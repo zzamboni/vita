@@ -166,7 +166,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 * Introduction
 
 #+latex: \begin{cvparagraph}
-I am a senior computer security expert, computer scientist, IT architect, team and project leader with 28 years of professional experience, specialized in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration management. I possess a strong combination of theoretical and practical knowledge in multiple areas of computing that make me able to analyze complex problems, design and implement elegant and pragmatic solutions. I have ample experience in technical writing, teaching and public speaking. I have a rich background which includes advanced education, scientific research, software architecture, practical technical knowledge, team leadership and customer-facing experience.
+I am a senior computer security expert, IT architect, computer scientist, team and project leader with 28 years of professional experience, specialized in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration management. I possess a strong combination of theoretical and practical knowledge in multiple areas of computing that make me able to analyze complex problems, design and implement elegant and pragmatic solutions. I have ample experience in technical writing, teaching and public speaking. I have a rich background which includes advanced education, scientific research, software architecture, practical technical knowledge, team leadership and customer-facing experience.
 #+latex: \end{cvparagraph}
 
 * Skill and Experience Overview

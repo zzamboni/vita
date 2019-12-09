@@ -2,6 +2,8 @@
 
 all:
 	latexmk
+view:
+	latexmk -pvc zamboni-vita
 clean:
 	latexmk -c -bibtex
 
