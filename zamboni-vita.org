@@ -6,6 +6,7 @@
 #+cvfooter_middle: %a~~~·~~~Curriculum Vit\ae
 #+cvfooter_right: \thepage
 #+macro: cvcite \cite{$1}
+#+options: num:1
 
 # LaTeX-specific options
 #+latex_class_options: [12pt,a4paper]
@@ -69,9 +70,9 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 
 * Introduction
 
-#+begin_cvparagraph
+#+latex: \begin{cvparagraph}
   I am a senior computer security expert, computer scientist, IT architect, team and project leader with 28 years of professional experience, specialized in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration management. I possess a strong combination of theoretical and practical knowledge in multiple areas of computing that make me able to analyze complex problems, design and implement elegant and pragmatic solutions. I have ample experience in technical writing, teaching and public speaking. I have a rich background which includes advanced education, scientific research, software architecture, practical technical knowledge, team leadership and customer-facing experience.
-#+end_cvparagraph
+#+latex: \end{cvparagraph}
 
 * Skill and Experience Overview
 :PROPERTIES:
@@ -850,22 +851,27 @@ Project: Implementation of a proof of concept Hyperjacking attack on Intel platf
   - UNICOS system administration on Cray supercomputers
 * Selected Publications
 
-#+latex: \nocite{*}
-#+latex: \printbibliography[keyword=book,          heading=cvbibsection, title=Books]
-#+latex: \printbibliography[keyword=editorial,     heading=cvbibsection, title=Editorial Activities]
-#+latex: \printbibliography[keyword=thesis,        heading=cvbibsection, title=Theses]
-#+latex: \printbibliography[keyword=refereed,      heading=cvbibsection, title=Refereed Papers]
-#+latex: \printbibliography[keyword=techreport,    heading=cvbibsection, title=Tech Reports]
-#+latex: \printbibliography[keyword=presentations, heading=cvbibsection, title=Presentations at Conferences and Workshops]
-#+latex: \printbibliography[keyword=invited,       heading=cvbibsection, title=Invited Talks and Articles]
-#+latex: \printbibliography[keyword=patent,        heading=cvbibsection, title=Patents]
-#+latex: \printbibliography[keyword=other,         heading=cvbibsection, title=Other Publications]
+#+begin_export latex
+\nocite{*}
+\printbibliography[keyword=book,          heading=cvbibsection, title=Books]
+\printbibliography[keyword=editorial,     heading=cvbibsection, title=Editorial Activities]
+\printbibliography[keyword=thesis,        heading=cvbibsection, title=Theses]
+\printbibliography[keyword=refereed,      heading=cvbibsection, title=Refereed Papers]
+\printbibliography[keyword=techreport,    heading=cvbibsection, title=Tech Reports]
+\printbibliography[keyword=presentations, heading=cvbibsection, title=Presentations at Conferences and Workshops]
+\printbibliography[keyword=invited,       heading=cvbibsection, title=Invited Talks and Articles]
+\printbibliography[keyword=patent,        heading=cvbibsection, title=Patents]
+\printbibliography[keyword=other,         heading=cvbibsection, title=Other Publications]
+#+end_export
+#+begin_export html
+The list of publications is for the moment not available in the HTML version of my CV. Please see the <a href="https://zzamboni.org/vita/">full PDF version</a>.
+#+end_export
 
 * References
 
-#+begin_cvparagraph
+#+latex: \begin{cvparagraph}
 Available by request.
-#+end_cvparagraph
+#+latex: \end{cvparagraph}
 
 * Local Variables :ARCHIVE:noexport:
 # Local Variables:
