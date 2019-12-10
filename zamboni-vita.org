@@ -881,7 +881,7 @@ Project: Implementation of a proof of concept Hyperjacking attack on Intel platf
 *** "Virtualization" lecture (2 hours), Systems Security class, Computer Science Dept.
 :PROPERTIES:
 :CV_ENV:   cvsubentry
-:LABEL: Multiple venues
+:LABEL: ETH Zürich
 :FROM: 2011
 :TO: 2013
 :END:
