@@ -45,9 +45,9 @@ The "Private info" section contains private information which should not be incl
 ,#+address: <my address>
 ,#+extrainfo: <other private information>
 
-When encrypted, this information is simply ignored. When I want to produce a version of my CV which includes this information, I run M-x org-decrypt-entry, which prompts for my GPG passphrase. Then, *without saving the file*, I run the following export command:
+When encrypted, this information is simply ignored. When I want to produce a version of my CV which includes this information, I run ~M-x org-decrypt-entry~, which prompts for my GPG passphrase. Then, *without saving the file*, I run the following export command:
 
- (org-export-to-file 'awesomecv "zamboni-vita-private.tex")
+(org-export-to-file 'awesomecv "zamboni-vita-private.tex")
 #+end_comment
 * Private info :noexport:crypt:
 -----BEGIN PGP MESSAGE-----
@@ -166,7 +166,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 * Introduction
 
 #+latex: \begin{cvparagraph}
-I am a senior computer security expert, IT architect, computer scientist, team and project leader with 28 years of professional experience, specialized in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration management. I possess a strong combination of theoretical and practical knowledge in multiple areas of computing that make me able to analyze complex problems, design and implement elegant and pragmatic solutions. I have ample experience in technical writing, teaching and public speaking. I have a rich background which includes advanced education, scientific research, software architecture, practical technical knowledge, team leadership and customer-facing experience.
+I am a senior computer security expert, IT architect, computer scientist, team and project leader with 28 years of professional experience. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration management. I possess a strong combination of leadership and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have strong communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
 #+latex: \end{cvparagraph}
 
 * Skill and Experience Overview
