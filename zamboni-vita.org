@@ -8,6 +8,8 @@
 #+cvfooter_right: \thepage
 #+macro: cvcite \cite{$1}
 #+options: num:1
+# Uncomment this options line before exporting to ASCII, to generate readable property fields
+# #+options: prop:("FROM" "TO" "LOCATION" "EMPLOYER" "SCHOOL" "ORGANIZATION" "DATE" "POSITION" "LABEL") toc:nil
 
 # LaTeX-specific options
 #+latex_class_options: [12pt,a4paper]
@@ -72,9 +74,9 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 - [[#experience][Experience]]
   - [[#swisscom][Swisscom]]
     - [[#enterprise-security-architect][Enterprise Security Architect]]
-    - [[#squad-lead--product-owner-for-health--state-management-in-the-it-clouds-large-solution][Squad Lead & Product Owner for /Health & State Management/ in the IT Clouds Large Solution]]
-    - [[#squad-lead--product-owner-for-health--state-management-in-the-enterprise-service-cloud-project][Squad Lead & Product Owner for /Health & State Management/ in the Enterprise Service Cloud project]]
-    - [[#head-of-health-and-state-management][Head of /Health and State Management/]]
+    - [[#squad-lead--product-owner-for-health--state-management-in-the-it-clouds-large-solution][Squad Lead & Product Owner for Health & State Management in the IT Clouds Large Solution]]
+    - [[#squad-lead--product-owner-for-health--state-management-in-the-enterprise-service-cloud-project][Squad Lead & Product Owner for Health & State Management in the Enterprise Service Cloud project]]
+    - [[#head-of-health-and-state-management][Head of Health and State Management]]
     - [[#lemm-squad-lead-in-the-enterprise-cloud-project][LEMM Squad Lead in the Enterprise Cloud project]]
     - [[#cloud-architect-and-orchard-project-lead][Cloud Architect and Orchard Project Lead]]
   - [[#swisscom-cloud-lab][Swisscom Cloud Lab]]
@@ -166,7 +168,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 * Introduction
 
 #+latex: \begin{cvparagraph}
-I am a senior computer security expert, IT architect, computer scientist, team and project leader with 28 years of professional experience. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration management. I possess a strong combination of leadership and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have strong communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
+I am a senior computer security expert, IT architect, computer scientist, team and project leader with 29 years of professional experience. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration management. I possess a strong combination of leadership and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have strong communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
 #+latex: \end{cvparagraph}
 
 * Skill and Experience Overview
@@ -178,8 +180,9 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 - Leadership :: Technical team and project leadership, [[https://www.scaledagile.com/][Scaled Agile Framework (SAFe)]] methodology and processes, SAFe Product Owner certification, SAFe Architect training.
 - Systems and Development :: Unix/Linux systems engineering and administration, systems health management and monitoring, cloud computing environments and platforms (OpenStack, Amazon EC2, Cloud Foundry) and software development experience (C, Python, Ruby, Perl, Java, etc.).
 - Configuration management :: CFEngine (Author of [[https://cf-learn.info/][/Learning CFEngine/]]), Ansible, Puppet.
+- Communications :: Excellent written and spoken communication skills, with more than 30 years of  written and oral communication and teaching experience in different contexts and topics.
 - Languages :: Spanish (native), English (100%), German (B1/B2 level).
-- Other skills :: Excellent written and spoken communication skills, customer-facing experience, project and product management experience.
+- Other skills :: Customer-facing experience, project and product management experience.
 
 * Experience
 :PROPERTIES:
@@ -202,7 +205,7 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 - As Security Architect for the IT Clouds Large Solution, I participate in the design and definition of security-relevant capabilities, compliance and business goals of cloud platforms built by Swisscom.
 - As Enterprise Architect, I participate in the overall design, discussion and proposals regarding the future of the products and solutions offered by Swisscom.
 
-*** Squad Lead & Product Owner for /Health & State Management/ in the IT Clouds Large Solution
+*** Squad Lead & Product Owner for Health & State Management in the IT Clouds Large Solution
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <2018-04-01>
@@ -212,7 +215,7 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 - The HSM team has an expanded scope to design, implement and manage Health Management and Monitoring components for all the IT Clouds platforms, including Enterprise Service Cloud, Application Cloud, Enterprise Cloud 1.x, Enterprise Cloud for SAP applications (EC4SAP), Marketplace Services, and Cloud Connectivity Management.
 - Main technologies involved: VMware vSphere (ESX, vCenter, NSX), VMware vRealize Operations Manager and Log Insight, Ansible (configuration management), OpsGenie (alert management).
 
-*** Squad Lead & Product Owner for /Health & State Management/ in the Enterprise Service Cloud project
+*** Squad Lead & Product Owner for Health & State Management in the Enterprise Service Cloud project
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :EMPLOYER: Swisscom
@@ -223,7 +226,7 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 
 - Worked with Product Management to define the technical features necessary for Health Management and Monitoring in the Enterprise Service Cloud project, and lead the team which implements, deploys and operates these components.
 
-*** Head of /Health and State Management/
+*** Head of Health and State Management
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :EMPLOYER: Swisscom
