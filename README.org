@@ -13,6 +13,13 @@ Exporting to ASCII uses the same trick as for HTML, but the result looks quite r
 
 Read the rest of this document for some more details, if you would like to use it as a starting point to write your own CV. Let me know if you have any questions or feedback!
 
+* Table of contents :TOC_1:
+- [[#org-mode-configuration][org-mode configuration]]
+- [[#latex-configuration][LaTeX configuration]]
+- [[#document-structure][Document structure]]
+- [[#detailed-ox-awesomecv-documentation][Detailed ox-awesomecv documentation]]
+- [[#next-steps-and-missing-stuff][Next steps and missing stuff]]
+
 * org-mode configuration
 
 Org-CV is not available in MELPA yet, so I clone the git repository under =~/.emacs.d/lisp/org-cv=, and then use the following code to load the modules:
