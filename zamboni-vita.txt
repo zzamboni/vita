@@ -1,0 +1,1121 @@
+           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+              IT ENTERPRISE SECURITY ARCHITECT · COMPUTER
+                  SCIENTIST · TEAM AND PROJECT LEADER
+
+                             Diego Zamboni
+           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+
+
+1 Introduction
+══════════════
+
+  I am a senior computer security expert, IT architect, computer
+  scientist, team and project leader with 29 years of professional
+  experience. I specialize in the areas of Computer Security, Cloud
+  Computing, Self-healing Systems and Configuration management. I
+  possess a strong combination of leadership and technical skills that
+  enable me to lead teams in analyzing complex problems, designing and
+  implementing elegant and pragmatic solutions. I have strong
+  communication abilities, with ample experience in writing, teaching
+  and public speaking. I can interact and work fluently at the
+  strategic, tactical and technical levels. I have a Ph.D. in Computer
+  Science and have experience in both academic and business
+  environments.
+
+
+2 Skill and Experience Overview
+═══════════════════════════════
+
+  Computer Security
+        Enterprise Security Architecture, Intrusion detection and
+        prevention (Ph.D. in Computer Science in this area), operating
+        systems security, network security, software security, secure
+        software development, virtualization and cloud computing
+        security, malware detection and containment.
+  Leadership
+        Technical team and project leadership, [Scaled Agile Framework
+        (SAFe)] methodology and processes, SAFe Product Owner
+        certification, SAFe Architect training.
+  Systems and Development
+        Unix/Linux systems engineering and administration, systems
+        health management and monitoring, cloud computing environments
+        and platforms (OpenStack, Amazon EC2, Cloud Foundry) and
+        software development experience (C, Python, Ruby, Perl, Java,
+        etc.).
+  Configuration management
+        CFEngine (Author of [/Learning CFEngine/]), Ansible, Puppet.
+  Communications
+        Excellent written and spoken communication skills, with more
+        than 30 years of written and oral communication and teaching
+        experience in different contexts and topics.
+  Languages
+        Spanish (native), English (100%), German (B1/B2 level).
+  Other skills
+        Customer-facing experience, project and product management
+        experience.
+
+
+[Scaled Agile Framework (SAFe)] <https://www.scaledagile.com/>
+
+[/Learning CFEngine/] <https://cf-learn.info/>
+
+
+3 Experience
+════════════
+
+
+
+
+Swisscom
+────────
+
+  LOCATION: Switzerland
+  FROM: 2015
+
+
+Enterprise Security Architect
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: <2019-04-01>
+
+  • As Security Architect for the IT Clouds Large Solution, I
+    participate in the design and definition of security-relevant
+    capabilities, compliance and business goals of cloud platforms built
+    by Swisscom.
+  • As Enterprise Architect, I participate in the overall design,
+    discussion and proposals regarding the future of the products and
+    solutions offered by Swisscom.
+
+
+Squad Lead & Product Owner for Health & State Management in the IT Clouds Large Solution
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: <2018-04-01>
+  TO: <2019-04-01>
+
+  • The HSM team has an expanded scope to design, implement and manage
+    Health Management and Monitoring components for all the IT Clouds
+    platforms, including Enterprise Service Cloud, Application Cloud,
+    Enterprise Cloud 1.x, Enterprise Cloud for SAP applications
+    (EC4SAP), Marketplace Services, and Cloud Connectivity Management.
+  • Main technologies involved: VMware vSphere (ESX, vCenter, NSX),
+    VMware vRealize Operations Manager and Log Insight, Ansible
+    (configuration management), OpsGenie (alert management).
+
+
+Squad Lead & Product Owner for Health & State Management in the Enterprise Service Cloud project
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  EMPLOYER: Swisscom
+  LOCATION: Switzerland
+  FROM: <2017-01-01>
+  TO: <2018-03-01>
+
+  • Worked with Product Management to define the technical features
+    necessary for Health Management and Monitoring in the Enterprise
+    Service Cloud project, and lead the team which implements, deploys
+    and operates these components.
+
+
+Head of Health and State Management
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  EMPLOYER: Swisscom
+  LOCATION: Switzerland
+  FROM: <2016-03-01>
+  TO: <2017-01-01>
+
+  • Led a team working on multiple projects related to Health Management
+    and Monitoring of the Swisscom cloud offerings, including
+    Application Cloud (CloudFoundry-based PaaS offering), Enterprise
+    Cloud 1.x and Enterprise Service Cloud (IaaS offerings).
+
+
+LEMM Squad Lead in the Enterprise Cloud project
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  EMPLOYER: Swisscom
+  LOCATION: Switzerland
+  FROM: <2016-06-01>
+  TO: <2016-12-31>
+
+  • Led the architecture and delivery of the Logging, Event Management
+    and Monitoring framework (LEMM) of the Swisscom Enterprise Cloud,
+    which handles all the processing, analysis and monitoring of the
+    logging messages, health events, and other relevant infrastructure
+    events.
+
+
+Cloud Architect and Orchard Project Lead
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  EMPLOYER: Swisscom
+  LOCATION: Switzerland
+  FROM: <2015-08-01>
+  TO: <2016-03-01>
+
+  • Continued leading the /Orchard/ project through its implementation,
+    release and further improvements and development.
+
+
+Swisscom Cloud Lab
+──────────────────
+
+  LOCATION: U.S.A. (remote)
+  FROM: 2014
+  TO: 2015
+
+
+Senior Platform Architect
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: <2014-08-01>
+  TO: <2015-07-31>
+
+  • I designed the architecture for the /Orchard/ health-management and
+    self-healing components of Swisscom's /Application Cloud/
+    Platform-as-a-Service Offering. This system performs self-monitoring
+    and self-healing of the infrastructure and platform components. In
+    addition to designing the architecture, I worked on its
+    implementation together with a team of three people managed by me.
+  • Main technologies involved: OpenStack (cloud computing
+    infrastructure), Plumgrid (SDN), Cloud Foundry (application
+    platform), Consul (health management and service discovery),
+    RabbitMQ (message bus), Riemann (event stream analysis).
+
+
+CFEngine AS
+───────────
+
+  LOCATION: Norway/U.S.A. (remote)
+  FROM: 2011
+  TO: 2014
+
+
+Product Manager
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: <2013-08-01>
+  TO: <2014-06-30>
+
+  • Coordinated the [CFEngine Design Center] project.
+  • Participated in the development of the CFEngine language roadmap.
+  • Coordinated the work on CFEngine third-party integration (e.g. AWS
+    EC2, VMware, Docker and OpenStack).
+  • Developed code for both the Design Center and some of the
+    integrations.
+
+
+[CFEngine Design Center] <http://cfengine.com/cfengine-design-center/>
+
+
+Senior Security Advisor
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: <2011-10-01>
+  TO: <2014-06-30>
+
+  • Overall advocate and fanatic for CFEngine, with a special focus on
+    security.
+  • Gave talks, wrote articles and blog posts, taught classes, and in
+    general spread the word about CFEngine.
+  • Worked on developing and implementing the strategy for CFEngine in
+    security.
+
+
+HP Enterprise Services
+──────────────────────
+
+  LOCATION: Mexico
+  FROM: 2009
+  TO: 2011
+
+
+Account Security Officer
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: <2010-10-01>
+  TO: <2011-10-01>
+
+  • I was the first point of contact for all security-related issues
+    for five HP enterprise customers in Mexico, some of them with
+    international presence.
+  • Initiated, advised and managed security-related projects.
+  • Handled communication and coordination between technical teams
+    involved in security initiatives.
+  • Involved in all security-related decisions at the sales, design,
+    implementation, delivery and ongoing maintenance stages of IT
+    Outsourcing projects.
+
+
+IT Outsourcing Service Delivery Consultant
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: <2009-11-01>
+  TO: <2010-10-01>
+
+  • I helped customer teams by solving complex problems in customer
+    environments.
+  • Performed analysis, design and implementation of solutions in
+    multiple areas of expertise, including system automation,
+    configuration management, system administration, system design,
+    virtualization, performance and security.
+
+
+IBM Zurich Research Lab
+───────────────────────
+
+  LOCATION: Switzerland
+  FROM: 2001
+  TO: 2009
+
+
+Research Staff Member
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: <2001-10-01>
+  TO: <2009-10-01>
+
+  • I worked in intrusion detection, malware detection and containment,
+    and virtualization security research projects. See /Research
+    activities/ for details of my research.
+
+
+Sun Microsystems
+────────────────
+
+  LOCATION: U.S.A.
+  FROM: 1997
+  TO: 1997
+
+
+Developer (Intern)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: <1997-05-01>
+  TO: <1997-08-01>
+
+  • Participated in the development of the /Bruce/ host vulnerability
+    scanner, later released as the [Sun Enterprise Network Security
+    Service] (SENSS).
+  • Designed and implemented the first version of the network-based
+    components of /Bruce/, which allowed it to operate on several hosts
+    in a network, controlled from a central location.
+
+
+[Sun Enterprise Network Security Service]
+<http://www.usenix.org/publications/login/1999-11/features/senss.html>
+
+
+National Autonomous University of Mexico (UNAM)
+───────────────────────────────────────────────
+
+  LOCATION: Mexico
+  FROM: 1991
+  TO: 1996
+
+
+Head of [Computer Security Area]
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: <1995-08-01>
+  TO: <1996-08-01>
+
+  • Founded UNAM's [Computer Security Area], the University's first team
+    dedicated to computer security, which has since evolved into a much
+    larger organization.
+  • Supervised up to nine people working on different projects related
+    to computer security.
+  • Supervised and participated in the direct monitoring of the security
+    of a Cray supercomputer and 22 Unix workstations.
+  • Provided security services to the whole University, including
+    incident response, security information, auditing and teaching.
+  • Established the celebration of the /International Computer Security
+    Day/ (sponsored by the Association for Computing Machinery) at UNAM.
+    Acted as the main organizer of the event for two years (1994 and
+    1995). This event has grown and divided into the /Computer Security
+    Day/ (a one-day event) and the /Seguridad en Cómputo/ (Computer
+    Security) conference (a multi-day event).
+  • Designed and headed development of an audit-analysis tool for Unix
+    systems (SAINT).
+
+
+[Computer Security Area] <http://www.seguridad.unam.mx/>
+
+
+System Administrator
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: <1991-11-01>
+  TO: <1995-08-01>
+
+  • Part of the system administration team at the University's
+    Supercomputing Center, managing UNAM's [Cray Y-MP Supercomputer]
+    (the first supercomputer in Latin America) and related systems.
+  • Managed the Network Queuing Subsystem (NQS).
+  • Collaborated in other aspects of the supercomputer administration,
+    including user administration, operating system installation,
+    resource management, and policy making and implementation.
+  • Directly managed three Unix workstations, provided support for 19
+    more.
+  • Monitored the security of the Cray supercomputer and related
+    workstations.
+
+
+[Cray Y-MP Supercomputer]
+<http://www.historiadelcomputo.unam.mx/files/fotos/Cray/cray.html>
+
+
+4 Education
+═══════════
+
+
+
+
+Ph.D. in Computer Science
+─────────────────────────
+
+  LOCATION: West Lafayette, IN, U.S.A.
+  SCHOOL: Purdue University
+  FROM: <1996-08-01>
+  TO: <2001-08-01>
+
+  • Thesis title: [/Using Internal Sensors for Computer Intrusion
+    Detection/].
+  • Advisor: [Eugene H. Spafford].
+
+
+[/Using Internal Sensors for Computer Intrusion Detection/]
+<https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf>
+
+[Eugene H. Spafford] <http://spaf.cerias.purdue.edu/>
+
+
+M.S. in Computer Science
+────────────────────────
+
+  LOCATION: West Lafayette, IN, U.S.A.
+  SCHOOL: Purdue University
+  FROM: <1996-08-01>
+  TO: <1998-05-01>
+
+  • Advisor: [Eugene H. Spafford].
+
+
+[Eugene H. Spafford] <http://spaf.cerias.purdue.edu/>
+
+
+Bachelor's degree in Computer Engineering
+─────────────────────────────────────────
+
+  LOCATION: Mexico City, Mexico
+  SCHOOL: National Autonomous University of Mexico (UNAM)
+  FROM: <1989-08-01>
+  TO: <1995-07-01>
+
+  • Thesis title: [UNAM/Cray Project for Security in the Unix Operating
+    System] (in Spanish, original title: /Proyecto UNAM/Cray de
+    Seguridad en el Sistema Operativo Unix/).
+
+
+[UNAM/Cray Project for Security in the Unix Operating System]
+<https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf>
+
+
+5 Certifications
+════════════════
+
+
+
+
+[Certified Information Systems Security Professional (CISSP)]
+─────────────────────────────────────────────────────────────
+
+  ORGANIZATION: (ISC)², the International Information System Security Certification Consortium
+  LOCATION: April 2019
+
+  The vendor-neutral CISSP credential confirms technical knowledge and
+  experience to design, engineer, implement, and manage the overall
+  security posture of an organization. Required by the world’s most
+  security-conscious organizations, CISSP is the gold-standard
+  information security certification that assures information security
+  leaders possess the breadth and depth of knowledge to establish
+  holistic security programs that protect against threats in an
+  increasingly complex cyber world.
+
+
+[Certified Information Systems Security Professional (CISSP)]
+<https://www.youracclaim.com/badges/98814af3-575b-4350-9667-70eddfea1da4/public_url>
+
+
+[SAFe® 4 Certified Product Owner/Product Manager]
+─────────────────────────────────────────────────
+
+  ORGANIZATION: Scaled Agile Inc.
+  LOCATION: July 2017
+
+  A SAFe® 4 Certified Product Owner/Product Manager is a SAFe
+  professional who works with customers and development organizations to
+  identify and write requirements. Key areas of competency include
+  identifying customer needs, writing epics, capabilities, features,
+  stories, and prioritizing work in order to effectively deliver value
+  to the enterprise.
+
+
+[SAFe® 4 Certified Product Owner/Product Manager]
+<https://www.youracclaim.com/badges/e6bf0ca2-f1c4-4af6-bf63-09f4b8cdbd02/public_url>
+
+
+6 Research
+══════════
+
+  (see ``Publications'' for publication reference details)
+
+
+Research projects at IBM (selected)
+───────────────────────────────────
+
+
+
+
+[Project Phantom]
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: 2008
+  TO: 2009
+
+  • Security for VMware virtual environments using virtual machine
+    introspection (based on the [VMware VMsafe API]) to provide
+    detection and prevention capabilities with increased security and
+    reliability.
+  • Publications: \cite{Christodorescu:2009:CSV:1655008.1655022}.
+
+
+[Project Phantom]
+<http://www-03.ibm.com/press/us/en/pressrelease/23833.wss>
+
+[VMware VMsafe API] <https://vmguru.com/2011/03/vmsafe-api/>
+
+
+Code instrumentation for intrusion detection
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: 2007
+  TO: 2007
+
+  • Exploration of code instrumentation and low-level monitoring
+    mechanisms for efficient and accurate intrusion detection and
+    prevention.
+
+
+[Billy Goat: Active worm detection and capture]
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: 2002
+  TO: 2008
+
+  • An active worm-detection system, in wide deployment in the IBM
+    worldwide internal network. Billy Goat listens for connections to
+    unused IP address ranges and actively responds to those connections
+    to accurately detect worm-infected machines, and in many cases
+    capture the worms themselves. Billy Goat is engineered for
+    distributed deployment, with each device containing standalone
+    detection and reporting capabilities, together with data
+    centralization features that allow network-wide data analysis and
+    reporting.
+  • Publications: \cite{riordan06:_build_billy_goat:first2006,
+    riordan05:bg_techreport}
+
+
+[Billy Goat: Active worm detection and capture]
+<http://domino.research.ibm.com/library/cyberdig.nsf/1e4115aea78b6e7c85256b360066f0d4/d7c39a9a2e73d870852570060051dfed?OpenDocument>
+
+
+[Router-based Billy Goat]
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: 2005
+  TO: 2007
+
+  • An active worm-capture device deployed at the network boundary and
+    coupled with the border router, that allows the Billy Goat to
+    effectively and automatically spoof every unused IP address outside
+    the local network. This makes it possible for the Router-based Billy
+    Goat to accurately detect local infected machines and prevent them
+    from establishing connections to the outside, limiting the
+    propagation of the worms to the outside network.
+  • Publications: \cite{zamboni07:sruti07-rbg}
+
+
+[Router-based Billy Goat]
+<http://www.usenix.org/event/sruti07/tech/full_papers/zamboni/zamboni.pdf>
+
+
+SOC in a Box
+╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: 2005
+  TO: 2007
+
+  • Integrated device containing multiple security tools: intrusion
+    detection, worm detection, vulnerability scanning and network
+    discovery.
+
+
+Exorcist
+╌╌╌╌╌╌╌╌
+
+  FROM: 2001
+  TO: 2002
+
+  • Host-based, behavior-based intrusion detection using sequences of
+    system calls.
+
+
+Ph.D. Thesis Research
+─────────────────────
+
+
+
+
+[Using internal sensors and embedded detectors for intrusion detection]
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • Study of data collection methods for intrusion detection systems.
+  • Implementation of novel methods for data collection in intrusion
+    detection systems.
+  • Analysis of the properties, advantages and disadvantages of internal
+    sensors and embedded detectors as data collection and analysis
+    elements in intrusion detection systems.
+  • Publications: \cite{zamboni01:phd-thesis,
+    zamboni02:sensors_detectors, kerschbaum00:network-embedded-sensors,
+    zamboni00:thesis-proposal, zamboni:raid2000}
+
+
+[Using internal sensors and embedded detectors for intrusion detection]
+<https://zzamboni.org/cerias/zamboni/thesis/>
+
+
+Additional research projects
+────────────────────────────
+
+
+
+
+[Using autonomous agents for intrusion detection]
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • Design and documentation of an architecture (AAFID) to perform
+    distributed monitoring and intrusion detection using autonomous
+    agents.
+  • Implementation of a prototype according to the architecture. This
+    prototype is [published as open source].
+  • Exploration of research issues in the distributed intrusion
+    detection area.
+  • Publications: \cite{spafford00:intrus_detec_auton_agent,
+    zamboni:aafid-acsac98, zamboni:aafid-architecture, zamboni:raid98,
+    zamboni00:build_aafid_with_perl, zamboni:raid99}.
+
+
+[Using autonomous agents for intrusion detection]
+<https://www.cerias.purdue.edu/site/about/history/coast/projects/aafid.php>
+
+[published as open source] <http://freshmeat.net/projects/aafid2>
+
+
+[Analysis of a denial-of-service attack on TCP/IP (Synkill)]
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  • Collaborated in the analysis of the SYN-flooding denial-of-service
+    attack against TCP and in the implementation of a defense tool.
+  • Publications: \cite{schuba97:synkill}.
+
+
+[Analysis of a denial-of-service attack on TCP/IP (Synkill)]
+<https://www.cerias.purdue.edu/site/about/history/coast/projects/coast-proj-synkill.php>
+
+
+7 System Development and Management
+═══════════════════════════════════
+
+  Programming languages
+        C, Perl, Java, AWK, Unix shells (Elvish shell, Bourne shell, C
+        shell, Korn shell), Python, PHP, Ruby, Objective~C, Cocoa (MacOS
+        X), Go, Clojure.
+  Development environments
+        Unix/Linux, OpenStack, Cloud Foundry, Amazon EC2, Mac OS X.
+  Unix system administration
+        Linux (experience with multiple distributions including RedHat,
+        Ubuntu, Debian, Gentoo, and others), OpenBSD, FreeBSD, MacOS X,
+        MacOS X Server, Solaris.
+  Configuration management
+        CFEngine 3, Puppet, Chef, Ansible.
+  Virtualization, containers and cloud
+        VMWare (ESX, vSphere), OpenStack, Amazon EC2, Docker, Cloud
+        Foundry.
+  Health Management and Monitoring
+        VMware vRealize Operations Manager, vRealize Log Insight,
+        Nagios, Icinga.
+  Other
+        REST APIs, Riemann (event stream processing), XML and related
+        technologies, network programming, database programming (SQL),
+        kernel programming (OpenBSD and Linux), HTML.
+
+
+8 Software Development Projects
+═══════════════════════════════
+
+[https://github.com/zzamboni/] <https://github.com/zzamboni/>
+
+Publicly-available software projects: see [https://github.com/zzamboni/]
+────────────────────────────────────────────────────────────────────────
+
+[https://github.com/zzamboni/] <https://github.com/zzamboni/>
+
+
+Other software projects (not publicly available)
+────────────────────────────────────────────────
+
+Pilatus (IBM)
+╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: 2005
+  TO: 2007
+
+  A system installer that allows arbitrary system installation and
+  configurations, allowing for both proprietary and open source
+  components to be installed in an automated fashion. Open source
+  components can be downloaded directly from their original source to
+  avoid distributing them.
+
+
+SOC in a Box (IBM)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: 2005
+  TO: 2007
+
+  A specialized Linux distribution containing multiple security services
+  for integrated security monitoring in small and medium
+  networks. Implementation includes also backend infrastructure
+  components for system installation, configuration and upgrade; and
+  data centralization, analysis and reporting.
+
+
+Billy Goat (IBM)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: 2002
+  TO: 2007
+
+  A specialized Linux distribution containing multiple sensors for
+  detection of large-scale automated attacks. Implementation includes
+  also backend infrastructure components for system configuration and
+  upgrade, data centralization, analysis and reporting.
+
+
+Embedded Sensors Project (ESP)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: 1999
+  TO: 2001
+
+  A system of sensors for intrusion detection developed in OpenBSD
+  through code instrumentation. Developed as part of my Ph.D. thesis
+  work. Programming done mostly in C.
+
+
+9 Honors & Awards
+═════════════════
+
+
+
+
+[CFEngine Champion]
+───────────────────
+
+  DATE: 2010
+  ORGANIZATION: CFEngine AS
+  LOCATION: Norway
+
+
+[CFEngine Champion] <https://cfengine.com/engage/cfengine-champions/>
+
+
+Josef Raviv Memorial Postdoctoral Fellowship
+────────────────────────────────────────────
+
+  DATE: <2001-07-01>
+  ORGANIZATION: IBM
+  LOCATION: U.S.A.
+
+
+Member of [Phi Beta Delta]
+──────────────────────────
+
+  DATE: <2001-04-01>
+  ORGANIZATION: honor society recognizing scholarly achievement
+  LOCATION: U.S.A.
+
+
+[Phi Beta Delta] <http://www.phibetadelta.org>
+
+
+UPE Microsoft Scholarship Award
+───────────────────────────────
+
+  DATE: <2000-09-01>
+  ORGANIZATION: honor society recognizing scholarly achievement
+  LOCATION: U.S.A.
+
+
+Member of [Upsilon Pi Epsilon]
+──────────────────────────────
+
+  DATE: <1998-04-01>
+  ORGANIZATION: the ACM Computer Sciences honor society
+  LOCATION: U.S.A.
+
+
+[Upsilon Pi Epsilon] <http://upe.acm.org/>
+
+
+Fulbright Scholarship
+─────────────────────
+
+  DATE: <1996-05-01>
+  ORGANIZATION: for pursuing Ph.D. studies at Purdue University
+  LOCATION: Mexico
+
+
+10 Other Professional Activities
+════════════════════════════════
+
+
+
+
+[The Association for Computing Machinery (ACM)]
+───────────────────────────────────────────────
+
+  POSITION: Member
+  FROM: 1998
+  TO:
+
+
+[The Association for Computing Machinery (ACM)] <http://www.acm.org/>
+
+
+[Purdue.pm], the Purdue Perl Users Group
+────────────────────────────────────────
+
+  POSITION: Founder
+  DATE: 2000
+  LOCATION: U.S.A.
+
+
+[Purdue.pm] <http://purdue.pm.org/>
+
+
+[Purdue University Chapter of Upsilon Pi Epsilon]
+─────────────────────────────────────────────────
+
+  POSITION: President
+  DATE: 1999
+  LOCATION: U.S.A.
+
+
+[Purdue University Chapter of Upsilon Pi Epsilon]
+<https://www.cs.purdue.edu/future-students/organizations.html>
+
+
+[Purdue University Chapter of Upsilon Pi Epsilon]
+─────────────────────────────────────────────────
+
+  POSITION: Secretary
+  DATE: 1998
+  LOCATION: U.S.A.
+
+
+[Purdue University Chapter of Upsilon Pi Epsilon]
+<https://www.cs.purdue.edu/future-students/organizations.html>
+
+
+11 Program Committees and Boards
+════════════════════════════════
+
+
+
+
+[Editorial Board Member]
+────────────────────────
+
+  ORGANIZATION: Computers \& Security Journal
+  DATE: 2011--2013
+
+
+[Editorial Board Member]
+<http://www.elsevier.com/wps/find/journaldescription.cws_home/405877/description>
+
+
+[Steering Committee Member]
+───────────────────────────
+
+  ORGANIZATION: Intl. Symposium on Recent Advances in Intrusion Detection
+  DATE: 2007--2012
+
+
+[Steering Committee Member] <http://www.raid-symposium.org/>
+
+
+[Program chair]
+───────────────
+
+  ORGANIZATION: 9th Intl. Symposium on Recent Advances in Intrusion Detection (RAID)
+  DATE: 2006
+  LOCATION: Germany
+
+
+[Program chair] <http://www.raid-symposium.org/raid2006/>
+
+
+[Program Committee Member]
+──────────────────────────
+
+  ORGANIZATION: Intl. Symposium on Recent Advances in Intrusion Detection
+  DATE: 2006
+
+
+[Program Committee Member] <http://www.raid-symposium.org/>
+
+
+Program co-chair
+────────────────
+
+  ORGANIZATION: IBM Academy of Technology Security and Privacy Symposium
+  DATE: 2009
+
+
+[Program chair]
+───────────────
+
+  ORGANIZATION: ZISC Workshop on Security in Virtualized Environments and Cloud Computing
+  DATE: 2009
+  LOCATION: Switzerland
+
+
+[Program chair] <https://www.video.ethz.ch/conferences/2009/zisc.html>
+
+
+[Program chair]
+───────────────
+
+  ORGANIZATION: Detection of Intrusions and Malware \& Vulnerability Assessment (DIMVA)
+  DATE: 2008
+  LOCATION: France
+
+
+[Program chair] <https://www.dimva.org/dimva2008/>
+
+
+[Program Committee Member]
+──────────────────────────
+
+  ORGANIZATION: IEEE Security and Privacy Symposium
+  DATE: 2007
+  LOCATION: U.S.A.
+
+
+[Program Committee Member]
+<http://www.ieee-security.org/TC/SP-Index.html>
+
+
+[Program Committee Member]
+──────────────────────────
+
+  ORGANIZATION: Annual Computer Security Applications Conference (ACSAC)
+  DATE: 2003--2007
+
+
+[Program Committee Member] <http://www.acsac.org/>
+
+
+Program Committee Member
+────────────────────────
+
+  ORGANIZATION: International Computer Security Day Conference
+  DATE: 1994--2000
+  LOCATION: Mexico
+
+
+Organizer
+─────────
+
+  ORGANIZATION: International Computer Security Day Conference
+  DATE: 1994--1995
+  LOCATION: Mexico
+
+
+12 Teaching and Advising
+════════════════════════
+
+Students
+────────
+
+Daniele Sgandurra, University of Pisa, Italy
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: Internship advisor
+  FROM: 2009
+  TO: 2009
+
+  • Project: Design and implementation of process injection using
+    virtual machine introspection.
+
+
+Martin Carbone, Georgia Institute of Technology, U.S.A.
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: Internship advisor
+  FROM: 2007
+  TO: 2007
+
+  Project: Implementation of a proof of concept Hyperjacking attack on
+  Intel platform.
+
+
+Urko Zurutuza Ortega, Mondragon University, Spain
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: Ph.D. co-advisor
+  FROM: 2005
+  TO: 2008
+
+  • Thesis: [Data Mining Approaches for Analysis of Worm Activity
+    Towards Automatic Signature Generation]
+
+
+[Data Mining Approaches for Analysis of Worm Activity Towards Automatic
+Signature Generation]
+<https://dialnet.unirioja.es/servlet/tesis?codigo=20012>
+
+
+Milton Yates, ENST Bretagne, France
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: External Diploma Thesis advisor
+  FROM: 2005
+  TO: 2005
+
+  • Thesis: [The Router-based Billy Goat Project]
+
+
+[The Router-based Billy Goat Project]
+<https://www.usenix.org/conference/sruti-07/boundary-detection-and-containment-local-worm-infections>
+
+
+Candid Wüest, ETH Zurich, Switzerland
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: Diploma Thesis tutor
+  FROM: 2002
+  TO: 2003
+
+  • Thesis: [Desktop Firewalls and Intrusion Detection]
+
+
+[Desktop Firewalls and Intrusion Detection]
+<https://pub.tik.ee.ethz.ch/students/2002-2003-Wi/DA-2003-22.pdf>
+
+
+Teaching
+────────
+
+CFEngine one-day training class (8 hour class)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: Multiple venues
+  FROM: 2011
+  TO: 2013
+
+
+"Virtualization" lecture (2 hours), Systems Security class, Computer Science Dept.
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: ETH Zürich
+  FROM: 2011
+  TO: 2013
+
+
+"Intrusion detection: Basic concepts and current research at IBM" class (3 hours), Information Technology Security Spring School
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: University of Lausanne
+  FROM: 2005
+  TO: 2005
+
+
+"Introduction to Computer Security" class (40 hours)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: ITESM, Mexico
+  FROM: 2003
+  TO: 2003
+
+
+EE495 ("Information Extraction, Retrieval and Security") course
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: Purdue University, U.S.A.
+  FROM: 2000
+  TO: 2000
+
+  • Collaborated in the design of eight security-related lectures and
+    taught two of them.
+  • Participated in the design of the class project.
+
+
+"SSH: Achieving secure communication over insecure channels" class
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: CSI NetSec conference, U.S.A.
+  FROM: 2000
+  TO: 2000
+
+
+"Protecting your computing system" class
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: Schlumberger, U.S.A.
+  FROM: 1997
+  TO: 1997
+
+
+Supercomputing Internship Program Courses
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  LABEL: UNAM, Mexico
+  FROM: 1991
+  TO: 1996
+
+  • Participated in the design and teaching of the syllabus, structure
+    and contents of multiple courses 10–40 hours long, including the
+    following topics:
+    • Introduction to Unix
+    • Unix utilities
+    • Unix security
+    • Basic Unix administration
+    • Advanced Unix administration
+    • UNICOS system administration on Cray supercomputers
+
+
+13 Selected Publications
+════════════════════════
+
+
+14 References
+═════════════
+
+  Available by request.

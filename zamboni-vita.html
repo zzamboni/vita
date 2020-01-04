@@ -1,0 +1,1406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-01-04 Sat 20:18 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IT Enterprise Security Architect · Computer Scientist · Team and Project Leader</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Diego Zamboni" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">IT Enterprise Security Architect · Computer Scientist · Team and Project Leader</h1>
+<p>
+
+</p>
+<div id="outline-container-org86d2402" class="outline-2">
+<h2 id="org86d2402"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+I am a senior computer security expert, IT architect, computer scientist, team and project leader with 29 years of professional experience. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration management. I possess a strong combination of leadership and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have strong communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2458e20" class="outline-2">
+<h2 id="org2458e20"><span class="section-number-2">2</span> Skill and Experience Overview</h2>
+<div class="outline-text-2" id="text-2">
+<dl class="org-dl">
+<dt>Computer Security</dt><dd>Enterprise Security Architecture, Intrusion detection and prevention (Ph.D. in Computer Science in this area), operating systems security, network security, software security, secure software development, virtualization and cloud computing security, malware detection and containment.</dd>
+<dt>Leadership</dt><dd>Technical team and project leadership, <a href="https://www.scaledagile.com/">Scaled Agile Framework (SAFe)</a> methodology and processes, SAFe Product Owner certification, SAFe Architect training.</dd>
+<dt>Systems and Development</dt><dd>Unix/Linux systems engineering and administration, systems health management and monitoring, cloud computing environments and platforms (OpenStack, Amazon EC2, Cloud Foundry) and software development experience (C, Python, Ruby, Perl, Java, etc.).</dd>
+<dt>Configuration management</dt><dd>CFEngine (Author of <a href="https://cf-learn.info/"><i>Learning CFEngine</i></a>), Ansible, Puppet.</dd>
+<dt>Communications</dt><dd>Excellent written and spoken communication skills, with more than 30 years of  written and oral communication and teaching experience in different contexts and topics.</dd>
+<dt>Languages</dt><dd>Spanish (native), English (100%), German (B1/B2 level).</dd>
+<dt>Other skills</dt><dd>Customer-facing experience, project and product management experience.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org84c68e8" class="outline-2">
+<h2 id="org84c68e8"><span class="section-number-2">3</span> Experience</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+
+<div id="outline-container-orgcb56641" class="outline-3">
+<h3 id="orgcb56641">Swisscom</h3>
+<div class="outline-text-3" id="text-orgcb56641">
+<pre class="example">
+LOCATION: Switzerland
+FROM: 2015
+</pre>
+</div>
+
+<div id="outline-container-org0ba0466" class="outline-4">
+<h4 id="org0ba0466">Enterprise Security Architect</h4>
+<div class="outline-text-4" id="text-org0ba0466">
+<pre class="example">
+FROM: <2019-04-01>
+</pre>
+
+<ul class="org-ul">
+<li>As Security Architect for the IT Clouds Large Solution, I participate in the design and definition of security-relevant capabilities, compliance and business goals of cloud platforms built by Swisscom.</li>
+<li>As Enterprise Architect, I participate in the overall design, discussion and proposals regarding the future of the products and solutions offered by Swisscom.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge2ffd49" class="outline-4">
+<h4 id="orge2ffd49">Squad Lead &amp; Product Owner for Health &amp; State Management in the IT Clouds Large Solution</h4>
+<div class="outline-text-4" id="text-orge2ffd49">
+<pre class="example">
+FROM: <2018-04-01>
+TO: <2019-04-01>
+</pre>
+
+<ul class="org-ul">
+<li>The HSM team has an expanded scope to design, implement and manage Health Management and Monitoring components for all the IT Clouds platforms, including Enterprise Service Cloud, Application Cloud, Enterprise Cloud 1.x, Enterprise Cloud for SAP applications (EC4SAP), Marketplace Services, and Cloud Connectivity Management.</li>
+<li>Main technologies involved: VMware vSphere (ESX, vCenter, NSX), VMware vRealize Operations Manager and Log Insight, Ansible (configuration management), OpsGenie (alert management).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbf092c8" class="outline-4">
+<h4 id="orgbf092c8">Squad Lead &amp; Product Owner for Health &amp; State Management in the Enterprise Service Cloud project</h4>
+<div class="outline-text-4" id="text-orgbf092c8">
+<pre class="example">
+EMPLOYER: Swisscom
+LOCATION: Switzerland
+FROM: <2017-01-01>
+TO: <2018-03-01>
+</pre>
+
+<ul class="org-ul">
+<li>Worked with Product Management to define the technical features necessary for Health Management and Monitoring in the Enterprise Service Cloud project, and lead the team which implements, deploys and operates these components.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdb5df49" class="outline-4">
+<h4 id="orgdb5df49">Head of Health and State Management</h4>
+<div class="outline-text-4" id="text-orgdb5df49">
+<pre class="example">
+EMPLOYER: Swisscom
+LOCATION: Switzerland
+FROM: <2016-03-01>
+TO: <2017-01-01>
+</pre>
+
+<ul class="org-ul">
+<li>Led a team working on multiple projects related to Health Management and Monitoring of the Swisscom cloud offerings, including Application Cloud (CloudFoundry-based PaaS offering), Enterprise Cloud 1.x and Enterprise Service Cloud (IaaS offerings).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf56f2c0" class="outline-4">
+<h4 id="orgf56f2c0">LEMM Squad Lead in the Enterprise Cloud project</h4>
+<div class="outline-text-4" id="text-orgf56f2c0">
+<pre class="example">
+EMPLOYER: Swisscom
+LOCATION: Switzerland
+FROM: <2016-06-01>
+TO: <2016-12-31>
+</pre>
+
+<ul class="org-ul">
+<li>Led the architecture and delivery of the Logging, Event Management and Monitoring framework (LEMM) of the Swisscom Enterprise Cloud, which handles all the processing, analysis and monitoring of the logging messages, health events, and other relevant infrastructure events.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgac8c024" class="outline-4">
+<h4 id="orgac8c024">Cloud Architect and Orchard Project Lead</h4>
+<div class="outline-text-4" id="text-orgac8c024">
+<pre class="example">
+EMPLOYER: Swisscom
+LOCATION: Switzerland
+FROM: <2015-08-01>
+TO: <2016-03-01>
+</pre>
+
+<ul class="org-ul">
+<li>Continued leading the <i>Orchard</i> project through its implementation, release and further improvements and development.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9dccee7" class="outline-3">
+<h3 id="org9dccee7">Swisscom Cloud Lab</h3>
+<div class="outline-text-3" id="text-org9dccee7">
+<pre class="example">
+LOCATION: U.S.A. (remote)
+FROM: 2014
+TO: 2015
+</pre>
+</div>
+
+<div id="outline-container-orgce1e7d1" class="outline-4">
+<h4 id="orgce1e7d1">Senior Platform Architect</h4>
+<div class="outline-text-4" id="text-orgce1e7d1">
+<pre class="example">
+FROM: <2014-08-01>
+TO: <2015-07-31>
+</pre>
+
+<ul class="org-ul">
+<li>I designed the architecture for the <i>Orchard</i> health-management and self-healing components of Swisscom's <i>Application Cloud</i> Platform-as-a-Service Offering. This system performs self-monitoring and self-healing of the infrastructure and platform components. In addition to designing the architecture, I worked on its implementation together with a team of three people managed by me.</li>
+<li>Main technologies involved: OpenStack (cloud computing infrastructure), Plumgrid (SDN), Cloud Foundry (application platform), Consul (health management and service discovery), RabbitMQ (message bus), Riemann (event stream analysis).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga90425f" class="outline-3">
+<h3 id="orga90425f">CFEngine AS</h3>
+<div class="outline-text-3" id="text-orga90425f">
+<pre class="example">
+LOCATION: Norway/U.S.A. (remote)
+FROM: 2011
+TO: 2014
+</pre>
+</div>
+
+<div id="outline-container-org8547c4b" class="outline-4">
+<h4 id="org8547c4b">Product Manager</h4>
+<div class="outline-text-4" id="text-org8547c4b">
+<pre class="example">
+FROM: <2013-08-01>
+TO: <2014-06-30>
+</pre>
+
+<ul class="org-ul">
+<li>Coordinated the <a href="http://cfengine.com/cfengine-design-center/">CFEngine Design Center</a> project.</li>
+<li>Participated in the development of the CFEngine language roadmap.</li>
+<li>Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack).</li>
+<li>Developed code for both the Design Center and some of the integrations.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7bcf592" class="outline-4">
+<h4 id="org7bcf592">Senior Security Advisor</h4>
+<div class="outline-text-4" id="text-org7bcf592">
+<pre class="example">
+FROM: <2011-10-01>
+TO: <2014-06-30>
+</pre>
+
+<ul class="org-ul">
+<li>Overall advocate and fanatic for CFEngine, with a special focus on security.</li>
+<li>Gave talks, wrote articles and blog posts, taught classes, and in general spread the word about CFEngine.</li>
+<li>Worked on developing and implementing the strategy for CFEngine in security.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf98bf85" class="outline-3">
+<h3 id="orgf98bf85">HP Enterprise Services</h3>
+<div class="outline-text-3" id="text-orgf98bf85">
+<pre class="example">
+LOCATION: Mexico
+FROM: 2009
+TO: 2011
+</pre>
+</div>
+
+<div id="outline-container-org1be8f31" class="outline-4">
+<h4 id="org1be8f31">Account Security Officer</h4>
+<div class="outline-text-4" id="text-org1be8f31">
+<pre class="example">
+FROM: <2010-10-01>
+TO: <2011-10-01>
+</pre>
+
+<ul class="org-ul">
+<li>I was the first point of contact for all security-related issues for five HP enterprise customers in Mexico, some of them with international presence.</li>
+<li>Initiated, advised and managed security-related projects.</li>
+<li>Handled communication and coordination between technical teams involved in security initiatives.</li>
+<li>Involved in all security-related decisions at the sales, design, implementation, delivery and ongoing maintenance stages of IT Outsourcing projects.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5d83aca" class="outline-4">
+<h4 id="org5d83aca">IT Outsourcing Service Delivery Consultant</h4>
+<div class="outline-text-4" id="text-org5d83aca">
+<pre class="example">
+FROM: <2009-11-01>
+TO: <2010-10-01>
+</pre>
+
+<ul class="org-ul">
+<li>I helped customer teams by solving complex problems in customer environments.</li>
+<li>Performed analysis, design and implementation of solutions in multiple areas of expertise, including system automation, configuration management, system administration, system design, virtualization, performance and security.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3c4b9f8" class="outline-3">
+<h3 id="org3c4b9f8">IBM Zurich Research Lab</h3>
+<div class="outline-text-3" id="text-org3c4b9f8">
+<pre class="example">
+LOCATION: Switzerland
+FROM: 2001
+TO: 2009
+</pre>
+</div>
+
+<div id="outline-container-orgd61a6c1" class="outline-4">
+<h4 id="orgd61a6c1">Research Staff Member</h4>
+<div class="outline-text-4" id="text-orgd61a6c1">
+<pre class="example">
+FROM: <2001-10-01>
+TO: <2009-10-01>
+</pre>
+
+<ul class="org-ul">
+<li>I worked in intrusion detection, malware detection and containment, and virtualization security research projects. See <i>Research activities</i> for details of my research.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb7a8f7c" class="outline-3">
+<h3 id="orgb7a8f7c">Sun Microsystems</h3>
+<div class="outline-text-3" id="text-orgb7a8f7c">
+<pre class="example">
+LOCATION: U.S.A.
+FROM: 1997
+TO: 1997
+</pre>
+</div>
+
+<div id="outline-container-orgaee66de" class="outline-4">
+<h4 id="orgaee66de">Developer (Intern)</h4>
+<div class="outline-text-4" id="text-orgaee66de">
+<pre class="example">
+FROM: <1997-05-01>
+TO: <1997-08-01>
+</pre>
+
+<ul class="org-ul">
+<li>Participated in the development of the <i>Bruce</i> host vulnerability scanner, later released as the <a href="http://www.usenix.org/publications/login/1999-11/features/senss.html">Sun Enterprise Network Security Service</a> (SENSS).</li>
+<li>Designed and implemented the first version of the network-based components of <i>Bruce</i>, which allowed it to operate on several hosts in a network, controlled from a central location.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7cab722" class="outline-3">
+<h3 id="org7cab722">National Autonomous University of Mexico (UNAM)</h3>
+<div class="outline-text-3" id="text-org7cab722">
+<pre class="example">
+LOCATION: Mexico
+FROM: 1991
+TO: 1996
+</pre>
+</div>
+
+<div id="outline-container-org062950e" class="outline-4">
+<h4 id="org062950e">Head of <a href="http://www.seguridad.unam.mx/">Computer Security Area</a></h4>
+<div class="outline-text-4" id="text-org062950e">
+<pre class="example">
+FROM: <1995-08-01>
+TO: <1996-08-01>
+</pre>
+
+<ul class="org-ul">
+<li>Founded UNAM's <a href="http://www.seguridad.unam.mx/">Computer Security Area</a>, the University's first team dedicated to computer security, which has since evolved into a much larger organization.</li>
+<li>Supervised up to nine people working on different projects related to computer security.</li>
+<li>Supervised and participated in the direct monitoring of the security of a Cray supercomputer and 22 Unix workstations.</li>
+<li>Provided security services to the whole University, including incident response, security information, auditing and teaching.</li>
+<li>Established the celebration of the <i>International Computer Security Day</i> (sponsored by the Association for Computing Machinery) at UNAM.  Acted as the main organizer of the event for two years (1994 and 1995). This event has grown and divided into the <i>Computer Security Day</i> (a one-day event) and the <i>Seguridad en Cómputo</i> (Computer Security) conference (a multi-day event).</li>
+<li>Designed and headed development of an audit-analysis tool for Unix systems (SAINT).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgef03f15" class="outline-4">
+<h4 id="orgef03f15">System Administrator</h4>
+<div class="outline-text-4" id="text-orgef03f15">
+<pre class="example">
+FROM: <1991-11-01>
+TO: <1995-08-01>
+</pre>
+
+<ul class="org-ul">
+<li>Part of the system administration team at the University's Supercomputing Center, managing UNAM's <a href="http://www.historiadelcomputo.unam.mx/files/fotos/Cray/cray.html">Cray Y-MP Supercomputer</a> (the first supercomputer in Latin America) and related systems.</li>
+<li>Managed the Network Queuing Subsystem (NQS).</li>
+<li>Collaborated in other aspects of the supercomputer administration, including user administration, operating system installation, resource management, and policy making and implementation.</li>
+<li>Directly managed three Unix workstations, provided support for 19 more.</li>
+<li>Monitored the security of the Cray supercomputer and related workstations.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge3c34f9" class="outline-2">
+<h2 id="orge3c34f9"><span class="section-number-2">4</span> Education</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+
+<div id="outline-container-org613335c" class="outline-3">
+<h3 id="org613335c">Ph.D. in Computer Science</h3>
+<div class="outline-text-3" id="text-org613335c">
+<pre class="example">
+LOCATION: West Lafayette, IN, U.S.A.
+SCHOOL: Purdue University
+FROM: <1996-08-01>
+TO: <2001-08-01>
+</pre>
+
+<ul class="org-ul">
+<li>Thesis title: <a href="https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf"><i>Using Internal Sensors for Computer Intrusion Detection</i></a>.</li>
+<li>Advisor: <a href="http://spaf.cerias.purdue.edu/">Eugene H. Spafford</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3efc79b" class="outline-3">
+<h3 id="org3efc79b">M.S. in Computer Science</h3>
+<div class="outline-text-3" id="text-org3efc79b">
+<pre class="example">
+LOCATION: West Lafayette, IN, U.S.A.
+SCHOOL: Purdue University
+FROM: <1996-08-01>
+TO: <1998-05-01>
+</pre>
+
+<ul class="org-ul">
+<li>Advisor: <a href="http://spaf.cerias.purdue.edu/">Eugene H. Spafford</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org960a743" class="outline-3">
+<h3 id="org960a743">Bachelor's degree in Computer Engineering</h3>
+<div class="outline-text-3" id="text-org960a743">
+<pre class="example">
+LOCATION: Mexico City, Mexico
+SCHOOL: National Autonomous University of Mexico (UNAM)
+FROM: <1989-08-01>
+TO: <1995-07-01>
+</pre>
+
+<ul class="org-ul">
+<li>Thesis title: <a href="https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf">UNAM/Cray Project for Security in the Unix Operating System</a> (in Spanish, original title: <i>Proyecto UNAM/Cray de Seguridad en el Sistema Operativo Unix</i>).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org37e71cb" class="outline-2">
+<h2 id="org37e71cb"><span class="section-number-2">5</span> Certifications</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+
+<div id="outline-container-org994892e" class="outline-3">
+<h3 id="org994892e"><a href="https://www.youracclaim.com/badges/98814af3-575b-4350-9667-70eddfea1da4/public_url">Certified Information Systems Security Professional (CISSP)</a></h3>
+<div class="outline-text-3" id="text-org994892e">
+<pre class="example">
+ORGANIZATION: (ISC)², the International Information System Security Certification Consortium
+LOCATION: April 2019
+</pre>
+
+<div class="cvitems">
+<p>
+The vendor-neutral CISSP credential confirms technical knowledge and experience to design, engineer, implement, and manage the overall security posture of an organization. Required by the world’s most security-conscious organizations, CISSP is the gold-standard information security certification that assures information security leaders possess the breadth and depth of knowledge to establish holistic security programs that protect against threats in an increasingly complex cyber world.
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org149e798" class="outline-3">
+<h3 id="org149e798"><a href="https://www.youracclaim.com/badges/e6bf0ca2-f1c4-4af6-bf63-09f4b8cdbd02/public_url">SAFe&reg; 4 Certified Product Owner/Product Manager</a></h3>
+<div class="outline-text-3" id="text-org149e798">
+<pre class="example">
+ORGANIZATION: Scaled Agile Inc.
+LOCATION: July 2017
+</pre>
+
+<div class="cvitems">
+<p>
+A SAFe&reg; 4 Certified Product Owner/Product Manager is a SAFe professional who works with customers and development organizations to identify and write requirements. Key areas of competency include identifying customer needs, writing epics, capabilities, features, stories, and prioritizing work in order to effectively deliver value to the enterprise.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2c1af70" class="outline-2">
+<h2 id="org2c1af70"><span class="section-number-2">6</span> Research</h2>
+<div class="outline-text-2" id="text-6">
+<div class="cvparagraph">
+<p>
+(see ``Publications'' for publication reference details)
+</p>
+
+</div>
+</div>
+
+<div id="outline-container-org7b21962" class="outline-3">
+<h3 id="org7b21962">Research projects at IBM (selected)</h3>
+<div class="outline-text-3" id="text-org7b21962">
+</div>
+
+<div id="outline-container-org31bb854" class="outline-4">
+<h4 id="org31bb854"><a href="http://www-03.ibm.com/press/us/en/pressrelease/23833.wss">Project Phantom</a></h4>
+<div class="outline-text-4" id="text-org31bb854">
+<pre class="example">
+FROM: 2008
+TO: 2009
+</pre>
+
+<ul class="org-ul">
+<li>Security for VMware virtual environments using virtual machine introspection (based on the <a href="https://vmguru.com/2011/03/vmsafe-api/">VMware VMsafe API</a>) to provide detection and prevention capabilities with increased security and reliability.</li>
+<li>Publications: \cite{Christodorescu:2009:CSV:1655008.1655022}.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6d4fc7d" class="outline-4">
+<h4 id="org6d4fc7d">Code instrumentation for intrusion detection</h4>
+<div class="outline-text-4" id="text-org6d4fc7d">
+<pre class="example">
+FROM: 2007
+TO: 2007
+</pre>
+
+<ul class="org-ul">
+<li>Exploration of code instrumentation and low-level monitoring mechanisms for  efficient and accurate intrusion detection and prevention.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org476af69" class="outline-4">
+<h4 id="org476af69"><a href="http://domino.research.ibm.com/library/cyberdig.nsf/1e4115aea78b6e7c85256b360066f0d4/d7c39a9a2e73d870852570060051dfed?OpenDocument">Billy Goat: Active worm detection and capture</a></h4>
+<div class="outline-text-4" id="text-org476af69">
+<pre class="example">
+FROM: 2002
+TO: 2008
+</pre>
+
+<ul class="org-ul">
+<li>An active worm-detection system, in wide deployment in the IBM worldwide internal network. Billy Goat listens for connections to unused IP address ranges and actively responds to those connections to accurately detect worm-infected machines, and in many cases capture the worms themselves. Billy Goat is engineered for distributed deployment, with each device containing standalone detection and reporting capabilities, together with data centralization features that allow network-wide data analysis and reporting.</li>
+<li>Publications: \cite{riordan06:_build_billy_goat:first2006, riordan05:bg_techreport}</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org81f15ac" class="outline-4">
+<h4 id="org81f15ac"><a href="http://www.usenix.org/event/sruti07/tech/full_papers/zamboni/zamboni.pdf">Router-based Billy Goat</a></h4>
+<div class="outline-text-4" id="text-org81f15ac">
+<pre class="example">
+FROM: 2005
+TO: 2007
+</pre>
+
+<ul class="org-ul">
+<li>An active worm-capture device deployed at the network boundary and coupled with the border router, that allows the Billy Goat to effectively and automatically spoof every unused IP address outside the local network. This makes it possible for the Router-based Billy Goat to accurately detect local infected machines and prevent them from establishing connections to the outside, limiting the propagation of the worms to the outside network.</li>
+<li>Publications: \cite{zamboni07:sruti07-rbg}</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcbdee13" class="outline-4">
+<h4 id="orgcbdee13">SOC in a Box</h4>
+<div class="outline-text-4" id="text-orgcbdee13">
+<pre class="example">
+FROM: 2005
+TO: 2007
+</pre>
+
+<ul class="org-ul">
+<li>Integrated device containing multiple security tools: intrusion detection, worm detection, vulnerability scanning and network discovery.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org32c8b26" class="outline-4">
+<h4 id="org32c8b26">Exorcist</h4>
+<div class="outline-text-4" id="text-org32c8b26">
+<pre class="example">
+FROM: 2001
+TO: 2002
+</pre>
+
+<ul class="org-ul">
+<li>Host-based, behavior-based intrusion detection using sequences of system calls.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org11ba9dc" class="outline-3">
+<h3 id="org11ba9dc">Ph.D. Thesis Research</h3>
+<div class="outline-text-3" id="text-org11ba9dc">
+</div>
+
+<div id="outline-container-org0d28192" class="outline-4">
+<h4 id="org0d28192"><a href="https://zzamboni.org/cerias/zamboni/thesis/">Using internal sensors and embedded detectors for intrusion detection</a></h4>
+<div class="outline-text-4" id="text-org0d28192">
+<ul class="org-ul">
+<li>Study of data collection methods for intrusion detection systems.</li>
+<li>Implementation of novel methods for data collection in intrusion detection systems.</li>
+<li>Analysis of the properties, advantages and disadvantages of internal sensors and embedded detectors as data collection and analysis elements in intrusion detection systems.</li>
+<li>Publications: \cite{zamboni01:phd-thesis, zamboni02:sensors_detectors, kerschbaum00:network-embedded-sensors, zamboni00:thesis-proposal, zamboni:raid2000}</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgde39527" class="outline-3">
+<h3 id="orgde39527">Additional research projects</h3>
+<div class="outline-text-3" id="text-orgde39527">
+</div>
+
+<div id="outline-container-org29ff2b3" class="outline-4">
+<h4 id="org29ff2b3"><a href="https://www.cerias.purdue.edu/site/about/history/coast/projects/aafid.php">Using autonomous agents for intrusion detection</a></h4>
+<div class="outline-text-4" id="text-org29ff2b3">
+<ul class="org-ul">
+<li>Design and documentation of an architecture (AAFID) to perform distributed monitoring and intrusion detection using autonomous agents.</li>
+<li>Implementation of a prototype according to the architecture. This prototype is <a href="http://freshmeat.net/projects/aafid2">published as open source</a>.</li>
+<li>Exploration of research issues in the distributed intrusion detection area.</li>
+<li>Publications: \cite{spafford00:intrus_detec_auton_agent, zamboni:aafid-acsac98, zamboni:aafid-architecture, zamboni:raid98, zamboni00:build_aafid_with_perl, zamboni:raid99}.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org534295d" class="outline-4">
+<h4 id="org534295d"><a href="https://www.cerias.purdue.edu/site/about/history/coast/projects/coast-proj-synkill.php">Analysis of a denial-of-service attack on TCP/IP (Synkill)</a></h4>
+<div class="outline-text-4" id="text-org534295d">
+<ul class="org-ul">
+<li>Collaborated in the analysis of the SYN-flooding denial-of-service attack against TCP and in the implementation of a defense tool.</li>
+<li>Publications: \cite{schuba97:synkill}.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf4c0fa3" class="outline-2">
+<h2 id="orgf4c0fa3"><span class="section-number-2">7</span> System Development and Management</h2>
+<div class="outline-text-2" id="text-7">
+<dl class="org-dl">
+<dt>Programming languages</dt><dd>C, Perl, Java, AWK, Unix shells (Elvish shell, Bourne shell, C shell, Korn shell), Python, PHP, Ruby, Objective~C, Cocoa (MacOS X), Go, Clojure.</dd>
+<dt>Development environments</dt><dd>Unix/Linux, OpenStack, Cloud Foundry, Amazon EC2, Mac OS X.</dd>
+<dt>Unix system administration</dt><dd>Linux (experience with multiple distributions including RedHat, Ubuntu, Debian, Gentoo, and others), OpenBSD, FreeBSD, MacOS X, MacOS X Server, Solaris.</dd>
+<dt>Configuration management</dt><dd>CFEngine 3, Puppet, Chef, Ansible.</dd>
+<dt>Virtualization, containers and cloud</dt><dd>VMWare (ESX, vSphere), OpenStack, Amazon EC2, Docker, Cloud Foundry.</dd>
+<dt>Health Management and Monitoring</dt><dd>VMware vRealize Operations Manager, vRealize Log Insight, Nagios, Icinga.</dd>
+<dt>Other</dt><dd>REST APIs, Riemann (event stream processing), XML and related technologies, network programming, database programming (SQL), kernel programming (OpenBSD and Linux), HTML.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgeef6673" class="outline-2">
+<h2 id="orgeef6673"><span class="section-number-2">8</span> Software Development Projects</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org2d69b86" class="outline-3">
+<h3 id="org2d69b86">Publicly-available software projects: see <a href="https://github.com/zzamboni/">https://github.com/zzamboni/</a></h3>
+</div>
+
+<div id="outline-container-org6ec887a" class="outline-3">
+<h3 id="org6ec887a">Other software projects (not publicly available)</h3>
+<div class="outline-text-3" id="text-org6ec887a">
+</div>
+<div id="outline-container-org33d85ea" class="outline-4">
+<h4 id="org33d85ea">Pilatus (IBM)</h4>
+<div class="outline-text-4" id="text-org33d85ea">
+<pre class="example">
+FROM: 2005
+TO: 2007
+</pre>
+
+<p>
+A system installer that allows arbitrary system installation and configurations, allowing for both proprietary and open source components to be installed in an automated fashion. Open source components can be downloaded directly from their original source to avoid distributing them.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3c4559e" class="outline-4">
+<h4 id="org3c4559e">SOC in a Box (IBM)</h4>
+<div class="outline-text-4" id="text-org3c4559e">
+<pre class="example">
+FROM: 2005
+TO: 2007
+</pre>
+
+<p>
+A specialized Linux distribution containing multiple security services for integrated security monitoring in small and medium networks. Implementation includes also backend infrastructure components for system installation, configuration and upgrade; and data centralization, analysis and reporting.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0160f83" class="outline-4">
+<h4 id="org0160f83">Billy Goat (IBM)</h4>
+<div class="outline-text-4" id="text-org0160f83">
+<pre class="example">
+FROM: 2002
+TO: 2007
+</pre>
+
+<p>
+A specialized Linux distribution containing multiple sensors for detection of large-scale automated attacks. Implementation includes also backend infrastructure components for system configuration and upgrade, data centralization, analysis and reporting.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org47519e7" class="outline-4">
+<h4 id="org47519e7">Embedded Sensors Project (ESP)</h4>
+<div class="outline-text-4" id="text-org47519e7">
+<pre class="example">
+FROM: 1999
+TO: 2001
+</pre>
+
+<p>
+A system of sensors for intrusion detection developed in OpenBSD through code instrumentation. Developed as part of my Ph.D. thesis work. Programming done mostly in C.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgee652b8" class="outline-2">
+<h2 id="orgee652b8"><span class="section-number-2">9</span> Honors &amp; Awards</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+
+<div id="outline-container-org4974f1d" class="outline-3">
+<h3 id="org4974f1d"><a href="https://cfengine.com/engage/cfengine-champions/">CFEngine Champion</a></h3>
+<div class="outline-text-3" id="text-org4974f1d">
+<pre class="example">
+DATE: 2010
+ORGANIZATION: CFEngine AS
+LOCATION: Norway
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org46618d8" class="outline-3">
+<h3 id="org46618d8">Josef Raviv Memorial Postdoctoral Fellowship</h3>
+<div class="outline-text-3" id="text-org46618d8">
+<pre class="example">
+DATE: <2001-07-01>
+ORGANIZATION: IBM
+LOCATION: U.S.A.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org5c6ac0f" class="outline-3">
+<h3 id="org5c6ac0f">Member of <a href="http://www.phibetadelta.org">Phi Beta Delta</a></h3>
+<div class="outline-text-3" id="text-org5c6ac0f">
+<pre class="example">
+DATE: <2001-04-01>
+ORGANIZATION: honor society recognizing scholarly achievement
+LOCATION: U.S.A.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org391ef40" class="outline-3">
+<h3 id="org391ef40">UPE Microsoft Scholarship Award</h3>
+<div class="outline-text-3" id="text-org391ef40">
+<pre class="example">
+DATE: <2000-09-01>
+ORGANIZATION: honor society recognizing scholarly achievement
+LOCATION: U.S.A.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0dcf53e" class="outline-3">
+<h3 id="org0dcf53e">Member of <a href="http://upe.acm.org/">Upsilon Pi Epsilon</a></h3>
+<div class="outline-text-3" id="text-org0dcf53e">
+<pre class="example">
+DATE: <1998-04-01>
+ORGANIZATION: the ACM Computer Sciences honor society
+LOCATION: U.S.A.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3db3f0e" class="outline-3">
+<h3 id="org3db3f0e">Fulbright Scholarship</h3>
+<div class="outline-text-3" id="text-org3db3f0e">
+<pre class="example">
+DATE: <1996-05-01>
+ORGANIZATION: for pursuing Ph.D. studies at Purdue University
+LOCATION: Mexico
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org14eb373" class="outline-2">
+<h2 id="org14eb373"><span class="section-number-2">10</span> Other Professional Activities</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+
+<div id="outline-container-org191998d" class="outline-3">
+<h3 id="org191998d"><a href="http://www.acm.org/">The Association for Computing Machinery (ACM)</a></h3>
+<div class="outline-text-3" id="text-org191998d">
+<pre class="example">
+POSITION: Member
+FROM: 1998
+TO:
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgbf137b6" class="outline-3">
+<h3 id="orgbf137b6"><a href="http://purdue.pm.org/">Purdue.pm</a>, the Purdue Perl Users Group</h3>
+<div class="outline-text-3" id="text-orgbf137b6">
+<pre class="example">
+POSITION: Founder
+DATE: 2000
+LOCATION: U.S.A.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org9847fdd" class="outline-3">
+<h3 id="org9847fdd"><a href="https://www.cs.purdue.edu/future-students/organizations.html">Purdue University Chapter of Upsilon Pi Epsilon</a></h3>
+<div class="outline-text-3" id="text-org9847fdd">
+<pre class="example">
+POSITION: President
+DATE: 1999
+LOCATION: U.S.A.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgad8b11e" class="outline-3">
+<h3 id="orgad8b11e"><a href="https://www.cs.purdue.edu/future-students/organizations.html">Purdue University Chapter of Upsilon Pi Epsilon</a></h3>
+<div class="outline-text-3" id="text-orgad8b11e">
+<pre class="example">
+POSITION: Secretary
+DATE: 1998
+LOCATION: U.S.A.
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org040d762" class="outline-2">
+<h2 id="org040d762"><span class="section-number-2">11</span> Program Committees and Boards</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+
+<div id="outline-container-orgbc1269d" class="outline-3">
+<h3 id="orgbc1269d"><a href="http://www.elsevier.com/wps/find/journaldescription.cws_home/405877/description">Editorial Board Member</a></h3>
+<div class="outline-text-3" id="text-orgbc1269d">
+<pre class="example">
+ORGANIZATION: Computers \& Security Journal
+DATE: 2011--2013
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgf636979" class="outline-3">
+<h3 id="orgf636979"><a href="http://www.raid-symposium.org/">Steering Committee Member</a></h3>
+<div class="outline-text-3" id="text-orgf636979">
+<pre class="example">
+ORGANIZATION: Intl. Symposium on Recent Advances in Intrusion Detection
+DATE: 2007--2012
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3b66cec" class="outline-3">
+<h3 id="org3b66cec"><a href="http://www.raid-symposium.org/raid2006/">Program chair</a></h3>
+<div class="outline-text-3" id="text-org3b66cec">
+<pre class="example">
+ORGANIZATION: 9th Intl. Symposium on Recent Advances in Intrusion Detection (RAID)
+DATE: 2006
+LOCATION: Germany
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge45b464" class="outline-3">
+<h3 id="orge45b464"><a href="http://www.raid-symposium.org/">Program Committee Member</a></h3>
+<div class="outline-text-3" id="text-orge45b464">
+<pre class="example">
+ORGANIZATION: Intl. Symposium on Recent Advances in Intrusion Detection
+DATE: 2006
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org4deb02c" class="outline-3">
+<h3 id="org4deb02c">Program co-chair</h3>
+<div class="outline-text-3" id="text-org4deb02c">
+<pre class="example">
+ORGANIZATION: IBM Academy of Technology Security and Privacy Symposium
+DATE: 2009
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8f69463" class="outline-3">
+<h3 id="org8f69463"><a href="https://www.video.ethz.ch/conferences/2009/zisc.html">Program chair</a></h3>
+<div class="outline-text-3" id="text-org8f69463">
+<pre class="example">
+ORGANIZATION: ZISC Workshop on Security in Virtualized Environments and Cloud Computing
+DATE: 2009
+LOCATION: Switzerland
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org9cb6aef" class="outline-3">
+<h3 id="org9cb6aef"><a href="https://www.dimva.org/dimva2008/">Program chair</a></h3>
+<div class="outline-text-3" id="text-org9cb6aef">
+<pre class="example">
+ORGANIZATION: Detection of Intrusions and Malware \& Vulnerability Assessment (DIMVA)
+DATE: 2008
+LOCATION: France
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org30017d9" class="outline-3">
+<h3 id="org30017d9"><a href="http://www.ieee-security.org/TC/SP-Index.html">Program Committee Member</a></h3>
+<div class="outline-text-3" id="text-org30017d9">
+<pre class="example">
+ORGANIZATION: IEEE Security and Privacy Symposium
+DATE: 2007
+LOCATION: U.S.A.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgcc82d37" class="outline-3">
+<h3 id="orgcc82d37"><a href="http://www.acsac.org/">Program Committee Member</a></h3>
+<div class="outline-text-3" id="text-orgcc82d37">
+<pre class="example">
+ORGANIZATION: Annual Computer Security Applications Conference (ACSAC)
+DATE: 2003--2007
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge437a8d" class="outline-3">
+<h3 id="orge437a8d">Program Committee Member</h3>
+<div class="outline-text-3" id="text-orge437a8d">
+<pre class="example">
+ORGANIZATION: International Computer Security Day Conference
+DATE: 1994--2000
+LOCATION: Mexico
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org72c66ad" class="outline-3">
+<h3 id="org72c66ad">Organizer</h3>
+<div class="outline-text-3" id="text-org72c66ad">
+<pre class="example">
+ORGANIZATION: International Computer Security Day Conference
+DATE: 1994--1995
+LOCATION: Mexico
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga5c2bce" class="outline-2">
+<h2 id="orga5c2bce"><span class="section-number-2">12</span> Teaching and Advising</h2>
+<div class="outline-text-2" id="text-12">
+</div>
+<div id="outline-container-org9eeb689" class="outline-3">
+<h3 id="org9eeb689">Students</h3>
+<div class="outline-text-3" id="text-org9eeb689">
+</div>
+<div id="outline-container-orgf9f903a" class="outline-4">
+<h4 id="orgf9f903a">Daniele Sgandurra, University of Pisa, Italy</h4>
+<div class="outline-text-4" id="text-orgf9f903a">
+<pre class="example">
+LABEL: Internship advisor
+FROM: 2009
+TO: 2009
+</pre>
+
+<ul class="org-ul">
+<li>Project: Design and implementation of process injection using virtual machine introspection.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org32acccd" class="outline-4">
+<h4 id="org32acccd">Martin Carbone, Georgia Institute of Technology, U.S.A.</h4>
+<div class="outline-text-4" id="text-org32acccd">
+<pre class="example">
+LABEL: Internship advisor
+FROM: 2007
+TO: 2007
+</pre>
+
+<p>
+Project: Implementation of a proof of concept Hyperjacking attack on Intel platform.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org117d148" class="outline-4">
+<h4 id="org117d148">Urko Zurutuza Ortega, Mondragon University, Spain</h4>
+<div class="outline-text-4" id="text-org117d148">
+<pre class="example">
+LABEL: Ph.D. co-advisor
+FROM: 2005
+TO: 2008
+</pre>
+
+<ul class="org-ul">
+<li>Thesis: <a href="https://dialnet.unirioja.es/servlet/tesis?codigo=20012">Data Mining Approaches for Analysis of Worm Activity Towards Automatic Signature Generation</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga3a77ff" class="outline-4">
+<h4 id="orga3a77ff">Milton Yates, ENST Bretagne, France</h4>
+<div class="outline-text-4" id="text-orga3a77ff">
+<pre class="example">
+LABEL: External Diploma Thesis advisor
+FROM: 2005
+TO: 2005
+</pre>
+
+<ul class="org-ul">
+<li>Thesis: <a href="https://www.usenix.org/conference/sruti-07/boundary-detection-and-containment-local-worm-infections">The Router-based Billy Goat Project</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org781b3cd" class="outline-4">
+<h4 id="org781b3cd">Candid Wüest, ETH Zurich, Switzerland</h4>
+<div class="outline-text-4" id="text-org781b3cd">
+<pre class="example">
+LABEL: Diploma Thesis tutor
+FROM: 2002
+TO: 2003
+</pre>
+
+<ul class="org-ul">
+<li>Thesis: <a href="https://pub.tik.ee.ethz.ch/students/2002-2003-Wi/DA-2003-22.pdf">Desktop Firewalls and Intrusion Detection</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf323332" class="outline-3">
+<h3 id="orgf323332">Teaching</h3>
+<div class="outline-text-3" id="text-orgf323332">
+</div>
+<div id="outline-container-org511e184" class="outline-4">
+<h4 id="org511e184">CFEngine one-day training class (8 hour class)</h4>
+<div class="outline-text-4" id="text-org511e184">
+<pre class="example">
+LABEL: Multiple venues
+FROM: 2011
+TO: 2013
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6494196" class="outline-4">
+<h4 id="org6494196">"Virtualization" lecture (2 hours), Systems Security class, Computer Science Dept.</h4>
+<div class="outline-text-4" id="text-org6494196">
+<pre class="example">
+LABEL: ETH Zürich
+FROM: 2011
+TO: 2013
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0430219" class="outline-4">
+<h4 id="org0430219">"Intrusion detection: Basic concepts and current research at IBM" class (3 hours), Information Technology Security Spring School</h4>
+<div class="outline-text-4" id="text-org0430219">
+<pre class="example">
+LABEL: University of Lausanne
+FROM: 2005
+TO: 2005
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org60adece" class="outline-4">
+<h4 id="org60adece">"Introduction to Computer Security" class (40 hours)</h4>
+<div class="outline-text-4" id="text-org60adece">
+<pre class="example">
+LABEL: ITESM, Mexico
+FROM: 2003
+TO: 2003
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org402f93f" class="outline-4">
+<h4 id="org402f93f">EE495 ("Information Extraction, Retrieval and Security") course</h4>
+<div class="outline-text-4" id="text-org402f93f">
+<pre class="example">
+LABEL: Purdue University, U.S.A.
+FROM: 2000
+TO: 2000
+</pre>
+
+<ul class="org-ul">
+<li>Collaborated in the design of eight security-related lectures and taught two of them.</li>
+<li>Participated in the design of the class project.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf7c887f" class="outline-4">
+<h4 id="orgf7c887f">"SSH: Achieving secure communication over insecure channels" class</h4>
+<div class="outline-text-4" id="text-orgf7c887f">
+<pre class="example">
+LABEL: CSI NetSec conference, U.S.A.
+FROM: 2000
+TO: 2000
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgebc4e72" class="outline-4">
+<h4 id="orgebc4e72">"Protecting your computing system" class</h4>
+<div class="outline-text-4" id="text-orgebc4e72">
+<pre class="example">
+LABEL: Schlumberger, U.S.A.
+FROM: 1997
+TO: 1997
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8ac30f3" class="outline-4">
+<h4 id="org8ac30f3">Supercomputing Internship Program Courses</h4>
+<div class="outline-text-4" id="text-org8ac30f3">
+<pre class="example">
+LABEL: UNAM, Mexico
+FROM: 1991
+TO: 1996
+</pre>
+
+<ul class="org-ul">
+<li>Participated in the design and teaching of the syllabus, structure and contents of multiple courses 10&#x2013;40 hours long,  including the following topics:
+<ul class="org-ul">
+<li>Introduction to Unix</li>
+<li>Unix utilities</li>
+<li>Unix security</li>
+<li>Basic Unix administration</li>
+<li>Advanced Unix administration</li>
+<li>UNICOS system administration on Cray supercomputers</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org3f88007" class="outline-2">
+<h2 id="org3f88007"><span class="section-number-2">13</span> Selected Publications</h2>
+<div class="outline-text-2" id="text-13">
+The list of publications is for the moment not available in the HTML version of my CV. Please see the <a href="https://zzamboni.org/vita/">full PDF version</a>.
+</div>
+</div>
+
+<div id="outline-container-org5472652" class="outline-2">
+<h2 id="org5472652"><span class="section-number-2">14</span> References</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+Available by request.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Diego Zamboni</p>
+<p class="date">Created: 2020-01-04 Sat 20:18</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
