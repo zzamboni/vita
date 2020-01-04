@@ -1,4 +1,5 @@
 zamboni-vita.tex
+zamboni-vita-private.*
 *.dvi
 *.log
 *.out
