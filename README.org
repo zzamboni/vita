@@ -7,9 +7,9 @@ My goal is to produce the CV from an Org file which focuses on the semantics of 
 
 The export to LaTeX is done using the [[https://github.com/posquit0/Awesome-CV][Awesome-CV]] LaTeX class and the [[https://gitlab.com/Titan-C/org-cv/merge_requests/3][ox-awesomecv]] exporter I wrote as part of the [[https://titan-c.gitlab.io/org-cv/][Org-CV]] package. The Awesome-CV exporter is not yet merged into Org-CV, but for now you can get it from the merge request at https://gitlab.com/Titan-C/org-cv/merge_requests/3.
 
-Exporting to HTML using the base ox-html exporter works fairly well, but the output is not optimally formatted. The main issue is that a lot of the semantic information (e.g. job dates, employers, etc.) are specified in property drawers, and ox-html does not know how to extract/format them. As a workaround, I have configured that those properties should be exported using the =prop= option. This is less than ideal because the properties are exported as-they-are, without any special formatting. You can find an example export in [[./zamboni-vita.html][zamboni-vita.html]].
+Exporting to HTML using the base ox-html exporter works fairly well, but the output is not optimally formatted. The main issue is that a lot of the semantic information (e.g. job dates, employers, etc.) are specified in property drawers, and ox-html does not know how to extract/format them. As a workaround, I have configured that those properties should be exported using the =prop= option. This is less than ideal because the properties are exported as-they-are, without any special formatting. You can find an example export in [[https://zzamboni.org/files/vita/zamboni-vita.html][zamboni-vita.html]].
 
-Exporting to ASCII uses the same trick as for HTML, but the result looks quite reasonable. I use the Plain Text UTF-8 exporter. You can see the output in [[./zamboni-vita.txt][zamboni-vita.txt]].
+Exporting to ASCII uses the same trick as for HTML, but the result looks quite reasonable. I use the Plain Text UTF-8 exporter. You can see the output in [[https://zzamboni.org/files/vita/zamboni-vita.txt][zamboni-vita.txt]].
 
 Read the rest of this document for some more details, if you would like to use it as a starting point to write your own CV. Let me know if you have any questions or feedback!
 
