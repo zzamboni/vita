@@ -83,7 +83,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 - [[#skill-and-experience-overview][Skill and Experience Overview]]
 - [[#experience][Experience]]
   - [[#swisscom][Swisscom]]
-    - [[#enterprise-security-architect][Enterprise Security Architect]]
+    - [[#enterprise-security-architect--it-clouds-security-solution-architect][Enterprise Security Architect / IT Clouds Security Solution Architect]]
     - [[#squad-lead--product-owner-for-health--state-management-in-the-it-clouds-large-solution][Squad Lead & Product Owner for Health & State Management in the IT Clouds Large Solution]]
     - [[#squad-lead--product-owner-for-health--state-management-in-the-enterprise-service-cloud-project][Squad Lead & Product Owner for Health & State Management in the Enterprise Service Cloud project]]
     - [[#head-of-health-and-state-management][Head of Health and State Management]]
@@ -178,7 +178,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 * Introduction
 
 #+latex: \begin{cvparagraph}
-I am a senior computer security expert, IT architect, computer scientist, team and project leader with 29 years of professional experience. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration management. I possess a strong combination of leadership and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have strong communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
+I am a senior computer security expert, IT architect, computer scientist, team and project leader with 29 years of professional experience. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration management. I possess a strong combination of leadership, research and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have strong communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
 #+latex: \end{cvparagraph}
 
 * Skill and Experience Overview
@@ -206,14 +206,14 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :FROM: 2015
 :END:
 
-*** Enterprise Security Architect
+*** Enterprise Security Architect / IT Clouds Security Solution Architect
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <2019-04-01>
 :END:
 
-- As Security Architect for the IT Clouds Large Solution, I participate in the design and definition of security-relevant capabilities, compliance and business goals of cloud platforms built by Swisscom.
-- As Enterprise Architect, I participate in the overall design, discussion and proposals regarding the future of the products and solutions offered by Swisscom.
+- As Enterprise Architect, I participate in the design of the future products and solutions offered by Swisscom.
+- As Security Architect for the IT Clouds Large Solution, I design and define security-relevant product features, compliance and business goals of the cloud platforms built by Swisscom. I also advise on compliance, governance and operational activities. Selected achievements:
 
 *** Squad Lead & Product Owner for Health & State Management in the IT Clouds Large Solution
 :PROPERTIES:
@@ -222,7 +222,7 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :TO: <2019-04-01>
 :END:
 
-- The HSM team has an expanded scope to design, implement and manage Health Management and Monitoring components for all the IT Clouds platforms, including Enterprise Service Cloud, Application Cloud, Enterprise Cloud 1.x, Enterprise Cloud for SAP applications (EC4SAP), Marketplace Services, and Cloud Connectivity Management.
+- I oversaw the requirement definition, planning and execution of the HSM team's mission to design, implement and manage Health Management and Monitoring components for all the IT Clouds platforms, including Enterprise Service Cloud, Application Cloud, Enterprise Cloud 1.x, Enterprise Cloud for SAP applications (EC4SAP), Marketplace Services, and Cloud Connectivity Management.
 - Main technologies involved: VMware vSphere (ESX, vCenter, NSX), VMware vRealize Operations Manager and Log Insight, Ansible (configuration management), OpsGenie (alert management).
 
 *** Squad Lead & Product Owner for Health & State Management in the Enterprise Service Cloud project
@@ -234,7 +234,8 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :TO: <2018-03-01>
 :END:
 
-- Worked with Product Management to define the technical features necessary for Health Management and Monitoring in the Enterprise Service Cloud project, and lead the team which implements, deploys and operates these components.
+- Worked with Product Management to define the technical features necessary for Health Management and Monitoring in the Enterprise Service Cloud project
+- I lead the team which implements, deploys and operates these components.
 
 *** Head of Health and State Management
 :PROPERTIES:

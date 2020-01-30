@@ -537,7 +537,7 @@
 % Define a section for CV
 % Usage: \cvsection{<section-title>}
 \newcommand{\cvsection}[1]{%
-  \needspace{7\baselineskip}
+  \needspace{3\baselineskip}
   \vspace{\acvSectionTopSkip}
   \sectionstyle{#1}
   \phantomsection
@@ -594,6 +594,7 @@
 
 \newcommand*{\cventry}[5]{%
   \vspace{-2.0mm}
+  \needspace{3\baselineskip}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
