@@ -601,7 +601,7 @@ A SAFe\reg 4 Certified Product Owner/Product Manager is a SAFe professional who 
 :CV_ENV:   cvskills
 :END:
 
-- Programming languages :: C, Perl, Java, AWK, Unix shells (Elvish shell, Bourne shell, C shell, Korn shell), Python, PHP, Ruby, Objective~C, Cocoa (MacOS X), Go, Clojure.
+- Programming languages :: C, Perl, Java, AWK, Unix shells (Elvish shell, Bourne shell, C shell, Korn shell), Python, PHP, Ruby, Objective C, Cocoa (MacOS X), Go, Clojure.
 - Development environments :: Unix/Linux, OpenStack, Cloud Foundry, Amazon EC2, Mac OS X.
 - Unix system administration :: Linux (experience with multiple distributions including RedHat, Ubuntu, Debian, Gentoo, and others), OpenBSD, FreeBSD, MacOS X, MacOS X Server, Solaris.
 - Configuration management :: CFEngine 3, Puppet, Chef, Ansible.
