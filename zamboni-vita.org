@@ -1,4 +1,5 @@
-#+begin cv_config  AwesomeCV and LaTeX configuration section
+:CV_CONFIG:
+# AwesomeCV and LaTeX configuration section
 
 # AwesomeCV configuration options
 #+photo: ./images/foto_diego.png
@@ -37,7 +38,7 @@
 #+latex_header: \renewcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 #+latex_header: \renewcommand*{\subsectionstyle}{\entrytitlestyle}
 
-#+end
+:END:
 
 #+title: IT Enterprise Security Architect · Computer Scientist · Team and Project Leader
 #+author: Diego Zamboni
