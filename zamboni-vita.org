@@ -2,7 +2,7 @@
 # AwesomeCV and LaTeX configuration section
 
 # AwesomeCV configuration options
-#+photo: ./images/foto_diego.png
+# #+photo: ./images/foto_diego.png
 #+photostyle: right,noedge
 #+cvcolor: awesome-orange
 #+cvfooter_left: \today
@@ -40,11 +40,12 @@
 
 :END:
 
-#+title: IT Enterprise Security Architect · Computer Scientist · Team and Project Leader
+#+title: IT Enterprise Security Architect · Team and Project Leader · Computer Scientist
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
 #+linkedin: zzamboni
+#+gitlab: zzamboni
 #+github: zzamboni
 #+stackoverflow: 5562 zzamboni
 #+homepage: zzamboni.org
@@ -81,14 +82,12 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 
 * Table of Contents                                          :TOC_3:noexport:
 - [[#introduction][Introduction]]
-- [[#skill-and-experience-overview][Skill and Experience Overview]]
+- [[#skill-overview][Skill Overview]]
+- [[#experience-overview][Experience Overview]]
 - [[#experience][Experience]]
   - [[#swisscom][Swisscom]]
-    - [[#enterprise-security-architect--it-clouds-security-solution-architect][Enterprise Security Architect / IT Clouds Security Solution Architect]]
-    - [[#squad-lead--product-owner-for-health--state-management-in-the-it-clouds-large-solution][Squad Lead & Product Owner for Health & State Management in the IT Clouds Large Solution]]
-    - [[#squad-lead--product-owner-for-health--state-management-in-the-enterprise-service-cloud-project][Squad Lead & Product Owner for Health & State Management in the Enterprise Service Cloud project]]
-    - [[#head-of-health-and-state-management][Head of Health and State Management]]
-    - [[#lemm-squad-lead-in-the-enterprise-cloud-project][LEMM Squad Lead in the Enterprise Cloud project]]
+    - [[#enterprise-architect-and-it-clouds-solution-security-architect][Enterprise Architect and IT Clouds Solution Security Architect]]
+    - [[#team-lead--product-owner-for-health--state-management][Team Lead & Product Owner for Health & State Management]]
     - [[#cloud-architect-and-orchard-project-lead][Cloud Architect and Orchard Project Lead]]
   - [[#swisscom-cloud-lab][Swisscom Cloud Lab]]
     - [[#senior-platform-architect][Senior Platform Architect]]
@@ -179,21 +178,25 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 * Introduction
 
 #+latex: \begin{cvparagraph}
-I am a senior computer security expert, IT architect, computer scientist, team and project leader with 29 years of professional experience. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration management. I possess a strong combination of leadership, research and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have strong communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
+I am a senior computer security expert, IT architect, computer scientist, team and project leader with 29 years of professional experience. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management. I possess a strong combination of leadership, conceptual and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have excellent communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
 #+latex: \end{cvparagraph}
 
-* Skill and Experience Overview
+* Skill Overview
 :PROPERTIES:
 :CV_ENV:   cvskills
 :END:
 
-- Computer Security :: Enterprise Security Architecture, Intrusion detection and prevention (Ph.D. in Computer Science in this area), operating systems security, network security, software security, secure software development, virtualization and cloud computing security, malware detection and containment.
-- Leadership :: Technical team and project leadership, [[https://www.scaledagile.com/][Scaled Agile Framework (SAFe)]] methodology and processes, SAFe Product Owner certification, SAFe Architect training.
-- Systems and Development :: Unix/Linux systems engineering and administration, systems health management and monitoring, cloud computing environments and platforms (OpenStack, Amazon EC2, Cloud Foundry) and software development experience (C, Python, Ruby, Perl, Java, etc.).
-- Configuration management :: CFEngine (Author of [[https://cf-learn.info/][/Learning CFEngine/]]), Ansible, Puppet.
+- Leadership :: Team and project leadership, Systems Architecture, familiar with [[https://www.scaledagile.com/][Scaled Agile Framework (SAFe)]] methodology and processes.
+- Computer Security :: Enterprise security architecture, risk management, intrusion detection and prevention (Ph.D. in Computer Science in this area), operating systems and network security, software security, secure software development, virtualization and cloud computing security.
 - Communications :: Excellent written and spoken communication skills, with more than 30 years of  written and oral communication and teaching experience in different contexts and topics.
+- Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud computing environments and platforms (OpenStack, Amazon EC2, Cloud Foundry) and software development experience (C, Python, Ruby, Perl, etc.).
+- Configuration management :: CFEngine (Author of [[https://cf-learn.info/][/Learning CFEngine/]]), Ansible, Puppet.
 - Languages :: Spanish (native), English (100%), German (B1/B2 level).
-- Other skills :: Customer-facing experience, project and product management experience.
+
+* Experience Overview
+:PROPERTIES:
+:CV_ENV:   cvhonors
+:END:
 
 * Experience
 :PROPERTIES:
@@ -207,58 +210,38 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :FROM: 2015
 :END:
 
-*** Enterprise Security Architect / IT Clouds Security Solution Architect
+*** Enterprise Architect and IT Clouds Solution Security Architect
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <2019-04-01>
 :END:
 
-- As Enterprise Architect, I participate in the design of the future products and solutions offered by Swisscom.
-- As Security Architect for the IT Clouds Large Solution, I design and define security-relevant product features, compliance and business goals of the cloud platforms built by Swisscom. I also advise on compliance, governance and operational activities. Selected achievements:
+- I currently have a dual role as a member of the Swisscom Enterprise Architecture team, and as a Solution Security Architect for the [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom Cloud Platforms]], which include both PaaS and IaaS offerings.
+- As /Solution Security Architect for IT Clouds/, I am a member of the leadership team, and my job is to ensure Swisscom's cloud platforms are secure and compliant. I  define, prioritize and drive security-relevant product features, compliance and business goals of the cloud platforms built by Swisscom. I also head the IT Clouds Security Community of Practice, advise on compliance, governance and operational activities. Selected achievements and ongoing activities:
+  - Launched the /Security Champions/ initiative to promote and improve a culture of security responsibility within the team.
+  - Brought various platforms and services within the Swisscom cloud ecosystem to compliance with internal security standards and with external requirements for financial and banking customers, by defining the requirements and working with the engineering teams to prioritize and review the corresponding implementations.
+  - Coordinate and oversee periodic threat modeling, audits and penetration tests against the various cloud platforms and services.
+  - Establish organization- and team-wide processes for risk management.
+- As /Enterprise Architect/, I participate in the design of the future products and solutions offered by Swisscom, in collaboration with architects from all other divisions of the company. These result in proposals that are brought to approval by management and planned for implementation over the next 5-10 years.
 
-*** Squad Lead & Product Owner for Health & State Management in the IT Clouds Large Solution
+*** Team Lead & Product Owner for Health & State Management
 :PROPERTIES:
 :CV_ENV:   cvsubentry
-:FROM: <2018-04-01>
+:FROM: <2016-03-01>
 :TO: <2019-04-01>
 :END:
 
-- I oversaw the requirement definition, planning and execution of the HSM team's mission to design, implement and manage Health Management and Monitoring components for all the IT Clouds platforms, including Enterprise Service Cloud, Application Cloud, Enterprise Cloud 1.x, Enterprise Cloud for SAP applications (EC4SAP), Marketplace Services, and Cloud Connectivity Management.
+- In this role, I built and lead a team which evolved on par with the Swisscom cloud platforms to provide monitoring and logging capabilities for Swisscom's cloud platforms. My responsibilities included people management (up to 16 people), requirement definition and prioritization in collaboration with Product Managers and other stakeholders, roadmap and architecture definition for the monitoring, logging and alerting platforms, driving the planning and execution of the work within the team, and participation in the technical implementation.
+- Selected achievements:
+  - Oversaw the transition of the /Enterprise Cloud 1/ LEMM (Logging, Event Management and Monitoring) and Access & Inventory frameworks into maintenance mode as the platform was retired.
+  - Oversaw the transition of the /Application Cloud/ platform from the Orchard monitoring framework into a new framework based on the [[https://www.influxdata.com/time-series-platform/][TICK stack]].
+  - Defined the scope and mission of the Health and State Management (HSM) team as part of the new [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/enterprise-service-cloud.html][/Enterprise Service Cloud/]] project.
+  - Defined logging and monitoring architecture for the /Enterprise Service Cloud/ platform based on vRealize Operations and vRealize Log Insight.
+  - Defined requirements, oversaw planning and execution of the HSM team's mission to design, implement and manage Health Management and Monitoring components as the IT Clouds scope expanded to other platforms, including Application Cloud, Enterprise Cloud for SAP applications (EC4SAP), Dynamic Computing Services, and related services and components.
+  - Defined architecture and oversaw implementation of Customer Log Forwarding service.
+  - Managed business relationship and technical implementation of OpsGenie for alert management in IT Clouds.
+  - Defined and implemented integrations between Jira and OpsGenie for alerting of user-reported incidents.
 - Main technologies involved: VMware vSphere (ESX, vCenter, NSX), VMware vRealize Operations Manager and Log Insight, Ansible (configuration management), OpsGenie (alert management).
-
-*** Squad Lead & Product Owner for Health & State Management in the Enterprise Service Cloud project
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:EMPLOYER: Swisscom
-:LOCATION: Switzerland
-:FROM: <2017-01-01>
-:TO: <2018-03-01>
-:END:
-
-- Worked with Product Management to define the technical features necessary for Health Management and Monitoring in the Enterprise Service Cloud project
-- I lead the team which implements, deploys and operates these components.
-
-*** Head of Health and State Management
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:EMPLOYER: Swisscom
-:LOCATION: Switzerland
-:FROM: <2016-03-01>
-:TO: <2017-01-01>
-:END:
-
-- Led a team working on multiple projects related to Health Management and Monitoring of the Swisscom cloud offerings, including Application Cloud (CloudFoundry-based PaaS offering), Enterprise Cloud 1.x and Enterprise Service Cloud (IaaS offerings).
-
-*** LEMM Squad Lead in the Enterprise Cloud project
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:EMPLOYER: Swisscom
-:LOCATION: Switzerland
-:FROM: <2016-06-01>
-:TO: <2016-12-31>
-:END:
-
-- Led the architecture and delivery of the Logging, Event Management and Monitoring framework (LEMM) of the Swisscom Enterprise Cloud, which handles all the processing, analysis and monitoring of the logging messages, health events, and other relevant infrastructure events.
 
 *** Cloud Architect and Orchard Project Lead
 :PROPERTIES:
@@ -269,7 +252,7 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :TO: <2016-03-01>
 :END:
 
-- Continued leading the /Orchard/ project through its implementation, release and further improvements and development.
+- Managed team of three people and lead the /Orchard/ project through its implementation, production release and further improvements and development.
 
 ** Swisscom Cloud Lab
 :PROPERTIES:
@@ -286,8 +269,9 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :TO: <2015-07-31>
 :END:
 
-- I designed the architecture for the /Orchard/ health-management and self-healing components of Swisscom's /Application Cloud/ Platform-as-a-Service Offering. This system performs self-monitoring and self-healing of the infrastructure and platform components. In addition to designing the architecture, I worked on its implementation together with a team of three people managed by me.
-- Main technologies involved: OpenStack (cloud computing infrastructure), Plumgrid (SDN), Cloud Foundry (application platform), Consul (health management and service discovery), RabbitMQ (message bus), Riemann (event stream analysis).
+- Designed the architecture for the /Orchard/ health-management and self-healing components of Swisscom's /Application Cloud/ Platform-as-a-Service Offering. This system performed self-monitoring and self-healing of the infrastructure and platform components.
+- Implemented initial prototype of the /Orchard/ platform.
+  - Main technologies involved: OpenStack (cloud computing infrastructure), Plumgrid (SDN), Cloud Foundry (application platform), Consul (health management and service discovery), RabbitMQ (message bus), Riemann (event stream analysis).
 
 ** CFEngine AS
 :PROPERTIES:
@@ -316,7 +300,7 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :TO: <2014-06-30>
 :END:
 
-- Overall advocate and fanatic for CFEngine, with a special focus on security.
+- CFEngine Advocate, with a special focus on security.
 - Gave talks, wrote articles and blog posts, taught classes, and in general spread the word about CFEngine.
 - Worked on developing and implementing the strategy for CFEngine in security.
 
@@ -335,10 +319,10 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :TO: <2011-10-01>
 :END:
 
--  I was the first point of contact for all security-related issues for five HP enterprise customers in Mexico, some of them with international presence.
--  Initiated, advised and managed security-related projects.
--  Handled communication and coordination between technical teams involved in security initiatives.
--  Involved in all security-related decisions at the sales, design, implementation, delivery and ongoing maintenance stages of IT Outsourcing projects.
+- Acted as first point of contact for all security-related issues for five HP enterprise customers in Mexico, some of them with international presence.
+- Initiated, advised and managed security-related projects.
+- Handled communication and coordination between technical teams involved in security initiatives.
+- Involved in all security-related decisions at the sales, design, implementation, delivery and ongoing maintenance stages of IT Outsourcing projects.
 
 *** IT Outsourcing Service Delivery Consultant
 :PROPERTIES:
@@ -602,8 +586,8 @@ A SAFe\reg 4 Certified Product Owner/Product Manager is a SAFe professional who 
 :CV_ENV:   cvskills
 :END:
 
-- Programming languages :: C, Perl, Java, AWK, Unix shells (Elvish shell, Bourne shell, C shell, Korn shell), Python, PHP, Ruby, Objective C, Cocoa (MacOS X), Go, Clojure.
-- Development environments :: Unix/Linux, OpenStack, Cloud Foundry, Amazon EC2, Mac OS X.
+- Programming languages :: C, Perl, Java, AWK, Unix shells (Elvish shell, Bourne shell, C shell, Korn shell), Python, PHP, Ruby, Objective C, Clojure, Racket, Emacs LISP.
+- Development environments :: Unix/Linux, Cloud Foundry, Amazon EC2, macOS.
 - Unix system administration :: Linux (experience with multiple distributions including RedHat, Ubuntu, Debian, Gentoo, and others), OpenBSD, FreeBSD, MacOS X, MacOS X Server, Solaris.
 - Configuration management :: CFEngine 3, Puppet, Chef, Ansible.
 - Virtualization, containers and cloud :: VMWare (ESX, vSphere), OpenStack, Amazon EC2, Docker, Cloud Foundry.
