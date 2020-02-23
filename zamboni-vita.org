@@ -6,7 +6,7 @@
 #+photostyle: right,noedge
 #+cvcolor: awesome-orange
 #+cvfooter_left: \today
-#+cvfooter_middle: %a~~~·~~~Curriculum Vit\ae
+#+cvfooter_middle: %a~~~·~~~Curriculum Vit\ae\\\textup{Source at https://gitlab.com/zzamboni/vita}
 #+cvfooter_right: \thepage
 
 # These options are useful for HTML or ASCII export, and harmless for
@@ -82,16 +82,19 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 
 * Table of Contents                                          :TOC_3:noexport:
 - [[#introduction][Introduction]]
-- [[#skill-overview][Skill Overview]]
-- [[#experience-overview][Experience Overview]]
-  - [[#cloud-platform-security-architect][Cloud Platform Security Architect]]
-  - [[#enterprise-architect][Enterprise Architect]]
-  - [[#health-and-state-management-team-lead][Health and State Management Team Lead]]
-  - [[#cloud-monitoring-architect-and-team-lead][Cloud Monitoring Architect and Team Lead]]
-  - [[#product-manager-advocate-and-security-advisor][Product Manager, Advocate and Security Advisor]]
-  - [[#account-security-officer-and-it-consultant][Account Security Officer and IT Consultant]]
-  - [[#security-researcher][Security Researcher]]
-  - [[#computer-security-area-founder-and-system-administrator][Computer Security Area founder and System Administrator]]
+- [[#skill-summary][Skill summary]]
+- [[#experience-summary][Experience summary]]
+  - [[#security-architect-for-iaas-and-paas-cloud-platforms][Security architect for IaaS and PaaS cloud platforms]]
+  - [[#enterprise-architect][Enterprise architect]]
+  - [[#product-owner-and-team-lead-for-cloud-platform-monitoring-and-logging-framework][Product owner and team lead for cloud platform monitoring and logging framework]]
+  - [[#architect-and-team-lead-for-paas-cloud-monitoring-framework][Architect and team lead for PaaS cloud monitoring framework]]
+  - [[#product-manager-advocate-and-security-advisor][Product manager, advocate and security advisor]]
+  - [[#author-of-multiple-books][Author of multiple books]]
+  - [[#account-security-officer-and-oursourcing-consultant][Account security officer and oursourcing consultant]]
+  - [[#security-researcher-in-the-area-of-intrusion-detection][Security researcher in the area of intrusion detection]]
+  - [[#founder-and-team-lead-of-computer-security-team][Founder and team lead of computer security team]]
+  - [[#system-administrator-for-supercomputing-environment][System administrator for supercomputing environment]]
+  - [[#public-speaker-and-instructor][Public speaker and instructor]]
 - [[#experience][Experience]]
   - [[#swisscom][Swisscom]]
     - [[#enterprise-architect-and-it-clouds-solution-security-architect][Enterprise Architect and IT Clouds Solution Security Architect]]
@@ -189,7 +192,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 I am a senior computer security expert, IT architect, computer scientist, team and project leader with 29 years of professional experience. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management. I possess a strong combination of leadership, conceptual and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have excellent communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
 #+latex: \end{cvparagraph}
 
-* Skill Overview
+* Skill summary
 :PROPERTIES:
 :CV_ENV:   cvskills
 :END:
@@ -201,12 +204,12 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 - Configuration management :: CFEngine (Author of [[https://cf-learn.info/][/Learning CFEngine/]]), Ansible, Puppet.
 - Languages :: Spanish (native), English (100%), German (B1/B2 level).
 
-* Experience Overview
+* Experience summary
 :PROPERTIES:
 :CV_ENV:   cvhonors
 :END:
 
-** Cloud Platform Security Architect
+** Security architect for IaaS and PaaS cloud platforms
 :PROPERTIES:
 :CV_ENV:   cvhonor
 :EMPLOYER: Swisscom
@@ -215,7 +218,7 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :LOCATION: Switzerland
 :END:
 
-** Enterprise Architect
+** Enterprise architect
 :PROPERTIES:
 :CV_ENV:   cvhonor
 :EMPLOYER: Swisscom
@@ -224,7 +227,7 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :LOCATION: Switzerland
 :END:
 
-** Health and State Management Team Lead
+** Product owner and team lead for cloud platform monitoring and logging framework
 :PROPERTIES:
 :CV_ENV:   cvhonor
 :EMPLOYER: Swisscom
@@ -232,23 +235,31 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :LOCATION: Switzerland
 :END:
 
-** Cloud Monitoring Architect and Team Lead
+** Architect and team lead for PaaS cloud monitoring framework
 :PROPERTIES:
 :CV_ENV:   cvhonor
 :EMPLOYER: Swisscom
 :DATE: 2014--2016
-:LOCATION: Switzerland / U.S.A. (partially remote)
+:LOCATION: Switzerland (partially remote)
 :END:
 
-** Product Manager, Advocate and Security Advisor
+** Product manager, advocate and security advisor
 :PROPERTIES:
 :CV_ENV:   cvhonor
 :EMPLOYER: CFEngine AS
 :DATE: 2011--2014
-:LOCATION: Norway / U.S.A. (remote)
+:LOCATION: Norway (remote)
 :END:
 
-** Account Security Officer and IT Consultant
+** Author of multiple books
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:EMPLOYER: O'Reilly Media and self-published
+:FROM: 2011
+:TO:
+:END:
+
+** Account security officer and oursourcing consultant
 :PROPERTIES:
 :CV_ENV:   cvhonor
 :EMPLOYER: HP Enterprise Services
@@ -256,7 +267,7 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :LOCATION: Mexico
 :END:
 
-** Security Researcher
+** Security researcher in the area of intrusion detection
 :PROPERTIES:
 :CV_ENV:   cvhonor
 :EMPLOYER: IBM Research --- Zürich
@@ -264,17 +275,34 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :LOCATION: Switzerland
 :END:
 
-** Computer Security Area founder and System Administrator
+** Founder and team lead of computer security team
 :PROPERTIES:
 :CV_ENV:   cvhonor
 :EMPLOYER: UNAM
-:DATE: 1991--1996
+:DATE: 1995--1996
 :LOCATION: Mexico
+:END:
+
+** System administrator for supercomputing environment
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:EMPLOYER: UNAM
+:DATE: 1991--1995
+:LOCATION: Mexico
+:END:
+
+** Public speaker and instructor
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:EMPLOYER: Multiple conferences and venues over the years
+:FROM: 1991
+:TO:
 :END:
 
 * Experience
 :PROPERTIES:
 :CV_ENV:   cventries
+:PAGEBREAK: yes
 :END:
 
 ** Swisscom
