@@ -40,7 +40,7 @@
 
 :END:
 
-#+title: IT Enterprise Security Architect · Team and Project Leader · Computer Scientist
+#+title: IT Enterprise Security Architect · Team and Project Leader · Computer Security Scientist
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
@@ -84,6 +84,14 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 - [[#introduction][Introduction]]
 - [[#skill-overview][Skill Overview]]
 - [[#experience-overview][Experience Overview]]
+  - [[#cloud-platform-security-architect][Cloud Platform Security Architect]]
+  - [[#enterprise-architect][Enterprise Architect]]
+  - [[#health-and-state-management-team-lead][Health and State Management Team Lead]]
+  - [[#cloud-monitoring-architect-and-team-lead][Cloud Monitoring Architect and Team Lead]]
+  - [[#product-manager-advocate-and-security-advisor][Product Manager, Advocate and Security Advisor]]
+  - [[#account-security-officer-and-it-consultant][Account Security Officer and IT Consultant]]
+  - [[#security-researcher][Security Researcher]]
+  - [[#computer-security-area-founder-and-system-administrator][Computer Security Area founder and System Administrator]]
 - [[#experience][Experience]]
   - [[#swisscom][Swisscom]]
     - [[#enterprise-architect-and-it-clouds-solution-security-architect][Enterprise Architect and IT Clouds Solution Security Architect]]
@@ -196,6 +204,72 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 * Experience Overview
 :PROPERTIES:
 :CV_ENV:   cvhonors
+:END:
+
+** Cloud Platform Security Architect
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:EMPLOYER: Swisscom
+:FROM: 2019
+:TO:
+:LOCATION: Switzerland
+:END:
+
+** Enterprise Architect
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:EMPLOYER: Swisscom
+:FROM: 2019
+:TO:
+:LOCATION: Switzerland
+:END:
+
+** Health and State Management Team Lead
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:EMPLOYER: Swisscom
+:DATE: 2016--2019
+:LOCATION: Switzerland
+:END:
+
+** Cloud Monitoring Architect and Team Lead
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:EMPLOYER: Swisscom
+:DATE: 2014--2016
+:LOCATION: Switzerland / U.S.A. (partially remote)
+:END:
+
+** Product Manager, Advocate and Security Advisor
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:EMPLOYER: CFEngine AS
+:DATE: 2011--2014
+:LOCATION: Norway / U.S.A. (remote)
+:END:
+
+** Account Security Officer and IT Consultant
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:EMPLOYER: HP Enterprise Services
+:DATE: 2009--2011
+:LOCATION: Mexico
+:END:
+
+** Security Researcher
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:EMPLOYER: IBM Research --- Zürich
+:DATE: 2001--2009
+:LOCATION: Switzerland
+:END:
+
+** Computer Security Area founder and System Administrator
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:EMPLOYER: UNAM
+:DATE: 1991--1996
+:LOCATION: Mexico
 :END:
 
 * Experience
