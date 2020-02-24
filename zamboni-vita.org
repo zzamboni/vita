@@ -5,9 +5,10 @@
 # #+photo: ./images/foto_diego.png
 #+photostyle: right,noedge
 #+cvcolor: awesome-orange
-#+cvfooter_left: \today
-#+cvfooter_middle: %a~~~·~~~Curriculum Vit\ae\\\textup{Source at https://gitlab.com/zzamboni/vita}
-#+cvfooter_right: \thepage
+#+cvhighlights: false
+#+cvfooter_left: \today\\~
+#+cvfooter_middle: %a~~~·~~~Curriculum Vit\ae\\\textup{\tiny Source at https://gitlab.com/zzamboni/vita}
+#+cvfooter_right: \thepage\\~
 
 # These options are useful for HTML or ASCII export, and harmless for
 # AwesomeCV, so I leave them on all the time
@@ -37,6 +38,7 @@
 #+latex_header: \renewcommand*{\bibfont}{\paragraphstyle}
 #+latex_header: \renewcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 #+latex_header: \renewcommand*{\subsectionstyle}{\entrytitlestyle}
+#+latex_header: \renewcommand*{\headerquotestyle}[1]{{\fontsize{8pt}{1em}\bodyfont #1}}
 
 :END:
 
@@ -81,20 +83,8 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 -----END PGP MESSAGE-----
 
 * Table of Contents                                          :TOC_3:noexport:
-- [[#introduction][Introduction]]
-- [[#skill-summary][Skill summary]]
-- [[#experience-summary][Experience summary]]
-  - [[#security-architect-for-iaas-and-paas-cloud-platforms][Security architect for IaaS and PaaS cloud platforms]]
-  - [[#enterprise-architect][Enterprise architect]]
-  - [[#product-owner-and-team-lead-for-cloud-platform-monitoring-and-logging-framework][Product owner and team lead for cloud platform monitoring and logging framework]]
-  - [[#architect-and-team-lead-for-paas-cloud-monitoring-framework][Architect and team lead for PaaS cloud monitoring framework]]
-  - [[#product-manager-advocate-and-security-advisor][Product manager, advocate and security advisor]]
-  - [[#author-of-multiple-books][Author of multiple books]]
-  - [[#account-security-officer-and-oursourcing-consultant][Account security officer and oursourcing consultant]]
-  - [[#security-researcher-in-the-area-of-intrusion-detection][Security researcher in the area of intrusion detection]]
-  - [[#founder-and-team-lead-of-computer-security-team][Founder and team lead of computer security team]]
-  - [[#system-administrator-for-supercomputing-environment][System administrator for supercomputing environment]]
-  - [[#public-speaker-and-instructor][Public speaker and instructor]]
+- [[#key-skills][Key skills]]
+- [[#key-professional-achievements][Key professional achievements]]
 - [[#experience][Experience]]
   - [[#swisscom][Swisscom]]
     - [[#enterprise-architect-and-it-clouds-solution-security-architect][Enterprise Architect and IT Clouds Solution Security Architect]]
@@ -137,7 +127,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
     - [[#analysis-of-a-denial-of-service-attack-on-tcpip-synkill][Analysis of a denial-of-service attack on TCP/IP (Synkill)]]
 - [[#system-development-and-management][System Development and Management]]
 - [[#software-development-projects][Software Development Projects]]
-  - [[#publicly-available-software-projects-see-httpsgithubcomzzamboni][Publicly-available software projects: see https://github.com/zzamboni/]]
+  - [[#publicly-available-software-projects-see-httpsgitlabcomzzamboni-and-httpsgithubcomzzamboni][Publicly-available software projects: see https://gitlab.com/zzamboni and https://github.com/zzamboni/]]
   - [[#other-software-projects-not-publicly-available][Other software projects (not publicly available)]]
     - [[#pilatus-ibm][Pilatus (IBM)]]
     - [[#soc-in-a-box-ibm][SOC in a Box (IBM)]]
@@ -186,25 +176,48 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 - [[#selected-publications][Selected Publications]]
 - [[#references][References]]
 
-* Introduction
+* Introduction :noexport:
 
 #+latex: \begin{cvparagraph}
-I am a senior computer security expert, IT architect, computer scientist, team and project leader with 29 years of professional experience. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management. I possess a strong combination of leadership, conceptual and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have excellent communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
+I am a senior computer security expert, IT architect, computer scientist, team and project leader with 29 years of professional experience, and much longer of being fascinated and passionate about computing. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management.
+
+I possess a strong combination of leadership, conceptual and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have excellent communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
+
+This page presents a summary of my qualifications --- please see the following pages for the full details.
 #+latex: \end{cvparagraph}
 
-* Skill summary
+* Key skills
 :PROPERTIES:
 :CV_ENV:   cvskills
 :END:
 
-- Leadership :: Team and project leadership, Systems Architecture, familiar with [[https://www.scaledagile.com/][Scaled Agile Framework (SAFe)]] methodology and processes.
-- Computer Security :: Enterprise security architecture, risk management, intrusion detection and prevention (Ph.D. in Computer Science in this area), operating systems and network security, software security, secure software development, virtualization and cloud computing security.
-- Communications :: Excellent written and spoken communication skills, with more than 30 years of  written and oral communication and teaching experience in different contexts and topics.
-- Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud computing environments and platforms (OpenStack, Amazon EC2, Cloud Foundry) and software development experience (C, Python, Ruby, Perl, etc.).
-- Configuration management :: CFEngine (Author of [[https://cf-learn.info/][/Learning CFEngine/]]), Ansible, Puppet.
-- Languages :: Spanish (native), English (100%), German (B1/B2 level).
+- Leadership :: 29 years of team and project leadership experience; systems architecture; [[https://www.scaledagile.com/][Scaled Agile Framework (SAFe)]] methodology and processes.
+- Computer Security :: Enterprise security architecture; risk management; intrusion detection and prevention (Ph.D. in this area); operating systems and network security; software security and secure software development; virtualization and cloud computing security; CISSP.
+- Communications :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication and teaching experience in different contexts and topics. I love teaching and writing.
+- Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon EC2, Cloud Foundry), software development experience (C, Python, Ruby, Perl, LISP, etc.).
+- Configuration management :: CFEngine, Ansible, Puppet.
+- Attitude :: Always willing to learn about technology, management, and any topic that allows me to continue growing. I am passionate about both technology and people.
+- Languages :: Spanish (native), English (100%), German (60%).
 
-* Experience summary
+* Key professional achievements
+
+#+latex: \begin{cvparagraph}
+- Responsible for security architecture, risk management and compliance of Swisscom's IT Clouds platforms and related services and components.
+- Established and currently lead the Swisscom IT Clouds security community of practice.
+- Established and managed the /Health and State Management/ team at Swisscom, which designs, implements and operates a framework for scalable monitoring, logging and alerting.
+- Designed the /Orchard/ monitoring framework for Swisscom's /Application Cloud/ platform, and led the team that implemented it and brought it into production.
+- Managed the CFEngine language roadmap, including discussions with internal stakeholders, customers and community.
+- Managed relationships at HP Enterprise Services with multiple large customers in the area of security. This included overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting.
+- Established and led the first incident response team at UNAM, which has grown into the university's [[https://www.seguridad.unam.mx/][Coordination of Information Security/UNAM-CERT]].
+- Designed and implemented the /Billy Goat/ malware analysis system at IBM.
+- Was in charge of system administration and security monitoring for UNAM's Cray Y-MP supercomputer and 22 subsidiary Unix workstations.
+- Authored multiple books including [[https://cf-learn.info/][/Learning CFEngine/]] (published by O'Reilly Media), [[https://leanpub.com/learning-hammerspoon][/Learning Hammerspoon/]] and [[https://leanpub.com/lit-config][/Literate Configuration/]].
+- Designed and implemented the first version of the [[https://docs.cfengine.com/docs/3.10/guide-design-center.html][CFEngine Design Center]], which is now a key component of CFEngine Enterprise.
+- Was [[#program-committees][program chair and program committee member for multiple conferences]] including RAID symposium, DIMVA conference, the first instances of the /International Computer Security Day/ and the /Computer Security/ conference at UNAM, and others.
+- Was member of the Editorial Board of the Computers & Security Journal.
+#+latex: \end{cvparagraph}
+
+* Experience summary :noexport:
 :PROPERTIES:
 :CV_ENV:   cvhonors
 :END:
@@ -318,12 +331,13 @@ I am a senior computer security expert, IT architect, computer scientist, team a
 :FROM: <2019-04-01>
 :END:
 
-- I currently have a dual role as a member of the Swisscom Enterprise Architecture team, and as a Solution Security Architect for the [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom Cloud Platforms]], which include both PaaS and IaaS offerings.
-- As /Solution Security Architect for IT Clouds/, I am a member of the leadership team, and my job is to ensure Swisscom's cloud platforms are secure and compliant. I  define, prioritize and drive security-relevant product features, compliance and business goals of the cloud platforms built by Swisscom. I also head the IT Clouds Security Community of Practice, advise on compliance, governance and operational activities. Selected achievements and ongoing activities:
-  - Launched the /Security Champions/ initiative to promote and improve a culture of security responsibility within the team.
-  - Brought various platforms and services within the Swisscom cloud ecosystem to compliance with internal security standards and with external requirements for financial and banking customers, by defining the requirements and working with the engineering teams to prioritize and review the corresponding implementations.
-  - Coordinate and oversee periodic threat modeling, audits and penetration tests against the various cloud platforms and services.
-  - Establish organization- and team-wide processes for risk management.
+- I currently have a dual role as a member of the Swisscom Enterprise Architecture team, and as a Solution Security Architect for the [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom Cloud Platforms]], which include offerings targeted at both the Enterprise and the SMB segments: /Enterprise Service Cloud/ (IaaS), /Enterprise Application Cloud/ (PaaS), /Dynamic Computing Services/ (IaaS), /Enterprise Cloud for SAP Applications/ (IaaS).
+- As /Solution Security Architect for IT Clouds/, I am a member of the leadership team, and my job is to ensure Swisscom's cloud platforms are secure and compliant. I  define, prioritize and drive security-relevant product features, compliance and business goals of the cloud platforms built by Swisscom. I also head the IT Clouds Security Community of Practice, advise on compliance, governance and operational activities.
+  - Selected achievements and ongoing activities:
+    - Launched the /Security Champions/ initiative to promote and improve a culture of security responsibility within the team.
+    - Brought various platforms and services within the Swisscom cloud ecosystem to compliance with internal security standards and with external requirements for financial and banking customers, by defining the requirements and working with the engineering teams to prioritize and review the corresponding implementations.
+    - Coordinate and oversee periodic threat modeling, audits and penetration tests against the various cloud platforms and services.
+    - Establish organization- and team-wide processes for risk management.
 - As /Enterprise Architect/, I participate in the design of the future products and solutions offered by Swisscom, in collaboration with architects from all other divisions of the company. These result in proposals that are brought to approval by management and planned for implementation over the next 5-10 years.
 
 *** Team Lead & Product Owner for Health & State Management
@@ -580,7 +594,7 @@ A SAFe\reg 4 Certified Product Owner/Product Manager is a SAFe professional who 
 :END:
 
 #+begin_cvparagraph
-(see ``Publications'' for publication reference details)
+[[#publications][(see ``Publications'' for publication reference details)]]
 #+end_cvparagraph
 
 ** Research projects at IBM (selected)
@@ -698,7 +712,7 @@ A SAFe\reg 4 Certified Product Owner/Product Manager is a SAFe professional who 
 
 * Software Development Projects
 
-** Publicly-available software projects: see [[https://github.com/zzamboni/][https://github.com/zzamboni/]]
+** Publicly-available software projects: see [[https://gitlab.com/zzamboni][https://gitlab.com/zzamboni]] and [[https://github.com/zzamboni/][https://github.com/zzamboni/]]
 
 ** Other software projects (not publicly available)
 
@@ -830,6 +844,7 @@ A system of sensors for intrusion detection developed in OpenBSD through code in
 
 * Program Committees and Boards
 :PROPERTIES:
+:CUSTOM_ID: program-committees
 :CV_ENV:   cvhonors
 :END:
 
@@ -1046,6 +1061,9 @@ Project: Implementation of a proof of concept Hyperjacking attack on Intel platf
   - Advanced Unix administration
   - UNICOS system administration on Cray supercomputers
 * Selected Publications
+:PROPERTIES:
+:CUSTOM_ID: publications
+:END:
 
 #+begin_export latex
 \nocite{*}
