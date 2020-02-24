@@ -132,7 +132,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
     - [[#pilatus-ibm][Pilatus (IBM)]]
     - [[#soc-in-a-box-ibm][SOC in a Box (IBM)]]
     - [[#billy-goat-ibm][Billy Goat (IBM)]]
-    - [[#embedded-sensors-project-esp][Embedded Sensors Project (ESP)]]
+    - [[#embedded-sensors-project-purdue-university][Embedded Sensors Project (Purdue University)]]
 - [[#honors--awards][Honors & Awards]]
   - [[#cfengine-champion][CFEngine Champion]]
   - [[#josef-raviv-memorial-postdoctoral-fellowship][Josef Raviv Memorial Postdoctoral Fellowship]]
@@ -743,7 +743,7 @@ A specialized Linux distribution containing multiple security services for integ
 
 A specialized Linux distribution containing multiple sensors for detection of large-scale automated attacks. Implementation includes also backend infrastructure components for system configuration and upgrade, data centralization, analysis and reporting.
 
-*** Embedded Sensors Project (ESP)
+*** Embedded Sensors Project (Purdue University)
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: 1999
