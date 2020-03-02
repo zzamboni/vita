@@ -192,7 +192,7 @@ This page presents a summary of my qualifications --- please see the following p
 :END:
 
 - Leadership :: 29 years of team and project leadership experience; systems architecture; [[https://www.scaledagile.com/][Scaled Agile Framework (SAFe)]] methodology and processes.
-- Computer Security :: Enterprise security architecture; risk management; intrusion detection and prevention (Ph.D. in this area); operating systems and network security; software security and secure software development; virtualization and cloud computing security; CISSP.
+- Computer Security :: Enterprise security architecture; risk management; compliance; intrusion detection and prevention (Ph.D. in this area); operating systems and network security; software security and secure software development; virtualization and cloud computing security; CISSP.
 - Communications :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication and teaching experience in different contexts and topics. I love teaching and writing.
 - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon EC2, Cloud Foundry), software development experience (C, Python, Ruby, Perl, LISP, etc.).
 - Configuration management :: CFEngine, Ansible, Puppet.
@@ -202,19 +202,19 @@ This page presents a summary of my qualifications --- please see the following p
 * Key professional achievements
 
 #+latex: \begin{cvparagraph}
-- Responsible for security architecture, risk management and compliance of Swisscom's IT Clouds platforms and related services and components.
+- Responsible for security architecture, risk management and compliance (ISO27001, FINMA, ISAE3402/3000, etc.) of Swisscom's IT Clouds platforms and related services and components.
 - Established and currently lead the Swisscom IT Clouds security community of practice.
 - Established and managed the /Health and State Management/ team at Swisscom, which designs, implements and operates a framework for scalable monitoring, logging and alerting.
 - Designed the /Orchard/ monitoring framework for Swisscom's /Application Cloud/ platform, and led the team that implemented it and brought it into production.
-- Managed the CFEngine language roadmap, including discussions with internal stakeholders, customers and community.
-- Managed relationships at HP Enterprise Services with multiple large customers in the area of security. This included overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting.
+- Managed the CFEngine language product roadmap.
+- Managed customer relationships at HP Enterprise Services in the area of security. This included overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting.
 - Established and led the first incident response team at UNAM, which has grown into the university's [[https://www.seguridad.unam.mx/][Coordination of Information Security/UNAM-CERT]].
-- Designed and implemented the /Billy Goat/ malware analysis system at IBM.
-- Was in charge of system administration and security monitoring for UNAM's Cray Y-MP supercomputer and 22 subsidiary Unix workstations.
+- Designed and implemented the /Billy Goat/ malware capture and analysis system at IBM.
+- System administration and security monitoring for UNAM's Cray Y-MP supercomputer and Unix workstations.
 - Authored multiple books including [[https://cf-learn.info/][/Learning CFEngine/]] (published by O'Reilly Media), [[https://leanpub.com/learning-hammerspoon][/Learning Hammerspoon/]] and [[https://leanpub.com/lit-config][/Literate Configuration/]].
 - Designed and implemented the first version of the [[https://docs.cfengine.com/docs/3.10/guide-design-center.html][CFEngine Design Center]], which is now a key component of CFEngine Enterprise.
-- Was [[#program-committees][program chair and program committee member for multiple conferences]] including RAID symposium, DIMVA conference, the first instances of the /International Computer Security Day/ and the /Computer Security/ conference at UNAM, and others.
-- Was member of the Editorial Board of the Computers & Security Journal.
+- [[#program-committees][Program chair and program committee member for multiple conferences]] including RAID symposium, DIMVA conference, the first instances of the /International Computer Security Day/ and the /Computer Security/ conference at UNAM, and others.
+- Member of the Editorial Board of the Computers & Security Journal.
 #+latex: \end{cvparagraph}
 
 * Experience summary :noexport:
@@ -331,9 +331,10 @@ This page presents a summary of my qualifications --- please see the following p
 :FROM: <2019-04-01>
 :END:
 
-- I currently have a dual role as a member of the Swisscom Enterprise Architecture team, and as a Solution Security Architect for the [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom Cloud Platforms]], which include offerings targeted at both the Enterprise and the SMB segments: /Enterprise Service Cloud/ (IaaS), /Enterprise Application Cloud/ (PaaS), /Dynamic Computing Services/ (IaaS), /Enterprise Cloud for SAP Applications/ (IaaS).
+- Dual role as a member of the Swisscom Enterprise Architecture team, and as a Solution Security Architect for the [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom Cloud Platforms]], which include offerings targeted at both the Enterprise and the SMB segments: /Enterprise Service Cloud/ (IaaS), /Enterprise Application Cloud/ (PaaS), /Dynamic Computing Services/ (IaaS), /Enterprise Cloud for SAP Applications/ (IaaS).
 - As /Solution Security Architect for IT Clouds/, I am a member of the leadership team, and my job is to ensure Swisscom's cloud platforms are secure and compliant. I  define, prioritize and drive security-relevant product features, compliance and business goals of the cloud platforms built by Swisscom. I also head the IT Clouds Security Community of Practice, advise on compliance, governance and operational activities.
   - Selected achievements and ongoing activities:
+    - Ensure ongoing cloud platform and service compliance with contractual and regulatory standards, including ISO27001, ISAE3402/3000, FINMA and GDPR.
     - Launched the /Security Champions/ initiative to promote and improve a culture of security responsibility within the team.
     - Brought various platforms and services within the Swisscom cloud ecosystem to compliance with internal security standards and with external requirements for financial and banking customers, by defining the requirements and working with the engineering teams to prioritize and review the corresponding implementations.
     - Coordinate and oversee periodic threat modeling, audits and penetration tests against the various cloud platforms and services.
