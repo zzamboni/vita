@@ -2,7 +2,7 @@
 # AwesomeCV and LaTeX configuration section
 
 # AwesomeCV configuration options
-# #+photo: ./images/foto_diego.png
+#+photo: ./images/foto_diego.png
 #+photostyle: right,noedge
 #+cvcolor: awesome-orange
 #+cvhighlights: false
@@ -32,7 +32,7 @@
 #+latex_header: \defbibheading{cvbibsection}[\bibname]{\cvsubsection{#1}}
 
 # Some font and separator redefinitions for the AwesomeCV class
-#+latex_header: \renewcommand{\acvHeaderSocialSep}{\quad\cdotp\quad}
+#+latex_header: \renewcommand{\acvHeaderSocialSep}{\enskip\cdotp\enskip}
 #+latex_header: \renewcommand{\acvHeaderIconSep}{~}
 #+latex_header: \renewcommand*{\bodyfontlight}{\sourcesanspro}
 #+latex_header: \renewcommand*{\bibfont}{\paragraphstyle}
@@ -197,7 +197,7 @@ This page presents a summary of my qualifications --- please see the following p
 - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon EC2, Cloud Foundry), software development experience (C, Python, Ruby, Perl, LISP, etc.).
 - Configuration management :: CFEngine, Ansible, Puppet.
 - Attitude :: Always willing to learn about technology, management, and any topic that allows me to continue growing. I am passionate about both technology and people.
-- Languages :: Spanish (native), English (100%), German (60%).
+- Languages :: Spanish (native), English (100%), German (60% - B1 level).
 
 * Key professional achievements
 
@@ -212,7 +212,7 @@ This page presents a summary of my qualifications --- please see the following p
 - Designed and implemented the /Billy Goat/ malware capture and analysis system at IBM.
 - System administration and security monitoring for UNAM's Cray Y-MP supercomputer and Unix workstations.
 - Authored multiple books including [[https://cf-learn.info/][/Learning CFEngine/]] (published by O'Reilly Media), [[https://leanpub.com/learning-hammerspoon][/Learning Hammerspoon/]] and [[https://leanpub.com/lit-config][/Literate Configuration/]].
-- Designed and implemented the first version of the [[https://docs.cfengine.com/docs/3.10/guide-design-center.html][CFEngine Design Center]], which is now a key component of CFEngine Enterprise.
+- Designed and implemented the first version of the [[https://docs.cfengine.com/docs/3.10/guide-design-center.html][CFEngine Design Center]].
 - [[#program-committees][Program chair and program committee member for multiple conferences]] including RAID symposium, DIMVA conference, the first instances of the /International Computer Security Day/ and the /Computer Security/ conference at UNAM, and others.
 - Member of the Editorial Board of the Computers & Security Journal.
 #+latex: \end{cvparagraph}
