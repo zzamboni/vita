@@ -537,7 +537,7 @@
 % Define a section for CV
 % Usage: \cvsection{<section-title>}
 \newcommand{\cvsection}[1]{%
-  \needspace{3\baselineskip}
+  \needspace{2\baselineskip}
   \vspace{\acvSectionTopSkip}
   \sectionstyle{#1}
   \phantomsection
@@ -547,7 +547,7 @@
 % Define a subsection for CV
 % Usage: \cvsubsection{<subsection-title>}
 \newcommand{\cvsubsection}[1]{%
-  \needspace{5\baselineskip}
+  \needspace{2\baselineskip}
   \vspace{\acvSectionContentTopSkip}
   \vspace{-3mm}
   \subsectionstyle{#1}
@@ -594,10 +594,10 @@
 
 \newcommand*{\cventry}[5]{%
   \vspace{-2.0mm}
-  \needspace{3\baselineskip}
+  \needspace{2\baselineskip}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm} R{5.5cm}}
     \ifempty{#1#2}
     {\entrypositionstyle{#3} & \entrydatestyle{#4} }
     {\ifempty{#3#4}

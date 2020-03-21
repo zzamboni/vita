@@ -2,12 +2,12 @@
 # AwesomeCV and LaTeX configuration section
 
 # AwesomeCV configuration options
-#+photo: ./images/foto_diego.png
+# #+photo: ./images/foto_diego.png
 #+photostyle: right,noedge
 #+cvcolor: awesome-orange
 #+cvhighlights: false
 #+cvfooter_left: \today\\~
-#+cvfooter_middle: %a~~~·~~~Curriculum Vit\ae\\\textup{\tiny Source at https://gitlab.com/zzamboni/vita}
+#+cvfooter_middle: %a\\\textup{\tiny Source at https://gitlab.com/zzamboni/vita}
 #+cvfooter_right: \thepage\\~
 
 # These options are useful for HTML or ASCII export, and harmless for
@@ -43,7 +43,7 @@
 :END:
 
 #+author: Diego Zamboni
-#+title: Enterprise Security Architect · Team and Project Leader · Computer Security Scientist
+#+title: Senior Engineering Manager\nbsp\nbsp·\nbsp\nbsp​Computer Security Expert\nbsp\nbsp·\nbsp\nbsp​IT Security Architect
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
 #+linkedin: zzamboni
@@ -51,6 +51,10 @@
 #+github: zzamboni
 #+stackoverflow: 5562 zzamboni
 #+homepage: zzamboni.org
+
+#+latex: \begin{cvparagraph}
+I am a Senior Engineering Manager and IT Architect with 29 years of experience building systems and leading teams in startups as well as big companies. I have experience working with and leading remote teams. I possess a strong combination of leadership, conceptual and technical skills. I have excellent communication abilities, with ample writing, teaching and public speaking experience. I specialize in the areas of Computer Security, Cloud Computing and Configuration Management.
+#+latex: \end{cvparagraph}
 
 #+begin_comment --- How to include private information in the CV ---
 
@@ -84,245 +88,52 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 
 * Table of Contents                                          :TOC_3:noexport:
 - [[#key-skills][Key skills]]
-- [[#key-professional-achievements][Key professional achievements]]
 - [[#experience][Experience]]
   - [[#swisscom][Swisscom]]
     - [[#enterprise-architect-and-it-clouds-solution-security-architect][Enterprise Architect and IT Clouds Solution Security Architect]]
-    - [[#team-lead--product-owner-for-health--state-management][Team Lead & Product Owner for Health & State Management]]
-    - [[#cloud-architect-and-orchard-project-lead][Cloud Architect and Orchard Project Lead]]
-  - [[#swisscom-cloud-lab][Swisscom Cloud Lab]]
-    - [[#senior-platform-architect][Senior Platform Architect]]
+    - [[#engineering-team-lead-for-monitoring-health-and-state-management][Engineering Team Lead for Monitoring, Health and State Management]]
   - [[#cfengine-as][CFEngine AS]]
-    - [[#product-manager][Product Manager]]
-    - [[#senior-security-advisor][Senior Security Advisor]]
+    - [[#senior-security-advisor-and-product-manager][Senior Security Advisor and Product Manager]]
   - [[#hp-enterprise-services][HP Enterprise Services]]
-    - [[#account-security-officer][Account Security Officer]]
-    - [[#it-outsourcing-service-delivery-consultant][IT Outsourcing Service Delivery Consultant]]
+    - [[#account-security-officer-and-service-delivery-consultant][Account Security Officer and Service Delivery Consultant]]
   - [[#ibm-zurich-research-lab][IBM Zurich Research Lab]]
     - [[#research-staff-member][Research Staff Member]]
-  - [[#sun-microsystems][Sun Microsystems]]
-    - [[#developer-intern][Developer (Intern)]]
   - [[#national-autonomous-university-of-mexico-unam][National Autonomous University of Mexico (UNAM)]]
     - [[#head-of-computer-security-area][Head of Computer Security Area]]
     - [[#system-administrator][System Administrator]]
 - [[#education][Education]]
   - [[#phd-in-computer-science][Ph.D. in Computer Science]]
-  - [[#ms-in-computer-science][M.S. in Computer Science]]
-  - [[#bachelors-degree-in-computer-engineering][Bachelor's degree in Computer Engineering]]
 - [[#certifications][Certifications]]
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#safereg-4-certified-product-ownerproduct-manager][SAFe\reg 4 Certified Product Owner/Product Manager]]
-- [[#research][Research]]
-  - [[#research-projects-at-ibm-selected][Research projects at IBM (selected)]]
-    - [[#project-phantom][Project Phantom]]
-    - [[#code-instrumentation-for-intrusion-detection][Code instrumentation for intrusion detection]]
-    - [[#billy-goat-active-worm-detection-and-capture][Billy Goat: Active worm detection and capture]]
-    - [[#router-based-billy-goat][Router-based Billy Goat]]
-    - [[#soc-in-a-box][SOC in a Box]]
-    - [[#exorcist][Exorcist]]
-  - [[#phd-thesis-research][Ph.D. Thesis Research]]
-    - [[#using-internal-sensors-and-embedded-detectors-for-intrusion-detection][Using internal sensors and embedded detectors for intrusion detection]]
-  - [[#additional-research-projects][Additional research projects]]
-    - [[#using-autonomous-agents-for-intrusion-detection][Using autonomous agents for intrusion detection]]
-    - [[#analysis-of-a-denial-of-service-attack-on-tcpip-synkill][Analysis of a denial-of-service attack on TCP/IP (Synkill)]]
-- [[#system-development-and-management][System Development and Management]]
-- [[#software-development-projects][Software Development Projects]]
-  - [[#publicly-available-software-projects-see-httpsgitlabcomzzamboni-and-httpsgithubcomzzamboni][Publicly-available software projects: see https://gitlab.com/zzamboni and https://github.com/zzamboni/]]
-  - [[#other-software-projects-not-publicly-available][Other software projects (not publicly available)]]
-    - [[#pilatus-ibm][Pilatus (IBM)]]
-    - [[#soc-in-a-box-ibm][SOC in a Box (IBM)]]
-    - [[#billy-goat-ibm][Billy Goat (IBM)]]
-    - [[#embedded-sensors-project-purdue-university][Embedded Sensors Project (Purdue University)]]
-- [[#honors--awards][Honors & Awards]]
-  - [[#cfengine-champion][CFEngine Champion]]
-  - [[#josef-raviv-memorial-postdoctoral-fellowship][Josef Raviv Memorial Postdoctoral Fellowship]]
-  - [[#member-of-phi-beta-delta][Member of Phi Beta Delta]]
-  - [[#upe-microsoft-scholarship-award][UPE Microsoft Scholarship Award]]
-  - [[#member-of-upsilon-pi-epsilon][Member of Upsilon Pi Epsilon]]
-  - [[#fulbright-scholarship][Fulbright Scholarship]]
-- [[#other-professional-activities][Other Professional Activities]]
-  - [[#the-association-for-computing-machinery-acm][The Association for Computing Machinery (ACM)]]
-  - [[#purduepm-the-purdue-perl-users-group][Purdue.pm, the Purdue Perl Users Group]]
-  - [[#purdue-university-chapter-of-upsilon-pi-epsilon][Purdue University Chapter of Upsilon Pi Epsilon]]
-  - [[#purdue-university-chapter-of-upsilon-pi-epsilon-1][Purdue University Chapter of Upsilon Pi Epsilon]]
-- [[#program-committees-and-boards][Program Committees and Boards]]
-  - [[#editorial-board-member][Editorial Board Member]]
-  - [[#steering-committee-member][Steering Committee Member]]
-  - [[#program-chair][Program chair]]
-  - [[#program-committee-member][Program Committee Member]]
-  - [[#program-co-chair][Program co-chair]]
-  - [[#program-chair-1][Program chair]]
-  - [[#program-chair-2][Program chair]]
-  - [[#program-committee-member-1][Program Committee Member]]
-  - [[#program-committee-member-2][Program Committee Member]]
-  - [[#program-committee-member-3][Program Committee Member]]
-  - [[#organizer][Organizer]]
-- [[#teaching-and-advising][Teaching and Advising]]
-  - [[#students][Students]]
-    - [[#daniele-sgandurra-university-of-pisa-italy][Daniele Sgandurra, University of Pisa, Italy]]
-    - [[#martin-carbone-georgia-institute-of-technology-usa][Martin Carbone, Georgia Institute of Technology, U.S.A.]]
-    - [[#urko-zurutuza-ortega-mondragon-university-spain][Urko Zurutuza Ortega, Mondragon University, Spain]]
-    - [[#milton-yates-enst-bretagne-france][Milton Yates, ENST Bretagne, France]]
-    - [[#candid-wüest-eth-zurich-switzerland][Candid Wüest, ETH Zurich, Switzerland]]
-  - [[#teaching][Teaching]]
-    - [[#cfengine-one-day-training-class-8-hour-class][CFEngine one-day training class (8 hour class)]]
-    - [[#virtualization-lecture-2-hours-systems-security-class-computer-science-dept]["Virtualization" lecture (2 hours), Systems Security class, Computer Science Dept.]]
-    - [[#intrusion-detection-basic-concepts-and-current-research-at-ibm-class-3-hours-information-technology-security-spring-school]["Intrusion detection: Basic concepts and current research at IBM" class (3 hours), Information Technology Security Spring School]]
-    - [[#introduction-to-computer-security-class-40-hours]["Introduction to Computer Security" class (40 hours)]]
-    - [[#ee495-information-extraction-retrieval-and-security-course][EE495 ("Information Extraction, Retrieval and Security") course]]
-    - [[#ssh-achieving-secure-communication-over-insecure-channels-class]["SSH: Achieving secure communication over insecure channels" class]]
-    - [[#protecting-your-computing-system-class]["Protecting your computing system" class]]
-    - [[#supercomputing-internship-program-courses][Supercomputing Internship Program Courses]]
-- [[#selected-publications][Selected Publications]]
-- [[#references][References]]
-
-* Introduction :noexport:
-
-#+latex: \begin{cvparagraph}
-I am a senior computer security expert, IT architect, computer scientist, team and project leader with 29 years of professional experience, and much longer of being fascinated and passionate about computing. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management.
-
-I possess a strong combination of leadership, conceptual and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have excellent communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
-
-This page presents a summary of my qualifications --- please see the following pages for the full details.
-#+latex: \end{cvparagraph}
+- [[#published-books][Published books]]
+  - [[#literate-configuration][Literate Configuration]]
+  - [[#learning-hammerspoon][Learning Hammerspoon]]
+  - [[#learning-cfengine][Learning CFEngine]]
+- [[#research-publications-and-references][Research, Publications, and References]]
 
 * Key skills
 :PROPERTIES:
 :CV_ENV:   cvskills
 :END:
 
-- Leadership :: 29 years of team and project leadership experience; systems architecture; [[https://www.scaledagile.com/][Scaled Agile Framework (SAFe)]] methodology and processes.
-- Computer Security :: Enterprise security architecture; risk management; compliance; intrusion detection and prevention (Ph.D. in this area); operating systems and network security; software security and secure software development; virtualization and cloud computing security; CISSP.
-- Communications :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication and teaching experience in different contexts and topics. I love teaching and writing.
-- Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon EC2, Cloud Foundry), software development experience (C, Python, Ruby, Perl, LISP, etc.).
+- Leadership :: Team and project leadership, systems and software architecture, agile methodologies.
+- Computer Security :: Secure software development, security architecture, risk management and compliance, virtualization and cloud computing security, intrusion detection and prevention, operating system and network security.
+- Communications :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication and teaching experience.
+- Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon EC2, Cloud Foundry), software development experience (Ruby, Python, C, Perl, LISP, etc.).
 - Configuration management :: CFEngine, Ansible, Puppet.
-- Attitude :: Always willing to learn about technology, management, and any topic that allows me to continue growing. I am passionate about both technology and people.
 - Languages :: Spanish (native), English (100%), German (60% - B1 level).
-
-* Key professional achievements
-
-#+latex: \begin{cvparagraph}
-- Responsible for security architecture, risk management and compliance (ISO27001, FINMA, ISAE3402/3000, etc.) of Swisscom's IT Clouds platforms and related services and components.
-- Established and currently lead the Swisscom IT Clouds security community of practice.
-- Established and managed the /Health and State Management/ team at Swisscom, which designs, implements and operates a framework for scalable monitoring, logging and alerting.
-- Designed the /Orchard/ monitoring framework for Swisscom's /Application Cloud/ platform, and led the team that implemented it and brought it into production.
-- Managed the CFEngine language product roadmap.
-- Managed customer relationships at HP Enterprise Services in the area of security. This included overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting.
-- Established and led the first incident response team at UNAM, which has grown into the university's [[https://www.seguridad.unam.mx/][Coordination of Information Security/UNAM-CERT]].
-- Designed and implemented the /Billy Goat/ malware capture and analysis system at IBM.
-- System administration and security monitoring for UNAM's Cray Y-MP supercomputer and Unix workstations.
-- Authored multiple books including [[https://cf-learn.info/][/Learning CFEngine/]] (published by O'Reilly Media), [[https://leanpub.com/learning-hammerspoon][/Learning Hammerspoon/]] and [[https://leanpub.com/lit-config][/Literate Configuration/]].
-- Designed and implemented the first version of the [[https://docs.cfengine.com/docs/3.10/guide-design-center.html][CFEngine Design Center]].
-- [[#program-committees][Program chair and program committee member for multiple conferences]] including RAID symposium, DIMVA conference, the first instances of the /International Computer Security Day/ and the /Computer Security/ conference at UNAM, and others.
-- Member of the Editorial Board of the Computers & Security Journal.
-#+latex: \end{cvparagraph}
-
-* Experience summary :noexport:
-:PROPERTIES:
-:CV_ENV:   cvhonors
-:END:
-
-** Security architect for IaaS and PaaS cloud platforms
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:EMPLOYER: Swisscom
-:FROM: 2019
-:TO:
-:LOCATION: Switzerland
-:END:
-
-** Enterprise architect
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:EMPLOYER: Swisscom
-:FROM: 2019
-:TO:
-:LOCATION: Switzerland
-:END:
-
-** Product owner and team lead for cloud platform monitoring and logging framework
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:EMPLOYER: Swisscom
-:DATE: 2016--2019
-:LOCATION: Switzerland
-:END:
-
-** Architect and team lead for PaaS cloud monitoring framework
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:EMPLOYER: Swisscom
-:DATE: 2014--2016
-:LOCATION: Switzerland (partially remote)
-:END:
-
-** Product manager, advocate and security advisor
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:EMPLOYER: CFEngine AS
-:DATE: 2011--2014
-:LOCATION: Norway (remote)
-:END:
-
-** Author of multiple books
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:EMPLOYER: O'Reilly Media and self-published
-:FROM: 2011
-:TO:
-:END:
-
-** Account security officer and oursourcing consultant
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:EMPLOYER: HP Enterprise Services
-:DATE: 2009--2011
-:LOCATION: Mexico
-:END:
-
-** Security researcher in the area of intrusion detection
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:EMPLOYER: IBM Research --- Zürich
-:DATE: 2001--2009
-:LOCATION: Switzerland
-:END:
-
-** Founder and team lead of computer security team
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:EMPLOYER: UNAM
-:DATE: 1995--1996
-:LOCATION: Mexico
-:END:
-
-** System administrator for supercomputing environment
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:EMPLOYER: UNAM
-:DATE: 1991--1995
-:LOCATION: Mexico
-:END:
-
-** Public speaker and instructor
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:EMPLOYER: Multiple conferences and venues over the years
-:FROM: 1991
-:TO:
-:END:
 
 * Experience
 :PROPERTIES:
 :CV_ENV:   cventries
-:PAGEBREAK: yes
 :END:
 
 ** Swisscom
 :PROPERTIES:
 :CV_ENV:   cvemployer
-:LOCATION: Switzerland
-:FROM: 2015
+:LOCATION: Switzerland/U.S.A.
+:FROM: 2014
 :END:
 
 *** Enterprise Architect and IT Clouds Solution Security Architect
@@ -331,64 +142,25 @@ This page presents a summary of my qualifications --- please see the following p
 :FROM: <2019-04-01>
 :END:
 
-- Dual role as a member of the Swisscom Enterprise Architecture team, and as a Solution Security Architect for the [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom Cloud Platforms]], which include offerings targeted at both the Enterprise and the SMB segments: /Enterprise Service Cloud/ (IaaS), /Enterprise Application Cloud/ (PaaS), /Dynamic Computing Services/ (IaaS), /Enterprise Cloud for SAP Applications/ (IaaS).
-- As /Solution Security Architect for IT Clouds/, I am a member of the leadership team, and my job is to ensure Swisscom's cloud platforms are secure and compliant. I  define, prioritize and drive security-relevant product features, compliance and business goals of the cloud platforms built by Swisscom. I also head the IT Clouds Security Community of Practice, advise on compliance, governance and operational activities.
-  - Selected achievements and ongoing activities:
-    - Ensure ongoing cloud platform and service compliance with contractual and regulatory standards, including ISO27001, ISAE3402/3000, FINMA and GDPR.
-    - Launched the /Security Champions/ initiative to promote and improve a culture of security responsibility within the team.
-    - Brought various platforms and services within the Swisscom cloud ecosystem to compliance with internal security standards and with external requirements for financial and banking customers, by defining the requirements and working with the engineering teams to prioritize and review the corresponding implementations.
-    - Coordinate and oversee periodic threat modeling, audits and penetration tests against the various cloud platforms and services.
-    - Establish organization- and team-wide processes for risk management.
-- As /Enterprise Architect/, I participate in the design of the future products and solutions offered by Swisscom, in collaboration with architects from all other divisions of the company. These result in proposals that are brought to approval by management and planned for implementation over the next 5-10 years.
+- Member of the /Swisscom IT Clouds/ leadership team, which defines and manages Swisscom's cloud offerings.
+- Member of the /Swisscom Enterprise Architecture/ team, which defines future Swisscom products and solutions.
+- Maintain cloud platform and service compliance with internal, contractual and regulatory standards (ISO27001, ISAE3402/3000, FINMA, GDPR).
+- Established /Security Champions/ initiative to promote and improve a culture of security responsibility.
+- Established organization-wide processes for risk management, threat modeling, audits and penetration testing.
 
-*** Team Lead & Product Owner for Health & State Management
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:FROM: <2016-03-01>
-:TO: <2019-04-01>
-:END:
-
-- In this role, I built and lead a team which evolved on par with the Swisscom cloud platforms to provide monitoring and logging capabilities for Swisscom's cloud platforms. My responsibilities included people management (up to 16 people), requirement definition and prioritization in collaboration with Product Managers and other stakeholders, roadmap and architecture definition for the monitoring, logging and alerting platforms, driving the planning and execution of the work within the team, and participation in the technical implementation.
-- Selected achievements:
-  - Oversaw the transition of the /Enterprise Cloud 1/ LEMM (Logging, Event Management and Monitoring) and Access & Inventory frameworks into maintenance mode as the platform was retired.
-  - Oversaw the transition of the /Application Cloud/ platform from the Orchard monitoring framework into a new framework based on the [[https://www.influxdata.com/time-series-platform/][TICK stack]].
-  - Defined the scope and mission of the Health and State Management (HSM) team as part of the new [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/enterprise-service-cloud.html][/Enterprise Service Cloud/]] project.
-  - Defined logging and monitoring architecture for the /Enterprise Service Cloud/ platform based on vRealize Operations and vRealize Log Insight.
-  - Defined requirements, oversaw planning and execution of the HSM team's mission to design, implement and manage Health Management and Monitoring components as the IT Clouds scope expanded to other platforms, including Application Cloud, Enterprise Cloud for SAP applications (EC4SAP), Dynamic Computing Services, and related services and components.
-  - Defined architecture and oversaw implementation of Customer Log Forwarding service.
-  - Managed business relationship and technical implementation of OpsGenie for alert management in IT Clouds.
-  - Defined and implemented integrations between Jira and OpsGenie for alerting of user-reported incidents.
-- Main technologies involved: VMware vSphere (ESX, vCenter, NSX), VMware vRealize Operations Manager and Log Insight, Ansible (configuration management), OpsGenie (alert management).
-
-*** Cloud Architect and Orchard Project Lead
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:EMPLOYER: Swisscom
-:LOCATION: Switzerland
-:FROM: <2015-08-01>
-:TO: <2016-03-01>
-:END:
-
-- Managed team of three people and lead the /Orchard/ project through its implementation, production release and further improvements and development.
-
-** Swisscom Cloud Lab
-:PROPERTIES:
-:CV_ENV:   cvemployer
-:LOCATION: U.S.A. (remote)
-:FROM: 2014
-:TO: 2015
-:END:
-
-*** Senior Platform Architect
+*** Engineering Team Lead for Monitoring, Health and State Management
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <2014-08-01>
-:TO: <2015-07-31>
+:TO: <2019-04-01>
 :END:
 
-- Designed the architecture for the /Orchard/ health-management and self-healing components of Swisscom's /Application Cloud/ Platform-as-a-Service Offering. This system performed self-monitoring and self-healing of the infrastructure and platform components.
-- Implemented initial prototype of the /Orchard/ platform.
-  - Main technologies involved: OpenStack (cloud computing infrastructure), Plumgrid (SDN), Cloud Foundry (application platform), Consul (health management and service discovery), RabbitMQ (message bus), Riemann (event stream analysis).
+- Established and managed a team of up to 16 engineers that designed, implemented and operated monitoring and logging capabilities for Swisscom's IaaS and PaaS cloud platforms
+- Unified diverse platform and service monitoring components into one cohesive pipeline, reducing costs and increasing efficiency.
+- Defined architecture and oversaw implementation of customer-facing monitoring and logging services.
+- Designed the architecture and implemented the initial version of the /Orchard/ monitoring platform for Swisscom's [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/application-cloud/enterprise-application-cloud.html][/Application Cloud/]].
+- Managed business relationship and technical implementation of OpsGenie for alert management in IT Clouds.
+- Defined and implemented integrations between Jira and OpsGenie for alerting of user-reported incidents.
 
 ** CFEngine AS
 :PROPERTIES:
@@ -398,28 +170,17 @@ This page presents a summary of my qualifications --- please see the following p
 :TO:       2014
 :END:
 
-*** Product Manager
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:FROM:     <2013-08-01>
-:TO: <2014-06-30>
-:END:
-
-- Coordinated the [[http://cfengine.com/cfengine-design-center/][CFEngine Design Center]] project.
-- Participated in the development of the CFEngine language roadmap.
-- Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack).
-- Developed code for both the Design Center and some of the integrations.
-
-*** Senior Security Advisor
+*** Senior Security Advisor and Product Manager
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM:     <2011-10-01>
 :TO: <2014-06-30>
 :END:
 
-- CFEngine Advocate, with a special focus on security.
+- Established and led the [[http://cfengine.com/cfengine-design-center/][CFEngine Design Center]] project.
+- Participated in the development of the CFEngine language roadmap and security strategy.
+- Overall CFEngine Advocate, with a special focus on security.
 - Gave talks, wrote articles and blog posts, taught classes, and in general spread the word about CFEngine.
-- Worked on developing and implementing the strategy for CFEngine in security.
 
 ** HP Enterprise Services
 :PROPERTIES:
@@ -427,28 +188,20 @@ This page presents a summary of my qualifications --- please see the following p
 :LOCATION: Mexico
 :FROM:     2009
 :TO:       2011
+:PAGEBREAK: yes
 :END:
 
-*** Account Security Officer
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:FROM: <2010-10-01>
-:TO: <2011-10-01>
-:END:
-
-- Acted as first point of contact for all security-related issues for five HP enterprise customers in Mexico, some of them with international presence.
-- Initiated, advised and managed security-related projects.
-- Handled communication and coordination between technical teams involved in security initiatives.
-- Involved in all security-related decisions at the sales, design, implementation, delivery and ongoing maintenance stages of IT Outsourcing projects.
-
-*** IT Outsourcing Service Delivery Consultant
+*** Account Security Officer and Service Delivery Consultant
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <2009-11-01>
-:TO: <2010-10-01>
+:TO: <2011-10-01>
 :END:
 
-- I helped customer teams by solving complex problems in customer environments.
+- First point of contact for security-related issues for HP enterprise customers in Mexico, some of them with international presence.
+- Initiated, advised and managed security-related projects.
+- Handled communication and coordination between technical teams involved in security initiatives.
+- Oversaw all security-related aspects of the design, implementation and delivery of IT Outsourcing projects.
 - Performed analysis, design and implementation of solutions in multiple areas of expertise, including system automation, configuration management, system administration, system design, virtualization, performance and security.
 
 ** IBM Zurich Research Lab
@@ -466,9 +219,13 @@ This page presents a summary of my qualifications --- please see the following p
 :TO:       <2009-10-01>
 :END:
 
-- I worked in intrusion detection, malware detection and containment, and virtualization security research projects. See /Research activities/ for details of my research.
+- I worked in multiple intrusion detection, malware detection and containment, and virtualization security research projects, including:
+  - [[http://www-03.ibm.com/press/us/en/pressrelease/23833.wss][/Project Phantom/]]: Security for VMware virtual environments using virtual machine introspection.
+  - [[http://domino.research.ibm.com/library/cyberdig.nsf/1e4115aea78b6e7c85256b360066f0d4/d7c39a9a2e73d870852570060051dfed?OpenDocument][/Billy Goat/]]: An active worm-detection and capture system, deployed in the IBM internal and external networks.
+  - [[http://www.usenix.org/event/sruti07/tech/full_papers/zamboni/zamboni.pdf][/Router-based Billy Goat/]]: An active worm-capture device deployed at the network boundary and coupled with a border router to effectively and automatically spoof every unused IP address outside the local network.
+  - /Exorcist/: Host-based, behavior-based intrusion detection using sequences of system calls.
 
-** Sun Microsystems
+** Sun Microsystems :noexport:
 :PROPERTIES:
 :CV_ENV:   cvemployer
 :LOCATION: U.S.A.
@@ -501,7 +258,7 @@ This page presents a summary of my qualifications --- please see the following p
 :TO:       <1996-08-01>
 :END:
 
-- Founded UNAM's [[http://www.seguridad.unam.mx/][Computer Security Area]], the University's first team dedicated to computer security, which has since evolved into a much larger organization.
+- Established UNAM's first [[http://www.seguridad.unam.mx/][Intrusion Response Team]], which has since evolved into a much larger organization.
 - Supervised up to nine people working on different projects related to computer security.
 - Supervised and participated in the direct monitoring of the security of a Cray supercomputer and 22 Unix workstations.
 - Provided security services to the whole University, including incident response, security information, auditing and teaching.
@@ -515,11 +272,8 @@ This page presents a summary of my qualifications --- please see the following p
 :TO:       <1995-08-01>
 :END:
 
-- Part of the system administration team at the University's Supercomputing Center, managing UNAM's [[http://www.historiadelcomputo.unam.mx/files/fotos/Cray/cray.html][Cray Y-MP Supercomputer]] (the first supercomputer in Latin America) and related systems.
-- Managed the Network Queuing Subsystem (NQS).
-- Collaborated in other aspects of the supercomputer administration, including user administration, operating system installation, resource management, and policy making and implementation.
-- Directly managed three Unix workstations, provided support for 19 more.
-- Monitored the security of the Cray supercomputer and related workstations.
+- Part of the system administration team at the University's Supercomputing Center, managing UNAM's [[http://www.historiadelcomputo.unam.mx/files/fotos/Cray/cray.html][Cray Y-MP Supercomputer]] and related systems.
+- Responded to security incidents affecting the Cray supercomputer and related workstations.
 
 * Education
 :PROPERTIES:
@@ -535,30 +289,7 @@ This page presents a summary of my qualifications --- please see the following p
 :TO: <2001-08-01>
 :END:
 
-- Thesis title: [[https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf][/Using Internal Sensors for Computer Intrusion Detection/]].
-- Advisor: [[http://spaf.cerias.purdue.edu/][Eugene H. Spafford]].
-
-** M.S. in Computer Science
-:PROPERTIES:
-:CV_ENV:   cvschool
-:LOCATION: West Lafayette, IN, U.S.A.
-:SCHOOL: Purdue University
-:FROM: <1996-08-01>
-:TO: <1998-05-01>
-:END:
-
-- Advisor: [[http://spaf.cerias.purdue.edu/][Eugene H. Spafford]].
-
-** Bachelor's degree in Computer Engineering
-:PROPERTIES:
-:CV_ENV:   cvschool
-:LOCATION: Mexico City, Mexico
-:SCHOOL: National Autonomous University of Mexico (UNAM)
-:FROM: <1989-08-01>
-:TO: <1995-07-01>
-:END:
-
-- Thesis title: [[https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf][UNAM/Cray Project for Security in the Unix Operating System]] (in Spanish, original title: /Proyecto UNAM/Cray de Seguridad en el Sistema Operativo Unix/).
+[[https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf][/Using Internal Sensors for Computer Intrusion Detection/]], Advisor: [[http://spaf.cerias.purdue.edu/][Eugene H. Spafford]].
 
 * Certifications
 :PROPERTIES:
@@ -567,525 +298,45 @@ This page presents a summary of my qualifications --- please see the following p
 
 ** [[https://www.youracclaim.com/badges/98814af3-575b-4350-9667-70eddfea1da4/public_url][Certified Information Systems Security Professional (CISSP)]]
 :PROPERTIES:
-:CV_ENV:   cvschool
-:ORGANIZATION: (ISC)², the International Information System Security Certification Consortium
-:LOCATION: April 2019
-:RIGHT_IMG: ./images/certified-information-systems-security-professional-cissp-large.png
+:CV_ENV:   cvsubentry
+:DATE: April 2019
 :END:
-
-#+begin_cvitems
-The vendor-neutral CISSP credential confirms technical knowledge and experience to design, engineer, implement, and manage the overall security posture of an organization. Required by the world’s most security-conscious organizations, CISSP is the gold-standard information security certification that assures information security leaders possess the breadth and depth of knowledge to establish holistic security programs that protect against threats in an increasingly complex cyber world.
-#+end_cvitems
 
 ** [[https://www.youracclaim.com/badges/e6bf0ca2-f1c4-4af6-bf63-09f4b8cdbd02/public_url][SAFe\reg 4 Certified Product Owner/Product Manager]]
 :PROPERTIES:
-:CV_ENV:   cvschool
-:ORGANIZATION: Scaled Agile Inc.
-:LOCATION: July 2017
-:RIGHT_IMG: ./images/certified-safe-4-product-owner-product-manager-large.png
+:CV_ENV:   cvsubentry
+:DATE: July 2017
 :END:
 
-#+begin_cvitems
-A SAFe\reg 4 Certified Product Owner/Product Manager is a SAFe professional who works with customers and development organizations to identify and write requirements. Key areas of competency include identifying customer needs, writing epics, capabilities, features, stories, and prioritizing work in order to effectively deliver value to the enterprise.
-#+end_cvitems
-
-* Research
+* Published books
 :PROPERTIES:
 :CV_ENV:   cventries
 :END:
 
-#+begin_cvparagraph
-[[#publications][(see ``Publications'' for publication reference details)]]
-#+end_cvparagraph
-
-** Research projects at IBM (selected)
-:PROPERTIES:
-:CV_ENV:   cvemployer
-:END:
-
-*** [[http://www-03.ibm.com/press/us/en/pressrelease/23833.wss][Project Phantom]]
+** [[https://leanpub.com/lit-config][Literate Configuration]]
 :PROPERTIES:
 :CV_ENV:   cvsubentry
-:FROM:     2008
-:TO:       2009
+:DATE: Self-published, 2019
 :END:
 
-- Security for VMware virtual environments using virtual machine introspection (based on the [[https://vmguru.com/2011/03/vmsafe-api/][VMware VMsafe API]]) to provide detection and prevention capabilities with increased security and reliability.
-- Publications: {{{cvcite(Christodorescu:2009:CSV:1655008.1655022)}}}.
-
-*** Code instrumentation for intrusion detection
+** [[https://leanpub.com/learning-hammerspoon][Learning Hammerspoon]]
 :PROPERTIES:
 :CV_ENV:   cvsubentry
-:FROM: 2007
-:TO: 2007
+:DATE: Self-published, 2018
 :END:
 
-- Exploration of code instrumentation and low-level monitoring mechanisms for  efficient and accurate intrusion detection and prevention.
-
-*** [[http://domino.research.ibm.com/library/cyberdig.nsf/1e4115aea78b6e7c85256b360066f0d4/d7c39a9a2e73d870852570060051dfed?OpenDocument][Billy Goat: Active worm detection and capture]]
+** [[http://cf-learn.info/][Learning CFEngine]]
 :PROPERTIES:
 :CV_ENV:   cvsubentry
-:FROM: 2002
-:TO: 2008
+:DATE: O’Reilly Media 2012, self-published 2017
 :END:
 
-- An active worm-detection system, in wide deployment in the IBM worldwide internal network. Billy Goat listens for connections to unused IP address ranges and actively responds to those connections to accurately detect worm-infected machines, and in many cases capture the worms themselves. Billy Goat is engineered for distributed deployment, with each device containing standalone detection and reporting capabilities, together with data centralization features that allow network-wide data analysis and reporting.
-- Publications: {{{cvcite(riordan06:_build_billy_goat:first2006\, riordan05:bg_techreport)}}}
-
-*** [[http://www.usenix.org/event/sruti07/tech/full_papers/zamboni/zamboni.pdf][Router-based Billy Goat]]
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:FROM: 2005
-:TO: 2007
-:END:
-
-- An active worm-capture device deployed at the network boundary and coupled with the border router, that allows the Billy Goat to effectively and automatically spoof every unused IP address outside the local network. This makes it possible for the Router-based Billy Goat to accurately detect local infected machines and prevent them from establishing connections to the outside, limiting the propagation of the worms to the outside network.
-- Publications: {{{cvcite(zamboni07:sruti07-rbg)}}}
-
-*** SOC in a Box
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:FROM: 2005
-:TO: 2007
-:END:
-
-- Integrated device containing multiple security tools: intrusion detection, worm detection, vulnerability scanning and network discovery.
-
-*** Exorcist
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:FROM: 2001
-:TO: 2002
-:END:
-
-- Host-based, behavior-based intrusion detection using sequences of system calls.
-
-** Ph.D. Thesis Research
-:PROPERTIES:
-:CV_ENV:   cvemployer
-:END:
-
-*** [[https://zzamboni.org/cerias/zamboni/thesis/][Using internal sensors and embedded detectors for intrusion detection]]
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:END:
-
-- Study of data collection methods for intrusion detection systems.
-- Implementation of novel methods for data collection in intrusion detection systems.
-- Analysis of the properties, advantages and disadvantages of internal sensors and embedded detectors as data collection and analysis elements in intrusion detection systems.
-- Publications: {{{cvcite(zamboni01:phd-thesis\, zamboni02:sensors_detectors\, kerschbaum00:network-embedded-sensors\, zamboni00:thesis-proposal\, zamboni:raid2000)}}}
-
-** Additional research projects
-:PROPERTIES:
-:CV_ENV:   cvemployer
-:END:
-
-*** [[https://www.cerias.purdue.edu/site/about/history/coast/projects/aafid.php][Using autonomous agents for intrusion detection]]
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:END:
-
-- Design and documentation of an architecture (AAFID) to perform distributed monitoring and intrusion detection using autonomous agents.
-- Implementation of a prototype according to the architecture. This prototype is [[http://freshmeat.net/projects/aafid2][published as open source]].
-- Exploration of research issues in the distributed intrusion detection area.
-- Publications: {{{cvcite(spafford00:intrus_detec_auton_agent\, zamboni:aafid-acsac98\, zamboni:aafid-architecture\, zamboni:raid98\, zamboni00:build_aafid_with_perl\, zamboni:raid99)}}}.
-
-*** [[https://www.cerias.purdue.edu/site/about/history/coast/projects/coast-proj-synkill.php][Analysis of a denial-of-service attack on TCP/IP (Synkill)]]
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:END:
-
-- Collaborated in the analysis of the SYN-flooding denial-of-service attack against TCP and in the implementation of a defense tool.
-- Publications: {{{cvcite(schuba97:synkill)}}}.
-
-* System Development and Management
-:PROPERTIES:
-:CV_ENV:   cvskills
-:END:
-
-- Programming languages :: C, Perl, Java, AWK, Unix shells (Elvish shell, Bourne shell, C shell, Korn shell), Python, PHP, Ruby, Objective C, Clojure, Racket, Emacs LISP.
-- Development environments :: Unix/Linux, Cloud Foundry, Amazon EC2, macOS.
-- Unix system administration :: Linux (experience with multiple distributions including RedHat, Ubuntu, Debian, Gentoo, and others), OpenBSD, FreeBSD, MacOS X, MacOS X Server, Solaris.
-- Configuration management :: CFEngine 3, Puppet, Chef, Ansible.
-- Virtualization, containers and cloud :: VMWare (ESX, vSphere), OpenStack, Amazon EC2, Docker, Cloud Foundry.
-- Health Management and Monitoring :: VMware vRealize Operations Manager, vRealize Log Insight, Nagios, Icinga.
-- Other :: REST APIs, Riemann (event stream processing), XML and related technologies, network programming, database programming (SQL), kernel programming (OpenBSD and Linux), HTML.
-
-* Software Development Projects
-
-** Publicly-available software projects: see [[https://gitlab.com/zzamboni][https://gitlab.com/zzamboni]] and [[https://github.com/zzamboni/][https://github.com/zzamboni/]]
-
-** Other software projects (not publicly available)
-
-*** Pilatus (IBM)
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:FROM: 2005
-:TO: 2007
-:END:
-
-A system installer that allows arbitrary system installation and configurations, allowing for both proprietary and open source components to be installed in an automated fashion. Open source components can be downloaded directly from their original source to avoid distributing them.
-
-*** SOC in a Box (IBM)
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:FROM: 2005
-:TO: 2007
-:END:
-
-A specialized Linux distribution containing multiple security services for integrated security monitoring in small and medium networks. Implementation includes also backend infrastructure components for system installation, configuration and upgrade; and data centralization, analysis and reporting.
-
-*** Billy Goat (IBM)
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:FROM: 2002
-:TO: 2007
-:END:
-
-A specialized Linux distribution containing multiple sensors for detection of large-scale automated attacks. Implementation includes also backend infrastructure components for system configuration and upgrade, data centralization, analysis and reporting.
-
-*** Embedded Sensors Project (Purdue University)
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:FROM: 1999
-:TO: 2001
-:END:
-
-A system of sensors for intrusion detection developed in OpenBSD through code instrumentation. Developed as part of my Ph.D. thesis work. Programming done mostly in C.
-
-* Honors & Awards
-:PROPERTIES:
-:CV_ENV:   cvhonors
-:END:
-
-** [[https://cfengine.com/engage/cfengine-champions/][CFEngine Champion]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:DATE: 2010
-:ORGANIZATION: CFEngine AS
-:LOCATION: Norway
-:END:
-
-** Josef Raviv Memorial Postdoctoral Fellowship
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:DATE: <2001-07-01>
-:ORGANIZATION: IBM
-:LOCATION: U.S.A.
-:END:
-
-** Member of [[http://www.phibetadelta.org][Phi Beta Delta]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:DATE: <2001-04-01>
-:ORGANIZATION: honor society recognizing scholarly achievement
-:LOCATION: U.S.A.
-:END:
-
-** UPE Microsoft Scholarship Award
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:DATE: <2000-09-01>
-:ORGANIZATION: honor society recognizing scholarly achievement
-:LOCATION: U.S.A.
-:END:
-
-** Member of [[http://upe.acm.org/][Upsilon Pi Epsilon]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:DATE: <1998-04-01>
-:ORGANIZATION: the ACM Computer Sciences honor society
-:LOCATION: U.S.A.
-:END:
-
-** Fulbright Scholarship
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:DATE: <1996-05-01>
-:ORGANIZATION: for pursuing Ph.D. studies at Purdue University
-:LOCATION: Mexico
-:END:
-
-* Other Professional Activities
-:PROPERTIES:
-:CV_ENV:   cvhonors
-:END:
-
-** [[http://www.acm.org/][The Association for Computing Machinery (ACM)]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:POSITION: Member
-:FROM: 1998
-:TO:
-:END:
-
-** [[http://purdue.pm.org/][Purdue.pm]], the Purdue Perl Users Group
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:POSITION: Founder
-:DATE: 2000
-:LOCATION: U.S.A.
-:END:
-
-** [[https://www.cs.purdue.edu/future-students/organizations.html][Purdue University Chapter of Upsilon Pi Epsilon]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:POSITION: President
-:DATE: 1999
-:LOCATION: U.S.A.
-:END:
-
-** [[https://www.cs.purdue.edu/future-students/organizations.html][Purdue University Chapter of Upsilon Pi Epsilon]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:POSITION: Secretary
-:DATE: 1998
-:LOCATION: U.S.A.
-:END:
-
-* Program Committees and Boards
-:PROPERTIES:
-:CUSTOM_ID: program-committees
-:CV_ENV:   cvhonors
-:END:
-
-** [[http://www.elsevier.com/wps/find/journaldescription.cws_home/405877/description][Editorial Board Member]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:ORGANIZATION: Computers \& Security Journal
-:DATE: 2011--2013
-:END:
-
-** [[http://www.raid-symposium.org/][Steering Committee Member]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:ORGANIZATION: Intl. Symposium on Recent Advances in Intrusion Detection
-:DATE: 2007--2012
-:END:
-
-** [[http://www.raid-symposium.org/raid2006/][Program chair]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:ORGANIZATION: 9th Intl. Symposium on Recent Advances in Intrusion Detection (RAID)
-:DATE: 2006
-:LOCATION: Germany
-:END:
-
-** [[http://www.raid-symposium.org/][Program Committee Member]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:ORGANIZATION: Intl. Symposium on Recent Advances in Intrusion Detection
-:DATE: 2006
-:END:
-
-** Program co-chair
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:ORGANIZATION: IBM Academy of Technology Security and Privacy Symposium
-:DATE: 2009
-:END:
-
-** [[https://www.video.ethz.ch/conferences/2009/zisc.html][Program chair]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:ORGANIZATION: ZISC Workshop on Security in Virtualized Environments and Cloud Computing
-:DATE: 2009
-:LOCATION: Switzerland
-:END:
-
-** [[https://www.dimva.org/dimva2008/][Program chair]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:ORGANIZATION: Detection of Intrusions and Malware \& Vulnerability Assessment (DIMVA)
-:DATE: 2008
-:LOCATION: France
-:END:
-
-** [[http://www.ieee-security.org/TC/SP-Index.html][Program Committee Member]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:ORGANIZATION: IEEE Security and Privacy Symposium
-:DATE: 2007
-:LOCATION: U.S.A.
-:END:
-
-** [[http://www.acsac.org/][Program Committee Member]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:ORGANIZATION: Annual Computer Security Applications Conference (ACSAC)
-:DATE: 2003--2007
-:END:
-
-** Program Committee Member
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:ORGANIZATION: International Computer Security Day Conference
-:DATE: 1994--2000
-:LOCATION: Mexico
-:END:
-
-** Organizer
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:ORGANIZATION: International Computer Security Day Conference
-:DATE: 1994--1995
-:LOCATION: Mexico
-:END:
-* Teaching and Advising
-
-** Students
-
-*** Daniele Sgandurra, University of Pisa, Italy
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: Internship advisor
-:FROM: 2009
-:TO: 2009
-:END:
-
-- Project: Design and implementation of process injection using virtual machine introspection.
-
-*** Martin Carbone, Georgia Institute of Technology, U.S.A.
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: Internship advisor
-:FROM: 2007
-:TO: 2007
-:END:
-
-Project: Implementation of a proof of concept Hyperjacking attack on Intel platform.
-
-*** Urko Zurutuza Ortega, Mondragon University, Spain
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: Ph.D. co-advisor
-:FROM: 2005
-:TO: 2008
-:END:
-
-- Thesis: [[https://dialnet.unirioja.es/servlet/tesis?codigo=20012][Data Mining Approaches for Analysis of Worm Activity Towards Automatic Signature Generation]]
-
-*** Milton Yates, ENST Bretagne, France
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: External Diploma Thesis advisor
-:FROM: 2005
-:TO: 2005
-:END:
-
-- Thesis: [[https://www.usenix.org/conference/sruti-07/boundary-detection-and-containment-local-worm-infections][The Router-based Billy Goat Project]]
-
-*** Candid Wüest, ETH Zurich, Switzerland
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: Diploma Thesis tutor
-:FROM: 2002
-:TO: 2003
-:END:
-
-- Thesis: [[https://pub.tik.ee.ethz.ch/students/2002-2003-Wi/DA-2003-22.pdf][Desktop Firewalls and Intrusion Detection]]
-
-** Teaching
-
-*** CFEngine one-day training class (8 hour class)
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: Multiple venues
-:FROM: 2011
-:TO: 2013
-:END:
-
-*** "Virtualization" lecture (2 hours), Systems Security class, Computer Science Dept.
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: ETH Zürich
-:FROM: 2011
-:TO: 2013
-:END:
-
-*** "Intrusion detection: Basic concepts and current research at IBM" class (3 hours), Information Technology Security Spring School
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: University of Lausanne
-:FROM: 2005
-:TO: 2005
-:END:
-
-*** "Introduction to Computer Security" class (40 hours)
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: ITESM, Mexico
-:FROM: 2003
-:TO: 2003
-:END:
-
-*** EE495 ("Information Extraction, Retrieval and Security") course
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: Purdue University, U.S.A.
-:FROM: 2000
-:TO: 2000
-:END:
-
-- Collaborated in the design of eight security-related lectures and taught two of them.
-- Participated in the design of the class project.
-
-*** "SSH: Achieving secure communication over insecure channels" class
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: CSI NetSec conference, U.S.A.
-:FROM: 2000
-:TO: 2000
-:END:
-
-*** "Protecting your computing system" class
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: Schlumberger, U.S.A.
-:FROM: 1997
-:TO: 1997
-:END:
-
-*** Supercomputing Internship Program Courses
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: UNAM, Mexico
-:FROM: 1991
-:TO: 1996
-:END:
-
-- Participated in the design and teaching of the syllabus, structure and contents of multiple courses 10--40 hours long,  including the following topics:
-  - Introduction to Unix
-  - Unix utilities
-  - Unix security
-  - Basic Unix administration
-  - Advanced Unix administration
-  - UNICOS system administration on Cray supercomputers
-* Selected Publications
-:PROPERTIES:
-:CUSTOM_ID: publications
-:END:
-
-#+begin_export latex
-\nocite{*}
-\printbibliography[keyword=book,          heading=cvbibsection, title=Books]
-\printbibliography[keyword=editorial,     heading=cvbibsection, title=Editorial Activities]
-\printbibliography[keyword=thesis,        heading=cvbibsection, title=Theses]
-\printbibliography[keyword=refereed,      heading=cvbibsection, title=Refereed Papers]
-\printbibliography[keyword=techreport,    heading=cvbibsection, title=Tech Reports]
-\printbibliography[keyword=presentations, heading=cvbibsection, title=Presentations at Conferences and Workshops]
-\printbibliography[keyword=invited,       heading=cvbibsection, title=Invited Talks and Articles]
-\printbibliography[keyword=patent,        heading=cvbibsection, title=Patents]
-\printbibliography[keyword=other,         heading=cvbibsection, title=Other Publications]
-#+end_export
-#+begin_export html
-The list of publications is for the moment not available in the HTML version of my CV. Please see the <a href="https://zzamboni.org/vita/">full PDF version</a>.
-#+end_export
-
-* References
+* Research, Publications, and References
 
 #+latex: \begin{cvparagraph}
-Available by request.
+Available upon request.
+
+Full Curriculum Vit\ae\nbsp​available at [[https://zzamboni.org/vita/][https://zzamboni.org/vita/]].
 #+latex: \end{cvparagraph}
 
 * Local Variables :ARCHIVE:noexport:
