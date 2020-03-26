@@ -90,6 +90,9 @@
   pdfsubject={},
   pdfkeywords={}
 }
+% Used to colorize and underline links
+\RequirePackage{soul}
+\RequirePackage{letltxmacro}
 % Automatically compute table widths
 \RequirePackage{tabularx}
 % Wrap figures
@@ -161,6 +164,23 @@
   \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}%
 }
 
+%-------------------------------------------------------------------------------
+%                Configuration for links
+%-------------------------------------------------------------------------------
+
+% The \colorizelinks command enables URL colorization. Optional
+% argument specifies the color.
+\newcommand*{\colorizelinks}[1][awesome-skyblue]{%
+  \hypersetup{%
+    colorlinks=true,
+    urlcolor=#1
+}}{}
+
+% The \underlinelinks command enables URL underlining. Optional
+% argument specifies the underline color.
+\newcommand*{\underlinelinks}[1][awesome-skyblue]{%
+  \LetLtxMacro{\savedhref}{\href}%
+  \renewcommand{\href}[2]{\savedhref{##1}{\setulcolor{#1}\ul{##2}}}}
 
 %-------------------------------------------------------------------------------
 %                Configuration for fonts
@@ -453,43 +473,43 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{mailto:\@email}{\faEnvelope\acvHeaderIconSep\@email}%
+          \href{mailto:\@email}{\mbox{\faEnvelope\acvHeaderIconSep\@email}}%
         }%
       \ifthenelse{\isundefined{\@homepage}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
+          \href{http://\@homepage}{\mbox{\faHome\acvHeaderIconSep\@homepage}}%
         }%
       \ifthenelse{\isundefined{\@gitlab}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://gitlab.com/\@gitlab}{\faGitlab\acvHeaderIconSep\@gitlab}%
+          \href{https://gitlab.com/\@gitlab}{\mbox{\faGitlab\acvHeaderIconSep\@gitlab}}%
         }%
       \ifthenelse{\isundefined{\@github}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
+          \href{https://github.com/\@github}{\mbox{\faGithubSquare\acvHeaderIconSep\@github}}%
         }%
       \ifthenelse{\isundefined{\@stackoverflowid}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\acvHeaderIconSep\@stackoverflowname}%
+          \href{https://stackoverflow.com/users/\@stackoverflowid}{\mbox{\faStackOverflow\acvHeaderIconSep\@stackoverflowname}}%
         }%
       \ifthenelse{\isundefined{\@linkedin}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\acvHeaderIconSep\@linkedin}%
+          \href{https://www.linkedin.com/in/\@linkedin}{\mbox{\faLinkedinSquare\acvHeaderIconSep\@linkedin}}%
         }%
       \ifthenelse{\isundefined{\@twitter}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
+          \href{https://twitter.com/\@twitter}{\mbox{\faTwitter\acvHeaderIconSep\@twitter}}%
         }%
       \ifthenelse{\isundefined{\@skype}}%
         {}%
@@ -501,13 +521,13 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.reddit.com/user/\@reddit}{\faReddit\acvHeaderIconSep\@reddit}%
+          \href{https://www.reddit.com/user/\@reddit}{\mbox{\faReddit\acvHeaderIconSep\@reddit}}%
         }%
       \ifthenelse{\isundefined{\@xing}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.xing.com/profile/\@xing}{\faXingSquare\acvHeaderIconSep\@xing}
+          \href{https://www.xing.com/profile/\@xing}{\mbox{\faXingSquare\acvHeaderIconSep\@xing}}
         }%
       \ifthenelse{\isundefined{\@extrainfo}}%
         {}%
