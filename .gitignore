@@ -25,3 +25,5 @@ auto
 *.bcf
 *.run.xml
 .DS_Store
+zamboni-resume-private.pdf
+zamboni-resume-private.tex
