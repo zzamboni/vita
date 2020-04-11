@@ -55,7 +55,7 @@
 #+homepage: zzamboni.org
 
 #+latex: \begin{cvparagraph}
-I am a Senior Engineering Manager and IT Architect with 29 years of experience building systems and leading teams in startups as well as big companies. I have experience working with and leading remote teams. I possess a strong combination of leadership, conceptual and technical skills. I have excellent communication abilities, with ample writing, teaching and public speaking experience. I specialize in the areas of Computer Security, Cloud Computing and Configuration Management.
+I am a Senior Engineering Manager, IT Architect and Researcher with 29 years of experience building systems and leading teams in startups as well as big companies. I have experience working with and leading remote teams. I possess a strong combination of leadership, conceptual and technical skills. I have excellent communication abilities, with ample writing, teaching and public speaking experience. I specialize in the areas of Computer Security, Cloud Computing and Configuration Management.
 #+latex: \end{cvparagraph}
 
 * Including private information :noexport:
@@ -96,7 +96,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 - [[#experience][Experience]]
   - [[#swisscom][Swisscom]]
     - [[#enterprise-architect-and-it-clouds-solution-security-architect][Enterprise Architect and IT Clouds Solution Security Architect]]
-    - [[#engineering-team-lead-for-monitoring-health-and-state-management][Engineering Team Lead for Monitoring, Health and State Management]]
+    - [[#engineering-leader-for-monitoring-health-and-state-management][Engineering Leader for Monitoring, Health and State Management]]
   - [[#cfengine-as][CFEngine AS]]
     - [[#senior-security-advisor-and-product-manager][Senior Security Advisor and Product Manager]]
   - [[#hp-enterprise-services][HP Enterprise Services]]
@@ -147,25 +147,26 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :FROM: <2019-04-01>
 :END:
 
-- As an EA, I define future Swisscom products and solutions as part of the /Swisscom Enterprise Architecture/ team.
 - As an SSA, I define and manage the security features and characteristics of [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's cloud offerings]], as a member of the /Swisscom IT Clouds/ leadership team.
 - As an SSA, I maintain cloud platform and service compliance with internal, contractual and regulatory standards (e.g. [[https://www.swisscom.ch/en/about/company/governance/riskmanagement/iso-iec-managementsystem.html][ISO27001]], ISAE3402/3000, FINMA and GDPR).
 - As an SSA, I established /Security Champions/ initiative to promote and improve a culture of security responsibility.
 - As an SSA, I established organization-wide processes for risk management, threat modeling, audits and penetration testing.
+- As an EA, I define future Swisscom products and solutions as part of the /Swisscom Enterprise Architecture/ team.
 
-*** Engineering Team Lead for Monitoring, Health and State Management
+*** Engineering Leader for Monitoring, Health and State Management
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <2014-08-01>
 :TO: <2019-04-01>
 :END:
 
-- Established and managed a team of up to 16 engineers that designed, implemented and operated monitoring and logging capabilities for Swisscom's IaaS and PaaS cloud platforms
-- Unified diverse platform and service monitoring components into one cohesive pipeline, reducing costs and increasing efficiency.
+- Established and managed a team of up to 16 engineers that designed, implemented (both software development and product integration) and operated monitoring and logging capabilities for Swisscom's IaaS and PaaS cloud platforms.
+- Unified diverse platform and service monitoring components into one cohesive pipeline, reducing costs and increasing efficiency by 20%.
 - Defined architecture and oversaw implementation of customer-facing monitoring and logging services.
 - Designed the architecture and implemented the initial version of the /Orchard/ monitoring platform for Swisscom's [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/application-cloud/enterprise-application-cloud.html][/Application Cloud/]].
-- Managed business relationship and technical implementation of OpsGenie for alert management in IT Clouds.
 - Defined and implemented integrations between Jira and OpsGenie for alerting of user-reported incidents.
+- Managed business relationship and technical implementation of OpsGenie for alert management in IT Clouds.
+- Managed engineering relationship with VMware for integration of their products in Swisscom's monitoring systems.
 
 ** [[https://cfengine.com/][CFEngine AS]]
 :PROPERTIES:
@@ -182,10 +183,11 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :TO: <2014-06-30>
 :END:
 
-- Established and led the [[http://cfengine.com/cfengine-design-center/][CFEngine Design Center]] project.
 - Participated in the development of the CFEngine language roadmap and security strategy.
 - Overall CFEngine Advocate, with a special focus on security.
 - Gave talks, wrote articles and blog posts, taught classes, and in general spread the word about CFEngine.
+- Published and promoted book [[http://cf-learn.info/][Learning CFEngine]] (O'Reilly Media).
+- Established and led the [[http://cfengine.com/cfengine-design-center/][CFEngine Design Center]] project through its initial implementation phase.
 
 ** [[https://www.hpe.com/][HP Enterprise Services]]
 :PROPERTIES:
