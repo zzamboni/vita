@@ -55,7 +55,7 @@
 #+homepage: zzamboni.org
 
 #+latex: \begin{cvparagraph}
-I am a Senior Engineering Manager, IT Architect and Researcher with 29 years of experience building systems and leading teams in startups as well as big companies. I have experience working with and leading remote teams. I possess a strong combination of leadership, conceptual and technical skills. I have excellent communication abilities, with ample writing, teaching and public speaking experience. I specialize in the areas of Computer Security, Cloud Computing and Configuration Management.
+I am a Senior Engineering Manager, IT Architect and Researcher with 29 years of experience building systems and leading teams in startups as well as big companies. I have experience working with and leading remote teams. I possess a strong combination of leadership, conceptual and technical skills with excellent communication abilities. I am a generalist but specialize in the areas of Computer Security, Cloud Computing and Configuration Management.
 #+latex: \end{cvparagraph}
 
 * Including private information :noexport:
@@ -96,7 +96,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 - [[#experience][Experience]]
   - [[#swisscom][Swisscom]]
     - [[#enterprise-architect-and-it-clouds-solution-security-architect][Enterprise Architect and IT Clouds Solution Security Architect]]
-    - [[#engineering-leader-for-monitoring-health-and-state-management][Engineering Leader for Monitoring, Health and State Management]]
+    - [[#architect-and-engineering-leader-for-monitoring-health-and-state-management][Architect and Engineering Leader for Monitoring, Health and State Management]]
   - [[#cfengine-as][CFEngine AS]]
     - [[#senior-security-advisor-and-product-manager][Senior Security Advisor and Product Manager]]
   - [[#hp-enterprise-services][HP Enterprise Services]]
@@ -107,7 +107,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
     - [[#head-of-computer-security-area][Head of Computer Security Area]]
     - [[#system-administrator][System Administrator]]
 - [[#education][Education]]
-  - [[#phd-in-computer-science][Ph.D. in Computer Science]]
+  - [[#phd-in-computer-science-purdue-university][Ph.D. in Computer Science, Purdue University]]
 - [[#certifications][Certifications]]
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#safereg-4-certified-product-ownerproduct-manager][SAFe\reg 4 Certified Product Owner/Product Manager]]
@@ -122,10 +122,10 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :CV_ENV:   cvskills
 :END:
 
-- Leadership :: Team and project leadership, systems and software architecture, agile methodologies.
-- Computer Security :: Secure software development, security architecture, risk management and compliance, virtualization and cloud computing security, intrusion detection and prevention, operating system and network security.
-- Communications :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication and teaching experience.
-- Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon EC2, Cloud Foundry), software development experience (Ruby, Python, C, Perl, LISP, etc.).
+- Leadership :: Team and project management, systems and software architecture.
+- Computer Security :: Security architecture, risk management and compliance; secure software development; virtualization and cloud computing security; intrusion detection and prevention; operating system and network security.
+- Communications and Research :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication, research and teaching experience.
+- Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon, Cloud Foundry, VMware), software development experience (Ruby, Python, C, Perl, LISP, etc.).
 - Configuration management :: CFEngine, Ansible, Puppet.
 - Languages :: Spanish (native), English (100%), German (60% - B1 level).
 
@@ -147,23 +147,25 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :FROM: <2019-04-01>
 :END:
 
-- As an SSA, I define and manage the security features and characteristics of [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's cloud offerings]], as a member of the /Swisscom IT Clouds/ leadership team.
-- As an SSA, I maintain cloud platform and service compliance with internal, contractual and regulatory standards (e.g. [[https://www.swisscom.ch/en/about/company/governance/riskmanagement/iso-iec-managementsystem.html][ISO27001]], ISAE3402/3000, FINMA and GDPR).
-- As an SSA, I established /Security Champions/ initiative to promote and improve a culture of security responsibility.
-- As an SSA, I established organization-wide processes for risk management, threat modeling, audits and penetration testing.
-- As an EA, I define future Swisscom products and solutions as part of the /Swisscom Enterprise Architecture/ team.
+- As a Solution Security Architect for IT Clouds...
+  - I define and manage the security features and characteristics of [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's cloud offerings]], as a member of the /Swisscom IT Clouds/ leadership team.
+  - I maintain cloud platform and service compliance with internal, contractual and regulatory standards (e.g. [[https://www.swisscom.ch/en/about/company/governance/riskmanagement/iso-iec-managementsystem.html][ISO27001]], ISAE3402/3000, FINMA and GDPR).
+  - I established /Security Champions/ initiative to promote and improve a culture of security responsibility.
+  - I established organization-wide processes for risk management, threat modeling, audits and penetration testing.
+  - I am the point of contact for CISO-level interactions with Swisscom's cloud customers.
+- As an Enterprise Architect, I define future Swisscom products and solutions as part of the /Swisscom Enterprise Architecture/ team.
 
-*** Engineering Leader for Monitoring, Health and State Management
+*** Architect and Engineering Leader for Monitoring, Health and State Management
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <2014-08-01>
 :TO: <2019-04-01>
 :END:
 
-- Established and managed a team of up to 16 engineers that designed, implemented (both software development and product integration) and operated monitoring and logging capabilities for Swisscom's IaaS and PaaS cloud platforms.
-- Unified diverse platform and service monitoring components into one cohesive pipeline, reducing costs and increasing efficiency by 20%.
+- Starting as a project lead and architect, I established and managed a team of up to 16 engineers that designed, implemented and operated monitoring and logging capabilities for Swisscom's IaaS and PaaS cloud offerings.
+- Unified platform and service monitoring components into one cohesive pipeline, reducing costs and increasing efficiency by 20%.
 - Defined architecture and oversaw implementation of customer-facing monitoring and logging services.
-- Designed the architecture and implemented the initial version of the /Orchard/ monitoring platform for Swisscom's [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/application-cloud/enterprise-application-cloud.html][/Application Cloud/]].
+- Designed and implemented the initial version of the /Orchard/ monitoring platform for Swisscom's [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/application-cloud/enterprise-application-cloud.html][/Application Cloud/]].
 - Defined and implemented integrations between Jira and OpsGenie for alerting of user-reported incidents.
 - Managed business relationship and technical implementation of OpsGenie for alert management in IT Clouds.
 - Managed engineering relationship with VMware for integration of their products in Swisscom's monitoring systems.
@@ -195,7 +197,6 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :LOCATION: Mexico
 :FROM:     2009
 :TO:       2011
-:PAGEBREAK: yes
 :END:
 
 *** Account Security Officer and Service Delivery Consultant
@@ -226,7 +227,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :TO:       <2009-10-01>
 :END:
 
-- I worked in multiple intrusion detection, malware detection and containment, and virtualization security research projects, including:
+- I worked in various research projects in intrusion detection, malware containment, and virtualization security, including:
   - [[http://www-03.ibm.com/press/us/en/pressrelease/23833.wss][/Project Phantom/]]: Security for VMware virtual environments using virtual machine introspection.
   - [[http://domino.research.ibm.com/library/cyberdig.nsf/1e4115aea78b6e7c85256b360066f0d4/d7c39a9a2e73d870852570060051dfed?OpenDocument][/Billy Goat/]]: An active worm-detection and capture system, deployed in the IBM internal and external networks.
   - [[http://www.usenix.org/event/sruti07/tech/full_papers/zamboni/zamboni.pdf][/Router-based Billy Goat/]]: An active worm-capture device deployed at the network boundary and coupled with a border router to effectively and automatically spoof every unused IP address outside the local network.
@@ -287,13 +288,11 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :CV_ENV:   cventries
 :END:
 
-** Ph.D. in Computer Science
+** Ph.D. in Computer Science, Purdue University
 :PROPERTIES:
 :CV_ENV:   cvschool
-:LOCATION: West Lafayette, IN, U.S.A.
-:SCHOOL: Purdue University
-:FROM: <1996-08-01>
-:TO: <2001-08-01>
+:LOCATION: West Lafayette, IN, U.S.A.\quad 1996--2001
+:SCHOOL:
 :END:
 
 /[[https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf][Using Internal Sensors for Computer Intrusion Detection]]/, Advisor: [[http://spaf.cerias.purdue.edu/][Eugene H. Spafford]].
