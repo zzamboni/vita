@@ -9,8 +9,8 @@
 #+cvcolorizelinks: awesome-skyblue
 #+cvunderlinelinks: false
 #+cvfooter_left: \today\\~
-#+cvfooter_middle: %a\\\textup{\tiny Source at \href{https://gitlab.com/zzamboni/vita}{https://gitlab.com/zzamboni/vita}}
-#+cvfooter_right: \thepage\\~
+#+cvfooter_right: %a\\\textup{\tiny Source at \href{https://gitlab.com/zzamboni/vita}{https://gitlab.com/zzamboni/vita}}
+# #+cvfooter_right: \thepage\\~
 
 # These options are useful for HTML or ASCII export, and harmless for
 # AwesomeCV, so I leave them on all the time
@@ -126,7 +126,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 - Computer Security :: Security architecture, risk management and compliance; secure software development; virtualization and cloud computing security; intrusion detection and prevention; operating system and network security.
 - Communications and Research :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication, research and teaching experience.
 - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon, Cloud Foundry, VMware), software development experience (Ruby, Python, C, Perl, LISP, etc.).
-- Configuration management :: CFEngine, Ansible, Puppet.
+- Configuration Management :: CFEngine, Ansible, Puppet.
 - Languages :: Spanish (native), English (100%), German (B1 level).
 
 * Experience
@@ -147,8 +147,8 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :FROM: <2019-04-01>
 :END:
 
-- As a Solution Security Architect for IT Clouds:
-  - I define and manage yearly KPIs and the security features and characteristics of [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's cloud offerings]] as a member of the /Swisscom IT Clouds/ leadership team.
+- As a Solution Security Architect for IT Clouds, I am a member of the /Swisscom IT Clouds/ leadership team:
+  - I define and manage yearly KPIs and the security features and characteristics of [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's cloud offerings]].
   - I work with product managers, engineering teams and the corporate security group to maintain cloud platform and service compliance with internal, contractual and regulatory standards (e.g. [[https://www.swisscom.ch/en/about/company/governance/riskmanagement/iso-iec-managementsystem.html][ISO27001]], ISAE3402/3000, FINMA and GDPR).
   - I established and manage the /Security Champions/ initiative to promote and improve a culture of security responsibility.
   - I established organization-wide processes for risk management, threat modeling, audits and penetration testing.
@@ -162,7 +162,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :TO: <2019-04-01>
 :END:
 
-- Starting as a project lead and architect, I founded and led a team of up to 16 people that designed, implemented and operated the monitoring and logging capabilities for Swisscom's IaaS and PaaS cloud offerings.
+- Starting as a project lead and architect, I founded and led a team of up to 16 people that designed, implemented and operated the monitoring and logging capabilities for Swisscom's IaaS and PaaS evolving cloud offerings:
   - Unified diverse monitoring components into a cohesive framework, reducing costs and increasing efficiency by 20%.
   - Defined architecture and implementated customer-facing monitoring and logging services.
   - Designed and implemented the [[https://cfsummit2016.sched.com/event/6aQ2/chaos-heidi-vs-orchard-self-disruption-and-healing-in-a-cloud-foundry-based-service-environment-diego-zamboni-swisscom-bill-chapman-stark-wayne][/Orchard/]] monitoring platform for Swisscom's [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/application-cloud/enterprise-application-cloud.html][/Application Cloud/]].
@@ -206,7 +206,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :TO: <2011-10-01>
 :END:
 
-- Managed security-related topics for HP enterprise customers in Mexico.
+- Managed security-related topics for HP enterprise customers in Mexico and abroad.
 - Initiated, advised and managed security-related projects.
 - Coordinated communication among technical teams involved in security initiatives.
 - Managed all security-related aspects of the design, implementation and delivery of IT Outsourcing projects.
@@ -227,7 +227,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :TO:       <2009-10-01>
 :END:
 
-- Established and participated in research projects in intrusion detection, malware containment, and virtualization security, including:
+- Established and developed research projects in intrusion detection, malware containment, and virtualization security, including:
   - [[http://www-03.ibm.com/press/us/en/pressrelease/23833.wss][/Project Phantom/]]: Security for VMware virtual environments using virtual machine introspection.
   - [[http://domino.research.ibm.com/library/cyberdig.nsf/1e4115aea78b6e7c85256b360066f0d4/d7c39a9a2e73d870852570060051dfed?OpenDocument][/Billy Goat/]]: An active worm-detection and capture system, deployed in the IBM internal and external networks.
   - [[http://www.usenix.org/event/sruti07/tech/full_papers/zamboni/zamboni.pdf][/Router-based Billy Goat/]]: An active worm-capture device deployed at the network boundary and coupled with a border router to effectively and automatically spoof every unused IP address outside the local network.
