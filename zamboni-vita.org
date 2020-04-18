@@ -4,8 +4,10 @@
 # AwesomeCV configuration options
 #+photo: ./images/foto_diego.png
 #+photostyle: right,noedge
-#+cvcolor: awesome-orange
+#+cvcolor: awesome-concrete
 #+cvhighlights: false
+#+cvcolorizelinks: awesome-skyblue
+#+cvunderlinelinks: false
 #+cvfooter_left: \today\\~
 #+cvfooter_middle: %a~~~·~~~Curriculum Vit\ae\\\textup{\tiny Source at https://gitlab.com/zzamboni/vita}
 #+cvfooter_right: \thepage\\~
@@ -191,13 +193,13 @@ This page presents a summary of my qualifications --- please see the following p
 :CV_ENV:   cvskills
 :END:
 
-- Leadership :: 29 years of team and project leadership experience; systems architecture; [[https://www.scaledagile.com/][Scaled Agile Framework (SAFe)]] methodology and processes.
+- Leadership :: 29 years of team and project leadership experience; systems architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework (SAFe)]] methodology and processes.
 - Computer Security :: Enterprise security architecture; risk management; compliance; intrusion detection and prevention (Ph.D. in this area); operating systems and network security; software security and secure software development; virtualization and cloud computing security; CISSP.
 - Communications :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication and teaching experience in different contexts and topics. I love teaching and writing.
 - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon EC2, Cloud Foundry), software development experience (C, Python, Ruby, Perl, LISP, etc.).
 - Configuration management :: CFEngine, Ansible, Puppet.
 - Attitude :: Always willing to learn about technology, management, and any topic that allows me to continue growing. I am passionate about both technology and people.
-- Languages :: Spanish (native), English (100%), German (60% - B1 level).
+- Languages :: Spanish (native), English (100%), German (B1 level).
 
 * Key professional achievements
 
@@ -208,7 +210,7 @@ This page presents a summary of my qualifications --- please see the following p
 - Designed the /Orchard/ monitoring framework for Swisscom's /Application Cloud/ platform, and led the team that implemented it and brought it into production.
 - Managed the CFEngine language product roadmap.
 - Managed customer relationships at HP Enterprise Services in the area of security. This included overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting.
-- Established and led the first incident response team at UNAM, which has grown into the university's [[https://www.seguridad.unam.mx/][Coordination of Information Security/UNAM-CERT]].
+- Established and led the first incident response team at UNAM, which has grown into the university's [[https://www.seguridad.unam.mx/][Information Security Organization/UNAM-CERT]].
 - Designed and implemented the /Billy Goat/ malware capture and analysis system at IBM.
 - System administration and security monitoring for UNAM's Cray Y-MP supercomputer and Unix workstations.
 - Authored multiple books including [[https://cf-learn.info/][/Learning CFEngine/]] (published by O'Reilly Media), [[https://leanpub.com/learning-hammerspoon][/Learning Hammerspoon/]] and [[https://leanpub.com/lit-config][/Literate Configuration/]].
@@ -377,6 +379,7 @@ This page presents a summary of my qualifications --- please see the following p
 :LOCATION: U.S.A. (remote)
 :FROM: 2014
 :TO: 2015
+:PAGEBREAK: yes
 :END:
 
 *** Senior Platform Architect
@@ -405,7 +408,7 @@ This page presents a summary of my qualifications --- please see the following p
 :TO: <2014-06-30>
 :END:
 
-- Coordinated the [[http://cfengine.com/cfengine-design-center/][CFEngine Design Center]] project.
+- Coordinated the [[https://docs.cfengine.com/docs/3.10/guide-design-center.html][CFEngine Design Center]] project.
 - Participated in the development of the CFEngine language roadmap.
 - Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack).
 - Developed code for both the Design Center and some of the integrations.
@@ -483,7 +486,7 @@ This page presents a summary of my qualifications --- please see the following p
 :TO:       <1997-08-01>
 :END:
 
-- Participated in the development of the /Bruce/ host vulnerability scanner, later released as the [[http://www.usenix.org/publications/login/1999-11/features/senss.html][Sun Enterprise Network Security Service]] (SENSS).
+- Participated in the development of the /Bruce/ host vulnerability scanner, later released as the [[https://www.usenix.org/legacy/publications/login/1999-11/features/senss.html][Sun Enterprise Network Security Service]] (SENSS).
 - Designed and implemented the first version of the network-based components of /Bruce/, which allowed it to operate on several hosts in a network, controlled from a central location.
 
 ** National Autonomous University of Mexico (UNAM)
