@@ -173,7 +173,9 @@
 \newcommand*{\colorizelinks}[1][awesome-skyblue]{%
   \hypersetup{%
     colorlinks=true,
-    urlcolor=#1
+    urlcolor=#1,
+    linkcolor=#1,
+    citecolor=#1
 }}{}
 
 % The \underlinelinks command enables URL underlining. Optional
