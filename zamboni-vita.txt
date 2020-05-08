@@ -1,6 +1,6 @@
            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-              IT ENTERPRISE SECURITY ARCHITECT · COMPUTER
-                  SCIENTIST · TEAM AND PROJECT LEADER
+              IT ENTERPRISE SECURITY ARCHITECT · TEAM AND
+              PROJECT LEADER · COMPUTER SECURITY SCIENTIST
 
                              Diego Zamboni
            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -9,58 +9,94 @@
 
 
 
-1 Introduction
-══════════════
+1 Key skills
+════════════
 
-  I am a senior computer security expert, IT architect, computer
-  scientist, team and project leader with 29 years of professional
-  experience. I specialize in the areas of Computer Security, Cloud
-  Computing, Self-healing Systems and Configuration management. I
-  possess a strong combination of leadership and technical skills that
-  enable me to lead teams in analyzing complex problems, designing and
-  implementing elegant and pragmatic solutions. I have strong
-  communication abilities, with ample experience in writing, teaching
-  and public speaking. I can interact and work fluently at the
-  strategic, tactical and technical levels. I have a Ph.D. in Computer
-  Science and have experience in both academic and business
-  environments.
-
-
-2 Skill and Experience Overview
-═══════════════════════════════
-
-  Computer Security
-        Enterprise Security Architecture, Intrusion detection and
-        prevention (Ph.D. in Computer Science in this area), operating
-        systems security, network security, software security, secure
-        software development, virtualization and cloud computing
-        security, malware detection and containment.
   Leadership
-        Technical team and project leadership, [Scaled Agile Framework
-        (SAFe)] methodology and processes, SAFe Product Owner
-        certification, SAFe Architect training.
-  Systems and Development
-        Unix/Linux systems engineering and administration, systems
-        health management and monitoring, cloud computing environments
-        and platforms (OpenStack, Amazon EC2, Cloud Foundry) and
-        software development experience (C, Python, Ruby, Perl, Java,
-        etc.).
-  Configuration management
-        CFEngine (Author of [/Learning CFEngine/]), Ansible, Puppet.
+        29 years of team and project leadership experience; systems
+        architecture; [Scaled Agile Framework (SAFe)] methodology and
+        processes.
+  Computer Security
+        Enterprise security architecture; risk management; compliance;
+        intrusion detection and prevention (Ph.D. in this area);
+        operating systems and network security; software security and
+        secure software development; virtualization and cloud computing
+        security; CISSP.
   Communications
         Excellent written and spoken communication skills, with more
-        than 30 years of written and oral communication and teaching
-        experience in different contexts and topics.
+        than 30 years of written and spoken communication and teaching
+        experience in different contexts and topics. I love teaching and
+        writing.
+  Systems and Development
+        Unix/Linux systems engineering and administration, system health
+        management and monitoring, cloud platforms (Amazon EC2, Cloud
+        Foundry), software development experience (C, Python, Ruby,
+        Perl, LISP, etc.).
+  Configuration management
+        CFEngine, Ansible, Puppet.
+  Attitude
+        Always willing to learn about technology, management, and any
+        topic that allows me to continue growing. I am passionate about
+        both technology and people.
   Languages
-        Spanish (native), English (100%), German (B1/B2 level).
-  Other skills
-        Customer-facing experience, project and product management
-        experience.
+        Spanish (native), English (100%), German (B1 level).
 
 
-[Scaled Agile Framework (SAFe)] <https://www.scaledagile.com/>
+[Scaled Agile Framework (SAFe)] <https://www.scaledagileframework.com/>
+
+
+2 Key professional achievements
+═══════════════════════════════
+
+  • Responsible for security architecture, risk management and
+    compliance (ISO27001, FINMA, ISAE3402/3000, etc.) of Swisscom's IT
+    Clouds platforms and related services and components.
+  • Established and currently lead the Swisscom IT Clouds security
+    community of practice.
+  • Established and managed the /Health and State Management/ team at
+    Swisscom, which designs, implements and operates a framework for
+    scalable monitoring, logging and alerting.
+  • Designed the /Orchard/ monitoring framework for Swisscom's
+    /Application Cloud/ platform, and led the team that implemented it
+    and brought it into production.
+  • Managed the CFEngine language product roadmap.
+  • Managed customer relationships at HP Enterprise Services in the area
+    of security. This included overseeing the activities of operational
+    and engineering teams, risk and compliance management, requirements
+    discussion and reporting.
+  • Established and led the first incident response team at UNAM, which
+    has grown into the university's [Information Security
+    Organization/UNAM-CERT].
+  • Designed and implemented the /Billy Goat/ malware capture and
+    analysis system at IBM.
+  • System administration and security monitoring for UNAM's Cray Y-MP
+    supercomputer and Unix workstations.
+  • Authored multiple books including [/Learning CFEngine/] (published
+    by O'Reilly Media), [/Learning Hammerspoon/] and [/Literate
+    Configuration/].
+  • Designed and implemented the first version of the [CFEngine Design
+    Center].
+  • [Program chair and program committee member for multiple
+    conferences] including RAID symposium, DIMVA conference, the first
+    instances of the /International Computer Security Day/ and the
+    /Computer Security/ conference at UNAM, and others.
+  • Member of the Editorial Board of the Computers & Security Journal.
+
+
+[Information Security Organization/UNAM-CERT]
+<https://www.seguridad.unam.mx/>
 
 [/Learning CFEngine/] <https://cf-learn.info/>
+
+[/Learning Hammerspoon/] <https://leanpub.com/learning-hammerspoon>
+
+[/Literate Configuration/] <https://leanpub.com/lit-config>
+
+[CFEngine Design Center]
+<https://docs.cfengine.com/docs/3.10/guide-design-center.html>
+
+[Program chair and program committee member for multiple conferences]
+See section 11
 
 
 3 Experience
@@ -76,77 +112,101 @@ Swisscom
   FROM: 2015
 
 
-Enterprise Security Architect
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+Enterprise Architect and IT Clouds Solution Security Architect
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   FROM: <2019-04-01>
 
-  • As Security Architect for the IT Clouds Large Solution, I
-    participate in the design and definition of security-relevant
-    capabilities, compliance and business goals of cloud platforms built
-    by Swisscom.
-  • As Enterprise Architect, I participate in the overall design,
-    discussion and proposals regarding the future of the products and
-    solutions offered by Swisscom.
+  • Dual role as a member of the Swisscom Enterprise Architecture team,
+    and as a Solution Security Architect for the [Swisscom Cloud
+    Platforms], which include offerings targeted at both the Enterprise
+    and the SMB segments: /Enterprise Service Cloud/ (IaaS), /Enterprise
+    Application Cloud/ (PaaS), /Dynamic Computing Services/ (IaaS),
+    /Enterprise Cloud for SAP Applications/ (IaaS).
+  • As /Solution Security Architect for IT Clouds/, I am a member of the
+    leadership team, and my job is to ensure Swisscom's cloud platforms
+    are secure and compliant. I define, prioritize and drive
+    security-relevant product features, compliance and business goals of
+    the cloud platforms built by Swisscom. I also head the IT Clouds
+    Security Community of Practice, advise on compliance, governance and
+    operational activities.
+    • Selected achievements and ongoing activities:
+      • Ensure ongoing cloud platform and service compliance with
+        contractual and regulatory standards, including ISO27001,
+        ISAE3402/3000, FINMA and GDPR.
+      • Launched the /Security Champions/ initiative to promote and
+        improve a culture of security responsibility within the team.
+      • Brought various platforms and services within the Swisscom cloud
+        ecosystem to compliance with internal security standards and
+        with external requirements for financial and banking customers,
+        by defining the requirements and working with the engineering
+        teams to prioritize and review the corresponding
+        implementations.
+      • Coordinate and oversee periodic threat modeling, audits and
+        penetration tests against the various cloud platforms and
+        services.
+      • Establish organization- and team-wide processes for risk
+        management.
+  • As /Enterprise Architect/, I participate in the design of the future
+    products and solutions offered by Swisscom, in collaboration with
+    architects from all other divisions of the company. These result in
+    proposals that are brought to approval by management and planned for
+    implementation over the next 5-10 years.
 
 
-Squad Lead & Product Owner for Health & State Management in the IT Clouds Large Solution
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+[Swisscom Cloud Platforms]
+<https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html>
 
-  FROM: <2018-04-01>
+
+Team Lead & Product Owner for Health & State Management
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  FROM: <2016-03-01>
   TO: <2019-04-01>
 
-  • The HSM team has an expanded scope to design, implement and manage
-    Health Management and Monitoring components for all the IT Clouds
-    platforms, including Enterprise Service Cloud, Application Cloud,
-    Enterprise Cloud 1.x, Enterprise Cloud for SAP applications
-    (EC4SAP), Marketplace Services, and Cloud Connectivity Management.
+  • In this role, I built and lead a team which evolved on par with the
+    Swisscom cloud platforms to provide monitoring and logging
+    capabilities for Swisscom's cloud platforms. My responsibilities
+    included people management (up to 16 people), requirement definition
+    and prioritization in collaboration with Product Managers and other
+    stakeholders, roadmap and architecture definition for the
+    monitoring, logging and alerting platforms, driving the planning and
+    execution of the work within the team, and participation in the
+    technical implementation.
+  • Selected achievements:
+    • Oversaw the transition of the /Enterprise Cloud 1/ LEMM (Logging,
+      Event Management and Monitoring) and Access & Inventory frameworks
+      into maintenance mode as the platform was retired.
+    • Oversaw the transition of the /Application Cloud/ platform from
+      the Orchard monitoring framework into a new framework based on the
+      [TICK stack].
+    • Defined the scope and mission of the Health and State Management
+      (HSM) team as part of the new [/Enterprise Service Cloud/]
+      project.
+    • Defined logging and monitoring architecture for the /Enterprise
+      Service Cloud/ platform based on vRealize Operations and vRealize
+      Log Insight.
+    • Defined requirements, oversaw planning and execution of the HSM
+      team's mission to design, implement and manage Health Management
+      and Monitoring components as the IT Clouds scope expanded to other
+      platforms, including Application Cloud, Enterprise Cloud for SAP
+      applications (EC4SAP), Dynamic Computing Services, and related
+      services and components.
+    • Defined architecture and oversaw implementation of Customer Log
+      Forwarding service.
+    • Managed business relationship and technical implementation of
+      OpsGenie for alert management in IT Clouds.
+    • Defined and implemented integrations between Jira and OpsGenie for
+      alerting of user-reported incidents.
   • Main technologies involved: VMware vSphere (ESX, vCenter, NSX),
     VMware vRealize Operations Manager and Log Insight, Ansible
     (configuration management), OpsGenie (alert management).
 
 
-Squad Lead & Product Owner for Health & State Management in the Enterprise Service Cloud project
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+[TICK stack] <https://www.influxdata.com/time-series-platform/>
 
-  EMPLOYER: Swisscom
-  LOCATION: Switzerland
-  FROM: <2017-01-01>
-  TO: <2018-03-01>
-
-  • Worked with Product Management to define the technical features
-    necessary for Health Management and Monitoring in the Enterprise
-    Service Cloud project, and lead the team which implements, deploys
-    and operates these components.
-
-
-Head of Health and State Management
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
-
-  EMPLOYER: Swisscom
-  LOCATION: Switzerland
-  FROM: <2016-03-01>
-  TO: <2017-01-01>
-
-  • Led a team working on multiple projects related to Health Management
-    and Monitoring of the Swisscom cloud offerings, including
-    Application Cloud (CloudFoundry-based PaaS offering), Enterprise
-    Cloud 1.x and Enterprise Service Cloud (IaaS offerings).
-
-
-LEMM Squad Lead in the Enterprise Cloud project
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
-
-  EMPLOYER: Swisscom
-  LOCATION: Switzerland
-  FROM: <2016-06-01>
-  TO: <2016-12-31>
-
-  • Led the architecture and delivery of the Logging, Event Management
-    and Monitoring framework (LEMM) of the Swisscom Enterprise Cloud,
-    which handles all the processing, analysis and monitoring of the
-    logging messages, health events, and other relevant infrastructure
-    events.
+[/Enterprise Service Cloud/]
+<https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/enterprise-service-cloud.html>
 
 
 Cloud Architect and Orchard Project Lead
@@ -157,8 +217,9 @@ Cloud Architect and Orchard Project Lead
   FROM: <2015-08-01>
   TO: <2016-03-01>
 
-  • Continued leading the /Orchard/ project through its implementation,
-    release and further improvements and development.
+  • Managed team of three people and lead the /Orchard/ project through
+    its implementation, production release and further improvements and
+    development.
 
 
 Swisscom Cloud Lab
@@ -175,16 +236,16 @@ Senior Platform Architect
   FROM: <2014-08-01>
   TO: <2015-07-31>
 
-  • I designed the architecture for the /Orchard/ health-management and
+  • Designed the architecture for the /Orchard/ health-management and
     self-healing components of Swisscom's /Application Cloud/
-    Platform-as-a-Service Offering. This system performs self-monitoring
-    and self-healing of the infrastructure and platform components. In
-    addition to designing the architecture, I worked on its
-    implementation together with a team of three people managed by me.
-  • Main technologies involved: OpenStack (cloud computing
-    infrastructure), Plumgrid (SDN), Cloud Foundry (application
-    platform), Consul (health management and service discovery),
-    RabbitMQ (message bus), Riemann (event stream analysis).
+    Platform-as-a-Service Offering. This system performed
+    self-monitoring and self-healing of the infrastructure and platform
+    components.
+  • Implemented initial prototype of the /Orchard/ platform.
+    • Main technologies involved: OpenStack (cloud computing
+      infrastructure), Plumgrid (SDN), Cloud Foundry (application
+      platform), Consul (health management and service discovery),
+      RabbitMQ (message bus), Riemann (event stream analysis).
 
 
 CFEngine AS
@@ -209,7 +270,8 @@ Product Manager
     integrations.
 
 
-[CFEngine Design Center] <http://cfengine.com/cfengine-design-center/>
+[CFEngine Design Center]
+<https://docs.cfengine.com/docs/3.10/guide-design-center.html>
 
 
 Senior Security Advisor
@@ -218,8 +280,7 @@ Senior Security Advisor
   FROM: <2011-10-01>
   TO: <2014-06-30>
 
-  • Overall advocate and fanatic for CFEngine, with a special focus on
-    security.
+  • CFEngine Advocate, with a special focus on security.
   • Gave talks, wrote articles and blog posts, taught classes, and in
     general spread the word about CFEngine.
   • Worked on developing and implementing the strategy for CFEngine in
@@ -240,8 +301,8 @@ Account Security Officer
   FROM: <2010-10-01>
   TO: <2011-10-01>
 
-  • I was the first point of contact for all security-related issues
-    for five HP enterprise customers in Mexico, some of them with
+  • Acted as first point of contact for all security-related issues for
+    five HP enterprise customers in Mexico, some of them with
     international presence.
   • Initiated, advised and managed security-related projects.
   • Handled communication and coordination between technical teams
@@ -307,7 +368,7 @@ Developer (Intern)
 
 
 [Sun Enterprise Network Security Service]
-<http://www.usenix.org/publications/login/1999-11/features/senss.html>
+<https://www.usenix.org/legacy/publications/login/1999-11/features/senss.html>
 
 
 National Autonomous University of Mexico (UNAM)
@@ -472,8 +533,11 @@ Bachelor's degree in Computer Engineering
 6 Research
 ══════════
 
-  (see ``Publications'' for publication reference details)
+  [(see ``Publications'' for publication reference details)]
 
+
+[(see ``Publications'' for publication reference details)] See section
+13
 
 Research projects at IBM (selected)
 ───────────────────────────────────
@@ -643,10 +707,10 @@ Additional research projects
 
   Programming languages
         C, Perl, Java, AWK, Unix shells (Elvish shell, Bourne shell, C
-        shell, Korn shell), Python, PHP, Ruby, Objective~C, Cocoa (MacOS
-        X), Go, Clojure.
+        shell, Korn shell), Python, PHP, Ruby, Objective C, Clojure,
+        Racket, Emacs LISP.
   Development environments
-        Unix/Linux, OpenStack, Cloud Foundry, Amazon EC2, Mac OS X.
+        Unix/Linux, Cloud Foundry, Amazon EC2, macOS.
   Unix system administration
         Linux (experience with multiple distributions including RedHat,
         Ubuntu, Debian, Gentoo, and others), OpenBSD, FreeBSD, MacOS X,
@@ -668,10 +732,14 @@ Additional research projects
 8 Software Development Projects
 ═══════════════════════════════
 
+[https://gitlab.com/zzamboni] <https://gitlab.com/zzamboni>
+
 [https://github.com/zzamboni/] <https://github.com/zzamboni/>
 
-Publicly-available software projects: see [https://github.com/zzamboni/]
-────────────────────────────────────────────────────────────────────────
+Publicly-available software projects: see [https://gitlab.com/zzamboni] and [https://github.com/zzamboni/]
+──────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[https://gitlab.com/zzamboni] <https://gitlab.com/zzamboni>
 
 [https://github.com/zzamboni/] <https://github.com/zzamboni/>
 
@@ -717,8 +785,8 @@ Billy Goat (IBM)
   upgrade, data centralization, analysis and reporting.
 
 
-Embedded Sensors Project (ESP)
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+Embedded Sensors Project (Purdue University)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   FROM: 1999
   TO: 2001
@@ -1113,6 +1181,8 @@ Supercomputing Internship Program Courses
 
 13 Selected Publications
 ════════════════════════
+
+  The list of publications is for the moment not available in the text version of my CV. Please see the the full PDF version at https://zzamboni.org/vita/.
 
 
 14 References

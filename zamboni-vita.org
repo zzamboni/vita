@@ -1084,7 +1084,9 @@ Project: Implementation of a proof of concept Hyperjacking attack on Intel platf
 #+begin_export html
 The list of publications is for the moment not available in the HTML version of my CV. Please see the <a href="https://zzamboni.org/vita/">full PDF version</a>.
 #+end_export
-
+#+begin_export ascii
+The list of publications is for the moment not available in the text version of my CV. Please see the the full PDF version at https://zzamboni.org/vita/.
+#+end_export
 * References
 
 #+latex: \begin{cvparagraph}
