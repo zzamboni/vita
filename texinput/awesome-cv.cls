@@ -322,6 +322,10 @@
 % Usage: \gitlab{<gitlab-nick>}
 \newcommand*{\gitlab}[1]{\def\@gitlab{#1}}
 
+% Defines writer's Leanpub (optional)
+% Usage: \leanpub{<leanpub-nick>}
+\newcommand*{\leanpub}[1]{\def\@leanpub{#1}}
+
 % Defines writer's stackoverflow profile (optional)
 % Usage: \stackoverflow{<so userid>}{<so username>}
 %   e.g.https://stackoverflow.com/users/123456/sam-smith
@@ -482,6 +486,12 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{http://\@homepage}{\mbox{\faHome\acvHeaderIconSep\@homepage}}%
+        }%
+      \ifthenelse{\isundefined{\@leanpub}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://leanpub.com/u/\@leanpub}{\mbox{\faLeanpub\acvHeaderIconSep\@leanpub}}%
         }%
       \ifthenelse{\isundefined{\@gitlab}}%
         {}%
