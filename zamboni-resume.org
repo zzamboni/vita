@@ -57,7 +57,7 @@
 #+homepage: zzamboni.org
 
 #+latex: \begin{cvparagraph}
-I am a Senior Engineering Leader, IT Enterprise Architect and Researcher with 29 years of experience building systems, leading and educating teams in startups as well as big companies. I have experience working with and leading remote teams. I possess excellent communication and writing abilities, with a proven record of successful writing and multiple published books and articles. I have a strong combination of leadership, conceptual and technical skills. My specialties lie the areas of Computer Security, Cloud Computing, Automation and Configuration Management.
+I am a Senior Engineering Leader, IT Enterprise Architect and Researcher with more than 30 years of experience building systems, writing, leading and educating teams in startups as well as big companies. I have experience working with and leading remote teams. I possess excellent communication and writing abilities, with a proven record of successful writing and multiple published books and articles. I have a strong combination of leadership, conceptual and technical skills. My specialties lie the areas of Computer Security, Cloud Computing, Automation and Configuration Management.
 #+latex: \end{cvparagraph}
 
 # #+latex: \begin{cvparagraph}
