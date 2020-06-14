@@ -45,18 +45,24 @@
 :END:
 
 #+author: Diego Zamboni
-#+title: Senior Engineering Leader · Computer Security Expert · IT Enterprise Architect
+# #+title: Senior Engineering Leader · Computer Security Expert · IT Enterprise Architect
+#+title: Engineering Leader and Architect  · Writer and Educator · Computer Security Expert
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
 #+linkedin: zzamboni
 #+gitlab: zzamboni
 #+github: zzamboni
+#+leanpub: zzamboni
 #+stackoverflow: 5562 zzamboni
 #+homepage: zzamboni.org
 
 #+latex: \begin{cvparagraph}
-I am a Senior Engineering Manager, IT Enterprise Architect and Researcher with 29 years of experience building systems and leading teams in startups as well as big companies. I have experience working with and leading remote teams. I possess a strong combination of leadership, conceptual and technical skills with excellent communication abilities. I specialize in the areas of Computer Security, Cloud Computing and Configuration Management.
+I am a Senior Engineering Leader, IT Enterprise Architect and Researcher with 29 years of experience building systems, leading and educating teams in startups as well as big companies. I have experience working with and leading remote teams. I possess excellent communication and writing abilities, with a proven record of successful writing and multiple published books and articles. I have a strong combination of leadership, conceptual and technical skills. My specialties lie the areas of Computer Security, Cloud Computing, Automation and Configuration Management.
 #+latex: \end{cvparagraph}
+
+# #+latex: \begin{cvparagraph}
+# I am a Senior Engineering Manager, IT Enterprise Architect and Researcher with 29 years of experience building systems and leading teams in startups as well as big companies. I have experience working with and leading remote teams. I possess a strong combination of leadership, conceptual and technical skills with excellent communication abilities. I specialize in the areas of Computer Security, Cloud Computing and Configuration Management.
+# #+latex: \end{cvparagraph}
 
 * Including private information :noexport:
 
@@ -93,6 +99,10 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 
 * Table of Contents                                          :TOC_3:noexport:
 - [[#key-skills][Key skills]]
+- [[#published-books][Published books]]
+  - [[#literate-configuration][Literate Configuration]]
+  - [[#learning-hammerspoon][Learning Hammerspoon]]
+  - [[#learning-cfengine][Learning CFEngine]]
 - [[#experience][Experience]]
   - [[#swisscom][Swisscom]]
     - [[#enterprise-architect-and-it-clouds-solution-security-architect][Enterprise Architect and IT Clouds Solution Security Architect]]
@@ -111,10 +121,6 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 - [[#certifications][Certifications]]
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#safereg-4-certified-product-ownerproduct-manager][SAFe\reg 4 Certified Product Owner/Product Manager]]
-- [[#published-books][Published books]]
-  - [[#literate-configuration][Literate Configuration]]
-  - [[#learning-hammerspoon][Learning Hammerspoon]]
-  - [[#learning-cfengine][Learning CFEngine]]
 - [[#research-publications-teaching-and-references][Research, Publications, Teaching and References]]
 
 * Key skills
@@ -122,13 +128,37 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :CV_ENV:   cvskills
 :END:
 
+- Writing and Education :: Excellent written and spoken communication skills, with more than 30 years of technical and scientific writing, research and teaching experience.
 - Leadership :: Team and project management, systems and software architecture.
 - Computer Security :: Security architecture, risk management and compliance; secure software development; virtualization and cloud computing security; intrusion detection and prevention; operating system and network security.
-- Communications and Research :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication, research and teaching experience.
 - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon, Cloud Foundry, VMware), software development experience (Ruby, Python, C, Perl, LISP, etc.).
 - Configuration Management :: CFEngine, Ansible, Puppet.
-- Languages :: Spanish (native), English (100%), German (B1 level).
+- Languages :: Spanish (native), English (100% proficiency), German (60% proficiency).
 
+* Published books
+:PROPERTIES:
+:CV_ENV:   cventries
+:END:
+
+** [[https://leanpub.com/lit-config][Literate Configuration]]
+:PROPERTIES:
+:CV_ENV:   cvsubentry
+:DATE: Self-published 2019
+:END:
+
+** [[https://leanpub.com/learning-hammerspoon][Learning Hammerspoon]]
+:PROPERTIES:
+:CV_ENV:   cvsubentry
+:DATE: Self-published 2018
+:END:
+
+** [[http://cf-learn.info/][Learning CFEngine]]
+:PROPERTIES:
+:CV_ENV:   cvsubentry
+:DATE: O’Reilly Media 2012, Self-published 2017
+:END:
+
+Full publication list in my Curriculum Vit\ae\nbsp​at [[https://zzamboni.org/vita/][https://zzamboni.org/vita/]].
 * Experience
 :PROPERTIES:
 :CV_ENV:   cventries
@@ -312,29 +342,6 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :DATE: July 2017
-:END:
-
-* Published books
-:PROPERTIES:
-:CV_ENV:   cventries
-:END:
-
-** [[https://leanpub.com/lit-config][Literate Configuration]]
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:DATE: Self-published 2019
-:END:
-
-** [[https://leanpub.com/learning-hammerspoon][Learning Hammerspoon]]
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:DATE: Self-published 2018
-:END:
-
-** [[http://cf-learn.info/][Learning CFEngine]]
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:DATE: O’Reilly Media 2012, Self-published 2017
 :END:
 
 * Research, Publications, Teaching and References
