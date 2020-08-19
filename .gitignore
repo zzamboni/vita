@@ -27,3 +27,4 @@ auto
 .DS_Store
 zamboni-resume-private.pdf
 zamboni-resume-private.tex
+.auctex-auto
