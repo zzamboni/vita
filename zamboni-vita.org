@@ -115,7 +115,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#safereg-4-certified-product-ownerproduct-manager][SAFe\reg 4 Certified Product Owner/Product Manager]]
 - [[#research][Research]]
-  - [[#research-projects-at-ibm-selected][Research projects at IBM (selected)]]
+  - [[#selected-research-projects-at-ibm][Selected research projects at IBM]]
     - [[#project-phantom][Project Phantom]]
     - [[#code-instrumentation-for-intrusion-detection][Code instrumentation for intrusion detection]]
     - [[#billy-goat-active-worm-detection-and-capture][Billy Goat: Active worm detection and capture]]
@@ -142,11 +142,6 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
   - [[#upe-microsoft-scholarship-award][UPE Microsoft Scholarship Award]]
   - [[#member-of-upsilon-pi-epsilon][Member of Upsilon Pi Epsilon]]
   - [[#fulbright-scholarship][Fulbright Scholarship]]
-- [[#other-professional-activities][Other Professional Activities]]
-  - [[#the-association-for-computing-machinery-acm][The Association for Computing Machinery (ACM)]]
-  - [[#purduepm-the-purdue-perl-users-group][Purdue.pm, the Purdue Perl Users Group]]
-  - [[#purdue-university-chapter-of-upsilon-pi-epsilon][Purdue University Chapter of Upsilon Pi Epsilon]]
-  - [[#purdue-university-chapter-of-upsilon-pi-epsilon-1][Purdue University Chapter of Upsilon Pi Epsilon]]
 - [[#program-committees-and-boards][Program Committees and Boards]]
   - [[#editorial-board-member][Editorial Board Member]]
   - [[#steering-committee-member][Steering Committee Member]]
@@ -167,6 +162,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
     - [[#milton-yates-enst-bretagne-france][Milton Yates, ENST Bretagne, France]]
     - [[#candid-wüest-eth-zurich-switzerland][Candid Wüest, ETH Zurich, Switzerland]]
   - [[#teaching][Teaching]]
+    - [[#cissp-training][CISSP training]]
     - [[#cfengine-one-day-training-class-8-hour-class][CFEngine one-day training class (8 hour class)]]
     - [[#virtualization-lecture-2-hours-systems-security-class-computer-science-dept]["Virtualization" lecture (2 hours), Systems Security class, Computer Science Dept.]]
     - [[#intrusion-detection-basic-concepts-and-current-research-at-ibm-class-3-hours-information-technology-security-spring-school]["Intrusion detection: Basic concepts and current research at IBM" class (3 hours), Information Technology Security Spring School]]
@@ -175,7 +171,12 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
     - [[#ssh-achieving-secure-communication-over-insecure-channels-class]["SSH: Achieving secure communication over insecure channels" class]]
     - [[#protecting-your-computing-system-class]["Protecting your computing system" class]]
     - [[#supercomputing-internship-program-courses][Supercomputing Internship Program Courses]]
-- [[#selected-publications][Selected Publications]]
+- [[#other-professional-activities][Other Professional Activities]]
+  - [[#the-association-for-computing-machinery-acm][The Association for Computing Machinery (ACM)]]
+  - [[#purduepm-the-purdue-perl-users-group][Purdue.pm, the Purdue Perl Users Group]]
+  - [[#purdue-university-chapter-of-upsilon-pi-epsilon][Purdue University Chapter of Upsilon Pi Epsilon]]
+  - [[#purdue-university-chapter-of-upsilon-pi-epsilon-1][Purdue University Chapter of Upsilon Pi Epsilon]]
+- [[#publications-talks-and-intellectual-property][Publications, Talks and Intellectual Property]]
 - [[#references][References]]
 
 * Introduction :noexport:
@@ -469,7 +470,7 @@ This page presents a summary of my qualifications --- please see the following p
 :TO:       <2009-10-01>
 :END:
 
-- I worked in intrusion detection, malware detection and containment, and virtualization security research projects. See /Research activities/ for details of my research.
+- I worked in intrusion detection, malware detection and containment, and virtualization security research projects. See [[#research][/Research/]] for details of my research.
 
 ** Sun Microsystems
 :PROPERTIES:
@@ -594,6 +595,7 @@ A SAFe\reg 4 Certified Product Owner/Product Manager is a SAFe professional who 
 
 * Research
 :PROPERTIES:
+:CUSTOM_ID: research
 :CV_ENV:   cventries
 :END:
 
@@ -601,7 +603,7 @@ A SAFe\reg 4 Certified Product Owner/Product Manager is a SAFe professional who 
 [[#publications][(see ``Publications'' for publication reference details)]]
 #+end_cvparagraph
 
-** Research projects at IBM (selected)
+** Selected research projects at IBM
 :PROPERTIES:
 :CV_ENV:   cvemployer
 :END:
@@ -809,43 +811,6 @@ A system of sensors for intrusion detection developed in OpenBSD through code in
 :LOCATION: Mexico
 :END:
 
-* Other Professional Activities
-:PROPERTIES:
-:CV_ENV:   cvhonors
-:END:
-
-** [[http://www.acm.org/][The Association for Computing Machinery (ACM)]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:POSITION: Member
-:FROM: 1998
-:TO:
-:END:
-
-** [[http://purdue.pm.org/][Purdue.pm]], the Purdue Perl Users Group
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:POSITION: Founder
-:DATE: 2000
-:LOCATION: U.S.A.
-:END:
-
-** [[https://www.cs.purdue.edu/future-students/organizations.html][Purdue University Chapter of Upsilon Pi Epsilon]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:POSITION: President
-:DATE: 1999
-:LOCATION: U.S.A.
-:END:
-
-** [[https://www.cs.purdue.edu/future-students/organizations.html][Purdue University Chapter of Upsilon Pi Epsilon]]
-:PROPERTIES:
-:CV_ENV:   cvhonor
-:POSITION: Secretary
-:DATE: 1998
-:LOCATION: U.S.A.
-:END:
-
 * Program Committees and Boards
 :PROPERTIES:
 :CUSTOM_ID: program-committees
@@ -989,6 +954,12 @@ Project: Implementation of a proof of concept Hyperjacking attack on Intel platf
 - Thesis: [[https://pub.tik.ee.ethz.ch/students/2002-2003-Wi/DA-2003-22.pdf][Desktop Firewalls and Intrusion Detection]]
 
 ** Teaching
+*** CISSP training
+:PROPERTIES:
+:CV_ENV:   cvsubentry
+:LABEL: iNetworks, Mexico (remote class)
+:DATE: 2020
+:END:
 
 *** CFEngine one-day training class (8 hour class)
 :PROPERTIES:
@@ -1064,7 +1035,44 @@ Project: Implementation of a proof of concept Hyperjacking attack on Intel platf
   - Basic Unix administration
   - Advanced Unix administration
   - UNICOS system administration on Cray supercomputers
-* Selected Publications
+* Other Professional Activities
+:PROPERTIES:
+:CV_ENV:   cvhonors
+:END:
+
+** [[http://www.acm.org/][The Association for Computing Machinery (ACM)]]
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:POSITION: Member
+:FROM: 1998
+:TO:
+:END:
+
+** [[http://purdue.pm.org/][Purdue.pm]], the Purdue Perl Users Group
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:POSITION: Founder
+:DATE: 2000
+:LOCATION: U.S.A.
+:END:
+
+** [[https://www.cs.purdue.edu/future-students/organizations.html][Purdue University Chapter of Upsilon Pi Epsilon]]
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:POSITION: President
+:DATE: 1999
+:LOCATION: U.S.A.
+:END:
+
+** [[https://www.cs.purdue.edu/future-students/organizations.html][Purdue University Chapter of Upsilon Pi Epsilon]]
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:POSITION: Secretary
+:DATE: 1998
+:LOCATION: U.S.A.
+:END:
+
+* Publications, Talks and Intellectual Property
 :PROPERTIES:
 :CUSTOM_ID: publications
 :END:
