@@ -44,7 +44,7 @@
 
 :END:
 
-#+title: IT Enterprise Security Architect · Team and Project Leader · Computer Security Scientist
+#+title: IT Enterprise Architect · Computer Security Scientist · Organization Leader
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
@@ -86,7 +86,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 
 * Table of Contents                                          :TOC_3:noexport:
 - [[#key-skills][Key skills]]
-- [[#key-professional-achievements][Key professional achievements]]
+- [[#professional-highlights][Professional highlights]]
 - [[#experience][Experience]]
   - [[#swisscom][Swisscom]]
     - [[#enterprise-architect-and-it-clouds-solution-security-architect][Enterprise Architect and IT Clouds Solution Security Architect]]
@@ -136,6 +136,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
     - [[#billy-goat-ibm][Billy Goat (IBM)]]
     - [[#embedded-sensors-project-purdue-university][Embedded Sensors Project (Purdue University)]]
 - [[#honors--awards][Honors & Awards]]
+  - [[#ieee-security--privacy-test-of-time-award][IEEE Security & Privacy Test of Time Award]]
   - [[#cfengine-champion][CFEngine Champion]]
   - [[#josef-raviv-memorial-postdoctoral-fellowship][Josef Raviv Memorial Postdoctoral Fellowship]]
   - [[#member-of-phi-beta-delta][Member of Phi Beta Delta]]
@@ -182,9 +183,9 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 * Introduction :noexport:
 
 #+latex: \begin{cvparagraph}
-I am a senior computer security expert, IT architect, computer scientist, team and project leader with 29 years of professional experience, and much longer of being fascinated and passionate about computing. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management.
+I am a senior computer scientist, computer security expert, IT architect, organization and team leader with 30 years of professional experience, and much longer of being fascinated and passionate about science, computing and education. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management.
 
-I possess a strong combination of leadership, conceptual and technical skills that enable me to lead teams in analyzing complex problems, designing and implementing elegant and pragmatic solutions. I have excellent communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have experience in both academic and business environments.
+I possess a strong combination of leadership, conceptual and technical skills that enable me to help organizations and teams reach their goals. I have excellent communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have extensive experience in both academic and business environments.
 
 This page presents a summary of my qualifications --- please see the following pages for the full details.
 #+latex: \end{cvparagraph}
@@ -194,27 +195,28 @@ This page presents a summary of my qualifications --- please see the following p
 :CV_ENV:   cvskills
 :END:
 
-- Leadership :: 29 years of team and project leadership experience; systems architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework (SAFe)]] methodology and processes.
-- Computer Security :: Enterprise security architecture; risk management; compliance; intrusion detection and prevention (Ph.D. in this area); operating systems and network security; software security and secure software development; virtualization and cloud computing security; CISSP.
-- Communications :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication and teaching experience in different contexts and topics. I love teaching and writing.
-- Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon EC2, Cloud Foundry), software development experience (C, Python, Ruby, Perl, LISP, etc.).
-- Configuration management :: CFEngine, Ansible, Puppet.
-- Attitude :: Always willing to learn about technology, management, and any topic that allows me to continue growing. I am passionate about both technology and people.
+- Leadership :: 30 years of team and project leadership experience; systems architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework (SAFe)]] methodology and processes.
+- Communications :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication and teaching experience in different contexts and topics.
+- Research :: Ph.D. in Computer Science, 9 years of experience at IBM Research.
+- Computer Security :: Enterprise security architecture; risk management; compliance; intrusion detection and prevention; operating systems and network security; software security and secure software development; virtualization and cloud computing security; CISSP certification.
+- Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon EC2, Cloud Foundry), software development experience (C, Python, Ruby, Perl, LISP, etc.), configuration management (CFEngine, Ansible, Puppet).
+- Attitude :: I am passionate and always willing to learn about science, technology, education, management, and any topic that allows me to continue growing.
 - Languages :: Spanish (native), English (100%), German (B1 level).
 
-* Key professional achievements
+* Professional highlights
 
 #+latex: \begin{cvparagraph}
-- Responsible for security architecture, risk management and compliance (ISO27001, FINMA, ISAE3402/3000, etc.) of Swisscom's IT Clouds platforms and related services and components.
+- 19 years of education and research experience, 11 years of industry experience.
+- Responsible for security architecture, risk management and compliance (ISO27001, FINMA, ISAE3402/3000, etc.) for Swisscom's IT Clouds platforms and related services and components.
 - Established and currently lead the Swisscom IT Clouds security community of practice.
-- Established and managed the /Health and State Management/ team at Swisscom, which designs, implements and operates a framework for scalable monitoring, logging and alerting.
-- Designed the /Orchard/ monitoring framework for Swisscom's /Application Cloud/ platform, and led the team that implemented it and brought it into production.
+- Established and managed the /Health and State Management/ team at Swisscom to design, implement and operate a framework for scalable monitoring, logging and alerting.
+- Established and led the first incident response team at UNAM, which has grown into the university's [[https://www.seguridad.unam.mx/][Information Security Organization (UNAM-CERT)]].
+- Managed IT security customer relationships at HP Enterprise Services in Mexico. This included overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting.
 - Managed the CFEngine language product roadmap.
-- Managed customer relationships at HP Enterprise Services in the area of security. This included overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting.
-- Established and led the first incident response team at UNAM, which has grown into the university's [[https://www.seguridad.unam.mx/][Information Security Organization/UNAM-CERT]].
+- Designed the /Orchard/ monitoring framework for Swisscom's /Application Cloud/ platform, and led the team that implemented it and brought it into production.
 - Designed and implemented the /Billy Goat/ malware capture and analysis system at IBM.
 - System administration and security monitoring for UNAM's Cray Y-MP supercomputer and Unix workstations.
-- Authored multiple books including [[https://cf-learn.info/][/Learning CFEngine/]] (published by O'Reilly Media), [[https://leanpub.com/learning-hammerspoon][/Learning Hammerspoon/]] and [[https://leanpub.com/lit-config][/Literate Configuration/]].
+- Authored multiple books including [[https://cf-learn.info/][/Learning CFEngine/]], [[https://leanpub.com/learning-hammerspoon][/Learning Hammerspoon/]] and [[https://leanpub.com/lit-config][/Literate Configuration/]].
 - Designed and implemented the first version of the [[https://docs.cfengine.com/docs/3.10/guide-design-center.html][CFEngine Design Center]].
 - [[#program-committees][Program chair and program committee member for multiple conferences]] including RAID symposium, DIMVA conference, the first instances of the /International Computer Security Day/ and the /Computer Security/ conference at UNAM, and others.
 - Member of the Editorial Board of the Computers & Security Journal.
@@ -392,7 +394,7 @@ This page presents a summary of my qualifications --- please see the following p
 
 - Designed the architecture for the /Orchard/ health-management and self-healing components of Swisscom's /Application Cloud/ Platform-as-a-Service Offering. This system performed self-monitoring and self-healing of the infrastructure and platform components.
 - Implemented initial prototype of the /Orchard/ platform.
-  - Main technologies involved: OpenStack (cloud computing infrastructure), Plumgrid (SDN), Cloud Foundry (application platform), Consul (health management and service discovery), RabbitMQ (message bus), Riemann (event stream analysis).
+  - Main technologies involved: OpenStack (cloud computing infrastructure), Plumgrid (SDN), Cloud Foundry (application platform), Consul (health management and service discovery), RabbitMQ (message bus), Riemann (event analysis).
 
 ** CFEngine AS
 :PROPERTIES:
@@ -701,7 +703,7 @@ A SAFe\reg 4 Certified Product Owner/Product Manager is a SAFe professional who 
 :END:
 
 - Collaborated in the analysis of the SYN-flooding denial-of-service attack against TCP and in the implementation of a defense tool.
-- Publications: {{{cvcite(schuba97:synkill)}}}.
+- Publications: {{{cvcite(schuba97:synkill)}}}, awarded the [[https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/][2020 IEEE Security & Privacy Test of Time Award]].
 
 * System Development and Management
 :PROPERTIES:
@@ -761,6 +763,14 @@ A system of sensors for intrusion detection developed in OpenBSD through code in
 * Honors & Awards
 :PROPERTIES:
 :CV_ENV:   cvhonors
+:END:
+
+** [[https://www.ieee-security.org/TC/SP2020/awards.html][IEEE Security & Privacy Test of Time Award]]
+:PROPERTIES:
+:CV_ENV:   cvhonor
+:DATE: <2020-05-18>
+:ORGANIZATION: IEEE
+:LOCATION: U.S.A.
 :END:
 
 ** [[https://cfengine.com/engage/cfengine-champions/][CFEngine Champion]]
