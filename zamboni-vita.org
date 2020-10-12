@@ -44,7 +44,7 @@
 
 :END:
 
-#+title: IT Enterprise Architect · Computer Security Scientist · Organization Leader
+#+title: IT Enterprise Architect · Computer Scientist · Organization Leader
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
@@ -195,29 +195,27 @@ This page presents a summary of my qualifications --- please see the following p
 :CV_ENV:   cvskills
 :END:
 
-- Leadership :: 30 years of team and project leadership experience; systems architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework (SAFe)]] methodology and processes.
+- Leadership :: 30 years of multidisciplinary team and project leadership experience; systems architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework (SAFe)]] Architect and Product Owner.
 - Communications :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication and teaching experience in different contexts and topics.
 - Research :: Ph.D. in Computer Science, 9 years of experience at IBM Research.
 - Computer Security :: Enterprise security architecture; risk management; compliance; intrusion detection and prevention; operating systems and network security; software security and secure software development; virtualization and cloud computing security; CISSP certification.
-- Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon EC2, Cloud Foundry), software development experience (C, Python, Ruby, Perl, LISP, etc.), configuration management (CFEngine, Ansible, Puppet).
+- Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms, software development, configuration management.
 - Attitude :: I am passionate and always willing to learn about science, technology, education, management, and any topic that allows me to continue growing.
 - Languages :: Spanish (native), English (100%), German (B1 level).
 
 * Professional highlights
 
 #+latex: \begin{cvparagraph}
-- 19 years of education and research experience, 11 years of industry experience.
-- Responsible for security architecture, risk management and compliance (ISO27001, FINMA, ISAE3402/3000, etc.) for Swisscom's IT Clouds platforms and related services and components.
-- Established and currently lead the Swisscom IT Clouds security community of practice.
+- 19 years of experience in education and research, 11 years of industry experience.
+- Manage security architecture, risk management and compliance (ISO27001, FINMA, ISAE3402/3000, etc.) activities for Swisscom's IT Clouds platforms and related services and components.
+- Established and manage the Swisscom IT Clouds security community of practice.
 - Established and managed the /Health and State Management/ team at Swisscom to design, implement and operate a framework for scalable monitoring, logging and alerting.
-- Established and led the first incident response team at UNAM, which has grown into the university's [[https://www.seguridad.unam.mx/][Information Security Organization (UNAM-CERT)]].
+- Established and managed the first incident response team at UNAM, which has grown into the university's [[https://www.seguridad.unam.mx/][Information Security Organization (UNAM-CERT)]].
 - Managed IT security customer relationships at HP Enterprise Services in Mexico. This included overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting.
 - Managed the CFEngine language product roadmap.
 - Designed the /Orchard/ monitoring framework for Swisscom's /Application Cloud/ platform, and led the team that implemented it and brought it into production.
 - Designed and implemented the /Billy Goat/ malware capture and analysis system at IBM.
-- System administration and security monitoring for UNAM's Cray Y-MP supercomputer and Unix workstations.
-- Authored multiple books including [[https://cf-learn.info/][/Learning CFEngine/]], [[https://leanpub.com/learning-hammerspoon][/Learning Hammerspoon/]] and [[https://leanpub.com/lit-config][/Literate Configuration/]].
-- Designed and implemented the first version of the [[https://docs.cfengine.com/docs/3.10/guide-design-center.html][CFEngine Design Center]].
+- Author of multiple books including [[https://cf-learn.info/][/Learning CFEngine/]], [[https://leanpub.com/learning-hammerspoon][/Learning Hammerspoon/]] and [[https://leanpub.com/lit-config][/Literate Configuration/]].
 - [[#program-committees][Program chair and program committee member for multiple conferences]] including RAID symposium, DIMVA conference, the first instances of the /International Computer Security Day/ and the /Computer Security/ conference at UNAM, and others.
 - Member of the Editorial Board of the Computers & Security Journal.
 #+latex: \end{cvparagraph}
