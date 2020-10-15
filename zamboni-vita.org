@@ -97,6 +97,8 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
   - [[#cfengine-as][CFEngine AS]]
     - [[#product-manager][Product Manager]]
     - [[#senior-security-advisor][Senior Security Advisor]]
+  - [[#boundless-innovation-and-technology][Boundless Innovation and Technology]]
+    - [[#cofounder-head-of-research-and-training][Cofounder, Head of Research and Training]]
   - [[#hp-enterprise-services][HP Enterprise Services]]
     - [[#account-security-officer][Account Security Officer]]
     - [[#it-outsourcing-service-delivery-consultant][IT Outsourcing Service Delivery Consultant]]
@@ -111,6 +113,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
   - [[#phd-in-computer-science][Ph.D. in Computer Science]]
   - [[#ms-in-computer-science][M.S. in Computer Science]]
   - [[#bachelors-degree-in-computer-engineering][Bachelor's degree in Computer Engineering]]
+- [[#languages][Languages]]
 - [[#certifications][Certifications]]
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#safereg-4-certified-product-ownerproduct-manager][SAFe\reg 4 Certified Product Owner/Product Manager]]
@@ -176,8 +179,8 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
   - [[#purduepm-the-purdue-perl-users-group][Purdue.pm, the Purdue Perl Users Group]]
   - [[#purdue-university-chapter-of-upsilon-pi-epsilon][Purdue University Chapter of Upsilon Pi Epsilon]]
   - [[#purdue-university-chapter-of-upsilon-pi-epsilon-1][Purdue University Chapter of Upsilon Pi Epsilon]]
-- [[#references][References]]
 - [[#publications-talks-and-intellectual-property][Publications, Talks and Intellectual Property]]
+- [[#references][References]]
 
 * Introduction :noexport:
 
@@ -329,6 +332,23 @@ This page presents a summary of my qualifications --- please see the following p
 - Gave talks, wrote articles and blog posts, taught classes, and in general spread the word about CFEngine.
 - Developed and implemented the strategy for CFEngine as a security component.
 
+** Boundless Innovation and Technology
+:PROPERTIES:
+:CV_ENV:   cvemployer
+:LOCATION: Mexico
+:FROM: 2012
+:TO: 2014
+:END:
+
+*** Cofounder, Head of Research and Training
+:PROPERTIES:
+:CV_ENV:   cvsubentry
+:FROM: <2012-07-01>
+:TO: <2014-07-31>
+:END:
+
+- I advised and coordinated teams working on teaching- and security-related products, consulting and services.
+
 ** HP Enterprise Services
 :PROPERTIES:
 :CV_ENV:   cvemployer
@@ -433,6 +453,7 @@ This page presents a summary of my qualifications --- please see the following p
 * Education
 :PROPERTIES:
 :CV_ENV:   cventries
+:PAGEBREAK: yes
 :END:
 
 ** Ph.D. in Computer Science
@@ -468,6 +489,14 @@ This page presents a summary of my qualifications --- please see the following p
 :END:
 
 - Thesis title: [[https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf][UNAM/Cray Project for Security in the Unix Operating System]] (in Spanish, original title: /Proyecto UNAM/Cray de Seguridad en el Sistema Operativo Unix/).
+* Languages
+:PROPERTIES:
+:CV_ENV:   cvskills
+:END:
+
+- Spanish :: native
+- English :: full professional proficiency
+- German :: basic proficiency (B1 level)
 
 * Certifications
 :PROPERTIES:
@@ -976,12 +1005,6 @@ Project: Implementation of a proof of concept Hyperjacking attack on Intel platf
 :LOCATION: U.S.A.
 :END:
 
-* References
-
-#+latex: \begin{cvparagraph}
-Available by request.
-#+latex: \end{cvparagraph}
-
 * Publications, Talks and Intellectual Property
 :PROPERTIES:
 :CUSTOM_ID: publications
@@ -1005,6 +1028,13 @@ The list of publications is for the moment not available in the HTML version of 
 #+begin_export ascii
 The list of publications is for the moment not available in the text version of my CV. Please see the full PDF version at https://zzamboni.org/vita/.
 #+end_export
+
+* References
+
+#+latex: \begin{cvparagraph}
+Available by request.
+#+latex: \end{cvparagraph}
+
 * Local Variables :ARCHIVE:noexport:
 # Local Variables:
 # eval: (add-hook 'after-save-hook (lambda () (org-export-to-file 'awesomecv "zamboni-vita.tex")) :append :local)
