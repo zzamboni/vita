@@ -2,7 +2,7 @@
 # AwesomeCV and LaTeX configuration section
 
 # AwesomeCV configuration options
-#+photo: ./images/foto_diego_2020.jpg
+#+photo: ./images/foto_diego_2020_small.jpg
 #+photostyle: right,noedge
 #+cvcolor: awesome-concrete
 #+cvhighlights: false
@@ -44,7 +44,7 @@
 
 :END:
 
-#+title: Computer Scientist · Research and Engineering Leader · Enterprise Architect
+#+title: Engineering Leader · Enterprise Architect · Computer Scientist
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
