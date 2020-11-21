@@ -44,7 +44,7 @@
 
 :END:
 
-#+title: Engineering Leader · Enterprise Architect · Computer Scientist
+#+title: Enterprise Security Architect · Engineering Leader · Computer Scientist
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
@@ -197,13 +197,13 @@ This page presents a summary of my qualifications --- please see the following p
 :CV_ENV:   cvskills
 :END:
 
-- Leadership :: 29 years of multidisciplinary team and project leadership experience; systems architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework]] (SAFe) Architect and Product Owner.
+- Leadership :: 29 years of multidisciplinary team and project leadership experience; IT Enterprise Architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework]] (SAFe) Architect and Product Owner.
 - Communications :: Excellent written and spoken communication skills, extensive teaching experience.
-- Research :: Ph.D. in Computer Science, 9 years of experience at IBM Research.
 - Computer Security :: Enterprise security architecture; risk management; compliance; intrusion detection and prevention; operating systems and network security; software security and secure software development; virtualization and cloud computing security; CISSP certification.
+- Research :: Ph.D. in Computer Science, 9 years of experience at IBM Research.
 - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms, software development, configuration management.
-- Attitude :: I am passionate about and always willing to support science, technology and education.
 
+# - Attitude :: I am passionate about and always willing to support science, technology and education.
 # - Languages :: Spanish (native), English (100%), German (B1 level).
 
 * Professional highlights
