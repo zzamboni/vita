@@ -45,7 +45,7 @@
 :END:
 
 #+author: Diego Zamboni
-#+title: Senior Engineering Leader · Computer Security Expert · IT Enterprise Architect
+#+title: IT Enterprise Architect · Senior Engineering Leader · Computer Security Expert
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
 #+linkedin: zzamboni
@@ -55,7 +55,7 @@
 #+homepage: zzamboni.org
 
 #+latex: \begin{cvparagraph}
-I am a Senior Engineering Manager, IT Enterprise Architect and Researcher with 30 years of experience building systems and leading teams in startups as well as big companies. I have experience working with and leading remote teams. I possess a strong combination of leadership, conceptual and technical skills with excellent communication abilities. I specialize in the areas of Computer Security, Cloud Computing and Configuration Management.
+I am an IT Enterprise Architect, Senior Engineering Manager and Researcher with 29 years of experience building systems and leading teams in startups as well as big companies. I specialize in the areas of Computer Security, Cloud Computing and Configuration Management. I have experience working with and leading remote teams. I possess a strong combination of leadership, conceptual and technical skills with excellent communication abilities.
 #+latex: \end{cvparagraph}
 
 * Including private information :noexport:
@@ -122,7 +122,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :CV_ENV:   cvskills
 :END:
 
-- Leadership :: Team and project management, systems and software architecture.
+- Leadership :: IT Systems and Software Architecture, Engineering Leadership, team and project management.
 - Computer Security :: Security architecture, risk management and compliance; secure software development; virtualization and cloud computing security; intrusion detection and prevention; operating system and network security.
 - Communications and Research :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication, research and teaching experience.
 - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon, Cloud Foundry, VMware), software development experience (Ruby, Python, C, Perl, LISP, etc.).
@@ -149,7 +149,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 
 - As a Solution Security Architect for IT Clouds, I am a member of the /Swisscom IT Clouds/ leadership team:
   - I define and manage yearly KPIs and the security features and characteristics of [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's cloud offerings]].
-  - I work with product managers, engineering teams and the corporate security group to maintain cloud platform and service compliance with internal, contractual and regulatory standards (e.g. [[https://www.swisscom.ch/en/about/company/governance/riskmanagement/iso-iec-managementsystem.html][ISO27001]], ISAE3402/3000, FINMA and GDPR).
+  - I ensure cloud platform and service compliance with internal, contractual and regulatory standards (e.g. [[https://www.swisscom.ch/en/about/company/governance/riskmanagement/iso-iec-managementsystem.html][ISO27001]], ISAE3402/3000, FINMA and GDPR).
   - I established and manage the /Security Champions/ initiative to promote and improve a culture of security responsibility.
   - I established organization-wide processes for risk management, threat modeling, audits and penetration testing.
   - I am the point of contact for CISO-level interactions with Swisscom's cloud customers.
@@ -164,10 +164,10 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 
 - Starting as a project lead and architect, I founded and led a team of up to 16 people that designed, implemented and operated the monitoring and logging capabilities for Swisscom's IaaS and PaaS evolving cloud offerings:
   - Unified diverse monitoring components into a cohesive framework, reducing costs and increasing efficiency by 20%.
-  - Defined architecture and implementated customer-facing monitoring and logging services.
+  - Defined architecture and implemented customer-facing monitoring and logging services.
   - Designed and implemented the [[https://cfsummit2016.sched.com/event/6aQ2/chaos-heidi-vs-orchard-self-disruption-and-healing-in-a-cloud-foundry-based-service-environment-diego-zamboni-swisscom-bill-chapman-stark-wayne][/Orchard/]] monitoring platform for Swisscom's [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/application-cloud/enterprise-application-cloud.html][/Application Cloud/]].
   - Defined and implemented integrations between Jira and OpsGenie for alerting of user-reported incidents.
-  - Managed business relationship and implementated Swisscom-wide use of OpsGenie for alert management.
+  - Managed business relationship and implemented Swisscom-wide use of OpsGenie for alert management.
   - Managed engineering relationship with VMware for integration of their products in Swisscom's monitoring systems.
 
 ** [[https://cfengine.com/][CFEngine AS]]
@@ -210,7 +210,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 - Initiated, advised and managed security-related projects.
 - Coordinated communication among technical teams involved in security initiatives.
 - Managed all security-related aspects of the design, implementation and delivery of IT Outsourcing projects.
-- Analyzed, designed and implementated solutions in the areas of system automation, configuration management, system administration, system design, virtualization, performance and security.
+- Analyzed, designed and implemented solutions in the areas of system automation, configuration management, system administration, system design, virtualization, performance and security.
 
 ** [[https://www.zurich.ibm.com/][IBM Zurich Research Lab]]
 :PROPERTIES:
