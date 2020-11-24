@@ -342,7 +342,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 #+latex: \begin{cvparagraph}
 Available upon request.
 
-Full Curriculum Vit\ae\nbsp​available at [[https://zzamboni.org/vita/][https://zzamboni.org/vita/]].
+Full Curriculum Vitæ available at [[https://zzamboni.org/vita/][https://zzamboni.org/vita/]].
 #+latex: \end{cvparagraph}
 
 * Local Variables :ARCHIVE:noexport:
