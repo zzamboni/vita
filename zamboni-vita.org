@@ -9,7 +9,7 @@
 #+cvcolorizelinks: awesome-skyblue
 #+cvunderlinelinks: false
 #+cvfooter_left: \today\\~
-#+cvfooter_middle: %a~~~·~~~Curriculum Vit\ae\\\textup{\tiny Source at https://gitlab.com/zzamboni/vita}
+#+cvfooter_middle: %a~~~·~~~Curriculum Vitæ\\\textup{\tiny Source at https://gitlab.com/zzamboni/vita}
 #+cvfooter_right: \thepage\\~
 
 # These options are useful for HTML or ASCII export, and harmless for
@@ -318,7 +318,7 @@ This page presents a summary of my qualifications --- please see the following p
 - Managed the CFEngine language roadmap.
 - Coordinated the [[https://docs.cfengine.com/docs/3.10/guide-design-center.html][CFEngine Design Center]] project.
 - Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack).
-- Developed code for both the Design Center and some of the integrations.
+- Developed code for both the Design Center core and its integrations.
 
 *** Senior Security Advisor
 :PROPERTIES:
