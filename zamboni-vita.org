@@ -9,7 +9,7 @@
 #+cvcolorizelinks: awesome-skyblue
 #+cvunderlinelinks: false
 #+cvfooter_left: \today\\~
-#+cvfooter_middle: %a~~~·~~~Curriculum Vitæ\\\textup{\tiny Source at https://gitlab.com/zzamboni/vita}
+#+cvfooter_middle: %a~~~·~~~Curriculum Vitæ\\\textup{\tiny Source at https://github.com/zzamboni/vita}
 #+cvfooter_right: \thepage\\~
 
 # These options are useful for HTML or ASCII export, and harmless for
@@ -44,12 +44,13 @@
 
 :END:
 
-#+title: Enterprise Security Architect · Engineering Leader · Computer Scientist
+#+title: Engineering Leader · Enterprise Security Architect · Computer Scientist
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
 #+linkedin: zzamboni
-#+gitlab: zzamboni
+#+leanpub: zzamboni
+# #+gitlab: zzamboni
 #+github: zzamboni
 #+stackoverflow: 5562 zzamboni
 #+homepage: zzamboni.org
@@ -131,7 +132,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
     - [[#analysis-of-a-denial-of-service-attack-on-tcpip-synkill][Analysis of a denial-of-service attack on TCP/IP (Synkill)]]
 - [[#system-development-and-management][System Development and Management]]
 - [[#software-development-projects][Software Development Projects]]
-  - [[#publicly-available-software-projects-see-httpsgitlabcomzzamboni-and-httpsgithubcomzzamboni][Publicly available software projects: see https://gitlab.com/zzamboni and https://github.com/zzamboni/]]
+  - [[#publicly-available-software-projects-see-httpsgithubcomzzamboni-and-httpsgitlabcomzzamboni][Publicly available software projects: see https://github.com/zzamboni/ and https://gitlab.com/zzamboni]]
   - [[#other-software-projects-not-publicly-available][Other software projects (not publicly available)]]
     - [[#pilatus-ibm][Pilatus (IBM)]]
     - [[#soc-in-a-box-ibm][SOC in a Box (IBM)]]
@@ -200,8 +201,8 @@ This page presents a summary of my qualifications --- please see the following p
 - Leadership :: 29 years of multidisciplinary team and project leadership experience; IT Enterprise Architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework]] (SAFe) Architect and Product Owner.
 - Communications :: Excellent written and spoken communication skills, extensive teaching experience.
 - Computer Security :: Enterprise security architecture; risk management; compliance; intrusion detection and prevention; operating systems and network security; software security and secure software development; virtualization and cloud computing security; CISSP certification.
-- Research :: Ph.D. in Computer Science, 9 years of experience at IBM Research.
 - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms, software development, configuration management.
+- Research :: Ph.D. in Computer Science, 9 years of experience at IBM Research.
 
 # - Attitude :: I am passionate about and always willing to support science, technology and education.
 # - Languages :: Spanish (native), English (100%), German (B1 level).
@@ -634,7 +635,7 @@ A SAFe\reg 4 Certified Product Owner/Product Manager is a SAFe professional who 
 :CV_ENV:   cvskills
 :END:
 
-- Programming languages :: Ruby, Python, C, Perl, Java, Clojure, Racket, AWK, Unix shells, LISP.
+- Programming languages :: Ruby, Python, C, Perl, Java, LISP family (Clojure, Racket), AWK, Unix shells.
 - Development environments :: Unix/Linux, Cloud Foundry, Amazon EC2, macOS.
 - Unix system administration :: Linux (multiple distributions), OpenBSD, FreeBSD, macOS, Solaris.
 - Configuration management :: CFEngine, Puppet, Chef, Ansible.
@@ -644,7 +645,7 @@ A SAFe\reg 4 Certified Product Owner/Product Manager is a SAFe professional who 
 
 * Software Development Projects
 
-** Publicly available software projects: see [[https://gitlab.com/zzamboni][https://gitlab.com/zzamboni]] and [[https://github.com/zzamboni/][https://github.com/zzamboni/]]
+** Publicly available software projects: see [[https://github.com/zzamboni/][https://github.com/zzamboni/]] and [[https://gitlab.com/zzamboni][https://gitlab.com/zzamboni]]
 
 ** Other software projects (not publicly available)
 

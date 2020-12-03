@@ -493,17 +493,17 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://leanpub.com/u/\@leanpub}{\mbox{\faLeanpub\acvHeaderIconSep\@leanpub}}%
         }%
-      \ifthenelse{\isundefined{\@gitlab}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://gitlab.com/\@gitlab}{\mbox{\faGitlab\acvHeaderIconSep\@gitlab}}%
-        }%
       \ifthenelse{\isundefined{\@github}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://github.com/\@github}{\mbox{\faGithubSquare\acvHeaderIconSep\@github}}%
+        }%
+      \ifthenelse{\isundefined{\@gitlab}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://gitlab.com/\@gitlab}{\mbox{\faGitlab\acvHeaderIconSep\@gitlab}}%
         }%
       \ifthenelse{\isundefined{\@stackoverflowid}}%
         {}%
