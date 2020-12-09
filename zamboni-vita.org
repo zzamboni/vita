@@ -44,7 +44,7 @@
 
 :END:
 
-#+title: Engineering Leader · Enterprise Security Architect · Computer Scientist
+#+title: Enterprise Security Architect · Engineering Leader · Computer Scientist
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
