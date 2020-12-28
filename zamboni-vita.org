@@ -509,7 +509,7 @@ This page presents a summary of my qualifications --- please see the following p
 :CV_ENV:   cvschool
 :ORGANIZATION: (ISC)², the International Information System Security Certification Consortium
 :LOCATION: April 2019
-:RIGHT_IMG: ./images/certified-information-systems-security-professional-cissp-large.png
+:RIGHT_IMG: ./images/certified-information-systems-security-professional-cissp-small.png
 :END:
 
 #+begin_cvitems
@@ -521,7 +521,7 @@ The vendor-neutral CISSP credential confirms technical knowledge and experience 
 :CV_ENV:   cvschool
 :ORGANIZATION: Scaled Agile Inc.
 :LOCATION: July 2017 (not renewed)
-:RIGHT_IMG: ./images/certified-safe-4-product-owner-product-manager-large.png
+:RIGHT_IMG: ./images/certified-safe-4-product-owner-product-manager-small.png
 :END:
 
 #+begin_cvitems
