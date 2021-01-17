@@ -109,7 +109,6 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
     - [[#developer-intern][Developer (Intern)]]
   - [[#national-autonomous-university-of-mexico-unam][National Autonomous University of Mexico (UNAM)]]
     - [[#head-of-computer-security-area][Head of Computer Security Area]]
-    - [[#system-administrator][System Administrator]]
 - [[#education][Education]]
   - [[#phd-in-computer-science][Ph.D. in Computer Science]]
   - [[#ms-in-computer-science][M.S. in Computer Science]]
@@ -199,8 +198,8 @@ This page presents a summary of my qualifications --- please see the following p
 :END:
 
 - Leadership :: 29 years of multidisciplinary team and project leadership experience; IT Enterprise Architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework]] (SAFe) Architect and Product Owner.
-- Communications :: Excellent written and spoken communication skills, extensive teaching experience.
-- Computer Security :: Enterprise security architecture; risk management; compliance; intrusion detection and prevention; operating systems and network security; software security and secure software development; virtualization and cloud computing security; CISSP certification.
+- Computer Security :: Enterprise security architecture; virtualization and cloud computing security; risk management and compliance; intrusion detection and prevention; operating systems and network security; software security and secure software development; [[https://www.isc2.org/Certifications/CISSP][CISSP]] certification.
+- Communications :: Excellent written and spoken communication skills, extensive public speaking, writing and teaching experience.
 - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms, software development, configuration management.
 - Research :: Ph.D. in Computer Science, 9 years of experience at IBM Research.
 
@@ -211,10 +210,10 @@ This page presents a summary of my qualifications --- please see the following p
 
 #+latex: \begin{cvparagraph}
 - 18 years of experience in education and research, 11 years of industry experience.
-- Management and leadership
-  + Manage security architecture, risk management, data governance and compliance (ISO27001, FINMA, ISAE3402/3000, etc.) for Swisscom's IT Clouds platforms.
+- Management and leadership, IT security, cloud computing
+  + Manage security architecture, risk management, data governance and compliance (ISO27001, ISAE3402/3000, etc.) for [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's Cloud platforms]].
   + Established and lead the Swisscom IT Clouds security community of practice.
-  + Established and led the /Health and State Management/ team at Swisscom to design, implement and operate a framework for scalable monitoring, logging and alerting.
+  + Established and led the /Health and State Management/ team at Swisscom to design, implement and operate a framework for scalable monitoring, logging and alerting for Swisscom's Cloud platforms.
   + Established and led the first computer security organization at UNAM, which has grown into the university's [[https://www.seguridad.unam.mx/][Information Security Coordination (UNAM-CERT)]].
   + Managed IT security customer relationships at HP Enterprise Services, including overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting.
   + Managed the CFEngine language product roadmap.
@@ -249,7 +248,7 @@ This page presents a summary of my qualifications --- please see the following p
 - As an /Enterprise Architect/, I participate in the design of future products and solutions offered by Swisscom, in collaboration with architects from all other divisions of the company.
 - As /Solution Security Architect for [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's Cloud Platforms]]/ ---which include /Enterprise Service Cloud/, /Enterprise Application Cloud/, /Dynamic Computing Services/, /Enterprise Cloud for SAP Applications/ and related services--- I am responsible for the security and compliance of those services. I  define, prioritize and drive relevant product features and business goals. I also lead the IT Clouds Security Community of Practice and advise engineering teams on compliance, governance and operational activities.
 - Selected achievements and activities:
-  + Ensure cloud platform and service compliance with internal, contractual and regulatory standards, including ISO27001, ISAE3402/3000, FINMA and GDPR.
+  + Ensure cloud platform and service compliance with internal, contractual and regulatory standards, including ISO27001, ISAE3402/3000 and GDPR.
   + Establish and currently lead a community of around 30 /Security Champions/ from different teams, who drive security initiatives and promote the security culture within the Swisscom IT Clouds organization.
   + Coordinate threat modelings, audits, penetration tests and security compliance reporting.
   + Coordinate organization- and team-wide processes for risk and vulnerability management.
@@ -438,7 +437,7 @@ This page presents a summary of my qualifications --- please see the following p
 - Established the celebration of the /International Computer Security Day/ (sponsored by the Association for Computing Machinery) at UNAM. Acted as the main organizer of the event for two years (1994 and 1995). This event has grown and evolved into the [[https://www.disc.unam.mx/][/Computer Security Day/]] and the [[https://congreso.seguridad.unam.mx/][/Computer Security Congress/]].
 - Designed and headed development of an audit-analysis tool for Unix systems (SAINT) {{{cvcite(zamboni96:saint)}}}.
 
-*** System Administrator
+*** System Administrator :noexport:
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <1991-11-01>
@@ -454,7 +453,6 @@ This page presents a summary of my qualifications --- please see the following p
 * Education
 :PROPERTIES:
 :CV_ENV:   cventries
-:PAGEBREAK: yes
 :END:
 
 ** Ph.D. in Computer Science
