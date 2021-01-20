@@ -1,0 +1,1 @@
+texinput/awesome-cv.cls
