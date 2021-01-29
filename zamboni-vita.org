@@ -109,6 +109,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
     - [[#developer-intern][Developer (Intern)]]
   - [[#national-autonomous-university-of-mexico-unam][National Autonomous University of Mexico (UNAM)]]
     - [[#head-of-computer-security-area][Head of Computer Security Area]]
+    - [[#system-administrator][System Administrator]]
 - [[#education][Education]]
   - [[#phd-in-computer-science][Ph.D. in Computer Science]]
   - [[#ms-in-computer-science][M.S. in Computer Science]]
@@ -437,7 +438,7 @@ This page presents a summary of my qualifications --- please see the following p
 - Established the celebration of the /International Computer Security Day/ (sponsored by the Association for Computing Machinery) at UNAM. Acted as the main organizer of the event for two years (1994 and 1995). This event has grown and evolved into the [[https://www.disc.unam.mx/][/Computer Security Day/]] and the [[https://congreso.seguridad.unam.mx/][/Computer Security Congress/]].
 - Designed and headed development of an audit-analysis tool for Unix systems (SAINT) {{{cvcite(zamboni96:saint)}}}.
 
-*** System Administrator :noexport:
+*** System Administrator
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <1991-11-01>
