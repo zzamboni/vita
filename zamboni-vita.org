@@ -2,7 +2,7 @@
 # AwesomeCV and LaTeX configuration section
 
 # AwesomeCV configuration options
-#+photo: ./images/foto_diego_2020_small.jpg
+#+photo: ./images/foto_diego_2020-3.jpg
 #+photostyle: right,noedge
 #+cvcolor: awesome-concrete
 #+cvhighlights: false
