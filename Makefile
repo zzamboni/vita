@@ -5,7 +5,7 @@ all:
 view:
 	latexmk -pvc zamboni-vita
 clean:
-	latexmk -C -bibtex
+	latexmk -c -bibtex
 
 ######################################################################
 # Web publishing
