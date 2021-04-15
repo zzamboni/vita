@@ -9,7 +9,7 @@
 #+cvcolorizelinks: awesome-skyblue
 #+cvunderlinelinks: false
 #+cvfooter_left: \today\\~
-#+cvfooter_middle: %a~~~·~~~Curriculum Vitæ\\\textup{\tiny Source at https://github.com/zzamboni/vita}
+#+cvfooter_middle: %a~~~·~~~Curriculum Vitæ\\\textup{\tiny Source at https://gitlab.com/zzamboni/vita}
 #+cvfooter_right: \thepage\\~
 
 # These options are useful for HTML or ASCII export, and harmless for
