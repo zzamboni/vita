@@ -1,11 +1,17 @@
 .PHONY: all clean publish
 
-all:
-	latexmk
-view:
-	latexmk -pvc zamboni-vita
+OUTPUTS = zamboni-vita.pdf zamboni-resume.pdf
+
+%.pdf: %.tex texinput/* fonts/*
+	tectonic $<
+
+all: $(OUTPUTS)
+
+view: all
+	open $(OUTPUTS)
+
 clean:
-	latexmk -c -bibtex
+	rm -f $(OUTPUTS)
 
 ######################################################################
 # Web publishing
