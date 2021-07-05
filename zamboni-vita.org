@@ -55,6 +55,10 @@
 #+stackoverflow: 5562 zzamboni
 #+homepage: zzamboni.org
 
+* Instructions :noexport:
+
+If you are viewing this file on Gitlab or Github, a lot of the document below may not make a lot of sense. Much of the metadata (e.g. job dates, companies, etc.) are encoded in Org-mode heading properties, which are processed by the [[https://gitlab.com/zzamboni/org-cv/-/tree/awesomecv][ox-awesomecv]] exporter to produce the LaTeX document. See the raw source of this file to see the full information.
+
 * How to include private information in the CV :noexport:
 
 The "Private info" section below contains private information which is not included in the CV by default. It is kept encrypted automatically thanks to the =org-crypt= package. The "crypt" tag causes it to be encrypted automatically every time the file is saved, and the "noexport" tag of the header above causes it to be omitted when the file gets exported. Its contents, when unencrypted, contains field definitions like this:
@@ -72,20 +76,15 @@ When encrypted, this information is simply ignored. When I want to produce a ver
 #+end_src
 
 ** Private info :crypt:
+
 -----BEGIN PGP MESSAGE-----
 Comment: GPGTools - http://gpgtools.org
 
-hQEMA6qprSR9RgU9AQgAiQGiKSOuTSMuTUQIU9Xqo4dczmdlInE2Dn3/G2/ADDbd
-+ZTgiPa+W8GBMezuTWCXvJLJq+OBai2z/DxazsRjN2q/6QKiLBM0gbWqqQHUCwIP
-5585zDInSO4HGoUPgjIqyPnPMuQWcMzhmI9OxuBe5QvLVFdFTk/7bmDcdqK3vccb
-qnApDl7akZcBFST7nVh3bW5OkHQ8JtNVPqorP4ZkwYPVKKwgXm815BpxMspT03sz
-yEUKkpi93S97Jd/SFZvgrMYFoKQhlZhij4Hgl8DiqIJ20v/CK6mKBIPXjuIoaQgM
-K6FZaY0ln8+aw+7KPPnDeHRkuWyCFcDI9XHfXbK0JNKxAThCWMuhTM/1HSP6uFWJ
-9dckj2SRWDeIy6upinvEBVFkdkOs6vEg9tzFSI4KvBDR7PmwkCt8WXTE2EWTvx9X
-GKHO/iWilFg/d5SeR34TxmFlMRm/8uRa9hVXyHceJAq+9qAWo1cf5PRO6UlQDOw3
-Rw6fltyGf36lnki4VHgl5VtcnnRR4x7hkjPGuZ41piOupdNJPdSllIxU+MgsZDei
-f/yLKNfJQJz6Y3WA/L6QqNVO
-=wzUV
+jA0ECQMCiV1cCDhWKBT00qsB9v31lsXyFz2ZqY5Vmte2ydfVUZujGGKkmC8u0mvY
+vGY1i2fTCbLmTMiN7CZzjcG+sww/eX8m251SHZAhLQLbEKNym5OoLSCYU0vO9Pdt
+eGxO7Um6mCI4gxKYzYOs4hfceq6GIh1SK+exW2BwbFNio56yhKk8iTW2s/zxJJKv
+6E8vu7aVtFgM3npDy8dV1uqH4IIsyL5oQD54VGIQde+pFH7XSEK4vNuQBAk=
+=9Psi
 -----END PGP MESSAGE-----
 
 * Table of Contents                                          :TOC_3:noexport:
