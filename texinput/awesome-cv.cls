@@ -221,7 +221,7 @@
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
-\newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
+\newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext}#1}}
 \newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
@@ -447,21 +447,21 @@
         \node[\@photoshape, draw=\@photoborder, line width=0.3mm, inner sep=\photodim, fill overzoom image=\@photo] () {};
       \end{tikzpicture}%
     }%
-  }
-  \newlength{\headertextwidth}
-  \newlength{\headerphotowidth}
-  \ifthenelse{\isundefined{\@photo}}{
-    \setlength{\headertextwidth}{\textwidth}
-    \setlength{\headerphotowidth}{0cm}
+  }%
+  \newlength{\headertextwidth}%
+  \newlength{\headerphotowidth}%
+  \ifthenelse{\isundefined{\@photo}}{%
+    \setlength{\headertextwidth}{\textwidth}%
+    \setlength{\headerphotowidth}{0cm}%
   }{%
-    \setlength{\headertextwidth}{0.75\textwidth}
-    \setlength{\headerphotowidth}{0.23\textwidth}
+    \setlength{\headertextwidth}{0.75\textwidth}%
+    \setlength{\headerphotowidth}{0.23\textwidth}%
   }%
   \begin{minipage}[c]{\headerphotowidth}%
-    \ifthenelse{\equal{\@photoalign}{left}}{\raggedright\drawphoto}{}
-  \end{minipage}
-  \begin{minipage}[c]{\headertextwidth}
-    \ifthenelse{\equal{#1}{L}}{\raggedright}{\ifthenelse{\equal{#1}{R}}{\raggedleft}{\centering}}
+    \ifthenelse{\equal{\@photoalign}{left}}{\raggedright\drawphoto}{}%
+  \end{minipage}%
+  \begin{minipage}[c]{\headertextwidth}%
+    \ifthenelse{\equal{#1}{L}}{\raggedright}{\ifthenelse{\equal{#1}{R}}{\raggedleft}{\centering}}%
     \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
     \\[\acvHeaderAfterNameSkip]%
     \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
@@ -539,7 +539,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.xing.com/profile/\@xing}{\mbox{\faIcon{xing-square}\acvHeaderIconSep\@xing}}
+          \href{https://www.xing.com/profile/\@xing}{\mbox{\faIcon{xing-square}\acvHeaderIconSep\@xing}}%
         }%
       \ifthenelse{\isundefined{\@extrainfo}}%
         {}%
@@ -553,8 +553,8 @@
       {\headerquotestyle{\@quote\\}\vspace{\acvHeaderAfterQuoteSkip}}%
   \end{minipage}%
   \begin{minipage}[c]{\headerphotowidth}%
-    \ifthenelse{\equal{\@photoalign}{right}}{\raggedleft\drawphoto}{}
-  \end{minipage}
+    \ifthenelse{\equal{\@photoalign}{right}}{\raggedleft\drawphoto}{}%
+  \end{minipage}%
 }
 
 % Define a footer for CV
