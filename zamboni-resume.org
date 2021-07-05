@@ -9,7 +9,7 @@
 #+cvcolorizelinks: awesome-skyblue
 #+cvunderlinelinks: false
 #+cvfooter_left: \today\\~
-#+cvfooter_right: %a\\\textup{\tiny Source at \href{https://gitlab.com/zzamboni/vita}{https://gitlab.com/zzamboni/vita}}
+#+cvfooter_right: %a\\\textup{\tiny Source at https://gitlab.com/zzamboni/vita}
 # #+cvfooter_right: \thepage\\~
 
 # These options are useful for HTML or ASCII export, and harmless for
@@ -45,7 +45,7 @@
 :END:
 
 #+author: Diego Zamboni
-#+title: IT Enterprise Architect · Senior Engineering Leader · Computer Security Expert
+#+title: IT Enterprise Architect · Senior Engineering Leader · Computer Security Expert
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
 #+linkedin: zzamboni
