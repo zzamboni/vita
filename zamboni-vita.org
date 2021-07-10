@@ -55,6 +55,9 @@
 #+stackoverflow: 5562 zzamboni
 #+homepage: zzamboni.org
 
+# Uncomment this line before HTML export to have a TOC at the top
+# #+TOC: headlines 1
+
 * Instructions :noexport:
 
 If you are viewing this file on Gitlab or Github, a lot of the document below may not make a lot of sense. Much of the metadata (e.g. job dates, companies, etc.) are encoded in Org-mode heading properties, which are processed by the [[https://gitlab.com/zzamboni/org-cv/-/tree/awesomecv][ox-awesomecv]] exporter to produce the LaTeX document. See the raw source of this file to see the full information.
