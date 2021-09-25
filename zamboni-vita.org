@@ -44,7 +44,7 @@
 
 :END:
 
-#+title: Enterprise Security Architect · Engineering Leader · Computer Scientist
+#+title: Security Architect · Engineering Leader · Computer Scientist
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 #+twitter: zzamboni
@@ -94,6 +94,8 @@ eGxO7Um6mCI4gxKYzYOs4hfceq6GIh1SK+exW2BwbFNio56yhKk8iTW2s/zxJJKv
 - [[#key-skills][Key skills]]
 - [[#professional-highlights][Professional highlights]]
 - [[#experience][Experience]]
+  - [[#amazon-web-services][Amazon Web Services]]
+    - [[#global-security-architect][Global Security Architect]]
   - [[#swisscom][Swisscom]]
     - [[#enterprise-architect-and-it-clouds-solution-security-architect][Enterprise Architect and IT Clouds Solution Security Architect]]
     - [[#team-lead--product-owner-for-health--state-management][Team Lead & Product Owner for Health & State Management]]
@@ -238,26 +240,43 @@ This page presents a summary of my qualifications --- please see the following p
 :PAGEBREAK: yes
 :END:
 
+** Amazon Web Services
+:PROPERTIES:
+:CV_ENV:   cvemployer
+:LOCATION: Switzerland
+:FROM: 2021
+:END:
+
+*** Global Security Architect
+:PROPERTIES:
+:CV_ENV:   cvsubentry
+:FROM: <2021-09-01>
+:END:
+
+I design and build highly secure cloud solutions for AWS Global accounts.
+
 ** Swisscom
 :PROPERTIES:
 :CV_ENV:   cvemployer
 :LOCATION: Switzerland
 :FROM: 2015
+:TO: 2021
 :END:
 
 *** Enterprise Architect and IT Clouds Solution Security Architect
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <2019-04-01>
+:TO: <2019-09-01>
 :END:
 
-- As an /Enterprise Architect/, I participate in the design of future products and solutions offered by Swisscom, in collaboration with architects from all other divisions of the company.
-- As /Solution Security Architect for [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's Cloud Platforms]]/ ---which include /Enterprise Service Cloud/, /Enterprise Application Cloud/, /Dynamic Computing Services/, /Enterprise Cloud for SAP Applications/ and related services--- I am responsible for the security, compliance and data governance of those services. I  define, prioritize and drive relevant product features and business goals. I also lead the IT Clouds Security Community of Practice and advise engineering teams on compliance, governance and operational activities.
+- As an /Enterprise Architect/, I participated in the design of future products and solutions offered by Swisscom, in collaboration with architects from all other divisions of the company.
+- As /Solution Security Architect for [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's Cloud Platforms]]/ ---which include /Enterprise Service Cloud/, /Enterprise Application Cloud/, /Dynamic Computing Services/, /Enterprise Cloud for SAP Applications/ and related services--- I was responsible for the security, compliance and data governance of those services. I  defined, prioritized and drove relevant product features and business goals. I also lead the IT Clouds Security Community of Practice and advised engineering teams on compliance, governance and operational activities.
 - Selected achievements and activities:
-  + Ensure cloud platform and service compliance with internal, contractual and regulatory standards, including ISO27001, ISAE3402/3000 and GDPR.
-  + Establish and currently lead a community of around 30 /Security Champions/ from different teams, who drive security initiatives and promote the security culture within the Swisscom IT Clouds organization.
-  + Coordinate threat modelings, audits, penetration tests and security compliance reporting.
-  + Coordinate organization- and team-wide processes for risk and vulnerability management.
+  + Ensured cloud platform and service compliance with internal, contractual and regulatory standards, including ISO27001, ISAE3402/3000 and GDPR.
+  + Established and led a community of around 30 /Security Champions/ from different teams, who drove security initiatives and promote the security culture within the Swisscom IT Clouds organization.
+  + Coordinated threat modelings, audits, penetration tests and security compliance reporting.
+  + Coordinated organization- and team-wide processes for risk and vulnerability management.
   + Development of the Swisscom /Platforms/ vision for 2025.
 
 *** Team Lead & Product Owner for Health & State Management

@@ -94,6 +94,8 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 * Table of Contents                                          :TOC_3:noexport:
 - [[#key-skills][Key skills]]
 - [[#experience][Experience]]
+  - [[#amazon-web-services][Amazon Web Services]]
+    - [[#global-security-architect][Global Security Architect]]
   - [[#swisscom][Swisscom]]
     - [[#enterprise-architect-and-it-clouds-solution-security-architect][Enterprise Architect and IT Clouds Solution Security Architect]]
     - [[#architect-and-engineering-leader-for-monitoring-health-and-state-management][Architect and Engineering Leader for Monitoring, Health and State Management]]
@@ -104,17 +106,12 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
   - [[#ibm-zurich-research-lab][IBM Zurich Research Lab]]
     - [[#research-staff-member][Research Staff Member]]
   - [[#national-autonomous-university-of-mexico-unam][National Autonomous University of Mexico (UNAM)]]
-    - [[#head-of-computer-security-area][Head of Computer Security Area]]
-    - [[#system-administrator][System Administrator]]
+    - [[#head-of-computer-security-area-and-system-administrator][Head of Computer Security Area and System Administrator]]
 - [[#education][Education]]
   - [[#phd-in-computer-science-purdue-university][Ph.D. in Computer Science, Purdue University]]
 - [[#certifications][Certifications]]
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#safereg-4-certified-product-ownerproduct-manager][SAFe\reg 4 Certified Product Owner/Product Manager]]
-- [[#published-books][Published books]]
-  - [[#literate-configuration][Literate Configuration]]
-  - [[#learning-hammerspoon][Learning Hammerspoon]]
-  - [[#learning-cfengine][Learning CFEngine]]
 - [[#research-publications-teaching-and-references][Research, Publications, Teaching and References]]
 
 * Key skills
@@ -122,7 +119,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :CV_ENV:   cvskills
 :END:
 
-- Leadership :: IT Systems and Software Architecture, Engineering Leadership, team and project management.
+- Leadership :: IT Systems and Software Architecture, Engineering Leadership.
 - Computer Security :: Security architecture, risk management and compliance; secure software development; virtualization and cloud computing security; intrusion detection and prevention; operating system and network security.
 - Communications and Research :: Excellent written and spoken communication skills, with more than 30 years of written and spoken communication, research and teaching experience.
 - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon, Cloud Foundry, VMware), software development experience (Ruby, Python, C, Perl, LISP, etc.).
@@ -134,26 +131,43 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :CV_ENV:   cventries
 :END:
 
+** [[https://aws.amazon.com/][Amazon Web Services]]
+:PROPERTIES:
+:CV_ENV:   cvemployer
+:LOCATION: Switzerland
+:FROM: 2021
+:END:
+
+*** Global Security Architect
+:PROPERTIES:
+:CV_ENV:   cvsubentry
+:FROM: <2021-09-01>
+:END:
+
+I design and build highly secure cloud solutions for AWS Global accounts.
+
 ** [[https://www.swisscom.com/][Swisscom]]
 :PROPERTIES:
 :CV_ENV:   cvemployer
 :LOCATION: Switzerland/U.S.A.
 :FROM: 2014
+:TO: 2021
 :END:
 
 *** Enterprise Architect and IT Clouds Solution Security Architect
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <2019-04-01>
+:TO: <2019-09-01>
 :END:
 
-- As a Solution Security Architect for IT Clouds, I am a member of the /Swisscom IT Clouds/ leadership team:
-  - I define and manage yearly KPIs and the security features and characteristics of [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's cloud offerings]].
-  - I ensure cloud platform and service compliance with internal, contractual and regulatory standards (e.g. [[https://www.swisscom.ch/en/about/company/governance/riskmanagement/iso-iec-managementsystem.html][ISO27001]], ISAE3402/3000, FINMA and GDPR).
+- As a Solution Security Architect for IT Clouds, I was a member of the /Swisscom IT Clouds/ leadership team:
+  - I defined and manage yearly KPIs and the security features and characteristics of [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's cloud offerings]].
+  - I ensured cloud platform and service compliance with internal, contractual and regulatory standards (e.g. [[https://www.swisscom.ch/en/about/company/governance/riskmanagement/iso-iec-managementsystem.html][ISO27001]], ISAE3402/3000, FINMA and GDPR).
   - I established and manage the /Security Champions/ initiative to promote and improve a culture of security responsibility.
   - I established organization-wide processes for risk management, threat modeling, audits and penetration testing.
-  - I am the point of contact for CISO-level interactions with Swisscom's cloud customers.
-- As an Enterprise Architect, I define future Swisscom products and solutions as part of the /Swisscom Enterprise Architecture/ team.
+  - I was the point of contact for CISO-level interactions with Swisscom's cloud customers.
+- As an Enterprise Architect, I defined future Swisscom products and solutions as part of the /Swisscom Enterprise Architecture/ team.
 
 *** Architect and Engineering Leader for Monitoring, Health and State Management
 :PROPERTIES:
@@ -176,6 +190,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :LOCATION: Norway/U.S.A. (remote)
 :FROM:     2011
 :TO:       2014
+:PAGEBREAK: yes
 :END:
 
 *** Senior Security Advisor and Product Manager
@@ -259,10 +274,10 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :TO:       1996
 :END:
 
-*** Head of [[http://www.seguridad.unam.mx/][Computer Security Area]]
+*** Head of [[http://www.seguridad.unam.mx/][Computer Security Area]] and System Administrator
 :PROPERTIES:
 :CV_ENV:   cvsubentry
-:FROM:     <1995-08-01>
+:FROM:     <1991-11-01>
 :TO:       <1996-08-01>
 :END:
 
@@ -272,15 +287,16 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 - Managed security services for the whole University, including incident response, security information, auditing and teaching.
 - Established the /International Computer Security Day/ (sponsored by the Association for Computing Machinery) at UNAM.  Acted as the main organizer of the event for two years (1994 and 1995). This event has grown and divided into the /Computer Security Day/ (a one-day event) and the /Seguridad en Cómputo/ (Computer Security) conference (a multi-day event).
 - Designed and headed development of an audit-analysis tool for Unix systems (SAINT).
+- System Administrator at UNAM's Supercomputing Center, managing UNAM's [[http://www.historiadelcomputo.unam.mx/files/fotos/Cray/cray.html][Cray Y-MP Supercomputer]] and related systems.
 
-*** System Administrator
+*** System Administrator :noexport:
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM:     <1991-11-01>
 :TO:       <1995-08-01>
 :END:
 
-- Part of the system administration team at the University's Supercomputing Center, managing UNAM's [[http://www.historiadelcomputo.unam.mx/files/fotos/Cray/cray.html][Cray Y-MP Supercomputer]] and related systems.
+- Part of the system administration team
 - Responded to security incidents affecting the Cray supercomputer and related workstations.
 
 * Education
@@ -314,33 +330,12 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :DATE: July 2017
 :END:
 
-* Published books
-:PROPERTIES:
-:CV_ENV:   cventries
-:END:
-
-** [[https://leanpub.com/lit-config][Literate Configuration]]
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:DATE: Self-published 2019
-:END:
-
-** [[https://leanpub.com/learning-hammerspoon][Learning Hammerspoon]]
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:DATE: Self-published 2018
-:END:
-
-** [[http://cf-learn.info/][Learning CFEngine]]
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:DATE: O’Reilly Media 2012, Self-published 2017
-:END:
-
 * Research, Publications, Teaching and References
 
 #+latex: \begin{cvparagraph}
-Available upon request.
+Books:  [[http://cf-learn.info/][Learning CFEngine]] (2012),  [[https://leanpub.com/learning-hammerspoon][Learning Hammerspoon]] (2018),  [[https://leanpub.com/lit-config][Literate Configuration]] (2019)
+
+References available upon request.
 
 Full Curriculum Vitæ available at [[https://zzamboni.org/vita/][https://zzamboni.org/vita/]].
 #+latex: \end{cvparagraph}
