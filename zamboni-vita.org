@@ -123,6 +123,7 @@ eGxO7Um6mCI4gxKYzYOs4hfceq6GIh1SK+exW2BwbFNio56yhKk8iTW2s/zxJJKv
   - [[#bachelors-degree-in-computer-engineering][Bachelor's degree in Computer Engineering]]
 - [[#languages][Languages]]
 - [[#certifications][Certifications]]
+  - [[#aws-certified-solutions-architect--associate][AWS Certified Solutions Architect – Associate]]
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#safereg-4-certified-product-ownerproduct-manager][SAFe\reg 4 Certified Product Owner/Product Manager]]
 - [[#research][Research]]
@@ -527,7 +528,19 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 :CV_ENV:   cventries
 :END:
 
-** [[https://www.youracclaim.com/badges/98814af3-575b-4350-9667-70eddfea1da4/public_url][Certified Information Systems Security Professional (CISSP)]]
+** [[https://www.credly.com/badges/3fe94170-f19a-4552-95a8-ea6b13a7586e/public_url][AWS Certified Solutions Architect – Associate]]
+:PROPERTIES:
+:CV_ENV:   cvschool
+:ORGANIZATION: Amazon Web Services Training and Certification
+:LOCATION: October 2021
+:RIGHT_IMG: ./images/AWS-SolArchitect-Associate-2020-small.png
+:END:
+
+#+begin_cvitems
+Earners of this certification have a comprehensive understanding of AWS services and technologies. They demonstrated the ability to build secure and robust solutions using architectural design principles based on customer requirements. Badge owners are able to strategically design well-architected distributed systems that are scalable, resilient, efficient, and fault-tolerant.
+#+end_cvitems
+
+** [[https://www.credly.com/badges/5b4d887e-116b-4646-968c-648ae9951069/public_url][Certified Information Systems Security Professional (CISSP)]]
 :PROPERTIES:
 :CV_ENV:   cvschool
 :ORGANIZATION: (ISC)², the International Information System Security Certification Consortium
@@ -539,11 +552,11 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 The vendor-neutral CISSP credential confirms technical knowledge and experience to design, engineer, implement, and manage the overall security posture of an organization. Required by the world’s most security-conscious organizations, CISSP is the gold-standard information security certification that assures information security leaders possess the breadth and depth of knowledge to establish holistic security programs that protect against threats in an increasingly complex cyber world.
 #+end_cvitems
 
-** [[https://www.youracclaim.com/badges/e6bf0ca2-f1c4-4af6-bf63-09f4b8cdbd02/public_url][SAFe\reg 4 Certified Product Owner/Product Manager]]
+** [[https://www.credly.com/badges/e6bf0ca2-f1c4-4af6-bf63-09f4b8cdbd02/public_url][SAFe\reg 4 Certified Product Owner/Product Manager]]
 :PROPERTIES:
 :CV_ENV:   cvschool
 :ORGANIZATION: Scaled Agile Inc.
-:LOCATION: July 2017 (not renewed)
+:LOCATION: July 2017
 :RIGHT_IMG: ./images/certified-safe-4-product-owner-product-manager-small.png
 :END:
 
