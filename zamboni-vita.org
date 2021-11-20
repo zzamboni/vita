@@ -124,8 +124,9 @@ eGxO7Um6mCI4gxKYzYOs4hfceq6GIh1SK+exW2BwbFNio56yhKk8iTW2s/zxJJKv
 - [[#languages][Languages]]
 - [[#certifications][Certifications]]
   - [[#aws-certified-solutions-architect--associate][AWS Certified Solutions Architect – Associate]]
+  - [[#aws-certified-security--specialty][AWS Certified Security – Specialty]]
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
-  - [[#safereg-4-certified-product-ownerproduct-manager][SAFe\reg 4 Certified Product Owner/Product Manager]]
+  - [[#certified-safe-5-agilist][Certified SAFe® 5 Agilist]]
 - [[#research][Research]]
   - [[#selected-research-projects-at-ibm][Selected research projects at IBM]]
     - [[#phantom][Phantom]]
@@ -194,7 +195,7 @@ eGxO7Um6mCI4gxKYzYOs4hfceq6GIh1SK+exW2BwbFNio56yhKk8iTW2s/zxJJKv
 * Introduction :noexport:
 
 #+latex: \begin{cvparagraph}
-I am a senior computer scientist, computer security expert, IT architect, organization and team leader with 29 years of professional experience, and much longer of being fascinated and passionate about science, computing and education. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management.
+I am a senior computer scientist, computer security expert, IT architect, organization and team leader with 30 years of professional experience, and much longer of being fascinated and passionate about science, computing and education. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management.
 
 I possess a strong combination of leadership, conceptual and technical skills that enable me to help organizations and teams reach their goals. I have excellent communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have extensive experience in both academic and business environments.
 
@@ -206,7 +207,7 @@ This page presents a summary of my qualifications --- please see the following p
 :CV_ENV:   cvskills
 :END:
 
-- Leadership :: 29 years of multidisciplinary team and project leadership experience; IT Enterprise Architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework]] (SAFe) Architect and Product Owner.
+- Leadership :: 30 years of multidisciplinary team and project leadership experience; IT Enterprise Architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework]] (SAFe 5) Agilist.
 - Computer Security :: Enterprise security architecture; virtualization and cloud computing security; risk management and compliance; intrusion detection and prevention; operating systems and network security; software security and secure software development; [[https://www.isc2.org/Certifications/CISSP][CISSP]] certification.
 - Communications :: Excellent written and spoken communication skills, extensive public speaking, writing and teaching experience.
 - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms, software development, configuration management.
@@ -218,7 +219,7 @@ This page presents a summary of my qualifications --- please see the following p
 * Professional highlights
 
 #+latex: \begin{cvparagraph}
-- 18 years of experience in education and research, 11 years of industry experience.
+- 18 years of experience in education and research, 12 years of industry experience.
 - Management and leadership, IT security, cloud computing
   + Manage security architecture, risk management, data governance and compliance (ISO27001, ISAE3402/3000, etc.) for [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's Cloud platforms]].
   + Established and lead the Swisscom IT Clouds security community of practice.
@@ -537,7 +538,19 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 :END:
 
 #+begin_cvitems
-Earners of this certification have a comprehensive understanding of AWS services and technologies. They demonstrated the ability to build secure and robust solutions using architectural design principles based on customer requirements. Badge owners are able to strategically design well-architected distributed systems that are scalable, resilient, efficient, and fault-tolerant.
+Earners of this certification have a comprehensive understanding of AWS services and technologies. They demonstrated the ability to build secure and robust solutions using architectural design principles based on customer requirements. They are able to strategically design well-architected distributed systems that are scalable, resilient, efficient, and fault-tolerant.
+#+end_cvitems
+
+** [[https://www.credly.com/badges/630be29b-36d2-4d90-a5ff-22745355a06d/public_url][AWS Certified Security – Specialty]]
+:PROPERTIES:
+:CV_ENV:   cvschool
+:ORGANIZATION: Amazon Web Services Training and Certification
+:LOCATION: October 2021
+:RIGHT_IMG: ./images/AWS-Certified-Security-Specialty-small.png
+:END:
+
+#+begin_cvitems
+Earners of this certification have an in-depth understanding of AWS security services and the shared responsibility model. They demonstrated the ability to design, implement, and troubleshoot various security models in the AWS Cloud. They can leverage various security models for organizations of all sizes.
 #+end_cvitems
 
 ** [[https://www.credly.com/badges/5b4d887e-116b-4646-968c-648ae9951069/public_url][Certified Information Systems Security Professional (CISSP)]]
@@ -552,7 +565,19 @@ Earners of this certification have a comprehensive understanding of AWS services
 The vendor-neutral CISSP credential confirms technical knowledge and experience to design, engineer, implement, and manage the overall security posture of an organization. Required by the world’s most security-conscious organizations, CISSP is the gold-standard information security certification that assures information security leaders possess the breadth and depth of knowledge to establish holistic security programs that protect against threats in an increasingly complex cyber world.
 #+end_cvitems
 
-** [[https://www.credly.com/badges/e6bf0ca2-f1c4-4af6-bf63-09f4b8cdbd02/public_url][SAFe\reg 4 Certified Product Owner/Product Manager]]
+** [[https://www.credly.com/badges/88eb9455-fffa-4798-804c-b22b7c1f9534/public_url][Certified SAFe® 5 Agilist]]
+:PROPERTIES:
+:CV_ENV:   cvschool
+:ORGANIZATION: Scaled Agile Inc.
+:LOCATION: November 2021
+:RIGHT_IMG: ./images/certified-safe-5-agilist-small.png
+:END:
+
+#+begin_cvitems
+A Certified SAFe® 5 Agilist (SA) is a SAFe enterprise leadership professional who is part of a Lean-Agile transformation. Key areas of competency include the application of Lean-Agile principles, execution and release of value through Agile Release Trains (ARTs), and building an Agile portfolio with Lean-Agile budgeting.
+#+end_cvitems
+
+** [[https://www.credly.com/badges/e6bf0ca2-f1c4-4af6-bf63-09f4b8cdbd02/public_url][SAFe® 4 Certified Product Owner/Product Manager]] :noexport:
 :PROPERTIES:
 :CV_ENV:   cvschool
 :ORGANIZATION: Scaled Agile Inc.
@@ -561,7 +586,7 @@ The vendor-neutral CISSP credential confirms technical knowledge and experience 
 :END:
 
 #+begin_cvitems
-A SAFe\reg 4 Certified Product Owner/Product Manager is a SAFe professional who works with customers and development organizations to identify and write requirements. Key areas of competency include identifying customer needs, writing epics, capabilities, features, stories, and prioritizing work in order to effectively deliver value to the enterprise.
+A SAFe® 4 Certified Product Owner/Product Manager is a SAFe professional who works with customers and development organizations to identify and write requirements. Key areas of competency include identifying customer needs, writing epics, capabilities, features, stories, and prioritizing work in order to effectively deliver value to the enterprise.
 #+end_cvitems
 
 * Research

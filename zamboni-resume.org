@@ -55,7 +55,7 @@
 #+homepage: zzamboni.org
 
 #+latex: \begin{cvparagraph}
-I am an IT Enterprise Architect, Senior Engineering Manager and Researcher with 29 years of experience building systems and leading teams in startups as well as big companies. I specialize in the areas of Computer Security, Cloud Computing and Configuration Management. I have experience working with and leading remote teams. I possess a strong combination of leadership, conceptual and technical skills with excellent communication abilities.
+I am an IT Enterprise Architect, Senior Engineering Manager and Researcher with 30 years of experience building systems and leading teams in startups as well as big companies. I specialize in the areas of Computer Security, Cloud Computing and Configuration Management. I have experience working with and leading remote teams. I possess a strong combination of leadership, conceptual and technical skills with excellent communication abilities.
 #+latex: \end{cvparagraph}
 
 * Including private information :noexport:
@@ -111,8 +111,9 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
   - [[#phd-in-computer-science-purdue-university][Ph.D. in Computer Science, Purdue University]]
 - [[#certifications][Certifications]]
   - [[#aws-certified-solutions-architect--associate][AWS Certified Solutions Architect – Associate]]
+  - [[#aws-certified-security--specialty][AWS Certified Security – Specialty]]
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
-  - [[#safereg-4-certified-product-ownerproduct-manager][SAFe\reg 4 Certified Product Owner/Product Manager]]
+  - [[#certified-safe-5-agilist][Certified SAFe® 5 Agilist]]
 - [[#research-publications-teaching-and-references][Research, Publications, Teaching and References]]
 
 * Key skills
@@ -325,16 +326,22 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 :DATE: October 2021
 :END:
 
+** [[https://www.credly.com/badges/630be29b-36d2-4d90-a5ff-22745355a06d/public_url][AWS Certified Security – Specialty]]
+:PROPERTIES:
+:CV_ENV:   cvsubentry
+:DATE: October 2021
+:END:
+
 ** [[https://www.youracclaim.com/badges/98814af3-575b-4350-9667-70eddfea1da4/public_url][Certified Information Systems Security Professional (CISSP)]]
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :DATE: April 2019
 :END:
 
-** [[https://www.youracclaim.com/badges/e6bf0ca2-f1c4-4af6-bf63-09f4b8cdbd02/public_url][SAFe\reg 4 Certified Product Owner/Product Manager]]
+** [[https://www.credly.com/badges/88eb9455-fffa-4798-804c-b22b7c1f9534/public_url][Certified SAFe® 5 Agilist]]
 :PROPERTIES:
 :CV_ENV:   cvsubentry
-:DATE: July 2017
+:DATE: November 2021
 :END:
 
 * Research, Publications, Teaching and References
