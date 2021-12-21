@@ -123,6 +123,7 @@ eGxO7Um6mCI4gxKYzYOs4hfceq6GIh1SK+exW2BwbFNio56yhKk8iTW2s/zxJJKv
   - [[#bachelors-degree-in-computer-engineering][Bachelor's degree in Computer Engineering]]
 - [[#languages][Languages]]
 - [[#certifications][Certifications]]
+  - [[#aws-certified-solutions-architect--professional][AWS Certified Solutions Architect – Professional]]
   - [[#aws-certified-solutions-architect--associate][AWS Certified Solutions Architect – Associate]]
   - [[#aws-certified-security--specialty][AWS Certified Security – Specialty]]
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
@@ -528,6 +529,18 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 :PROPERTIES:
 :CV_ENV:   cventries
 :END:
+
+** [[https://www.credly.com/badges/5f462d17-402c-44b8-a8f9-80187ad0d7a1/public_url][AWS Certified Solutions Architect – Professional]]
+:PROPERTIES:
+:CV_ENV:   cvschool
+:ORGANIZATION: Amazon Web Services Training and Certification
+:LOCATION: December 2021
+:RIGHT_IMG: ./images/aws-certified-solutions-architect-professional-small.png
+:END:
+
+#+begin_cvitems
+Earners of this certification have an extensive understanding of designing technical strategies to accomplish specific business goals. They demonstrated the ability to balance best practices and trade-offs based on business context. Badge owners are able to design solutions across multiple platforms and providers.
+#+end_cvitems
 
 ** [[https://www.credly.com/badges/3fe94170-f19a-4552-95a8-ea6b13a7586e/public_url][AWS Certified Solutions Architect – Associate]]
 :PROPERTIES:
