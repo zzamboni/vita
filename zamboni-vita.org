@@ -60,7 +60,7 @@
 
 * Instructions :noexport:
 
-If you are viewing this file on Gitlab or Github, a lot of the document below may not make a lot of sense. Much of the metadata (e.g. job dates, companies, etc.) are encoded in Org-mode heading properties, which are processed by the [[https://gitlab.com/zzamboni/org-cv/-/tree/awesomecv][ox-awesomecv]] exporter to produce the LaTeX document. See the raw source of this file to see the full information.
+If you are viewing this file on Gitlab or Github, a lot of the document below may not make a lot of sense. Much of the metadata (e.g. job dates, companies, etc.) are encoded in Org-mode heading properties, which are processed by the [[https://gitlab.com/zzamboni/org-cv/-/tree/awesomecv][ox-awesomecv]] exporter to produce the LaTeX document. See the raw source of this file to see the full information, or see [[https://zzamboni.org/vita/]] for the final results.
 
 * How to include private information in the CV :noexport:
 
@@ -126,6 +126,7 @@ eGxO7Um6mCI4gxKYzYOs4hfceq6GIh1SK+exW2BwbFNio56yhKk8iTW2s/zxJJKv
   - [[#aws-certified-solutions-architect--professional][AWS Certified Solutions Architect – Professional]]
   - [[#aws-certified-solutions-architect--associate][AWS Certified Solutions Architect – Associate]]
   - [[#aws-certified-security--specialty][AWS Certified Security – Specialty]]
+  - [[#aws-certified-sysops-administrator--associate][AWS Certified SysOps Administrator – Associate]]
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#certified-safe-5-agilist][Certified SAFe® 5 Agilist]]
 - [[#research][Research]]
@@ -564,6 +565,18 @@ Earners of this certification have a comprehensive understanding of AWS services
 
 #+begin_cvitems
 Earners of this certification have an in-depth understanding of AWS security services and the shared responsibility model. They demonstrated the ability to design, implement, and troubleshoot various security models in the AWS Cloud. They can leverage various security models for organizations of all sizes.
+#+end_cvitems
+
+** [[https://www.credly.com/badges/7200e54c-efe5-407a-a632-b8731c9f870a/public_url][AWS Certified SysOps Administrator – Associate]]
+:PROPERTIES:
+:CV_ENV:   cvschool
+:ORGANIZATION: Amazon Web Services Training and Certification
+:LOCATION: February 2022
+:RIGHT_IMG: ./images/aws-certified-sysops-administrator-associate-small.png
+:END:
+
+#+begin_cvitems
+Earners of this certification have a comprehensive understanding on how to deploy, manage, and operate IT systems on the AWS Cloud. They demonstrated the ability to migrate on-premises workloads to AWS and monitor, scale, and secure systems on the AWS platform. They are able to provide guidance on implementing best practices for cloud operations.
 #+end_cvitems
 
 ** [[https://www.credly.com/badges/5b4d887e-116b-4646-968c-648ae9951069/public_url][Certified Information Systems Security Professional (CISSP)]]

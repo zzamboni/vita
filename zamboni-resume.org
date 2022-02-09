@@ -113,6 +113,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
   - [[#aws-certified-solutions-architect--professional][AWS Certified Solutions Architect – Professional]]
   - [[#aws-certified-solutions-architect--associate][AWS Certified Solutions Architect – Associate]]
   - [[#aws-certified-security--specialty][AWS Certified Security – Specialty]]
+  - [[#aws-certified-sysops-administrator--associate][AWS Certified SysOps Administrator – Associate]]
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#certified-safe-5-agilist][Certified SAFe® 5 Agilist]]
 - [[#research-publications-teaching-and-references][Research, Publications, Teaching and References]]
@@ -205,7 +206,6 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 
 - Developed the CFEngine language roadmap and security strategy.
 - Acted as overall CFEngine Advocate, with a special focus on security.
-- Gave talks, wrote articles and blog posts, taught classes, and in general spread the word about CFEngine.
 - Published the book [[http://cf-learn.info/][Learning CFEngine]] (O'Reilly Media), which was used for promotion and education.
 - Established and led the [[https://docs.cfengine.com/docs/3.10/guide-design-center.html][/CFEngine Design Center/]] project through its initial implementation phase.
 
@@ -225,8 +225,6 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 :END:
 
 - Managed security-related topics for HP enterprise customers in Mexico and abroad.
-- Initiated, advised and managed security-related projects.
-- Coordinated communication among technical teams involved in security initiatives.
 - Managed all security-related aspects of the design, implementation and delivery of IT Outsourcing projects.
 - Analyzed, designed and implemented solutions in the areas of system automation, configuration management, system administration, system design, virtualization, performance and security.
 
@@ -249,7 +247,6 @@ I design and build highly secure cloud solutions for AWS Global accounts.
   - [[http://www-03.ibm.com/press/us/en/pressrelease/23833.wss][/Project Phantom/]]: Security for VMware virtual environments using virtual machine introspection.
   - [[http://domino.research.ibm.com/library/cyberdig.nsf/1e4115aea78b6e7c85256b360066f0d4/d7c39a9a2e73d870852570060051dfed?OpenDocument][/Billy Goat/]]: An active worm-detection and capture system, deployed in the IBM internal and external networks.
   - [[http://www.usenix.org/event/sruti07/tech/full_papers/zamboni/zamboni.pdf][/Router-based Billy Goat/]]: An active worm-capture device deployed at the network boundary and coupled with a border router to effectively and automatically spoof every unused IP address outside the local network.
-  - /Exorcist/: Host-based, behavior-based intrusion detection using sequences of system calls.
 
 ** Sun Microsystems :noexport:
 :PROPERTIES:
@@ -267,7 +264,6 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 :END:
 
 - Participated in the development of the /Bruce/ host vulnerability scanner, later released as the [[http://www.usenix.org/publications/login/1999-11/features/senss.html][Sun Enterprise Network Security Service]] (SENSS).
-- Designed and implemented the first version of the network-based components of /Bruce/, which allowed it to operate on several hosts in a network, controlled from a central location.
 
 ** [[https://www.unam.mx/][National Autonomous University of Mexico (UNAM)]]
 :PROPERTIES:
@@ -285,11 +281,8 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 :END:
 
 - Established UNAM's first [[http://www.seguridad.unam.mx/][Intrusion Response Team]], which has since evolved into a much larger organization.
-- Supervised up to nine people working on different projects related to computer security.
-- Supervised and participated in the direct monitoring of the security of a Cray supercomputer and 22 Unix workstations.
-- Managed security services for the whole University, including incident response, security information, auditing and teaching.
-- Established the /International Computer Security Day/ (sponsored by the Association for Computing Machinery) at UNAM.  Acted as the main organizer of the event for two years (1994 and 1995). This event has grown and divided into the /Computer Security Day/ (a one-day event) and the /Seguridad en Cómputo/ (Computer Security) conference (a multi-day event).
-- Designed and headed development of an audit-analysis tool for Unix systems (SAINT).
+- Managed security services for the supercomputing organization and for the whole University, including incident response, security information, auditing and teaching.
+- Established the /International Computer Security Day/, which has grown and divided into the /Computer Security Day/ (a one-day event) and the /Seguridad en Cómputo/ (Computer Security) conference (a multi-day event).
 - System Administrator at UNAM's Supercomputing Center, managing UNAM's [[http://www.historiadelcomputo.unam.mx/files/fotos/Cray/cray.html][Cray Y-MP Supercomputer]] and related systems.
 
 *** System Administrator :noexport:
@@ -337,6 +330,12 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :DATE: October 2021
+:END:
+
+** [[https://www.credly.com/badges/7200e54c-efe5-407a-a632-b8731c9f870a/public_url][AWS Certified SysOps Administrator – Associate]]
+:PROPERTIES:
+:CV_ENV:   cvsubentry
+:DATE: February 2022
 :END:
 
 ** [[https://www.youracclaim.com/badges/98814af3-575b-4350-9667-70eddfea1da4/public_url][Certified Information Systems Security Professional (CISSP)]]
