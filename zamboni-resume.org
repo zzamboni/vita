@@ -362,5 +362,5 @@ Full Curriculum Vitæ available at [[https://zzamboni.org/vita/][https://zzambon
 
 * Local Variables :ARCHIVE:noexport:
 # Local Variables:
-# eval: (add-hook 'after-save-hook (lambda () (org-export-to-file 'awesomecv "zamboni-resume.tex")) :append :local)
+# eval: (add-hook 'after-save-hook (lambda () (org-export-to-file 'awesomecv "src/zamboni-resume.tex")) :append :local)
 # End:

@@ -1,6 +1,13 @@
 zamboni-vita.tex
 zamboni-vita-private.*
 zamboni-resume.tex
+zamboni-resume-private.tex
+src/zamboni-vita.tex
+src/zamboni-vita-private.tex
+src/zamboni-resume.tex
+src/zamboni-resume-private.tex
+zamboni-resume-private.pdf
+build/zamboni-vita-private
 *.dvi
 *.log
 *.out
@@ -25,6 +32,4 @@ auto
 *.bcf
 *.run.xml
 .DS_Store
-zamboni-resume-private.pdf
-zamboni-resume-private.tex
 .auctex-auto

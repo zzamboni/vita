@@ -75,7 +75,7 @@ The "Private info" section below contains private information which is not inclu
 When encrypted, this information is simply ignored. When I want to produce a version of my CV which includes this information, I run ~M-x org-decrypt-entry~, which prompts for my GPG passphrase. Then, *without saving the file*, I run the following export command:
 
 #+begin_src emacs-lisp
-(org-export-to-file 'awesomecv "zamboni-vita-private.tex")
+(org-export-to-file 'awesomecv "src/zamboni-vita-private.tex")
 #+end_src
 
 ** Private info :crypt:
@@ -1125,5 +1125,5 @@ Available by request.
 
 * Local Variables :ARCHIVE:noexport:
 # Local Variables:
-# eval: (add-hook 'after-save-hook (lambda () (org-export-to-file 'awesomecv "zamboni-vita.tex")) :append :local)
+# eval: (add-hook 'after-save-hook (lambda () (org-export-to-file 'awesomecv "src/zamboni-vita.tex")) :append :local)
 # End:
