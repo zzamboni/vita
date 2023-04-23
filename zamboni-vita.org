@@ -44,15 +44,15 @@
 
 :END:
 
-#+title: Security Architect · Engineering Leader · Computer Scientist
+#+title: Security Architect · Organizational Leader · Computer Scientist
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
-#+twitter: zzamboni
+# #+twitter: zzamboni
 #+linkedin: zzamboni
 #+leanpub: zzamboni
 # #+gitlab: zzamboni
 #+github: zzamboni
-#+stackoverflow: 5562 zzamboni
+# #+stackoverflow: 5562 zzamboni
 #+homepage: zzamboni.org
 
 # Uncomment this line before HTML export to have a TOC at the top
@@ -64,13 +64,15 @@ If you are viewing this file on Gitlab or Github, a lot of the document below ma
 
 * How to include private information in the CV :noexport:
 
-The "Private info" section below contains private information which is not included in the CV by default. It is kept encrypted automatically thanks to the =org-crypt= package. The "crypt" tag causes it to be encrypted automatically every time the file is saved, and the "noexport" tag of the header above causes it to be omitted when the file gets exported. Its contents, when unencrypted, contains field definitions like this:
+The "Private info" and "Private section for work-internal CV" sections below contain private information which is not included in the CV by default. It is kept encrypted automatically thanks to the =org-crypt= package. The "crypt" tag causes it to be encrypted automatically every time the file is saved, and the "noexport" tag of the header above causes it to be omitted when the file gets exported. Its contents, when unencrypted, contains field definitions like these:
 
 #+begin_src org
 ,#+mobile: <my mobile number>
 ,#+address: <my address>
 ,#+extrainfo: <other private information>
 #+end_src
+
+The encrypted sections can also contain text, though for now you will have to move it outside the section tagged as ~:noexport:~ for it to be exported.
 
 When encrypted, this information is simply ignored. When I want to produce a version of my CV which includes this information, I run ~M-x org-decrypt-entry~, which prompts for my GPG passphrase. Then, *without saving the file*, I run the following export command:
 
@@ -81,20 +83,21 @@ When encrypted, this information is simply ignored. When I want to produce a ver
 ** Private info :crypt:
 
 -----BEGIN PGP MESSAGE-----
-Comment: GPGTools - http://gpgtools.org
 
-jA0ECQMCiV1cCDhWKBT00qsB9v31lsXyFz2ZqY5Vmte2ydfVUZujGGKkmC8u0mvY
-vGY1i2fTCbLmTMiN7CZzjcG+sww/eX8m251SHZAhLQLbEKNym5OoLSCYU0vO9Pdt
-eGxO7Um6mCI4gxKYzYOs4hfceq6GIh1SK+exW2BwbFNio56yhKk8iTW2s/zxJJKv
-6E8vu7aVtFgM3npDy8dV1uqH4IIsyL5oQD54VGIQde+pFH7XSEK4vNuQBAk=
-=9Psi
+jA0ECQMCsFAHmRIKpCbn0qYB5rWVDQnfDNU786QVtXDcIH0wcUIoFZSyaH9ryNp4
+wtbFdo5Xz9slSm5jUzKn0Zr9JdY/V7wUGboGyjSm8r29+6uR3kKZY6jFwxiAbzxb
+7WiTJx0snC6nBxeYuVi6l6U1G/2IMZgCrW89amVy+OjHO49G2gzB362m/wjl1027
+XD9zqp4MjopNjVxWYgta+HJz501p7cFpyR5eujk0nS431P7LL8LM
+=xiPM
 -----END PGP MESSAGE-----
 
 * Table of Contents                                          :TOC_3:noexport:
 - [[#key-skills][Key skills]]
-- [[#professional-highlights][Professional highlights]]
+- [[#aws-experience-highlights][AWS experience highlights]]
+- [[#other-professional-highlights][Other Professional highlights]]
 - [[#experience][Experience]]
   - [[#amazon-web-services][Amazon Web Services]]
+    - [[#senior-global-security-architect][Senior Global Security Architect]]
     - [[#global-security-architect][Global Security Architect]]
   - [[#swisscom][Swisscom]]
     - [[#enterprise-architect-and-it-clouds-solution-security-architect][Enterprise Architect and IT Clouds Solution Security Architect]]
@@ -124,11 +127,14 @@ eGxO7Um6mCI4gxKYzYOs4hfceq6GIh1SK+exW2BwbFNio56yhKk8iTW2s/zxJJKv
 - [[#languages][Languages]]
 - [[#certifications][Certifications]]
   - [[#aws-certified-solutions-architect--professional][AWS Certified Solutions Architect – Professional]]
-  - [[#aws-certified-solutions-architect--associate][AWS Certified Solutions Architect – Associate]]
+  - [[#aws-certified-devops-engineer--professional][AWS Certified DevOps Engineer – Professional]]
   - [[#aws-certified-security--specialty][AWS Certified Security – Specialty]]
+  - [[#aws-certified-solutions-architect--associate][AWS Certified Solutions Architect – Associate]]
   - [[#aws-certified-sysops-administrator--associate][AWS Certified SysOps Administrator – Associate]]
+  - [[#aws-certified-developer--associate][AWS Certified Developer – Associate]]
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#certified-safe-5-agilist][Certified SAFe® 5 Agilist]]
+  - [[#certified-safe-5-advanced-scrum-master][Certified SAFe® 5 Advanced Scrum Master]]
 - [[#research][Research]]
   - [[#selected-research-projects-at-ibm][Selected research projects at IBM]]
     - [[#phantom][Phantom]]
@@ -141,7 +147,6 @@ eGxO7Um6mCI4gxKYzYOs4hfceq6GIh1SK+exW2BwbFNio56yhKk8iTW2s/zxJJKv
   - [[#additional-research-projects][Additional research projects]]
     - [[#using-autonomous-agents-for-intrusion-detection][Using autonomous agents for intrusion detection]]
     - [[#analysis-of-a-denial-of-service-attack-on-tcpip-synkill][Analysis of a denial-of-service attack on TCP/IP (Synkill)]]
-- [[#system-development-and-management][System Development and Management]]
 - [[#software-development-projects][Software Development Projects]]
   - [[#publicly-available-software-projects-see-httpsgithubcomzzamboni-and-httpsgitlabcomzzamboni][Publicly available software projects: see https://github.com/zzamboni/ and https://gitlab.com/zzamboni]]
   - [[#other-software-projects-not-publicly-available][Other software projects (not publicly available)]]
@@ -171,21 +176,11 @@ eGxO7Um6mCI4gxKYzYOs4hfceq6GIh1SK+exW2BwbFNio56yhKk8iTW2s/zxJJKv
   - [[#founder-and-organizer][Founder and organizer]]
 - [[#teaching-and-advising][Teaching and Advising]]
   - [[#students][Students]]
-    - [[#daniele-sgandurra-university-of-pisa-italy][Daniele Sgandurra, University of Pisa, Italy]]
-    - [[#martin-carbone-georgia-institute-of-technology-usa][Martin Carbone, Georgia Institute of Technology, U.S.A.]]
     - [[#urko-zurutuza-ortega-mondragon-university-spain][Urko Zurutuza Ortega, Mondragon University, Spain]]
     - [[#milton-yates-enst-bretagne-france][Milton Yates, ENST Bretagne, France]]
     - [[#candid-wüest-eth-zurich-switzerland][Candid Wüest, ETH Zurich, Switzerland]]
-  - [[#teaching][Teaching]]
-    - [[#cissp-training-30-hours][CISSP training (30 hours)]]
-    - [[#cfengine-one-day-training-class-8-hours][CFEngine one-day training class (8 hours)]]
-    - [[#virtualization-lecture-2-hours-systems-security-class-computer-science-dept]["Virtualization" lecture (2 hours), Systems Security class, Computer Science Dept.]]
-    - [[#intrusion-detection-basic-concepts-and-current-research-at-ibm-class-3-hours-information-technology-security-spring-school]["Intrusion detection: Basic concepts and current research at IBM" class (3 hours), Information Technology Security Spring School]]
-    - [[#introduction-to-computer-security-class-40-hours]["Introduction to Computer Security" class (40 hours)]]
-    - [[#ee495-information-extraction-retrieval-and-security-course][EE495 ("Information Extraction, Retrieval and Security") course]]
-    - [[#ssh-achieving-secure-communication-over-insecure-channels-class]["SSH: Achieving secure communication over insecure channels" class]]
-    - [[#protecting-your-computing-system-class]["Protecting your computing system" class]]
-    - [[#supercomputing-internship-program-courses][Supercomputing Internship Program Courses]]
+    - [[#daniele-sgandurra-university-of-pisa-italy][Daniele Sgandurra, University of Pisa, Italy]]
+    - [[#martin-carbone-georgia-institute-of-technology-usa][Martin Carbone, Georgia Institute of Technology, U.S.A.]]
 - [[#other-professional-activities][Other Professional Activities]]
   - [[#the-association-for-computing-machinery-acm][The Association for Computing Machinery (ACM)]]
   - [[#purduepm-the-purdue-perl-users-group][Purdue.pm, the Purdue Perl Users Group]]
@@ -209,22 +204,57 @@ This page presents a summary of my qualifications --- please see the following p
 :CV_ENV:   cvskills
 :END:
 
-- Leadership :: 30 years of multidisciplinary team and project leadership experience; IT Enterprise Architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework]] (SAFe 5) Agilist.
-- Computer Security :: Enterprise security architecture; virtualization and cloud computing security; risk management and compliance; intrusion detection and prevention; operating systems and network security; software security and secure software development; [[https://www.isc2.org/Certifications/CISSP][CISSP]] certification.
+- Leadership :: 32 years of multidisciplinary team and project leadership experience; IT Enterprise Architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework]] (SAFe) experience.
 - Communications :: Excellent written and spoken communication skills, extensive public speaking, writing and teaching experience.
-- Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms, software development, configuration management.
+- Cloud Computing :: AWS architecture, infrastructure, development and security. Holder of [[#certifications][6 AWS certifications]].
+- Computer Security :: Enterprise security architecture; virtualization and cloud computing security; risk management and compliance; intrusion detection and prevention; software security and secure software development; [[#certifications][CISSP]] certification.
 - Research :: Ph.D. in Computer Science, 9 years of experience at IBM Research.
+- Languages :: Spanish (native), English (100%), German (B1 level).
 
-# - Attitude :: I am passionate about and always willing to support science, technology and education.
-# - Languages :: Spanish (native), English (100%), German (B1 level).
+# - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms, software development, configuration management.
+
+* Private section for work-internal CV :noexport:crypt:
+-----BEGIN PGP MESSAGE-----
+
+jA0ECQMCBqrXztES9qHn0uoBDhBHVwORc0EYx/07JK8pN3Hrv+ThSjXglg0LojR4
+UrirHpscVUG+kIKRiCO6iUdclZp0SscsImOMaGaUU8/XVil8fQGr/QPN+68NphRi
+jvBuxOqtZV1/rKvMjts/jD4cLRG8WN+OjjKFTYAnIJGeUAPdzEiJcSdFH7VimWZ7
+DVq6Pw9aPQTKgQjd0DKBzGg/QgEQur+rc1NYZjjVSOr2h1D3SWgnRn/F7F/Exh0w
+xa1Le2X/3QxEiaqhJCDS2IVxr1Ch5o0l9fpm3wtstGwL3gPMi61BHwVA4dU0r61W
+YsI8tFEmGGqHSp3HmZr8WbHBlJlfn76I3Z46RAx5NX6kU3KtMNR6uPN1raUUXWrb
+H3XKSxf3NIyMhCwGsrkMnTFZLieJity74O7xBUlKZYS5bKQSUSRUlSemSlxxxveL
+Kgzmzi4kflSy+QOc58YI1vVYRckVohq4+qmQ2daJb7JftmCkYwM2cw8tdW4qYLwJ
+qr3icwkLSOnQ/fQ0BHMUKfItAajKXSYhW8Eo7tnw1OGJaTMkFV7ON2tngu1idDK6
+bWrrNQRo/Wz+19A69ZbllFtg36iLaxbfzb0sPI3O4sxJDVX8VYqVMIz2dydwHHwh
+f9p33Xigf7rk1caoI9LlLSiA2LT9Oaq+wSUWomHPUwrjcU3J/mGS6lpaaCamMox7
+bXdwj/vVO25yViUjgN26CuVWdolzd8tAN5WKWgRX07BnRXPaeyqrAig016R5aBSa
+Vb3Q4anbQlbrFsB2fx7n9jbM3F4neMJSvzECEGKH0EnQxHEr0EJEP9jsK+7FaIrS
+LcrdLMzsBIVUoB93rWYNQGRgQQ3UZh+WNm+0n6OHnF2JFQTGEp4o+9hnkUwpX5sw
+OjVqNS6xKxbYKYfkr4OEyMfRfTFAAQtxvfBMFo9Shcqf5RzeMRtAt9QIwq/lLAQx
+GFhx+efLcrs7egA1lg9EXDcScPRgMC46VJp7NDNoSAgBNM6qcCuHrx/NOSN3ndYV
+PPNGufGa21taJVwz5sM8jkbP/RKwlUle/+CUf62mVRQDCnE42mi7OlWRz3voJVy0
+yVApyoIkjQZHKvEhpeQKtoydiu+KRJ4CQYXNkKa1xQLJ4CQZiFkw2UwAarBDCcqT
+oyefu7iA68Jw5TX5Dc7VBMN3KzYIUn4x8DeJ60ue3VerbDaXRfBUXzcpk8D0Zu5d
+ai3F2VLGLss/qe4zcdoBVyJ+t/c2j84uBExlFuiBaOB154Ow3Mw0q33QK7I7wKH7
+hwnc2mn4Ru3yX8bmKxqWi8ndgj6z/8F5tSbD/YOMRRfG96Ged1zHKPE9RXHbNHip
+xLNUddenQPoy89fVY1TFD1W3ctnHLplLmaLONcWGt0XcwGpARJ39BdP1ofYbA9PQ
+tXM2iLOlNH84YXeUHdmS4H6jpf3LfYzmk+xz88eG3MbbHAnXdcn5le4IB5NlZnnk
+iC8cJ+w9FyHMfB9UvelBfr+4DrPB30T6Z8p7C9J+Xe3e+Tvn/uajK5DPWIJn2Id2
+CORDLwW6DHYA8QlCT6mAu2PDkYzG9pluZjHa6ve4DxejIm0CdveShFyF13+8xJy6
+5U4ahkcab/H0ShnHWfYGFj7+qQ6x9ppP0WjJdwAk6HW2IDD/lLMKikXz+XCveGf+
+zBt0Ab1yIjf36Lv6e33D6hTubKWZg0UZn5ujBZKNSTJKitdUyPB8ZqvrQsiUNu5z
+fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
+=gcb5
+-----END PGP MESSAGE-----
 
 * Professional highlights
 
 #+latex: \begin{cvparagraph}
-- 18 years of experience in education and research, 12 years of industry experience.
 - Management and leadership, IT security, cloud computing
-  + Manage security architecture, risk management, data governance and compliance (ISO27001, ISAE3402/3000, etc.) for [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's Cloud platforms]].
-  + Established and lead the Swisscom IT Clouds security community of practice.
+  + Manage security architecture, define and promote security best practices and drive activities related to risk analysis, threat modeling and mitigation at the  [[https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions][Stellantis /Virtual Engineering Workbench/]].
+  + Established scalable and durable mechanisms to enable partners to work securely in the [[https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/][Volkswagen Digital Production Platform (DPP)]] program.
+  + Managed security architecture, risk management, data governance and compliance (ISO27001, ISAE3402/3000, etc.) for [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's Cloud platforms]].
+  + Established and led the Swisscom IT Clouds security community of practice.
   + Established and led the /Health and State Management/ team at Swisscom to design, implement and operate a framework for scalable monitoring, logging and alerting for Swisscom's Cloud platforms.
   + Established and led the first computer security organization at UNAM, which has grown into the university's [[https://www.seguridad.unam.mx/][Information Security Coordination (UNAM-CERT)]].
   + Managed IT security customer relationships at HP Enterprise Services, including overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting.
@@ -241,7 +271,6 @@ This page presents a summary of my qualifications --- please see the following p
 * Experience
 :PROPERTIES:
 :CV_ENV:   cventries
-:PAGEBREAK: yes
 :END:
 
 ** Amazon Web Services
@@ -251,13 +280,29 @@ This page presents a summary of my qualifications --- please see the following p
 :FROM: 2021
 :END:
 
+*** Senior Global Security Architect
+:PROPERTIES:
+:CV_ENV:   cvsubentry
+:FROM: <2021-10-01>
+:END:
+
+- I work with customers and within AWS to increase security awareness, design and build secure solutions, mentor and develop colleagues and customers in security best practices.
+- As Lead Security Architect at the [[https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions][Stellantis /Virtual Engineering Workbench/]] (VEW) project, I have:
+  - Established the VEW security workstream to identify customer security requirements and policies, define and promote security best practices and drive activities related to risk analysis, threat modeling and mitigation definition, prioritization and implementation.
+  - Established measurement mechanisms for status and metrics for security activities, which provide visibility to both technical and business stakeholders.
+  - Established a /Security Champions/ program to promote and transfer security knowledge.
+  - Defined and tracked implementation of  security features to fulfill both customer business requirements and AWS best practices.
+
 *** Global Security Architect
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <2021-09-01>
+:TO: <2022-09-30>
 :END:
 
-I design and build highly secure cloud solutions for AWS Global accounts.
+- Worked with AWS global customers to improve security posture and promote secure design and implementation practices.
+- In the [[https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/][Volkswagen Digital Production Platform (DPP)]] program, I established scalable and durable mechanisms to enable DPP partners to work securely in the DPP program. I also created and promoted security learning materials tailored for various roles within the project, and increased security awareness and knowledge by promoting a /Security Guardians/ initiative across the organization.
+
 
 ** Swisscom
 :PROPERTIES:
@@ -293,7 +338,7 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 - I built and led a team which evolved on par with Swisscom cloud platforms to provide their monitoring and logging capabilities. My responsibilities included people management (up to 16 people), definition and prioritization of requirements and roadmaps (in collaboration with Product Managers and other stakeholders), technical architecture, and managing the planning and execution of team activities.
 - Selected achievements:
   - Led the transition of the /Enterprise Cloud/ LEMM (Logging, Event Management and Monitoring) and Access & Inventory frameworks into maintenance mode as the platform was retired.
-  - Defined the scope and mission of the Health and State Management (HSM) team as part of the new [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/enterprise-service-cloud.html][/Enterprise Service Cloud/]] project, and later of other platforms as the /IT Clouds/ scope expanded to [[https://www.swisscom.ch/de/business/enterprise/angebot/cloud-data-center/application-cloud.html][/Application Cloud/]], [[https://www.swisscom.ch/de/business/enterprise/angebot/sap/enterprise-cloud-for-sap-solutions.html][/Enterprise Cloud for SAP Solutions/]] and [[https://www.swisscom.ch/de/business/enterprise/angebot/cloud-data-center/dynamic-computing-services.html][/Dynamic Computing Services/]].
+  - Defined the scope and mission of the Health and State Management (HSM) team as part of the new [[https://www.swisscom.ch/en/business/enterprise/offer/cloud/cloudservices/enterprise-service-cloud.html][/Enterprise Service Cloud/]] project, and later of other platforms as the /IT Clouds/ scope expanded to [[https://www.swisscom.ch/en/business/enterprise/offer/cloud/cloudservices/application-cloud.html][/Application Cloud/]], [[https://www.swisscom.ch/en/business/enterprise/offer/platforms-applications/core-business-applications-service/enterprise-cloud-for-sap-solutions.html][/Enterprise Cloud for SAP Solutions/]] and [[https://www.swisscom.ch/en/business/enterprise/offer/cloud/cloudservices/dynamic-computing-services.html][/Dynamic Computing Services/]].
   - Defined the logging and monitoring architecture for the /Enterprise Service Cloud/ platform based on VMware vRealize Operations and vRealize Log Insight.
   - Led the transition of the /Application Cloud/ platform monitoring from the Orchard framework to a TICK-based framework.
   - Defined architecture and oversaw implementation of the Customer Log Forwarding service.
@@ -345,7 +390,7 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 :END:
 
 - Managed the CFEngine language roadmap.
-- Coordinated the [[https://docs.cfengine.com/docs/3.10/guide-design-center.html][CFEngine Design Center]] project.
+- Created and led the [[https://docs.cfengine.com/docs/3.10/guide-design-center.html][CFEngine Design Center]] project, which was the foundation for the current [[https://build.cfengine.com/][CFEngine Build]] service.
 - Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack).
 - Developed code for both the Design Center core and its integrations.
 
@@ -450,6 +495,7 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 :LOCATION: Mexico
 :FROM: 1991
 :TO: 1996
+:PAGEBREAK: yes
 :END:
 
 *** Head of [[http://www.seguridad.unam.mx/][Computer Security Area]]
@@ -528,92 +574,82 @@ I design and build highly secure cloud solutions for AWS Global accounts.
 
 * Certifications
 :PROPERTIES:
+:CUSTOM_ID: certifications
 :CV_ENV:   cventries
 :END:
+
+#+attr_latex: :width 50pt :center nil
+[[file:images/aws-certified-solutions-architect-professional-small.png]] [[file:images/aws-certified-devops-engineer-professional-small.png]] [[file:images/aws-certified-security-specialty-small.png]] [[file:images/aws-certified-solutions-architect-associate-small.png]] [[file:images/aws-certified-sysops-administrator-associate-small.png]] [[file:images/aws-certified-developer-associate-small.png]] [[file:images/certified-information-systems-security-professional-cissp-small.png]] [[file:images/certified-safe-5-agilist-small.png]] [[file:images/certified-safe-5-advanced-scrum-master-small.png]]
 
 ** [[https://www.credly.com/badges/5f462d17-402c-44b8-a8f9-80187ad0d7a1/public_url][AWS Certified Solutions Architect – Professional]]
 :PROPERTIES:
 :CV_ENV:   cvschool
 :ORGANIZATION: Amazon Web Services Training and Certification
-:LOCATION: December 2021
-:RIGHT_IMG: ./images/aws-certified-solutions-architect-professional-small.png
+:LOCATION: Since December 2021
 :END:
 
-#+begin_cvitems
-Earners of this certification have an extensive understanding of designing technical strategies to accomplish specific business goals. They demonstrated the ability to balance best practices and trade-offs based on business context. Badge owners are able to design solutions across multiple platforms and providers.
-#+end_cvitems
-
-** [[https://www.credly.com/badges/3fe94170-f19a-4552-95a8-ea6b13a7586e/public_url][AWS Certified Solutions Architect – Associate]]
+** [[https://www.credly.com/badges/4f046d8f-9511-47b4-a4af-01c58c3c7766/public_url][AWS Certified DevOps Engineer – Professional]]
 :PROPERTIES:
 :CV_ENV:   cvschool
 :ORGANIZATION: Amazon Web Services Training and Certification
-:LOCATION: October 2021
-:RIGHT_IMG: ./images/AWS-SolArchitect-Associate-2020-small.png
+:LOCATION: Since May 2022
 :END:
-
-#+begin_cvitems
-Earners of this certification have a comprehensive understanding of AWS services and technologies. They demonstrated the ability to build secure and robust solutions using architectural design principles based on customer requirements. They are able to strategically design well-architected distributed systems that are scalable, resilient, efficient, and fault-tolerant.
-#+end_cvitems
 
 ** [[https://www.credly.com/badges/630be29b-36d2-4d90-a5ff-22745355a06d/public_url][AWS Certified Security – Specialty]]
 :PROPERTIES:
 :CV_ENV:   cvschool
 :ORGANIZATION: Amazon Web Services Training and Certification
-:LOCATION: October 2021
-:RIGHT_IMG: ./images/AWS-Certified-Security-Specialty-small.png
+:LOCATION: Since October 2021
 :END:
 
-#+begin_cvitems
-Earners of this certification have an in-depth understanding of AWS security services and the shared responsibility model. They demonstrated the ability to design, implement, and troubleshoot various security models in the AWS Cloud. They can leverage various security models for organizations of all sizes.
-#+end_cvitems
+** [[https://www.credly.com/badges/3fe94170-f19a-4552-95a8-ea6b13a7586e/public_url][AWS Certified Solutions Architect – Associate]]
+:PROPERTIES:
+:CV_ENV:   cvschool
+:ORGANIZATION: Amazon Web Services Training and Certification
+:LOCATION: Since October 2021
+:END:
 
 ** [[https://www.credly.com/badges/7200e54c-efe5-407a-a632-b8731c9f870a/public_url][AWS Certified SysOps Administrator – Associate]]
 :PROPERTIES:
 :CV_ENV:   cvschool
 :ORGANIZATION: Amazon Web Services Training and Certification
-:LOCATION: February 2022
-:RIGHT_IMG: ./images/aws-certified-sysops-administrator-associate-small.png
+:LOCATION: Since February 2022
 :END:
 
-#+begin_cvitems
-Earners of this certification have a comprehensive understanding on how to deploy, manage, and operate IT systems on the AWS Cloud. They demonstrated the ability to migrate on-premises workloads to AWS and monitor, scale, and secure systems on the AWS platform. They are able to provide guidance on implementing best practices for cloud operations.
-#+end_cvitems
+** [[https://www.credly.com/badges/611cf376-9625-45ed-b037-8b984892abaf/public_url][AWS Certified Developer – Associate]]
+:PROPERTIES:
+:CV_ENV:   cvschool
+:ORGANIZATION: Amazon Web Services Training and Certification
+:LOCATION: Since April 2022
+:END:
 
 ** [[https://www.credly.com/badges/5b4d887e-116b-4646-968c-648ae9951069/public_url][Certified Information Systems Security Professional (CISSP)]]
 :PROPERTIES:
 :CV_ENV:   cvschool
 :ORGANIZATION: (ISC)², the International Information System Security Certification Consortium
-:LOCATION: April 2019
-:RIGHT_IMG: ./images/certified-information-systems-security-professional-cissp-small.png
+:LOCATION: Since April 2019
 :END:
-
-#+begin_cvitems
-The vendor-neutral CISSP credential confirms technical knowledge and experience to design, engineer, implement, and manage the overall security posture of an organization. Required by the world’s most security-conscious organizations, CISSP is the gold-standard information security certification that assures information security leaders possess the breadth and depth of knowledge to establish holistic security programs that protect against threats in an increasingly complex cyber world.
-#+end_cvitems
 
 ** [[https://www.credly.com/badges/88eb9455-fffa-4798-804c-b22b7c1f9534/public_url][Certified SAFe® 5 Agilist]]
 :PROPERTIES:
 :CV_ENV:   cvschool
 :ORGANIZATION: Scaled Agile Inc.
-:LOCATION: November 2021
-:RIGHT_IMG: ./images/certified-safe-5-agilist-small.png
+:LOCATION: Since November 2021
 :END:
 
-#+begin_cvitems
-A Certified SAFe® 5 Agilist (SA) is a SAFe enterprise leadership professional who is part of a Lean-Agile transformation. Key areas of competency include the application of Lean-Agile principles, execution and release of value through Agile Release Trains (ARTs), and building an Agile portfolio with Lean-Agile budgeting.
-#+end_cvitems
+** [[https://www.credly.com/badges/4f0585e9-4d82-4287-9f55-00a8141f51e6/public_url][Certified SAFe® 5 Advanced Scrum Master]]
+:PROPERTIES:
+:CV_ENV:   cvschool
+:ORGANIZATION: Scaled Agile Inc.
+:LOCATION: Since March 2022
+:END:
 
 ** [[https://www.credly.com/badges/e6bf0ca2-f1c4-4af6-bf63-09f4b8cdbd02/public_url][SAFe® 4 Certified Product Owner/Product Manager]] :noexport:
 :PROPERTIES:
 :CV_ENV:   cvschool
 :ORGANIZATION: Scaled Agile Inc.
 :LOCATION: July 2017
-:RIGHT_IMG: ./images/certified-safe-4-product-owner-product-manager-small.png
 :END:
-
-#+begin_cvitems
-A SAFe® 4 Certified Product Owner/Product Manager is a SAFe professional who works with customers and development organizations to identify and write requirements. Key areas of competency include identifying customer needs, writing epics, capabilities, features, stories, and prioritizing work in order to effectively deliver value to the enterprise.
-#+end_cvitems
 
 * Research
 :PROPERTIES:
@@ -630,7 +666,7 @@ A SAFe® 4 Certified Product Owner/Product Manager is a SAFe professional who wo
 :CV_ENV:   cvemployer
 :END:
 
-*** [[http://www-03.ibm.com/press/us/en/pressrelease/23833.wss][Phantom]]
+*** Phantom
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: 2008
@@ -697,6 +733,7 @@ A SAFe® 4 Certified Product Owner/Product Manager is a SAFe professional who wo
 ** Additional research projects
 :PROPERTIES:
 :CV_ENV:   cvemployer
+:PAGEBREAK: yes
 :END:
 
 *** [[https://www.cerias.purdue.edu/site/about/history/coast/projects/aafid.php][Using autonomous agents for intrusion detection]]
@@ -717,7 +754,7 @@ A SAFe® 4 Certified Product Owner/Product Manager is a SAFe professional who wo
 - Collaborated in the analysis of the SYN-flooding denial-of-service attack against TCP and in the implementation of a defense tool.
 - Publications: {{{cvcite(schuba97:synkill)}}}, awarded the [[https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/][2020 IEEE Security & Privacy Test of Time Award]].
 
-* System Development and Management
+* System Development and Management :noexport:
 :PROPERTIES:
 :CV_ENV:   cvskills
 :END:
@@ -846,14 +883,14 @@ A system of sensors for intrusion detection developed in OpenBSD through code in
 :DATE: 2011--2013
 :END:
 
-** [[http://www.raid-symposium.org/][Steering Committee Member]]
+** Steering Committee Member
 :PROPERTIES:
 :CV_ENV:   cvhonor
 :ORGANIZATION: Intl. Symposium on Recent Advances in Intrusion Detection
 :DATE: 2007--2017
 :END:
 
-** [[http://www.raid-symposium.org/raid2006/][Program Chair]]
+** Program Chair
 :PROPERTIES:
 :CV_ENV:   cvhonor
 :ORGANIZATION: 9th Intl. Symposium on Recent Advances in Intrusion Detection (RAID)
@@ -861,7 +898,7 @@ A system of sensors for intrusion detection developed in OpenBSD through code in
 :LOCATION: Germany
 :END:
 
-** [[http://www.raid-symposium.org/][Program Committee Member]]
+** Program Committee Member
 :PROPERTIES:
 :CV_ENV:   cvhonor
 :ORGANIZATION: Intl. Symposium on Recent Advances in Intrusion Detection
@@ -925,26 +962,6 @@ A system of sensors for intrusion detection developed in OpenBSD through code in
 
 ** Students
 
-*** Daniele Sgandurra, University of Pisa, Italy
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: Internship advisor
-:FROM: 2009
-:TO: 2009
-:END:
-
-- Project: Design and implementation of process injection using virtual machine introspection.
-
-*** Martin Carbone, Georgia Institute of Technology, U.S.A.
-:PROPERTIES:
-:CV_ENV:   cvsubentry
-:LABEL: Internship advisor
-:FROM: 2007
-:TO: 2007
-:END:
-
-Project: Implementation of a proof of concept Hyperjacking attack on Intel platform.
-
 *** Urko Zurutuza Ortega, Mondragon University, Spain
 :PROPERTIES:
 :CV_ENV:   cvsubentry
@@ -968,14 +985,34 @@ Project: Implementation of a proof of concept Hyperjacking attack on Intel platf
 *** Candid Wüest, ETH Zurich, Switzerland
 :PROPERTIES:
 :CV_ENV:   cvsubentry
-:LABEL: Diploma Thesis tutor
+:LABEL: Diploma Thesis advisor
 :FROM: 2002
 :TO: 2003
 :END:
 
 - Thesis: [[https://pub.tik.ee.ethz.ch/students/2002-2003-Wi/DA-2003-22.pdf][Desktop Firewalls and Intrusion Detection]]
 
-** Teaching
+*** Daniele Sgandurra, University of Pisa, Italy
+:PROPERTIES:
+:CV_ENV:   cvsubentry
+:LABEL: Internship advisor
+:FROM: 2009
+:TO: 2009
+:END:
+
+- Project: Design and implementation of process injection using virtual machine introspection.
+
+*** Martin Carbone, Georgia Institute of Technology, U.S.A.
+:PROPERTIES:
+:CV_ENV:   cvsubentry
+:LABEL: Internship advisor
+:FROM: 2007
+:TO: 2007
+:END:
+
+Project: Implementation of a proof of concept Hyperjacking attack on Intel platform.
+
+** Teaching :noexport:
 *** CISSP training (30 hours)
 :PROPERTIES:
 :CV_ENV:   cvsubentry
