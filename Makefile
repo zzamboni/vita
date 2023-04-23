@@ -1,14 +1,15 @@
 .PHONY: all clean publish
 
-OUTPUTS = zamboni-vita.pdf zamboni-resume.pdf
+OUTPUTS = build/zamboni-vita/zamboni-vita.pdf build/zamboni-resume/zamboni-resume.pdf
 
-%.pdf: %.tex texinput/* fonts/*
-	tectonic $<
-
-all: $(OUTPUTS)
+all:
+	tectonic -X build
 
 view: all
 	open $(OUTPUTS)
+
+watch:
+	tectonic -X watch -x 'build --open'
 
 clean:
 	rm -f $(OUTPUTS)
