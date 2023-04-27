@@ -10,6 +10,13 @@ preamble = ''
 postamble = ''
 
 # [[output]]
+# name = 'zamboni-vita.html'
+# type = 'html'
+# index = 'zamboni-vita.tex'
+# preamble = ''
+# postamble = ''
+
+# [[output]]
 # name = 'zamboni-vita-private'
 # type = 'pdf'
 # index = 'zamboni-vita-private.tex'
