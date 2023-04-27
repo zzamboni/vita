@@ -24,6 +24,6 @@ VITADEST = $(WEBDEST)/static/files/vita
 VITAPAGE = $(WEBDEST)/content/vita.md
 
 publish:
-	cp zamboni-vita.pdf zamboni-vita.html zamboni-vita.txt zamboni-resume.pdf $(VITADEST)
+	cp build/zamboni-vita/zamboni-vita.pdf build/zamboni-resume/zamboni-resume.pdf $(VITADEST)
 	sed -i '' 's/Last updated .*/Last updated on **'"$$(date +'%B %e, %Y')"'**/' $(VITAPAGE)
 	cd $(WEBDEST); git add $(VITADEST) $(VITAPAGE); git commit -a -m 'Updated CV'; git push
