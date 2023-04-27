@@ -93,8 +93,7 @@ XD9zqp4MjopNjVxWYgta+HJz501p7cFpyR5eujk0nS431P7LL8LM
 
 * Table of Contents                                          :TOC_3:noexport:
 - [[#key-skills][Key skills]]
-- [[#aws-experience-highlights][AWS experience highlights]]
-- [[#other-professional-highlights][Other Professional highlights]]
+- [[#professional-highlights][Professional highlights]]
 - [[#experience][Experience]]
   - [[#amazon-web-services][Amazon Web Services]]
     - [[#senior-global-security-architect][Senior Global Security Architect]]
@@ -124,7 +123,6 @@ XD9zqp4MjopNjVxWYgta+HJz501p7cFpyR5eujk0nS431P7LL8LM
   - [[#phd-in-computer-science][Ph.D. in Computer Science]]
   - [[#ms-in-computer-science][M.S. in Computer Science]]
   - [[#bachelors-degree-in-computer-engineering][Bachelor's degree in Computer Engineering]]
-- [[#languages][Languages]]
 - [[#certifications][Certifications]]
   - [[#aws-certified-solutions-architect--professional][AWS Certified Solutions Architect – Professional]]
   - [[#aws-certified-devops-engineer--professional][AWS Certified DevOps Engineer – Professional]]
@@ -135,6 +133,7 @@ XD9zqp4MjopNjVxWYgta+HJz501p7cFpyR5eujk0nS431P7LL8LM
   - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#certified-safe-5-agilist][Certified SAFe® 5 Agilist]]
   - [[#certified-safe-5-advanced-scrum-master][Certified SAFe® 5 Advanced Scrum Master]]
+- [[#languages][Languages]]
 - [[#research][Research]]
   - [[#selected-research-projects-at-ibm][Selected research projects at IBM]]
     - [[#phantom][Phantom]]
@@ -563,14 +562,6 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 :END:
 
 - Thesis title: [[https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf][UNAM/Cray Project for Security in the Unix Operating System]] (in Spanish, original title: /Proyecto UNAM/Cray de Seguridad en el Sistema Operativo Unix/).
-* Languages
-:PROPERTIES:
-:CV_ENV:   cvskills
-:END:
-
-- Spanish :: native
-- English :: full professional proficiency
-- German :: basic proficiency (B1 level)
 
 * Certifications
 :PROPERTIES:
@@ -650,6 +641,15 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 :ORGANIZATION: Scaled Agile Inc.
 :LOCATION: July 2017
 :END:
+
+* Languages
+:PROPERTIES:
+:CV_ENV:   cvskills
+:END:
+
+- Spanish :: native
+- English :: full professional proficiency
+- German :: basic proficiency (B1 level)
 
 * Research
 :PROPERTIES:
