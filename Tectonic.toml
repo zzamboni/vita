@@ -23,9 +23,9 @@ postamble = ''
 # preamble = ''
 # postamble = ''
 
-# [[output]]
-# name = 'zamboni-resume'
-# type = 'pdf'
-# index = 'zamboni-resume.tex'
-# preamble = ''
-# postamble = ''
+[[output]]
+name = 'zamboni-resume'
+type = 'pdf'
+index = 'zamboni-resume.tex'
+preamble = ''
+postamble = ''
