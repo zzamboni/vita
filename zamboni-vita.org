@@ -44,7 +44,7 @@
 
 :END:
 
-#+title: Security Architect · Organizational Leader · Computer Scientist
+#+title: Senior Security Architect · Organizational Leader · Computer Scientist
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 # #+twitter: zzamboni
@@ -301,7 +301,6 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 
 - Worked with AWS global customers to improve security posture and promote secure design and implementation practices.
 - In the [[https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/][Volkswagen Digital Production Platform (DPP)]] program, I established scalable and durable mechanisms to enable DPP partners to work securely in the DPP program. I also created and promoted security learning materials tailored for various roles within the project, and increased security awareness and knowledge by promoting a /Security Guardians/ initiative across the organization.
-
 
 ** Swisscom
 :PROPERTIES:
