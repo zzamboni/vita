@@ -44,7 +44,7 @@
 
 :END:
 
-#+title: Senior Security Architect · Organizational Leader · Computer Scientist
+#+title: Organizational Leader · Senior Security Architect · Computer Scientist
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 # #+twitter: zzamboni
@@ -322,7 +322,7 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 - Selected achievements and activities:
   + Ensured cloud platform and service compliance with internal, contractual and regulatory standards, including ISO27001, ISAE3402/3000 and GDPR.
   + Established and led a community of around 30 /Security Champions/ from different teams, who drove security initiatives and promote the security culture within the Swisscom IT Clouds organization.
-  + Coordinated threat modelings, audits, penetration tests and security compliance reporting.
+  + Coordinated threat modeling, audits, penetration tests and security compliance reporting.
   + Coordinated organization- and team-wide processes for risk and vulnerability management.
   + Development of the Swisscom /Platforms/ vision for 2025.
 
