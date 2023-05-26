@@ -127,6 +127,7 @@ XD9zqp4MjopNjVxWYgta+HJz501p7cFpyR5eujk0nS431P7LL8LM
   - [[#aws-certified-solutions-architect--professional][AWS Certified Solutions Architect – Professional]]
   - [[#aws-certified-devops-engineer--professional][AWS Certified DevOps Engineer – Professional]]
   - [[#aws-certified-security--specialty][AWS Certified Security – Specialty]]
+  - [[#aws-certified-data-analytics--specialty][AWS Certified Data Analytics – Specialty]]
   - [[#aws-certified-solutions-architect--associate][AWS Certified Solutions Architect – Associate]]
   - [[#aws-certified-sysops-administrator--associate][AWS Certified SysOps Administrator – Associate]]
   - [[#aws-certified-developer--associate][AWS Certified Developer – Associate]]
@@ -568,8 +569,8 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 :CV_ENV:   cventries
 :END:
 
-#+attr_latex: :width 50pt :center nil
-[[file:images/aws-certified-solutions-architect-professional-small.png]] [[file:images/aws-certified-devops-engineer-professional-small.png]] [[file:images/aws-certified-security-specialty-small.png]] [[file:images/aws-certified-solutions-architect-associate-small.png]] [[file:images/aws-certified-sysops-administrator-associate-small.png]] [[file:images/aws-certified-developer-associate-small.png]] [[file:images/certified-information-systems-security-professional-cissp-small.png]] [[file:images/certified-safe-5-agilist-small.png]] [[file:images/certified-safe-5-advanced-scrum-master-small.png]]
+#+attr_latex: :width 40pt :center nil
+[[file:images/aws-certified-solutions-architect-professional-small.png]] [[file:images/aws-certified-devops-engineer-professional-small.png]] [[file:images/aws-certified-security-specialty-small.png]] [[file:images/aws-certified-data-analytics-specialty-small.png]] [[file:images/aws-certified-solutions-architect-associate-small.png]] [[file:images/aws-certified-sysops-administrator-associate-small.png]] [[file:images/aws-certified-developer-associate-small.png]] [[file:images/certified-information-systems-security-professional-cissp-small.png]] [[file:images/certified-safe-5-agilist-small.png]] [[file:images/certified-safe-5-advanced-scrum-master-small.png]]
 
 ** [[https://www.credly.com/badges/5f462d17-402c-44b8-a8f9-80187ad0d7a1/public_url][AWS Certified Solutions Architect – Professional]]
 :PROPERTIES:
@@ -590,6 +591,13 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 :CV_ENV:   cvschool
 :ORGANIZATION: Amazon Web Services Training and Certification
 :LOCATION: Since October 2021
+:END:
+
+** [[https://www.credly.com/badges/cf7fa455-0305-4aec-a627-bf9ffa133308/public_url][AWS Certified Data Analytics – Specialty]]
+:PROPERTIES:
+:CV_ENV:   cvschool
+:ORGANIZATION: Amazon Web Services Training and Certification
+:LOCATION: Since May 2023
 :END:
 
 ** [[https://www.credly.com/badges/3fe94170-f19a-4552-95a8-ea6b13a7586e/public_url][AWS Certified Solutions Architect – Associate]]

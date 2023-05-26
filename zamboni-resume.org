@@ -329,7 +329,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :END:
 
 #+attr_latex: :width 40pt :center nil
-[[file:images/aws-certified-solutions-architect-professional-small.png]] [[file:images/aws-certified-devops-engineer-professional-small.png]] [[file:images/aws-certified-security-specialty-small.png]] [[file:images/aws-certified-solutions-architect-associate-small.png]] [[file:images/aws-certified-sysops-administrator-associate-small.png]] [[file:images/aws-certified-developer-associate-small.png]] [[file:images/certified-information-systems-security-professional-cissp-small.png]] [[file:images/certified-safe-5-agilist-small.png]] [[file:images/certified-safe-5-advanced-scrum-master-small.png]]
+[[file:images/aws-certified-solutions-architect-professional-small.png]] [[file:images/aws-certified-devops-engineer-professional-small.png]] [[file:images/aws-certified-security-specialty-small.png]]  [[file:images/aws-certified-data-analytics-specialty-small.png]] [[file:images/aws-certified-solutions-architect-associate-small.png]] [[file:images/aws-certified-sysops-administrator-associate-small.png]] [[file:images/aws-certified-developer-associate-small.png]] [[file:images/certified-information-systems-security-professional-cissp-small.png]] [[file:images/certified-safe-5-agilist-small.png]] [[file:images/certified-safe-5-advanced-scrum-master-small.png]]
 
 * Research, Publications, Teaching and References
 
