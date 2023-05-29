@@ -44,7 +44,7 @@
 
 :END:
 
-#+title: Senior Security Architect · Organizational Leader · Computer Scientist
+#+title: Organizational Leader · Senior Security Architect · Computer Scientist
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 # #+twitter: zzamboni
@@ -56,7 +56,7 @@
 #+homepage: zzamboni.org
 
 #+latex: \begin{cvparagraph}
-I am a Senior Enterprise Security Architect, Organizational Leader and Computer Scientist with 32 years of experience building systems and leading teams and projects. I specialize in the areas of Computer Security, Cloud Computing and Configuration Management. I have experience working with and leading remote teams. I possess a strong combination of leadership, conceptual and technical skills with excellent communication abilities.
+I am a Senior Organizational Leader, Enterprise Security Architect and Computer Scientist with 32 years of experience building systems and leading teams and projects. I specialize in the areas of Computer Security, Cloud Computing and Configuration Management. I possess a strong combination of leadership, conceptual and technical knowledge with excellent communication skills.
 #+latex: \end{cvparagraph}
 
 * Including private information :noexport:
@@ -120,7 +120,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :END:
 
 - Leadership :: 32 years of team and project leadership experience; IT Enterprise Architecture.
-- Computer Security :: Enterprise security architecture; virtualization and cloud computing security; risk management and compliance; intrusion detection and prevention; software security and secure software development.
+- Computer Security :: Enterprise security architecture; virtualization and cloud computing security; governance, risk management and compliance; intrusion detection and prevention; software security and secure software development.
 - Cloud Computing :: AWS architecture, infrastructure, development and security.
 - Communications and Research :: Excellent written and spoken communication skills;  research and teaching experience.
 - Research :: Ph.D. in Computer Science, 9 years of experience at IBM Research.
