@@ -5,8 +5,10 @@ OUTPUTS = build/zamboni-vita/zamboni-vita.pdf build/zamboni-resume/zamboni-resum
 all:
 	tectonic -X build
 
-view: all
+open:
 	open $(OUTPUTS)
+
+view: all open
 
 watch:
 	tectonic -X watch -x 'build --open'
