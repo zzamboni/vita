@@ -251,7 +251,7 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 
 #+latex: \begin{cvparagraph}
 - Management and leadership, IT security, cloud computing
-  + Manage security architecture, define and promote security best practices and drive activities related to risk analysis, threat modeling and mitigation at the  [[https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions][Stellantis /Virtual Engineering Workbench/]].
+  + Manage security architecture, define and promote security best practices and drive activities related to risk analysis, threat modeling and mitigation at the [[https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions][Stellantis /Virtual Engineering Workbench/]] project.
   + Established scalable and durable mechanisms to enable partners to work securely in the [[https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/][Volkswagen Digital Production Platform (DPP)]] program.
   + Managed security architecture, risk management, data governance and compliance (ISO27001, ISAE3402/3000, etc.) for [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's Cloud platforms]].
   + Established and led the Swisscom IT Clouds security community of practice.
