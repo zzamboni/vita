@@ -206,8 +206,9 @@ This page presents a summary of my qualifications --- please see the following p
 
 - Leadership :: 32 years of multidisciplinary team and project leadership experience; IT Enterprise Architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework]] (SAFe) experience.
 - Communications :: Excellent written and spoken communication skills, extensive public speaking, writing and teaching experience.
+- Technology :: Broad and deep IT expertise, including cloud computing, computer security, operating systems, networking, configuration management, software & services development, programming languages, etc.
 - Cloud Computing :: AWS architecture, infrastructure, development and security. Holder of [[#certifications][6 AWS certifications]].
-- Computer Security :: Enterprise security architecture; virtualization and cloud computing security; risk management and compliance; intrusion detection and prevention; software security and secure software development; [[#certifications][CISSP]] certification.
+- Computer Security :: Enterprise security architecture; virtualization and cloud computing security architecture and implementation; risk management and compliance; intrusion detection and prevention; software security and secure software development.
 - Research :: Ph.D. in Computer Science, 9 years of experience at IBM Research.
 - Languages :: Spanish (native), English (100%), German (B1 level).
 
@@ -251,21 +252,21 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 
 #+latex: \begin{cvparagraph}
 - Management and leadership, IT security, cloud computing
-  + Manage security architecture, define and promote security best practices and drive activities related to risk analysis, threat modeling and mitigation at the [[https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions][Stellantis /Virtual Engineering Workbench/]] project.
+  + Currently manage security architecture at the [[https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions][Stellantis /Virtual Engineering Workbench/]] project. Worked with CISO and business stakeholders to define governance, establish security best practices and drive risk analysis, threat modeling and mitigation.
   + Established scalable and durable mechanisms to enable partners to work securely in the [[https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/][Volkswagen Digital Production Platform (DPP)]] program.
   + Managed security architecture, risk management, data governance and compliance (ISO27001, ISAE3402/3000, etc.) for [[https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html][Swisscom's Cloud platforms]].
   + Established and led the Swisscom IT Clouds security community of practice.
   + Established and led the /Health and State Management/ team at Swisscom to design, implement and operate a framework for scalable monitoring, logging and alerting for Swisscom's Cloud platforms.
   + Established and led the first computer security organization at UNAM, which has grown into the university's [[https://www.seguridad.unam.mx/][Information Security Coordination (UNAM-CERT)]].
   + Managed IT security customer relationships at HP Enterprise Services, including overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting.
-  + Managed the CFEngine language product roadmap.
+#  + Managed the CFEngine language product roadmap.
 - Research, architecture and design
   + Designed the /Orchard/ monitoring framework for Swisscom's /Application Cloud/ platform, and led the team that implemented it and brought it into production.
   + Designed and implemented the /Billy Goat/ malware capture and analysis system at IBM.
 - Communications and community
   + Author of multiple books including [[https://cf-learn.info/][/Learning CFEngine/]], [[https://leanpub.com/learning-hammerspoon][/Learning Hammerspoon/]] and [[https://leanpub.com/lit-config][/Literate Configuration/]].
   + [[#program-committees][Program chair and program committee member for multiple conferences]] including the RAID symposium, DIMVA conference, the /Computer Security Day/ and /Computer Security/ conference at UNAM, and others.
-  + Member of the Editorial Board of the Computers & Security Journal.
+  + Member of the Editorial Board of the [[https://www.sciencedirect.com/journal/computers-and-security][Computers & Security Journal]].
 #+latex: \end{cvparagraph}
 
 * Experience
