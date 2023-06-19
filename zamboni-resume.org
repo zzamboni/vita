@@ -176,7 +176,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <2019-04-01>
-:TO: <2019-09-01>
+:TO: <2021-09-30>
 :END:
 
 - As a Solution Security Architect for IT Clouds, I was a member of the /Swisscom IT Clouds/ leadership team:

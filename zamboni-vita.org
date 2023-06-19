@@ -315,7 +315,7 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 :PROPERTIES:
 :CV_ENV:   cvsubentry
 :FROM: <2019-04-01>
-:TO: <2019-09-01>
+:TO: <2021-09-30>
 :END:
 
 - As an /Enterprise Architect/, I participated in the design of future products and solutions offered by Swisscom, in collaboration with architects from all other divisions of the company.
