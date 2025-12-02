@@ -6,7 +6,7 @@ all:
 	tectonic -X build
 
 open:
-	open $(OUTPUTS)
+	for i in $(OUTPUTS); do echo $$i...; open $$i &; done
 
 view: all open
 
@@ -27,5 +27,6 @@ VITAPAGE = $(WEBDEST)/content/vita.md
 
 publish:
 	cp build/zamboni-vita/zamboni-vita.pdf build/zamboni-resume/zamboni-resume.pdf $(VITADEST)
-	sed -i '' 's/Last updated .*/Last updated on **'"$$(date +'%B %e, %Y')"'**/' $(VITAPAGE)
+	sed -i'' 's/Last updated .*/Last updated on **'"$$(date +'%B %e, %Y')"'**/' $(VITAPAGE)
+	sed -i'' 's/^date: .*/date: '"$$(date -Iseconds)"'/' $(VITAPAGE)
 	cd $(WEBDEST); git add $(VITADEST) $(VITAPAGE); git commit -a -m 'Updated CV'; git push
