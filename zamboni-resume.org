@@ -124,7 +124,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 - Cloud Computing :: AWS architecture, infrastructure, development and security.
 - Communications and Research :: Excellent written and spoken communication skills;  research and teaching experience.
 - Research :: Ph.D. in Computer Science, 9 years of experience at IBM Research.
-- Languages :: Spanish (native), English (100%), German (B1 level).
+- Languages :: Spanish (native), English (100%), German (B2 level).
 
 # - Configuration Management :: CFEngine, Ansible, Puppet.
 # - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms (Amazon, Cloud Foundry, VMware), software development experience (Ruby, Python, C, Perl, LISP, etc.).
@@ -293,7 +293,7 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :TO:       <1996-08-01>
 :END:
 
-- Established UNAM's first [[http://www.seguridad.unam.mx/][Intrusion Response Team]], which has since evolved into a much larger organization.
+- Established UNAM's first Intrusion Response Team, which evolved into the current [[http://www.seguridad.unam.mx/][Information Security organization]].
 - Managed security services for the supercomputing organization and for the whole University, including incident response, security information, auditing and teaching.
 - Established the /International Computer Security Day/, which has grown and divided into the /Computer Security Day/ (a one-day event) and the /Seguridad en Cómputo/ (Computer Security) conference (a multi-day event).
 - System Administrator at UNAM's Supercomputing Center, managing UNAM's [[http://www.historiadelcomputo.unam.mx/files/fotos/Cray/cray.html][Cray Y-MP Supercomputer]] and related systems.
@@ -328,8 +328,19 @@ f/yLKNfJQJz6Y3WA/L6QqNVO
 :CV_ENV:   cventries
 :END:
 
-#+attr_latex: :width 40pt :center nil
-[[file:images/aws-certified-solutions-architect-professional-small.png]] [[file:images/aws-certified-devops-engineer-professional-small.png]] [[file:images/aws-certified-security-specialty-small.png]]  [[file:images/aws-certified-data-analytics-specialty-small.png]] [[file:images/aws-certified-solutions-architect-associate-small.png]] [[file:images/aws-certified-sysops-administrator-associate-small.png]] [[file:images/aws-certified-developer-associate-small.png]] [[file:images/certified-information-systems-security-professional-cissp-small.png]] [[file:images/certified-safe-5-agilist-small.png]] [[file:images/certified-safe-5-advanced-scrum-master-small.png]]
+# #+attr_latex: :width 40pt :center nil
+# [[file:images/aws-certified-solutions-architect-professional-small.png]] [[file:images/aws-certified-devops-engineer-professional-small.png]] [[file:images/aws-certified-security-specialty-small.png]]  [[file:images/aws-certified-data-analytics-specialty-small.png]] [[file:images/aws-certified-solutions-architect-associate-small.png]] [[file:images/aws-certified-sysops-administrator-associate-small.png]] [[file:images/aws-certified-developer-associate-small.png]] [[file:images/certified-information-systems-security-professional-cissp-small.png]] [[file:images/certified-safe-5-agilist-small.png]] [[file:images/certified-safe-5-advanced-scrum-master-small.png]]
+
+#+latex: \href{https://www.credly.com/badges/5f462d17-402c-44b8-a8f9-80187ad0d7a1/public_url}{\includegraphics[width=40pt]{images/aws-certified-solutions-architect-professional-small.png}}
+#+latex: \href{https://www.credly.com/badges/4f046d8f-9511-47b4-a4af-01c58c3c7766/public_url}{\includegraphics[width=40pt]{images/aws-certified-devops-engineer-professional-small.png}}
+#+latex: \href{https://www.credly.com/badges/630be29b-36d2-4d90-a5ff-22745355a06d/public_url}{\includegraphics[width=40pt]{images/aws-certified-security-specialty-small.png}}
+#+latex: \href{https://www.credly.com/badges/cf7fa455-0305-4aec-a627-bf9ffa133308/public_url}{\includegraphics[width=40pt]{images/aws-certified-data-analytics-specialty-small.png}}
+#+latex: \href{https://www.credly.com/badges/3fe94170-f19a-4552-95a8-ea6b13a7586e/public_url}{\includegraphics[width=40pt]{images/aws-certified-solutions-architect-associate-small.png}}
+#+latex: \href{https://www.credly.com/badges/7200e54c-efe5-407a-a632-b8731c9f870a/public_url}{\includegraphics[width=40pt]{images/aws-certified-sysops-administrator-associate-small.png}}
+#+latex: \href{https://www.credly.com/badges/611cf376-9625-45ed-b037-8b984892abaf/public_url}{\includegraphics[width=40pt]{images/aws-certified-developer-associate-small.png}}
+#+latex: \href{https://www.credly.com/badges/5b4d887e-116b-4646-968c-648ae9951069/public_url}{\includegraphics[width=40pt]{images/certified-information-systems-security-professional-cissp-small.png}}
+#+latex: \href{https://www.credly.com/badges/88eb9455-fffa-4798-804c-b22b7c1f9534/public_url}{\includegraphics[width=40pt]{images/certified-safe-5-agilist-small.png}}
+#+latex: \href{https://www.credly.com/badges/4f0585e9-4d82-4287-9f55-00a8141f51e6/public_url}{\includegraphics[width=40pt]{images/certified-safe-5-advanced-scrum-master-small.png}}
 
 * Research, Publications, Teaching and References
 

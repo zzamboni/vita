@@ -44,7 +44,7 @@
 
 :END:
 
-#+title: Organizational Leader · Senior Security Architect · Computer Scientist
+#+title: Organizational Leader · Security Expert · Computer Scientist
 #+author: Diego Zamboni
 #+email: diego@zzamboni.org
 # #+twitter: zzamboni
@@ -124,6 +124,7 @@ XD9zqp4MjopNjVxWYgta+HJz501p7cFpyR5eujk0nS431P7LL8LM
   - [[#ms-in-computer-science][M.S. in Computer Science]]
   - [[#bachelors-degree-in-computer-engineering][Bachelor's degree in Computer Engineering]]
 - [[#certifications][Certifications]]
+  - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#aws-certified-solutions-architect--professional][AWS Certified Solutions Architect – Professional]]
   - [[#aws-certified-devops-engineer--professional][AWS Certified DevOps Engineer – Professional]]
   - [[#aws-certified-security--specialty][AWS Certified Security – Specialty]]
@@ -131,7 +132,6 @@ XD9zqp4MjopNjVxWYgta+HJz501p7cFpyR5eujk0nS431P7LL8LM
   - [[#aws-certified-solutions-architect--associate][AWS Certified Solutions Architect – Associate]]
   - [[#aws-certified-sysops-administrator--associate][AWS Certified SysOps Administrator – Associate]]
   - [[#aws-certified-developer--associate][AWS Certified Developer – Associate]]
-  - [[#certified-information-systems-security-professional-cissp][Certified Information Systems Security Professional (CISSP)]]
   - [[#certified-safe-5-agilist][Certified SAFe® 5 Agilist]]
   - [[#certified-safe-5-advanced-scrum-master][Certified SAFe® 5 Advanced Scrum Master]]
 - [[#languages][Languages]]
@@ -207,10 +207,10 @@ This page presents a summary of my qualifications --- please see the following p
 - Leadership :: 32 years of multidisciplinary team and project leadership experience; IT Enterprise Architecture; [[https://www.scaledagileframework.com/][Scaled Agile Framework]] (SAFe) experience.
 - Communications :: Excellent written and spoken communication skills, extensive public speaking, writing and teaching experience.
 - Technology :: Broad and deep IT expertise, including cloud computing, computer security, operating systems, networking, configuration management, software & services development, programming languages, etc.
-- Cloud Computing :: AWS architecture, infrastructure, development and security. Holder of [[#certifications][6 AWS certifications]].
+- Cloud Computing :: AWS architecture, infrastructure, development and security. Holder of [[#certifications][7 AWS certifications]].
 - Computer Security :: Enterprise security architecture; virtualization and cloud computing security architecture and implementation; risk management and compliance; intrusion detection and prevention; software security and secure software development.
 - Research :: Ph.D. in Computer Science, 9 years of experience at IBM Research.
-- Languages :: Spanish (native), English (100%), German (B1 level).
+- Languages :: Spanish (native), English (100%), German (B2 level).
 
 # - Systems and Development :: Unix/Linux systems engineering and administration, system health management and monitoring, cloud platforms, software development, configuration management.
 
@@ -570,8 +570,26 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 :CV_ENV:   cventries
 :END:
 
-#+attr_latex: :width 40pt :center nil
-[[file:images/aws-certified-solutions-architect-professional-small.png]] [[file:images/aws-certified-devops-engineer-professional-small.png]] [[file:images/aws-certified-security-specialty-small.png]] [[file:images/aws-certified-data-analytics-specialty-small.png]] [[file:images/aws-certified-solutions-architect-associate-small.png]] [[file:images/aws-certified-sysops-administrator-associate-small.png]] [[file:images/aws-certified-developer-associate-small.png]] [[file:images/certified-information-systems-security-professional-cissp-small.png]] [[file:images/certified-safe-5-agilist-small.png]] [[file:images/certified-safe-5-advanced-scrum-master-small.png]]
+# #+attr_latex: :width 40pt :center nil
+# [[file:images/aws-certified-solutions-architect-professional-small.png]] [[file:images/aws-certified-devops-engineer-professional-small.png]] [[file:images/aws-certified-security-specialty-small.png]] [[file:images/aws-certified-data-analytics-specialty-small.png]] [[file:images/aws-certified-solutions-architect-associate-small.png]] [[file:images/aws-certified-sysops-administrator-associate-small.png]] [[file:images/aws-certified-developer-associate-small.png]] [[file:images/certified-information-systems-security-professional-cissp-small.png]] [[file:images/certified-safe-5-agilist-small.png]] [[file:images/certified-safe-5-advanced-scrum-master-small.png]]
+
+#+latex: \href{https://www.credly.com/badges/5b4d887e-116b-4646-968c-648ae9951069/public_url}{\includegraphics[width=40pt]{images/certified-information-systems-security-professional-cissp-small.png}}
+#+latex: \href{https://www.credly.com/badges/5f462d17-402c-44b8-a8f9-80187ad0d7a1/public_url}{\includegraphics[width=40pt]{images/aws-certified-solutions-architect-professional-small.png}}
+#+latex: \href{https://www.credly.com/badges/4f046d8f-9511-47b4-a4af-01c58c3c7766/public_url}{\includegraphics[width=40pt]{images/aws-certified-devops-engineer-professional-small.png}}
+#+latex: \href{https://www.credly.com/badges/630be29b-36d2-4d90-a5ff-22745355a06d/public_url}{\includegraphics[width=40pt]{images/aws-certified-security-specialty-small.png}}
+#+latex: \href{https://www.credly.com/badges/cf7fa455-0305-4aec-a627-bf9ffa133308/public_url}{\includegraphics[width=40pt]{images/aws-certified-data-analytics-specialty-small.png}}
+#+latex: \href{https://www.credly.com/badges/3fe94170-f19a-4552-95a8-ea6b13a7586e/public_url}{\includegraphics[width=40pt]{images/aws-certified-solutions-architect-associate-small.png}}
+#+latex: \href{https://www.credly.com/badges/7200e54c-efe5-407a-a632-b8731c9f870a/public_url}{\includegraphics[width=40pt]{images/aws-certified-sysops-administrator-associate-small.png}}
+#+latex: \href{https://www.credly.com/badges/611cf376-9625-45ed-b037-8b984892abaf/public_url}{\includegraphics[width=40pt]{images/aws-certified-developer-associate-small.png}}
+#+latex: \href{https://www.credly.com/badges/88eb9455-fffa-4798-804c-b22b7c1f9534/public_url}{\includegraphics[width=40pt]{images/certified-safe-5-agilist-small.png}}
+#+latex: \href{https://www.credly.com/badges/4f0585e9-4d82-4287-9f55-00a8141f51e6/public_url}{\includegraphics[width=40pt]{images/certified-safe-5-advanced-scrum-master-small.png}}
+
+** [[https://www.credly.com/badges/5b4d887e-116b-4646-968c-648ae9951069/public_url][Certified Information Systems Security Professional (CISSP)]]
+:PROPERTIES:
+:CV_ENV:   cvschool
+:ORGANIZATION: (ISC)², the International Information System Security Certification Consortium
+:LOCATION: Since April 2019
+:END:
 
 ** [[https://www.credly.com/badges/5f462d17-402c-44b8-a8f9-80187ad0d7a1/public_url][AWS Certified Solutions Architect – Professional]]
 :PROPERTIES:
@@ -622,13 +640,6 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 :LOCATION: Since April 2022
 :END:
 
-** [[https://www.credly.com/badges/5b4d887e-116b-4646-968c-648ae9951069/public_url][Certified Information Systems Security Professional (CISSP)]]
-:PROPERTIES:
-:CV_ENV:   cvschool
-:ORGANIZATION: (ISC)², the International Information System Security Certification Consortium
-:LOCATION: Since April 2019
-:END:
-
 ** [[https://www.credly.com/badges/88eb9455-fffa-4798-804c-b22b7c1f9534/public_url][Certified SAFe® 5 Agilist]]
 :PROPERTIES:
 :CV_ENV:   cvschool
@@ -657,7 +668,7 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 
 - Spanish :: native
 - English :: full professional proficiency
-- German :: basic proficiency (B1 level)
+- German :: intermediate proficiency (B2 level)
 
 * Research
 :PROPERTIES:
