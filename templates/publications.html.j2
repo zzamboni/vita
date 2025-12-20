@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Diego Zamboni">
+  <meta name="description" content="Publications by Diego Zamboni">
+  <title>Publications</title>
+  <style>
+    :root {
+  color-scheme: light dark;
+
+  --color-background-light: #ffffff;
+  --color-dimmed-light: #f3f4f5;
+  --color-primary-light: #191e23;
+  --color-secondary-light: #6c7781;
+  --color-accent-light: #0073aa;
+
+  --color-background-dark: #191e23;
+  --color-dimmed-dark: #23282d;
+  --color-primary-dark: #fbfbfc;
+  --color-secondary-dark: #ccd0d4;
+  --color-accent-dark: #00a0d2;
+
+  --color-background: var(--color-background-light);
+  --color-dimmed: var(--color-dimmed-light);
+  --color-primary: var(--color-primary-light);
+  --color-secondary: var(--color-secondary-light);
+  --color-accent: var(--color-accent-light);
+
+  --scale-ratio: 1.25;
+  --scale0: 1rem;
+  --scale1: calc(var(--scale0) * var(--scale-ratio));
+  --scale2: calc(var(--scale1) * var(--scale-ratio));
+  --scale3: calc(var(--scale2) * var(--scale-ratio));
+  --scale4: calc(var(--scale3) * var(--scale-ratio));
+  --scale5: calc(var(--scale4) * var(--scale-ratio));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-background-dark);
+    --color-dimmed: var(--color-dimmed-dark);
+    --color-primary: var(--color-primary-dark);
+    --color-secondary: var(--color-secondary-dark);
+    --color-accent: var(--color-accent-dark);
+  }
+}
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin-inline: auto;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+               "Helvetica Neue", Arial, sans-serif;
+
+  font-size: var(--scale0);
+  line-height: 1.6;
+
+  background: var(--color-background);
+  color: var(--color-primary);
+}
+h1 {
+  font-size: var(--scale4);
+  font-weight: 600;
+  margin-bottom: 0.75em;
+}
+
+h2 {
+  font-size: var(--scale2);
+  font-weight: 600;
+  color: var(--color-secondary);
+
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  padding-bottom: 0.25em;
+
+  border-bottom: 1px solid var(--color-dimmed);
+}
+.toc {
+  font-size: var(--scale0);
+  color: var(--color-secondary);
+  margin: 1em 0 2em 0;
+}
+
+.toc a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
+.pub {
+  margin-bottom: 1.25em;
+}
+
+.pub strong {
+  font-weight: 600;
+}
+
+.meta {
+  font-size: 0.9em;
+  color: var(--color-secondary);
+}
+footer {
+  margin-top: 3em;
+  font-size: 0.8em;
+  color: var(--color-secondary);
+  text-align: right;
+}
+
+@media print {
+  body {
+    max-width: none;
+    padding: 0;
+    font-size: 11pt;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .toc {
+    font-size: 0.9em;
+    margin-bottom: 1em;
+  }
+
+  h1, h2 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .pub {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  footer {
+    position: running(footer);
+  }
+}
+    
+  </style>
+</head>
+<body>
+
+<h1>Publications</h1>
+
+<nav class="toc">
+    {% for section in toc_sections %}
+        <a href="#{{ section }}">
+          {{ section_titles[section] }}
+        </a>{% if not loop.last %} · {% endif %} 
+    {% endfor %}<br>
+</nav>
+
+{% for section in section_order %}
+{% set items = sections[section] %}
+{% if items %}
+<h2 id="{{ section }}">{{ section_titles[section] }}</h2>
+
+{% for e in items %}
+{% if dev_reload %}
+<!-- <div style="background-color: lightgrey"><pre>{{ e|pprint }}</pre></div><br/> -->
+{% endif %}
+<div class="pub" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <strong itemprop="name">
+    {% if e.url or e._doi_url %}
+      <a itemprop="url" href="{{ e.url or e._doi_url }}">
+        {{ e.title or e.issuetitle }}
+      </a>
+    {% else %}
+      {{ e.title or e.issuetitle }}
+    {% endif %}
+  </strong><br>
+  {% if e.authors %}{{ e.authors }}<br>{% elif e.editor %}Editors: {{ e.editor }}<br>{% endif %}
+  <span class="meta">
+    {% if e.ENTRYTYPE == "phdthesis" %}{{ e.type or "PhD thesis" }}, {{ e.school }}
+    {% elif e.ENTRYTYPE == "mastersthesis" %}{{ e.type or "MSc thesis" }}, {{ e.school }}
+    {% elif e.ENTRYTYPE == "techreport" %}{{ e.type or "Technical Report" }} {{ e.number }}, {{ e.institution or e.location }}
+    {% else %}{{ e.journal or e.booktitle or e.publisher or e.institution or e.howpublished or "" }}{% endif %}
+    {% if e.year or e.date %} · {{ e.year or e.date }}<meta itemprop="datePublished" content="{{ e.year or e.date }}">{% endif %}
+    {% if e._doi_url and e.url %} · <a href="{{ e._doi_url }}">DOI {{ e.doi }}</a>{% endif %}
+    {% if e.doi %}<meta itemprop="identifier" content="{{ e.doi }}">{% endif %}
+    {% if e.note %} · {{ e.note }}{% endif %}
+  </span>
+</div>
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+<footer>
+  <small>Generated {{ generated }}</small>
+</footer>
+{% if dev_reload %}
+<!-- Dev mode only: auto-reload when page changes. -->
+<script>
+(() => {
+  const self = new URL(location.href);
+  self.searchParams.set("__reload", Date.now().toString());
+
+  let lastModified = null;
+  async function check() {
+    try {
+      const res = await fetch(self.toString(), { method: "GET", cache: "no-store" });
+      const lm = res.headers.get("last-modified") || null;
+
+      if (lastModified === null) { lastModified = lm; return; }
+      if (lm && lastModified && lm !== lastModified) location.reload();
+    } catch (e) { /* ignore transient errors during rebuild */ }
+  }
+  setInterval(check, 800);
+})();
+</script>
+{% endif %}
+</body>
+</html>

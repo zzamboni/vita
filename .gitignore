@@ -33,3 +33,4 @@ auto
 *.run.xml
 .DS_Store
 .auctex-auto
+node_modules/

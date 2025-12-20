@@ -1,0 +1,228 @@
+# -----------------------------------------------------------------------------
+# Global variables / paths
+# -----------------------------------------------------------------------------
+[vars]
+# Input CV (JSON Resume format)
+cv_json = "diego-zamboni-jsonresume.json"
+
+# Publications pipeline inputs
+pubs_script   = "scripts/build_publications.py"
+pubs_template = "templates/publications.html.j2"
+pubs_bib      = "src/**/*.bib"
+
+# Output layout (keep dev/prod artifacts separated under build/)
+output_dir_base = "build/zamboni-jsonresume"
+output_dir_dev  = "{{vars.output_dir_base}}/dev"
+output_dir_prod = "{{vars.output_dir_base}}/prod"
+
+# Output files (dev/prod)
+cv_html_dev   = "{{vars.output_dir_dev}}/vita.html"
+cv_html_prod  = "{{vars.output_dir_prod}}/vita.html"
+
+pubs_html_dev  = "{{vars.output_dir_dev}}/publications.html"
+pubs_html_prod = "{{vars.output_dir_prod}}/publications.html"
+
+# Local dev server settings (used for polling-based auto-reload)
+port = "8008"
+base_url = "http://127.0.0.1:{{vars.port}}"
+cv_url = "{{vars.base_url}}/vita.html"
+pubs_url = "{{vars.base_url}}/publications.html"
+
+
+# -----------------------------------------------------------------------------
+# Core build steps
+# -----------------------------------------------------------------------------
+
+# Render the CV HTML from the JSON Resume input.
+
+[tasks.render-dev]
+description = "Render CV (dev)"
+usage = '''
+flag "-t --theme <theme>"
+'''
+sources = ["{{vars.cv_json}}", "scripts/render_cv.sh", "mise.toml"]
+outputs = ["{{vars.cv_html_dev}}"]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+scripts/render_cv.sh "${usage_theme:-}" "{{vars.cv_json}}" "{{vars.cv_html_dev}}"
+'''
+
+[tasks.render-prod]
+description = "Render CV (prod)"
+usage = '''
+flag "-t --theme <theme>"
+'''
+sources = ["{{vars.cv_json}}", "scripts/render_cv.sh", "mise.toml"]
+outputs = ["{{vars.cv_html_prod}}"]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+scripts/render_cv.sh "${usage_theme:-}" "{{vars.cv_json}}" "{{vars.cv_html_prod}}"
+'''
+
+# Build publications HTML from BibTeX + template.
+
+[tasks.pubs-dev]
+description = "Build publications (dev)"
+sources = ["{{vars.pubs_script}}", "{{vars.pubs_template}}", "{{vars.pubs_bib}}", "scripts/build_pubs.sh", "mise.toml"]
+outputs = ["{{vars.pubs_html_dev}}"]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+scripts/build_pubs.sh 1 "{{vars.pubs_html_dev}}" "{{vars.pubs_script}}"
+'''
+
+[tasks.pubs-prod]
+description = "Build publications (prod)"
+sources = ["{{vars.pubs_script}}", "{{vars.pubs_template}}", "{{vars.pubs_bib}}", "scripts/build_pubs.sh", "mise.toml"]
+outputs = ["{{vars.pubs_html_prod}}"]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+scripts/build_pubs.sh 0 "{{vars.pubs_html_prod}}" "{{vars.pubs_script}}"
+'''
+
+# Dev-only: inject a reload polling snippet into the dev CV HTML.
+# This keeps resumed output unchanged in prod.
+[tasks.cv-reload-inject]
+description = "Inject dev reload script into dev CV HTML"
+depends = ["render-dev"]
+sources = [
+  "{{vars.cv_html_dev}}",
+  "mise.toml",
+]
+outputs = [
+  "{{vars.cv_html_dev}}",
+]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Only inject once
+if grep -q "__reload" "{{vars.cv_html_dev}}"; then
+  exit 0
+fi
+
+needle="</body>"
+inject='
+<script>
+(() => {
+  const self = new URL(location.href);
+  self.searchParams.set("__reload", Date.now().toString());
+  let lastModified = null;
+  async function check() {
+    try {
+      const res = await fetch(self.toString(), { cache: "no-store" });
+      const lm = res.headers.get("last-modified") || null;
+      if (lastModified === null) { lastModified = lm; return; }
+      if (lm && lastModified && lm !== lastModified) location.reload();
+    } catch (e) {}
+  }
+  setInterval(check, 800);
+})();
+</script>
+</body>'
+
+perl -0777 -pe "s~$needle~$inject~" -i "{{vars.cv_html_dev}}"
+'''
+
+
+# -----------------------------------------------------------------------------
+# Mode targets (what you normally run)
+# -----------------------------------------------------------------------------
+
+# Build dev outputs (both pages) with auto-reload enabled.
+# This is what you should use with `mise watch build-dev`.
+[tasks.build-dev]
+description = "Build dev outputs (with auto-reload)"
+depends = ["render-dev", "pubs-dev", "cv-reload-inject"]  # keep your inject task dev-only
+
+# Build production outputs (both pages) without any auto-reload code.
+[tasks.build-prod]
+description = "Build prod outputs (no auto-reload)"
+depends = ["render-prod", "pubs-prod"]
+
+# Convenience aliases (optional, but nice for discoverability)
+[tasks.cv-dev]
+description = "Build CV (dev, inject reload)"
+depends = ["cv-reload-inject"]
+
+[tasks.cv-prod]
+description = "Build CV (production, no reload injection)"
+depends = ["render-prod"]
+
+# -----------------------------------------------------------------------------
+# Dev UX tasks (server / open / one-command dev loop)
+# -----------------------------------------------------------------------------
+
+# Serve the dev output directory over HTTP.
+# Required for the polling-based auto-reload snippets (fetch + Last-Modified).
+[tasks.serve]
+description = "Serve output_dir_dev over HTTP (needed for reload polling)"
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+echo "→ Serving {{vars.output_dir_dev}} at {{vars.base_url}}"
+python3 -m http.server "{{vars.port}}" --directory "{{vars.output_dir_dev}}"
+'''
+
+# Open the dev pages once (using your system `open` wrapper).
+# Tip: use `mise watch build-dev` separately to rebuild without re-opening tabs.
+[tasks.open-dev]
+description = "Open CV + publications once"
+depends = ["build-dev"]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+echo "→ Opening CV + publications pages"
+open "{{vars.cv_url}}" >/dev/null 2>&1 || true
+open "{{vars.pubs_url}}" >/dev/null 2>&1 || true
+'''
+
+# Open the prod pages from the local filesystem.
+[tasks.open-prod]
+description = "Open CV + publications (prod)"
+depends = ["build-prod"]
+run = '''
+open {{vars.cv_html_prod}}
+open {{vars.pubs_html_prod}}
+'''
+
+# One-command dev loop:
+# - build dev artifacts once
+# - start server in background (quiet)
+# - open pages once
+# - run `mise watch build-dev` in the foreground
+[tasks.go-dev]
+description = "Dev loop: serve + open once + watch build-dev"
+depends = ["build-dev"]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "→ Serving {{vars.output_dir_dev}} at {{vars.base_url}}"
+python3 -m http.server "{{vars.port}}" --directory "{{vars.output_dir_dev}}" >/dev/null 2>&1 &
+server_pid=$!
+
+cleanup() {
+  kill "$server_pid" >/dev/null 2>&1 || true
+}
+trap cleanup EXIT INT TERM
+
+sleep 0.3
+
+echo "→ Opening pages"
+open "{{vars.cv_url}}" >/dev/null 2>&1 || true
+open "{{vars.pubs_url}}" >/dev/null 2>&1 || true
+
+echo "→ Watching for changes (build-dev)"
+mise watch build-dev
+'''
+
+# One-command prod loop:
+# - build prod artifacts
+# - open them
+[tasks.go-prod]
+description = "Build and open prod files"
+depends = ["build-prod", "open-prod"]
