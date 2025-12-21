@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "jsonresume-theme-even": "^0.26.1",
+    "jsonresume-theme-even": "file:themes/jsonresume-theme-even",
     "resumed": "^6.1.0"
   }
 }
