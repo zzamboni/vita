@@ -35,3 +35,4 @@ auto
 .DS_Store
 .auctex-auto
 node_modules/
+themes/
