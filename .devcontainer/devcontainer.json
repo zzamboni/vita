@@ -1,0 +1,42 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+	"name": "Node.js",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/javascript-node",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": { 
+//		"ghcr.io/devcontainers/features/python:1": {},
+		"ghcr.io/devcontainers-extra/features/mise:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"hverlin.mise-vscode",
+				"tamasfe.even-better-toml",
+				"lfs.vscode-emacs-friendly",
+				"wholroyd.jinja"
+			]
+//			"settings": {
+// 			    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+//      			"python.terminal.activateEnvironment": true
+//    }
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [8008],
+    "appPort": [8008],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "mise trust . && mise install && grep -q 'mise activate' ~/.bashrc || echo 'eval \"$(mise activate bash)\"' >> ~/.bashrc && mise x -- mise run bootstrap",
+	// Use 'postStartCommand' to run commands after the container is started.
+	"postStartCommand": "mise x -- mise go-dev"
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

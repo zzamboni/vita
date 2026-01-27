@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@jsonresume/jsonresume-to-rendercv": "file:themes/jsonresume.org/packages/converters/jsonresume-to-rendercv",
     "jsonresume-theme-even": "file:themes/jsonresume-theme-even",
     "resumed": "^6.1.0"
   }

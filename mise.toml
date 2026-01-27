@@ -1,6 +1,14 @@
 # -----------------------------------------------------------------------------
-# Global variables / paths
+# Global tools / variables / paths
 # -----------------------------------------------------------------------------
+[tools]
+python = "3.14.2"
+uv = "latest"
+watchexec = "latest"
+
+[env]
+_.python.venv = { path = ".venv", create = true, uv_create_args = ["--seed"] }
+
 [vars]
 # Input CV (JSON Resume format)
 cv_json = "diego-zamboni-jsonresume.json"
@@ -28,6 +36,29 @@ base_url = "http://127.0.0.1:{{vars.port}}"
 cv_url = "{{vars.base_url}}/vita.html"
 pubs_url = "{{vars.base_url}}/publications.html"
 
+
+# Install dependencies
+[tasks.bootstrap]
+description = "Install/update project dependencies (Python + npm)"
+sources = ["requirements.txt", "package-lock.json", "package.json", "mise.toml"]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Python deps (into .venv created by mise env config)
+uv pip sync requirements.txt
+
+# Node deps
+# Root
+if [ -f package-lock.json ]; then npm ci; else npm install; fi
+
+# Local copy of jsonresume-theme-even
+if [ -f themes/jsonresume-theme-even/package-lock.json ]; then
+  (cd themes/jsonresume-theme-even && npm ci)
+else
+  (cd themes/jsonresume-theme-even && npm install)
+fi
+'''
 
 # -----------------------------------------------------------------------------
 # Core build steps
@@ -164,7 +195,7 @@ run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 echo "→ Serving {{vars.output_dir_dev}} at {{vars.base_url}}"
-python3 -m http.server "{{vars.port}}" --directory "{{vars.output_dir_dev}}"
+python3 -m http.server "{{vars.port}}" --bind 0.0.0.0 --directory "{{vars.output_dir_dev}}"
 '''
 
 # Open the dev pages once (using your system `open` wrapper).
@@ -226,3 +257,28 @@ mise watch build-dev
 [tasks.go-prod]
 description = "Build and open prod files"
 depends = ["build-prod", "open-prod"]
+
+[tasks.dev-rebuild]
+description = "Rebuild devcontainer when config changes"
+sources = [
+  ".devcontainer/devcontainer.json"
+]
+outputs.auto = true
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Recreate container so new config/features/post* hooks apply
+devcontainer build --workspace-folder .
+'''
+
+[tasks.dev-up]
+description = "Run go-dev inside devcontainer"
+depends = [ "dev-rebuild" ]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+CID=$(script -q -c "devcontainer up --workspace-folder ." /dev/null | tee /dev/tty | tail -n 1 | jq -r '.containerId')
+docker kill $CID
+'''
