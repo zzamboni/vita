@@ -245,7 +245,8 @@
             "studyType": "Ph.D.",
             "startDate": "1996-08-01",
             "endDate": "2001-08-01",
-            "location": "West Lafayette, IN, U.S.A."
+            "location": "West Lafayette, IN, U.S.A.",
+            "summary": "Thesis: [Using Internal Sensors for Computer Intrusion Detection](https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf). Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)"
         },
         {
             "institution": "Purdue University",
@@ -254,7 +255,8 @@
             "studyType": "M.S.",
             "startDate": "1996-08-01",
             "endDate": "1998-05-01",
-            "location": "West Lafayette, IN, U.S.A."
+            "location": "West Lafayette, IN, U.S.A.",
+            "summary": "Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)"
         },
         {
             "institution": "National Autonomous University of Mexico (UNAM)",
@@ -263,7 +265,8 @@
             "studyType": "Bachelor's degree",
             "startDate": "1989-08-01",
             "endDate": "1995-07-01",
-            "location": "Mexico City, Mexico"
+            "location": "Mexico City, Mexico",
+            "summary": "Thesis: [UNAM/Cray Project for Security in the Unix Operating System](https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf) (in Spanish, original title: *Proyecto UNAM/Cray de Seguridad en el Sistema Operativo Unix*)"
         }
     ],
     "certificates": [
@@ -383,6 +386,76 @@
                 "Ph.D. in Computer Science",
                 "9 years of experience at IBM Research"
             ]
+        },
+        {
+            "name": "Programming Languages",
+            "keywords": [
+                "Ruby",
+                "Python",
+                "C",
+                "Perl",
+                "Java",
+                "LISP family (Clojure, Racket)",
+                "AWK",
+                "Unix shells"
+            ]
+        },
+        {
+            "name": "Systems & Development",
+            "keywords": [
+                "Unix/Linux systems engineering and administration",
+                "System health management and monitoring",
+                "Cloud platforms",
+                "Software development",
+                "Configuration management"
+            ]
+        },
+        {
+            "name": "Development Environments & Technologies",
+            "keywords": [
+                "Unix/Linux",
+                "Cloud Foundry",
+                "Amazon EC2",
+                "macOS",
+                "VMware (ESX, vSphere)",
+                "OpenStack",
+                "Docker",
+                "REST APIs",
+                "Riemann (event stream processing)",
+                "XML and related technologies",
+                "Network programming",
+                "Database programming (SQL)",
+                "Kernel programming (OpenBSD and Linux)",
+                "HTML"
+            ]
+        },
+        {
+            "name": "Configuration Management",
+            "keywords": [
+                "CFEngine",
+                "Puppet",
+                "Chef",
+                "Ansible"
+            ]
+        },
+        {
+            "name": "Virtualization & Cloud",
+            "keywords": [
+                "VMware (ESX, vSphere)",
+                "OpenStack",
+                "Amazon EC2",
+                "Docker",
+                "Cloud Foundry"
+            ]
+        },
+        {
+            "name": "Health Management & Monitoring",
+            "keywords": [
+                "VMware vRealize Operations Manager",
+                "vRealize Log Insight",
+                "Nagios",
+                "Icinga"
+            ]
         }
     ],
     "languages": [
@@ -428,6 +501,12 @@
             "date": "1998-04-01",
             "awarder": "Association for Computing Machinery (ACM)",
             "summary": "[Upsilon Pi Epsilon](http://upe.acm.org/)"
+        },
+        {
+            "title": "Member of Phi Beta Delta",
+            "date": "2001-04-01",
+            "awarder": "Phi Beta Delta honor society",
+            "summary": "Honor society recognizing scholarly achievement."
         },
         {
             "title": "Fulbright Scholarship",
