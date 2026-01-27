@@ -7,6 +7,10 @@
         "image": "https://zzamboni.org/img/avatar-professional.jpg",
         "url": "https://zzamboni.org",
         "summary": "I am a senior computer scientist, computer security expert, IT architect, organization and team leader with 30 years of professional experience, and much longer of being fascinated and passionate about science, computing and education. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management.\n\nI possess a strong combination of leadership, conceptual and technical skills that enable me to help organizations and teams reach their goals. I have excellent communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have extensive experience in both academic and business environments.",
+        "location": {
+            "city": "Zurich",
+            "countryCode": "CH"
+        },
         "profiles": [
             {
                 "network": "Linkedin",
@@ -544,7 +548,7 @@
         },
         {
             "name": "Using internal sensors and embedded detectors for intrusion detection",
-            "type": "PhD Thesis",
+            "type": "Ph.D. Thesis",
             "url": "https://zzamboni.org/cerias/zamboni/thesis/",
             "startDate": "1996",
             "endDate": "2001",
@@ -571,7 +575,10 @@
         {
             "name": "Full publications list",
             "url": "publications.html",
-            "summary": "Complete list of publications, patents, talks, and theses."
+            "summary": "Complete list of publications, patents, talks, and theses.",
+            "authors": [
+                    "Diego Zamboni"
+            ]
         }
     ],
     "meta": {

@@ -61,6 +61,26 @@ body {
   background: var(--color-background);
   color: var(--color-primary);
 }
+
+.breadcrumb {
+  font-size: 0.9em;
+  color: var(--color-secondary);
+  margin-bottom: 0.5em;
+}
+
+.breadcrumb a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .sep {
+  margin: 0 0.4em;
+}
+
 h1 {
   font-size: var(--scale4);
   font-weight: 600;
@@ -118,6 +138,10 @@ footer {
     font-size: 11pt;
   }
 
+  .breadcrumb {
+    display: none;
+  }
+
   a {
     color: inherit;
     text-decoration: none;
@@ -146,6 +170,13 @@ footer {
   </style>
 </head>
 <body>
+
+<nav class="breadcrumb">
+
+  <a href="vita.html">Curriculum Vitae</a>
+  <span class="sep">›</span>
+  <span>Publications</span>
+</nav>
 
 <h1>Publications</h1>
 

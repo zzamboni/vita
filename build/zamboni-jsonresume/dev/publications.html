@@ -61,6 +61,26 @@ body {
   background: var(--color-background);
   color: var(--color-primary);
 }
+
+.breadcrumb {
+  font-size: 0.9em;
+  color: var(--color-secondary);
+  margin-bottom: 0.5em;
+}
+
+.breadcrumb a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .sep {
+  margin: 0 0.4em;
+}
+
 h1 {
   font-size: var(--scale4);
   font-weight: 600;
@@ -118,6 +138,10 @@ footer {
     font-size: 11pt;
   }
 
+  .breadcrumb {
+    display: none;
+  }
+
   a {
     color: inherit;
     text-decoration: none;
@@ -146,6 +170,13 @@ footer {
   </style>
 </head>
 <body>
+
+<nav class="breadcrumb">
+
+  <a href="vita.html">Curriculum Vitae</a>
+  <span class="sep">›</span>
+  <span>Publications</span>
+</nav>
 
 <h1>Publications</h1>
 
@@ -195,7 +226,7 @@ footer {
 <!-- <div style="background-color: lightgrey"><pre>{'ENTRYTYPE': 'book',
  'ID': 'zamboni20:emacs-org-leanpub',
  '_doi_url': None,
- '_keywords': {'book', 'selected'},
+ '_keywords': {'selected', 'book'},
  '_publisher_raw': 'Leanpub',
  '_section': 'book',
  '_source': 'zamboni-pubs',
@@ -342,7 +373,7 @@ footer {
 <!-- <div style="background-color: lightgrey"><pre>{'ENTRYTYPE': 'book',
  'ID': 'zamboni12:learning-cfengine3',
  '_doi_url': None,
- '_keywords': {'book', 'selected'},
+ '_keywords': {'selected', 'book'},
  '_publisher_raw': "O'Reilly Media, Inc. 2012--2017, afterwards self-published",
  '_section': 'book',
  '_source': 'zamboni-pubs',
@@ -943,7 +974,7 @@ footer {
 <!-- <div style="background-color: lightgrey"><pre>{'ENTRYTYPE': 'proceedings',
  'ID': 'zamboni06:raid06-proceedings',
  '_doi_url': None,
- '_keywords': {'editorial', 'selected'},
+ '_keywords': {'selected', 'editorial'},
  '_publisher_raw': 'Springer-Verlag New York, Inc.',
  '_section': 'editorial',
  '_source': 'zamboni-pubs',
@@ -2415,7 +2446,7 @@ Advances in Intrusion Detection (RAID98)
 
 
 <footer>
-  <small>Generated 2025-12-20</small>
+  <small>Generated 2026-01-27</small>
 </footer>
 
 <!-- Dev mode only: auto-reload when page changes. -->
