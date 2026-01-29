@@ -270,11 +270,8 @@
   ],
   "certificates": [
     {
-      "name": "OneTrust Certified Tech Risk & Compliance Management Track Badge",
-      "issuer": "OneTrust",
-      "url": "https://www.credly.com/badges/5e537f13-96ce-4ffc-8b23-6997ec5ab7e5/public_url",
-      "date": "2024-08-10",
-      "image": "https://images.credly.com/images/2a578f8d-55a1-4d73-9f12-dc7f51c166a8/image.png"
+      "name": "(see full list)",
+      "url": "https://www.credly.com/users/zzamboni/"
     },
     {
       "name": "AWS Certified Data Analytics – Specialty",
@@ -284,74 +281,11 @@
       "image": "https://images.credly.com/images/6430efe4-0ac0-4df6-8f1b-9559d8fcdf27/image.png"
     },
     {
-      "name": "Certified SAFe® 5 Agilist",
-      "issuer": "SAFe by Scaled Agile, Inc.",
-      "url": "https://www.credly.com/badges/e879eee9-8ffa-4513-a56d-4e622f45b9c1/public_url",
-      "date": "2023-01-29",
-      "image": "https://images.credly.com/images/969ca68c-6793-4ebc-b35a-1d2663ad3c26/cert_mark_SA_badge_large_300px.png"
-    },
-    {
-      "name": "AWS Certified DevOps Engineer – Professional",
-      "issuer": "Amazon Web Services Training and Certification",
-      "url": "https://www.credly.com/badges/4f046d8f-9511-47b4-a4af-01c58c3c7766/public_url",
-      "date": "2022-05-03",
-      "image": "https://images.credly.com/images/bd31ef42-d460-493e-8503-39592aaf0458/image.png"
-    },
-    {
-      "name": "AWS Certified Developer – Associate",
-      "issuer": "Amazon Web Services Training and Certification",
-      "url": "https://www.credly.com/badges/611cf376-9625-45ed-b037-8b984892abaf/public_url",
-      "date": "2022-04-12",
-      "image": "https://images.credly.com/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png"
-    },
-    {
-      "name": "Certified SAFe® 5 Advanced Scrum Master",
-      "issuer": "SAFe by Scaled Agile, Inc.",
-      "url": "https://www.credly.com/badges/4f0585e9-4d82-4287-9f55-00a8141f51e6/public_url",
-      "date": "2022-03-04",
-      "image": "https://images.credly.com/images/ae28729a-5b39-4270-aefb-412e01b5e9a5/cert_mark_SASM_badge_large_300px.png"
-    },
-    {
-      "name": "AWS Certified SysOps Administrator – Associate",
-      "issuer": "Amazon Web Services Training and Certification",
-      "url": "https://www.credly.com/badges/b5ab1a46-2ea9-4aa0-a4c4-851f651b030c/public_url",
-      "date": "2022-02-06",
-      "image": "https://images.credly.com/images/f0d3fbb9-bfa7-4017-9989-7bde8eaf42b1/image.png"
-    },
-    {
-      "name": "AWS Certified Solutions Architect – Professional",
-      "issuer": "Amazon Web Services Training and Certification",
-      "url": "https://www.credly.com/badges/5f462d17-402c-44b8-a8f9-80187ad0d7a1/public_url",
-      "date": "2021-12-19",
-      "image": "https://images.credly.com/images/2d84e428-9078-49b6-a804-13c15383d0de/image.png"
-    },
-    {
-      "name": "AWS Certified Security – Specialty",
-      "issuer": "Amazon Web Services Training and Certification",
-      "url": "https://www.credly.com/badges/630be29b-36d2-4d90-a5ff-22745355a06d/public_url",
-      "date": "2021-10-24",
-      "image": "https://images.credly.com/images/53acdae5-d69f-4dda-b650-d02ed7a50dd7/image.png"
-    },
-    {
-      "name": "AWS Certified Solutions Architect – Associate",
-      "issuer": "Amazon Web Services Training and Certification",
-      "url": "https://www.credly.com/badges/56ff7e45-cadb-436d-ba67-d9d8380d6a5d/public_url",
-      "date": "2021-10-10",
-      "image": "https://images.credly.com/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png"
-    },
-    {
       "name": "Certified Information Systems Security Professional (CISSP)",
       "issuer": "ISC2",
       "url": "https://www.credly.com/badges/d74f6e4c-0667-41fb-9243-e11a3793ace4/public_url",
       "date": "2019-04-08",
       "image": "https://images.credly.com/images/6eeb0a98-33cb-4f72-bfc3-f89d65a3286c/image.png"
-    },
-    {
-      "name": "Certified SAFe® 4 Product Owner/Product Manager",
-      "issuer": "SAFe by Scaled Agile, Inc.",
-      "url": "https://www.credly.com/badges/e6bf0ca2-f1c4-4af6-bf63-09f4b8cdbd02/public_url",
-      "date": "2017-07-31",
-      "image": "https://images.credly.com/images/ad65aa49-625f-4a04-9661-0ff1b00c262c/cert_mark_POPM_badge.png"
     }
   ],
   "skills": [

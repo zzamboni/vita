@@ -23,7 +23,7 @@ from urllib.request import Request, urlopen
 CREDLY_USER_BADGES_URL = "https://www.credly.com/users/{username}/badges.json"
 CREDLY_BADGE_PUBLIC_URL = "https://www.credly.com/badges/{badge_id}/public_url"
 
-CREDLY_HOST_RE = re.compile(r"^https?://(www\.)?credly\.com/", re.IGNORECASE)
+CREDLY_HOST_RE = re.compile(r"^https?://(www\.)?credly\.com/badges/", re.IGNORECASE)
 
 
 def http_get_json(url: str) -> Any:
@@ -222,7 +222,7 @@ def build_cert_from_badge(b: Dict[str, Any]) -> Dict[str, Any]:
 
 def is_credly_certificate_entry(cert: Dict[str, Any]) -> bool:
     url = cert.get("url")
-    return isinstance(url, str) and bool(CREDLY_HOST_RE.match(url.strip()))
+    return (not isinstance(url, str)) or bool(CREDLY_HOST_RE.match(url.strip()))
 
 
 def main() -> int:
