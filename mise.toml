@@ -183,6 +183,14 @@ depends = ["cv-reload-inject"]
 description = "Build CV (production, no reload injection)"
 depends = ["render-prod"]
 
+[tasks.certs-update]
+description = "Update certificates from credly"
+run = "./scripts/update-certs-from-credly.py zzamboni {{cv_json}}"
+
+[tasks.certs-update-all]
+description = "Update certificates from credly (include expired)"
+run = "./scripts/update-certs-from-credly.py --include-expired zzamboni {{vars.cv_json}}"
+
 # -----------------------------------------------------------------------------
 # Dev UX tasks (server / open / one-command dev loop)
 # -----------------------------------------------------------------------------
