@@ -284,7 +284,7 @@ fnz1WILGEfxWuOaGqk829lGlFdDDSTjutmJ85rfy5hEro9OCmbAwhGop5KXR
 *** Senior Global Security Architect
 :PROPERTIES:
 :CV_ENV:   cvsubentry
-:FROM: <2021-10-01>
+:FROM: <2022-10-01>
 :END:
 
 - I work with customers and within AWS to increase security awareness, design and build secure solutions, mentor and develop colleagues and customers in security best practices.

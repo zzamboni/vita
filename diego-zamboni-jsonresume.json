@@ -41,15 +41,14 @@
             "position": "CISO Governance",
             "startDate": "2024-01-01",
             "location": "Switzerland",
-            "summary": "I lead the global CISO Governance team, focusing on establishing robust security policies and monitoring compliance. I am in charge of defining Avaloq's global Information Security Management System. My role involves defining requirements and ensuring effective oversight of first-line security functions, which is essential for maintaining a secure and compliant environment in the financial technology sector.",
-            "highlights": [
-            ]
+            "summary": "I lead the global CISO Governance team, focusing on establishing robust security policies and monitoring compliance. I am in charge of defining and monitoring Avaloq's global Information Security Management System. My role involves defining requirements and ensuring effective oversight of first-line security functions, which is essential for maintaining a secure and compliant environment in the financial technology sector.",
+            "highlights": []
         },
         {
             "name": "Amazon Web Services",
             "url": "https://aws.amazon.com/",
             "position": "Senior Global Security Architect",
-            "startDate": "2021-10-01",
+            "startDate": "2022-10-01",
             "endDate": "2023-12-31",
             "location": "Switzerland",
             "summary": "I worked with customers and within AWS to increase security awareness, design and build secure solutions, mentor and develop colleagues and customers in security best practices. I was Lead Security Architect in the [Stellantis Virtual Engineering Workbench](https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions) (VEW) project.",
@@ -68,7 +67,7 @@
             "endDate": "2022-09-30",
             "location": "Switzerland",
             "summary": "Worked with AWS global customers to improve security posture and promote secure design and implementation practices. I was a member of the security team in the  [Volkswagen Digital Production Platform (DPP)](https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/) project.",
-            "highlights": [    
+            "highlights": [
                 "Established in DPP scalable and durable mechanisms to enable DPP partners to work securely in the DPP program.",
                 "Created and promoted security learning materials tailored for various roles within the DPP project.",
                 "Increased security awareness and knowledge by promoting a *Security Guardians* initiative across the DPP organization."
@@ -240,7 +239,7 @@
     "education": [
         {
             "institution": "Purdue University",
-            "url": "https://cs.purdue.edu/",
+            "url": "https://cerias.purdue.edu/",
             "area": "Computer Science",
             "studyType": "Ph.D.",
             "startDate": "1996-08-01",
@@ -250,7 +249,7 @@
         },
         {
             "institution": "Purdue University",
-            "url": "https://cs.purdue.edu/",
+            "url": "https://cerias.purdue.edu/",
             "area": "Computer Science",
             "studyType": "M.S.",
             "startDate": "1996-08-01",
@@ -337,19 +336,19 @@
             "keywords": [
                 "32 years of multidisciplinary team and project leadership experience",
                 "IT Enterprise Architecture",
-                "Scaled Agile Framework (SAFe) experience"
+                "Scaled Agile Framework (SAFe)"
             ]
         },
         {
-            "name": "Communications",
+            "name": "Communication",
             "keywords": [
                 "Excellent written and spoken communication skills",
                 "Extensive public speaking experience",
-                "Writing and teaching experience"
+                "Professional writing and teaching experience"
             ]
         },
         {
-            "name": "Computer Security",
+            "name": "Information and Cyber Security",
             "keywords": [
                 "Enterprise security governance",
                 "Enterprise security architecture",
@@ -377,7 +376,8 @@
             "name": "Cloud Computing",
             "keywords": [
                 "AWS architecture",
-                "AWS security"
+                "AWS security",
+                "AWS infrastructure and development"
             ]
         },
         {
@@ -396,8 +396,7 @@
                 "Perl",
                 "Java",
                 "LISP family (Clojure, Racket)",
-                "AWK",
-                "Unix shells"
+                "Unix shells and tools"
             ]
         },
         {
@@ -421,7 +420,6 @@
                 "OpenStack",
                 "Docker",
                 "REST APIs",
-                "Riemann (event stream processing)",
                 "XML and related technologies",
                 "Network programming",
                 "Database programming (SQL)",
@@ -452,9 +450,7 @@
             "name": "Health Management & Monitoring",
             "keywords": [
                 "VMware vRealize Operations Manager",
-                "vRealize Log Insight",
-                "Nagios",
-                "Icinga"
+                "vRealize Log Insight"
             ]
         }
     ],
@@ -585,6 +581,33 @@
                 "1995: Organizer",
                 "1994&ndash;2000: Program Committee Member"
             ]
+        },
+        {
+            "organization": "The Association for Computing Machinery (ACM)",
+            "position": "Member",
+            "url": "http://www.acm.org/",
+            "startDate": "1998"
+        },
+        {
+            "organization": "Purdue.pm, the Purdue Perl Users Group",
+            "position": "Founder",
+            "url": "http://purdue.pm.org/",
+            "summary": "Location: U.S.A.",
+            "startDate": "2000"
+        },
+        {
+            "organization": "Purdue University Chapter of Upsilon Pi Epsilon",
+            "position": "President",
+            "url": "https://www.cs.purdue.edu/future-students/organizations.html",
+            "summary": "Location: U.S.A.",
+            "startDate": "1999"
+        },
+        {
+            "organization": "Purdue University Chapter of Upsilon Pi Epsilon",
+            "position": "Secretary",
+            "url": "https://www.cs.purdue.edu/future-students/organizations.html",
+            "summary": "Location: U.S.A.",
+            "startDate": "1998"
         }
     ],
     "projects": [
@@ -648,6 +671,91 @@
             "startDate": "1997",
             "endDate": "1997",
             "description": "Collaborated in the analysis of the SYN-flooding denial-of-service attack against TCP and in the implementation of a defense tool. The paper was awarded the [2020 IEEE Security & Privacy Test of Time Award](https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/)."
+        },
+        {
+            "name": "Management and leadership, IT security, cloud computing",
+            "type": "Professional Highlights",
+            "highlights": [
+                "Managed security architecture at the [Stellantis *Virtual Engineering Workbench*](https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions) project. Worked with Stellantis CISO and business stakeholders to define governance, establish security best practices and drive risk analysis, threat modeling and mitigation.",
+                "Established scalable and durable mechanisms to enable partners to work securely in the [Volkswagen Digital Production Platform (DPP)](https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/) program.",
+                "Managed security architecture, risk management, data governance and compliance (ISO27001, ISAE3402/3000, etc.) for [Swisscom's Cloud platforms](https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html).",
+                "Established and led the Swisscom IT Clouds security community of practice.",
+                "Established and led the *Health and State Management* team at Swisscom to design, implement and operate a framework for scalable monitoring, logging and alerting for Swisscom's Cloud platforms.",
+                "Established and led the first computer security organization at UNAM, which has grown into the university's [Information Security Coordination (UNAM-CERT)](https://www.seguridad.unam.mx/).",
+                "Managed IT security customer relationships at HP Enterprise Services, including overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting."
+            ]
+        },
+        {
+            "name": "Research, architecture and design",
+            "type": "Professional Highlights",
+            "highlights": [
+                "Designed the *Orchard* monitoring framework for Swisscom's *Application Cloud* platform, and led the team that implemented it and brought it into production.",
+                "Designed and implemented the *Billy Goat* malware capture and analysis system at IBM."
+            ]
+        },
+        {
+            "name": "Communications and community",
+            "type": "Professional Highlights",
+            "highlights": [
+                "Author of multiple books including [*Learning CFEngine*](https://cf-learn.info/), [*Learning Hammerspoon*](https://leanpub.com/learning-hammerspoon) and [*Literate Configuration*](https://leanpub.com/lit-config).",
+                "Program chair and program committee member for multiple conferences including the RAID symposium, DIMVA conference, the *Computer Security Day* and *Computer Security* conference at UNAM, and others.",
+                "Member of the Editorial Board of the [Computers & Security Journal](https://www.sciencedirect.com/journal/computers-and-security)."
+            ]
+        },
+        {
+            "name": "Open-source software projects",
+            "type": "Software",
+            "url": "https://github.com/zzamboni",
+            "description": "Selection of publicly available projects on GitHub and GitLab.\n\n- GitHub: [github.com/zzamboni](https://github.com/zzamboni)\n- GitLab: [gitlab.com/zzamboni](https://gitlab.com/zzamboni)"
+        },
+        {
+            "name": "Pilatus",
+            "type": "Software",
+            "startDate": "2005-01-01",
+            "endDate": "2007-12-31",
+            "description": "An automated system installer that allows arbitrary system installation and configurations, allowing for both proprietary and open source components to be installed in an automated fashion. Open source components can be downloaded directly from their original source to avoid distributing them."
+        },
+        {
+            "name": "Embedded Sensors Project",
+            "type": "Software",
+            "startDate": "1999-01-01",
+            "endDate": "2001-12-31",
+            "description": "A system of sensors for intrusion detection developed in OpenBSD through code instrumentation. Developed as part of my Ph.D. thesis work."
+        },
+        {
+            "name": "Advising: Urko Zurutuza Ortega",
+            "type": "Teaching & Advising",
+            "description": "**Ph.D. co-advisor** — Mondragon University,  Spain\n\n- Thesis: [Data Mining Approaches for Analysis of Worm Activity Towards Automatic Signature Generation](https://dialnet.unirioja.es/servlet/tesis?codigo=20012)",
+            "startDate": "2005-01-01",
+            "endDate": "2008-12-31"
+        },
+        {
+            "name": "Advising: Milton Yates",
+            "type": "Teaching & Advising",
+            "description": "**External Diploma Thesis advisor** — ENST Bretagne,  France\n\n- Thesis: [The Router-based Billy Goat Project](https://www.usenix.org/conference/sruti-07/boundary-detection-and-containment-local-worm-infections)",
+            "startDate": "2005-01-01",
+            "endDate": "2005-12-31"
+        },
+        {
+            "name": "Advising: Candid Wüest",
+            "type": "Teaching & Advising",
+            "description": "**Diploma Thesis advisor** — ETH Zurich,  Switzerland\n\n- Thesis: [Desktop Firewalls and Intrusion Detection](https://pub.tik.ee.ethz.ch/students/2002-2003-Wi/DA-2003-22.pdf)",
+            "startDate": "2002-01-01",
+            "endDate": "2003-12-31"
+        },
+        {
+            "name": "Advising: Daniele Sgandurra",
+            "type": "Teaching & Advising",
+            "description": "**Internship advisor** — University of Pisa,  Italy\n\n- Project: Design and implementation of process injection using virtual machine introspection.",
+            "startDate": "2009-01-01",
+            "endDate": "2009-12-31"
+        },
+        {
+            "name": "Advising: Martin Carbone",
+            "type": "Teaching & Advising",
+            "description": "**Internship advisor** — Georgia Institute of Technology,  U.S.A.\n\nProject: Implementation of a proof of concept Hyperjacking attack on Intel platform.",
+            "startDate": "2007-01-01",
+            "endDate": "2007-12-31"
         }
     ],
     "publications": [
@@ -656,7 +764,7 @@
             "url": "publications.html",
             "summary": "Complete list of publications, patents, talks, and theses.",
             "authors": [
-                    "Diego Zamboni"
+                "Diego Zamboni"
             ]
         }
     ],
