@@ -36,3 +36,4 @@ auto
 .auctex-auto
 node_modules/
 themes/
+build/zamboni-jsonresume/dev/
