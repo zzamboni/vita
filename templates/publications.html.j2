@@ -114,6 +114,37 @@ h2 {
 }
 .pub {
   margin-bottom: 1.25em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em;
+  align-items: start;
+}
+
+.pub-ref {
+  white-space: nowrap;
+  user-select: none;
+  padding-top: 0.15em;
+}
+
+.ref-number {
+  display: inline-block;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.9em;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.ref-number:hover {
+  background-color: var(--color-dimmed);
+  text-decoration: underline;
+}
+
+.pub-content {
+  grid-column: 2;
 }
 
 .pub strong {
@@ -188,36 +219,45 @@ footer {
     {% endfor %}<br>
 </nav>
 
+{% set pub_counter = namespace(value=0) %}
 {% for section in section_order %}
 {% set items = sections[section] %}
 {% if items %}
 <h2 id="{{ section }}">{{ section_titles[section] }}</h2>
 
 {% for e in items %}
+{% set pub_counter.value = pub_counter.value + 1 %}
 {% if dev_reload %}
 <!-- <div style="background-color: lightgrey"><pre>{{ e|pprint }}</pre></div><br/> -->
 {% endif %}
-<div class="pub" itemscope itemtype="https://schema.org/ScholarlyArticle">
-  <strong itemprop="name">
-    {% if e.url or e._doi_url %}
-      <a itemprop="url" href="{{ e.url or e._doi_url }}">
-        {{ e.title or e.issuetitle }}
-      </a>
-    {% else %}
-      {{ e.title or e.issuetitle }}
-    {% endif %}
-  </strong><br>
-  {% if e.authors %}{{ e.authors }}<br>{% elif e.editor %}Editors: {{ e.editor }}<br>{% endif %}
-  <span class="meta">
-    {% if e.ENTRYTYPE == "phdthesis" %}{{ e.type or "PhD thesis" }}, {{ e.school }}
-    {% elif e.ENTRYTYPE == "mastersthesis" %}{{ e.type or "MSc thesis" }}, {{ e.school }}
-    {% elif e.ENTRYTYPE == "techreport" %}{{ e.type or "Technical Report" }} {{ e.number }}, {{ e.institution or e.location }}
-    {% else %}{{ e.journal or e.booktitle or e.publisher or e.institution or e.howpublished or "" }}{% endif %}
-    {% if e.year or e.date %} · {{ e.year or e.date }}<meta itemprop="datePublished" content="{{ e.year or e.date }}">{% endif %}
-    {% if e._doi_url and e.url %} · <a href="{{ e._doi_url }}">DOI {{ e.doi }}</a>{% endif %}
-    {% if e.doi %}<meta itemprop="identifier" content="{{ e.doi }}">{% endif %}
-    {% if e.note %} · {{ e.note }}{% endif %}
+<div class="pub" id="pub-{{ pub_counter.value }}" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-{{ pub_counter.value }}" class="ref-number" title="Copy link to clipboard">
+      [{{ pub_counter.value }}]
+    </a>
   </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      {% if e.url or e._doi_url %}
+        <a itemprop="url" href="{{ e.url or e._doi_url }}">
+          {{ e.title or e.issuetitle }}
+        </a>
+      {% else %}
+        {{ e.title or e.issuetitle }}
+      {% endif %}
+    </strong><br>
+    {% if e.authors %}{{ e.authors }}<br>{% elif e.editor %}Editors: {{ e.editor }}<br>{% endif %}
+    <span class="meta">
+      {% if e.ENTRYTYPE == "phdthesis" %}{{ e.type or "PhD thesis" }}, {{ e.school }}
+      {% elif e.ENTRYTYPE == "mastersthesis" %}{{ e.type or "MSc thesis" }}, {{ e.school }}
+      {% elif e.ENTRYTYPE == "techreport" %}{{ e.type or "Technical Report" }} {{ e.number }}, {{ e.institution or e.location }}
+      {% else %}{{ e.journal or e.booktitle or e.publisher or e.institution or e.howpublished or "" }}{% endif %}
+      {% if e.year or e.date %} · {{ e.year or e.date }}<meta itemprop="datePublished" content="{{ e.year or e.date }}">{% endif %}
+      {% if e._doi_url and e.url %} · <a href="{{ e._doi_url }}">DOI {{ e.doi }}</a>{% endif %}
+      {% if e.doi %}<meta itemprop="identifier" content="{{ e.doi }}">{% endif %}
+      {% if e.note %} · {{ e.note }}{% endif %}
+    </span>
+  </div>
 </div>
 {% endfor %}
 {% endif %}
@@ -226,6 +266,44 @@ footer {
 <footer>
   <small>Generated {{ generated }}</small>
 </footer>
+
+<script>
+document.querySelectorAll('.ref-number').forEach(link => {
+  link.addEventListener('click', async (e) => {
+    e.preventDefault();
+    
+    // Get the pub ID from the href (e.g., "#pub-1" -> "pub-1")
+    const pubId = link.getAttribute('href').substring(1);
+    const refNumber = link.textContent.trim();
+    
+    // Get the current page filename
+    const pageUrl = window.location.pathname.split('/').pop() || 'publications.html';
+    
+    // Create Markdown link format: [1](publications.html#pub-1)
+    const markdownLink = `[${refNumber}](${pageUrl}#${pubId})`;
+    
+    // Copy to clipboard
+    try {
+      await navigator.clipboard.writeText(markdownLink);
+      
+      // Visual feedback: change color briefly
+      const originalColor = link.style.color;
+      link.style.color = 'var(--color-secondary)';
+      link.textContent = '✓';
+      
+      setTimeout(() => {
+        link.style.color = originalColor;
+        link.textContent = link.getAttribute('data-original-text') || link.textContent;
+      }, 1500);
+    } catch (err) {
+      console.error('Failed to copy to clipboard:', err);
+    }
+  });
+  
+  // Store original text for restoration
+  link.setAttribute('data-original-text', link.textContent);
+});
+</script>
 {% if dev_reload %}
 <!-- Dev mode only: auto-reload when page changes. -->
 <script>
