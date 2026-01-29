@@ -215,8 +215,8 @@ run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 echo "→ Opening CV + publications pages"
-open "{{vars.cv_url}}" >/dev/null 2>&1 || true
-open "{{vars.pubs_url}}" >/dev/null 2>&1 || true
+xdg-open "{{vars.cv_url}}" >/dev/null 2>&1 || true
+xdg-open "{{vars.pubs_url}}" >/dev/null 2>&1 || true
 '''
 
 # Open the prod pages from the local filesystem.
@@ -224,8 +224,8 @@ open "{{vars.pubs_url}}" >/dev/null 2>&1 || true
 description = "Open CV + publications (prod)"
 depends = ["build-prod"]
 run = '''
-open {{vars.cv_html_prod}}
-open {{vars.pubs_html_prod}}
+xdg-open {{vars.cv_html_prod}}
+xdg-open {{vars.pubs_html_prod}}
 '''
 
 # One-command dev loop:
@@ -234,7 +234,7 @@ open {{vars.pubs_html_prod}}
 # - open pages once
 # - run `mise watch build-dev` in the foreground
 [tasks.go-dev]
-description = "Dev loop: serve + open once + watch build-dev"
+description = "Dev loop: serve + xdg-open once + watch build-dev"
 depends = ["build-dev"]
 run = '''
 #!/usr/bin/env bash
@@ -252,8 +252,8 @@ trap cleanup EXIT INT TERM
 sleep 0.3
 
 echo "→ Opening pages"
-open "{{vars.cv_url}}" >/dev/null 2>&1 || true
-open "{{vars.pubs_url}}" >/dev/null 2>&1 || true
+xdg-open "{{vars.cv_url}}" >/dev/null 2>&1 || true
+xdg-open "{{vars.pubs_url}}" >/dev/null 2>&1 || true
 
 echo "→ Watching for changes (build-dev)"
 mise watch build-dev
