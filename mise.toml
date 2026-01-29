@@ -32,7 +32,7 @@ pubs_html_prod = "{{vars.output_dir_prod}}/publications.html"
 
 # Local dev server settings (used for polling-based auto-reload)
 port = "8008"
-base_url = "http://127.0.0.1:{{vars.port}}"
+base_url = "http://localhost:{{vars.port}}"
 cv_url = "{{vars.base_url}}/vita.html"
 pubs_url = "{{vars.base_url}}/publications.html"
 
@@ -233,7 +233,7 @@ run = '''
 set -euo pipefail
 
 echo "→ Serving {{vars.output_dir_dev}} at {{vars.base_url}}"
-python3 -m http.server "{{vars.port}}" --directory "{{vars.output_dir_dev}}" >/dev/null 2>&1 &
+python3 -m http.server "{{vars.port}}" --bind 0.0.0.0 --directory "{{vars.output_dir_dev}}" >/dev/null 2>&1 &
 server_pid=$!
 
 cleanup() {
@@ -258,8 +258,8 @@ mise watch build-dev
 description = "Build and open prod files"
 depends = ["build-prod", "open-prod"]
 
-[tasks.dev-rebuild]
-description = "Rebuild devcontainer when config changes"
+[tasks.dev-rebuild-image]
+description = "Rebuild devcontainer image when its config changes"
 sources = [
   ".devcontainer/devcontainer.json"
 ]
@@ -273,12 +273,22 @@ devcontainer build --workspace-folder .
 '''
 
 [tasks.dev-up]
-description = "Run go-dev inside devcontainer"
-depends = [ "dev-rebuild" ]
+description = "Run go-dev inside devcontainer (reuse existing)"
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 
 CID=$(script -q -c "devcontainer up --workspace-folder ." /dev/null | tee /dev/tty | tail -n 1 | jq -r '.containerId')
+docker kill $CID
+'''
+
+[tasks.dev-rebuild-up]
+description = "Run go-dev inside devcontainer (build new)"
+depends = [ "dev-rebuild-image" ]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+CID=$(script -q -c "devcontainer up --workspace-folder . --remove-existing-container" /dev/null | tee /dev/tty | tail -n 1 | jq -r '.containerId')
 docker kill $CID
 '''
