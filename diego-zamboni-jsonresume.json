@@ -612,6 +612,10 @@
     ],
     "projects": [
         {
+            "description": "See [Publications](publications.html) for publication details.",
+            "type": "Research"
+        },
+        {
             "name": "Phantom",
             "type": "Research",
             "startDate": "2008",
@@ -662,7 +666,7 @@
             "url": "https://www.cerias.purdue.edu/site/about/history/coast/projects/aafid.php",
             "startDate": "1997",
             "endDate": "1999",
-            "description": "Design and documentation of an architecture (AAFID) to perform distributed monitoring and intrusion detection using autonomous agents. Implementation of a prototype according to the architecture. This prototype is [published as open source](http://freshmeat.net/projects/aafid2). Exploration of research issues in the distributed intrusion detection area."
+            "description": "Design and documentation of an architecture (AAFID) to perform distributed monitoring and intrusion detection using autonomous agents. Implementation of a prototype according to the architecture. This prototype was [published as open source](https://www.cerias.purdue.edu/site/about/history/coast/projects/aafid-announce-0999.php). Exploration of research issues in the distributed intrusion detection area."
         },
         {
             "name": "Analysis of a denial-of-service attack on TCP/IP (Synkill)",
