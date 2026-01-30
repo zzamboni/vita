@@ -312,7 +312,7 @@ def main() -> int:
 
     out_path = args.output or args.jsonresume
     with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(resume, f, ensure_ascii=False, indent=2)
+        json.dump(resume, f, ensure_ascii=False, indent=4)
         f.write("\n")
 
     print(f"Updated {out_path}")

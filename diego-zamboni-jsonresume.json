@@ -1,741 +1,741 @@
 {
-  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
-  "basics": {
-    "name": "Diego Zamboni",
-    "label": "CISO · Organizational Leader · Security Expert · Computer Scientist",
-    "email": "diego@zzamboni.org",
-    "image": "https://zzamboni.org/img/avatar-professional.jpg",
-    "url": "https://zzamboni.org",
-    "summary": "I am a senior computer scientist, computer security expert, IT architect, organization and team leader with 30 years of professional experience, and much longer of being fascinated and passionate about science, computing and education. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management.\n\nI possess a strong combination of leadership, conceptual and technical skills that enable me to help organizations and teams reach their goals. I have excellent communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have extensive experience in both academic and business environments.",
-    "location": {
-      "city": "Zurich",
-      "countryCode": "CH"
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "Diego Zamboni",
+        "label": "CISO · Organizational Leader · Security Expert · Computer Scientist",
+        "email": "diego@zzamboni.org",
+        "image": "https://zzamboni.org/img/avatar-professional.jpg",
+        "url": "https://zzamboni.org",
+        "summary": "I am a senior computer scientist, computer security expert, IT architect, organization and team leader with 30 years of professional experience, and much longer of being fascinated and passionate about science, computing and education. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management.\n\nI possess a strong combination of leadership, conceptual and technical skills that enable me to help organizations and teams reach their goals. I have excellent communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have extensive experience in both academic and business environments.",
+        "location": {
+            "city": "Zurich",
+            "countryCode": "CH"
+        },
+        "profiles": [
+            {
+                "network": "Linkedin",
+                "username": "zzamboni",
+                "url": "https://linkedin.com/in/zzamboni"
+            },
+            {
+                "network": "Leanpub",
+                "username": "zzamboni",
+                "url": "https://leanpub.com/u/zzamboni"
+            },
+            {
+                "network": "Github",
+                "username": "zzamboni",
+                "url": "https://github.com/zzamboni"
+            },
+            {
+                "network": "Bluesky",
+                "username": "zzamboni.org",
+                "url": "https://bsky.app/profile/zzamboni.org"
+            }
+        ]
     },
-    "profiles": [
-      {
-        "network": "Linkedin",
-        "username": "zzamboni",
-        "url": "https://linkedin.com/in/zzamboni"
-      },
-      {
-        "network": "Leanpub",
-        "username": "zzamboni",
-        "url": "https://leanpub.com/u/zzamboni"
-      },
-      {
-        "network": "Github",
-        "username": "zzamboni",
-        "url": "https://github.com/zzamboni"
-      },
-      {
-        "network": "Bluesky",
-        "username": "zzamboni.org",
-        "url": "https://bsky.app/profile/zzamboni.org"
-      }
-    ]
-  },
-  "work": [
-    {
-      "name": "Avaloq",
-      "url": "https://avaloq.com/",
-      "position": "CISO Governance",
-      "startDate": "2024-01-01",
-      "location": "Switzerland",
-      "summary": "I lead the global CISO Governance team, focusing on establishing robust security policies and monitoring compliance. I am in charge of defining and monitoring Avaloq's global Information Security Management System. My role involves defining requirements and ensuring effective oversight of first-line security functions, which is essential for maintaining a secure and compliant environment in the financial technology sector.",
-      "highlights": []
-    },
-    {
-      "name": "Amazon Web Services",
-      "url": "https://aws.amazon.com/",
-      "position": "Senior Global Security Architect",
-      "startDate": "2022-10-01",
-      "endDate": "2023-12-31",
-      "location": "Switzerland",
-      "summary": "I worked with customers and within AWS to increase security awareness, design and build secure solutions, mentor and develop colleagues and customers in security best practices. I was Lead Security Architect in the [Stellantis Virtual Engineering Workbench](https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions) (VEW) project.",
-      "highlights": [
-        "Established the VEW security workstream to identify customer security requirements and policies, define and promote security best practices and drive activities related to risk analysis, threat modeling and mitigation definition, prioritization and implementation.",
-        "Established in VEW measurement mechanisms for status and metrics for security activities, which provide visibility to both technical and business stakeholders.",
-        "Established the VEW *Security Champions* program to promote and transfer security knowledge.",
-        "Defined and tracked implementation of security features in VEW to fulfill both customer business requirements and AWS best practices."
-      ]
-    },
-    {
-      "name": "Amazon Web Services",
-      "url": "https://aws.amazon.com/",
-      "position": "Global Security Architect",
-      "startDate": "2021-09-01",
-      "endDate": "2022-09-30",
-      "location": "Switzerland",
-      "summary": "Worked with AWS global customers to improve security posture and promote secure design and implementation practices. I was a member of the security team in the  [Volkswagen Digital Production Platform (DPP)](https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/) project.",
-      "highlights": [
-        "Established in DPP scalable and durable mechanisms to enable DPP partners to work securely in the DPP program.",
-        "Created and promoted security learning materials tailored for various roles within the DPP project.",
-        "Increased security awareness and knowledge by promoting a *Security Guardians* initiative across the DPP organization."
-      ]
-    },
-    {
-      "name": "Swisscom",
-      "url": "https://swisscom.com/",
-      "position": "Enterprise Architect and IT Clouds Solution Security Architect",
-      "startDate": "2019-04-01",
-      "endDate": "2021-09-30",
-      "location": "Switzerland",
-      "summary": "As an *Enterprise Architect*, I participated in the design of future products and solutions offered by Swisscom, in collaboration with architects from all other divisions of the company.\n\nAs *Solution Security Architect for [Swisscom's Cloud Platforms](https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html)* (including *Enterprise Service Cloud*, *Enterprise Application Cloud*, *Dynamic Computing Services*, *Enterprise Cloud for SAP Applications* and related services) I was responsible for the security, compliance and data governance of those services. I  defined, prioritized and drove relevant product features and business goals. I also lead the IT Clouds Security Community of Practice and advised engineering teams on compliance, governance and operational activities.",
-      "highlights": [
-        "Ensured cloud platform and service compliance with internal, contractual and regulatory standards, including ISO27001, ISAE3402/3000 and GDPR.",
-        "Established and led a community of around 30 /Security Champions/ from different teams, who drove security initiatives and promote the security culture within the Swisscom IT Clouds organization.",
-        "Coordinated threat modeling, audits, penetration tests and security compliance reporting.",
-        "Coordinated organization- and team-wide processes for risk and vulnerability management.",
-        "Development of the Swisscom Platforms vision for 2025."
-      ]
-    },
-    {
-      "name": "Swisscom",
-      "url": "https://swisscom.com/",
-      "position": "Team Lead & Product Owner for Health & State Management",
-      "startDate": "2016-03-01",
-      "endDate": "2019-04-01",
-      "location": "Switzerland",
-      "summary": "I built and led a team which evolved on par with Swisscom cloud platforms to provide their monitoring and logging capabilities. My responsibilities included people management (up to 16 people), definition and prioritization of requirements and roadmaps (in collaboration with Product Managers and other stakeholders), technical architecture, and managing the planning and execution of team activities.",
-      "highlights": [
-        "Led the transition of the *Enterprise Cloud* LEMM (Logging, Event Management and Monitoring) and Access & Inventory frameworks into maintenance mode as the platform was retired.",
-        "Defined the scope and mission of the Health and State Management (HSM) team as part of the new [*Enterprise Service Cloud*](https://www.swisscom.ch/en/business/enterprise/offer/cloud/cloudservices/enterprise-service-cloud.html) project, and later of other platforms as the *IT Clouds* scope expanded to [*Application Cloud*](https://www.swisscom.ch/en/business/enterprise/offer/cloud/cloudservices/application-cloud.html), [*Enterprise Cloud for SAP Solutions*](https://www.swisscom.ch/en/business/enterprise/offer/platforms-applications/core-business-applications-service/enterprise-cloud-for-sap-solutions.html) and [*Dynamic Computing Services*](https://www.swisscom.ch/en/business/enterprise/offer/cloud/cloudservices/dynamic-computing-services.html).",
-        "Defined the logging and monitoring architecture for the *Enterprise Service Cloud* platform based on VMware vRealize Operations and vRealize Log Insight.",
-        "Led the transition of the *Application Cloud* platform monitoring from the Orchard framework to a TICK-based framework.",
-        "Defined architecture and oversaw implementation of the Customer Log Forwarding service.",
-        "Managed business relationship and technical implementation of OpsGenie for alert management in IT Clouds.",
-        "Main technologies involved: VMware vSphere (ESX, vCenter, NSX), VMware vRealize Operations Manager and Log Insight, Ansible (configuration management), OpsGenie (alert management)."
-      ]
-    },
-    {
-      "name": "Swisscom",
-      "url": "https://swisscom.com/",
-      "position": "Cloud Architect and Orchard Project Lead",
-      "startDate": "2015-08-01",
-      "endDate": "2016-03-01",
-      "location": "Switzerland",
-      "summary": "Managed a team of three people and led the *Orchard* project through its implementation, production release and further improvements and development."
-    },
-    {
-      "name": "Swisscom Cloud Lab",
-      "position": "Senior Platform Architect",
-      "startDate": "2014-08-01",
-      "endDate": "2015-07-31",
-      "location": "U.S.A. (remote)",
-      "highlights": [
-        "Designed the architecture and implemented the initial prototype for the *Orchard* health-management and self-healing framework for Swisscom's *Application Cloud* Platform-as-a-Service service.",
-        "Main technologies involved: OpenStack (cloud computing infrastructure), Cloud Foundry (application platform), Consul (health management and service discovery), RabbitMQ (message bus), Riemann (event analysis)."
-      ]
-    },
-    {
-      "name": "CFEngine AS",
-      "url": "https://cfengine.com/",
-      "position": "Product Manager",
-      "startDate": "2013-08-01",
-      "endDate": "2014-06-30",
-      "location": "Norway/U.S.A. (remote)",
-      "highlights": [
-        "Managed the CFEngine language roadmap.",
-        "Created and led the [CFEngine Design Center](https://docs.cfengine.com/docs/3.10/guide-design-center.html) project, which was the foundation for the current [CFEngine Build](https://build.cfengine.com/) service.",
-        "Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack).",
-        "Developed code for both the Design Center core and its integrations."
-      ]
-    },
-    {
-      "name": "CFEngine AS",
-      "url": "https://cfengine.com/",
-      "position": "Senior Security Advisor",
-      "startDate": "2011-10-01",
-      "endDate": "2014-06-30",
-      "location": "Norway/U.S.A. (remote)",
-      "highlights": [
-        "CFEngine Advocate, with a special focus on security.",
-        "Wrote the book [*Learning CFEngine 3*](https://cf-learn.info/), published by O'Reilly Media, which became the de facto introductory text to CFEngine.",
-        "Gave talks, wrote articles and blog posts, taught classes, and in general spread the word about CFEngine.",
-        "Developed and implemented the strategy for CFEngine as a security component."
-      ]
-    },
-    {
-      "name": "Boundless Innovation and Technology",
-      "position": "Cofounder, Head of Research and Training",
-      "startDate": "2012-07-01",
-      "endDate": "2014-07-31",
-      "location": "Mexico",
-      "summary": "I advised and coordinated teams working on teaching- and security-related products, consulting and services."
-    },
-    {
-      "name": "HP Enterprise Services",
-      "position": "Account Security Officer",
-      "startDate": "2010-10-01",
-      "endDate": "2011-10-01",
-      "location": "Mexico",
-      "highlights": [
-        "Acted as first point of contact for all security-related issues for five HP enterprise customers in Mexico.",
-        "Initiated, advised and managed security-related projects.",
-        "Handled communication and coordination between technical teams involved in security initiatives.",
-        "Involved in all security-related decisions at the sales, design, implementation, delivery and ongoing maintenance stages of IT Outsourcing projects."
-      ]
-    },
-    {
-      "name": "HP Enterprise Services",
-      "position": "IT Outsourcing Service Delivery Consultant",
-      "startDate": "2009-11-01",
-      "endDate": "2010-10-01",
-      "location": "Mexico",
-      "highlights": [
-        "Helped multidisciplinary customer teams (software engineering, IT management, networking, sales and support) by solving complex problems in customer environments.",
-        "Performed analysis, design and implementation of solutions in multiple areas of expertise, including system automation, configuration management, system administration, system design, virtualization, performance and security."
-      ]
-    },
-    {
-      "name": "IBM Zurich Research Lab",
-      "position": "Research Staff Member",
-      "startDate": "2001-10-01",
-      "endDate": "2009-10-01",
-      "location": "Switzerland",
-      "summary": "I was a member of the [*Global Security Analysis Laboratory*](https://www.zurich.ibm.com/security/) (GSAL), where I worked in intrusion detection, malware detection and containment, and virtualization security research projects. See [Research](#projects-research) for details of my research."
-    },
-    {
-      "name": "Sun Microsystems",
-      "position": "Developer (Intern)",
-      "startDate": "1997-05-01",
-      "endDate": "1997-08-01",
-      "location": "U.S.A.",
-      "highlights": [
-        "Developer for the *Bruce* host vulnerability scanner, later released as the [Sun Enterprise Network Security Service](https://www.usenix.org/legacy/publications/login/1999-11/features/senss.html) (SENSS).",
-        "Designed and implemented the first version of the network-based components of *Bruce*, which allowed it to operate on several hosts in a network, controlled from a central location."
-      ]
-    },
-    {
-      "name": "National Autonomous University of Mexico (UNAM)",
-      "position": "Founder and lead of Computer Security Area",
-      "startDate": "1995-08-01",
-      "endDate": "1996-08-01",
-      "location": "Mexico",
-      "highlights": [
-        "Established UNAM's [*Computer Security Area*](http://www.seguridad.unam.mx/), the University's first team dedicated to computer security, which has evolved into the [*Information Security Coordination (UNAM-CERT)*](http://www.seguridad.unam.mx/).",
-        "Managed up to nine people working on different projects related to computer security.",
-        "Managed security monitoring for a Cray supercomputer and 22 Unix workstations.",
-        "Provided security services to the whole University, including incident response, security information, auditing and teaching.",
-        "Established the celebration of the *International Computer Security Day* (sponsored by the Association for Computing Machinery) at UNAM. Acted as the main organizer of the event for two years (1994 and 1995). This event has grown and evolved into the [*Computer Security Day*](https://www.disc.unam.mx/) and the [*Computer Security Congress*](https://congreso.seguridad.unam.mx/).",
-        "Designed and headed development of an audit-analysis tool for Unix systems (SAINT)."
-      ]
-    },
-    {
-      "name": "National Autonomous University of Mexico (UNAM)",
-      "position": "System Administrator",
-      "startDate": "1991-11-01",
-      "endDate": "1995-08-01",
-      "location": "Mexico",
-      "highlights": [
-        "System administrator at UNAM's Supercomputing Center, managing a [Cray Y-MP Supercomputer](http://www.historiadelcomputo.unam.mx/files/fotos/Cray/cray.html) and related systems.",
-        "Managed the Network Queuing Subsystem (NQS),",
-        "Managed and provided support for 22 Unix workstations.",
-        "Monitored the security of the Cray supercomputer and related workstations.",
-        "Other responsibilities: user administration, operating system installation, resource management, security policies."
-      ]
+    "work": [
+        {
+            "name": "Avaloq",
+            "url": "https://avaloq.com/",
+            "position": "CISO Governance",
+            "startDate": "2024-01-01",
+            "location": "Switzerland",
+            "summary": "I lead the global CISO Governance team, focusing on establishing robust security policies and monitoring compliance. I am in charge of defining and monitoring Avaloq's global Information Security Management System. My role involves defining requirements and ensuring effective oversight of first-line security functions, which is essential for maintaining a secure and compliant environment in the financial technology sector.",
+            "highlights": []
+        },
+        {
+            "name": "Amazon Web Services",
+            "url": "https://aws.amazon.com/",
+            "position": "Senior Global Security Architect",
+            "startDate": "2022-10-01",
+            "endDate": "2023-12-31",
+            "location": "Switzerland",
+            "summary": "I worked with customers and within AWS to increase security awareness, design and build secure solutions, mentor and develop colleagues and customers in security best practices. I was Lead Security Architect in the [Stellantis Virtual Engineering Workbench](https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions) (VEW) project.",
+            "highlights": [
+                "Established the VEW security workstream to identify customer security requirements and policies, define and promote security best practices and drive activities related to risk analysis, threat modeling and mitigation definition, prioritization and implementation.",
+                "Established in VEW measurement mechanisms for status and metrics for security activities, which provide visibility to both technical and business stakeholders.",
+                "Established the VEW *Security Champions* program to promote and transfer security knowledge.",
+                "Defined and tracked implementation of security features in VEW to fulfill both customer business requirements and AWS best practices."
+            ]
+        },
+        {
+            "name": "Amazon Web Services",
+            "url": "https://aws.amazon.com/",
+            "position": "Global Security Architect",
+            "startDate": "2021-09-01",
+            "endDate": "2022-09-30",
+            "location": "Switzerland",
+            "summary": "Worked with AWS global customers to improve security posture and promote secure design and implementation practices. I was a member of the security team in the  [Volkswagen Digital Production Platform (DPP)](https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/) project.",
+            "highlights": [
+                "Established in DPP scalable and durable mechanisms to enable DPP partners to work securely in the DPP program.",
+                "Created and promoted security learning materials tailored for various roles within the DPP project.",
+                "Increased security awareness and knowledge by promoting a *Security Guardians* initiative across the DPP organization."
+            ]
+        },
+        {
+            "name": "Swisscom",
+            "url": "https://swisscom.com/",
+            "position": "Enterprise Architect and IT Clouds Solution Security Architect",
+            "startDate": "2019-04-01",
+            "endDate": "2021-09-30",
+            "location": "Switzerland",
+            "summary": "As an *Enterprise Architect*, I participated in the design of future products and solutions offered by Swisscom, in collaboration with architects from all other divisions of the company.\n\nAs *Solution Security Architect for [Swisscom's Cloud Platforms](https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html)* (including *Enterprise Service Cloud*, *Enterprise Application Cloud*, *Dynamic Computing Services*, *Enterprise Cloud for SAP Applications* and related services) I was responsible for the security, compliance and data governance of those services. I  defined, prioritized and drove relevant product features and business goals. I also lead the IT Clouds Security Community of Practice and advised engineering teams on compliance, governance and operational activities.",
+            "highlights": [
+                "Ensured cloud platform and service compliance with internal, contractual and regulatory standards, including ISO27001, ISAE3402/3000 and GDPR.",
+                "Established and led a community of around 30 /Security Champions/ from different teams, who drove security initiatives and promote the security culture within the Swisscom IT Clouds organization.",
+                "Coordinated threat modeling, audits, penetration tests and security compliance reporting.",
+                "Coordinated organization- and team-wide processes for risk and vulnerability management.",
+                "Development of the Swisscom Platforms vision for 2025."
+            ]
+        },
+        {
+            "name": "Swisscom",
+            "url": "https://swisscom.com/",
+            "position": "Team Lead & Product Owner for Health & State Management",
+            "startDate": "2016-03-01",
+            "endDate": "2019-04-01",
+            "location": "Switzerland",
+            "summary": "I built and led a team which evolved on par with Swisscom cloud platforms to provide their monitoring and logging capabilities. My responsibilities included people management (up to 16 people), definition and prioritization of requirements and roadmaps (in collaboration with Product Managers and other stakeholders), technical architecture, and managing the planning and execution of team activities.",
+            "highlights": [
+                "Led the transition of the *Enterprise Cloud* LEMM (Logging, Event Management and Monitoring) and Access & Inventory frameworks into maintenance mode as the platform was retired.",
+                "Defined the scope and mission of the Health and State Management (HSM) team as part of the new [*Enterprise Service Cloud*](https://www.swisscom.ch/en/business/enterprise/offer/cloud/cloudservices/enterprise-service-cloud.html) project, and later of other platforms as the *IT Clouds* scope expanded to [*Application Cloud*](https://www.swisscom.ch/en/business/enterprise/offer/cloud/cloudservices/application-cloud.html), [*Enterprise Cloud for SAP Solutions*](https://www.swisscom.ch/en/business/enterprise/offer/platforms-applications/core-business-applications-service/enterprise-cloud-for-sap-solutions.html) and [*Dynamic Computing Services*](https://www.swisscom.ch/en/business/enterprise/offer/cloud/cloudservices/dynamic-computing-services.html).",
+                "Defined the logging and monitoring architecture for the *Enterprise Service Cloud* platform based on VMware vRealize Operations and vRealize Log Insight.",
+                "Led the transition of the *Application Cloud* platform monitoring from the Orchard framework to a TICK-based framework.",
+                "Defined architecture and oversaw implementation of the Customer Log Forwarding service.",
+                "Managed business relationship and technical implementation of OpsGenie for alert management in IT Clouds.",
+                "Main technologies involved: VMware vSphere (ESX, vCenter, NSX), VMware vRealize Operations Manager and Log Insight, Ansible (configuration management), OpsGenie (alert management)."
+            ]
+        },
+        {
+            "name": "Swisscom",
+            "url": "https://swisscom.com/",
+            "position": "Cloud Architect and Orchard Project Lead",
+            "startDate": "2015-08-01",
+            "endDate": "2016-03-01",
+            "location": "Switzerland",
+            "summary": "Managed a team of three people and led the *Orchard* project through its implementation, production release and further improvements and development."
+        },
+        {
+            "name": "Swisscom Cloud Lab",
+            "position": "Senior Platform Architect",
+            "startDate": "2014-08-01",
+            "endDate": "2015-07-31",
+            "location": "U.S.A. (remote)",
+            "highlights": [
+                "Designed the architecture and implemented the initial prototype for the *Orchard* health-management and self-healing framework for Swisscom's *Application Cloud* Platform-as-a-Service service.",
+                "Main technologies involved: OpenStack (cloud computing infrastructure), Cloud Foundry (application platform), Consul (health management and service discovery), RabbitMQ (message bus), Riemann (event analysis)."
+            ]
+        },
+        {
+            "name": "CFEngine AS",
+            "url": "https://cfengine.com/",
+            "position": "Product Manager",
+            "startDate": "2013-08-01",
+            "endDate": "2014-06-30",
+            "location": "Norway/U.S.A. (remote)",
+            "highlights": [
+                "Managed the CFEngine language roadmap.",
+                "Created and led the [CFEngine Design Center](https://docs.cfengine.com/docs/3.10/guide-design-center.html) project, which was the foundation for the current [CFEngine Build](https://build.cfengine.com/) service.",
+                "Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack).",
+                "Developed code for both the Design Center core and its integrations."
+            ]
+        },
+        {
+            "name": "CFEngine AS",
+            "url": "https://cfengine.com/",
+            "position": "Senior Security Advisor",
+            "startDate": "2011-10-01",
+            "endDate": "2014-06-30",
+            "location": "Norway/U.S.A. (remote)",
+            "highlights": [
+                "CFEngine Advocate, with a special focus on security.",
+                "Wrote the book [*Learning CFEngine 3*](https://cf-learn.info/), published by O'Reilly Media, which became the de facto introductory text to CFEngine.",
+                "Gave talks, wrote articles and blog posts, taught classes, and in general spread the word about CFEngine.",
+                "Developed and implemented the strategy for CFEngine as a security component."
+            ]
+        },
+        {
+            "name": "Boundless Innovation and Technology",
+            "position": "Cofounder, Head of Research and Training",
+            "startDate": "2012-07-01",
+            "endDate": "2014-07-31",
+            "location": "Mexico",
+            "summary": "I advised and coordinated teams working on teaching- and security-related products, consulting and services."
+        },
+        {
+            "name": "HP Enterprise Services",
+            "position": "Account Security Officer",
+            "startDate": "2010-10-01",
+            "endDate": "2011-10-01",
+            "location": "Mexico",
+            "highlights": [
+                "Acted as first point of contact for all security-related issues for five HP enterprise customers in Mexico.",
+                "Initiated, advised and managed security-related projects.",
+                "Handled communication and coordination between technical teams involved in security initiatives.",
+                "Involved in all security-related decisions at the sales, design, implementation, delivery and ongoing maintenance stages of IT Outsourcing projects."
+            ]
+        },
+        {
+            "name": "HP Enterprise Services",
+            "position": "IT Outsourcing Service Delivery Consultant",
+            "startDate": "2009-11-01",
+            "endDate": "2010-10-01",
+            "location": "Mexico",
+            "highlights": [
+                "Helped multidisciplinary customer teams (software engineering, IT management, networking, sales and support) by solving complex problems in customer environments.",
+                "Performed analysis, design and implementation of solutions in multiple areas of expertise, including system automation, configuration management, system administration, system design, virtualization, performance and security."
+            ]
+        },
+        {
+            "name": "IBM Zurich Research Lab",
+            "position": "Research Staff Member",
+            "startDate": "2001-10-01",
+            "endDate": "2009-10-01",
+            "location": "Switzerland",
+            "summary": "I was a member of the [*Global Security Analysis Laboratory*](https://www.zurich.ibm.com/security/) (GSAL), where I worked in intrusion detection, malware detection and containment, and virtualization security research projects. See [Research](#projects-research) for details of my research."
+        },
+        {
+            "name": "Sun Microsystems",
+            "position": "Developer (Intern)",
+            "startDate": "1997-05-01",
+            "endDate": "1997-08-01",
+            "location": "U.S.A.",
+            "highlights": [
+                "Developer for the *Bruce* host vulnerability scanner, later released as the [Sun Enterprise Network Security Service](https://www.usenix.org/legacy/publications/login/1999-11/features/senss.html) (SENSS).",
+                "Designed and implemented the first version of the network-based components of *Bruce*, which allowed it to operate on several hosts in a network, controlled from a central location."
+            ]
+        },
+        {
+            "name": "National Autonomous University of Mexico (UNAM)",
+            "position": "Founder and lead of Computer Security Area",
+            "startDate": "1995-08-01",
+            "endDate": "1996-08-01",
+            "location": "Mexico",
+            "highlights": [
+                "Established UNAM's [*Computer Security Area*](http://www.seguridad.unam.mx/), the University's first team dedicated to computer security, which has evolved into the [*Information Security Coordination (UNAM-CERT)*](http://www.seguridad.unam.mx/).",
+                "Managed up to nine people working on different projects related to computer security.",
+                "Managed security monitoring for a Cray supercomputer and 22 Unix workstations.",
+                "Provided security services to the whole University, including incident response, security information, auditing and teaching.",
+                "Established the celebration of the *International Computer Security Day* (sponsored by the Association for Computing Machinery) at UNAM. Acted as the main organizer of the event for two years (1994 and 1995). This event has grown and evolved into the [*Computer Security Day*](https://www.disc.unam.mx/) and the [*Computer Security Congress*](https://congreso.seguridad.unam.mx/).",
+                "Designed and headed development of an audit-analysis tool for Unix systems (SAINT)."
+            ]
+        },
+        {
+            "name": "National Autonomous University of Mexico (UNAM)",
+            "position": "System Administrator",
+            "startDate": "1991-11-01",
+            "endDate": "1995-08-01",
+            "location": "Mexico",
+            "highlights": [
+                "System administrator at UNAM's Supercomputing Center, managing a [Cray Y-MP Supercomputer](http://www.historiadelcomputo.unam.mx/files/fotos/Cray/cray.html) and related systems.",
+                "Managed the Network Queuing Subsystem (NQS),",
+                "Managed and provided support for 22 Unix workstations.",
+                "Monitored the security of the Cray supercomputer and related workstations.",
+                "Other responsibilities: user administration, operating system installation, resource management, security policies."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Purdue University",
+            "url": "https://cerias.purdue.edu/",
+            "area": "Computer Science",
+            "studyType": "Ph.D.",
+            "startDate": "1996-08-01",
+            "endDate": "2001-08-01",
+            "location": "West Lafayette, IN, U.S.A.",
+            "summary": "Thesis: [Using Internal Sensors for Computer Intrusion Detection](https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf). Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)"
+        },
+        {
+            "institution": "Purdue University",
+            "url": "https://cerias.purdue.edu/",
+            "area": "Computer Science",
+            "studyType": "M.S.",
+            "startDate": "1996-08-01",
+            "endDate": "1998-05-01",
+            "location": "West Lafayette, IN, U.S.A.",
+            "summary": "Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)"
+        },
+        {
+            "institution": "National Autonomous University of Mexico (UNAM)",
+            "url": "https://www.unam.mx/",
+            "area": "Computer Engineering",
+            "studyType": "Bachelor's degree",
+            "startDate": "1989-08-01",
+            "endDate": "1995-07-01",
+            "location": "Mexico City, Mexico",
+            "summary": "Thesis: [UNAM/Cray Project for Security in the Unix Operating System](https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf) (in Spanish, original title: *Proyecto UNAM/Cray de Seguridad en el Sistema Operativo Unix*)"
+        }
+    ],
+    "certificates": [
+        {
+            "name": "See full list on Credly",
+            "url": "https://www.credly.com/users/zzamboni/"
+        },
+        {
+            "name": "AWS Certified Data Analytics – Specialty",
+            "issuer": "Amazon Web Services Training and Certification",
+            "url": "https://www.credly.com/badges/cf7fa455-0305-4aec-a627-bf9ffa133308/public_url",
+            "date": "2023-05-24",
+            "image": "https://images.credly.com/images/6430efe4-0ac0-4df6-8f1b-9559d8fcdf27/image.png"
+        },
+        {
+            "name": "Certified Information Systems Security Professional (CISSP)",
+            "issuer": "ISC2",
+            "url": "https://www.credly.com/badges/d74f6e4c-0667-41fb-9243-e11a3793ace4/public_url",
+            "date": "2019-04-08",
+            "image": "https://images.credly.com/images/6eeb0a98-33cb-4f72-bfc3-f89d65a3286c/image.png"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Leadership",
+            "keywords": [
+                "32 years of multidisciplinary team and project leadership experience",
+                "IT Enterprise Architecture",
+                "Scaled Agile Framework (SAFe)"
+            ]
+        },
+        {
+            "name": "Communication",
+            "keywords": [
+                "Excellent written and spoken communication skills",
+                "Extensive public speaking experience",
+                "Professional writing and teaching experience"
+            ]
+        },
+        {
+            "name": "Information and Cyber Security",
+            "keywords": [
+                "Enterprise security governance",
+                "Enterprise security architecture",
+                "Virtualization and cloud computing security",
+                "Risk management and compliance",
+                "Intrusion detection and prevention",
+                "Software security and secure software development",
+                "ISO27001"
+            ]
+        },
+        {
+            "name": "Technology",
+            "keywords": [
+                "Broad and deep IT expertise",
+                "Cloud computing",
+                "Computer security",
+                "Operating systems",
+                "Networking",
+                "Configuration management",
+                "Software & services development",
+                "Programming languages"
+            ]
+        },
+        {
+            "name": "Cloud Computing",
+            "keywords": [
+                "AWS architecture",
+                "AWS security",
+                "AWS infrastructure and development",
+                "Held multiple AWS Professional- and Associate-level certifications (Security, Solutions Architect, Dev/Sysops) from 2022-2025"
+            ]
+        },
+        {
+            "name": "Research",
+            "keywords": [
+                "Ph.D. in Computer Science",
+                "9 years of experience at IBM Research"
+            ]
+        },
+        {
+            "name": "Programming Languages",
+            "keywords": [
+                "Ruby",
+                "Python",
+                "C",
+                "Perl",
+                "Java",
+                "LISP family (Clojure, Racket)",
+                "Unix shells and tools"
+            ]
+        },
+        {
+            "name": "Systems & Development",
+            "keywords": [
+                "Unix/Linux systems engineering and administration",
+                "System health management and monitoring",
+                "Cloud platforms",
+                "Software development",
+                "Configuration management"
+            ]
+        },
+        {
+            "name": "Development Environments & Technologies",
+            "keywords": [
+                "Unix/Linux",
+                "Cloud Foundry",
+                "Amazon EC2",
+                "macOS",
+                "VMware (ESX, vSphere)",
+                "OpenStack",
+                "Docker",
+                "REST APIs",
+                "XML and related technologies",
+                "Network programming",
+                "Database programming (SQL)",
+                "Kernel programming (OpenBSD and Linux)",
+                "HTML"
+            ]
+        },
+        {
+            "name": "Configuration Management",
+            "keywords": [
+                "CFEngine",
+                "Puppet",
+                "Chef",
+                "Ansible"
+            ]
+        },
+        {
+            "name": "Virtualization & Cloud",
+            "keywords": [
+                "VMware (ESX, vSphere)",
+                "OpenStack",
+                "Amazon EC2",
+                "Docker",
+                "Cloud Foundry"
+            ]
+        },
+        {
+            "name": "Health Management & Monitoring",
+            "keywords": [
+                "VMware vRealize Operations Manager",
+                "vRealize Log Insight"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Spanish",
+            "fluency": "Native"
+        },
+        {
+            "language": "English",
+            "fluency": "Full proficiency"
+        },
+        {
+            "language": "German",
+            "fluency": "Intermediate proficiency (B2 level)"
+        }
+    ],
+    "awards": [
+        {
+            "title": "IEEE Security & Privacy Test of Time Award",
+            "date": "2020-05-18",
+            "awarder": "IEEE",
+            "summary": "[IEEE S&P page](https://www.ieee-security.org/TC/SP2020/awards.html), [CERIAS blog post](https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/)"
+        },
+        {
+            "title": "CFEngine Champion",
+            "date": "2010",
+            "awarder": "CFEngine AS",
+            "summary": "[CFEngine Champions](https://cfengine.com/engage/cfengine-champions/)"
+        },
+        {
+            "title": "Josef Raviv Memorial Postdoctoral Fellowship",
+            "date": "2001-07-01",
+            "awarder": "IBM",
+            "summary": "[Diego Zamboni Earns Fellowship From IBM](https://www.cerias.purdue.edu/site/news/view/diego_zamboni_earns_fellowship_from_ibm)"
+        },
+        {
+            "title": "UPE Microsoft Scholarship Award",
+            "date": "2000-09-01",
+            "awarder": "UPE and Microsoft"
+        },
+        {
+            "title": "Member of Upsilon Pi Epsilon",
+            "date": "1998-04-01",
+            "awarder": "Association for Computing Machinery (ACM)",
+            "summary": "[Upsilon Pi Epsilon](http://upe.acm.org/)"
+        },
+        {
+            "title": "Member of Phi Beta Delta",
+            "date": "2001-04-01",
+            "awarder": "Phi Beta Delta honor society",
+            "summary": "Honor society recognizing scholarly achievement."
+        },
+        {
+            "title": "Fulbright Scholarship",
+            "date": "1996-05-01",
+            "awarder": "Fulbright Program and CONACYT",
+            "summary": "Scholarship for pursuing Ph.D. studies at Purdue University."
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "Computers & Security Journal",
+            "position": "Editorial Board Member",
+            "startDate": "2011",
+            "endDate": "2013",
+            "url": "https://www.sciencedirect.com/journal/computers-and-security"
+        },
+        {
+            "organization": "Intl. Symposium on Recent Advances in Intrusion Detection (RAID)",
+            "position": "Program and Steering Committee Member, Program Chair",
+            "startDate": "2001",
+            "endDate": "2017",
+            "url": "https://dblp.org/db/conf/raid/index.html",
+            "highlights": [
+                "2001&ndash;2005: Program Committee member.",
+                "2006: Program Chair for RAID'06.",
+                "2007&ndash;2017: Steering Committee member."
+            ]
+        },
+        {
+            "organization": "IBM Academy of Technology Security and Privacy Symposium",
+            "position": "Program Co-chair",
+            "startDate": "2009-06",
+            "endDate": "2009-06",
+            "summary": "Internal virtual IBM event."
+        },
+        {
+            "organization": "ZISC Workshop on Security in Virtualized Environments and Cloud Computing",
+            "position": "Program Chair",
+            "url": "https://www.video.ethz.ch/conferences/2009/zisc.html",
+            "startDate": "2009-09-10",
+            "endDate": "2009-09-10",
+            "summary": "[Zurich Information Security and Privacy Center (ZISC)](https://zisc.ethz.ch/)"
+        },
+        {
+            "organization": "Detection of Intrusions and Malware & Vulnerability Assessment (DIMVA) 2008",
+            "position": "Program Chair",
+            "url": "https://www.dimva.org/dimva2008/",
+            "startDate": "2008-07",
+            "endDate": "2008-07",
+            "summary": "Location: Paris, France"
+        },
+        {
+            "organization": "IEEE Security and Privacy Symposium",
+            "position": "Program Committee Member",
+            "url": "http://www.ieee-security.org/TC/SP-Index.html",
+            "startDate": "2007-05",
+            "endDate": "2007-05",
+            "summary": "Location: Oakland, CA, U.S.A."
+        },
+        {
+            "organization": "Annual Computer Security Applications Conference (ACSAC)",
+            "position": "Program Committee Member",
+            "url": "http://www.acsac.org/",
+            "startDate": "2003",
+            "endDate": "2007"
+        },
+        {
+            "organization": "Computer Security Day Conference",
+            "position": "Founder, organizer, Program Committee Member",
+            "url": "https://www.disc.unam.mx/",
+            "startDate": "1994",
+            "endDate": "2000",
+            "summary": "Location: Mexico",
+            "highlights": [
+                "1994: Founder and organizer",
+                "1995: Organizer",
+                "1994&ndash;2000: Program Committee Member"
+            ]
+        },
+        {
+            "organization": "The Association for Computing Machinery (ACM)",
+            "position": "Member",
+            "url": "http://www.acm.org/",
+            "startDate": "1998"
+        },
+        {
+            "organization": "Purdue.pm, the Purdue Perl Users Group",
+            "position": "Founder",
+            "url": "http://purdue.pm.org/",
+            "summary": "Location: U.S.A.",
+            "startDate": "2000"
+        },
+        {
+            "organization": "Purdue University Chapter of Upsilon Pi Epsilon",
+            "position": "President",
+            "url": "https://www.cs.purdue.edu/future-students/organizations.html",
+            "summary": "Location: U.S.A.",
+            "startDate": "1999"
+        },
+        {
+            "organization": "Purdue University Chapter of Upsilon Pi Epsilon",
+            "position": "Secretary",
+            "url": "https://www.cs.purdue.edu/future-students/organizations.html",
+            "summary": "Location: U.S.A.",
+            "startDate": "1998"
+        }
+    ],
+    "projects": [
+        {
+            "description": "See [Publications](publications.html) for publication details.",
+            "type": "Research"
+        },
+        {
+            "name": "Phantom",
+            "type": "Research",
+            "startDate": "2008",
+            "endDate": "2009",
+            "description": "Security for VMware virtual environments using virtual machine introspection (based on the [VMware VMsafe API](https://vmguru.com/2011/03/vmsafe-api/)) to provide intrusion detection and prevention capabilities. Publications: [[6]](publications.html#pub-6)"
+        },
+        {
+            "name": "Billy Goat: Active worm detection and capture",
+            "type": "Research",
+            "url": "https://dominoweb.draco.res.ibm.com/d7c39a9a2e73d870852570060051dfed.html",
+            "startDate": "2002",
+            "endDate": "2008",
+            "description": "Billy Goat was the first instance of what is today called *honeypots* and *honeynets*. It is an active worm-capture device that simulates thousands of vulnerable hosts in order to attract and capture worms propagating in the network. The captured worms are then analyzed to extract signatures and other relevant information, which is used to update intrusion detection and prevention systems."
+        },
+        {
+            "name": "Router-based Billy Goat",
+            "type": "Research",
+            "url": "http://www.usenix.org/event/sruti07/tech/full_papers/zamboni/zamboni.pdf",
+            "startDate": "2005",
+            "endDate": "2007",
+            "description": "An active worm-capture device deployed at the network boundary and coupled with the border router, that allows the Billy Goat to effectively and automatically spoof every unused IP address outside the local network. This makes it possible for the Router-based Billy Goat to accurately detect local infected machines and prevent them from establishing connections to the outside, limiting the propagation of the worms to the outside network."
+        },
+        {
+            "name": "SOC in a Box",
+            "type": "Research",
+            "startDate": "2005",
+            "endDate": "2007",
+            "description": "Integrated device containing multiple security tools: intrusion detection, worm detection, vulnerability scanning and network discovery. Precursor to what is today called *Unified Threat Management* systems."
+        },
+        {
+            "name": "Exorcist",
+            "type": "Research",
+            "startDate": "2001",
+            "endDate": "2002",
+            "description": "Host-based, behavior-based intrusion detection using sequences of system calls."
+        },
+        {
+            "name": "Using internal sensors and embedded detectors for intrusion detection",
+            "type": "Ph.D. Thesis",
+            "url": "https://zzamboni.org/cerias/zamboni/thesis/",
+            "startDate": "1996",
+            "endDate": "2001",
+            "description": "Study of data collection methods for intrusion detection systems. Implementation of novel methods for data collection in intrusion detection systems. Analysis of the properties, advantages and disadvantages of internal sensors and embedded detectors as data collection and analysis elements in intrusion detection systems."
+        },
+        {
+            "name": "Using autonomous agents for intrusion detection",
+            "type": "Research",
+            "url": "https://www.cerias.purdue.edu/site/about/history/coast/projects/aafid.php",
+            "startDate": "1997",
+            "endDate": "1999",
+            "description": "Design and documentation of an architecture (AAFID) to perform distributed monitoring and intrusion detection using autonomous agents. Implementation of a prototype according to the architecture. This prototype was [published as open source](https://www.cerias.purdue.edu/site/about/history/coast/projects/aafid-announce-0999.php). Exploration of research issues in the distributed intrusion detection area."
+        },
+        {
+            "name": "Analysis of a denial-of-service attack on TCP/IP (Synkill)",
+            "type": "Research",
+            "url": "https://www.cerias.purdue.edu/site/about/history/coast/projects/coast-proj-synkill.php",
+            "startDate": "1997",
+            "endDate": "1997",
+            "description": "Collaborated in the analysis of the SYN-flooding denial-of-service attack against TCP and in the implementation of a defense tool. The paper was awarded the [2020 IEEE Security & Privacy Test of Time Award](https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/)."
+        },
+        {
+            "name": "Management and leadership, IT security, cloud computing",
+            "type": "Professional Highlights",
+            "highlights": [
+                "Managed security architecture at the [Stellantis *Virtual Engineering Workbench*](https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions) project. Worked with Stellantis CISO and business stakeholders to define governance, establish security best practices and drive risk analysis, threat modeling and mitigation.",
+                "Established scalable and durable mechanisms to enable partners to work securely in the [Volkswagen Digital Production Platform (DPP)](https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/) program.",
+                "Managed security architecture, risk management, data governance and compliance (ISO27001, ISAE3402/3000, etc.) for [Swisscom's Cloud platforms](https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html).",
+                "Established and led the Swisscom IT Clouds security community of practice.",
+                "Established and led the *Health and State Management* team at Swisscom to design, implement and operate a framework for scalable monitoring, logging and alerting for Swisscom's Cloud platforms.",
+                "Established and led the first computer security organization at UNAM, which has grown into the university's [Information Security Coordination (UNAM-CERT)](https://www.seguridad.unam.mx/).",
+                "Managed IT security customer relationships at HP Enterprise Services, including overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting."
+            ]
+        },
+        {
+            "name": "Research, architecture and design",
+            "type": "Professional Highlights",
+            "highlights": [
+                "Designed the *Orchard* monitoring framework for Swisscom's *Application Cloud* platform, and led the team that implemented it and brought it into production.",
+                "Designed and implemented the *Billy Goat* malware capture and analysis system at IBM."
+            ]
+        },
+        {
+            "name": "Communications and community",
+            "type": "Professional Highlights",
+            "highlights": [
+                "Author of multiple books including [*Learning CFEngine*](https://cf-learn.info/), [*Learning Hammerspoon*](https://leanpub.com/learning-hammerspoon) and [*Literate Configuration*](https://leanpub.com/lit-config).",
+                "Program chair and program committee member for multiple conferences including the RAID symposium, DIMVA conference, the *Computer Security Day* and *Computer Security* conference at UNAM, and others.",
+                "Member of the Editorial Board of the [Computers & Security Journal](https://www.sciencedirect.com/journal/computers-and-security)."
+            ]
+        },
+        {
+            "name": "Open-source software projects",
+            "type": "Software",
+            "url": "https://github.com/zzamboni",
+            "description": "Selection of publicly available projects on GitHub and GitLab.\n\n- GitHub: [github.com/zzamboni](https://github.com/zzamboni)\n- GitLab: [gitlab.com/zzamboni](https://gitlab.com/zzamboni)"
+        },
+        {
+            "name": "Pilatus",
+            "type": "Software",
+            "startDate": "2005-01-01",
+            "endDate": "2007-12-31",
+            "description": "An automated system installer that allows arbitrary system installation and configurations, allowing for both proprietary and open source components to be installed in an automated fashion. Open source components can be downloaded directly from their original source to avoid distributing them."
+        },
+        {
+            "name": "Embedded Sensors Project",
+            "type": "Software",
+            "startDate": "1999-01-01",
+            "endDate": "2001-12-31",
+            "description": "A system of sensors for intrusion detection developed in OpenBSD through code instrumentation. Developed as part of my Ph.D. thesis work."
+        },
+        {
+            "name": "Advising: Urko Zurutuza Ortega",
+            "type": "Teaching & Advising",
+            "description": "**Ph.D. co-advisor** — Mondragon University,  Spain\n\n- Thesis: [Data Mining Approaches for Analysis of Worm Activity Towards Automatic Signature Generation](https://dialnet.unirioja.es/servlet/tesis?codigo=20012)",
+            "startDate": "2005-01-01",
+            "endDate": "2008-12-31"
+        },
+        {
+            "name": "Advising: Milton Yates",
+            "type": "Teaching & Advising",
+            "description": "**External Diploma Thesis advisor** — ENST Bretagne,  France\n\n- Thesis: [The Router-based Billy Goat Project](https://www.usenix.org/conference/sruti-07/boundary-detection-and-containment-local-worm-infections)",
+            "startDate": "2005-01-01",
+            "endDate": "2005-12-31"
+        },
+        {
+            "name": "Advising: Candid Wüest",
+            "type": "Teaching & Advising",
+            "description": "**Diploma Thesis advisor** — ETH Zurich,  Switzerland\n\n- Thesis: [Desktop Firewalls and Intrusion Detection](https://pub.tik.ee.ethz.ch/students/2002-2003-Wi/DA-2003-22.pdf)",
+            "startDate": "2002-01-01",
+            "endDate": "2003-12-31"
+        },
+        {
+            "name": "Advising: Daniele Sgandurra",
+            "type": "Teaching & Advising",
+            "description": "**Internship advisor** — University of Pisa,  Italy\n\n- Project: Design and implementation of process injection using virtual machine introspection.",
+            "startDate": "2009-01-01",
+            "endDate": "2009-12-31"
+        },
+        {
+            "name": "Advising: Martin Carbone",
+            "type": "Teaching & Advising",
+            "description": "**Internship advisor** — Georgia Institute of Technology,  U.S.A.\n\nProject: Implementation of a proof of concept Hyperjacking attack on Intel platform.",
+            "startDate": "2007-01-01",
+            "endDate": "2007-12-31"
+        }
+    ],
+    "publications": [
+        {
+            "name": "Full publications list",
+            "url": "publications.html",
+            "summary": "Complete list of publications, patents, talks, and theses.",
+            "authors": [
+                "Diego Zamboni"
+            ]
+        }
+    ],
+    "meta": {
+        "theme": "jsonresume-theme-even",
+        "themeOptions": {
+            "icons": "fontawesome",
+            "projectsByType": true
+        }
     }
-  ],
-  "education": [
-    {
-      "institution": "Purdue University",
-      "url": "https://cerias.purdue.edu/",
-      "area": "Computer Science",
-      "studyType": "Ph.D.",
-      "startDate": "1996-08-01",
-      "endDate": "2001-08-01",
-      "location": "West Lafayette, IN, U.S.A.",
-      "summary": "Thesis: [Using Internal Sensors for Computer Intrusion Detection](https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf). Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)"
-    },
-    {
-      "institution": "Purdue University",
-      "url": "https://cerias.purdue.edu/",
-      "area": "Computer Science",
-      "studyType": "M.S.",
-      "startDate": "1996-08-01",
-      "endDate": "1998-05-01",
-      "location": "West Lafayette, IN, U.S.A.",
-      "summary": "Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)"
-    },
-    {
-      "institution": "National Autonomous University of Mexico (UNAM)",
-      "url": "https://www.unam.mx/",
-      "area": "Computer Engineering",
-      "studyType": "Bachelor's degree",
-      "startDate": "1989-08-01",
-      "endDate": "1995-07-01",
-      "location": "Mexico City, Mexico",
-      "summary": "Thesis: [UNAM/Cray Project for Security in the Unix Operating System](https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf) (in Spanish, original title: *Proyecto UNAM/Cray de Seguridad en el Sistema Operativo Unix*)"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "See full list on Credly",
-      "url": "https://www.credly.com/users/zzamboni/"
-    },
-    {
-      "name": "AWS Certified Data Analytics – Specialty",
-      "issuer": "Amazon Web Services Training and Certification",
-      "url": "https://www.credly.com/badges/cf7fa455-0305-4aec-a627-bf9ffa133308/public_url",
-      "date": "2023-05-24",
-      "image": "https://images.credly.com/images/6430efe4-0ac0-4df6-8f1b-9559d8fcdf27/image.png"
-    },
-    {
-      "name": "Certified Information Systems Security Professional (CISSP)",
-      "issuer": "ISC2",
-      "url": "https://www.credly.com/badges/d74f6e4c-0667-41fb-9243-e11a3793ace4/public_url",
-      "date": "2019-04-08",
-      "image": "https://images.credly.com/images/6eeb0a98-33cb-4f72-bfc3-f89d65a3286c/image.png"
-    }
-  ],
-  "skills": [
-    {
-      "name": "Leadership",
-      "keywords": [
-        "32 years of multidisciplinary team and project leadership experience",
-        "IT Enterprise Architecture",
-        "Scaled Agile Framework (SAFe)"
-      ]
-    },
-    {
-      "name": "Communication",
-      "keywords": [
-        "Excellent written and spoken communication skills",
-        "Extensive public speaking experience",
-        "Professional writing and teaching experience"
-      ]
-    },
-    {
-      "name": "Information and Cyber Security",
-      "keywords": [
-        "Enterprise security governance",
-        "Enterprise security architecture",
-        "Virtualization and cloud computing security",
-        "Risk management and compliance",
-        "Intrusion detection and prevention",
-        "Software security and secure software development",
-        "ISO27001"
-      ]
-    },
-    {
-      "name": "Technology",
-      "keywords": [
-        "Broad and deep IT expertise",
-        "Cloud computing",
-        "Computer security",
-        "Operating systems",
-        "Networking",
-        "Configuration management",
-        "Software & services development",
-        "Programming languages"
-      ]
-    },
-    {
-      "name": "Cloud Computing",
-      "keywords": [
-        "AWS architecture",
-        "AWS security",
-        "AWS infrastructure and development",
-        "Held multiple AWS Professional- and Associate-level certifications (Security, Solutions Architect, Dev/Sysops) from 2022-2025"
-      ]
-    },
-    {
-      "name": "Research",
-      "keywords": [
-        "Ph.D. in Computer Science",
-        "9 years of experience at IBM Research"
-      ]
-    },
-    {
-      "name": "Programming Languages",
-      "keywords": [
-        "Ruby",
-        "Python",
-        "C",
-        "Perl",
-        "Java",
-        "LISP family (Clojure, Racket)",
-        "Unix shells and tools"
-      ]
-    },
-    {
-      "name": "Systems & Development",
-      "keywords": [
-        "Unix/Linux systems engineering and administration",
-        "System health management and monitoring",
-        "Cloud platforms",
-        "Software development",
-        "Configuration management"
-      ]
-    },
-    {
-      "name": "Development Environments & Technologies",
-      "keywords": [
-        "Unix/Linux",
-        "Cloud Foundry",
-        "Amazon EC2",
-        "macOS",
-        "VMware (ESX, vSphere)",
-        "OpenStack",
-        "Docker",
-        "REST APIs",
-        "XML and related technologies",
-        "Network programming",
-        "Database programming (SQL)",
-        "Kernel programming (OpenBSD and Linux)",
-        "HTML"
-      ]
-    },
-    {
-      "name": "Configuration Management",
-      "keywords": [
-        "CFEngine",
-        "Puppet",
-        "Chef",
-        "Ansible"
-      ]
-    },
-    {
-      "name": "Virtualization & Cloud",
-      "keywords": [
-        "VMware (ESX, vSphere)",
-        "OpenStack",
-        "Amazon EC2",
-        "Docker",
-        "Cloud Foundry"
-      ]
-    },
-    {
-      "name": "Health Management & Monitoring",
-      "keywords": [
-        "VMware vRealize Operations Manager",
-        "vRealize Log Insight"
-      ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "Spanish",
-      "fluency": "Native"
-    },
-    {
-      "language": "English",
-      "fluency": "Full proficiency"
-    },
-    {
-      "language": "German",
-      "fluency": "Intermediate proficiency (B2 level)"
-    }
-  ],
-  "awards": [
-    {
-      "title": "IEEE Security & Privacy Test of Time Award",
-      "date": "2020-05-18",
-      "awarder": "IEEE",
-      "summary": "[IEEE S&P page](https://www.ieee-security.org/TC/SP2020/awards.html), [CERIAS blog post](https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/)"
-    },
-    {
-      "title": "CFEngine Champion",
-      "date": "2010",
-      "awarder": "CFEngine AS",
-      "summary": "[CFEngine Champions](https://cfengine.com/engage/cfengine-champions/)"
-    },
-    {
-      "title": "Josef Raviv Memorial Postdoctoral Fellowship",
-      "date": "2001-07-01",
-      "awarder": "IBM",
-      "summary": "[Diego Zamboni Earns Fellowship From IBM](https://www.cerias.purdue.edu/site/news/view/diego_zamboni_earns_fellowship_from_ibm)"
-    },
-    {
-      "title": "UPE Microsoft Scholarship Award",
-      "date": "2000-09-01",
-      "awarder": "UPE and Microsoft"
-    },
-    {
-      "title": "Member of Upsilon Pi Epsilon",
-      "date": "1998-04-01",
-      "awarder": "Association for Computing Machinery (ACM)",
-      "summary": "[Upsilon Pi Epsilon](http://upe.acm.org/)"
-    },
-    {
-      "title": "Member of Phi Beta Delta",
-      "date": "2001-04-01",
-      "awarder": "Phi Beta Delta honor society",
-      "summary": "Honor society recognizing scholarly achievement."
-    },
-    {
-      "title": "Fulbright Scholarship",
-      "date": "1996-05-01",
-      "awarder": "Fulbright Program and CONACYT",
-      "summary": "Scholarship for pursuing Ph.D. studies at Purdue University."
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "Computers & Security Journal",
-      "position": "Editorial Board Member",
-      "startDate": "2011",
-      "endDate": "2013",
-      "url": "https://www.sciencedirect.com/journal/computers-and-security"
-    },
-    {
-      "organization": "Intl. Symposium on Recent Advances in Intrusion Detection (RAID)",
-      "position": "Program and Steering Committee Member, Program Chair",
-      "startDate": "2001",
-      "endDate": "2017",
-      "url": "https://dblp.org/db/conf/raid/index.html",
-      "highlights": [
-        "2001&ndash;2005: Program Committee member.",
-        "2006: Program Chair for RAID'06.",
-        "2007&ndash;2017: Steering Committee member."
-      ]
-    },
-    {
-      "organization": "IBM Academy of Technology Security and Privacy Symposium",
-      "position": "Program Co-chair",
-      "startDate": "2009-06",
-      "endDate": "2009-06",
-      "summary": "Internal virtual IBM event."
-    },
-    {
-      "organization": "ZISC Workshop on Security in Virtualized Environments and Cloud Computing",
-      "position": "Program Chair",
-      "url": "https://www.video.ethz.ch/conferences/2009/zisc.html",
-      "startDate": "2009-09-10",
-      "endDate": "2009-09-10",
-      "summary": "[Zurich Information Security and Privacy Center (ZISC)](https://zisc.ethz.ch/)"
-    },
-    {
-      "organization": "Detection of Intrusions and Malware & Vulnerability Assessment (DIMVA) 2008",
-      "position": "Program Chair",
-      "url": "https://www.dimva.org/dimva2008/",
-      "startDate": "2008-07",
-      "endDate": "2008-07",
-      "summary": "Location: Paris, France"
-    },
-    {
-      "organization": "IEEE Security and Privacy Symposium",
-      "position": "Program Committee Member",
-      "url": "http://www.ieee-security.org/TC/SP-Index.html",
-      "startDate": "2007-05",
-      "endDate": "2007-05",
-      "summary": "Location: Oakland, CA, U.S.A."
-    },
-    {
-      "organization": "Annual Computer Security Applications Conference (ACSAC)",
-      "position": "Program Committee Member",
-      "url": "http://www.acsac.org/",
-      "startDate": "2003",
-      "endDate": "2007"
-    },
-    {
-      "organization": "Computer Security Day Conference",
-      "position": "Founder, organizer, Program Committee Member",
-      "url": "https://www.disc.unam.mx/",
-      "startDate": "1994",
-      "endDate": "2000",
-      "summary": "Location: Mexico",
-      "highlights": [
-        "1994: Founder and organizer",
-        "1995: Organizer",
-        "1994&ndash;2000: Program Committee Member"
-      ]
-    },
-    {
-      "organization": "The Association for Computing Machinery (ACM)",
-      "position": "Member",
-      "url": "http://www.acm.org/",
-      "startDate": "1998"
-    },
-    {
-      "organization": "Purdue.pm, the Purdue Perl Users Group",
-      "position": "Founder",
-      "url": "http://purdue.pm.org/",
-      "summary": "Location: U.S.A.",
-      "startDate": "2000"
-    },
-    {
-      "organization": "Purdue University Chapter of Upsilon Pi Epsilon",
-      "position": "President",
-      "url": "https://www.cs.purdue.edu/future-students/organizations.html",
-      "summary": "Location: U.S.A.",
-      "startDate": "1999"
-    },
-    {
-      "organization": "Purdue University Chapter of Upsilon Pi Epsilon",
-      "position": "Secretary",
-      "url": "https://www.cs.purdue.edu/future-students/organizations.html",
-      "summary": "Location: U.S.A.",
-      "startDate": "1998"
-    }
-  ],
-  "projects": [
-    {
-      "description": "See [Publications](publications.html) for publication details.",
-      "type": "Research"
-    },
-    {
-      "name": "Phantom",
-      "type": "Research",
-      "startDate": "2008",
-      "endDate": "2009",
-      "description": "Security for VMware virtual environments using virtual machine introspection (based on the [VMware VMsafe API](https://vmguru.com/2011/03/vmsafe-api/)) to provide intrusion detection and prevention capabilities."
-    },
-    {
-      "name": "Billy Goat: Active worm detection and capture",
-      "type": "Research",
-      "url": "https://dominoweb.draco.res.ibm.com/d7c39a9a2e73d870852570060051dfed.html",
-      "startDate": "2002",
-      "endDate": "2008",
-      "description": "Billy Goat was the first instance of what is today called *honeypots* and *honeynets*. It is an active worm-capture device that simulates thousands of vulnerable hosts in order to attract and capture worms propagating in the network. The captured worms are then analyzed to extract signatures and other relevant information, which is used to update intrusion detection and prevention systems."
-    },
-    {
-      "name": "Router-based Billy Goat",
-      "type": "Research",
-      "url": "http://www.usenix.org/event/sruti07/tech/full_papers/zamboni/zamboni.pdf",
-      "startDate": "2005",
-      "endDate": "2007",
-      "description": "An active worm-capture device deployed at the network boundary and coupled with the border router, that allows the Billy Goat to effectively and automatically spoof every unused IP address outside the local network. This makes it possible for the Router-based Billy Goat to accurately detect local infected machines and prevent them from establishing connections to the outside, limiting the propagation of the worms to the outside network."
-    },
-    {
-      "name": "SOC in a Box",
-      "type": "Research",
-      "startDate": "2005",
-      "endDate": "2007",
-      "description": "Integrated device containing multiple security tools: intrusion detection, worm detection, vulnerability scanning and network discovery. Precursor to what is today called *Unified Threat Management* systems."
-    },
-    {
-      "name": "Exorcist",
-      "type": "Research",
-      "startDate": "2001",
-      "endDate": "2002",
-      "description": "Host-based, behavior-based intrusion detection using sequences of system calls."
-    },
-    {
-      "name": "Using internal sensors and embedded detectors for intrusion detection",
-      "type": "Ph.D. Thesis",
-      "url": "https://zzamboni.org/cerias/zamboni/thesis/",
-      "startDate": "1996",
-      "endDate": "2001",
-      "description": "Study of data collection methods for intrusion detection systems. Implementation of novel methods for data collection in intrusion detection systems. Analysis of the properties, advantages and disadvantages of internal sensors and embedded detectors as data collection and analysis elements in intrusion detection systems."
-    },
-    {
-      "name": "Using autonomous agents for intrusion detection",
-      "type": "Research",
-      "url": "https://www.cerias.purdue.edu/site/about/history/coast/projects/aafid.php",
-      "startDate": "1997",
-      "endDate": "1999",
-      "description": "Design and documentation of an architecture (AAFID) to perform distributed monitoring and intrusion detection using autonomous agents. Implementation of a prototype according to the architecture. This prototype was [published as open source](https://www.cerias.purdue.edu/site/about/history/coast/projects/aafid-announce-0999.php). Exploration of research issues in the distributed intrusion detection area."
-    },
-    {
-      "name": "Analysis of a denial-of-service attack on TCP/IP (Synkill)",
-      "type": "Research",
-      "url": "https://www.cerias.purdue.edu/site/about/history/coast/projects/coast-proj-synkill.php",
-      "startDate": "1997",
-      "endDate": "1997",
-      "description": "Collaborated in the analysis of the SYN-flooding denial-of-service attack against TCP and in the implementation of a defense tool. The paper was awarded the [2020 IEEE Security & Privacy Test of Time Award](https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/)."
-    },
-    {
-      "name": "Management and leadership, IT security, cloud computing",
-      "type": "Professional Highlights",
-      "highlights": [
-        "Managed security architecture at the [Stellantis *Virtual Engineering Workbench*](https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions) project. Worked with Stellantis CISO and business stakeholders to define governance, establish security best practices and drive risk analysis, threat modeling and mitigation.",
-        "Established scalable and durable mechanisms to enable partners to work securely in the [Volkswagen Digital Production Platform (DPP)](https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/) program.",
-        "Managed security architecture, risk management, data governance and compliance (ISO27001, ISAE3402/3000, etc.) for [Swisscom's Cloud platforms](https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html).",
-        "Established and led the Swisscom IT Clouds security community of practice.",
-        "Established and led the *Health and State Management* team at Swisscom to design, implement and operate a framework for scalable monitoring, logging and alerting for Swisscom's Cloud platforms.",
-        "Established and led the first computer security organization at UNAM, which has grown into the university's [Information Security Coordination (UNAM-CERT)](https://www.seguridad.unam.mx/).",
-        "Managed IT security customer relationships at HP Enterprise Services, including overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting."
-      ]
-    },
-    {
-      "name": "Research, architecture and design",
-      "type": "Professional Highlights",
-      "highlights": [
-        "Designed the *Orchard* monitoring framework for Swisscom's *Application Cloud* platform, and led the team that implemented it and brought it into production.",
-        "Designed and implemented the *Billy Goat* malware capture and analysis system at IBM."
-      ]
-    },
-    {
-      "name": "Communications and community",
-      "type": "Professional Highlights",
-      "highlights": [
-        "Author of multiple books including [*Learning CFEngine*](https://cf-learn.info/), [*Learning Hammerspoon*](https://leanpub.com/learning-hammerspoon) and [*Literate Configuration*](https://leanpub.com/lit-config).",
-        "Program chair and program committee member for multiple conferences including the RAID symposium, DIMVA conference, the *Computer Security Day* and *Computer Security* conference at UNAM, and others.",
-        "Member of the Editorial Board of the [Computers & Security Journal](https://www.sciencedirect.com/journal/computers-and-security)."
-      ]
-    },
-    {
-      "name": "Open-source software projects",
-      "type": "Software",
-      "url": "https://github.com/zzamboni",
-      "description": "Selection of publicly available projects on GitHub and GitLab.\n\n- GitHub: [github.com/zzamboni](https://github.com/zzamboni)\n- GitLab: [gitlab.com/zzamboni](https://gitlab.com/zzamboni)"
-    },
-    {
-      "name": "Pilatus",
-      "type": "Software",
-      "startDate": "2005-01-01",
-      "endDate": "2007-12-31",
-      "description": "An automated system installer that allows arbitrary system installation and configurations, allowing for both proprietary and open source components to be installed in an automated fashion. Open source components can be downloaded directly from their original source to avoid distributing them."
-    },
-    {
-      "name": "Embedded Sensors Project",
-      "type": "Software",
-      "startDate": "1999-01-01",
-      "endDate": "2001-12-31",
-      "description": "A system of sensors for intrusion detection developed in OpenBSD through code instrumentation. Developed as part of my Ph.D. thesis work."
-    },
-    {
-      "name": "Advising: Urko Zurutuza Ortega",
-      "type": "Teaching & Advising",
-      "description": "**Ph.D. co-advisor** — Mondragon University,  Spain\n\n- Thesis: [Data Mining Approaches for Analysis of Worm Activity Towards Automatic Signature Generation](https://dialnet.unirioja.es/servlet/tesis?codigo=20012)",
-      "startDate": "2005-01-01",
-      "endDate": "2008-12-31"
-    },
-    {
-      "name": "Advising: Milton Yates",
-      "type": "Teaching & Advising",
-      "description": "**External Diploma Thesis advisor** — ENST Bretagne,  France\n\n- Thesis: [The Router-based Billy Goat Project](https://www.usenix.org/conference/sruti-07/boundary-detection-and-containment-local-worm-infections)",
-      "startDate": "2005-01-01",
-      "endDate": "2005-12-31"
-    },
-    {
-      "name": "Advising: Candid Wüest",
-      "type": "Teaching & Advising",
-      "description": "**Diploma Thesis advisor** — ETH Zurich,  Switzerland\n\n- Thesis: [Desktop Firewalls and Intrusion Detection](https://pub.tik.ee.ethz.ch/students/2002-2003-Wi/DA-2003-22.pdf)",
-      "startDate": "2002-01-01",
-      "endDate": "2003-12-31"
-    },
-    {
-      "name": "Advising: Daniele Sgandurra",
-      "type": "Teaching & Advising",
-      "description": "**Internship advisor** — University of Pisa,  Italy\n\n- Project: Design and implementation of process injection using virtual machine introspection.",
-      "startDate": "2009-01-01",
-      "endDate": "2009-12-31"
-    },
-    {
-      "name": "Advising: Martin Carbone",
-      "type": "Teaching & Advising",
-      "description": "**Internship advisor** — Georgia Institute of Technology,  U.S.A.\n\nProject: Implementation of a proof of concept Hyperjacking attack on Intel platform.",
-      "startDate": "2007-01-01",
-      "endDate": "2007-12-31"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Full publications list",
-      "url": "publications.html",
-      "summary": "Complete list of publications, patents, talks, and theses.",
-      "authors": [
-        "Diego Zamboni"
-      ]
-    }
-  ],
-  "meta": {
-    "theme": "jsonresume-theme-even",
-    "themeOptions": {
-      "icons": "fontawesome",
-      "projectsByType": true
-    }
-  }
 }
