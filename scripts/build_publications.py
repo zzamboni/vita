@@ -162,6 +162,11 @@ def entry_to_jsonresume_publication(e):
 
 def normalize(entries):
     for e in entries:
+        # Ensure we have the bibtex key for anchoring
+        # bibtexparser may use 'key' or 'ID' depending on version
+        if "key" not in e and "ID" in e:
+            e["key"] = e["ID"]
+        
         # Year
         e["year"] = int(e.get("year", 0))
 

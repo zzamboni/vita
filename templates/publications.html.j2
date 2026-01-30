@@ -230,9 +230,9 @@ footer {
 {% if dev_reload %}
 <!-- <div style="background-color: lightgrey"><pre>{{ e|pprint }}</pre></div><br/> -->
 {% endif %}
-<div class="pub" id="pub-{{ pub_counter.value }}" itemscope itemtype="https://schema.org/ScholarlyArticle">
+<div class="pub" id="pub-{{ e.key }}" itemscope itemtype="https://schema.org/ScholarlyArticle">
   <span class="pub-ref">
-    <a href="#pub-{{ pub_counter.value }}" class="ref-number" title="Copy link to clipboard">
+    <a href="#pub-{{ e.key }}" class="ref-number" data-ref-number="{{ pub_counter.value }}" title="Copy link to clipboard">
       [{{ pub_counter.value }}]
     </a>
   </span>
@@ -272,15 +272,15 @@ document.querySelectorAll('.ref-number').forEach(link => {
   link.addEventListener('click', async (e) => {
     e.preventDefault();
     
-    // Get the pub ID from the href (e.g., "#pub-1" -> "pub-1")
+    // Get the pub ID from the href (e.g., "#pub-smith2020" -> "pub-smith2020")
     const pubId = link.getAttribute('href').substring(1);
-    const refNumber = link.textContent.trim();
+    const refText = link.textContent.trim(); // This includes the brackets like "[1]"
     
     // Get the current page filename
     const pageUrl = window.location.pathname.split('/').pop() || 'publications.html';
     
-    // Create Markdown link format: [1](publications.html#pub-1)
-    const markdownLink = `[${refNumber}](${pageUrl}#${pubId})`;
+    // Create Markdown link format: [1](publications.html#pub-smith2020)
+    const markdownLink = `${refText}(${pageUrl}#${pubId})`;
     
     // Copy to clipboard
     try {

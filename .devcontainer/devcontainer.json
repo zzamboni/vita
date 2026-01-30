@@ -15,7 +15,9 @@
 				"hverlin.mise-vscode",
 				"tamasfe.even-better-toml",
 				"lfs.vscode-emacs-friendly",
-				"wholroyd.jinja"
+				"wholroyd.jinja",
+				"ms-python.python",
+				"anthropic.claude-code"
 			]
 		}
 	},
