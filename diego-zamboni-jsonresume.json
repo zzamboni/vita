@@ -472,76 +472,6 @@
     ],
     "volunteer": [
         {
-            "organization": "Computers & Security Journal",
-            "position": "Editorial Board Member",
-            "startDate": "2011",
-            "endDate": "2013",
-            "url": "https://www.sciencedirect.com/journal/computers-and-security"
-        },
-        {
-            "organization": "Intl. Symposium on Recent Advances in Intrusion Detection (RAID)",
-            "position": "Program and Steering Committee Member, Program Chair",
-            "startDate": "2001",
-            "endDate": "2017",
-            "url": "https://dblp.org/db/conf/raid/index.html",
-            "highlights": [
-                "2001&ndash;2005: Program Committee member.",
-                "2006: Program Chair for RAID'06.",
-                "2007&ndash;2017: Steering Committee member."
-            ]
-        },
-        {
-            "organization": "IBM Academy of Technology Security and Privacy Symposium",
-            "position": "Program Co-chair",
-            "startDate": "2009-06",
-            "endDate": "2009-06",
-            "summary": "Internal virtual IBM event."
-        },
-        {
-            "organization": "ZISC Workshop on Security in Virtualized Environments and Cloud Computing",
-            "position": "Program Chair",
-            "url": "https://www.video.ethz.ch/conferences/2009/zisc.html",
-            "startDate": "2009-09-10",
-            "endDate": "2009-09-10",
-            "summary": "[Zurich Information Security and Privacy Center (ZISC)](https://zisc.ethz.ch/)"
-        },
-        {
-            "organization": "Detection of Intrusions and Malware & Vulnerability Assessment (DIMVA) 2008",
-            "position": "Program Chair",
-            "url": "https://www.dimva.org/dimva2008/",
-            "startDate": "2008-07",
-            "endDate": "2008-07",
-            "summary": "Location: Paris, France"
-        },
-        {
-            "organization": "IEEE Security and Privacy Symposium",
-            "position": "Program Committee Member",
-            "url": "http://www.ieee-security.org/TC/SP-Index.html",
-            "startDate": "2007-05",
-            "endDate": "2007-05",
-            "summary": "Location: Oakland, CA, U.S.A."
-        },
-        {
-            "organization": "Annual Computer Security Applications Conference (ACSAC)",
-            "position": "Program Committee Member",
-            "url": "http://www.acsac.org/",
-            "startDate": "2003",
-            "endDate": "2007"
-        },
-        {
-            "organization": "Computer Security Day Conference",
-            "position": "Founder, organizer, Program Committee Member",
-            "url": "https://www.disc.unam.mx/",
-            "startDate": "1994",
-            "endDate": "2000",
-            "summary": "Location: Mexico",
-            "highlights": [
-                "1994: Founder and organizer",
-                "1995: Organizer",
-                "1994&ndash;2000: Program Committee Member"
-            ]
-        },
-        {
             "organization": "The Association for Computing Machinery (ACM)",
             "position": "Member",
             "url": "http://www.acm.org/",
@@ -708,6 +638,79 @@
             ]
         },
         {
+            "name": "Computers & Security Journal",
+            "type": "Program Committees and Boards",
+            "url": "https://www.sciencedirect.com/journal/computers-and-security",
+            "startDate": "2011",
+            "endDate": "2013",
+            "roles": [ "Editorial Board Member" ]
+        },
+        {
+            "name": "Intl. Symposium on Recent Advances in Intrusion Detection (RAID)",
+            "type": "Program Committees and Boards",
+            "url": "https://dblp.org/db/conf/raid/index.html",
+            "startDate": "2001",
+            "endDate": "2017",
+            "roles": [
+                "Program Committee member (2001&ndash;2005)",
+                "Program Chair for RAID'06 (2006)",
+                "Steering Committee member (2007&ndash;2017)"
+            ]
+        },
+        {
+            "name": "IBM Academy of Technology Security and Privacy Symposium",
+            "type": "Program Committees and Boards",
+            "startDate": "2009-06",
+            "endDate": "2009-06",
+            "roles": [ "Program Co-chair" ],
+            "entity": "IBM (Internal event)"
+        },
+        {
+            "name": "ZISC Workshop on Security in Virtualized Environments and Cloud Computing",
+            "type": "Program Committees and Boards",
+            "url": "https://www.video.ethz.ch/conferences/2009/zisc.html",
+            "startDate": "2009-09-10",
+            "endDate": "2009-09-10",
+            "roles": [ "Program Chair" ],
+            "entity": "[Zurich Information Security and Privacy Center (ZISC)](https://zisc.ethz.ch/)"
+        },
+        {
+            "name": "Detection of Intrusions and Malware & Vulnerability Assessment (DIMVA) 2008",
+            "type": "Program Committees and Boards",
+            "url": "https://www.dimva.org/dimva2008/",
+            "startDate": "2008-07",
+            "endDate": "2008-07",
+            "roles": [ "Program Chair" ]
+        },
+        {
+            "name": "IEEE Security and Privacy Symposium",
+            "type": "Program Committees and Boards",
+            "url": "http://www.ieee-security.org/TC/SP-Index.html",
+            "startDate": "2007-05",
+            "endDate": "2007-05",
+            "roles": [ "Program Committee Member" ]
+        },
+        {
+            "name": "Annual Computer Security Applications Conference (ACSAC)",
+            "type": "Program Committees and Boards",
+            "url": "http://www.acsac.org/",
+            "startDate": "2003",
+            "endDate": "2007",
+            "roles": [
+                "Program Committee Member"
+            ]
+        },
+        {
+            "name": "Computer Security Day Conference",
+            "type": "Program Committees and Boards",
+            "url": "https://www.disc.unam.mx/",
+            "startDate": "1994",
+            "endDate": "2000",
+            "roles": [
+                "Founder and Program Committee Member (1994&ndash;2000)"
+            ]
+        },
+        {
             "name": "Open-source software projects",
             "type": "Software",
             "highlights": [
@@ -732,37 +735,62 @@
             "description": "A system of sensors for intrusion detection developed in OpenBSD through code instrumentation. Developed as part of my Ph.D. thesis work."
         },
         {
-            "name": "Advising: Urko Zurutuza Ortega",
-            "type": "Teaching & Advising",
-            "description": "**Ph.D. co-advisor** — Mondragon University,  Spain\n\n- Thesis: [Data Mining Approaches for Analysis of Worm Activity Towards Automatic Signature Generation](https://dialnet.unirioja.es/servlet/tesis?codigo=20012)",
+            "name": "Urko Zurutuza Ortega",
+            "type": "Advising",
+            "roles": [ "Ph.D. co-advisor" ],
+            "entity": "IBM Research",
+            "highlights": [
+                "Student from Mondragon University, Spain.",
+                "Thesis: [Data Mining Approaches for Analysis of Worm Activity Towards Automatic Signature Generation](https://dialnet.unirioja.es/servlet/tesis?codigo=20012)"
+            ],
             "startDate": "2005-01-01",
             "endDate": "2008-12-31"
         },
         {
-            "name": "Advising: Milton Yates",
-            "type": "Teaching & Advising",
-            "description": "**External Diploma Thesis advisor** — ENST Bretagne,  France\n\n- Thesis: [The Router-based Billy Goat Project](https://www.usenix.org/conference/sruti-07/boundary-detection-and-containment-local-worm-infections)",
+            "name": "Milton Yates",
+            "type": "Advising",
+            "roles": [ "External Diploma Thesis advisor" ],
+            "entity": "IBM Research",
+            "highlights": [
+                "Student from ENST Bretagne, France",
+                "Thesis: [The Router-based Billy Goat Project](https://www.usenix.org/conference/sruti-07/boundary-detection-and-containment-local-worm-infections)"
+            ],
             "startDate": "2005-01-01",
             "endDate": "2005-12-31"
         },
         {
-            "name": "Advising: Candid Wüest",
-            "type": "Teaching & Advising",
-            "description": "**Diploma Thesis advisor** — ETH Zurich,  Switzerland\n\n- Thesis: [Desktop Firewalls and Intrusion Detection](https://pub.tik.ee.ethz.ch/students/2002-2003-Wi/DA-2003-22.pdf)",
+            "name": "Candid Wüest",
+            "type": "Advising",
+            "roles": [ "Diploma Thesis advisor" ],
+            "entity": "IBM Research",
+            "highlights": [
+                "Student from ETH Zurich, Switzerland",
+                "Thesis: [Desktop Firewalls and Intrusion Detection](https://pub.tik.ee.ethz.ch/students/2002-2003-Wi/DA-2003-22.pdf)"
+            ],
             "startDate": "2002-01-01",
             "endDate": "2003-12-31"
         },
         {
-            "name": "Advising: Daniele Sgandurra",
-            "type": "Teaching & Advising",
-            "description": "**Internship advisor** — University of Pisa,  Italy\n\n- Project: Design and implementation of process injection using virtual machine introspection.",
+            "name": "Daniele Sgandurra",
+            "type": "Advising",
+            "roles": [ "Internship advisor" ],
+            "entity": "IBM Research",
+            "highlights": [
+                "Student from University of Pisa, Italy.",
+                "Project: Design and implementation of process injection using virtual machine introspection."
+            ],
             "startDate": "2009-01-01",
             "endDate": "2009-12-31"
         },
         {
-            "name": "Advising: Martin Carbone",
-            "type": "Teaching & Advising",
-            "description": "**Internship advisor** — Georgia Institute of Technology,  U.S.A.\n\nProject: Implementation of a proof of concept Hyperjacking attack on Intel platform.",
+            "name": "Martin Carbone",
+            "type": "Advising",
+            "roles": [ "Internship advisor" ],
+            "entity": "IBM Research",
+            "highlights": [
+                "Student from Georgia Institute of Technology, U.S.A.",
+                "Project: Implementation of a proof of concept Hyperjacking attack on Intel platform."
+            ],
             "startDate": "2007-01-01",
             "endDate": "2007-12-31"
         }
