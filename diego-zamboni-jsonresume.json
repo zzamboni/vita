@@ -577,63 +577,105 @@
         {
             "name": "Phantom",
             "type": "Research",
+            "entity": "IBM Research",
             "startDate": "2008",
             "endDate": "2009",
-            "description": "Security for VMware virtual environments using virtual machine introspection (based on the [VMware VMsafe API](https://vmguru.com/2011/03/vmsafe-api/)) to provide intrusion detection and prevention capabilities. Publications: [[6]](publications.html#pub-6)"
+            "highlights": [
+                "Developed security solution for VMware virtual environments using virtual machine introspection",
+                "Implemented intrusion detection and prevention capabilities based on VMware VMsafe API",
+                "Publications: [[6]](publications.html#pub-Christodorescu:2009:CSV:1655008.1655022)"
+            ]
         },
         {
             "name": "Billy Goat: Active worm detection and capture",
             "type": "Research",
+            "entity": "IBM Research",
             "url": "https://dominoweb.draco.res.ibm.com/d7c39a9a2e73d870852570060051dfed.html",
             "startDate": "2002",
             "endDate": "2008",
-            "description": "Billy Goat was the first instance of what is today called *honeypots* and *honeynets*. It is an active worm-capture device that simulates thousands of vulnerable hosts in order to attract and capture worms propagating in the network. The captured worms are then analyzed to extract signatures and other relevant information, which is used to update intrusion detection and prevention systems."
+            "highlights": [
+                "Pioneered active worm-capture technology that became the foundation for modern honeypots and honeynets",
+                "Designed system to simulate thousands of vulnerable hosts to attract and capture propagating worms",
+                "Implemented automated analysis to extract signatures and update intrusion detection/prevention systems",
+                "Publications: [[11]](publications.html#pub-riordan06:_build_billy_goat:first2006), [[23]](publications.html#pub-riordan05:bg_techreport)"
+            ]
         },
         {
             "name": "Router-based Billy Goat",
             "type": "Research",
+            "entity": "IBM Research",
             "url": "http://www.usenix.org/event/sruti07/tech/full_papers/zamboni/zamboni.pdf",
             "startDate": "2005",
             "endDate": "2007",
-            "description": "An active worm-capture device deployed at the network boundary and coupled with the border router, that allows the Billy Goat to effectively and automatically spoof every unused IP address outside the local network. This makes it possible for the Router-based Billy Goat to accurately detect local infected machines and prevent them from establishing connections to the outside, limiting the propagation of the worms to the outside network."
+            "highlights": [
+                "Deployed active worm-capture at network boundary, coupled with border router infrastructure",
+                "Implemented automatic IP address spoofing to cover entire external address space",
+                "Enabled accurate detection of infected local machines and prevention of outbound worm propagation",
+                "Publications: [[10]](publications.html#pub-zamboni07:sruti07-rbg)"
+            ]
         },
         {
             "name": "SOC in a Box",
             "type": "Research",
+            "entity": "IBM Research",
             "startDate": "2005",
             "endDate": "2007",
-            "description": "Integrated device containing multiple security tools: intrusion detection, worm detection, vulnerability scanning and network discovery. Precursor to what is today called *Unified Threat Management* systems."
+            "highlights": [
+                "Pioneered integrated security appliance concept, precursor to modern Unified Threat Management systems",
+                "Combined multiple security functions: intrusion detection, worm detection, vulnerability scanning, and network discovery"
+            ]
         },
         {
             "name": "Exorcist",
             "type": "Research",
+            "entity": "IBM Research",
             "startDate": "2001",
             "endDate": "2002",
-            "description": "Host-based, behavior-based intrusion detection using sequences of system calls."
+            "highlights": [
+                "Developed host-based intrusion detection system using behavior analysis",
+                "Implemented system call sequence monitoring for anomaly detection"
+            ]
         },
         {
             "name": "Using internal sensors and embedded detectors for intrusion detection",
             "type": "Ph.D. Thesis",
+            "entity": "Purdue University",
             "url": "https://zzamboni.org/cerias/zamboni/thesis/",
             "startDate": "1996",
             "endDate": "2001",
-            "description": "Study of data collection methods for intrusion detection systems. Implementation of novel methods for data collection in intrusion detection systems. Analysis of the properties, advantages and disadvantages of internal sensors and embedded detectors as data collection and analysis elements in intrusion detection systems."
+            "highlights": [
+                "Investigated novel approaches to data collection for intrusion detection systems",
+                "Implemented and evaluated internal sensors and embedded detectors as data collection mechanisms",
+                "Analyzed trade-offs and effectiveness of different sensor placement strategies in IDS architectures",
+                "Publications: [[27]](publications.html#pub-zamboni01:phd-thesis), [[12]](publications.html#pub-zamboni02:sensors_detectors),  [[13]](publications.html#pub-kerschbaum00:network-embedded-sensors),  [[25]](publications.html#pub-spafford00:data_collection-techrep),  [[24]](publications.html#pub-zamboni00:thesis-proposal), [[32]](publications.html#pub-zamboni:raid2000)"
+            ]
         },
         {
             "name": "Using autonomous agents for intrusion detection",
             "type": "Research",
+            "entity": "Purdue University",
             "url": "https://www.cerias.purdue.edu/site/about/history/coast/projects/aafid.php",
             "startDate": "1997",
             "endDate": "1999",
-            "description": "Design and documentation of an architecture (AAFID) to perform distributed monitoring and intrusion detection using autonomous agents. Implementation of a prototype according to the architecture. This prototype was [published as open source](https://www.cerias.purdue.edu/site/about/history/coast/projects/aafid-announce-0999.php). Exploration of research issues in the distributed intrusion detection area."
+            "highlights": [
+                "Designed AAFID architecture for distributed monitoring and intrusion detection using autonomous agents",
+                "Implemented and published prototype as open source, contributing to distributed IDS research community",
+                "Explored novel research approaches in distributed intrusion detection",
+                "Publications: [[14]](publications.html#pub-spafford00:intrus_detec_auton_agent), [[15]](publications.html#pub-zamboni:aafid-acsac98), [[26]](publications.html#pub-zamboni:aafid-architecture), [[35]](publications.html#pub-zamboni:raid98), [[33]](publications.html#pub-zamboni00:build_aafid_with_perl), [[34]](publications.html#pub-zamboni:raid99)"
+            ]
         },
         {
             "name": "Analysis of a denial-of-service attack on TCP/IP (Synkill)",
             "type": "Research",
+            "entity": "Purdue University",
             "url": "https://www.cerias.purdue.edu/site/about/history/coast/projects/coast-proj-synkill.php",
             "startDate": "1997",
             "endDate": "1997",
-            "description": "Collaborated in the analysis of the SYN-flooding denial-of-service attack against TCP and in the implementation of a defense tool. The paper was awarded the [2020 IEEE Security & Privacy Test of Time Award](https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/)."
+            "highlights": [
+                "Analyzed SYN-flooding denial-of-service attack against TCP/IP protocol",
+                "Developed defense tool to mitigate SYN-flooding attacks",
+                "Publications: [[16]](publications.html#pub-schuba97:synkill), awarded the [2020 IEEE Security & Privacy Test of Time Award](https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/)"
+            ]
         },
         {
             "name": "Management and leadership, IT security, cloud computing",
@@ -668,12 +710,15 @@
         {
             "name": "Open-source software projects",
             "type": "Software",
-            "url": "https://github.com/zzamboni",
-            "description": "Selection of publicly available projects on GitHub and GitLab.\n\n- GitHub: [github.com/zzamboni](https://github.com/zzamboni)\n- GitLab: [gitlab.com/zzamboni](https://gitlab.com/zzamboni)"
+            "highlights": [
+                "GitHub: [github.com/zzamboni](https://github.com/zzamboni)",
+                "GitLab: [gitlab.com/zzamboni](https://gitlab.com/zzamboni)"
+            ]
         },
         {
             "name": "Pilatus",
             "type": "Software",
+            "entity": "IBM Research (not publicly available)",
             "startDate": "2005-01-01",
             "endDate": "2007-12-31",
             "description": "An automated system installer that allows arbitrary system installation and configurations, allowing for both proprietary and open source components to be installed in an automated fashion. Open source components can be downloaded directly from their original source to avoid distributing them."
@@ -681,6 +726,7 @@
         {
             "name": "Embedded Sensors Project",
             "type": "Software",
+            "entity": "Purdue University",
             "startDate": "1999-01-01",
             "endDate": "2001-12-31",
             "description": "A system of sensors for intrusion detection developed in OpenBSD through code instrumentation. Developed as part of my Ph.D. thesis work."
