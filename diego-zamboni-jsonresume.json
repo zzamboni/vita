@@ -481,22 +481,15 @@
             "organization": "Purdue.pm, the Purdue Perl Users Group",
             "position": "Founder",
             "url": "http://purdue.pm.org/",
-            "summary": "Location: U.S.A.",
-            "startDate": "2000"
+            "startDate": "2000",
+            "endDate": "2000"
         },
         {
             "organization": "Purdue University Chapter of Upsilon Pi Epsilon",
-            "position": "President",
+            "position": "Secretary and President",
             "url": "https://www.cs.purdue.edu/future-students/organizations.html",
-            "summary": "Location: U.S.A.",
-            "startDate": "1999"
-        },
-        {
-            "organization": "Purdue University Chapter of Upsilon Pi Epsilon",
-            "position": "Secretary",
-            "url": "https://www.cs.purdue.edu/future-students/organizations.html",
-            "summary": "Location: U.S.A.",
-            "startDate": "1998"
+            "startDate": "1998",
+            "endDate": "2000"
         }
     ],
     "projects": [
@@ -793,6 +786,82 @@
             ],
             "startDate": "2007-01-01",
             "endDate": "2007-12-31"
+        },
+        {
+            "name": "CISSP training (30 hours)",
+            "type": "Teaching",
+            "entity": "iNetworks, Mexico (remote class)",
+            "startDate": "2020",
+            "endDate": "2020"
+        },
+        {
+            "name": "CFEngine one-day training class (8 hours)",
+            "type": "Teaching",
+            "entity": "Multiple venues",
+            "startDate": "2011",
+            "endDate": "2013"
+        },
+        {
+            "name": "Virtualization lecture (2 hours), Systems Security class, Computer Science Dept.",
+            "type": "Teaching",
+            "entity": "ETH Zürich",
+            "startDate": "2011",
+            "endDate": "2013"
+        },
+        {
+            "name": "Intrusion detection: Basic concepts and current research at IBM class (3 hours), Information Technology Security Spring School",
+            "type": "Teaching",
+            "entity": "University of Lausanne",
+            "startDate": "2005",
+            "endDate": "2005"
+        },
+        {
+            "name": "Introduction to Computer Security class (40 hours)",
+            "type": "Teaching",
+            "entity": "ITESM, Mexico",
+            "startDate": "2003",
+            "endDate": "2003"
+        },
+        {
+            "name": "EE495 (Information Extraction, Retrieval and Security) course",
+            "type": "Teaching",
+            "entity": "Purdue University, U.S.A.",
+            "startDate": "2000",
+            "endDate": "2000",
+            "highlights": [
+                "Co-designed eight security-related lectures and taught two of them",
+                "Co-designed the class project"
+            ]
+        },
+        {
+            "name": "SSH: Achieving secure communication over insecure channels class",
+            "type": "Teaching",
+            "entity": "CSI NetSec conference, U.S.A.",
+            "startDate": "2000",
+            "endDate": "2000"
+        },
+        {
+            "name": "Protecting your computing system class",
+            "type": "Teaching",
+            "entity": "Schlumberger, U.S.A.",
+            "startDate": "1997",
+            "endDate": "1997"
+        },
+        {
+            "name": "Supercomputing Internship Program Courses",
+            "type": "Teaching",
+            "entity": "UNAM, Mexico",
+            "startDate": "1991",
+            "endDate": "1996",
+            "description": "Designed and taught multiple courses (10-40 hours long) on the following topics:",
+            "highlights": [
+                "Introduction to Unix",
+                "Unix utilities",
+                "Unix security",
+                "Basic Unix administration",
+                "Advanced Unix administration",
+                "UNICOS system administration on Cray supercomputers"
+            ]
         }
     ],
     "publications": [
