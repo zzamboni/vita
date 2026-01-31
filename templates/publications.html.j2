@@ -280,7 +280,7 @@ document.querySelectorAll('.ref-number').forEach(link => {
     const pageUrl = window.location.pathname.split('/').pop() || 'publications.html';
     
     // Create Markdown link format: [1](publications.html#pub-smith2020)
-    const markdownLink = `${refText}(${pageUrl}#${pubId})`;
+    const markdownLink = `[${refText}](${pageUrl}#${pubId})`;
     
     // Copy to clipboard
     try {
