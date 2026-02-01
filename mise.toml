@@ -18,6 +18,11 @@ pubs_script   = "scripts/build_publications.py"
 pubs_template = "templates/publications.html.j2"
 pubs_bib      = "src/**/*.bib"
 
+# Typst CV pipeline
+typst_script = "scripts/render_typst_cv.py"
+typst_output = "diego-zamboni-jsonresume.typ"
+typst_pdf    = "diego-zamboni-jsonresume.pdf"
+
 # Output layout (keep dev/prod artifacts separated under build/)
 output_dir_base = "build/zamboni-jsonresume"
 output_dir_dev  = "{{vars.output_dir_base}}/dev"
@@ -114,8 +119,40 @@ set -euo pipefail
 scripts/build_pubs.sh 0 "{{vars.pubs_html_prod}}" "{{vars.pubs_script}}"
 '''
 
+# Generate Typst CV from JSON Resume format.
+
+[tasks.render-typst]
+description = "Render Typst CV from JSON"
+sources = ["{{vars.cv_json}}", "{{vars.typst_script}}", "mise.toml"]
+outputs = ["{{vars.typst_output}}"]
+run = '''
+#!/usr/bin/env bash
+set -euxo pipefail
+python "{{vars.typst_script}}" "{{vars.cv_json}}" "{{vars.typst_output}}"
+'''
+
+# Compile Typst CV to PDF.
+
+[tasks.compile-typst]
+description = "Compile Typst CV to PDF"
+depends = ["render-typst"]
+sources = ["{{vars.typst_output}}", "assets/profile/**/*"]
+outputs = ["{{vars.typst_pdf}}"]
+run = '''
+#!/usr/bin/env bash
+set -euxo pipefail
+typst compile "{{vars.typst_output}}" "{{vars.typst_pdf}}"
+'''
+
+# Build both Typst outputs (typ + PDF).
+
+[tasks.typst]
+description = "Build Typst CV (typ + PDF)"
+depends = ["compile-typst"]
+
 # Dev-only: inject a reload polling snippet into the dev CV HTML.
 # This keeps resumed output unchanged in prod.
+
 [tasks.cv-reload-inject]
 description = "Inject dev reload script into dev CV HTML"
 depends = ["render-dev"]
@@ -167,12 +204,12 @@ perl -0777 -pe "s~$needle~$inject~" -i "{{vars.cv_html_dev}}"
 # This is what you should use with `mise watch build-dev`.
 [tasks.build-dev]
 description = "Build dev outputs (with auto-reload)"
-depends = ["render-dev", "pubs-dev", "cv-reload-inject"]  # keep your inject task dev-only
+depends = ["render-dev", "pubs-dev", "cv-reload-inject", "typst"]  # keep your inject task dev-only
 
 # Build production outputs (both pages) without any auto-reload code.
 [tasks.build-prod]
 description = "Build prod outputs (no auto-reload)"
-depends = ["render-prod", "pubs-prod"]
+depends = ["render-prod", "pubs-prod", "typst"]
 
 # Convenience aliases (optional, but nice for discoverability)
 [tasks.cv-dev]
@@ -228,6 +265,14 @@ xdg-open {{vars.cv_html_prod}}
 xdg-open {{vars.pubs_html_prod}}
 '''
 
+# Open the Typst PDF.
+[tasks.open-typst]
+description = "Open Typst PDF"
+depends = ["typst"]
+run = '''
+xdg-open {{vars.typst_pdf}}
+'''
+
 # One-command dev loop:
 # - build dev artifacts once
 # - start server in background (quiet)
@@ -254,6 +299,7 @@ sleep 0.3
 echo "→ Opening pages"
 xdg-open "{{vars.cv_url}}" >/dev/null 2>&1 || true
 xdg-open "{{vars.pubs_url}}" >/dev/null 2>&1 || true
+xdg-open "{{vars.typst_pdf}}" >/dev/null 2>&1 || true
 
 echo "→ Watching for changes (build-dev)"
 mise watch build-dev
@@ -287,7 +333,17 @@ run = '''
 set -euo pipefail
 
 CID=$(script -q -c "devcontainer up --workspace-folder ." /dev/null | tee /dev/tty | tail -n 1 | jq -r '.containerId')
+devcontainer exec --workspace-folder . mise x -- mise go-dev 
 docker kill $CID
+'''
+
+[tasks.dev-up-nobuild]
+description = "Run go-dev inside devcontainer (reuse existing)"
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+CID=$(script -q -c "devcontainer up --workspace-folder ." /dev/null | tee /dev/tty | tail -n 1 | jq -r '.containerId')
 '''
 
 [tasks.dev-rebuild-up]
@@ -298,5 +354,20 @@ run = '''
 set -euo pipefail
 
 CID=$(script -q -c "devcontainer up --workspace-folder . --remove-existing-container" /dev/null | tee /dev/tty | tail -n 1 | jq -r '.containerId')
+devcontainer exec --workspace-folder . mise x -- mise go-dev 
 docker kill $CID
 '''
+
+[tasks.dev-rebuild-up-nobuild]
+description = "Run go-dev inside devcontainer (build new)"
+depends = [ "dev-rebuild-image" ]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+CID=$(script -q -c "devcontainer up --workspace-folder . --remove-existing-container" /dev/null | tee /dev/tty | tail -n 1 | jq -r '.containerId')
+'''
+
+[tasks.dev-bash]
+description = "Shell session in running container"
+run = "devcontainer exec --workspace-folder . bash"

@@ -7,7 +7,8 @@
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": { 
-		"ghcr.io/devcontainers-extra/features/mise:1": {}
+		"ghcr.io/devcontainers-extra/features/mise:1": {},
+        "ghcr.io/devcontainers-extra/features/typst:1": { "version": "0.14.2" }
 	},
 	"customizations": {
 		"vscode": {
@@ -30,13 +31,15 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "sudo mkdir -p /home/node/.npm /home/node/.cache /home/node/.local && sudo chown -R node:node /home/node/.npm /home/node/.cache /home/node/.local && mise trust . && mise install && mise x -- mise run bootstrap",
 	// Use 'postStartCommand' to run commands after the container is started.
-	"postStartCommand": "grep -q 'mise activate' ~/.bashrc || echo 'eval \"$(mise activate bash)\"' >> ~/.bashrc && mise x -- mise go-dev",
+	//"postStartCommand": "grep -q 'mise activate' ~/.bashrc || echo 'eval \"$(mise activate bash)\"' >> ~/.bashrc && mise x -- mise go-dev",
+    "postStartCommand": "grep -q 'mise activate' ~/.bashrc || echo 'eval \"$(mise activate bash)\"' >> ~/.bashrc",
 
     // Mount caches from the host to speed up container rebuild
     "mounts": [
         "source=vita-npm-cache,target=/home/node/.npm,type=volume",
         "source=vita-uv-cache,target=/home/node/.cache/uv,type=volume",
-        "source=vita-mise,target=/home/node/.local/share/mise,type=volume"
+        "source=vita-mise,target=/home/node/.local/share/mise,type=volume",
+        "source=${localEnv:HOME}/.local/share/fonts,target=/home/node/.local/share/fonts,type=bind,consistency=cached",
     ]
 
 	// Configure tool-specific properties.
