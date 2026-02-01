@@ -2,7 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
     "basics": {
         "name": "Diego Zamboni",
-        "label": "CISO · Organizational Leader · Security Expert · Computer Scientist",
+        "label": "CISO • Organizational Leader • Security Expert • Computer Scientist",
         "email": "diego@zzamboni.org",
         "image": "https://zzamboni.org/img/avatar-professional.jpg",
         "url": "https://zzamboni.org",
