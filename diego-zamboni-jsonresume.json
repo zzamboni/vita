@@ -878,7 +878,8 @@
         "theme": "jsonresume-theme-even",
         "themeOptions": {
             "icons": "fontawesome",
-            "projectsByType": true
+            "projectsByType": true,
+            "showTableOfContents": true
         }
     }
 }
