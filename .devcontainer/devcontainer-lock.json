@@ -4,6 +4,11 @@
       "version": "1.0.0",
       "resolved": "ghcr.io/devcontainers-extra/features/mise@sha256:5c389ab1e3c8e44e5e0ff119f6868d54dbb781bc860bd8587dc66209cb8c4a8c",
       "integrity": "sha256:5c389ab1e3c8e44e5e0ff119f6868d54dbb781bc860bd8587dc66209cb8c4a8c"
+    },
+    "ghcr.io/devcontainers-extra/features/typst:1": {
+      "version": "1.0.6",
+      "resolved": "ghcr.io/devcontainers-extra/features/typst@sha256:84f5a686d184b896946757ba2056d73cac2dea3d6454cca3178a6a113f5ea33b",
+      "integrity": "sha256:84f5a686d184b896946757ba2056d73cac2dea3d6454cca3178a6a113f5ea33b"
     }
   }
 }

@@ -4,7 +4,15 @@
       "Bash(ls:*)",
       "Bash(test:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(chmod:*)",
+      "Bash(typst compile:*)",
+      "Bash(./scripts/render_typst_cv.py:*)",
+      "Bash(xdg-open:*)",
+      "Bash(python scripts/render_typst_cv.py:*)",
+      "Bash(mise run:*)",
+      "Bash(mise tasks:*)",
+      "Bash(mise task:*)"
     ]
   }
 }
