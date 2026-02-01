@@ -98,19 +98,69 @@ h2 {
 
   border-bottom: 1px solid var(--color-dimmed);
 }
-.toc {
-  font-size: var(--scale0);
-  color: var(--color-secondary);
-  margin: 1em 0 2em 0;
+/* Table of Contents */
+.table-of-contents {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+  max-width: 12em;
+  padding: 1em;
+  background: var(--color-dimmed);
+  border-radius: 0.5em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  max-height: calc(100vh - 4em);
+  overflow-y: auto;
 }
 
-.toc a {
+.table-of-contents ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.table-of-contents li {
+  margin: 0;
+}
+
+.table-of-contents li + li {
+  margin-top: 0.5em;
+}
+
+.table-of-contents a {
+  display: block;
+  color: var(--color-secondary);
+  text-decoration: none;
+  padding: 0.3em 0.5em;
+  border-radius: 0.25em;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+}
+
+.table-of-contents a:hover {
   color: var(--color-accent);
+  background: var(--color-background);
   text-decoration: none;
 }
 
-.toc a:hover {
-  text-decoration: underline;
+.table-of-contents a.active {
+  color: var(--color-accent);
+  background: var(--color-background);
+  font-weight: bold;
+}
+
+/* Hide TOC on smaller screens and in print */
+@media print, (max-width: 64em) {
+  .table-of-contents {
+    display: none;
+  }
+}
+
+/* Adjust body padding when TOC is visible */
+@media (min-width: 64em) {
+  body:has(.table-of-contents) {
+    padding-right: 16em;
+  }
 }
 .pub {
   margin-bottom: 1.25em;
@@ -206,17 +256,22 @@ footer {
 
   <a href="vita.html">Curriculum Vitae</a>
   <span class="sep">›</span>
-  <span>Publications</span>
+  <span>Diego Zamboni &mdash; Publications</span>
 </nav>
 
-<h1>Publications</h1>
+<h1 id="top">Diego Zamboni &mdash; Publications</h1>
 
-<nav class="toc">
+<nav class="table-of-contents" aria-label="Table of contents">
+  <ul>
+    <li>
+      <a href="#top" data-toc-target="top"><b>Publications</b></a>
+    </li>
     {% for section in toc_sections %}
-        <a href="#{{ section }}">
-          {{ section_titles[section] }}
-        </a>{% if not loop.last %} · {% endif %} 
-    {% endfor %}<br>
+    <li>
+      <a href="#{{ section }}" data-toc-target="{{ section }}">{{ section_titles[section] }}</a>
+    </li>
+    {% endfor %}
+  </ul>
 </nav>
 
 {% set pub_counter = namespace(value=0) %}
@@ -268,6 +323,80 @@ footer {
 </footer>
 
 <script>
+// Table of Contents active state tracking
+(() => {
+  const toc = document.querySelector('.table-of-contents');
+  if (!toc) return;
+
+  const links = toc.querySelectorAll('a[data-toc-target]');
+  if (!links.length) return;
+
+  // Track all sections
+  const sections = Array.from(links)
+    .map(link => {
+      const target = link.getAttribute('data-toc-target');
+      if (target === 'top') return { element: document.body, link, id: target };
+      const section = document.getElementById(target);
+      return section ? { element: section, link, id: target } : null;
+    })
+    .filter(Boolean);
+
+  if (!sections.length) return;
+
+  // Update active link
+  const setActiveLink = target => {
+    links.forEach(link => link.classList.remove('active'));
+    const activeLink = sections.find(s => s.element === target)?.link;
+    if (activeLink) activeLink.classList.add('active');
+  };
+
+  // Intersection Observer to track visible sections
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: 0,
+  };
+
+  let activeSection = null;
+
+  const observer = new IntersectionObserver(entries => {
+    const intersecting = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+    if (intersecting.length > 0) {
+      const target = intersecting[0].target;
+      const sectionData = sections.find(s => s.element === target);
+      if (sectionData) {
+        activeSection = sectionData.element;
+        setActiveLink(activeSection);
+      }
+    }
+  }, observerOptions);
+
+  // Observe sections
+  sections.forEach(({ element }) => {
+    observer.observe(element);
+  });
+
+  // Handle smooth scrolling
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.getAttribute('data-toc-target');
+      const sectionData = sections.find(s => s.id === target);
+      if (sectionData) {
+        sectionData.element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setActiveLink(sectionData.element);
+      }
+    });
+  });
+
+  // Set initial active state
+  setActiveLink(sections[0].element);
+})();
+
+// Reference number link copying
 document.querySelectorAll('.ref-number').forEach(link => {
   link.addEventListener('click', async (e) => {
     e.preventDefault();
