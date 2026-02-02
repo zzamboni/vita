@@ -12,7 +12,9 @@
       "Bash(python scripts/render_typst_cv.py:*)",
       "Bash(mise run:*)",
       "Bash(mise tasks:*)",
-      "Bash(mise task:*)"
+      "Bash(mise task:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ]
   }
 }
