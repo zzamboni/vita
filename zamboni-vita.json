@@ -628,8 +628,8 @@
         {
             "name": "IBM Academy of Technology Security and Privacy Symposium",
             "type": "Program Committees and Boards",
-            "startDate": "2009-06",
-            "endDate": "2009-06",
+            "startDate": "2009-06-23",
+            "endDate": "2009-06-25",
             "roles": [ "Program Co-chair" ],
             "entity": "IBM (Internal event)"
         },
@@ -646,16 +646,16 @@
             "name": "Detection of Intrusions and Malware & Vulnerability Assessment (DIMVA) 2008",
             "type": "Program Committees and Boards",
             "url": "https://www.dimva.org/dimva2008/",
-            "startDate": "2008-07",
-            "endDate": "2008-07",
+            "startDate": "2008-07-10",
+            "endDate": "2008-07-11",
             "roles": [ "Program Chair" ]
         },
         {
             "name": "IEEE Security and Privacy Symposium",
             "type": "Program Committees and Boards",
             "url": "http://www.ieee-security.org/TC/SP-Index.html",
-            "startDate": "2007-05",
-            "endDate": "2007-05",
+            "startDate": "2007-05-20",
+            "endDate": "2007-05-23",
             "roles": [ "Program Committee Member" ]
         },
         {
