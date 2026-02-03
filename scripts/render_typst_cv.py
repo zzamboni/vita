@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """
-Convert JSONResume format to Typst CV format.
+Convert JSONResume format to Typst CV using brilliant-cv template.
 
-This script reads a JSONResume JSON file and generates a professional-looking
-CV in Typst format, which can then be compiled to PDF.
+This script reads a JSONResume JSON file and generates a CV using the
+brilliant-cv Typst template.
+
+Diego Zamboni <diego@zzamboni.org>, 2026
+
+Coded with help from Claude Code.
 """
 
 import json
@@ -20,22 +24,14 @@ def convert_markdown_to_typst(text: str) -> str:
     if not text:
         return ""
 
-    # Convert Markdown links [text](url) to Typst #link("url")[text]
-    # Handle nested brackets in link text by using a more sophisticated approach
     def replace_link(match):
         link_text = match.group(1)
         url = match.group(2)
-        # Recursively process the link text for other markdown (but not links)
         link_text_processed = convert_markdown_inline(link_text)
         return f'#link("{url}")[{link_text_processed}]'
 
-    # Use a regex that allows brackets within the link text
-    # Match [ followed by anything (including brackets) followed by ]( and then the URL
     text = re.sub(r'\[(.+?)\]\(([^)]+)\)', replace_link, text)
-
-    # Convert inline formatting
     text = convert_markdown_inline(text)
-
     return text
 
 
@@ -43,40 +39,29 @@ def convert_markdown_inline(text: str) -> str:
     """Convert inline Markdown formatting (bold, italic) to Typst."""
     if not text:
         return ""
-
-    # Convert **bold** to *bold* (Typst uses single asterisk for bold)
     text = re.sub(r'\*\*([^*]+)\*\*', r'*\1*', text)
-
-    # Convert *italic* to _italic_ (Typst uses underscore for italic)
-    # But we need to be careful not to convert * that are part of bold
     text = re.sub(r'(?<!\*)\*(?!\*)([^*]+)\*(?!\*)', r'_\1_', text)
-
     return text
 
 
 def escape_typst(text: str) -> str:
-    """Escape special Typst characters in text that's already been processed."""
+    """Escape special Typst characters."""
     if not text:
         return ""
-    # Escape special characters for Typst
-    # Note: Don't escape *, _, [, ] if they're part of Typst markup from markdown conversion
     text = text.replace("\\", "\\\\")
     text = text.replace("#", "\\#")
     text = text.replace("<", "\\<")
     text = text.replace(">", "\\>")
     text = text.replace("@", "\\@")
+    text = text.replace('"', '\\"')
     return text
 
 
 def process_text(text: str) -> str:
-    """Process text: convert markdown to Typst, then escape remaining special chars."""
+    """Process text: convert markdown to Typst."""
     if not text:
         return ""
-    # First convert markdown to Typst markup
-    text = convert_markdown_to_typst(text)
-    # Then escape only the characters that should be escaped
-    # We need a more selective escape that doesn't break Typst markup
-    return text
+    return convert_markdown_to_typst(text)
 
 
 def format_date(date_str: Optional[str]) -> str:
@@ -94,152 +79,167 @@ def format_date_range(start: Optional[str], end: Optional[str]) -> str:
     """Format date range."""
     start_fmt = format_date(start)
     end_fmt = format_date(end) if end else "Present"
-    return f"{start_fmt} -- {end_fmt}"
+    return f"{start_fmt} - {end_fmt}"
 
 
-def render_header(basics: Dict[str, Any], assets_dir: Path) -> str:
-    """Render the CV header with name and contact info."""
+def download_image(url: str, output_dir: Path) -> Optional[str]:
+    """Download an image from URL and return local path."""
+    if not url:
+        return None
+
+    try:
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        url_parts = url.split("/")
+        if "images.credly.com" in url:
+            unique_id = url_parts[-2] if len(url_parts) >= 2 else url_parts[-1]
+            filename = f"{unique_id}.png"
+        else:
+            filename = url_parts[-1]
+            if not filename.endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg')):
+                filename += '.png'
+
+        local_path = output_dir / filename
+
+        if not local_path.exists():
+            print(f"Downloading {url}...")
+            urllib.request.urlretrieve(url, local_path)
+
+        return str(local_path)
+    except Exception as e:
+        print(f"Warning: Failed to download {url}: {e}")
+        return None
+
+def _personal_info_line(label, value):
+    return f'      {label}: "{value}"'
+
+def _personal_info_custom(name, icon, text, url=None):
+    return f'''      custom-{name}: (
+        awesomeIcon: "{icon or name}",
+        text: "{text}"''' + \
+        (f',\n        link: "{url}"' if url else "") + "\n      )"
+
+def generate_metadata(basics: Dict[str, Any]) -> str:
+    """Generate brilliant-cv metadata dictionary."""
     name = basics.get("name", "")
+    name_parts = name.split()
+    first_name = basics.get("first_name", name_parts[0] if (len(name_parts)>0) else "")
+    last_name = basics.get("last_name", name_parts[1] if (len(name_parts)>1) else "")
     label = basics.get("label", "")
     email = basics.get("email", "")
     url = basics.get("url", "")
+    phone = basics.get("phone", "")
     location = basics.get("location", {})
-    image_url = basics.get("image", "")
 
     city = location.get("city", "")
     country = location.get("countryCode", "")
-    location_str = f"{city}, {country}" if city and country else city or country
 
-    # Download profile image if available
-    local_image = None
-    if image_url:
-        local_image = download_image(image_url, assets_dir / "profile")
-
-    # Icon mapping
-    icon_map = {
-        "email": "envelope",
-        "url": "globe",
-        "location": "location-dot"
-    }
-
-    # Build contact info items with icons
-    contact_items = []
+    # Build personal info for brilliant-cv
+    personal_info = []
     if email:
-        contact_items.append(f"#fa-icon(\"envelope\") #link(\"mailto:{email}\")[{escape_typst(email)}]")
+        personal_info.append(_personal_info_line('email', email))
+    if phone:
+        personal_info.append(_personal_info_line('phone', escape_typst(phone)))
     if url:
         url_display = url.replace("https://", "").replace("http://", "")
-        contact_items.append(f"#fa-icon(\"globe\") #link(\"{url}\")[{escape_typst(url_display)}]")
-    if location_str:
-        contact_items.append(f"#fa-icon(\"location-dot\") {location_str}")
+        # personal_info.append(_personal_info_line('homepage', url_display))
+        personal_info.append(_personal_info_custom('homepage', 'home', url_display, url))
+    if city:
+        personal_info.append(_personal_info_line('location', escape_typst(city)))
 
-    contact_line = " #text(fill: gray)[•] ".join(contact_items)
-
-    # Social network icon mapping
-    social_icons = {
-        "LinkedIn": "linkedin",
-        "Linkedin": "linkedin",
-        "GitHub": "github",
-        "Github": "github",
-        "Twitter": "twitter",
-        "Bluesky": "bluesky",
-        "Leanpub": "leanpub"
-    }
-
-    # Add profiles/social links
+    # Add social profiles
     profiles = basics.get("profiles", [])
-    social_line = ""
-    if profiles:
-        profile_links = []
-        for profile in profiles:
-            network = profile.get("network", "")
-            url = profile.get("url", "")
-            username = profile.get("username", "")
-            if url and network:
-                icon = social_icons.get(network, "link")
-                profile_links.append(f"#fa-icon(\"{icon}\") #link(\"{url}\")[{escape_typst(network)}]")
+    for profile in profiles:
+        network = profile.get("network", "").lower()
+        username = profile.get("username", "")
+        networkIcon = profile.get("networkIcon", None)
+        url = profile.get("url", None)
+        if username:
+            if network in ["linkedin", "github"]:
+                personal_info.append(_personal_info_line(network, username))
+            else:
+                personal_info.append(_personal_info_custom(network, networkIcon, username, url))
+    personal_str = ",\n".join(personal_info)
 
-        if profile_links:
-            # Align left if we have a photo, center otherwise
-            social_line =  f"""{" #text(fill: gray)[•] ".join(profile_links)}
-"""
-    
-    # Header with optional profile photo
-    if local_image:
-        # Layout with photo on the left, text info on the right
-        output = f"""// Header with profile photo
-#grid(
-  columns: (80%, 20%),
-  column-gutter: 1.5em,
-  align: (center, center),
-  [
-    #set par(spacing: 0.3em)
-    #v(1em)
-    #text(size: 28pt, weight: "thin")[{escape_typst(name)}]
+    metadata = f'''#let metadata = (
+  language: "en",
+  name: "{escape_typst(name)}",
+  tagline: "{escape_typst(label)}",
 
-    #v(0.3em)
-    #text(size: 10pt, fill: gray)[#smallcaps[{process_text(label)}]]
-
-    #v(0.5em)
-    #text(size: 8pt)[{contact_line}]
-
-    #v(0.5em)
-    #text(size: 8pt)[{social_line}]
-  ],
-  [
-    // Circular profile photo
-    #box(
-      clip: true,
-      radius: 50%,
-      stroke: 0pt + rgb("#3498db"),
-      width: 8em,
-      height: 8em,
-      image(\"{local_image}\", width: 8em, height: 8em, fit: "cover")
+  personal: (
+    first_name: "{escape_typst(first_name)}",
+    last_name: "{escape_typst(last_name)}",
+    info: (
+{personal_str}
     )
-  ]
+  ),
+
+  layout: (
+    awesome_color: "skyblue",
+    before_section_skip: "1pt",
+    before_entry_skip: "1pt",
+    before_entry_description_skip: "1pt",
+    paper_size: "a4",
+    page_margin: (x: 1.5cm, y: 1.5cm),
+
+    header: (
+      display_profile_photo: true,
+      display_profile_photo_small: false,
+      profile_photo_alignment: "right",
+      profile_photo_radius_pt: 50%,
+      info_row_font_size: 9pt,
+      header_align: "center"
+    ),
+
+    entry: (
+      display_logo: false,
+      display_entry_company_first: true,
+      display_entry_society_first: false,
+    ),
+
+    footer: (
+      display_page_counter: true,
+      display_footer: false,
+    ),
+
+    fonts: (),
+  ),
+
+  inject: (
+    inject_ai_prompt: false,
+    inject_keywords: false,
+    injected_keywords_list: []
+  ),
+
+  lang: (
+    en: (
+      education: "Education",
+      professional: "Professional Experience",
+      certificates: "Certifications",
+      skills: "Skills",
+      projects: "Projects",
+      activities: "Professional Activities",
+      languages: "Languages",
+      date_in_present: "Present",
+      cv_footer: "Curriculum Vitae",
+      header_quote: "{escape_typst(label)}",
+    ),
+  ),
 )
+'''
 
-#v(0.8em)
-
-"""
-    else:
-        # Centered layout without photo
-        output = f"""// Header
-#align(center)[
-    #set par(spacing: 0.3em)
-    #v(1em)
-    #text(size: 28pt, weight: "thin")[{escape_typst(name)}]
-
-    #v(0.3em)
-    #text(size: 10pt, fill: gray)[#smallcaps[{process_text(label)}]]
-
-    #v(0.5em)
-    #text(size: 8pt)[{contact_line}]
-
-    #v(0.5em)
-    #text(size: 8pt)[{social_line}]
-]
-
-#v(0.8em)
-
-"""
-
-
-    return output
+    return metadata
 
 
 def render_summary(basics: Dict[str, Any]) -> str:
-    """Render the professional summary."""
+    """Render professional summary."""
     summary = basics.get("summary", "")
     if not summary:
         return ""
 
-    # Split into paragraphs
     paragraphs = [p.strip() for p in summary.split("\n\n") if p.strip()]
 
-    output = """== Summary
-
-"""
-
+    output = '#cvSection("Summary")\n\n'
     for para in paragraphs:
         output += f"{process_text(para)}\n\n"
 
@@ -247,13 +247,11 @@ def render_summary(basics: Dict[str, Any]) -> str:
 
 
 def render_experience(work: List[Dict[str, Any]]) -> str:
-    """Render work experience section."""
+    """Render work experience using brilliant-cv."""
     if not work:
         return ""
 
-    output = """== Professional Experience
-
-"""
+    output = '#cvSection("Professional Experience")\n\n'
 
     for job in work:
         company = job.get("name", "")
@@ -267,48 +265,38 @@ def render_experience(work: List[Dict[str, Any]]) -> str:
 
         date_range = format_date_range(start, end)
 
-        # Company name (with link if available)
-        if url:
-            company_display = f"#link(\"{url}\")[*{escape_typst(company)}*]"
-        else:
-            company_display = f"*{escape_typst(company)}*"
-
-        output += f"""#grid(
-  columns: (1fr, auto),
-  [{company_display}],
-  [#text(fill: gray)[{date_range}]]
-)
-
-"""
-
-        # Position and location
-        position_line = f"_{escape_typst(position)}_"
-        if location:
-            position_line += f" #text(fill: gray)[• {escape_typst(location)}]"
-
-        output += f"{position_line}\n\n"
-
-        # Summary
+        # Build description
+        desc_parts = []
         if summary:
-            output += f"{process_text(summary)}\n\n"
-
-        # Highlights
+            desc_parts.append(process_text(summary))
         if highlights:
             for highlight in highlights:
-                output += f"- {process_text(highlight)}\n"
-            output += "\n"
+                desc_parts.append(f"- {process_text(highlight)}")
+
+        description = "\n".join(desc_parts) if desc_parts else ""
+
+        output += f'#cvEntry(\n'
+        output += f'  title: [{escape_typst(position)}],\n'
+        output += f'  society: ['
+        if url:
+            output += f'#link("{url}")[{escape_typst(company)}]'
+        else:
+            output += escape_typst(company)
+        output += '],\n'
+        output += f'  date: [{date_range}],\n'
+        output += f'  location: [{escape_typst(location)}],\n'
+        output += f'  description: [\n    {description}\n  ]\n'
+        output += ')\n\n'
 
     return output
 
 
 def render_education(education: List[Dict[str, Any]]) -> str:
-    """Render education section."""
+    """Render education using brilliant-cv."""
     if not education:
         return ""
 
-    output = """== Education
-
-"""
+    output = '#cvSection("Education")\n\n'
 
     for edu in education:
         institution = edu.get("institution", "")
@@ -322,46 +310,34 @@ def render_education(education: List[Dict[str, Any]]) -> str:
 
         date_range = format_date_range(start, end)
 
-        # Institution name (with link if available)
-        if url:
-            institution_display = f"#link(\"{url}\")[*{escape_typst(institution)}*]"
-        else:
-            institution_display = f"*{escape_typst(institution)}*"
-
-        output += f"""#grid(
-  columns: (1fr, auto),
-  [{institution_display}],
-  [#text(fill: gray)[{date_range}]]
-)
-
-"""
-
-        # Degree and area
-        degree_line = f"_{escape_typst(study_type)}"
+        title = study_type
         if area:
-            degree_line += f" in {escape_typst(area)}"
-        degree_line += "_"
+            title += f" in {area}"
 
-        if location:
-            degree_line += f" #text(fill: gray)[• {escape_typst(location)}]"
+        description = process_text(summary) if summary else ""
 
-        output += f"{degree_line}\n\n"
-
-        # Summary (e.g., thesis info)
-        if summary:
-            output += f"{process_text(summary)}\n\n"
+        output += f'#cvEntry(\n'
+        output += f'  title: [{escape_typst(title)}],\n'
+        output += f'  society: ['
+        if url:
+            output += f'#link("{url}")[{escape_typst(institution)}]'
+        else:
+            output += escape_typst(institution)
+        output += '],\n'
+        output += f'  date: [{date_range}],\n'
+        output += f'  location: [{escape_typst(location)}],\n'
+        output += f'  description: [{description}]\n'
+        output += ')\n\n'
 
     return output
 
 
 def render_skills(skills: List[Dict[str, Any]]) -> str:
-    """Render skills section."""
+    """Render skills using brilliant-cv."""
     if not skills:
         return ""
 
-    output = """== Skills
-
-"""
+    output = '#cvSection("Skills")\n\n'
 
     for skill_group in skills:
         name = skill_group.get("name", "")
@@ -370,55 +346,18 @@ def render_skills(skills: List[Dict[str, Any]]) -> str:
         if not keywords:
             continue
 
-        output += f"*{escape_typst(name)}*: "
-        output += ", ".join([escape_typst(kw) for kw in keywords])
-        output += "\n\n"
+        keywords_str = " #sym.dot.c ".join([escape_typst(kw) for kw in keywords])
+        output += f'#cvSkill(type: [{escape_typst(name)}], info: [{keywords_str}])\n#v(6pt)\n\n'
 
     return output
 
 
-def download_image(url: str, output_dir: Path) -> Optional[str]:
-    """Download an image from URL and return local path."""
-    if not url:
-        return None
-
-    try:
-        # Create assets directory if it doesn't exist
-        output_dir.mkdir(parents=True, exist_ok=True)
-
-        # Use a unique filename based on the URL path
-        # Extract the unique ID from Credly URLs (e.g., 6430efe4-0ac0-4df6-8f1b-9559d8fcdf27)
-        url_parts = url.split("/")
-        if "images.credly.com" in url:
-            # Credly URLs have format: /images/<uuid>/image.png
-            unique_id = url_parts[-2] if len(url_parts) >= 2 else url_parts[-1]
-            filename = f"{unique_id}.png"
-        else:
-            filename = url_parts[-1]
-            if not filename.endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg')):
-                filename += '.png'
-
-        local_path = output_dir / filename
-
-        # Download if not already cached
-        if not local_path.exists():
-            print(f"Downloading {url}...")
-            urllib.request.urlretrieve(url, local_path)
-
-        return str(local_path)
-    except Exception as e:
-        print(f"Warning: Failed to download {url}: {e}")
-        return None
-
-
 def render_certificates(certificates: List[Dict[str, Any]], assets_dir: Path) -> str:
-    """Render certificates and certifications section."""
+    """Render certificates using brilliant-cv."""
     if not certificates:
         return ""
 
-    output = """== Certifications
-
-"""
+    output = '#cvSection("Certifications")\n\n'
 
     for cert in certificates:
         name = cert.get("name", "")
@@ -427,111 +366,55 @@ def render_certificates(certificates: List[Dict[str, Any]], assets_dir: Path) ->
         url = cert.get("url", "")
         image_url = cert.get("image", "")
 
-        # Skip the "See full list" entry
         if "See full list" in name:
             if url:
-                output += f"Full list available at #link(\"{url}\")[Credly]\n\n"
+                output += f'Full list available at #link("{url}")[Credly]\n\n'
             continue
 
-        # Download image if available
         local_image = None
         if image_url:
             local_image = download_image(image_url, assets_dir / "badges")
 
-        # Add certificate with badge image
-        if local_image:
-            output += f"""#grid(
-  columns: (auto, 1fr),
-  column-gutter: 0.8em,
-  align: (center, left),
-  [#image(\"{local_image}\", width: 3em)],
-  [
-"""
-        else:
-            output += "- "
-
-        if url:
-            cert_text = f"#link(\"{url}\")[*{escape_typst(name)}*]"
-        else:
-            cert_text = f"*{escape_typst(name)}*"
-
-        if issuer:
-            cert_text += f", {escape_typst(issuer)}"
-
-        if date:
-            cert_text += f" ({format_date(date)})"
+        date_fmt = format_date(date) if date else ""
 
         if local_image:
-            output += f"    {cert_text}\n  ]\n)\n\n"
+            output += f'#grid(\n'
+            output += f'  columns: (auto, 1fr),\n'
+            output += f'  column-gutter: 1em,\n'
+            output += f'  align: (center + horizon, left + horizon),\n'
+            output += f'  [#image("{local_image}", width: 3em)],\n'
+            output += f'  [\n'
+            if url:
+                output += f'    #link("{url}")[*{escape_typst(name)}*]'
+            else:
+                output += f'    *{escape_typst(name)}*'
+            if issuer:
+                output += f', {escape_typst(issuer)}'
+            if date_fmt:
+                output += f' ({date_fmt})'
+            output += '\n  ]\n)\n\n'
         else:
-            output += f"{cert_text}\n"
-
-    output += "\n"
-    return output
-
-
-def render_awards(awards: List[Dict[str, Any]]) -> str:
-    """Render awards and honors section."""
-    if not awards:
-        return ""
-
-    output = """== Awards & Honors
-
-"""
-
-    for award in awards:
-        title = award.get("title", "")
-        awarder = award.get("awarder", "")
-        date = award.get("date", "")
-        summary = award.get("summary", "")
-
-        award_line = f"- *{escape_typst(title)}*"
-
-        if awarder:
-            award_line += f", {escape_typst(awarder)}"
-
-        if date:
-            award_line += f" ({format_date(date)})"
-
-        output += f"{award_line}\n"
-
-        if summary:
-            output += f"  {process_text(summary)}\n"
-
-    output += "\n"
-    return output
-
-
-def render_languages(languages: List[Dict[str, Any]]) -> str:
-    """Render languages section."""
-    if not languages:
-        return ""
-
-    output = """== Languages
-
-"""
-
-    lang_items = []
-    for lang in languages:
-        language = lang.get("language", "")
-        fluency = lang.get("fluency", "")
-
-        if language and fluency:
-            lang_items.append(f"*{escape_typst(language)}*: {escape_typst(fluency)}")
-
-    output += " #text(fill: gray)[|] ".join(lang_items) + "\n\n"
+            output += '- '
+            if url:
+                output += f'#link("{url}")[*{escape_typst(name)}*]'
+            else:
+                output += f'*{escape_typst(name)}*'
+            if issuer:
+                output += f', {escape_typst(issuer)}'
+            if date_fmt:
+                output += f' ({date_fmt})'
+            output += '\n\n'
 
     return output
 
 
 def render_projects(projects: List[Dict[str, Any]], project_type: str) -> str:
-    """Render projects of a specific type."""
+    """Render projects using brilliant-cv."""
     filtered = [p for p in projects if p.get("type") == project_type]
 
     if not filtered:
         return ""
 
-    # Map project types to section titles
     type_titles = {
         "Research": "Research Projects",
         "Software": "Software Projects",
@@ -542,10 +425,7 @@ def render_projects(projects: List[Dict[str, Any]], project_type: str) -> str:
     }
 
     title = type_titles.get(project_type, project_type)
-
-    output = f"""== {title}
-
-"""
+    output = f'#cvSection("{title}")\n\n'
 
     for project in filtered:
         name = project.get("name", "")
@@ -557,57 +437,47 @@ def render_projects(projects: List[Dict[str, Any]], project_type: str) -> str:
         url = project.get("url", "")
         roles = project.get("roles", [])
 
-        # Skip the publications reference in Research type
         if project_type == "Research" and not name:
             if description:
                 output += f"_{process_text(description)}_\n\n"
             continue
 
-        # Project name/title
-        if name:
-            if url:
-                output += f"*#link(\"{url}\")[{process_text(name)}]*"
-            else:
-                output += f"*{process_text(name)}*"
+        date_range = format_date_range(start, end) if start else ""
 
-            # Add date range if available
-            if start:
-                date_range = format_date_range(start, end)
-                output += f" #text(fill: gray)[({date_range})]"
-
-            output += "\n\n"
-
-        # Entity/organization
-        if entity:
-            output += f"_{process_text(entity)}_\n\n"
-
-        # Roles (for committees/advising)
+        desc_parts = []
+        if description:
+            desc_parts.append(process_text(description))
         if roles:
             for role in roles:
-                output += f"- {process_text(role)}\n"
-            output += "\n"
-
-        # Description
-        if description and name:  # Only if we have a name (avoid duplication)
-            output += f"{process_text(description)}\n\n"
-
-        # Highlights
+                desc_parts.append(f"- {process_text(role)}")
         if highlights:
             for highlight in highlights:
-                output += f"- {process_text(highlight)}\n"
-            output += "\n"
+                desc_parts.append(f"- {process_text(highlight)}")
+
+        full_description = "\n".join(desc_parts) if desc_parts else ""
+
+        output += f'#cvEntry(\n'
+        output += f'  title: ['
+        if url:
+            output += f'#link("{url}")[{process_text(name)}]'
+        else:
+            output += process_text(name)
+        output += '],\n'
+        output += f'  society: [{process_text(entity)}],\n'
+        output += f'  date: [{date_range}],\n'
+        output += f'  location: [],\n'
+        output += f'  description: [\n    {full_description}\n  ]\n'
+        output += ')\n\n'
 
     return output
 
 
 def render_volunteer(volunteer: List[Dict[str, Any]]) -> str:
-    """Render volunteer/professional activities section."""
+    """Render volunteer activities using brilliant-cv."""
     if not volunteer:
         return ""
 
-    output = """== Professional Activities
-
-"""
+    output = '#cvSection("Professional Activities")\n\n'
 
     for vol in volunteer:
         org = vol.get("organization", "")
@@ -616,80 +486,85 @@ def render_volunteer(volunteer: List[Dict[str, Any]]) -> str:
         end = vol.get("endDate", "")
         url = vol.get("url", "")
 
+        date_range = format_date_range(start, end) if start else ""
+
+        output += f'#cvEntry(\n'
+        output += f'  title: [{escape_typst(position)}],\n'
+        output += f'  society: ['
         if url:
-            output += f"- *{escape_typst(position)}*, #link(\"{url}\")[{escape_typst(org)}]"
+            output += f'#link("{url}")[{escape_typst(org)}]'
         else:
-            output += f"- *{escape_typst(position)}*, {escape_typst(org)}"
+            output += escape_typst(org)
+        output += '],\n'
+        output += f'  date: [{date_range}],\n'
+        output += f'  location: [],\n'
+        output += f'  description: []\n'
+        output += ')\n\n'
 
-        if start:
-            date_range = format_date_range(start, end)
-            output += f" ({date_range})"
+    return output
 
-        output += "\n"
 
-    output += "\n"
+def render_languages(languages: List[Dict[str, Any]]) -> str:
+    """Render languages using brilliant-cv."""
+    if not languages:
+        return ""
+
+    output = '#cvSection("Languages")\n\n'
+
+    for lang in languages:
+        language = lang.get("language", "")
+        fluency = lang.get("fluency", "")
+
+        if language and fluency:
+            output += f'#cvSkill(type: [{escape_typst(language)}], info: [{escape_typst(fluency)}])\n\n'
+
     return output
 
 
 def generate_typst_cv(resume_data: Dict[str, Any], assets_dir: Path) -> str:
-    """Generate complete Typst CV from JSONResume data."""
+    """Generate Typst CV using brilliant-cv template."""
 
-    # Start with document setup
+    basics = resume_data.get("basics", {})
+    image_url = basics.get("image", "")
+
+    # Download profile photo
+    photo_path = None
+    if image_url:
+        photo_path = download_image(image_url, assets_dir / "profile")
+
+    # Start with imports and metadata
     output = """// Professional CV generated from JSONResume
-// Compiled with Typst
+// Using brilliant-cv template
 
-#import "@preview/fontawesome:0.6.0": fa-icon
+#import "@preview/brilliant-cv:3.1.2": *
 
-#set document(
-  title: "{name} - Curriculum Vitae",
-  author: "{name}",
+"""
+
+    # Add metadata
+    output += generate_metadata(basics)
+    output += "\n"
+
+    # Apply brilliant-cv template
+    if photo_path:
+        output += f'''#show: cv.with(
+  metadata,
+  profile-photo: image("{photo_path}"),
 )
 
-#set page(
-  paper: "a4",
-  margin: (x: 1.5cm, y: 1.5cm),
+'''
+    else:
+        output += '''#show: cv.with(
+  metadata,
 )
 
-#set text(
-  font: "Roboto",
-  size: 9pt,
-  lang: "en",
-)
-
-#set par(
-  justify: true,
-  leading: 0.65em,
-)
-
-#show heading.where(level: 2): it => {{
-  set text(size: 14pt, weight: "bold")
-  v(0.8em)
-  block[
-    #text(fill: rgb("#2c3e50"))[#it.body]
-    #v(-0.3em)
-    #line(length: 100%, stroke: 0.5pt + rgb("#3498db"))
-  ]
-  v(0.5em)
-}}
-
-#show link: it => {{
-  set text(fill: rgb("#2980b9"))
-  underline(it)
-}}
-
-""".format(name=resume_data.get("basics", {}).get("name", ""))
+'''
 
     # Add content sections
-    output += render_header(resume_data.get("basics", {}), assets_dir)
-    output += render_summary(resume_data.get("basics", {}))
+    output += render_summary(basics)
     output += render_experience(resume_data.get("work", []))
     output += render_education(resume_data.get("education", []))
-
-    # Skills and certifications
     output += render_skills(resume_data.get("skills", []))
     output += render_certificates(resume_data.get("certificates", []), assets_dir)
-    output += render_awards(resume_data.get("awards", []))
-    output += render_languages(resume_data.get("languages", []))
 
     # Projects sections
     projects = resume_data.get("projects", [])
@@ -697,8 +572,8 @@ def generate_typst_cv(resume_data: Dict[str, Any], assets_dir: Path) -> str:
                          "Program Committees and Boards", "Advising", "Teaching"]:
         output += render_projects(projects, project_type)
 
-    # Volunteer/professional activities
     output += render_volunteer(resume_data.get("volunteer", []))
+    output += render_languages(resume_data.get("languages", []))
 
     return output
 
@@ -716,20 +591,16 @@ def main():
         print(f"Error: Input file {input_file} not found")
         sys.exit(1)
 
-    # Read JSONResume data
     with open(input_file, 'r', encoding='utf-8') as f:
         resume_data = json.load(f)
 
-    # Determine assets directory (relative to output file or current directory)
     if output_file:
         assets_dir = output_file.parent / "assets"
     else:
         assets_dir = Path.cwd() / "assets"
 
-    # Generate Typst CV
     typst_content = generate_typst_cv(resume_data, assets_dir)
 
-    # Write output
     if output_file:
         output_file.parent.mkdir(parents=True, exist_ok=True)
         with open(output_file, 'w', encoding='utf-8') as f:
