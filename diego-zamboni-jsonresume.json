@@ -365,7 +365,7 @@
                 "System health management and monitoring",
                 "Cloud platforms",
                 "Software development",
-                "Configuration management"
+                "Configuration management (CFEngine, Puppet, Chef, Ansible)"
             ]
         },
         {
@@ -384,32 +384,6 @@
                 "Database programming (SQL)",
                 "Kernel programming (OpenBSD and Linux)",
                 "HTML"
-            ]
-        },
-        {
-            "name": "Configuration Management",
-            "keywords": [
-                "CFEngine",
-                "Puppet",
-                "Chef",
-                "Ansible"
-            ]
-        },
-        {
-            "name": "Virtualization & Cloud",
-            "keywords": [
-                "VMware (ESX, vSphere)",
-                "OpenStack",
-                "Amazon EC2",
-                "Docker",
-                "Cloud Foundry"
-            ]
-        },
-        {
-            "name": "Health Management & Monitoring",
-            "keywords": [
-                "VMware vRealize Operations Manager",
-                "vRealize Log Insight"
             ]
         }
     ],
@@ -632,6 +606,7 @@
         },
         {
             "name": "Computers & Security Journal",
+            "entity": "Elsevier",
             "type": "Program Committees and Boards",
             "url": "https://www.sciencedirect.com/journal/computers-and-security",
             "startDate": "2011",
@@ -872,6 +847,12 @@
             "authors": [
                 "Diego Zamboni"
             ]
+        }
+    ],
+    "references": [
+        {
+            "name": "Available upon request",
+            "reference": ""
         }
     ],
     "meta": {
