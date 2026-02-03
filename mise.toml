@@ -30,7 +30,12 @@ output_dir_prod = "{{vars.output_dir_base}}/prod"
 
 # Output files (dev/prod)
 cv_html_dev   = "{{vars.output_dir_dev}}/vita.html"
+cv_typst_dev  = "{{vars.output_dir_dev}}/{{vars.typst_output}}"
+cv_pdf_dev    = "{{vars.output_dir_dev}}/{{vars.typst_pdf}}"
+
 cv_html_prod  = "{{vars.output_dir_prod}}/vita.html"
+cv_typst_prod = "{{vars.output_dir_prod}}/{{vars.typst_output}}"
+cv_pdf_prod   = "{{vars.output_dir_prod}}/{{vars.typst_pdf}}"
 
 pubs_html_dev  = "{{vars.output_dir_dev}}/publications.html"
 pubs_html_prod = "{{vars.output_dir_prod}}/publications.html"
@@ -121,34 +126,34 @@ scripts/build_pubs.sh 0 "{{vars.pubs_html_prod}}" "{{vars.pubs_script}}"
 
 # Generate Typst CV from JSON Resume format.
 
-[tasks.render-typst]
-description = "Render Typst CV from JSON"
+[tasks.render-typst-dev]
+description = "Render Typst CV from JSON (dev)"
 sources = ["{{vars.cv_json}}", "{{vars.typst_script}}", "mise.toml"]
-outputs = ["{{vars.typst_output}}"]
+outputs = ["{{vars.cv_typst_dev}}"]
 run = '''
 #!/usr/bin/env bash
 set -euxo pipefail
-python "{{vars.typst_script}}" "{{vars.cv_json}}" "{{vars.typst_output}}"
+python "{{vars.typst_script}}" "{{vars.cv_json}}" "{{vars.cv_typst_dev}}"
 '''
 
 # Compile Typst CV to PDF.
 
-[tasks.compile-typst]
-description = "Compile Typst CV to PDF"
-depends = ["render-typst"]
-sources = ["{{vars.typst_output}}", "assets/profile/**/*"]
-outputs = ["{{vars.typst_pdf}}"]
+[tasks.compile-typst-dev]
+description = "Compile Typst CV to PDF (dev)"
+depends = ["render-typst-dev"]
+sources = ["{{vars.cv_typst_dev}}", "assets/**/*"]
+outputs = ["{{vars.cv_pdf_dev}}"]
 run = '''
 #!/usr/bin/env bash
 set -euxo pipefail
-typst compile "{{vars.typst_output}}" "{{vars.typst_pdf}}"
+typst compile "{{vars.cv_typst_dev}}" "{{vars.cv_pdf_dev}}"
 '''
 
 # Build both Typst outputs (typ + PDF).
 
-[tasks.typst]
+[tasks.typst-dev]
 description = "Build Typst CV (typ + PDF)"
-depends = ["compile-typst"]
+depends = ["compile-typst-dev"]
 
 # Dev-only: inject a reload polling snippet into the dev CV HTML.
 # This keeps resumed output unchanged in prod.
@@ -204,12 +209,12 @@ perl -0777 -pe "s~$needle~$inject~" -i "{{vars.cv_html_dev}}"
 # This is what you should use with `mise watch build-dev`.
 [tasks.build-dev]
 description = "Build dev outputs (with auto-reload)"
-depends = ["render-dev", "pubs-dev", "cv-reload-inject", "typst"]  # keep your inject task dev-only
+depends = ["render-dev", "pubs-dev", "cv-reload-inject", "typst-dev"]  # keep your inject task dev-only
 
 # Build production outputs (both pages) without any auto-reload code.
 [tasks.build-prod]
 description = "Build prod outputs (no auto-reload)"
-depends = ["render-prod", "pubs-prod", "typst"]
+depends = ["render-prod", "pubs-prod", "typst-dev"]
 
 # Convenience aliases (optional, but nice for discoverability)
 [tasks.cv-dev]
@@ -268,7 +273,7 @@ xdg-open {{vars.pubs_html_prod}}
 # Open the Typst PDF.
 [tasks.open-typst]
 description = "Open Typst PDF"
-depends = ["typst"]
+depends = ["typst-dev"]
 run = '''
 xdg-open {{vars.typst_pdf}}
 '''
