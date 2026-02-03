@@ -79,10 +79,13 @@ def format_date_range(start: Optional[str], end: Optional[str]) -> str:
     """Format date range."""
     start_fmt = format_date(start)
     end_fmt = format_date(end) if end else "Present"
-    return f"{start_fmt} - {end_fmt}"
+    if start_fmt == end_fmt:
+        return f"{start_fmt}"
+    else:
+        return f"{start_fmt} - {end_fmt}"
 
 
-def download_image(url: str, output_dir: Path) -> Optional[str]:
+def download_image(url: str, base_output_dir: Path, output_dir: Path) -> Optional[str]:
     """Download an image from URL and return local path."""
     if not url:
         return None
@@ -99,13 +102,14 @@ def download_image(url: str, output_dir: Path) -> Optional[str]:
             if not filename.endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg')):
                 filename += '.png'
 
-        local_path = output_dir / filename
+        output_dir_full = base_output_dir / output_dir
+        local_path = output_dir_full / filename
 
         if not local_path.exists():
             print(f"Downloading {url}...")
             urllib.request.urlretrieve(url, local_path)
 
-        return str(local_path)
+        return str(output_dir / filename)
     except Exception as e:
         print(f"Warning: Failed to download {url}: {e}")
         return None
@@ -239,7 +243,7 @@ def render_summary(basics: Dict[str, Any]) -> str:
 
     paragraphs = [p.strip() for p in summary.split("\n\n") if p.strip()]
 
-    output = '#cvSection("Summary")\n\n'
+    output = '#cv-section("Summary")\n\n'
     for para in paragraphs:
         output += f"{process_text(para)}\n\n"
 
@@ -251,7 +255,7 @@ def render_experience(work: List[Dict[str, Any]]) -> str:
     if not work:
         return ""
 
-    output = '#cvSection("Professional Experience")\n\n'
+    output = '#cv-section("Professional Experience")\n\n'
 
     for job in work:
         company = job.get("name", "")
@@ -275,7 +279,7 @@ def render_experience(work: List[Dict[str, Any]]) -> str:
 
         description = "\n".join(desc_parts) if desc_parts else ""
 
-        output += f'#cvEntry(\n'
+        output += f'#cv-entry(\n'
         output += f'  title: [{escape_typst(position)}],\n'
         output += f'  society: ['
         if url:
@@ -296,7 +300,7 @@ def render_education(education: List[Dict[str, Any]]) -> str:
     if not education:
         return ""
 
-    output = '#cvSection("Education")\n\n'
+    output = '#cv-section("Education")\n\n'
 
     for edu in education:
         institution = edu.get("institution", "")
@@ -316,7 +320,7 @@ def render_education(education: List[Dict[str, Any]]) -> str:
 
         description = process_text(summary) if summary else ""
 
-        output += f'#cvEntry(\n'
+        output += f'#cv-entry(\n'
         output += f'  title: [{escape_typst(title)}],\n'
         output += f'  society: ['
         if url:
@@ -337,7 +341,7 @@ def render_skills(skills: List[Dict[str, Any]]) -> str:
     if not skills:
         return ""
 
-    output = '#cvSection("Skills")\n\n'
+    output = '#cv-section("Skills")\n\n'
 
     for skill_group in skills:
         name = skill_group.get("name", "")
@@ -347,17 +351,17 @@ def render_skills(skills: List[Dict[str, Any]]) -> str:
             continue
 
         keywords_str = " #sym.dot.c ".join([escape_typst(kw) for kw in keywords])
-        output += f'#cvSkill(type: [{escape_typst(name)}], info: [{keywords_str}])\n#v(6pt)\n\n'
+        output += f'#cv-skill(type: [{escape_typst(name)}], info: [{keywords_str}])\n#v(6pt)\n\n'
 
     return output
 
 
-def render_certificates(certificates: List[Dict[str, Any]], assets_dir: Path) -> str:
+def render_certificates(certificates: List[Dict[str, Any]], base_output_dir: Path, assets_dir: Path) -> str:
     """Render certificates using brilliant-cv."""
     if not certificates:
         return ""
 
-    output = '#cvSection("Certifications")\n\n'
+    output = '#cv-section("Certifications")\n\n'
 
     for cert in certificates:
         name = cert.get("name", "")
@@ -373,7 +377,7 @@ def render_certificates(certificates: List[Dict[str, Any]], assets_dir: Path) ->
 
         local_image = None
         if image_url:
-            local_image = download_image(image_url, assets_dir / "badges")
+            local_image = download_image(image_url, base_output_dir, assets_dir / "badges")
 
         date_fmt = format_date(date) if date else ""
 
@@ -425,7 +429,7 @@ def render_projects(projects: List[Dict[str, Any]], project_type: str) -> str:
     }
 
     title = type_titles.get(project_type, project_type)
-    output = f'#cvSection("{title}")\n\n'
+    output = f'#cv-section("{title}")\n\n'
 
     for project in filtered:
         name = project.get("name", "")
@@ -456,7 +460,7 @@ def render_projects(projects: List[Dict[str, Any]], project_type: str) -> str:
 
         full_description = "\n".join(desc_parts) if desc_parts else ""
 
-        output += f'#cvEntry(\n'
+        output += f'#cv-entry(\n'
         output += f'  title: ['
         if url:
             output += f'#link("{url}")[{process_text(name)}]'
@@ -477,7 +481,7 @@ def render_volunteer(volunteer: List[Dict[str, Any]]) -> str:
     if not volunteer:
         return ""
 
-    output = '#cvSection("Professional Activities")\n\n'
+    output = '#cv-section("Professional Activities")\n\n'
 
     for vol in volunteer:
         org = vol.get("organization", "")
@@ -488,7 +492,7 @@ def render_volunteer(volunteer: List[Dict[str, Any]]) -> str:
 
         date_range = format_date_range(start, end) if start else ""
 
-        output += f'#cvEntry(\n'
+        output += f'#cv-entry(\n'
         output += f'  title: [{escape_typst(position)}],\n'
         output += f'  society: ['
         if url:
@@ -509,19 +513,19 @@ def render_languages(languages: List[Dict[str, Any]]) -> str:
     if not languages:
         return ""
 
-    output = '#cvSection("Languages")\n\n'
+    output = '#cv-section("Languages")\n\n'
 
     for lang in languages:
         language = lang.get("language", "")
         fluency = lang.get("fluency", "")
 
         if language and fluency:
-            output += f'#cvSkill(type: [{escape_typst(language)}], info: [{escape_typst(fluency)}])\n\n'
+            output += f'#cv-skill(type: [{escape_typst(language)}], info: [{escape_typst(fluency)}])\n\n'
 
     return output
 
 
-def generate_typst_cv(resume_data: Dict[str, Any], assets_dir: Path) -> str:
+def generate_typst_cv(resume_data: Dict[str, Any], base_output_dir: Path, assets_dir: Path) -> str:
     """Generate Typst CV using brilliant-cv template."""
 
     basics = resume_data.get("basics", {})
@@ -530,7 +534,7 @@ def generate_typst_cv(resume_data: Dict[str, Any], assets_dir: Path) -> str:
     # Download profile photo
     photo_path = None
     if image_url:
-        photo_path = download_image(image_url, assets_dir / "profile")
+        photo_path = download_image(image_url, base_output_dir, assets_dir / "profile")
 
     # Start with imports and metadata
     output = """// Professional CV generated from JSONResume
@@ -564,7 +568,7 @@ def generate_typst_cv(resume_data: Dict[str, Any], assets_dir: Path) -> str:
     output += render_experience(resume_data.get("work", []))
     output += render_education(resume_data.get("education", []))
     output += render_skills(resume_data.get("skills", []))
-    output += render_certificates(resume_data.get("certificates", []), assets_dir)
+    output += render_certificates(resume_data.get("certificates", []), base_output_dir, assets_dir)
 
     # Projects sections
     projects = resume_data.get("projects", [])
@@ -594,12 +598,16 @@ def main():
     with open(input_file, 'r', encoding='utf-8') as f:
         resume_data = json.load(f)
 
-    if output_file:
-        assets_dir = output_file.parent / "assets"
-    else:
-        assets_dir = Path.cwd() / "assets"
+    assets_dir = Path("assets")
 
-    typst_content = generate_typst_cv(resume_data, assets_dir)
+    if output_file:
+        base_output_dir = output_file.parent
+    else:
+        base_output_dir = Path.cwd()
+
+    assets_dir_full = base_output_dir / assets_dir
+
+    typst_content = generate_typst_cv(resume_data, base_output_dir, assets_dir)
 
     if output_file:
         output_file.parent.mkdir(parents=True, exist_ok=True)
