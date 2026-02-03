@@ -11,7 +11,7 @@ _.python.venv = { path = ".venv", create = true, uv_create_args = ["--seed"] }
 
 [vars]
 # Input CV (JSON Resume format)
-cv_json = "diego-zamboni-jsonresume.json"
+cv_json = "zamboni-vita.json"
 
 # Publications pipeline inputs
 pubs_script   = "scripts/build_publications.py"
@@ -20,8 +20,8 @@ pubs_bib      = "src/**/*.bib"
 
 # Typst CV pipeline
 typst_script = "scripts/render_typst_cv.py"
-typst_output = "diego-zamboni-jsonresume.typ"
-typst_pdf    = "diego-zamboni-jsonresume.pdf"
+typst_output = "zamboni-vita.typ"
+typst_pdf    = "zamboni-vita.pdf"
 
 # Output layout (keep dev/prod artifacts separated under build/)
 output_dir_base = "build/zamboni-jsonresume"
