@@ -403,22 +403,19 @@
     ],
     "awards": [
         {
-            "title": "IEEE Security & Privacy Test of Time Award",
+            "title": "IEEE Security & Privacy Test of Time Award ([IEEE S&P page](https://www.ieee-security.org/TC/SP2020/awards.html), [CERIAS blog post](https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/))",
             "date": "2020-05-18",
-            "awarder": "IEEE",
-            "summary": "[IEEE S&P page](https://www.ieee-security.org/TC/SP2020/awards.html), [CERIAS blog post](https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/)"
+            "awarder": "IEEE"
         },
         {
-            "title": "CFEngine Champion",
+            "title": "[CFEngine Champion](https://cfengine.com/engage/cfengine-champions/)",
             "date": "2010",
-            "awarder": "CFEngine AS",
-            "summary": "[CFEngine Champions](https://cfengine.com/engage/cfengine-champions/)"
+            "awarder": "CFEngine AS"
         },
         {
-            "title": "Josef Raviv Memorial Postdoctoral Fellowship",
+            "title": "[Josef Raviv Memorial Postdoctoral Fellowship](https://www.cerias.purdue.edu/site/news/view/diego_zamboni_earns_fellowship_from_ibm)",
             "date": "2001-07-01",
-            "awarder": "IBM",
-            "summary": "[Diego Zamboni Earns Fellowship From IBM](https://www.cerias.purdue.edu/site/news/view/diego_zamboni_earns_fellowship_from_ibm)"
+            "awarder": "IBM"
         },
         {
             "title": "UPE Microsoft Scholarship Award",
@@ -426,22 +423,19 @@
             "awarder": "UPE and Microsoft"
         },
         {
-            "title": "Member of Upsilon Pi Epsilon",
+            "title": "[Member of Upsilon Pi Epsilon](http://upe.acm.org/)",
             "date": "1998-04-01",
-            "awarder": "Association for Computing Machinery (ACM)",
-            "summary": "[Upsilon Pi Epsilon](http://upe.acm.org/)"
+            "awarder": "Association for Computing Machinery (ACM)"
         },
         {
             "title": "Member of Phi Beta Delta",
             "date": "2001-04-01",
-            "awarder": "Phi Beta Delta honor society",
-            "summary": "Honor society recognizing scholarly achievement."
+            "awarder": "Phi Beta Delta honor society"
         },
         {
-            "title": "Fulbright Scholarship",
+            "title": "Fulbright Scholarship (for pursuing Ph.D. studies at Purdue University)",
             "date": "1996-05-01",
-            "awarder": "Fulbright Program and CONACYT",
-            "summary": "Scholarship for pursuing Ph.D. studies at Purdue University."
+            "awarder": "Fulbright Program and CONACYT"
         }
     ],
     "volunteer": [
@@ -611,7 +605,9 @@
             "url": "https://www.sciencedirect.com/journal/computers-and-security",
             "startDate": "2011",
             "endDate": "2013",
-            "roles": [ "Editorial Board Member" ]
+            "roles": [
+                "Editorial Board Member"
+            ]
         },
         {
             "name": "Intl. Symposium on Recent Advances in Intrusion Detection (RAID)",
@@ -630,7 +626,9 @@
             "type": "Program Committees and Boards",
             "startDate": "2009-06-23",
             "endDate": "2009-06-25",
-            "roles": [ "Program Co-chair" ],
+            "roles": [
+                "Program Co-chair"
+            ],
             "entity": "IBM (Internal event)"
         },
         {
@@ -639,7 +637,9 @@
             "url": "https://www.video.ethz.ch/conferences/2009/zisc.html",
             "startDate": "2009-09-10",
             "endDate": "2009-09-10",
-            "roles": [ "Program Chair" ],
+            "roles": [
+                "Program Chair"
+            ],
             "entity": "[Zurich Information Security and Privacy Center (ZISC)](https://zisc.ethz.ch/)"
         },
         {
@@ -648,7 +648,9 @@
             "url": "https://www.dimva.org/dimva2008/",
             "startDate": "2008-07-10",
             "endDate": "2008-07-11",
-            "roles": [ "Program Chair" ]
+            "roles": [
+                "Program Chair"
+            ]
         },
         {
             "name": "IEEE Security and Privacy Symposium",
@@ -656,7 +658,9 @@
             "url": "http://www.ieee-security.org/TC/SP-Index.html",
             "startDate": "2007-05-20",
             "endDate": "2007-05-23",
-            "roles": [ "Program Committee Member" ]
+            "roles": [
+                "Program Committee Member"
+            ]
         },
         {
             "name": "Annual Computer Security Applications Conference (ACSAC)",
@@ -705,7 +709,9 @@
         {
             "name": "Urko Zurutuza Ortega",
             "type": "Advising",
-            "roles": [ "Ph.D. co-advisor" ],
+            "roles": [
+                "Ph.D. co-advisor"
+            ],
             "entity": "IBM Research",
             "highlights": [
                 "Student from Mondragon University, Spain.",
@@ -717,7 +723,9 @@
         {
             "name": "Milton Yates",
             "type": "Advising",
-            "roles": [ "External Diploma Thesis advisor" ],
+            "roles": [
+                "External Diploma Thesis advisor"
+            ],
             "entity": "IBM Research",
             "highlights": [
                 "Student from ENST Bretagne, France",
@@ -729,7 +737,9 @@
         {
             "name": "Candid Wüest",
             "type": "Advising",
-            "roles": [ "Diploma Thesis advisor" ],
+            "roles": [
+                "Diploma Thesis advisor"
+            ],
             "entity": "IBM Research",
             "highlights": [
                 "Student from ETH Zurich, Switzerland",
@@ -741,7 +751,9 @@
         {
             "name": "Daniele Sgandurra",
             "type": "Advising",
-            "roles": [ "Internship advisor" ],
+            "roles": [
+                "Internship advisor"
+            ],
             "entity": "IBM Research",
             "highlights": [
                 "Student from University of Pisa, Italy.",
@@ -753,7 +765,9 @@
         {
             "name": "Martin Carbone",
             "type": "Advising",
-            "roles": [ "Internship advisor" ],
+            "roles": [
+                "Internship advisor"
+            ],
             "entity": "IBM Research",
             "highlights": [
                 "Student from Georgia Institute of Technology, U.S.A.",
