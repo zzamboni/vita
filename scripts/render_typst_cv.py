@@ -412,6 +412,37 @@ def render_certificates(certificates: List[Dict[str, Any]], base_output_dir: Pat
     return output
 
 
+def render_awards(awards: List[Dict[str, Any]]) -> str:
+    """Render awards using brilliant-cv."""
+    if not awards:
+        return ""
+
+    output = '#cv-section("Awards")\n\n'
+
+    for award in awards:
+        title = award.get("title", "")
+        date = award.get("date", "")
+        awarder = award.get("awarder", "")
+        summary = award.get("summary", "")
+        url = award.get("url", "")
+
+        date_fmt = format_date(date) if date else ""
+
+        output += '#cv-honor(\n'
+        output += f'  date: [{date_fmt}],\n'
+        output += f'  title: [{process_text(title)}],\n'
+        if awarder:
+            output += f'  issuer: [{escape_typst(awarder)}],\n'
+        if url:
+            output += f'  url: "{url}",\n'
+        output += ')\n#v(6pt)\n\n'
+
+        if summary:
+            output += f'{process_text(summary)}\n\n'
+
+    return output
+
+
 def render_projects(projects: List[Dict[str, Any]], project_type: str) -> str:
     """Render projects using brilliant-cv."""
     filtered = [p for p in projects if p.get("type") == project_type]
@@ -508,6 +539,38 @@ def render_volunteer(volunteer: List[Dict[str, Any]]) -> str:
     return output
 
 
+def render_publications(publications: List[Dict[str, Any]]) -> str:
+    """Render publications using brilliant-cv."""
+    if not publications:
+        return ""
+
+    output = '#cv-section("Publications")\n\n'
+
+    for pub in publications:
+        name = pub.get("name", "")
+        publisher = pub.get("publisher", "")
+        release_date = pub.get("releaseDate", "")
+        url = pub.get("url", "")
+        summary = pub.get("summary", "")
+
+        date_fmt = format_date(release_date) if release_date else ""
+
+        output += '#cv-entry(\n'
+        output += f'  title: ['
+        if url:
+            output += f'#link("{url}")[{process_text(name)}]'
+        else:
+            output += process_text(name)
+        output += '],\n'
+        output += f'  society: [{escape_typst(publisher)}],\n'
+        output += f'  date: [{date_fmt}],\n'
+        output += f'  location: [],\n'
+        output += f'  description: [{process_text(summary)}]\n'
+        output += ')\n\n'
+
+    return output
+
+
 def render_languages(languages: List[Dict[str, Any]]) -> str:
     """Render languages using brilliant-cv."""
     if not languages:
@@ -521,6 +584,42 @@ def render_languages(languages: List[Dict[str, Any]]) -> str:
 
         if language and fluency:
             output += f'#cv-skill(type: [{escape_typst(language)}], info: [{escape_typst(fluency)}])\n\n'
+
+    return output
+
+
+def render_interests(interests: List[Dict[str, Any]]) -> str:
+    """Render interests using brilliant-cv."""
+    if not interests:
+        return ""
+
+    output = '#cv-section("Interests")\n\n'
+
+    for interest in interests:
+        name = interest.get("name", "")
+        keywords = interest.get("keywords", [])
+        keywords_str = " #sym.dot.c ".join([escape_typst(kw) for kw in keywords])
+        output += f'#cv-skill(type: [{escape_typst(name)}], info: [{keywords_str}])\n\n'
+
+    return output
+
+
+def render_references(references: List[Dict[str, Any]]) -> str:
+    """Render references."""
+    if not references:
+        return ""
+
+    output = '#cv-section("References")\n\n'
+
+    for ref in references:
+        name = ref.get("name", "")
+        reference = ref.get("reference", "")
+        if name and reference:
+            output += f'- *{escape_typst(name)}*: {process_text(reference)}\n\n'
+        elif name:
+            output += f'- *{escape_typst(name)}*\n\n'
+        elif reference:
+            output += f'- {process_text(reference)}\n\n'
 
     return output
 
@@ -569,6 +668,7 @@ def generate_typst_cv(resume_data: Dict[str, Any], base_output_dir: Path, assets
     output += render_education(resume_data.get("education", []))
     output += render_skills(resume_data.get("skills", []))
     output += render_certificates(resume_data.get("certificates", []), base_output_dir, assets_dir)
+    output += render_awards(resume_data.get("awards", []))
 
     # Projects sections
     projects = resume_data.get("projects", [])
@@ -577,7 +677,10 @@ def generate_typst_cv(resume_data: Dict[str, Any], base_output_dir: Path, assets
         output += render_projects(projects, project_type)
 
     output += render_volunteer(resume_data.get("volunteer", []))
+    output += render_publications(resume_data.get("publications", []))
     output += render_languages(resume_data.get("languages", []))
+    output += render_interests(resume_data.get("interests", []))
+    output += render_references(resume_data.get("references", []))
 
     return output
 
