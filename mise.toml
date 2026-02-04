@@ -141,7 +141,7 @@ python "{{vars.typst_script}}" "{{vars.cv_json}}" "{{vars.cv_typst_dev}}"
 [tasks.compile-typst-dev]
 description = "Compile Typst CV to PDF (dev)"
 depends = ["render-typst-dev"]
-sources = ["{{vars.cv_typst_dev}}", "assets/**/*"]
+sources = ["{{vars.cv_typst_dev}}", "{{vars.output_dir_dev}}/assets/**/*"]
 outputs = ["{{vars.cv_pdf_dev}}"]
 run = '''
 #!/usr/bin/env bash
@@ -252,30 +252,29 @@ python3 -m http.server "{{vars.port}}" --bind 0.0.0.0 --directory "{{vars.output
 # Tip: use `mise watch build-dev` separately to rebuild without re-opening tabs.
 [tasks.open-dev]
 description = "Open CV + publications once"
-depends = ["build-dev"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 echo "→ Opening CV + publications pages"
 xdg-open "{{vars.cv_url}}" >/dev/null 2>&1 || true
 xdg-open "{{vars.pubs_url}}" >/dev/null 2>&1 || true
+xdg-open "{{vars.cv_pdf_dev}}" >/dev/null 2>&1 || true
 '''
 
 # Open the prod pages from the local filesystem.
 [tasks.open-prod]
 description = "Open CV + publications (prod)"
-depends = ["build-prod"]
 run = '''
 xdg-open {{vars.cv_html_prod}}
 xdg-open {{vars.pubs_html_prod}}
+xdg-open {{vars.cv_pdf_prod}}
 '''
 
 # Open the Typst PDF.
-[tasks.open-typst]
+[tasks.open-typst-dev]
 description = "Open Typst PDF"
-depends = ["typst-dev"]
 run = '''
-xdg-open {{vars.typst_pdf}}
+xdg-open {{vars.cv_pdf_dev}}
 '''
 
 # One-command dev loop:
@@ -307,7 +306,7 @@ xdg-open "{{vars.pubs_url}}" >/dev/null 2>&1 || true
 xdg-open "{{vars.typst_pdf}}" >/dev/null 2>&1 || true
 
 echo "→ Watching for changes (build-dev)"
-mise watch build-dev
+mise watch build-dev --no-vcs-ignore
 '''
 
 # One-command prod loop:
