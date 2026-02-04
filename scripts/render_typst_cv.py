@@ -197,8 +197,7 @@ def generate_metadata(basics: Dict[str, Any]) -> str:
 
     entry: (
       display_logo: false,
-      display_entry_company_first: true,
-      display_entry_society_first: false,
+      display_entry_society_first: true,
     ),
 
     footer: (
@@ -257,40 +256,92 @@ def render_experience(work: List[Dict[str, Any]]) -> str:
 
     output = '#cv-section("Professional Experience")\n\n'
 
+    grouped_work: List[Dict[str, Any]] = []
     for job in work:
         company = job.get("name", "")
-        position = job.get("position", "")
-        start = job.get("startDate", "")
-        end = job.get("endDate", "")
-        location = job.get("location", "")
-        summary = job.get("summary", "")
-        highlights = job.get("highlights", [])
-        url = job.get("url", "")
+        if not grouped_work or grouped_work[-1]["company"] != company:
+            grouped_work.append({"company": company, "jobs": []})
+        grouped_work[-1]["jobs"].append(job)
 
-        date_range = format_date_range(start, end)
+    for group in grouped_work:
+        jobs = group["jobs"]
+        if len(jobs) == 1:
+            job = jobs[0]
+            company = job.get("name", "")
+            position = job.get("position", "")
+            start = job.get("startDate", "")
+            end = job.get("endDate", "")
+            location = job.get("location", "")
+            summary = job.get("summary", "")
+            highlights = job.get("highlights", [])
+            url = job.get("url", "")
 
-        # Build description
-        desc_parts = []
-        if summary:
-            desc_parts.append(process_text(summary))
-        if highlights:
-            for highlight in highlights:
-                desc_parts.append(f"- {process_text(highlight)}")
+            date_range = format_date_range(start, end)
 
-        description = "\n".join(desc_parts) if desc_parts else ""
+            # Build description
+            desc_parts = []
+            if summary:
+                desc_parts.append(process_text(summary))
+            if highlights:
+                for highlight in highlights:
+                    desc_parts.append(f"- {process_text(highlight)}")
 
-        output += f'#cv-entry(\n'
-        output += f'  title: [{escape_typst(position)}],\n'
+            description = "\n".join(desc_parts) if desc_parts else ""
+
+            output += f'#cv-entry(\n'
+            output += f'  title: [{escape_typst(position)}],\n'
+            output += f'  society: ['
+            if url:
+                output += f'#link("{url}")[{escape_typst(company)}]'
+            else:
+                output += escape_typst(company)
+            output += '],\n'
+            output += f'  date: [{date_range}],\n'
+            output += f'  location: [{escape_typst(location)}],\n'
+            output += f'  description: [\n    {description}\n  ]\n'
+            output += ')\n\n'
+            continue
+
+        company = group["company"]
+        url = next((job.get("url", "") for job in jobs if job.get("url", "")), "")
+        locations = [job.get("location", "") for job in jobs if job.get("location", "")]
+        shared_location = locations[0] if locations and len(set(locations)) == 1 else ""
+
+        output += f'#cv-entry-start(\n'
         output += f'  society: ['
         if url:
             output += f'#link("{url}")[{escape_typst(company)}]'
         else:
             output += escape_typst(company)
         output += '],\n'
-        output += f'  date: [{date_range}],\n'
-        output += f'  location: [{escape_typst(location)}],\n'
-        output += f'  description: [\n    {description}\n  ]\n'
-        output += ')\n\n'
+        if shared_location:
+            output += f'  location: [{escape_typst(shared_location)}],\n'
+        output += ')\n#v(4pt)\n\n'
+
+        for job in jobs:
+            position = job.get("position", "")
+            start = job.get("startDate", "")
+            end = job.get("endDate", "")
+            summary = job.get("summary", "")
+            highlights = job.get("highlights", [])
+
+            date_range = format_date_range(start, end)
+
+            # Build description
+            desc_parts = []
+            if summary:
+                desc_parts.append(process_text(summary))
+            if highlights:
+                for highlight in highlights:
+                    desc_parts.append(f"- {process_text(highlight)}")
+
+            description = "\n".join(desc_parts) if desc_parts else ""
+
+            output += f'#cv-entry-continued(\n'
+            output += f'  title: [{escape_typst(position)}],\n'
+            output += f'  date: [{date_range}],\n'
+            output += f'  description: [\n    {description}\n  ]\n'
+            output += ')\n\n'
 
     return output
 
@@ -492,6 +543,7 @@ def render_projects(projects: List[Dict[str, Any]], project_type: str) -> str:
         full_description = "\n".join(desc_parts) if desc_parts else ""
 
         output += f'#cv-entry(\n'
+        output += f'  metadata: metadata_alt,\n'
         output += f'  title: ['
         if url:
             output += f'#link("{url}")[{process_text(name)}]'
@@ -645,6 +697,15 @@ def generate_typst_cv(resume_data: Dict[str, Any], base_output_dir: Path, assets
 
     # Add metadata
     output += generate_metadata(basics)
+    output += '''
+#let metadata_alt = metadata + (
+  layout: metadata.layout + (
+    entry: metadata.layout.entry + (
+      display_entry_society_first: false,
+    )
+  )
+)
+'''
     output += "\n"
 
     # Apply brilliant-cv template
