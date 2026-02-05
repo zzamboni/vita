@@ -16,6 +16,7 @@ import sys
 import urllib.request
 from datetime import datetime
 from pathlib import Path
+import shutil
 from typing import Any, Dict, List, Optional
 
 
@@ -114,6 +115,26 @@ def download_image(url: str, base_output_dir: Path, output_dir: Path) -> Optiona
         print(f"Warning: Failed to download {url}: {e}")
         return None
 
+
+def find_company_logo(name: str, base_output_dir: Path, assets_dir: Path,
+                      source_assets_dir: Path) -> Optional[str]:
+    """Find a local logo and ensure it exists under the output assets dir."""
+    if not name:
+        return None
+
+    source_logos_dir = source_assets_dir / "logos"
+    output_logos_dir = base_output_dir / assets_dir / "logos"
+    for ext in (".png", ".jpg", ".jpeg", ".svg", ".webp", ".gif"):
+        filename = f"{name}{ext}"
+        candidate = source_logos_dir / filename
+        if candidate.exists():
+            output_logos_dir.mkdir(parents=True, exist_ok=True)
+            dest = output_logos_dir / filename
+            if dest.resolve() != candidate.resolve():
+                shutil.copy2(candidate, dest)
+            return str(assets_dir / "logos" / filename)
+    return None
+
 def _personal_info_line(label, value):
     return f'      {label}: "{value}"'
 
@@ -196,7 +217,7 @@ def generate_metadata(basics: Dict[str, Any]) -> str:
     ),
 
     entry: (
-      display_logo: false,
+      display_logo: true,
       display_entry_society_first: true,
     ),
 
@@ -249,7 +270,8 @@ def render_summary(basics: Dict[str, Any]) -> str:
     return output
 
 
-def render_experience(work: List[Dict[str, Any]]) -> str:
+def render_experience(work: List[Dict[str, Any]], base_output_dir: Path, assets_dir: Path,
+                      source_assets_dir: Path) -> str:
     """Render work experience using brilliant-cv."""
     if not work:
         return ""
@@ -275,6 +297,7 @@ def render_experience(work: List[Dict[str, Any]]) -> str:
             summary = job.get("summary", "")
             highlights = job.get("highlights", [])
             url = job.get("url", "")
+            logo_path = find_company_logo(company, base_output_dir, assets_dir, source_assets_dir)
 
             date_range = format_date_range(start, end)
 
@@ -297,6 +320,8 @@ def render_experience(work: List[Dict[str, Any]]) -> str:
                 output += escape_typst(company)
             output += '],\n'
             output += f'  date: [{date_range}],\n'
+            if logo_path:
+                output += f'  logo: image("{logo_path}"),\n'
             output += f'  location: [{escape_typst(location)}],\n'
             output += f'  description: [\n    {description}\n  ]\n'
             output += ')\n\n'
@@ -304,6 +329,7 @@ def render_experience(work: List[Dict[str, Any]]) -> str:
 
         company = group["company"]
         url = next((job.get("url", "") for job in jobs if job.get("url", "")), "")
+        logo_path = find_company_logo(company, base_output_dir, assets_dir, source_assets_dir)
         locations = [job.get("location", "") for job in jobs if job.get("location", "")]
         shared_location = locations[0] if locations and len(set(locations)) == 1 else ""
 
@@ -314,6 +340,8 @@ def render_experience(work: List[Dict[str, Any]]) -> str:
         else:
             output += escape_typst(company)
         output += '],\n'
+        if logo_path:
+            output += f'  logo: image("{logo_path}"),\n'
         if shared_location:
             output += f'  location: [{escape_typst(shared_location)}],\n'
         output += ')\n#v(4pt)\n\n'
@@ -346,7 +374,8 @@ def render_experience(work: List[Dict[str, Any]]) -> str:
     return output
 
 
-def render_education(education: List[Dict[str, Any]]) -> str:
+def render_education(education: List[Dict[str, Any]], base_output_dir: Path, assets_dir: Path,
+                     source_assets_dir: Path) -> str:
     """Render education using brilliant-cv."""
     if not education:
         return ""
@@ -362,6 +391,7 @@ def render_education(education: List[Dict[str, Any]]) -> str:
         location = edu.get("location", "")
         summary = edu.get("summary", "")
         url = edu.get("url", "")
+        logo_path = find_company_logo(institution, base_output_dir, assets_dir, source_assets_dir)
 
         date_range = format_date_range(start, end)
 
@@ -380,6 +410,8 @@ def render_education(education: List[Dict[str, Any]]) -> str:
             output += escape_typst(institution)
         output += '],\n'
         output += f'  date: [{date_range}],\n'
+        if logo_path:
+            output += f'  logo: image("{logo_path}"),\n'
         output += f'  location: [{escape_typst(location)}],\n'
         output += f'  description: [{description}]\n'
         output += ')\n\n'
@@ -676,7 +708,8 @@ def render_references(references: List[Dict[str, Any]]) -> str:
     return output
 
 
-def generate_typst_cv(resume_data: Dict[str, Any], base_output_dir: Path, assets_dir: Path) -> str:
+def generate_typst_cv(resume_data: Dict[str, Any], base_output_dir: Path, assets_dir: Path,
+                      source_assets_dir: Path) -> str:
     """Generate Typst CV using brilliant-cv template."""
 
     basics = resume_data.get("basics", {})
@@ -725,8 +758,18 @@ def generate_typst_cv(resume_data: Dict[str, Any], base_output_dir: Path, assets
 
     # Add content sections
     output += render_summary(basics)
-    output += render_experience(resume_data.get("work", []))
-    output += render_education(resume_data.get("education", []))
+    output += render_experience(
+        resume_data.get("work", []),
+        base_output_dir,
+        assets_dir,
+        source_assets_dir,
+    )
+    output += render_education(
+        resume_data.get("education", []),
+        base_output_dir,
+        assets_dir,
+        source_assets_dir,
+    )
     output += render_skills(resume_data.get("skills", []))
     output += render_certificates(resume_data.get("certificates", []), base_output_dir, assets_dir)
     output += render_awards(resume_data.get("awards", []))
@@ -763,6 +806,7 @@ def main():
         resume_data = json.load(f)
 
     assets_dir = Path("assets")
+    source_assets_dir = Path("assets")
 
     if output_file:
         base_output_dir = output_file.parent
@@ -771,7 +815,12 @@ def main():
 
     assets_dir_full = base_output_dir / assets_dir
 
-    typst_content = generate_typst_cv(resume_data, base_output_dir, assets_dir)
+    typst_content = generate_typst_cv(
+        resume_data,
+        base_output_dir,
+        assets_dir,
+        source_assets_dir,
+    )
 
     if output_file:
         output_file.parent.mkdir(parents=True, exist_ok=True)
