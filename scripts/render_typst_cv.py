@@ -254,10 +254,8 @@ def generate_metadata(basics: Dict[str, Any]) -> str:
 
     header: (
       display_profile_photo: true,
-      display_profile_photo_small: false,
-      profile_photo_alignment: "right",
-      profile_photo_radius_pt: 50%,
-      info_row_font_size: 9pt,
+      profile_photo_radius_pt: "50%",
+      info_row_font_size: "8pt",
       header_align: "center"
     ),
 
@@ -268,7 +266,7 @@ def generate_metadata(basics: Dict[str, Any]) -> str:
 
     footer: (
       display_page_counter: true,
-      display_footer: false,
+      display_footer: true,
     ),
 
     fonts: (),
@@ -290,7 +288,7 @@ def generate_metadata(basics: Dict[str, Any]) -> str:
       activities: "Professional Activities",
       languages: "Languages",
       date_in_present: "Present",
-      cv_footer: "Curriculum Vitae",
+      cv_footer: [ Curriculum Vitae - #datetime.today().display() ],
       header_quote: "{escape_typst(label)}",
     ),
   ),
