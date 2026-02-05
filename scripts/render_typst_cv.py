@@ -65,6 +65,45 @@ def process_text(text: str) -> str:
     return convert_markdown_to_typst(text)
 
 
+PROJECT_SECTION_PREFIX = "projects:"
+
+DEFAULT_SECTIONS = [
+    "work",
+    "volunteer",
+    "education",
+    "projects",
+    "awards",
+    "certificates",
+    "publications",
+    "skills",
+    "languages",
+    "interests",
+    "references",
+]
+
+
+def normalize_label(label: str) -> str:
+    if not label:
+        return label
+    return label[0].upper() + label[1:]
+
+
+def get_theme_options(resume_data: Dict[str, Any]) -> Dict[str, Any]:
+    return resume_data.get("meta", {}).get("themeOptions", {}) if resume_data else {}
+
+
+def ordered_project_groups(projects: List[Dict[str, Any]]) -> List[tuple]:
+    groups = []
+    by_key: Dict[Any, List[Dict[str, Any]]] = {}
+    for project in projects:
+        key = project.get("type")
+        if key not in by_key:
+            by_key[key] = []
+            groups.append((key, by_key[key]))
+        by_key[key].append(project)
+    return groups
+
+
 def format_date(date_str: Optional[str]) -> str:
     """Format date string for display."""
     if not date_str:
@@ -255,7 +294,7 @@ def generate_metadata(basics: Dict[str, Any]) -> str:
     return metadata
 
 
-def render_summary(basics: Dict[str, Any]) -> str:
+def render_summary(basics: Dict[str, Any], label: str = "Summary") -> str:
     """Render professional summary."""
     summary = basics.get("summary", "")
     if not summary:
@@ -263,7 +302,7 @@ def render_summary(basics: Dict[str, Any]) -> str:
 
     paragraphs = [p.strip() for p in summary.split("\n\n") if p.strip()]
 
-    output = '#cv-section("Summary")\n\n'
+    output = f'#cv-section("{label}")\n\n'
     for para in paragraphs:
         output += f"{process_text(para)}\n\n"
 
@@ -271,12 +310,12 @@ def render_summary(basics: Dict[str, Any]) -> str:
 
 
 def render_experience(work: List[Dict[str, Any]], base_output_dir: Path, assets_dir: Path,
-                      source_assets_dir: Path) -> str:
+                      source_assets_dir: Path, label: str = "Work") -> str:
     """Render work experience using brilliant-cv."""
     if not work:
         return ""
 
-    output = '#cv-section("Professional Experience")\n\n'
+    output = f'#cv-section("{label}")\n\n'
 
     grouped_work: List[Dict[str, Any]] = []
     for job in work:
@@ -375,12 +414,12 @@ def render_experience(work: List[Dict[str, Any]], base_output_dir: Path, assets_
 
 
 def render_education(education: List[Dict[str, Any]], base_output_dir: Path, assets_dir: Path,
-                     source_assets_dir: Path) -> str:
+                     source_assets_dir: Path, label: str = "Education") -> str:
     """Render education using brilliant-cv."""
     if not education:
         return ""
 
-    output = '#cv-section("Education")\n\n'
+    output = f'#cv-section("{label}")\n\n'
 
     for edu in education:
         institution = edu.get("institution", "")
@@ -419,12 +458,12 @@ def render_education(education: List[Dict[str, Any]], base_output_dir: Path, ass
     return output
 
 
-def render_skills(skills: List[Dict[str, Any]]) -> str:
+def render_skills(skills: List[Dict[str, Any]], label: str = "Skills") -> str:
     """Render skills using brilliant-cv."""
     if not skills:
         return ""
 
-    output = '#cv-section("Skills")\n\n'
+    output = f'#cv-section("{label}")\n\n'
 
     for skill_group in skills:
         name = skill_group.get("name", "")
@@ -439,12 +478,12 @@ def render_skills(skills: List[Dict[str, Any]]) -> str:
     return output
 
 
-def render_certificates(certificates: List[Dict[str, Any]], base_output_dir: Path, assets_dir: Path) -> str:
+def render_certificates(certificates: List[Dict[str, Any]], base_output_dir: Path, assets_dir: Path, label: str = "Certificates") -> str:
     """Render certificates using brilliant-cv."""
     if not certificates:
         return ""
 
-    output = '#cv-section("Certifications")\n\n'
+    output = f'#cv-section("{label}")\n\n'
 
     for cert in certificates:
         name = cert.get("name", "")
@@ -495,12 +534,12 @@ def render_certificates(certificates: List[Dict[str, Any]], base_output_dir: Pat
     return output
 
 
-def render_awards(awards: List[Dict[str, Any]]) -> str:
+def render_awards(awards: List[Dict[str, Any]], label: str = "Awards") -> str:
     """Render awards using brilliant-cv."""
     if not awards:
         return ""
 
-    output = '#cv-section("Awards")\n\n'
+    output = f'#cv-section("{label}")\n\n'
 
     for award in awards:
         title = award.get("title", "")
@@ -526,26 +565,14 @@ def render_awards(awards: List[Dict[str, Any]]) -> str:
     return output
 
 
-def render_projects(projects: List[Dict[str, Any]], project_type: str) -> str:
+def render_projects(projects: List[Dict[str, Any]], label: str = "Projects") -> str:
     """Render projects using brilliant-cv."""
-    filtered = [p for p in projects if p.get("type") == project_type]
-
-    if not filtered:
+    if not projects:
         return ""
 
-    type_titles = {
-        "Research": "Research Projects",
-        "Software": "Software Projects",
-        "Professional Highlights": "Professional Highlights",
-        "Program Committees and Boards": "Program Committees & Editorial Boards",
-        "Advising": "Student Advising",
-        "Teaching": "Teaching Experience"
-    }
+    output = f'#cv-section("{label}")\n\n'
 
-    title = type_titles.get(project_type, project_type)
-    output = f'#cv-section("{title}")\n\n'
-
-    for project in filtered:
+    for project in projects:
         name = project.get("name", "")
         description = project.get("description", "")
         entity = project.get("entity", "")
@@ -555,7 +582,7 @@ def render_projects(projects: List[Dict[str, Any]], project_type: str) -> str:
         url = project.get("url", "")
         roles = project.get("roles", [])
 
-        if project_type == "Research" and not name:
+        if not name:
             if description:
                 output += f"_{process_text(description)}_\n\n"
             continue
@@ -591,12 +618,12 @@ def render_projects(projects: List[Dict[str, Any]], project_type: str) -> str:
     return output
 
 
-def render_volunteer(volunteer: List[Dict[str, Any]]) -> str:
+def render_volunteer(volunteer: List[Dict[str, Any]], label: str = "Volunteer") -> str:
     """Render volunteer activities using brilliant-cv."""
     if not volunteer:
         return ""
 
-    output = '#cv-section("Professional Activities")\n\n'
+    output = f'#cv-section("{label}")\n\n'
 
     for vol in volunteer:
         org = vol.get("organization", "")
@@ -623,12 +650,12 @@ def render_volunteer(volunteer: List[Dict[str, Any]]) -> str:
     return output
 
 
-def render_publications(publications: List[Dict[str, Any]]) -> str:
+def render_publications(publications: List[Dict[str, Any]], label: str = "Publications") -> str:
     """Render publications using brilliant-cv."""
     if not publications:
         return ""
 
-    output = '#cv-section("Publications")\n\n'
+    output = f'#cv-section("{label}")\n\n'
 
     for pub in publications:
         name = pub.get("name", "")
@@ -655,12 +682,12 @@ def render_publications(publications: List[Dict[str, Any]]) -> str:
     return output
 
 
-def render_languages(languages: List[Dict[str, Any]]) -> str:
+def render_languages(languages: List[Dict[str, Any]], label: str = "Languages") -> str:
     """Render languages using brilliant-cv."""
     if not languages:
         return ""
 
-    output = '#cv-section("Languages")\n\n'
+    output = f'#cv-section("{label}")\n\n'
 
     for lang in languages:
         language = lang.get("language", "")
@@ -672,12 +699,12 @@ def render_languages(languages: List[Dict[str, Any]]) -> str:
     return output
 
 
-def render_interests(interests: List[Dict[str, Any]]) -> str:
+def render_interests(interests: List[Dict[str, Any]], label: str = "Interests") -> str:
     """Render interests using brilliant-cv."""
     if not interests:
         return ""
 
-    output = '#cv-section("Interests")\n\n'
+    output = f'#cv-section("{label}")\n\n'
 
     for interest in interests:
         name = interest.get("name", "")
@@ -688,12 +715,12 @@ def render_interests(interests: List[Dict[str, Any]]) -> str:
     return output
 
 
-def render_references(references: List[Dict[str, Any]]) -> str:
+def render_references(references: List[Dict[str, Any]], label: str = "References") -> str:
     """Render references."""
     if not references:
         return ""
 
-    output = '#cv-section("References")\n\n'
+    output = f'#cv-section("{label}")\n\n'
 
     for ref in references:
         name = ref.get("name", "")
@@ -707,6 +734,112 @@ def render_references(references: List[Dict[str, Any]]) -> str:
 
     return output
 
+
+def render_sections(resume_data: Dict[str, Any], base_output_dir: Path, assets_dir: Path,
+                    source_assets_dir: Path) -> str:
+    """Render resume sections in the desired order."""
+    theme_options = get_theme_options(resume_data)
+    sections = theme_options.get("sections")
+    sections_is_default = not isinstance(sections, list) or not sections
+    if sections_is_default:
+        sections = DEFAULT_SECTIONS
+
+    section_labels = theme_options.get("sectionLabels", {})
+    projects_by_type = bool(theme_options.get("projectsByType"))
+    projects = resume_data.get("projects", [])
+    has_project_overrides = (not sections_is_default) and any(
+        isinstance(section, str) and (section == "projects" or section.startswith(PROJECT_SECTION_PREFIX))
+        for section in sections
+    )
+
+    def label_for(key: str, fallback: str) -> str:
+        return normalize_label(section_labels.get(key, fallback))
+
+    output = ""
+    for section in sections:
+        if section == "work":
+            output += render_experience(
+                resume_data.get("work", []),
+                base_output_dir,
+                assets_dir,
+                source_assets_dir,
+                label=label_for("work", "Work"),
+            )
+            continue
+        if section == "volunteer":
+            output += render_volunteer(resume_data.get("volunteer", []), label=label_for("volunteer", "Volunteer"))
+            continue
+        if section == "education":
+            output += render_education(
+                resume_data.get("education", []),
+                base_output_dir,
+                assets_dir,
+                source_assets_dir,
+                label=label_for("education", "Education"),
+            )
+            continue
+        if section == "projects":
+            if projects_by_type and sections_is_default:
+                for type_key, items in ordered_project_groups(projects):
+                    if not items:
+                        continue
+                    if type_key is None:
+                        output += render_projects(items, label_for("projects", "Projects"))
+                    else:
+                        label_key = f"{PROJECT_SECTION_PREFIX}{type_key}"
+                        output += render_projects(items, label_for(label_key, str(type_key)))
+                continue
+
+            if projects_by_type and has_project_overrides:
+                typeless = [p for p in projects if not p.get("type")]
+                if typeless:
+                    output += render_projects(typeless, label_for("projects", "Projects"))
+                continue
+
+            output += render_projects(projects, label_for("projects", "Projects"))
+            continue
+        if isinstance(section, str) and section.startswith(PROJECT_SECTION_PREFIX):
+            if not projects_by_type:
+                continue
+            type_key = section[len(PROJECT_SECTION_PREFIX):].strip()
+            if not type_key:
+                continue
+            items = [p for p in projects if p.get("type") == type_key]
+            if not items:
+                continue
+            output += render_projects(items, label_for(section, type_key))
+            continue
+        if section == "awards":
+            output += render_awards(resume_data.get("awards", []), label=label_for("awards", "Awards"))
+            continue
+        if section == "certificates":
+            output += render_certificates(
+                resume_data.get("certificates", []),
+                base_output_dir,
+                assets_dir,
+                label=label_for("certificates", "Certificates"),
+            )
+            continue
+        if section == "publications":
+            output += render_publications(
+                resume_data.get("publications", []),
+                label=label_for("publications", "Publications"),
+            )
+            continue
+        if section == "skills":
+            output += render_skills(resume_data.get("skills", []), label=label_for("skills", "Skills"))
+            continue
+        if section == "languages":
+            output += render_languages(resume_data.get("languages", []), label=label_for("languages", "Languages"))
+            continue
+        if section == "interests":
+            output += render_interests(resume_data.get("interests", []), label=label_for("interests", "Interests"))
+            continue
+        if section == "references":
+            output += render_references(resume_data.get("references", []), label=label_for("references", "References"))
+            continue
+
+    return output
 
 def generate_typst_cv(resume_data: Dict[str, Any], base_output_dir: Path, assets_dir: Path,
                       source_assets_dir: Path) -> str:
@@ -758,33 +891,7 @@ def generate_typst_cv(resume_data: Dict[str, Any], base_output_dir: Path, assets
 
     # Add content sections
     output += render_summary(basics)
-    output += render_experience(
-        resume_data.get("work", []),
-        base_output_dir,
-        assets_dir,
-        source_assets_dir,
-    )
-    output += render_education(
-        resume_data.get("education", []),
-        base_output_dir,
-        assets_dir,
-        source_assets_dir,
-    )
-    output += render_skills(resume_data.get("skills", []))
-    output += render_certificates(resume_data.get("certificates", []), base_output_dir, assets_dir)
-    output += render_awards(resume_data.get("awards", []))
-
-    # Projects sections
-    projects = resume_data.get("projects", [])
-    for project_type in ["Professional Highlights", "Research", "Software",
-                         "Program Committees and Boards", "Advising", "Teaching"]:
-        output += render_projects(projects, project_type)
-
-    output += render_volunteer(resume_data.get("volunteer", []))
-    output += render_publications(resume_data.get("publications", []))
-    output += render_languages(resume_data.get("languages", []))
-    output += render_interests(resume_data.get("interests", []))
-    output += render_references(resume_data.get("references", []))
+    output += render_sections(resume_data, base_output_dir, assets_dir, source_assets_dir)
 
     return output
 
