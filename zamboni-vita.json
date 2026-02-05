@@ -8,8 +8,7 @@
         "url": "https://zzamboni.org",
         "summary": "I am a senior computer scientist, computer security expert, IT architect, organization and team leader with 30 years of professional experience, and much longer of being fascinated and passionate about science, computing and education. I specialize in the areas of Computer Security, Cloud Computing, Self-healing Systems and Configuration Management.\n\nI possess a strong combination of leadership, conceptual and technical skills that enable me to help organizations and teams reach their goals. I have excellent communication abilities, with ample experience in writing, teaching and public speaking. I can interact and work fluently at the strategic, tactical and technical levels. I have a Ph.D. in Computer Science and have extensive experience in both academic and business environments.",
         "location": {
-            "city": "Zurich",
-            "countryCode": "CH"
+            "city": "Swiss residence permit C"
         },
         "profiles": [
             {
@@ -117,8 +116,9 @@
             "summary": "Managed a team of three people and led the *Orchard* project through its implementation, production release and further improvements and development."
         },
         {
-            "name": "Swisscom Cloud Lab",
-            "position": "Senior Platform Architect",
+            "name": "Swisscom",
+            "url": "https://swisscom.com/",
+            "position": "Cloud Lab Senior Platform Architect",
             "startDate": "2014-08-01",
             "endDate": "2015-07-31",
             "location": "U.S.A. (remote)",
@@ -165,6 +165,7 @@
         },
         {
             "name": "HP Enterprise Services",
+            "url": "https://hp.com/",
             "position": "Account Security Officer",
             "startDate": "2010-10-01",
             "endDate": "2011-10-01",
@@ -178,6 +179,7 @@
         },
         {
             "name": "HP Enterprise Services",
+            "url": "https://hp.com/",
             "position": "IT Outsourcing Service Delivery Consultant",
             "startDate": "2009-11-01",
             "endDate": "2010-10-01",
@@ -189,6 +191,7 @@
         },
         {
             "name": "IBM Zurich Research Lab",
+            "url": "https://research.ibm.com/labs/zurich",
             "position": "Research Staff Member",
             "startDate": "2001-10-01",
             "endDate": "2009-10-01",
@@ -197,6 +200,7 @@
         },
         {
             "name": "Sun Microsystems",
+            "url": "https://en.wikipedia.org/wiki/Sun_Microsystems",
             "position": "Developer (Intern)",
             "startDate": "1997-05-01",
             "endDate": "1997-08-01",
@@ -208,6 +212,7 @@
         },
         {
             "name": "National Autonomous University of Mexico (UNAM)",
+            "url": "https://www.unam.mx/",
             "position": "Founder and lead of Computer Security Area",
             "startDate": "1995-08-01",
             "endDate": "1996-08-01",
@@ -223,6 +228,7 @@
         },
         {
             "name": "National Autonomous University of Mexico (UNAM)",
+            "url": "https://www.unam.mx/",
             "position": "System Administrator",
             "startDate": "1991-11-01",
             "endDate": "1995-08-01",
