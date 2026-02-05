@@ -19,6 +19,12 @@ from pathlib import Path
 import shutil
 from typing import Any, Dict, List, Optional
 
+# Config parameters
+
+# Whether to highlight some letters in #cv-section titles
+HIGHLIGHTED_TITLES = "false"
+# How many letters to highlight, only meaningful if above is true
+HIGHLIGHTED_LETTERS = "3"
 
 def convert_markdown_to_typst(text: str) -> str:
     """Convert Markdown formatting to Typst markup."""
@@ -302,7 +308,10 @@ def render_summary(basics: Dict[str, Any], label: str = "Summary") -> str:
 
     paragraphs = [p.strip() for p in summary.split("\n\n") if p.strip()]
 
-    output = f'#cv-section("{label}")\n\n'
+    output = (
+        f'#cv-section("{label}", highlighted: {HIGHLIGHTED_TITLES}, '
+        f'letters: {HIGHLIGHTED_LETTERS})\n\n'
+    )
     for para in paragraphs:
         output += f"{process_text(para)}\n\n"
 
@@ -315,7 +324,10 @@ def render_experience(work: List[Dict[str, Any]], base_output_dir: Path, assets_
     if not work:
         return ""
 
-    output = f'#cv-section("{label}")\n\n'
+    output = (
+        f'#cv-section("{label}", highlighted: {HIGHLIGHTED_TITLES}, '
+        f'letters: {HIGHLIGHTED_LETTERS})\n\n'
+    )
 
     grouped_work: List[Dict[str, Any]] = []
     for job in work:
@@ -419,7 +431,10 @@ def render_education(education: List[Dict[str, Any]], base_output_dir: Path, ass
     if not education:
         return ""
 
-    output = f'#cv-section("{label}")\n\n'
+    output = (
+        f'#cv-section("{label}", highlighted: {HIGHLIGHTED_TITLES}, '
+        f'letters: {HIGHLIGHTED_LETTERS})\n\n'
+    )
 
     for edu in education:
         institution = edu.get("institution", "")
@@ -463,7 +478,10 @@ def render_skills(skills: List[Dict[str, Any]], label: str = "Skills") -> str:
     if not skills:
         return ""
 
-    output = f'#cv-section("{label}")\n\n'
+    output = (
+        f'#cv-section("{label}", highlighted: {HIGHLIGHTED_TITLES}, '
+        f'letters: {HIGHLIGHTED_LETTERS})\n\n'
+    )
 
     for skill_group in skills:
         name = skill_group.get("name", "")
@@ -483,7 +501,10 @@ def render_certificates(certificates: List[Dict[str, Any]], base_output_dir: Pat
     if not certificates:
         return ""
 
-    output = f'#cv-section("{label}")\n\n'
+    output = (
+        f'#cv-section("{label}", highlighted: {HIGHLIGHTED_TITLES}, '
+        f'letters: {HIGHLIGHTED_LETTERS})\n\n'
+    )
 
     for cert in certificates:
         name = cert.get("name", "")
@@ -539,7 +560,10 @@ def render_awards(awards: List[Dict[str, Any]], label: str = "Awards") -> str:
     if not awards:
         return ""
 
-    output = f'#cv-section("{label}")\n\n'
+    output = (
+        f'#cv-section("{label}", highlighted: {HIGHLIGHTED_TITLES}, '
+        f'letters: {HIGHLIGHTED_LETTERS})\n\n'
+    )
 
     for award in awards:
         title = award.get("title", "")
@@ -570,7 +594,10 @@ def render_projects(projects: List[Dict[str, Any]], label: str = "Projects") -> 
     if not projects:
         return ""
 
-    output = f'#cv-section("{label}")\n\n'
+    output = (
+        f'#cv-section("{label}", highlighted: {HIGHLIGHTED_TITLES}, '
+        f'letters: {HIGHLIGHTED_LETTERS})\n\n'
+    )
 
     for project in projects:
         name = project.get("name", "")
@@ -623,7 +650,10 @@ def render_volunteer(volunteer: List[Dict[str, Any]], label: str = "Volunteer") 
     if not volunteer:
         return ""
 
-    output = f'#cv-section("{label}")\n\n'
+    output = (
+        f'#cv-section("{label}", highlighted: {HIGHLIGHTED_TITLES}, '
+        f'letters: {HIGHLIGHTED_LETTERS})\n\n'
+    )
 
     for vol in volunteer:
         org = vol.get("organization", "")
@@ -655,7 +685,10 @@ def render_publications(publications: List[Dict[str, Any]], label: str = "Public
     if not publications:
         return ""
 
-    output = f'#cv-section("{label}")\n\n'
+    output = (
+        f'#cv-section("{label}", highlighted: {HIGHLIGHTED_TITLES}, '
+        f'letters: {HIGHLIGHTED_LETTERS})\n\n'
+    )
 
     for pub in publications:
         name = pub.get("name", "")
@@ -687,7 +720,10 @@ def render_languages(languages: List[Dict[str, Any]], label: str = "Languages") 
     if not languages:
         return ""
 
-    output = f'#cv-section("{label}")\n\n'
+    output = (
+        f'#cv-section("{label}", highlighted: {HIGHLIGHTED_TITLES}, '
+        f'letters: {HIGHLIGHTED_LETTERS})\n\n'
+    )
 
     for lang in languages:
         language = lang.get("language", "")
@@ -704,7 +740,10 @@ def render_interests(interests: List[Dict[str, Any]], label: str = "Interests") 
     if not interests:
         return ""
 
-    output = f'#cv-section("{label}")\n\n'
+    output = (
+        f'#cv-section("{label}", highlighted: {HIGHLIGHTED_TITLES}, '
+        f'letters: {HIGHLIGHTED_LETTERS})\n\n'
+    )
 
     for interest in interests:
         name = interest.get("name", "")
@@ -720,7 +759,10 @@ def render_references(references: List[Dict[str, Any]], label: str = "References
     if not references:
         return ""
 
-    output = f'#cv-section("{label}")\n\n'
+    output = (
+        f'#cv-section("{label}", highlighted: {HIGHLIGHTED_TITLES}, '
+        f'letters: {HIGHLIGHTED_LETTERS})\n\n'
+    )
 
     for ref in references:
         name = ref.get("name", "")
