@@ -534,8 +534,8 @@
             ]
         },
         {
-            "name": "Using internal sensors and embedded detectors for intrusion detection",
-            "type": "Ph.D. Thesis",
+            "name": "Ph.D. Thesis: Using internal sensors and embedded detectors for intrusion detection",
+            "type": "Research",
             "entity": "Purdue University",
             "url": "https://zzamboni.org/cerias/zamboni/thesis/",
             "startDate": "1996",
@@ -605,88 +605,67 @@
             ]
         },
         {
-            "name": "Computers & Security Journal",
-            "entity": "Elsevier",
+            "name": "Editorial Board Member",
+            "entity": "Computers & Security Journal, Elsevier",
             "type": "Program Committees and Boards",
             "url": "https://www.sciencedirect.com/journal/computers-and-security",
             "startDate": "2011",
-            "endDate": "2013",
-            "roles": [
-                "Editorial Board Member"
-            ]
+            "endDate": "2013"
         },
         {
-            "name": "Intl. Symposium on Recent Advances in Intrusion Detection (RAID)",
+            "name": "Program Committee (2001-2005), Program Chair (2006), Steering Committee (2007-2017)",
+            "entity": "Intl. Symposium on Recent Advances in Intrusion Detection (RAID)",
             "type": "Program Committees and Boards",
             "url": "https://dblp.org/db/conf/raid/index.html",
             "startDate": "2001",
-            "endDate": "2017",
-            "roles": [
-                "Program Committee member (2001&ndash;2005)",
-                "Program Chair for RAID'06 (2006)",
-                "Steering Committee member (2007&ndash;2017)"
-            ]
+            "endDate": "2017"
         },
         {
-            "name": "IBM Academy of Technology Security and Privacy Symposium",
+            "name": "Program co-chair",
+            "entity": "IBM Academy of Technology Security and Privacy Symposium (internal IBM event)",
             "type": "Program Committees and Boards",
             "startDate": "2009-06-23",
-            "endDate": "2009-06-25",
-            "roles": [
-                "Program Co-chair"
-            ],
-            "entity": "IBM (Internal event)"
+            "endDate": "2009-06-25"
         },
         {
-            "name": "ZISC Workshop on Security in Virtualized Environments and Cloud Computing",
+            "name": "Program Chair",
+            "entity": "[ZISC](https://zisc.ethz.ch/) Workshop on Security in Virtualized Environments and Cloud Computing",
             "type": "Program Committees and Boards",
             "url": "https://www.video.ethz.ch/conferences/2009/zisc.html",
             "startDate": "2009-09-10",
-            "endDate": "2009-09-10",
-            "roles": [
-                "Program Chair"
-            ],
-            "entity": "[Zurich Information Security and Privacy Center (ZISC)](https://zisc.ethz.ch/)"
+            "endDate": "2009-09-10"
         },
         {
-            "name": "Detection of Intrusions and Malware & Vulnerability Assessment (DIMVA) 2008",
+            "name": "Program Chair",
+            "entity": "Detection of Intrusions and Malware & Vulnerability Assessment (DIMVA)",
             "type": "Program Committees and Boards",
             "url": "https://www.dimva.org/dimva2008/",
             "startDate": "2008-07-10",
-            "endDate": "2008-07-11",
-            "roles": [
-                "Program Chair"
-            ]
+            "endDate": "2008-07-11"
         },
         {
-            "name": "IEEE Security and Privacy Symposium",
+            "name": "Program Committee Member",
+            "entity": "IEEE Security and Privacy Symposium",
             "type": "Program Committees and Boards",
             "url": "http://www.ieee-security.org/TC/SP-Index.html",
             "startDate": "2007-05-20",
-            "endDate": "2007-05-23",
-            "roles": [
-                "Program Committee Member"
-            ]
+            "endDate": "2007-05-23"
         },
         {
-            "name": "Annual Computer Security Applications Conference (ACSAC)",
+            "name": "Program Committee Member",
+            "entity": "Annual Computer Security Applications Conference (ACSAC)",
             "type": "Program Committees and Boards",
             "url": "http://www.acsac.org/",
             "startDate": "2003",
-            "endDate": "2007",
-            "roles": [
-                "Program Committee Member"
-            ]
+            "endDate": "2007"
         },
         {
-            "name": "Computer Security Day Conference",
+            "name": "Founder and Program Committee Member",
+            "entity": "Computer Security Day Conference",
             "type": "Program Committees and Boards",
             "url": "https://www.disc.unam.mx/",
             "startDate": "1994",
-            "endDate": "2000",
-            "roles": [
-                "Founder and Program Committee Member (1994&ndash;2000)"
-            ]
+            "endDate": "2000"
         },
         {
             "name": "Open-source software projects",
@@ -713,70 +692,65 @@
             "description": "A system of sensors for intrusion detection developed in OpenBSD through code instrumentation. Developed as part of my Ph.D. thesis work."
         },
         {
-            "name": "Urko Zurutuza Ortega",
+            "name": "Urko Zurutuza Ortega (Mondragon University, Spain)",
             "type": "Advising",
             "roles": [
                 "Ph.D. co-advisor"
             ],
             "entity": "IBM Research",
             "highlights": [
-                "Student from Mondragon University, Spain.",
                 "Thesis: [Data Mining Approaches for Analysis of Worm Activity Towards Automatic Signature Generation](https://dialnet.unirioja.es/servlet/tesis?codigo=20012)"
             ],
             "startDate": "2005-01-01",
             "endDate": "2008-12-31"
         },
         {
-            "name": "Milton Yates",
+            "name": "Milton Yates (ENST Bretagne, France)",
             "type": "Advising",
             "roles": [
                 "External Diploma Thesis advisor"
             ],
             "entity": "IBM Research",
             "highlights": [
-                "Student from ENST Bretagne, France",
                 "Thesis: [The Router-based Billy Goat Project](https://www.usenix.org/conference/sruti-07/boundary-detection-and-containment-local-worm-infections)"
             ],
             "startDate": "2005-01-01",
             "endDate": "2005-12-31"
         },
         {
-            "name": "Candid Wüest",
+            "name": "Candid Wüest (ETH Zurich, Switzerland)",
             "type": "Advising",
             "roles": [
                 "Diploma Thesis advisor"
             ],
             "entity": "IBM Research",
             "highlights": [
-                "Student from ETH Zurich, Switzerland",
                 "Thesis: [Desktop Firewalls and Intrusion Detection](https://pub.tik.ee.ethz.ch/students/2002-2003-Wi/DA-2003-22.pdf)"
             ],
             "startDate": "2002-01-01",
             "endDate": "2003-12-31"
         },
         {
-            "name": "Daniele Sgandurra",
+            "name": "Daniele Sgandurra (University of Pisa, Italy)",
             "type": "Advising",
             "roles": [
                 "Internship advisor"
             ],
             "entity": "IBM Research",
             "highlights": [
-                "Student from University of Pisa, Italy.",
                 "Project: Design and implementation of process injection using virtual machine introspection."
             ],
             "startDate": "2009-01-01",
             "endDate": "2009-12-31"
         },
         {
-            "name": "Martin Carbone",
+            "name": "Martin Carbone (Georgia Institute of Technology, U.S.A.)",
             "type": "Advising",
             "roles": [
                 "Internship advisor"
             ],
             "entity": "IBM Research",
             "highlights": [
-                "Student from Georgia Institute of Technology, U.S.A.",
                 "Project: Implementation of a proof of concept Hyperjacking attack on Intel platform."
             ],
             "startDate": "2007-01-01",
@@ -861,9 +835,8 @@
     ],
     "publications": [
         {
-            "name": "Full publications list",
+            "name": "Full list online",
             "url": "publications.html",
-            "summary": "Complete list of publications, patents, talks, and theses.",
             "authors": [
                 "Diego Zamboni"
             ]
@@ -871,8 +844,7 @@
     ],
     "references": [
         {
-            "name": "",
-            "reference": "Available upon request"
+            "reference": "Available by request"
         }
     ],
     "meta": {
@@ -880,7 +852,35 @@
         "themeOptions": {
             "icons": "fontawesome",
             "projectsByType": true,
-            "showTableOfContents": true
+            "showTableOfContents": true,
+            "sections": [
+                "skills",
+                "projects:Professional Highlights",
+                "work",
+                "education",
+                "certificates",
+                "projects:Research",
+                "projects:Software",
+                "awards",
+                "projects:Program Committees and Boards",
+                "projects:Advising",
+                "projects:Teaching",
+                "projects",
+                "volunteer",
+                "publications",
+                "languages",
+                "interests",
+                "references"
+            ],
+            "sectionLabels": {
+                "work": "Experience",
+                "skills": "Key skills",
+                "certificates": "Certifications",
+                "awards": "Honors & Awards",
+                "publications": "Publications, Talks & Intellectual Property",
+                "volunteer": "Other Professional Activities",
+                "projects:Advising": "Student Advising"
+            }
         }
     }
 }
