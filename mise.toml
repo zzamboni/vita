@@ -125,7 +125,6 @@ scripts/build_pubs.sh 0 "{{vars.pubs_html_prod}}" "{{vars.pubs_script}}"
 '''
 
 # Generate Typst CV from JSON Resume format.
-
 [tasks.render-typst-dev]
 description = "Render Typst CV from JSON (dev)"
 sources = ["{{vars.cv_json}}", "{{vars.typst_script}}", "mise.toml"]
@@ -137,7 +136,6 @@ python "{{vars.typst_script}}" "{{vars.cv_json}}" "{{vars.cv_typst_dev}}"
 '''
 
 # Compile Typst CV to PDF.
-
 [tasks.compile-typst-dev]
 description = "Compile Typst CV to PDF (dev)"
 depends = ["render-typst-dev"]
@@ -149,8 +147,18 @@ set -euxo pipefail
 typst compile "{{vars.cv_typst_dev}}" "{{vars.cv_pdf_dev}}"
 '''
 
+# Manual Typst loop: compile the existing .typ without re-rendering JSON.
+[tasks.compile-typst-dev-manual]
+description = "Compile existing Typst CV to PDF (dev, manual edits)"
+sources = ["{{vars.cv_typst_dev}}", "{{vars.output_dir_dev}}/assets/**/*"]
+outputs = ["{{vars.cv_pdf_dev}}"]
+run = '''
+#!/usr/bin/env bash
+set -euxo pipefail
+typst compile "{{vars.cv_typst_dev}}" "{{vars.cv_pdf_dev}}"
+'''
+  
 # Build both Typst outputs (typ + PDF).
-
 [tasks.typst-dev]
 description = "Build Typst CV (typ + PDF)"
 depends = ["compile-typst-dev"]
@@ -300,13 +308,18 @@ trap cleanup EXIT INT TERM
 
 sleep 0.3
 
-echo "→ Opening pages"
-xdg-open "{{vars.cv_url}}" >/dev/null 2>&1 || true
-xdg-open "{{vars.pubs_url}}" >/dev/null 2>&1 || true
-xdg-open "{{vars.typst_pdf}}" >/dev/null 2>&1 || true
-
 echo "→ Watching for changes (build-dev)"
-mise watch build-dev --no-vcs-ignore
+# Manual watcher: rebuild PDF when you edit the .typ by hand in build/.
+watchexec -w "{{vars.cv_typst_dev}}" --no-vcs-ignore -- mise run compile-typst-dev-manual >/dev/null 2>&1 &
+manual_pid=$!
+
+cleanup() {
+  kill "$server_pid" >/dev/null 2>&1 || true
+  kill "$manual_pid" >/dev/null 2>&1 || true
+}
+trap cleanup EXIT INT TERM
+
+mise watch build-dev
 '''
 
 # One-command prod loop:
