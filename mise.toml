@@ -29,22 +29,30 @@ output_dir_dev  = "{{vars.output_dir_base}}/dev"
 output_dir_prod = "{{vars.output_dir_base}}/prod"
 
 # Output files (dev/prod)
-cv_html_dev   = "{{vars.output_dir_dev}}/vita.html"
-cv_typst_dev  = "{{vars.output_dir_dev}}/{{vars.typst_output}}"
-cv_pdf_dev    = "{{vars.output_dir_dev}}/{{vars.typst_pdf}}"
+cv_html_dev   = "{{vars.output_dir_dev}}/vita/index.html"
+cv_typst_dev  = "{{vars.output_dir_dev}}/vita/{{vars.typst_output}}"
+cv_pdf_dev    = "{{vars.output_dir_dev}}/vita/{{vars.typst_pdf}}"
 
-cv_html_prod  = "{{vars.output_dir_prod}}/vita.html"
-cv_typst_prod = "{{vars.output_dir_prod}}/{{vars.typst_output}}"
-cv_pdf_prod   = "{{vars.output_dir_prod}}/{{vars.typst_pdf}}"
+cv_html_prod  = "{{vars.output_dir_prod}}/vita/index.html"
+cv_typst_prod = "{{vars.output_dir_prod}}/vita/{{vars.typst_output}}"
+cv_pdf_prod   = "{{vars.output_dir_prod}}/vita/{{vars.typst_pdf}}"
 
-pubs_html_dev  = "{{vars.output_dir_dev}}/publications.html"
-pubs_html_prod = "{{vars.output_dir_prod}}/publications.html"
+pubs_html_dev  = "{{vars.output_dir_dev}}/vita/publications/index.html"
+pubs_html_prod = "{{vars.output_dir_prod}}/vita/publications/index.html"
+
+# Publications downloads
+pubs_bib_src  = "src/zamboni-pubs.bib"
+pubs_pdf_src  = "src/zamboni-pubs.pdf"
+pubs_bib_dev  = "{{vars.output_dir_dev}}/vita/publications/zamboni-pubs.bib"
+pubs_pdf_dev  = "{{vars.output_dir_dev}}/vita/publications/zamboni-pubs.pdf"
+pubs_bib_prod = "{{vars.output_dir_prod}}/vita/publications/zamboni-pubs.bib"
+pubs_pdf_prod = "{{vars.output_dir_prod}}/vita/publications/zamboni-pubs.pdf"
 
 # Local dev server settings (used for polling-based auto-reload)
 port = "8008"
 base_url = "http://localhost:{{vars.port}}"
-cv_url = "{{vars.base_url}}/vita.html"
-pubs_url = "{{vars.base_url}}/publications.html"
+cv_url = "{{vars.base_url}}/vita/"
+pubs_url = "{{vars.base_url}}/vita/publications/"
 
 
 # Install dependencies
@@ -111,7 +119,8 @@ outputs = ["{{vars.pubs_html_dev}}"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
-scripts/build_pubs.sh 1 "{{vars.pubs_html_dev}}" "{{vars.pubs_script}}"
+PUBS_LINKS='[{"name":"PDF","url":"/vita/publications/zamboni-pubs.pdf","icon":"file-pdf"},{"name":"BibTeX","url":"/vita/publications/zamboni-pubs.bib","icon":"fa-tex"}]' \
+  scripts/build_pubs.sh 1 "{{vars.pubs_html_dev}}" "{{vars.pubs_script}}"
 '''
 
 [tasks.pubs-prod]
@@ -121,7 +130,37 @@ outputs = ["{{vars.pubs_html_prod}}"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
-scripts/build_pubs.sh 0 "{{vars.pubs_html_prod}}" "{{vars.pubs_script}}"
+PUBS_LINKS='[{"name":"BibTeX","url":"/vita/publications/zamboni-pubs.bib","icon":"book"},{"name":"PDF","url":"/vita/publications/zamboni-pubs.pdf","icon":"file-pdf"}]' \
+  scripts/build_pubs.sh 0 "{{vars.pubs_html_prod}}" "{{vars.pubs_script}}"
+'''
+
+# Copy publications downloads into output layout.
+[tasks.pubs-assets-dev]
+description = "Copy publications downloads (dev)"
+sources = ["{{vars.pubs_bib_src}}", "mise.toml"]
+outputs = ["{{vars.pubs_bib_dev}}"]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+mkdir -p "$(dirname "{{vars.pubs_bib_dev}}")"
+cp "{{vars.pubs_bib_src}}" "{{vars.pubs_bib_dev}}"
+if [ -f "{{vars.pubs_pdf_src}}" ]; then
+  cp "{{vars.pubs_pdf_src}}" "{{vars.pubs_pdf_dev}}"
+fi
+'''
+
+[tasks.pubs-assets-prod]
+description = "Copy publications downloads (prod)"
+sources = ["{{vars.pubs_bib_src}}", "mise.toml"]
+outputs = ["{{vars.pubs_bib_prod}}"]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+mkdir -p "$(dirname "{{vars.pubs_bib_prod}}")"
+cp "{{vars.pubs_bib_src}}" "{{vars.pubs_bib_prod}}"
+if [ -f "{{vars.pubs_pdf_src}}" ]; then
+  cp "{{vars.pubs_pdf_src}}" "{{vars.pubs_pdf_prod}}"
+fi
 '''
 
 # Generate Typst CV from JSON Resume format.
@@ -135,11 +174,21 @@ set -euxo pipefail
 python "{{vars.typst_script}}" "{{vars.cv_json}}" "{{vars.cv_typst_dev}}"
 '''
 
+[tasks.render-typst-prod]
+description = "Render Typst CV from JSON (prod)"
+sources = ["{{vars.cv_json}}", "{{vars.typst_script}}", "mise.toml"]
+outputs = ["{{vars.cv_typst_prod}}"]
+run = '''
+#!/usr/bin/env bash
+set -euxo pipefail
+python "{{vars.typst_script}}" "{{vars.cv_json}}" "{{vars.cv_typst_prod}}"
+'''
+
 # Compile Typst CV to PDF.
 [tasks.compile-typst-dev]
 description = "Compile Typst CV to PDF (dev)"
 depends = ["render-typst-dev"]
-sources = ["{{vars.cv_typst_dev}}", "{{vars.output_dir_dev}}/assets/**/*"]
+sources = ["{{vars.cv_typst_dev}}", "{{vars.output_dir_dev}}/vita/assets/**/*"]
 outputs = ["{{vars.cv_pdf_dev}}"]
 run = '''
 #!/usr/bin/env bash
@@ -147,10 +196,21 @@ set -euxo pipefail
 typst compile "{{vars.cv_typst_dev}}" "{{vars.cv_pdf_dev}}"
 '''
 
+[tasks.compile-typst-prod]
+description = "Compile Typst CV to PDF (prod)"
+depends = ["render-typst-prod"]
+sources = ["{{vars.cv_typst_prod}}", "{{vars.output_dir_prod}}/vita/assets/**/*"]
+outputs = ["{{vars.cv_pdf_prod}}"]
+run = '''
+#!/usr/bin/env bash
+set -euxo pipefail
+typst compile "{{vars.cv_typst_prod}}" "{{vars.cv_pdf_prod}}"
+'''
+
 # Manual Typst loop: compile the existing .typ without re-rendering JSON.
 [tasks.compile-typst-dev-manual]
 description = "Compile existing Typst CV to PDF (dev, manual edits)"
-sources = ["{{vars.cv_typst_dev}}", "{{vars.output_dir_dev}}/assets/**/*"]
+sources = ["{{vars.cv_typst_dev}}", "{{vars.output_dir_dev}}/vita/assets/**/*"]
 outputs = ["{{vars.cv_pdf_dev}}"]
 run = '''
 #!/usr/bin/env bash
@@ -162,6 +222,10 @@ typst compile "{{vars.cv_typst_dev}}" "{{vars.cv_pdf_dev}}"
 [tasks.typst-dev]
 description = "Build Typst CV (typ + PDF)"
 depends = ["compile-typst-dev"]
+
+[tasks.typst-prod]
+description = "Build Typst CV (typ + PDF, prod)"
+depends = ["compile-typst-prod"]
 
 # Dev-only: inject a reload polling snippet into the dev CV HTML.
 # This keeps resumed output unchanged in prod.
@@ -217,12 +281,12 @@ perl -0777 -pe "s~$needle~$inject~" -i "{{vars.cv_html_dev}}"
 # This is what you should use with `mise watch build-dev`.
 [tasks.build-dev]
 description = "Build dev outputs (with auto-reload)"
-depends = ["render-dev", "pubs-dev", "cv-reload-inject", "typst-dev"]  # keep your inject task dev-only
+depends = ["render-dev", "pubs-dev", "pubs-assets-dev", "cv-reload-inject", "typst-dev"]  # keep your inject task dev-only
 
 # Build production outputs (both pages) without any auto-reload code.
 [tasks.build-prod]
 description = "Build prod outputs (no auto-reload)"
-depends = ["render-prod", "pubs-prod", "typst-dev"]
+depends = ["render-prod", "pubs-prod", "pubs-assets-prod", "typst-prod"]
 
 # Convenience aliases (optional, but nice for discoverability)
 [tasks.cv-dev]

@@ -137,8 +137,6 @@ def download_image(url: str, base_output_dir: Path, output_dir: Path) -> Optiona
         return None
 
     try:
-        output_dir.mkdir(parents=True, exist_ok=True)
-
         url_parts = url.split("/")
         if "images.credly.com" in url:
             unique_id = url_parts[-2] if len(url_parts) >= 2 else url_parts[-1]
@@ -149,6 +147,7 @@ def download_image(url: str, base_output_dir: Path, output_dir: Path) -> Optiona
                 filename += '.png'
 
         output_dir_full = base_output_dir / output_dir
+        output_dir_full.mkdir(parents=True, exist_ok=True)
         local_path = output_dir_full / filename
 
         if not local_path.exists():

@@ -45,6 +45,106 @@ SECTION_TITLES = {
     "other": "Other Publications",
 }
 
+FA_SVG_DIR = Path("assets/fontawesome/svgs")
+_ICON_CACHE = {}
+
+
+def normalize_icon_name(icon):
+    if not icon:
+        return ""
+    raw = str(icon)
+    cleaned = (
+        raw.replace("fa-", " ")
+        .replace("fa ", " ")
+        .replace("fa-solid ", " ")
+        .replace("fa-regular ", " ")
+        .replace("fa-brands ", " ")
+        .strip()
+    )
+    parts = cleaned.split()
+    return parts[-1] if parts else cleaned
+
+
+def load_icon_svg(icon_name: str) -> str:
+    if not icon_name:
+        return ""
+    if icon_name in _ICON_CACHE:
+        return _ICON_CACHE[icon_name]
+    if not FA_SVG_DIR.exists():
+        _ICON_CACHE[icon_name] = ""
+        return ""
+    filename = f"{icon_name}.svg"
+    for style in ("solid", "regular", "brands"):
+        candidate = FA_SVG_DIR / style / filename
+        if candidate.exists():
+            _ICON_CACHE[icon_name] = candidate.read_text()
+            return _ICON_CACHE[icon_name]
+    for candidate in FA_SVG_DIR.rglob(filename):
+        _ICON_CACHE[icon_name] = candidate.read_text()
+        return _ICON_CACHE[icon_name]
+    _ICON_CACHE[icon_name] = ""
+    return ""
+
+def parse_legacy_links(env_var: str):
+    raw = os.environ.get(env_var, "")
+    if not raw:
+        return []
+
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        logging.warning("Invalid %s JSON payload; ignoring.", env_var)
+        return []
+
+    if isinstance(data, dict):
+        return [{"label": str(k), "url": str(v)} for k, v in data.items()]
+
+    if isinstance(data, list):
+        links = []
+        for item in data:
+            if isinstance(item, dict) and "label" in item and "url" in item:
+                links.append({"label": str(item["label"]), "url": str(item["url"])})
+            elif isinstance(item, (list, tuple)) and len(item) == 2:
+                links.append({"label": str(item[0]), "url": str(item[1])})
+        return links
+
+    return []
+
+
+
+def parse_floating_links(env_var: str):
+    raw = os.environ.get(env_var, "")
+    if not raw:
+        return []
+
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        logging.warning("Invalid %s JSON payload; ignoring.", env_var)
+        return []
+
+    if not isinstance(data, list):
+        return []
+
+    links = []
+    for item in data:
+        if not isinstance(item, dict):
+            continue
+        name = item.get("name")
+        url = item.get("url")
+        icon = item.get("icon")
+        if name and url and icon:
+            icon_key = normalize_icon_name(icon)
+            links.append(
+                {
+                    "name": str(name),
+                    "url": str(url),
+                    "icon": str(icon),
+                    "icon_svg": load_icon_svg(icon_key),
+                }
+            )
+    return links
+
 
 # Minimal accent mapping (extend as needed)
 LATEX_ACCENTS = {
@@ -251,6 +351,7 @@ def main():
         toc_sections=non_empty_sections,
         generated=datetime.now(UTC).strftime("%Y-%m-%d"),
         dev_reload=dev_reload,
+        floating_links=parse_floating_links("PUBS_LINKS"),
     )
 
     OUT_FILE.parent.mkdir(exist_ok=True)

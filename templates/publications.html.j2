@@ -7,7 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Publications</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap">
-  <style>
+  {# Inline SVG icons are used for floating links; no external icon CSS needed. #}
+{# Floating links configuration (edit this list as needed) #}
+{% set default_floating_links = [
+  {
+    "name": "BibTeX",
+    "url": "/vita/publications/zamboni-pubs.bib",
+    "icon": "book"
+  },
+  {
+    "name": "PDF",
+    "url": "/vita/publications/zamboni-pubs.pdf",
+    "icon": "file-pdf"
+  }
+] %}
+{% set floating_links = floating_links or default_floating_links %}
+
+<style>
     :root {
   color-scheme: light dark;
 
@@ -42,6 +58,17 @@ html {
   font-size: 14px;
 }
 
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 1.3em;
+  height: 1.3em;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--color-background-dark);
@@ -63,6 +90,35 @@ body {
 
   background: var(--color-background);
   color: var(--color-primary);
+}
+
+.floating-links {
+  position: fixed;
+  right: 1.4em;
+  bottom: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  z-index: 110;
+}
+
+.floating-links a {
+  display: grid;
+  place-items: center;
+  width: 2.6em;
+  height: 2.6em;
+  border-radius: 50%;
+  background: var(--color-dimmed);
+  color: var(--color-accent);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-links a:hover,
+.floating-links a:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .breadcrumb {
@@ -243,6 +299,10 @@ footer {
     font-size: 11pt;
   }
 
+  .floating-links {
+    display: none;
+  }
+
   .breadcrumb {
     display: none;
   }
@@ -276,9 +336,21 @@ footer {
 </head>
 <body>
 
+{% if floating_links %}
+<nav class="floating-links" aria-label="Quick links">
+  {% for link in floating_links %}
+  <a href="{{ link.url }}" aria-label="{{ link.name }}" title="{{ link.name }}">
+    <span class="icon">
+      {{ link.icon_svg | safe if link.icon_svg else link.name }}
+    </span>
+  </a>
+  {% endfor %}
+</nav>
+{% endif %}
+
 <nav class="breadcrumb">
 
-  <a href="vita.html">Curriculum Vitae</a>
+  <a href="/vita/">Curriculum Vitae</a>
   <span class="sep">›</span>
   <span>Diego Zamboni &mdash; Publications</span>
 </nav>
@@ -433,9 +505,10 @@ document.querySelectorAll('.ref-number').forEach(link => {
     const refText = link.textContent.trim(); // This includes the brackets like "[1]"
     
     // Get the current page filename
-    const pageUrl = window.location.pathname.split('/').pop() || 'publications.html';
+    const path = window.location.pathname;
+    const pageUrl = path.endsWith('/') ? path : path.split('/').pop() || '/vita/publications/';
     
-    // Create Markdown link format: [1](publications.html#pub-smith2020)
+    // Create Markdown link format: [1](/vita/publications/#pub-smith2020)
     const markdownLink = `[${refText}](${pageUrl}#${pubId})`;
     
     // Copy to clipboard
