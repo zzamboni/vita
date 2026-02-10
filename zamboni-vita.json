@@ -578,6 +578,7 @@
             "name": "Management and leadership, IT security, cloud computing",
             "type": "Professional Highlights",
             "highlights": [
+                "Chief Information Security Officer for Governance at [Avaloq](https://avaloq.com/), defining and managing Avaloq's global ISO27001-certified Information Security Management System",
                 "Managed security architecture at the [Stellantis *Virtual Engineering Workbench*](https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions) project. Worked with Stellantis CISO and business stakeholders to define governance, establish security best practices and drive risk analysis, threat modeling and mitigation.",
                 "Established scalable and durable mechanisms to enable partners to work securely in the [Volkswagen Digital Production Platform (DPP)](https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/) program.",
                 "Managed security architecture, risk management, data governance and compliance (ISO27001, ISAE3402/3000, etc.) for [Swisscom's Cloud platforms](https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html).",
@@ -601,7 +602,7 @@
             "highlights": [
                 "Author of multiple books including [*Learning CFEngine*](https://cf-learn.info/), [*Learning Hammerspoon*](https://leanpub.com/learning-hammerspoon) and [*Literate Configuration*](https://leanpub.com/lit-config).",
                 "Program chair and program committee member for multiple conferences including the RAID symposium, DIMVA conference, the *Computer Security Day* and *Computer Security* conference at UNAM, and others.",
-                "Member of the Editorial Board of the [Computers & Security Journal](https://www.sciencedirect.com/journal/computers-and-security)."
+                "Former member of the Editorial Board of the [Computers & Security Journal](https://www.sciencedirect.com/journal/computers-and-security)."
             ]
         },
         {
