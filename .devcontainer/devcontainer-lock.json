@@ -9,6 +9,11 @@
       "version": "1.0.6",
       "resolved": "ghcr.io/devcontainers-extra/features/typst@sha256:84f5a686d184b896946757ba2056d73cac2dea3d6454cca3178a6a113f5ea33b",
       "integrity": "sha256:84f5a686d184b896946757ba2056d73cac2dea3d6454cca3178a6a113f5ea33b"
+    },
+    "ghcr.io/prulloac/devcontainer-features/latex:1": {
+      "version": "1.3.2",
+      "resolved": "ghcr.io/prulloac/devcontainer-features/latex@sha256:7480f63bc43911c1d0602b8b3ab5b0119611899139dd271b1bea059097e9b033",
+      "integrity": "sha256:7480f63bc43911c1d0602b8b3ab5b0119611899139dd271b1bea059097e9b033"
     }
   }
 }

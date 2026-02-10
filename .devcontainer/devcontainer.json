@@ -8,7 +8,10 @@
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": { 
 		"ghcr.io/devcontainers-extra/features/mise:1": {},
-        "ghcr.io/devcontainers-extra/features/typst:1": { "version": "0.14.2" }
+        "ghcr.io/devcontainers-extra/features/typst:1": { "version": "0.14.2" },
+        "ghcr.io/prulloac/devcontainer-features/latex:1": {
+            "packages": "biber,biblatex,enumitem,fontawesome,fontspec,ifmtarg,lualatex-math,needspace,parskip,ragged2e,setspace,soul,sourcesanspro,tcolorbox,tikzfill,unicode-math,wrapfig,xcolor,xifthen,xkeyval"
+        }
 	},
 	"customizations": {
 		"vscode": {
@@ -24,14 +27,13 @@
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8008],
-    "appPort": [8008],
+	"forwardPorts": [8008,8009],
+    "appPort": [8008,8009],
     "updateRemoteUserUID": false,
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo mkdir -p /home/node/.npm /home/node/.cache /home/node/.local && sudo chown -R node:node /home/node/.npm /home/node/.cache /home/node/.local && mise trust . && mise install && mise x -- mise run bootstrap",
+	"postCreateCommand": "sudo mkdir -p /home/node/.npm /home/node/.cache /home/node/.local /home/node/.local/bin && sudo chown -R node:node /home/node/.npm /home/node/.cache /home/node/.local && mise trust . && mise install && mise x -- mise run bootstrap && (cd /home/node/.local/bin; curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net | sh)",
 	// Use 'postStartCommand' to run commands after the container is started.
-	//"postStartCommand": "grep -q 'mise activate' ~/.bashrc || echo 'eval \"$(mise activate bash)\"' >> ~/.bashrc && mise x -- mise go-dev",
     "postStartCommand": "grep -q 'mise activate' ~/.bashrc || echo 'eval \"$(mise activate bash)\"' >> ~/.bashrc",
 
     // Mount caches from the host to speed up container rebuild
