@@ -16,7 +16,7 @@ cv_json = "zamboni-vita.json"
 # Publications pipeline inputs
 pubs_script   = "scripts/build_publications.py"
 pubs_template = "templates/publications.html.j2"
-pubs_bib      = "src/**/*.bib"
+pubs_bib      = "pubs-src/**/*.bib"
 pubs_links    = '[{"name":"Home","url":"/about","icon":"home"},{"name":"PDF","url":"/vita/publications/zamboni-pubs.pdf","icon":"file-pdf"},{"name":"BibTeX","url":"/vita/publications/zamboni-pubs.bib","icon":"tex"}]'
 
 # Typst CV pipeline
@@ -41,9 +41,9 @@ cv_pdf_prod   = "{{vars.output_dir_prod}}/vita/{{vars.typst_pdf}}"
 pubs_html_dev  = "{{vars.output_dir_dev}}/vita/publications/index.html"
 pubs_html_prod = "{{vars.output_dir_prod}}/vita/publications/index.html"
 
-# Publications downloads
-pubs_bib_src  = "src/zamboni-pubs.bib"
-pubs_pdf_src  = "src/zamboni-pubs.pdf"
+# Publications outputs
+pubs_tex      = "pubs-src/zamboni-pubs.tex"
+pubs_pdf_src  = "pubs-src/zamboni-pubs.pdf"
 pubs_bib_dev  = "{{vars.output_dir_dev}}/vita/publications/zamboni-pubs.bib"
 pubs_pdf_dev  = "{{vars.output_dir_dev}}/vita/publications/zamboni-pubs.pdf"
 pubs_bib_prod = "{{vars.output_dir_prod}}/vita/publications/zamboni-pubs.bib"
@@ -89,6 +89,7 @@ fi
 
 [tasks.render-dev]
 description = "Render CV (dev)"
+depends = ["profile-assets-dev"]
 usage = '''
 flag "-t --theme <theme>"
 '''
@@ -98,12 +99,11 @@ run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 scripts/render_cv.sh "${usage_theme:-}" "{{vars.cv_json}}" "{{vars.cv_html_dev}}"
-mkdir -p {{vars.output_dir_dev}}/vita/assets/profile
-cp -a assets/profile/* {{vars.output_dir_dev}}/vita/assets/profile
 '''
 
 [tasks.render-prod]
 description = "Render CV (prod)"
+depends = ["profile-assets-prod"]
 usage = '''
 flag "-t --theme <theme>"
 '''
@@ -113,8 +113,30 @@ run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 scripts/render_cv.sh "${usage_theme:-}" "{{vars.cv_json}}" "{{vars.cv_html_prod}}"
-mkdir -p {{vars.output_dir_prod}}/vita/assets/profile
-cp -a assets/profile/* {{vars.output_dir_prod}}/vita/assets/profile
+'''
+
+[tasks.profile-assets-dev]
+description = "Sync profile assets (dev)"
+sources = ["assets/profile/**/*", "mise.toml"]
+outputs = ["{{vars.output_dir_dev}}/vita/assets/profile/.synced"]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+mkdir -p "{{vars.output_dir_dev}}/vita/assets/profile"
+cp -a assets/profile/* "{{vars.output_dir_dev}}/vita/assets/profile/"
+touch "{{vars.output_dir_dev}}/vita/assets/profile/.synced"
+'''
+
+[tasks.profile-assets-prod]
+description = "Sync profile assets (prod)"
+sources = ["assets/profile/**/*", "mise.toml"]
+outputs = ["{{vars.output_dir_prod}}/vita/assets/profile/.synced"]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+mkdir -p "{{vars.output_dir_prod}}/vita/assets/profile"
+cp -a assets/profile/* "{{vars.output_dir_prod}}/vita/assets/profile/"
+touch "{{vars.output_dir_prod}}/vita/assets/profile/.synced"
 '''
 
 # Build publications HTML from BibTeX + template.
@@ -143,38 +165,40 @@ PUBS_LINKS='{{vars.pubs_links}}' \
   scripts/build_pubs.sh 0 "{{vars.pubs_html_prod}}" "{{vars.pubs_script}}"
 '''
 
-# Copy publications downloads into output layout.
-[tasks.pubs-assets-dev]
-description = "Copy publications downloads (dev)"
-sources = ["{{vars.pubs_bib_src}}", "mise.toml"]
-outputs = ["{{vars.pubs_bib_dev}}"]
+[tasks.pubs-pdf-dev]
+description = "Build publications PDF (dev, LaTeX)"
+sources = ["{{vars.pubs_tex}}", "{{vars.pubs_bib}}", "mise.toml"]
+outputs = ["{{vars.pubs_pdf_dev}}"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
-mkdir -p "$(dirname "{{vars.pubs_bib_dev}}")"
-cp "{{vars.pubs_bib_src}}" "{{vars.pubs_bib_dev}}"
-if [ -f "{{vars.pubs_pdf_src}}" ]; then
-  cp "{{vars.pubs_pdf_src}}" "{{vars.pubs_pdf_dev}}"
-fi
+(
+  cd "$(dirname "{{vars.pubs_tex}}")"
+  tectonic -Z search-path=$(dirname $(kpsewhich biblatex.sty)) zamboni-pubs.tex
+)
+mkdir -p "$(dirname "{{vars.pubs_pdf_dev}}")"
+cp "{{vars.pubs_pdf_src}}" "{{vars.pubs_pdf_dev}}"
 '''
 
-[tasks.pubs-assets-prod]
-description = "Copy publications downloads (prod)"
-sources = ["{{vars.pubs_bib_src}}", "mise.toml"]
-outputs = ["{{vars.pubs_bib_prod}}"]
+[tasks.pubs-pdf-prod]
+description = "Build publications PDF (prod, LaTeX)"
+sources = ["{{vars.pubs_tex}}", "{{vars.pubs_bib}}", "mise.toml"]
+outputs = ["{{vars.pubs_pdf_prod}}"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
-mkdir -p "$(dirname "{{vars.pubs_bib_prod}}")"
-cp "{{vars.pubs_bib_src}}" "{{vars.pubs_bib_prod}}"
-if [ -f "{{vars.pubs_pdf_src}}" ]; then
-  cp "{{vars.pubs_pdf_src}}" "{{vars.pubs_pdf_prod}}"
-fi
+(
+  cd "$(dirname "{{vars.pubs_tex}}")"
+  tectonic -Z search-path=$(dirname $(kpsewhich biblatex.sty)) zamboni-pubs.tex
+)
+mkdir -p "$(dirname "{{vars.pubs_pdf_prod}}")"
+cp "{{vars.pubs_pdf_src}}" "{{vars.pubs_pdf_prod}}"
 '''
 
 # Generate Typst CV from JSON Resume format.
 [tasks.render-typst-dev]
 description = "Render Typst CV from JSON (dev)"
+depends = ["profile-assets-dev"]
 sources = ["{{vars.cv_json}}", "{{vars.typst_script}}", "mise.toml"]
 outputs = ["{{vars.cv_typst_dev}}"]
 run = '''
@@ -185,6 +209,7 @@ python "{{vars.typst_script}}" "{{vars.cv_json}}" "{{vars.cv_typst_dev}}"
 
 [tasks.render-typst-prod]
 description = "Render Typst CV from JSON (prod)"
+depends = ["profile-assets-prod"]
 sources = ["{{vars.cv_json}}", "{{vars.typst_script}}", "mise.toml"]
 outputs = ["{{vars.cv_typst_prod}}"]
 run = '''
@@ -290,12 +315,12 @@ perl -0777 -pe "s~$needle~$inject~" -i "{{vars.cv_html_dev}}"
 # This is what you should use with `mise watch build-dev`.
 [tasks.build-dev]
 description = "Build dev outputs (with auto-reload)"
-depends = ["render-dev", "pubs-dev", "pubs-assets-dev", "cv-reload-inject", "typst-dev"]  # keep your inject task dev-only
+depends = ["render-dev", "pubs-dev", "pubs-pdf-dev", "cv-reload-inject", "typst-dev"]  # keep your inject task dev-only
 
 # Build production outputs (both pages) without any auto-reload code.
 [tasks.build-prod]
 description = "Build prod outputs (no auto-reload)"
-depends = ["render-prod", "pubs-prod", "pubs-assets-prod", "typst-prod"]
+depends = ["render-prod", "pubs-prod", "pubs-pdf-prod", "typst-prod"]
 
 # Convenience aliases (optional, but nice for discoverability)
 [tasks.cv-dev]

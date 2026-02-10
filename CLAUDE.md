@@ -78,11 +78,11 @@ mise run dev-rebuild-up         # Rebuild and run devcontainer
 ### Source Files
 
 - **`diego-zamboni-jsonresume.json`**: Primary CV data source in JSONResume format
-- **`src/zamboni-vita.tex`**: Full CV LaTeX source (exported from org-mode)
-- **`src/zamboni-resume.tex`**: Short resume LaTeX source
-- **`src/zamboni-vita-private.tex`**: Private CV version with contact details
-- **`src/zamboni-pubs.bib`**: Publications BibTeX database
-- **`src/zamboni-patents.bib`**: Patents BibTeX database
+- **`pubs-src/zamboni-vita.tex`**: Full CV LaTeX source (exported from org-mode)
+- **`pubs-src/zamboni-resume.tex`**: Short resume LaTeX source
+- **`pubs-src/zamboni-vita-private.tex`**: Private CV version with contact details
+- **`pubs-src/zamboni-pubs.bib`**: Publications BibTeX database
+- **`pubs-src/zamboni-patents.bib`**: Patents BibTeX database
 - **`templates/publications.html.j2`**: Jinja2 template for publications HTML
 
 ### Build Pipeline
@@ -94,7 +94,7 @@ mise run dev-rebuild-up         # Rebuild and run devcontainer
 
 **LaTeX Pipeline:**
 1. `.tex` files → Tectonic (XeTeX/LuaTeX) → PDF output
-2. Uses custom AwesomeCV class in `src/awesome-cv.cls`
+2. Uses custom AwesomeCV class in `pubs-src/awesome-cv.cls`
 3. Configuration in `Tectonic.toml` defines output artifacts
 
 ### Output Structure

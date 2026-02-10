@@ -13,7 +13,7 @@ import os
 
 #logging.getLogger("bibtexparser").setLevel(logging.ERROR)
 
-BIB_DIR = Path("src")
+BIB_DIR = Path("pubs-src")
 OUT_FILE = Path(os.environ.get("PUBS_HTML", "dist/publications.html"))
 TEMPLATE_DIR = Path("templates")
 

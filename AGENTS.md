@@ -1,7 +1,7 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `src/` holds LaTeX sources, BibTeX data, and images used by the CV/pubs pipelines (e.g., `src/zamboni-vita.tex`, `src/**/*.bib`).
+- `pubs-src/` holds LaTeX sources, BibTeX data, and images used by the CV/pubs pipelines (e.g., `pubs-src/zamboni-vita.tex`, `pubs-src/**/*.bib`).
 - `scripts/` contains build helpers like `render_cv.sh`, `build_publications.py`, and Typst tooling.
 - `templates/` holds Jinja2 templates for publications HTML.
 - `themes/` contains local JSONResume themes and converters.
