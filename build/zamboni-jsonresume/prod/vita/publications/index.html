@@ -1,0 +1,2403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Diego Zamboni">
+  <meta name="description" content="Publications by Diego Zamboni">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publications</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap">
+  
+
+
+
+
+<style>
+    :root {
+  color-scheme: light dark;
+
+  --color-background-light: #ffffff;
+  --color-dimmed-light: #f3f4f5;
+  --color-primary-light: #191e23;
+  --color-secondary-light: #6c7781;
+  --color-accent-light: #0073aa;
+
+  --color-background-dark: #191e23;
+  --color-dimmed-dark: #23282d;
+  --color-primary-dark: #fbfbfc;
+  --color-secondary-dark: #ccd0d4;
+  --color-accent-dark: #00a0d2;
+
+  --color-background: var(--color-background-light);
+  --color-dimmed: var(--color-dimmed-light);
+  --color-primary: var(--color-primary-light);
+  --color-secondary: var(--color-secondary-light);
+  --color-accent: var(--color-accent-light);
+
+  --scale-ratio: 1.25;
+  --scale0: 1rem;
+  --scale1: calc(var(--scale0) * var(--scale-ratio));
+  --scale2: calc(var(--scale1) * var(--scale-ratio));
+  --scale3: calc(var(--scale2) * var(--scale-ratio));
+  --scale4: calc(var(--scale3) * var(--scale-ratio));
+  --scale5: calc(var(--scale4) * var(--scale-ratio));
+}
+
+html {
+  font-size: 14px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 1.3em;
+  height: 1.3em;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-background-dark);
+    --color-dimmed: var(--color-dimmed-dark);
+    --color-primary: var(--color-primary-dark);
+    --color-secondary: var(--color-secondary-dark);
+    --color-accent: var(--color-accent-dark);
+  }
+}
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin-inline: auto;
+
+  font:
+    1em/1.5 Lato,
+    sans-serif;
+
+  background: var(--color-background);
+  color: var(--color-primary);
+}
+
+.floating-links {
+  position: fixed;
+  right: 1.4em;
+  bottom: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  z-index: 110;
+}
+
+.floating-links a {
+  display: grid;
+  place-items: center;
+  width: 2.6em;
+  height: 2.6em;
+  border-radius: 50%;
+  background: var(--color-dimmed);
+  color: var(--color-accent);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-links a:hover,
+.floating-links a:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.breadcrumb {
+  font-size: 0.9em;
+  color: var(--color-secondary);
+  margin-bottom: 0.5em;
+}
+
+.breadcrumb a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .sep {
+  margin: 0 0.4em;
+}
+
+h1, h2, h3, h5 {
+  font-weight: normal;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--scale5);
+  margin-bottom: 0.75em;
+}
+
+h2 {
+  font-size: var(--scale4);
+  color: var(--color-secondary);
+}
+
+h3 {
+  color: var(--color-secondary);
+  font-size: var(--scale3);
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid var(--color-dimmed);
+}
+
+h4 {
+  font-size: var(--scale2);
+}
+
+h5 {
+  font-size: var(--scale1);
+}
+
+h6 {
+  font-size: var(--scale0);
+}
+/* Table of Contents */
+.table-of-contents {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+  max-width: 12em;
+  padding: 1em;
+  background: var(--color-dimmed);
+  border-radius: 0.5em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  max-height: calc(100vh - 4em);
+  overflow-y: auto;
+}
+
+.table-of-contents ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.table-of-contents li {
+  margin: 0;
+}
+
+.table-of-contents li + li {
+  margin-top: 0.5em;
+}
+
+.table-of-contents a {
+  display: block;
+  color: var(--color-secondary);
+  text-decoration: none;
+  padding: 0.3em 0.5em;
+  border-radius: 0.25em;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+}
+
+.table-of-contents a:hover {
+  color: var(--color-accent);
+  background: var(--color-background);
+  text-decoration: none;
+}
+
+.table-of-contents a.active {
+  color: var(--color-accent);
+  background: var(--color-background);
+  font-weight: bold;
+}
+
+/* Hide TOC on smaller screens and in print */
+@media print, (max-width: 64em) {
+  .table-of-contents {
+    display: none;
+  }
+}
+
+/* Adjust body padding when TOC is visible */
+@media (min-width: 64em) {
+  body:has(.table-of-contents) {
+    padding-right: 16em;
+  }
+}
+.pub {
+  margin-bottom: 1.25em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em;
+  align-items: start;
+}
+
+.pub-ref {
+  white-space: nowrap;
+  user-select: none;
+  padding-top: 0.15em;
+}
+
+.ref-number {
+  display: inline-block;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.9em;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.ref-number:hover {
+  background-color: var(--color-dimmed);
+  text-decoration: underline;
+}
+
+.pub-content {
+  grid-column: 2;
+}
+
+.pub strong {
+  font-weight: 600;
+}
+
+.meta {
+  font-size: 0.9em;
+  color: var(--color-secondary);
+}
+footer {
+  margin-top: 3em;
+  font-size: 0.8em;
+  color: var(--color-secondary);
+  text-align: right;
+}
+
+@media print {
+  body {
+    max-width: none;
+    padding: 0;
+    font-size: 11pt;
+  }
+
+  .floating-links {
+    display: none;
+  }
+
+  .breadcrumb {
+    display: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .toc {
+    font-size: 0.9em;
+    margin-bottom: 1em;
+  }
+
+  h1, h2 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .pub {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  footer {
+    position: running(footer);
+  }
+}
+    
+  </style>
+</head>
+<body>
+
+
+<nav class="floating-links" aria-label="Quick links">
+  
+  <a href="/about" aria-label="Home" title="Home">
+    <span class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc. --><path fill="currentColor" d="M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272l16 0 0 176c0 35.3 28.7 64 64 64l288 0c35.3 0 64-28.7 64-64l0-176 16 0c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1l-224-208zM240 320l32 0c26.5 0 48 21.5 48 48l0 96-128 0 0-96c0-26.5 21.5-48 48-48z"/></svg>
+    </span>
+  </a>
+  
+  <a href="/vita/publications/zamboni-pubs.pdf" aria-label="PDF" title="PDF">
+    <span class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc. --><path fill="currentColor" d="M96 0C60.7 0 32 28.7 32 64l0 384c0 35.3 28.7 64 64 64l80 0 0-112c0-35.3 28.7-64 64-64l176 0 0-165.5c0-17-6.7-33.3-18.7-45.3L290.7 18.7C278.7 6.7 262.5 0 245.5 0L96 0zM357.5 176L264 176c-13.3 0-24-10.7-24-24L240 58.5 357.5 176zM240 380c-11 0-20 9-20 20l0 128c0 11 9 20 20 20s20-9 20-20l0-28 12 0c33.1 0 60-26.9 60-60s-26.9-60-60-60l-32 0zm32 80l-12 0 0-40 12 0c11 0 20 9 20 20s-9 20-20 20zm96-80c-11 0-20 9-20 20l0 128c0 11 9 20 20 20l32 0c28.7 0 52-23.3 52-52l0-64c0-28.7-23.3-52-52-52l-32 0zm20 128l0-88 12 0c6.6 0 12 5.4 12 12l0 64c0 6.6-5.4 12-12 12l-12 0zm88-108l0 128c0 11 9 20 20 20s20-9 20-20l0-44 28 0c11 0 20-9 20-20s-9-20-20-20l-28 0 0-24 28 0c11 0 20-9 20-20s-9-20-20-20l-48 0c-11 0-20 9-20 20z"/></svg>
+    </span>
+  </a>
+  
+  <a href="/vita/publications/zamboni-pubs.bib" aria-label="BibTeX" title="BibTeX">
+    <span class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc. --><path fill="currentColor" d="M620.8 95.4c-30.8 .4-42.1 16.6-47.7 24.5l-.1 .1-55.7 80.5 82.8 121.1c7.5 10.6 11.3 12.5 35.4 12.5l0 9.1c-9.1-.7-28-.7-37.7-.7-12.4 0-30.8 0-42.9 .7l0-9.1c13.2-.8 16.6-7.3 16.6-10.2 0-1.1 0-2.3-3-6.4l-65.5-96.3-60.2 87.9c-1.9 2.7-3.8 5.4-3.8 10.2 0 6.1 3.4 13.6 15 14.7l0 9.1c-9.4-.7-27.1-.7-37.2-.7l-2.8 0-11.7 82.6-195.9 0 0-9.1c26.7 0 30.9 0 30.9-16.9l0-203.2c0-16.9-4.3-16.9-30.9-16.9l0-10.3 19.8 0c-4.8-61.1-10.8-71.7-68-71.8l-20.7 0c-6.8 1.5-6.8 6.1-6.8 14.4l0 205c0 13.6 1.1 17.8 32.4 17.8l10.5 0 0 9.1-.4 0c-17.9-.3-36.7-.7-54.9-.7s-36.9 .3-54.8 .7l-.6 0 0-9.1 10.7 0c31.7 0 32.8-4.1 32.8-17.8l0-205c0-8.7 0-13.2-7.2-14.3l-20.8 0c-58.4 0-63.7 10.9-68.6 73.3l-6.8 0 6.3-83.3 217.5 0 6.1 81.8 164.1 0 9 83.3-6.8 0c-5.3-49.8-12.1-73-70.3-73l-51.5 0c-15 0-15.8 1.9-15.8 14.6l0 93.3 35.5 0c35.5 0 38.9-12.8 38.9-44l6 0 0 97.9-6 0c0-31.8-3.4-44.8-38.9-44.8l-35.5 0 0 105.2c0 13 .7 14.8 15.8 14.8l52.2 0c61.1 0 69.9-25.8 77.4-73.6-7.7 0-16.3 .2-22.2 .7l0-9.1c7.2 0 31.7-.4 47.8-23.8l65.5-95.7-72.7-106.7c-8.3-11.7-15.1-12.5-35.8-12.5l0-9.1c9.1 .7 27.9 .7 37.7 .7 12.4 0 30.8 0 42.9-.7l0 9.1c-12.5 .4-16.6 6.8-16.6 10.2 0 1.1 .4 2.3 3 6.4l55.7 81.6 49.7-72.1c2.7-3.7 4.5-6.8 4.5-11.3 0-6.1-3-13.6-15-14.8l0-9.1c9.4 .7 24.8 .7 37.2 .7 9 0 23.3 0 32-.7l0 9.1z"/></svg>
+    </span>
+  </a>
+  
+</nav>
+
+
+<nav class="breadcrumb">
+
+  <a href="/vita/">Curriculum Vitae</a>
+  <span class="sep">›</span>
+  <span>Diego Zamboni &mdash; Publications</span>
+</nav>
+
+<div>
+<h1 id="top">Diego Zamboni</h1>
+<h2>Publications</h2>
+</div>
+
+<nav class="table-of-contents" aria-label="Table of contents">
+  <ul>
+    <li>
+      <a href="#top" data-toc-target="top"><b>Publications</b></a>
+    </li>
+    
+    <li>
+      <a href="#book" data-toc-target="book">Books</a>
+    </li>
+    
+    <li>
+      <a href="#editorial" data-toc-target="editorial">Editorial Activities</a>
+    </li>
+    
+    <li>
+      <a href="#thesis" data-toc-target="thesis">Theses</a>
+    </li>
+    
+    <li>
+      <a href="#refereed" data-toc-target="refereed">Refereed Papers</a>
+    </li>
+    
+    <li>
+      <a href="#techreport" data-toc-target="techreport">Technical Reports</a>
+    </li>
+    
+    <li>
+      <a href="#presentations" data-toc-target="presentations">Presentations</a>
+    </li>
+    
+    <li>
+      <a href="#invited" data-toc-target="invited">Invited Talks and Articles</a>
+    </li>
+    
+    <li>
+      <a href="#patent" data-toc-target="patent">Patents</a>
+    </li>
+    
+  </ul>
+</nav>
+
+
+
+
+
+<h3 id="book">Books</h3>
+
+
+
+
+<div class="pub" id="pub-zamboni20:emacs-org-leanpub" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni20:emacs-org-leanpub" class="ref-number" data-ref-number="1" title="Copy link to clipboard">
+      [1]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://leanpub.com/emacs-org-leanpub">
+          Publishing with Emacs, Org-mode and Leanpub
+        </a>
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      Leanpub
+       · 2020<meta itemprop="datePublished" content="2020">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni19:lit-config" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni19:lit-config" class="ref-number" data-ref-number="2" title="Copy link to clipboard">
+      [2]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://leanpub.com/lit-config">
+          Literate Configuration
+        </a>
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      Leanpub
+       · 2019<meta itemprop="datePublished" content="2019">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni19:utilerias-unix" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni19:utilerias-unix" class="ref-number" data-ref-number="3" title="Copy link to clipboard">
+      [3]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://leanpub.com/utileras-unix">
+          Utilerías de Unix (Unix utilities course notes)
+        </a>
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      Leanpub
+       · 2019<meta itemprop="datePublished" content="2019">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni18:learning-hammerspoon" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni18:learning-hammerspoon" class="ref-number" data-ref-number="4" title="Copy link to clipboard">
+      [4]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://leanpub.com/learning-hammerspoon">
+          Learning Hammerspoon
+        </a>
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      Leanpub
+       · 2018<meta itemprop="datePublished" content="2018">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni12:learning-cfengine3" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni12:learning-cfengine3" class="ref-number" data-ref-number="5" title="Copy link to clipboard">
+      [5]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="http://cf-learn.info/">
+          Learning CFEngine
+        </a>
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      O'Reilly Media, Inc. 2012–2017, afterwards self-published
+       · 2012<meta itemprop="datePublished" content="2012">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+
+
+<h3 id="editorial">Editorial Activities</h3>
+
+
+
+
+<div class="pub" id="pub-zamboni-editorial-board-csj" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni-editorial-board-csj" class="ref-number" data-ref-number="6" title="Copy link to clipboard">
+      [6]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        Computers & Security Journal
+      
+    </strong><br>
+    
+    <span class="meta">
+      Elsevier
+       · 2011<meta itemprop="datePublished" content="2011">
+      
+      
+       · Member of the Editorial Board
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-frincke-wespi-zamboni:comnet-specialissue" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-frincke-wespi-zamboni:comnet-specialissue" class="ref-number" data-ref-number="7" title="Copy link to clipboard">
+      [7]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://doi.org/10.1016/j.comnet.2006.10.004">
+          Computer Networks
+        </a>
+      
+    </strong><br>
+    Editors: Deborah Frincke and Andreas Wespi and Diego Zamboni<br>
+    <span class="meta">
+      Elsevier North-Holland, Inc.
+       · 2007<meta itemprop="datePublished" content="2007">
+      
+      <meta itemprop="identifier" content="10.1016/j.comnet.2006.10.004">
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni06:raid06-proceedings" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni06:raid06-proceedings" class="ref-number" data-ref-number="8" title="Copy link to clipboard">
+      [8]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        Proceedings of the Recent Advances in Intrusion Detection (RAID): 9th International Symposium
+      
+    </strong><br>
+    Editors: Diego Zamboni and Christopher Kruegel<br>
+    <span class="meta">
+      Springer-Verlag New York, Inc.
+       · 2006<meta itemprop="datePublished" content="2006">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-valdes06:raid05-proceedings" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-valdes06:raid05-proceedings" class="ref-number" data-ref-number="9" title="Copy link to clipboard">
+      [9]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        Proceedings of the Recent Advances in Intrusion Detection (RAID): 8th International Symposium
+      
+    </strong><br>
+    Editors: Alfonso Valdes and Diego Zamboni<br>
+    <span class="meta">
+      Springer-Verlag New York, Inc.
+       · 2005<meta itemprop="datePublished" content="2005">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni03:SPE-SS" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni03:SPE-SS" class="ref-number" data-ref-number="10" title="Copy link to clipboard">
+      [10]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="http://onlinelibrary.wiley.com/doi/10.1002/spe.v33:5/issuetoc">
+          Special issue on “Security Software”
+        </a>
+      
+    </strong><br>
+    Editors: Diego Zamboni<br>
+    <span class="meta">
+      Software: Practice and Experience
+       · 2003<meta itemprop="datePublished" content="2003">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+
+
+<h3 id="thesis">Theses</h3>
+
+
+
+
+<div class="pub" id="pub-zamboni01:phd-thesis" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni01:phd-thesis" class="ref-number" data-ref-number="11" title="Copy link to clipboard">
+      [11]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://www.cerias.purdue.edu/apps/reports_and_papers/view/1800">
+          Using Internal Sensors for Computer Intrusion Detection
+        </a>
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      PhD thesis, Purdue University
+      
+       · 2001<meta itemprop="datePublished" content="2001">
+      
+      
+       · CERIAS TR 2001-42
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni95:bs-thesis" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni95:bs-thesis" class="ref-number" data-ref-number="12" title="Copy link to clipboard">
+      [12]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf">
+          Proyecto UNAM/Cray de Seguridad en el Sistema Operativo Unix (<em>UNAM/Cray project for Unix System Security</em>)
+        </a>
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      B.Sc. Thesis, Universidad Nacional Autonoma de México
+      
+       · 1995<meta itemprop="datePublished" content="1995">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+
+
+<h3 id="refereed">Refereed Papers</h3>
+
+
+
+
+<div class="pub" id="pub-Christodorescu:2009:CSV:1655008.1655022" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-Christodorescu:2009:CSV:1655008.1655022" class="ref-number" data-ref-number="13" title="Copy link to clipboard">
+      [13]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://doi.org/10.1145/1655008.1655022">
+          Cloud Security is Not (Just) Virtualization Security: A Short Paper
+        </a>
+      
+    </strong><br>
+    Mihai Christodorescu, Reiner Sailer, Douglas Lee Schales, Daniele Sgandurra, Diego Zamboni<br>
+    <span class="meta">
+      Proceedings of the 2009 ACM Workshop on Cloud Computing Security
+       · 2009<meta itemprop="datePublished" content="2009">
+      
+      <meta itemprop="identifier" content="10.1145/1655008.1655022">
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zurutuza08:recsi08" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zurutuza08:recsi08" class="ref-number" data-ref-number="14" title="Copy link to clipboard">
+      [14]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        Un marco inteligente para el análisis de tráfico generado por gusanos en Internet (An intelligent framework for analysis of worm-generated Internet traffic)
+      
+    </strong><br>
+    U. Zurutuza, R. Uribeetxeberria, M. Fernández, I. Vélez de Mendizabal, D. Zamboni<br>
+    <span class="meta">
+      Actas de la X Reunión Española sobre Criptología y Seguridad de la Información (X Spanish Meeting on Cryptology and Information Security)
+       · 2008<meta itemprop="datePublished" content="2008">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zurutuza08:aisec-bg" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zurutuza08:aisec-bg" class="ref-number" data-ref-number="15" title="Copy link to clipboard">
+      [15]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://doi.org/10.1145/1456377.1456394">
+          A data mining approach for analysis of worm activity through automatic signature generation
+        </a>
+      
+    </strong><br>
+    Urko Zurutuza, Roberto Uribeetxeberria, Diego Zamboni<br>
+    <span class="meta">
+      Proceedings of the 1st ACM workshop on AISec (AISec'08)
+       · 2008<meta itemprop="datePublished" content="2008">
+      
+      <meta itemprop="identifier" content="10.1145/1456377.1456394">
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zurutuza07:cedi07-wormledge" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zurutuza07:cedi07-wormledge" class="ref-number" data-ref-number="16" title="Copy link to clipboard">
+      [16]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        Análisis de datos procedentes de un sistema de detección de gusanos mediante técnicas de clustering (Analysis of data from a worm-detection system using clustering techniques)
+      
+    </strong><br>
+    Urko Zurutuza, Roberto Uribetxeberria, Diego Zamboni<br>
+    <span class="meta">
+      Actas del II Simposio sobre Seguridad Informática (SSI'2007), II Congreso Español de Informática (CEDI 2007) (Proceedings of the II Symposium on Computer Security, II Spanish Conference on Informatics)
+       · 2007<meta itemprop="datePublished" content="2007">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni07:sruti07-rbg" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni07:sruti07-rbg" class="ref-number" data-ref-number="17" title="Copy link to clipboard">
+      [17]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="http://www.usenix.org/events/sruti07/tech/full_papers/zamboni/zamboni.pdf">
+          Boundary detection and containment of local worm infections
+        </a>
+      
+    </strong><br>
+    Diego Zamboni, James Riordan, Milton Yates<br>
+    <span class="meta">
+      Proceedings of the 3rd Workshop on Steps to Reducing Unwanted Traffic on the Internet (SRUTI'07)
+       · 2007<meta itemprop="datePublished" content="2007">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-riordan06:_build_billy_goat:first2006" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-riordan06:_build_billy_goat:first2006" class="ref-number" data-ref-number="18" title="Copy link to clipboard">
+      [18]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        Building and deploying Billy Goat, a worm-detection system
+      
+    </strong><br>
+    James Riordan, Diego Zamboni, Yann Duponchel<br>
+    <span class="meta">
+      Proceedings of the 18th Annual FIRST Conference
+       · 2006<meta itemprop="datePublished" content="2006">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni02:sensors_detectors" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni02:sensors_detectors" class="ref-number" data-ref-number="19" title="Copy link to clipboard">
+      [19]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://www.researchgate.net/publication/220065478_Using_Internal_Sensors_and_Embedded_Detectors_for_Intrusion_Detection">
+          Using internal sensors and embedded detectors for intrusion detection
+        </a>
+      
+    </strong><br>
+    Florian Kerschbaum, Eugene H. Spafford, Diego Zamboni<br>
+    <span class="meta">
+      Journal of Computer Security
+       · 2002<meta itemprop="datePublished" content="2002">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-kerschbaum00:network-embedded-sensors" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-kerschbaum00:network-embedded-sensors" class="ref-number" data-ref-number="20" title="Copy link to clipboard">
+      [20]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://www.cerias.purdue.edu/apps/reports_and_papers/view/1641/">
+          Using embedded sensors for detecting network attacks
+        </a>
+      
+    </strong><br>
+    Florian Kerschbaum, Eugene H. Spafford, Diego Zamboni<br>
+    <span class="meta">
+      Proceedings of the 1st ACM Workshop on Intrusion Detection Systems
+       · 2000<meta itemprop="datePublished" content="2000">
+      
+      
+       · CERIAS TR 2000-25
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-spafford00:intrus_detec_auton_agent" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-spafford00:intrus_detec_auton_agent" class="ref-number" data-ref-number="21" title="Copy link to clipboard">
+      [21]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="http://dx.doi.org/10.1016/S1389-1286(00)00136-5">
+          Intrusion Detection using Autonomous Agents
+        </a>
+      
+    </strong><br>
+    Eugene H. Spafford, Diego Zamboni<br>
+    <span class="meta">
+      Computer Networks
+       · 2000<meta itemprop="datePublished" content="2000">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni:aafid-acsac98" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni:aafid-acsac98" class="ref-number" data-ref-number="22" title="Copy link to clipboard">
+      [22]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="http://zzamboni.org/files/pubs/aafid-acsac98.pdf">
+          An Architecture for Intrusion Detection using Autonomous Agents
+        </a>
+      
+    </strong><br>
+    Jai Sundar Balasubramaniyan, Jose Omar Garcia-Fernandez, David Isacoff, Eugene Spafford, Diego Zamboni<br>
+    <span class="meta">
+      Proceedings of the Fourteenth Annual Computer Security Applications Conference
+       · 1998<meta itemprop="datePublished" content="1998">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-schuba97:synkill" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-schuba97:synkill" class="ref-number" data-ref-number="23" title="Copy link to clipboard">
+      [23]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://www.cerias.purdue.edu/apps/reports_and_papers/view/605">
+          Analysis of a Denial of Service Attack on TCP
+        </a>
+      
+    </strong><br>
+    Christoph L. Schuba, Ivan V. Krsul, Markus G. Kuhn, Eugene H. Spafford, Aurobindo Sundaram, Diego Zamboni<br>
+    <span class="meta">
+      Proceedings of the 1997 IEEE Symposium on Security and Privacy
+       · 1997<meta itemprop="datePublished" content="1997">
+      
+      
+       · Awarded the 2020 IEEE Security & Privacy Test of Time Award.
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni96:saint" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni96:saint" class="ref-number" data-ref-number="24" title="Copy link to clipboard">
+      [24]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="http://zzamboni.org/files/pubs/SAINT.pdf">
+          SAINT –-A Security Analysis Integration Tool
+        </a>
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      Proceedings of the 1996 Systems Administration, Networking and Security Conference
+       · 1996<meta itemprop="datePublished" content="1996">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+
+
+<h3 id="techreport">Technical Reports</h3>
+
+
+
+
+<div class="pub" id="pub-riordan05:bg_techreport" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-riordan05:bg_techreport" class="ref-number" data-ref-number="25" title="Copy link to clipboard">
+      [25]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://dominoweb.draco.res.ibm.com/reports/rz3609_revised.pdf">
+          Billy Goat, an Accurate Worm-Detection System
+        </a>
+      
+    </strong><br>
+    James Riordan, Diego Zamboni, Yann Duponchel<br>
+    <span class="meta">
+      Research Report RZ 3609, IBM Research
+      
+       · 2005<meta itemprop="datePublished" content="2005">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni00:thesis-proposal" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni00:thesis-proposal" class="ref-number" data-ref-number="26" title="Copy link to clipboard">
+      [26]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://www.cerias.purdue.edu/apps/reports_and_papers/view/581">
+          Doing intrusion detection using embedded sensors–- Thesis proposal
+        </a>
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      CERIAS Technical Report 2000-21, CERIAS, Purdue University
+      
+       · 2000<meta itemprop="datePublished" content="2000">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-spafford00:data_collection-techrep" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-spafford00:data_collection-techrep" class="ref-number" data-ref-number="27" title="Copy link to clipboard">
+      [27]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://www.cerias.purdue.edu/apps/reports_and_papers/view/1842">
+          Data Collection mechanisms for intrusion detection systems
+        </a>
+      
+    </strong><br>
+    Eugene Spafford, Diego Zamboni<br>
+    <span class="meta">
+      CERIAS Technical Report 2000-08, CERIAS, Purdue University
+      
+       · 2000<meta itemprop="datePublished" content="2000">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni:aafid-architecture" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni:aafid-architecture" class="ref-number" data-ref-number="28" title="Copy link to clipboard">
+      [28]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://www.cerias.purdue.edu/apps/reports_and_papers/view/65">
+          An Architecture for Intrusion Detection using Autonomous Agents
+        </a>
+      
+    </strong><br>
+    Jai Sundar Balasubramaniyan, Jose Omar Garcia-Fernandez, Eugene Spafford, Diego Zamboni<br>
+    <span class="meta">
+      Technical Report 98-05, COAST Laboratory, Purdue University
+      
+       · 1998<meta itemprop="datePublished" content="1998">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+
+
+<h3 id="presentations">Presentations</h3>
+
+
+
+
+<div class="pub" id="pub-zamboni-chapman:cfsummit2016" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni-chapman:cfsummit2016" class="ref-number" data-ref-number="29" title="Copy link to clipboard">
+      [29]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="http://sched.co/6aQ2">
+          Chaos Heidi vs. Orchard: Self-Disruption and Healing in a Cloud Foundry-Based Service Environment
+        </a>
+      
+    </strong><br>
+    Diego Zamboni, Bill Chapman<br>
+    <span class="meta">
+      Presented at the Cloud Foundry Summit Silicon Valley 2016
+       · 2016<meta itemprop="datePublished" content="2016">
+      
+      
+       · <a href="https://www.youtube.com/watch?v=Wr4E–kr_KE">Recording</a>
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni-burgess:ucms14" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni-burgess:ucms14" class="ref-number" data-ref-number="30" title="Copy link to clipboard">
+      [30]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://www.usenix.org/conference/ucms14/summit-program/presentation/zamboni">
+          The Future of In-Container Configuration Management
+        </a>
+      
+    </strong><br>
+    Diego Zamboni, Mark Burgess<br>
+    <span class="meta">
+      Invited talk at the 2014 Usenix Configuration Management Summit (UCMS'14)
+       · 2014<meta itemprop="datePublished" content="2014">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-svoboda-zamboni:lisa2013" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-svoboda-zamboni:lisa2013" class="ref-number" data-ref-number="31" title="Copy link to clipboard">
+      [31]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://www.usenix.org/conference/lisa13/leveraging-memory-key-value-stores-large-scale-operations">
+          Leveraging In-Memory Key Value Stores for Large-Scale Operations
+        </a>
+      
+    </strong><br>
+    Mike Svoboda, Diego Zamboni<br>
+    <span class="meta">
+      Invited talk at the 27th Large Installation System Administration (LISA) Conference
+       · 2013<meta itemprop="datePublished" content="2013">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni:raid2000" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni:raid2000" class="ref-number" data-ref-number="32" title="Copy link to clipboard">
+      [32]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="http://zzamboni.org/files/pubs/sensors-raid2000.pdf">
+          Design and implementation issues for embedded
+sensors in intrusion detection
+        </a>
+      
+    </strong><br>
+    Eugene H. Spafford, Diego Zamboni<br>
+    <span class="meta">
+      Presented at the Third International Workshop on
+Recent Advances in Intrusion Detection
+(RAID2000)
+       · 2000<meta itemprop="datePublished" content="2000">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni00:build_aafid_with_perl" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni00:build_aafid_with_perl" class="ref-number" data-ref-number="33" title="Copy link to clipboard">
+      [33]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="http://zzamboni.org/files/pubs/tpc40.pdf">
+          Building a Distributed Intrusion Detection System with Perl
+        </a>
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      Presented at The Perl Conference 4.0
+       · 2000<meta itemprop="datePublished" content="2000">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni:raid99" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni:raid99" class="ref-number" data-ref-number="34" title="Copy link to clipboard">
+      [34]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://www.cerias.purdue.edu/apps/reports_and_papers/view/3487">
+          New directions for the AAFID architecture
+        </a>
+      
+    </strong><br>
+    Eugene H. Spafford, Diego Zamboni<br>
+    <span class="meta">
+      Proceedings of the Second International Workshop on Recent
+Advances in Intrusion Detection (RAID99)
+       · 1999<meta itemprop="datePublished" content="1999">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni:raid98" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni:raid98" class="ref-number" data-ref-number="35" title="Copy link to clipboard">
+      [35]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        AAFID: Autonomous Agents for Intrusion Detection
+      
+    </strong><br>
+    Eugene H. Spafford, Diego Zamboni<br>
+    <span class="meta">
+      Proceedings of the First International Workshop on Recent
+Advances in Intrusion Detection (RAID98)
+       · 1998<meta itemprop="datePublished" content="1998">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+
+
+<h3 id="invited">Invited Talks and Articles</h3>
+
+
+
+
+<div class="pub" id="pub-burgess14:cfeng_decen_approac_config_manag" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-burgess14:cfeng_decen_approac_config_manag" class="ref-number" data-ref-number="36" title="Copy link to clipboard">
+      [36]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="http://www.infoq.com/articles/cfengine-view-on-it-automation">
+          CFEngine's Decentralized Approach to Configuration Management
+        </a>
+      
+    </strong><br>
+    Mark Burgess, Diego Zamboni<br>
+    <span class="meta">
+      InfoQ
+       · 2014<meta itemprop="datePublished" content="2014">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni11:security_third_wave_it_engineering" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni11:security_third_wave_it_engineering" class="ref-number" data-ref-number="37" title="Copy link to clipboard">
+      [37]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://zzamboni.org/post/security-in-the-third-wave-of-it-engineering/">
+          Security in the Third Wave of IT Engineering
+        </a>
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      Keynote talk, presented at the 2011 Computer Security Congress in Mexico City
+       · 2011<meta itemprop="datePublished" content="2011">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-carbone08:_tamin_virtualization" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-carbone08:_tamin_virtualization" class="ref-number" data-ref-number="38" title="Copy link to clipboard">
+      [38]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://ieeexplore.ieee.org/document/4446700">
+          Taming Virtualization
+        </a>
+      
+    </strong><br>
+    Martim Carbone, Diego Zamboni, Wenke Lee<br>
+    <span class="meta">
+      IEEE Security and Privacy
+       · 2008<meta itemprop="datePublished" content="2008">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni06:sigmaxi-talk" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni06:sigmaxi-talk" class="ref-number" data-ref-number="39" title="Copy link to clipboard">
+      [39]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        From Intrusion Detection to Remediation and Beyond: Evolution, Trends, and Research at IBM
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      Invited talk at the annual meeting of the Swiss Chapter of the Sigma XI Honorary Scientific Society
+       · 2006<meta itemprop="datePublished" content="2006">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni05:zisc-talk" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni05:zisc-talk" class="ref-number" data-ref-number="40" title="Copy link to clipboard">
+      [40]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        Intrusion what? From detection to prevention and beyond
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      Talk at the Zurich Information Security Center Information Security Colloquium
+       · 2005<meta itemprop="datePublished" content="2005">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-_how_to_hook_worms:spectrum05" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-_how_to_hook_worms:spectrum05" class="ref-number" data-ref-number="41" title="Copy link to clipboard">
+      [41]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://spectrum.ieee.org/computing/networks/how-to-hook-worms">
+          How to Hook Worms
+        </a>
+      
+    </strong><br>
+    James Riordan, Andreas Wespi, Diego Zamboni<br>
+    <span class="meta">
+      IEEE Spectrum
+       · 2005<meta itemprop="datePublished" content="2005">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni2004:congreso-seguridad" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni2004:congreso-seguridad" class="ref-number" data-ref-number="42" title="Copy link to clipboard">
+      [42]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <em>Diez Años de Aciertos y Fallas –- ¿Qué Hemos Aprendido y Qué nos Depara el Futuro en la Seguridad?</em> (Ten years of hits and misses –- what have we learned, and what does the future in security hold for us?)
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      Keynote talk, presented at the 2004 Computer Security Congress in Mexico City
+       · 2004<meta itemprop="datePublished" content="2004">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-riordan04:billy_goat" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-riordan04:billy_goat" class="ref-number" data-ref-number="43" title="Copy link to clipboard">
+      [43]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="http://www.ercim.org/publication/Ercim_News/enw56/riordan.html">
+          Billy Goat Detects Worms and Viruses
+        </a>
+      
+    </strong><br>
+    James Riordan, Diego Zamboni<br>
+    <span class="meta">
+      ERCIM News
+       · 2004<meta itemprop="datePublished" content="2004">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni99:disc-aafid" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni99:disc-aafid" class="ref-number" data-ref-number="44" title="Copy link to clipboard">
+      [44]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <em>Avances en el sistema y arquitectura AAFID para detección de intrusos</em> (Advances in the AAFID intrusion detection architecture and system)
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      Proceedings of the 1999 <em>Día Internacional de la Seguridad en Cómputo</em> (International Computer Security Day) conference
+       · 1999<meta itemprop="datePublished" content="1999">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-zamboni98:disc-aafid" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-zamboni98:disc-aafid" class="ref-number" data-ref-number="45" title="Copy link to clipboard">
+      [45]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        AAFID: <em>Detección de Intrusos usando Agentes Autónomos</em> (Intrusion Detection using Autonomous Agents)
+      
+    </strong><br>
+    Diego Zamboni<br>
+    <span class="meta">
+      Proceedings of the 1998 <em>Día Internacional de la Seguridad en Cómputo</em> (International Computer Security Day) conference
+       · 1998<meta itemprop="datePublished" content="1998">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+
+
+<h3 id="patent">Patents</h3>
+
+
+
+
+<div class="pub" id="pub-lens.org/107-038-681-631-856" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/107-038-681-631-856" class="ref-number" data-ref-number="46" title="Copy link to clipboard">
+      [46]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/107-038-681-631-856">
+          Hardware Emulation Using On-the-fly Virtualization
+        </a>
+      
+    </strong><br>
+    Martim Carbone, Bernhard Jansen, Harigovind Ramasamy, Matthias Schunter, Axel Tanner, Diego Zamboni<br>
+    <span class="meta">
+      Granted Patent US 9250942 B2, United States
+      
+       · 2016-02-02<meta itemprop="datePublished" content="2016-02-02">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/012-709-360-909-626" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/012-709-360-909-626" class="ref-number" data-ref-number="47" title="Copy link to clipboard">
+      [47]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/012-709-360-909-626">
+          Secure User Interaction Using Virtualization
+        </a>
+      
+    </strong><br>
+    Bernhard Jansen, Matthias Schunter, Axel Tanner, Diego Zamboni<br>
+    <span class="meta">
+      Granted Patent US 8516564 B2, United States
+      
+       · 2013-08-20<meta itemprop="datePublished" content="2013-08-20">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/113-267-068-964-958" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/113-267-068-964-958" class="ref-number" data-ref-number="48" title="Copy link to clipboard">
+      [48]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/113-267-068-964-958">
+          Detection And Control Of Peer-to-peer Communication
+        </a>
+      
+    </strong><br>
+    Diego Zamboni, Alessandri Dominique, Daniela Bourges-Waldegg, James Riordan<br>
+    <span class="meta">
+      Granted Patent CN 101390369 B, China
+      
+       · 2012-11-14<meta itemprop="datePublished" content="2012-11-14">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/151-595-773-205-878" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/151-595-773-205-878" class="ref-number" data-ref-number="49" title="Copy link to clipboard">
+      [49]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/151-595-773-205-878">
+          Detection And Control Of Peer-to-peer Communication
+        </a>
+      
+    </strong><br>
+    Diego Zamboni, Dominique Alessandri, Daniela Bourges-Waldegg, James Riordan<br>
+    <span class="meta">
+      Patent Family of US 8219679 B2, United States, others
+      
+       · 2012-07-10<meta itemprop="datePublished" content="2012-07-10">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/025-823-888-291-212" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/025-823-888-291-212" class="ref-number" data-ref-number="50" title="Copy link to clipboard">
+      [50]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/025-823-888-291-212">
+          Network Attack Detection
+        </a>
+      
+    </strong><br>
+    James Riordan, Yann Duponchel, Ruediger Rissmann, Diego Zamboni<br>
+    <span class="meta">
+      Patent Application US 2012/0096548 A1, United States
+      
+       · 2012-04-19<meta itemprop="datePublished" content="2012-04-19">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/029-398-797-666-948" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/029-398-797-666-948" class="ref-number" data-ref-number="51" title="Copy link to clipboard">
+      [51]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/029-398-797-666-948">
+          Methods For Operating Virtual Networks, Data Network System, Computer Program And Computer Program Product
+        </a>
+      
+    </strong><br>
+    Yann Duponchel, James Riordan, Ruediger Rissmann, Diego Zamboni<br>
+    <span class="meta">
+      Granted Patent JP 4886788 B2, Japan
+      
+       · 2012-02-29<meta itemprop="datePublished" content="2012-02-29">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/180-018-185-996-580" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/180-018-185-996-580" class="ref-number" data-ref-number="52" title="Copy link to clipboard">
+      [52]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/180-018-185-996-580">
+          Network Attack Detection
+        </a>
+      
+    </strong><br>
+    Ruediger Rissmann, Yann Duponchel, Diego Zamboni, James Riordan<br>
+    <span class="meta">
+      Granted Patent KR 101090815 B1, Republic of Korea
+      
+       · 2011-12-08<meta itemprop="datePublished" content="2011-12-08">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/046-970-961-390-965" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/046-970-961-390-965" class="ref-number" data-ref-number="53" title="Copy link to clipboard">
+      [53]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/046-970-961-390-965">
+          Detection And Control Of Peer-to-peer Communication
+        </a>
+      
+    </strong><br>
+    Diego Zamboni, Alessandri Dominique, Daniela Bourges-Waldegg, James Riordan<br>
+    <span class="meta">
+      Granted Patent JP 4829982 B2, Japan
+      
+       · 2011-12-07<meta itemprop="datePublished" content="2011-12-07">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/065-534-634-366-763" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/065-534-634-366-763" class="ref-number" data-ref-number="54" title="Copy link to clipboard">
+      [54]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/065-534-634-366-763">
+          IP Network Management Based On Automatically Acquired Network Entity Status Information
+        </a>
+      
+    </strong><br>
+    James Riordan, Ruediger Rissmann, Diego Zamboni<br>
+    <span class="meta">
+      Patent Family of US 8055751 B2, United States, others
+      
+       · 2011-11-08<meta itemprop="datePublished" content="2011-11-08">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/090-147-732-334-753" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/090-147-732-334-753" class="ref-number" data-ref-number="55" title="Copy link to clipboard">
+      [55]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/090-147-732-334-753">
+          Network Attack Detection
+        </a>
+      
+    </strong><br>
+    Ruediger Rissmann, Yann Duponchel, Diego Zamboni, James Riordan<br>
+    <span class="meta">
+      Granted Patent JP 4753264 B2, Japan
+      
+       · 2011-08-24<meta itemprop="datePublished" content="2011-08-24">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/080-322-567-493-840" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/080-322-567-493-840" class="ref-number" data-ref-number="56" title="Copy link to clipboard">
+      [56]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/080-322-567-493-840">
+          Methods For Operating Virtual Networks, Data Network System, Computer Program And Computer Program Product
+        </a>
+      
+    </strong><br>
+    Yann Duponchel, James Riordan, Ruediger Rissmann, Diego Zamboni<br>
+    <span class="meta">
+      Patent Family of US 7908350 B2, United States, others
+      
+       · 2011-03-15<meta itemprop="datePublished" content="2011-03-15">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/002-818-728-052-940" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/002-818-728-052-940" class="ref-number" data-ref-number="57" title="Copy link to clipboard">
+      [57]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/002-818-728-052-940">
+          Methods For Operating Virtual Networks, Data Network System, Computer Program And Computer Program Product
+        </a>
+      
+    </strong><br>
+    Yann Duponchel, James Riordan, Ruediger Rissmann, Diego Zamboni<br>
+    <span class="meta">
+      Granted Patent KR 100998418 B1, Republic of Korea
+      
+       · 2010-12-03<meta itemprop="datePublished" content="2010-12-03">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/179-407-514-833-082" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/179-407-514-833-082" class="ref-number" data-ref-number="58" title="Copy link to clipboard">
+      [58]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/179-407-514-833-082">
+          Erkennung Von Netzwerkangriffen
+        </a>
+      
+    </strong><br>
+    Ruediger Rissmann, Yann Duponchel, Diego Zamboni, James Riordan<br>
+    <span class="meta">
+      Granted Patent DE 602006017668 D1, Germany
+      
+       · 2010-12-02<meta itemprop="datePublished" content="2010-12-02">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/002-199-882-054-266" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/002-199-882-054-266" class="ref-number" data-ref-number="59" title="Copy link to clipboard">
+      [59]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/002-199-882-054-266">
+          Erkennung Von Netzwerkangriffen
+        </a>
+      
+    </strong><br>
+    Ruediger Rissmann, Yann Duponchel, Diego Zamboni, James Riordan<br>
+    <span class="meta">
+      Granted Patent AT 485552 T, Austria
+      
+       · 2010-11-15<meta itemprop="datePublished" content="2010-11-15">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/044-792-433-937-531" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/044-792-433-937-531" class="ref-number" data-ref-number="60" title="Copy link to clipboard">
+      [60]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/044-792-433-937-531">
+          Network Attack Detection
+        </a>
+      
+    </strong><br>
+    Ruediger Rissmann, Yann Duponchel, Diego Zamboni, James Riordan<br>
+    <span class="meta">
+      Patent Family of EP 1866725 B1, European Patent Office, others
+      
+       · 2010-10-20<meta itemprop="datePublished" content="2010-10-20">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/032-065-473-420-813" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/032-065-473-420-813" class="ref-number" data-ref-number="61" title="Copy link to clipboard">
+      [61]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/032-065-473-420-813">
+          Methods For Operating Virtual Networks, Equipment, Data Network System
+        </a>
+      
+    </strong><br>
+    Diego Zamboni, Yann Duponchel, James Riordan, Ruediger Rissmann<br>
+    <span class="meta">
+      Granted Patent CN 101326771 B, China
+      
+       · 2010-09-15<meta itemprop="datePublished" content="2010-09-15">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/023-500-648-492-606" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/023-500-648-492-606" class="ref-number" data-ref-number="62" title="Copy link to clipboard">
+      [62]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/023-500-648-492-606">
+          Verfahren Zum Betrieb Von Mehreren Virtuellen Netzwerken
+        </a>
+      
+    </strong><br>
+    Yann Duponchel, James Riordan, Ruediger Rissmann, Diego Zamboni<br>
+    <span class="meta">
+      Granted Patent DE 602006012095 D1, Germany
+      
+       · 2010-03-18<meta itemprop="datePublished" content="2010-03-18">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/066-334-395-713-288" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/066-334-395-713-288" class="ref-number" data-ref-number="63" title="Copy link to clipboard">
+      [63]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/066-334-395-713-288">
+          Verfahren Zum Betrieb Von Mehreren Virtuellen Netzwerken
+        </a>
+      
+    </strong><br>
+    Yann Duponchel, James Riordan, Ruediger Rissmann, Diego Zamboni<br>
+    <span class="meta">
+      Granted Patent AT 456890 T, Austria
+      
+       · 2010-02-15<meta itemprop="datePublished" content="2010-02-15">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/159-743-880-849-911" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/159-743-880-849-911" class="ref-number" data-ref-number="64" title="Copy link to clipboard">
+      [64]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/159-743-880-849-911">
+          Method For Operating Several Virtual Networks
+        </a>
+      
+    </strong><br>
+    Yann Duponchel, James Riordan, Ruediger Rissmann, Diego Zamboni<br>
+    <span class="meta">
+      Patent Family of EP 1969777 B1, European Patent Office, others
+      
+       · 2010-01-27<meta itemprop="datePublished" content="2010-01-27">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/038-781-979-981-306" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/038-781-979-981-306" class="ref-number" data-ref-number="65" title="Copy link to clipboard">
+      [65]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/038-781-979-981-306">
+          Network Attack Detection Method And Device
+        </a>
+      
+    </strong><br>
+    Ruediger Rissmann, Yann Duponchel<br>
+    <span class="meta">
+      Granted Patent CN 100561492 C, China
+      
+       · 2009-11-18<meta itemprop="datePublished" content="2009-11-18">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/077-245-544-178-974" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/077-245-544-178-974" class="ref-number" data-ref-number="66" title="Copy link to clipboard">
+      [66]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/077-245-544-178-974">
+          Preventing Attacks In A Data Processing System
+        </a>
+      
+    </strong><br>
+    Morton Swimmer, Andreas Wespi, Diego Zamboni<br>
+    <span class="meta">
+      Granted Patent US 7555777 B2, United States
+      
+       · 2009-06-30<meta itemprop="datePublished" content="2009-06-30">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+<div class="pub" id="pub-lens.org/009-701-089-204-105" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <span class="pub-ref">
+    <a href="#pub-lens.org/009-701-089-204-105" class="ref-number" data-ref-number="67" title="Copy link to clipboard">
+      [67]
+    </a>
+  </span>
+  <div class="pub-content">
+    <strong itemprop="name">
+      
+        <a itemprop="url" href="https://lens.org/009-701-089-204-105">
+          Network Protection For Denial Of Service Attacks
+        </a>
+      
+    </strong><br>
+    Christoph Schuba, Ivan Krsul, Diego Zamboni, Eugene Spafford, Aurobindo Sundaram, Markus Kuhn<br>
+    <span class="meta">
+      Granted Patent US 6725378 B1, United States
+      
+       · 2004-04-20<meta itemprop="datePublished" content="2004-04-20">
+      
+      
+      
+    </span>
+  </div>
+</div>
+
+
+
+
+
+
+
+<footer>
+  <small>Generated 2026-02-10</small>
+</footer>
+
+<script>
+// Table of Contents active state tracking
+(() => {
+  const toc = document.querySelector('.table-of-contents');
+  if (!toc) return;
+
+  const links = toc.querySelectorAll('a[data-toc-target]');
+  if (!links.length) return;
+
+  // Track all sections
+  const sections = Array.from(links)
+    .map(link => {
+      const target = link.getAttribute('data-toc-target');
+      if (target === 'top') return { element: document.body, link, id: target };
+      const section = document.getElementById(target);
+      return section ? { element: section, link, id: target } : null;
+    })
+    .filter(Boolean);
+
+  if (!sections.length) return;
+
+  // Update active link
+  const setActiveLink = target => {
+    links.forEach(link => link.classList.remove('active'));
+    const activeLink = sections.find(s => s.element === target)?.link;
+    if (activeLink) activeLink.classList.add('active');
+  };
+
+  // Intersection Observer to track visible sections
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: 0,
+  };
+
+  let activeSection = null;
+
+  const observer = new IntersectionObserver(entries => {
+    const intersecting = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+    if (intersecting.length > 0) {
+      const target = intersecting[0].target;
+      const sectionData = sections.find(s => s.element === target);
+      if (sectionData) {
+        activeSection = sectionData.element;
+        setActiveLink(activeSection);
+      }
+    }
+  }, observerOptions);
+
+  // Observe sections
+  sections.forEach(({ element }) => {
+    observer.observe(element);
+  });
+
+  // Handle smooth scrolling
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.getAttribute('data-toc-target');
+      const sectionData = sections.find(s => s.id === target);
+      if (sectionData) {
+        sectionData.element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setActiveLink(sectionData.element);
+      }
+    });
+  });
+
+  // Set initial active state
+  setActiveLink(sections[0].element);
+})();
+
+// Reference number link copying
+document.querySelectorAll('.ref-number').forEach(link => {
+  link.addEventListener('click', async (e) => {
+    e.preventDefault();
+    
+    // Get the pub ID from the href (e.g., "#pub-smith2020" -> "pub-smith2020")
+    const pubId = link.getAttribute('href').substring(1);
+    const refText = link.textContent.trim(); // This includes the brackets like "[1]"
+    
+    // Get the current page filename
+    const path = window.location.pathname;
+    const pageUrl = path.endsWith('/') ? path : path.split('/').pop() || '/vita/publications/';
+    
+    // Create Markdown link format: [1](/vita/publications/#pub-smith2020)
+    const markdownLink = `[${refText}](${pageUrl}#${pubId})`;
+    
+    // Copy to clipboard
+    try {
+      await navigator.clipboard.writeText(markdownLink);
+      
+      // Visual feedback: change color briefly
+      const originalColor = link.style.color;
+      link.style.color = 'var(--color-secondary)';
+      link.textContent = '✓';
+      
+      setTimeout(() => {
+        link.style.color = originalColor;
+        link.textContent = link.getAttribute('data-original-text') || link.textContent;
+      }, 1500);
+    } catch (err) {
+      console.error('Failed to copy to clipboard:', err);
+    }
+  });
+  
+  // Store original text for restoration
+  link.setAttribute('data-original-text', link.textContent);
+});
+</script>
+
+</body>
+</html>
