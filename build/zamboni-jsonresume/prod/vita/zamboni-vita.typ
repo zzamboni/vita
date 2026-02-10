@@ -431,7 +431,7 @@ _See #link("/vita/publications/")[Publications] for publication details._
   description: [
     - Developed security solution for VMware virtual environments using virtual machine introspection
 - Implemented intrusion detection and prevention capabilities based on VMware VMsafe API
-- Publications: #link("/vita/publications/#pub-Christodorescu:2009:CSV:1655008.1655022")[[6]]
+- Publications: #link("/vita/publications/#pub-Christodorescu:2009:CSV:1655008.1655022")[[13]]
   ]
 )
 
@@ -445,7 +445,7 @@ _See #link("/vita/publications/")[Publications] for publication details._
     - Pioneered active worm-capture technology that became the foundation for modern honeypots and honeynets
 - Designed system to simulate thousands of vulnerable hosts to attract and capture propagating worms
 - Implemented automated analysis to extract signatures and update intrusion detection/prevention systems
-- Publications: #link("/vita/publications/#pub-riordan06:_build_billy_goat:first2006")[[11]], #link("/vita/publications/#pub-riordan05:bg_techreport")[[23]]
+- Publications: #link("/vita/publications/#pub-riordan06:_build_billy_goat:first2006")[[18]], #link("/vita/publications/#pub-riordan05:bg_techreport")[[25]]
   ]
 )
 
@@ -459,7 +459,7 @@ _See #link("/vita/publications/")[Publications] for publication details._
     - Deployed active worm-capture at network boundary, coupled with border router infrastructure
 - Implemented automatic IP address spoofing to cover entire external address space
 - Enabled accurate detection of infected local machines and prevention of outbound worm propagation
-- Publications: #link("/vita/publications/#pub-zamboni07:sruti07-rbg")[[10]]
+- Publications: #link("/vita/publications/#pub-zamboni07:sruti07-rbg")[[17]]
   ]
 )
 
@@ -497,7 +497,7 @@ _See #link("/vita/publications/")[Publications] for publication details._
     - Investigated novel approaches to data collection for intrusion detection systems
 - Implemented and evaluated internal sensors and embedded detectors as data collection mechanisms
 - Analyzed trade-offs and effectiveness of different sensor placement strategies in IDS architectures
-- Publications: #link("/vita/publications/#pub-zamboni01:phd-thesis")[[27]], #link("/vita/publications/#pub-zamboni02:sensors_detectors")[[12]],  #link("/vita/publications/#pub-kerschbaum00:network-embedded-sensors")[[13]],  #link("/vita/publications/#pub-spafford00:data_collection-techrep")[[25]],  #link("/vita/publications/#pub-zamboni00:thesis-proposal")[[24]], #link("/vita/publications/#pub-zamboni:raid2000")[[32]]
+- Publications: #link("/vita/publications/#pub-zamboni01:phd-thesis")[[11]], #link("/vita/publications/#pub-zamboni02:sensors_detectors")[[19]],  #link("/vita/publications/#pub-kerschbaum00:network-embedded-sensors")[[20]],  #link("/vita/publications/#pub-spafford00:data_collection-techrep")[[27]],  #link("/vita/publications/#pub-zamboni00:thesis-proposal")[[26]], #link("/vita/publications/#pub-zamboni:raid2000")[[32]]
   ]
 )
 
@@ -511,7 +511,7 @@ _See #link("/vita/publications/")[Publications] for publication details._
     - Designed AAFID architecture for distributed monitoring and intrusion detection using autonomous agents
 - Implemented and published prototype as open source, contributing to distributed IDS research community
 - Explored novel research approaches in distributed intrusion detection
-- Publications: #link("/vita/publications/#pub-spafford00:intrus_detec_auton_agent")[[14]], #link("/vita/publications/#pub-zamboni:aafid-acsac98")[[15]], #link("/vita/publications/#pub-zamboni:aafid-architecture")[[26]], #link("/vita/publications/#pub-zamboni:raid98")[[35]], #link("/vita/publications/#pub-zamboni00:build_aafid_with_perl")[[33]], #link("/vita/publications/#pub-zamboni:raid99")[[34]]
+- Publications: #link("/vita/publications/#pub-spafford00:intrus_detec_auton_agent")[[21]], #link("/vita/publications/#pub-zamboni:aafid-acsac98")[[22]], #link("/vita/publications/#pub-zamboni:aafid-architecture")[[28]], #link("/vita/publications/#pub-zamboni:raid98")[[35]], #link("/vita/publications/#pub-zamboni00:build_aafid_with_perl")[[33]], #link("/vita/publications/#pub-zamboni:raid99")[[34]]
   ]
 )
 
@@ -524,7 +524,7 @@ _See #link("/vita/publications/")[Publications] for publication details._
   description: [
     - Analyzed SYN-flooding denial-of-service attack against TCP/IP protocol
 - Developed defense tool to mitigate SYN-flooding attacks
-- Publications: #link("/vita/publications/#pub-schuba97:synkill")[[16]], awarded the #link("https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/")[2020 IEEE Security & Privacy Test of Time Award]
+- Publications: #link("/vita/publications/#pub-schuba97:synkill")[[23]], awarded the #link("https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/")[2020 IEEE Security & Privacy Test of Time Award]
   ]
 )
 
