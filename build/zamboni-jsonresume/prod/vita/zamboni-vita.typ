@@ -18,7 +18,7 @@
         text: "zzamboni.org",
         link: "https://zzamboni.org"
       ),
-      location: "Swiss residence permit C",
+      location: "Zurich",
       linkedin: "zzamboni",
       custom-leanpub: (
         awesomeIcon: "leanpub",
