@@ -17,6 +17,7 @@ cv_json = "zamboni-vita.json"
 pubs_script   = "scripts/build_publications.py"
 pubs_template = "templates/publications.html.j2"
 pubs_bib      = "src/**/*.bib"
+pubs_links    = '[{"name":"Home","url":"/about","icon":"home"},{"name":"PDF","url":"/vita/publications/zamboni-pubs.pdf","icon":"file-pdf"},{"name":"BibTeX","url":"/vita/publications/zamboni-pubs.bib","icon":"tex"}]'
 
 # Typst CV pipeline
 typst_script = "scripts/render_typst_cv.py"
@@ -50,7 +51,9 @@ pubs_pdf_prod = "{{vars.output_dir_prod}}/vita/publications/zamboni-pubs.pdf"
 
 # Local dev server settings (used for polling-based auto-reload)
 port = "8008"
+port_prod = "8009"
 base_url = "http://localhost:{{vars.port}}"
+base_url_prod = "http://localhost:{{vars.port_prod}}"
 cv_url = "{{vars.base_url}}/vita/"
 pubs_url = "{{vars.base_url}}/vita/publications/"
 
@@ -95,6 +98,8 @@ run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 scripts/render_cv.sh "${usage_theme:-}" "{{vars.cv_json}}" "{{vars.cv_html_dev}}"
+mkdir -p {{vars.output_dir_dev}}/vita/assets/profile
+cp -a assets/profile/* {{vars.output_dir_dev}}/vita/assets/profile
 '''
 
 [tasks.render-prod]
@@ -108,6 +113,8 @@ run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 scripts/render_cv.sh "${usage_theme:-}" "{{vars.cv_json}}" "{{vars.cv_html_prod}}"
+mkdir -p {{vars.output_dir_prod}}/vita/assets/profile
+cp -a assets/profile/* {{vars.output_dir_prod}}/vita/assets/profile
 '''
 
 # Build publications HTML from BibTeX + template.
@@ -119,7 +126,8 @@ outputs = ["{{vars.pubs_html_dev}}"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
-PUBS_LINKS='[{"name":"PDF","url":"/vita/publications/zamboni-pubs.pdf","icon":"file-pdf"},{"name":"BibTeX","url":"/vita/publications/zamboni-pubs.bib","icon":"fa-tex"}]' \
+PUBS_LINKS='{{vars.pubs_links}}' \
+  PUBS_OUT_DIR="{{vars.output_dir_dev}}/vita/publications" \
   scripts/build_pubs.sh 1 "{{vars.pubs_html_dev}}" "{{vars.pubs_script}}"
 '''
 
@@ -130,7 +138,8 @@ outputs = ["{{vars.pubs_html_prod}}"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
-PUBS_LINKS='[{"name":"BibTeX","url":"/vita/publications/zamboni-pubs.bib","icon":"book"},{"name":"PDF","url":"/vita/publications/zamboni-pubs.pdf","icon":"file-pdf"}]' \
+PUBS_LINKS='{{vars.pubs_links}}' \
+  PUBS_OUT_DIR="{{vars.output_dir_prod}}/vita/publications" \
   scripts/build_pubs.sh 0 "{{vars.pubs_html_prod}}" "{{vars.pubs_script}}"
 '''
 
@@ -317,7 +326,18 @@ run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 echo "→ Serving {{vars.output_dir_dev}} at {{vars.base_url}}"
-python3 -m http.server "{{vars.port}}" --bind 0.0.0.0 --directory "{{vars.output_dir_dev}}"
+python3 -m http.server "{{vars.port}}" --bind 0.0.0.0 --directory "{{vars.output_dir_dev}}" >/dev/null 2>&1
+'''
+
+# Serve the dev output directory over HTTP.
+# Required for the polling-based auto-reload snippets (fetch + Last-Modified).
+[tasks.serve-prod]
+description = "Serve output_dir_prod over HTTP"
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+echo "→ Serving {{vars.output_dir_prod}} at {{vars.base_url_prod}}"
+python3 -m http.server "{{vars.port_prod}}" --bind 0.0.0.0 --directory "{{vars.output_dir_prod}}" >/dev/null 2>&1
 '''
 
 # Open the dev pages once (using your system `open` wrapper).
