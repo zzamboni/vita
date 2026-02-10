@@ -322,6 +322,22 @@ depends = ["render-dev", "pubs-dev", "pubs-pdf-dev", "cv-reload-inject", "typst-
 description = "Build prod outputs (no auto-reload)"
 depends = ["render-prod", "pubs-prod", "pubs-pdf-prod", "typst-prod"]
 
+[tasks.deploy-prod]
+description = "Deploy prod vita to website static directory"
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+src_dir="{{vars.output_dir_prod}}/vita"
+dest_dir="../websites/zzamboni.org/static/vita"
+
+rm -rf "$dest_dir"
+mkdir -p "$dest_dir"
+
+echo ">>> Deploying '$src_dir' to '$dest_dir' ..."
+rsync -a --delete --exclude "*.typ" "$src_dir"/ "$dest_dir"/
+'''
+
 # Convenience aliases (optional, but nice for discoverability)
 [tasks.cv-dev]
 description = "Build CV (dev, inject reload)"
