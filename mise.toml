@@ -144,7 +144,7 @@ touch "{{vars.output_dir_prod}}/vita/assets/profile/.synced"
 [tasks.pubs-dev]
 description = "Build publications (dev)"
 sources = ["{{vars.pubs_script}}", "{{vars.pubs_template}}", "{{vars.pubs_bib}}", "scripts/build_pubs.sh", "mise.toml"]
-outputs = ["{{vars.pubs_html_dev}}"]
+outputs = ["{{vars.pubs_html_dev}}", "{{vars.pubs_bib_dev}}"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
@@ -156,7 +156,7 @@ PUBS_LINKS='{{vars.pubs_links}}' \
 [tasks.pubs-prod]
 description = "Build publications (prod)"
 sources = ["{{vars.pubs_script}}", "{{vars.pubs_template}}", "{{vars.pubs_bib}}", "scripts/build_pubs.sh", "mise.toml"]
-outputs = ["{{vars.pubs_html_prod}}"]
+outputs = ["{{vars.pubs_html_prod}}", "{{vars.pubs_bib_prod}}"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail

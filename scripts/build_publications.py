@@ -16,6 +16,7 @@ import os
 BIB_DIR = Path("pubs-src")
 OUT_FILE = Path(os.environ.get("PUBS_HTML", "dist/publications.html"))
 TEMPLATE_DIR = Path("templates")
+PUBS_OUT_DIR = Path(os.environ.get("PUBS_OUT_DIR", "")) if os.environ.get("PUBS_OUT_DIR") else None
 
 EXPORT_SELECTED = False
 SELECTED_KEYWORD = "selected"
@@ -213,6 +214,45 @@ def latex_to_html(s):
 
     return s
 
+def clean_bib_entry(entry):
+    cleaned = {}
+    for k, v in entry.items():
+        if k.startswith("_"):
+            continue
+        if v is None:
+            continue
+        if isinstance(v, (str, int, float)):
+            cleaned[k] = str(v)
+    return cleaned
+
+def write_combined_bib(raw_entries, sections):
+    if not PUBS_OUT_DIR:
+        return
+    PUBS_OUT_DIR.mkdir(parents=True, exist_ok=True)
+    combined_path = PUBS_OUT_DIR / "zamboni-pubs.bib"
+    raw_by_key = {
+        (e.get("key") or e.get("ID")): e for e in raw_entries if (e.get("key") or e.get("ID"))
+    }
+    chunks = []
+    for section_key in SECTION_ORDER:
+        section_entries = sections.get(section_key, [])
+        if not section_entries:
+            continue
+        section_title = SECTION_TITLES.get(section_key, section_key)
+        chunks.append(f"% ====== {section_title} ======\n")
+        section_db = bibtexparser.bibdatabase.BibDatabase()
+        entries_for_section = []
+        for e in section_entries:
+            key = e.get("key") or e.get("ID")
+            if not key:
+                continue
+            raw = raw_by_key.get(key, e)
+            entries_for_section.append(clean_bib_entry(raw))
+        section_db.entries = entries_for_section
+        chunks.append(bibtexparser.dumps(section_db).strip())
+        chunks.append("")
+    combined_path.write_text("\n".join(chunks).strip() + "\n")
+
 def group_by_section(entries):
     grouped = defaultdict(list)
     for e in entries:
@@ -330,8 +370,10 @@ def normalize(entries):
     return sorted(entries, key=lambda e: e["year"], reverse=True)
 
 def main():
-    entries = normalize(load_bibtex())
+    raw_entries = load_bibtex()
+    entries = normalize(raw_entries)
     sections = group_by_section(entries)
+    write_combined_bib(raw_entries, sections)
 
     non_empty_sections = [
         s for s in SECTION_ORDER
