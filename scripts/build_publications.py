@@ -23,10 +23,10 @@ SELECTED_OUT_FILE = Path("site/selected-publications.json")
 
 SECTION_ORDER = [
     "book",
-    "refereed",
     "editorial",
-    "techreport",
     "thesis",
+    "refereed",
+    "techreport",
     "presentations",
     "invited",
     "patent",
@@ -45,7 +45,7 @@ SECTION_TITLES = {
     "other": "Other Publications",
 }
 
-FA_SVG_DIR = Path("assets/fontawesome/svgs")
+FA_SVG_DIR = Path("assets/fontawesome")
 _ICON_CACHE = {}
 
 
@@ -218,8 +218,18 @@ def group_by_section(entries):
     for e in entries:
         grouped[e["_section"]].append(e)
 
-    # Ensure empty sections still exist
-    return {s: grouped.get(s, []) for s in SECTION_ORDER}
+    def sort_key(entry):
+        year = entry.get("year")
+        if year:
+            return (int(year), "")
+        date = entry.get("date") or ""
+        return (0, str(date))
+
+    # Ensure empty sections still exist, and sort each section by year (desc)
+    return {
+        s: sorted(grouped.get(s, []), key=sort_key, reverse=True)
+        for s in SECTION_ORDER
+    }
 
 def load_bibtex():
     entries = []
