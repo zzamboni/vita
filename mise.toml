@@ -41,6 +41,8 @@ cv_pdf_prod   = "{{vars.output_dir_prod}}/vita/{{vars.typst_pdf}}"
 pubs_html_dev  = "{{vars.output_dir_dev}}/vita/publications/index.html"
 pubs_html_prod = "{{vars.output_dir_prod}}/vita/publications/index.html"
 
+website_deploy_dir = "../websites/zzamboni.org/static/vita"
+
 # Publications outputs
 pubs_tex      = "pubs-src/zamboni-pubs.tex"
 pubs_pdf_src  = "pubs-src/zamboni-pubs.pdf"
@@ -182,7 +184,7 @@ cp "{{vars.pubs_pdf_src}}" "{{vars.pubs_pdf_dev}}"
 
 [tasks.pubs-pdf-prod]
 description = "Build publications PDF (prod, LaTeX)"
-sources = ["{{vars.pubs_tex}}", "{{vars.pubs_bib}}", "mise.toml"]
+sources = ["{{vars.pubs_tex}}", "{{vars.pubs_bib}}"]
 outputs = ["{{vars.pubs_pdf_prod}}"]
 run = '''
 #!/usr/bin/env bash
@@ -329,7 +331,7 @@ run = '''
 set -euo pipefail
 
 src_dir="{{vars.output_dir_prod}}/vita"
-dest_dir="../websites/zzamboni.org/static/vita"
+dest_dir="{{vars.website_deploy_dir}}"
 
 rm -rf "$dest_dir"
 mkdir -p "$dest_dir"
