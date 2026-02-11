@@ -194,6 +194,7 @@ I possess a strong combination of leadership, conceptual and technical skills th
 #cv-entry-start(
   society: [#link("https://swisscom.com/")[Swisscom]],
   logo: image("assets/logos/Swisscom.jpg"),
+  location: [Switzerland],
 )
 #v(4pt)
 
