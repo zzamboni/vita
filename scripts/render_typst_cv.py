@@ -379,7 +379,7 @@ def render_experience(work: List[Dict[str, Any]], base_output_dir: Path, assets_
         url = next((job.get("url", "") for job in jobs if job.get("url", "")), "")
         logo_path = find_company_logo(company, base_output_dir, assets_dir, source_assets_dir)
         locations = [job.get("location", "") for job in jobs if job.get("location", "")]
-        shared_location = locations[0] if locations and len(set(locations)) == 1 else ""
+        shared_location = locations[0]
 
         output += f'#cv-entry-start(\n'
         output += f'  society: ['
