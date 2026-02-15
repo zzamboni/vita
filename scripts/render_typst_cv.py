@@ -7,7 +7,7 @@ brilliant-cv Typst template.
 
 Diego Zamboni <diego@zzamboni.org>, 2026
 
-Coded with help from Claude Code.
+Coded with help from Claude Code and Codex.
 """
 
 import json
@@ -897,6 +897,68 @@ def generate_typst_cv(resume_data: Dict[str, Any], base_output_dir: Path, assets
 // Using brilliant-cv template
 
 #import "@preview/brilliant-cv:3.1.2": *
+
+/// Add the title of a section
+///
+/// NOTE: If the language is non-Latin, the title highlight will not be sliced.
+///
+/// This is a copy of the function from the brilliant-cv package, but making it sticky
+/// to prevent orphan headings.
+///
+/// - title (str): The title of the section.
+/// - highlighted (bool): Whether the first n letters will be highlighted in accent color.
+/// - letters (int): The number of first letters of the title to highlight.
+/// - metadata (array): (optional) the metadata read from the TOML file.
+/// - awesome-colors (array): (optional) the awesome colors of the CV.
+/// -> content
+#let cv-section(
+  title,
+  highlighted: true,
+  letters: 3,
+  metadata: none,
+  // New parameter names (recommended)
+  awesome-colors: none,
+  // Old parameter names (deprecated, for backward compatibility)
+  awesomeColors: _awesome-colors,
+) = context {
+  let metadata = if metadata != none { metadata } else { cv-metadata.get() }
+  // Backward compatibility logic (remove this block when deprecating)
+  let awesome-colors = if awesome-colors != none {
+    awesome-colors
+  } else {
+    // TODO: Add deprecation warning in future version
+    // Currently Typst doesn't have a standard warning mechanism for user functions
+    awesomeColors
+  }
+
+  let lang = metadata.language
+  let non-latin = _is-non-latin(lang)
+  let before-section-skip = _get-layout-value(metadata, "before_section_skip", 1pt)
+  let accent-color = _set-accent-color(awesome-colors, metadata)
+  let highlighted-text = title.slice(0, letters)
+  let normal-text = title.slice(letters)
+
+  let section-title-style(str, color: black) = {
+    text(size: 16pt, weight: "bold", fill: color, str)
+  }
+
+  v(before-section-skip)
+  block(
+    sticky: true,
+    [#if non-latin {
+      section-title-style(title, color: accent-color)
+    } else {
+      if highlighted {
+        section-title-style(highlighted-text, color: accent-color)
+        section-title-style(normal-text, color: black)
+      } else {
+        section-title-style(title, color: black)
+      }
+    }
+    #h(2pt)
+    #box(width: 1fr, line(stroke: 0.9pt, length: 100%))]
+  )
+}
 
 """
 
