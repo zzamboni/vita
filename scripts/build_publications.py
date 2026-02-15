@@ -10,10 +10,11 @@ import re
 import html
 import json
 import os
+import copy
 
 #logging.getLogger("bibtexparser").setLevel(logging.ERROR)
 
-BIB_DIR = Path("pubs-src")
+BIB_DIR = Path(os.environ.get("PUBS_BIB_DIR", "pubs-src"))
 OUT_FILE = Path(os.environ.get("PUBS_HTML", "dist/publications.html"))
 TEMPLATE_DIR = Path("templates")
 PUBS_OUT_DIR = Path(os.environ.get("PUBS_OUT_DIR", "")) if os.environ.get("PUBS_OUT_DIR") else None
@@ -310,7 +311,8 @@ def entry_to_jsonresume_publication(e):
         "summary": " — ".join([b for b in summary_bits if b]),
     }
 
-def normalize(entries):
+def normalize(raw_entries):
+    entries = copy.deepcopy(raw_entries)
     for e in entries:
         # Ensure we have the bibtex key for anchoring
         # bibtexparser may use 'key' or 'ID' depending on version
