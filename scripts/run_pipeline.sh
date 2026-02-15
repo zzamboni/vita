@@ -3,11 +3,11 @@ set -euo pipefail
 
 usage() {
   cat <<'USAGE'
-Usage: scripts/run_pipeline.sh --json <file> --bib <file> [--bib <file> ...] --out <dir>
+Usage: scripts/run_pipeline.sh --json <file> [--bib <file> ...] --out <dir>
 
 Required:
   --json <file>   JSON Resume input
-  --bib <file>    BibTeX input (repeatable)
+  --bib <file>    BibTeX input (optional, repeatable)
   --out <dir>     Output base directory (will create <dir>/vita)
 
 Example:
@@ -64,7 +64,7 @@ done
 
 out_vita="$output_dir/vita"
 out_pubs="$out_vita/publications"
-mkdir -p "$out_vita" "$out_pubs"
+mkdir -p "$out_vita"
 
 # Sync profile assets for Typst CV
 mkdir -p "$out_vita/assets/profile"
@@ -77,58 +77,59 @@ scripts/render_cv.sh "" "$json_file" "$out_vita/index.html"
 python scripts/render_typst_cv.py "$json_file" "$out_vita/zamboni-vita.typ"
 typst compile "$out_vita/zamboni-vita.typ" "$out_vita/zamboni-vita.pdf"
 
-# Prepare temp bib dir for publications
-pubs_tmp_dir="$(mktemp -d)"
-# trap 'rm -rf "$pubs_tmp_dir"' EXIT
+if [[ ${#bib_files[@]} -gt 0 ]]; then
+  mkdir -p "$out_pubs"
 
-for bib in "${bib_files[@]}"; do
-  cp "$bib" "$pubs_tmp_dir/"
-done
+  # Prepare temp bib dir for publications
+  pubs_tmp_dir="$(mktemp -d)"
+  trap 'rm -rf "$pubs_tmp_dir"' EXIT
 
-# Publications HTML + aggregated BibTeX
-PUBS_BIB_DIR="$pubs_tmp_dir" \
-PUBS_HTML="$out_pubs/index.html" \
-PUBS_OUT_DIR="$out_pubs" \
-PUBS_LINKS='[]' \
-python scripts/build_publications.py
+  for bib in "${bib_files[@]}"; do
+    cp "$bib" "$pubs_tmp_dir/"
+  done
 
-# Build publications PDF via LaTeX
-# Generate a temporary zamboni-pubs.tex that uses the aggregated bib only.
-agg_bib="$out_pubs/zamboni-pubs.bib"
-if [[ ! -f "$agg_bib" ]]; then
-  echo "Aggregated bib not found: $agg_bib" >&2
-  exit 1
+  # Publications HTML + aggregated BibTeX
+  PUBS_BIB_DIR="$pubs_tmp_dir" \
+  PUBS_HTML="$out_pubs/index.html" \
+  PUBS_OUT_DIR="$out_pubs" \
+  PUBS_LINKS='[]' \
+  python scripts/build_publications.py
+
+  # Build publications PDF via LaTeX using aggregated BibTeX.
+  agg_bib="$out_pubs/zamboni-pubs.bib"
+  if [[ ! -f "$agg_bib" ]]; then
+    echo "Aggregated bib not found: $agg_bib" >&2
+    exit 1
+  fi
+
+  pubs_tex_src_dir="pubs-src"
+  pubs_tex_src="${pubs_tex_src_dir}/zamboni-pubs.tex"
+
+  if [[ ! -f "$pubs_tex_src" ]]; then
+    echo "Publications tex template not found: $pubs_tex_src" >&2
+    exit 1
+  fi
+
+  pubs_work_dir="$pubs_tmp_dir/tex"
+  mkdir -p "$pubs_work_dir"
+  cp -a "$pubs_tex_src_dir"/. "$pubs_work_dir"
+
+  # Strip existing addbibresource lines, then add our aggregated bib.
+  awk 'BEGIN { first = 1 }
+    !/^\\addbibresource/ { print }
+    /^\\addbibresource/ && first { first = 0; printf "\\addbibresource{zamboni-pubs.bib}\n" }
+  ' "$pubs_tex_src" > "$pubs_work_dir/zamboni-pubs.tex"
+
+  cp "$agg_bib" "$pubs_work_dir/zamboni-pubs.bib"
+
+  (
+    cd "$pubs_work_dir"
+    tectonic -Z search-path=$(dirname $(kpsewhich biblatex.sty)) zamboni-pubs.tex
+  )
+
+  cp "$pubs_work_dir/zamboni-pubs.pdf" "$out_pubs/zamboni-pubs.pdf"
+else
+  rm -rf "$out_pubs"
 fi
-
-pubs_tex_src_dir="pubs-src"
-pubs_tex_src="${pubs_tex_src_dir}/zamboni-pubs.tex"
-
-if [[ ! -f "$pubs_tex_src" ]]; then
-  echo "Publications tex template not found: $pubs_tex_src" >&2
-  exit 1
-fi
-
-pubs_work_dir="$pubs_tmp_dir/tex"
-echo "tmp dir = $pubs_work_dir"
-mkdir -p "$pubs_work_dir"
-cp -a $pubs_tex_src_dir/* "$pubs_work_dir"
-
-# Strip existing addbibresource lines, then add our aggregated bib.
-awk 'BEGIN { first = 1 }
-  !/^\\addbibresource/ { print }
-  /^\\addbibresource/ && first { first = 0; printf "\\addbibresource{zamboni-pubs.bib}\n" }
-' "$pubs_tex_src" > "$pubs_work_dir/zamboni-pubs.tex"
-
-# printf '\\addbibresource{zamboni-pubs.bib}\n' >> "$pubs_work_dir/zamboni-pubs.tex"
-
-cp "$agg_bib" "$pubs_work_dir/zamboni-pubs.bib"
-
-
-(
-  cd "$pubs_work_dir"
-  tectonic -Z search-path=$(dirname $(kpsewhich biblatex.sty)) zamboni-pubs.tex
-)
-
-cp "$pubs_work_dir/zamboni-pubs.pdf" "$out_pubs/zamboni-pubs.pdf"
 
 echo "Done. Output in: $out_vita"

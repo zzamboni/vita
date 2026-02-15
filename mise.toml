@@ -349,7 +349,7 @@ flag "--out <dir>" help="Output directory" default="build/resume-output"
 '''
 run = '''
 #!/usr/bin/env bash
-set -xeuo pipefail
+set -euo pipefail
 
 args=()
 if [[ -n "${usage_out}" ]]; then
