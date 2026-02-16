@@ -1,0 +1,13 @@
+.git
+**/.git
+.gitignore
+.devcontainer
+.venv
+node_modules
+**/node_modules
+**/__pycache__
+**/*.pyc
+build
+README.org
+CLAUDE.md
+AGENTS.md

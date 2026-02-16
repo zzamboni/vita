@@ -58,6 +58,7 @@ base_url = "http://localhost:{{vars.port}}"
 base_url_prod = "http://localhost:{{vars.port_prod}}"
 cv_url = "{{vars.base_url}}/vita/"
 pubs_url = "{{vars.base_url}}/vita/publications/"
+pipeline_docker_image = "zamboni/vita-pipeline:latest"
 
 
 # Install dependencies
@@ -386,6 +387,57 @@ if [[ -n "${usage_bibfiles-}" ]]; then
 fi
 
 devcontainer exec --workspace-folder . -- mise run pipeline "${args[@]}"
+'''
+
+[tasks.pipeline-image-build]
+description = "Build standalone pipeline Docker image"
+sources = [
+  "Dockerfile",
+  ".dockerignore",
+  "requirements.txt",
+  "package.json",
+  "package-lock.json",
+  "scripts/run_pipeline.sh",
+  "scripts/render_cv.sh",
+  "scripts/render_typst_cv.py",
+  "scripts/build_publications.py",
+  "templates/publications.html.j2",
+  "pubs-src/zamboni-pubs.tex",
+  "assets/profile/**/*",
+  "assets/fontawesome/**/*",
+  "themes/jsonresume-theme-even/**/*",
+]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+docker build --build-arg PREWARM_CACHE=1 -t "{{vars.pipeline_docker_image}}" .
+'''
+
+[tasks.pipeline-docker]
+description = "Run pipeline through standalone Docker image"
+usage = '''
+arg "<resume>" help="JSONresume file"
+arg "[bibfiles]" var=#true help="BibTeX files (optional)"
+flag "--out <dir>" help="Output directory" default="build/resume-output"
+'''
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+args=()
+if [[ -n "${usage_out}" ]]; then
+   args+=(--out "${usage_out}")
+fi
+args+=(--json "${usage_resume}")
+if [[ -n "${usage_bibfiles-}" ]]; then
+   read -r -a arr <<< "$usage_bibfiles"
+   for f in "${arr[@]}"; do
+      args+=(--bib "$f")
+   done
+fi
+
+VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
+  docker/run-pipeline.sh "${args[@]}"
 '''
 
 # Convenience aliases (optional, but nice for discoverability)
