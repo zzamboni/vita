@@ -413,6 +413,10 @@ set -euo pipefail
 docker build --build-arg PREWARM_CACHE=1 -t "{{vars.pipeline_docker_image}}" .
 '''
 
+[tasks.docker-bash]
+description = "Open an interative shell in the Docker image"
+run = "docker run -it --entrypoint /bin/bash -v ${PWD}:/work -w /work zamboni/vita-pipeline"
+
 [tasks.pipeline-docker]
 description = "Run pipeline through standalone Docker image"
 usage = '''
