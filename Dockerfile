@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
 FROM base AS runtime
+ENV TECTONIC_CACHE_DIR=/opt/tectonic-cache
 
 RUN cd /tmp \
   && curl --proto '=https' --tlsv1.2 -fsSLo typst.tar.xz \
@@ -40,29 +41,61 @@ RUN cd /tmp \
 
 WORKDIR /opt/vita-toolkit
 
-RUN mkdir -p /root/.local/share/fonts
-COPY fonts/ /root/.local/share/fonts/
 COPY requirements-docker.txt package.json package-lock.json ./
-COPY scripts/ ./scripts/
-COPY templates/ ./templates/
-COPY assets/ ./assets/
-COPY pubs-src/ ./pubs-src/
 COPY themes/jsonresume-theme-even/ ./themes/jsonresume-theme-even/
-COPY docker/entrypoint.sh /usr/local/bin/vita-pipeline
 
 RUN pip3 install --no-cache-dir --break-system-packages -r requirements-docker.txt \
   && npm ci --omit=dev --ignore-scripts --no-audit --no-fund \
   && npm cache clean --force \
   && rm -rf themes/jsonresume-theme-even themes/jsonresume.org \
-  && rm -f package.json package-lock.json requirements-docker.txt \
-  && chmod +x /opt/vita-toolkit/scripts/run_pipeline.sh /usr/local/bin/vita-pipeline
+  && rm -f package.json package-lock.json requirements-docker.txt
+
+RUN mkdir -p /root/.local/share/fonts
+COPY fonts/ /root/.local/share/fonts/
+COPY scripts/ ./scripts/
+COPY templates/ ./templates/
+COPY assets/ ./assets/
+COPY pubs-assets/ ./pubs-assets/
+COPY docker/entrypoint.sh /usr/local/bin/vita-pipeline
+
+RUN chmod +x /opt/vita-toolkit/scripts/run_pipeline.sh /usr/local/bin/vita-pipeline
 
 ARG PREWARM_CACHE=0
 RUN if [ "$PREWARM_CACHE" = "1" ]; then \
-      cd pubs-src && tectonic prime-tectonic.tex && \
-      (echo '#import "@preview/brilliant-cv:3.1.2"'; \
-       echo '#import "@preview/fontawesome:0.6.0"') | typst compile - prime-typst.pdf && \
-      rm -f *.pdf; \
+      mkdir -p "$TECTONIC_CACHE_DIR" /tmp/tectonic-prime/fonts; \
+      cp /opt/vita-toolkit/pubs-assets/awesome-cv.cls /tmp/tectonic-prime/; \
+      cp -a /opt/vita-toolkit/pubs-assets/fonts/. /tmp/tectonic-prime/fonts/; \
+      printf '%s\n' \
+        '@article{prime-entry,' \
+        '  title={Prime},' \
+        '  author={Prime, Example},' \
+        '  journal={Prime Journal},' \
+        '  year={2024},' \
+        '  keyword={other}' \
+        '}' > /tmp/tectonic-prime/publications.bib; \
+      printf '%s\n' \
+        '\documentclass[12pt,a4paper]{awesome-cv}' \
+        '\usepackage[defernumbers=true,style=numeric,sorting=ydnt,backend=biber]{biblatex}' \
+        '\addbibresource{publications.bib}' \
+        '\defbibheading{cvbibsection}[\bibname]{\cvsubsection{#1}}' \
+        '\renewcommand*{\bodyfontlight}{\sourcesanspro}' \
+        '\renewcommand*{\bibfont}{\paragraphstyle}' \
+        '\renewcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}' \
+        '\renewcommand*{\subsectionstyle}{\entrytitlestyle}' \
+        '\renewcommand*{\headerquotestyle}[1]{{\fontsize{8pt}{1em}\bodyfont #1}}' \
+        '\fontdir[fonts/]' \
+        '\colorlet{awesome}{awesome-concrete}' \
+        '\colorizelinks[awesome-skyblue]' \
+        '\begin{document}' \
+        '\makecvfooter{\today}{Publications}{\thepage}' \
+        '\cvsubsection{Foo}' \
+        '\cvsection{Bar}' \
+        '\nocite{*}' \
+        '\printbibliography[keyword=other, heading=cvbibsection, title=Other Publications]' \
+        '\end{document}' > /tmp/tectonic-prime/publications.tex; \
+      cd /tmp/tectonic-prime && tectonic publications.tex; \
+      (echo '#import "@preview/brilliant-cv:3.1.2"'; echo '#import "@preview/fontawesome:0.6.0"') | typst compile - /tmp/tectonic-prime/prime-typst.pdf; \
+      rm -rf /tmp/tectonic-prime; \
     fi
 
 WORKDIR /work

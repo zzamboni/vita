@@ -5,9 +5,7 @@ Convert JSONResume format to Typst CV using brilliant-cv template.
 This script reads a JSONResume JSON file and generates a CV using the
 brilliant-cv Typst template.
 
-Diego Zamboni <diego@zzamboni.org>, 2026
-
-Coded with help from Claude Code and Codex.
+Generic JSON Resume to Typst converter.
 """
 
 import json

@@ -43,15 +43,15 @@ def update_json_text(text: str, mapping: dict[str, str]) -> tuple[str, int, int]
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Update publication reference numbers in zamboni-vita.json.")
+    parser = argparse.ArgumentParser(description="Update publication reference numbers in a JSON Resume file.")
     parser.add_argument(
         "--html",
-        default="build/zamboni-jsonresume/dev/vita/publications/index.html",
+        default="build/jsonresume/dev/vita/publications/index.html",
         help="Path to publications HTML file.",
     )
     parser.add_argument(
         "--json",
-        default="zamboni-vita.json",
+        default="resume.json",
         help="Path to JSON resume file to update.",
     )
     args = parser.parse_args()

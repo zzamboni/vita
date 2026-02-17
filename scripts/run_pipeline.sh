@@ -7,7 +7,7 @@ workdir="${VITA_WORKDIR:-$PWD}"
 
 usage() {
   cat <<'USAGE'
-Usage: scripts/run_pipeline.sh --json <file> [--bib <file> ...] --out <dir>
+Usage: scripts/run_pipeline.sh --json <file> [--bib <file> ...] [--pubs-url <url>] --out <dir>
 
 Required:
   --json <file>   JSON Resume input (relative to working dir or absolute path)
@@ -15,9 +15,10 @@ Required:
 
 Optional:
   --bib <file>    BibTeX input (repeatable)
+  --pubs-url <url>  Online publications URL used in generated publications PDF footer
 
 Example:
-  scripts/run_pipeline.sh --json zamboni-vita.json --bib zamboni-pubs.bib --out build/out
+  scripts/run_pipeline.sh --json resume.json --bib publications.bib --pubs-url https://example.org/vita/publications --out build/out
 USAGE
 }
 
@@ -32,6 +33,7 @@ resolve_path() {
 
 json_file=""
 output_dir=""
+pubs_url=""
 bib_files=()
 
 while [[ $# -gt 0 ]]; do
@@ -46,6 +48,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --out)
       output_dir="$2"
+      shift 2
+      ;;
+    --pubs-url)
+      pubs_url="$2"
       shift 2
       ;;
     -h|--help)
@@ -67,6 +73,45 @@ fi
 
 json_file="$(resolve_path "$json_file")"
 out_base="$(resolve_path "$output_dir")"
+json_name="$(basename "$json_file")"
+json_stem="${json_name%.*}"
+
+cv_typ_name="${json_stem}.typ"
+cv_pdf_name="${json_stem}.pdf"
+pubs_base_name="${json_stem}-pubs"
+pubs_bib_name="${pubs_base_name}.bib"
+pubs_tex_name="${pubs_base_name}.tex"
+pubs_pdf_name="${pubs_base_name}.pdf"
+
+resume_name="$(
+  python - "$json_file" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+def esc(s: str) -> str:
+    rep = {
+        "\\": r"\textbackslash{}",
+        "{": r"\{",
+        "}": r"\}",
+        "#": r"\#",
+        "$": r"\$",
+        "%": r"\%",
+        "&": r"\&",
+        "_": r"\_",
+        "^": r"\^{}",
+        "~": r"\~{}",
+    }
+    return "".join(rep.get(ch, ch) for ch in s)
+
+data = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+name = data.get("basics", {}).get("name", "Publications")
+print(esc(str(name)))
+PY
+)"
+
+pubs_url_display="${pubs_url#https://}"
+pubs_url_display="${pubs_url_display#http://}"
 
 if [[ ! -f "$json_file" ]]; then
   echo "JSON file not found: $json_file" >&2
@@ -95,8 +140,8 @@ fi
 "$toolkit_root/scripts/render_cv.sh" "" "$json_file" "$out_vita/index.html"
 
 # Render + compile CV PDF via Typst
-python "$toolkit_root/scripts/render_typst_cv.py" "$json_file" "$out_vita/zamboni-vita.typ"
-typst compile "$out_vita/zamboni-vita.typ" "$out_vita/zamboni-vita.pdf"
+python "$toolkit_root/scripts/render_typst_cv.py" "$json_file" "$out_vita/$cv_typ_name"
+typst compile "$out_vita/$cv_typ_name" "$out_vita/$cv_pdf_name"
 
 if [[ ${#bib_files[@]} -gt 0 ]]; then
   mkdir -p "$out_pubs"
@@ -108,47 +153,85 @@ if [[ ${#bib_files[@]} -gt 0 ]]; then
     cp "$bib" "$pubs_tmp_dir/"
   done
 
+  pubs_links_json="$(printf '[{\"name\":\"PDF\",\"url\":\"/vita/publications/%s\",\"icon\":\"file-pdf\"},{\"name\":\"BibTeX\",\"url\":\"/vita/publications/%s\",\"icon\":\"book\"}]' "$pubs_pdf_name" "$pubs_bib_name")"
+
   # Publications HTML + aggregated BibTeX
   (
     cd "$toolkit_root"
     PUBS_BIB_DIR="$pubs_tmp_dir" \
     PUBS_HTML="$out_pubs/index.html" \
     PUBS_OUT_DIR="$out_pubs" \
-    PUBS_LINKS='[]' \
+    PUBS_BIB_FILENAME="$pubs_bib_name" \
+    PUBS_LINKS="$pubs_links_json" \
     python scripts/build_publications.py
   )
 
-  agg_bib="$out_pubs/zamboni-pubs.bib"
+  agg_bib="$out_pubs/$pubs_bib_name"
   if [[ ! -f "$agg_bib" ]]; then
     echo "Aggregated bib not found: $agg_bib" >&2
     exit 1
   fi
 
-  pubs_tex_src_dir="$toolkit_root/pubs-src"
-  pubs_tex_src="$pubs_tex_src_dir/zamboni-pubs.tex"
-  if [[ ! -f "$pubs_tex_src" ]]; then
-    echo "Publications tex template not found: $pubs_tex_src" >&2
+  pubs_assets_dir="$toolkit_root/pubs-assets"
+  if [[ ! -f "$pubs_assets_dir/awesome-cv.cls" ]]; then
+    echo "Publications class file not found: $pubs_assets_dir/awesome-cv.cls" >&2
     exit 1
   fi
 
   pubs_work_dir="$pubs_tmp_dir/tex"
   mkdir -p "$pubs_work_dir"
-  cp -a "$pubs_tex_src_dir"/. "$pubs_work_dir"
+  cp -a "$pubs_assets_dir"/. "$pubs_work_dir"
 
-  # Keep only one addbibresource line pointing to the generated aggregate.
-  awk 'BEGIN { first = 1 }
-    !/^\\addbibresource/ { print }
-    /^\\addbibresource/ && first { first = 0; printf "\\addbibresource{zamboni-pubs.bib}\n" }
-  ' "$pubs_tex_src" > "$pubs_work_dir/zamboni-pubs.tex"
+  if [[ -n "$pubs_url" ]]; then
+    footer_center="${resume_name}~~~·~~~Publications\\\\\\textup{\\tiny Online at \\href{${pubs_url}}{\\nolinkurl{${pubs_url_display}}}}"
+  else
+    footer_center="${resume_name}~~~·~~~Publications"
+  fi
 
-  cp "$agg_bib" "$pubs_work_dir/zamboni-pubs.bib"
+  cat > "$pubs_work_dir/$pubs_tex_name" <<LATEX
+\documentclass[12pt,a4paper]{awesome-cv}
+\usepackage[defernumbers=true,style=numeric,sorting=ydnt,backend=biber]{biblatex}
+\addbibresource{$pubs_bib_name}
+\defbibheading{cvbibsection}[\bibname]{\cvsubsection{#1}}
+\renewcommand*{\bodyfontlight}{\sourcesanspro}
+\renewcommand*{\bibfont}{\paragraphstyle}
+\AtBeginBibliography{\raggedright\emergencystretch=1em}
+\renewcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+\renewcommand*{\subsectionstyle}{\entrytitlestyle}
+\renewcommand*{\headerquotestyle}[1]{{\fontsize{8pt}{1em}\bodyfont #1}}
+\fontdir[fonts/]
+\colorlet{awesome}{awesome-concrete}
+\setbool{acvSectionColorHighlight}{false}
+\colorizelinks[awesome-skyblue]
+\hypersetup{
+ pdftitle={Publications},
+ pdflang={English}}
+\begin{document}
+\makecvfooter{\today}{$footer_center}{\thepage}
+\cvsubsection{$resume_name}
+\cvsection{Publications}
+\label{publications}
+\nocite{*}
+\printbibliography[keyword=book,          heading=cvbibsection, title=Books]
+\printbibliography[keyword=editorial,     heading=cvbibsection, title=Editorial Activities]
+\printbibliography[keyword=thesis,        heading=cvbibsection, title=Theses]
+\printbibliography[keyword=refereed,      heading=cvbibsection, title=Refereed Papers]
+\printbibliography[keyword=techreport,    heading=cvbibsection, title=Tech Reports]
+\printbibliography[keyword=presentations, heading=cvbibsection, title=Presentations at Conferences and Workshops]
+\printbibliography[keyword=invited,       heading=cvbibsection, title=Invited Talks and Articles]
+\printbibliography[keyword=patent,        heading=cvbibsection, title=Patents]
+\printbibliography[keyword=other,         heading=cvbibsection, title=Other Publications]
+\end{document}
+LATEX
+
+  cp "$agg_bib" "$pubs_work_dir/$pubs_bib_name"
 
   (
     cd "$pubs_work_dir"
-    tectonic zamboni-pubs.tex
+    tectonic "$pubs_tex_name"
   )
 
-  cp "$pubs_work_dir/zamboni-pubs.pdf" "$out_pubs/zamboni-pubs.pdf"
+  cp "$pubs_work_dir/$pubs_pdf_name" "$out_pubs/$pubs_pdf_name"
 else
   rm -rf "$out_pubs"
 fi

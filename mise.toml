@@ -11,21 +11,21 @@ _.python.venv = { path = ".venv", create = true, uv_create_args = ["--seed"] }
 
 [vars]
 # Input CV (JSON Resume format)
-cv_json = "zamboni-vita.json"
+cv_json = "resume.json"
 
 # Publications pipeline inputs
 pubs_script   = "scripts/build_publications.py"
 pubs_template = "templates/publications.html.j2"
 pubs_bib      = "pubs-src/**/*.bib"
-pubs_links    = '[{"name":"Home","url":"/about","icon":"home"},{"name":"PDF","url":"/vita/publications/zamboni-pubs.pdf","icon":"file-pdf"},{"name":"BibTeX","url":"/vita/publications/zamboni-pubs.bib","icon":"tex"}]'
+pubs_links    = '[{"name":"Home","url":"/about","icon":"home"},{"name":"PDF","url":"/vita/publications/publications.pdf","icon":"file-pdf"},{"name":"BibTeX","url":"/vita/publications/publications.bib","icon":"tex"}]'
 
 # Typst CV pipeline
 typst_script = "scripts/render_typst_cv.py"
-typst_output = "zamboni-vita.typ"
-typst_pdf    = "zamboni-vita.pdf"
+typst_output = "resume.typ"
+typst_pdf    = "resume.pdf"
 
 # Output layout (keep dev/prod artifacts separated under build/)
-output_dir_base = "build/zamboni-jsonresume"
+output_dir_base = "build/jsonresume"
 output_dir_dev  = "{{vars.output_dir_base}}/dev"
 output_dir_prod = "{{vars.output_dir_base}}/prod"
 
@@ -44,12 +44,12 @@ pubs_html_prod = "{{vars.output_dir_prod}}/vita/publications/index.html"
 website_deploy_dir = "../websites/zzamboni.org/static/vita"
 
 # Publications outputs
-pubs_tex      = "pubs-src/zamboni-pubs.tex"
-pubs_pdf_src  = "pubs-src/zamboni-pubs.pdf"
-pubs_bib_dev  = "{{vars.output_dir_dev}}/vita/publications/zamboni-pubs.bib"
-pubs_pdf_dev  = "{{vars.output_dir_dev}}/vita/publications/zamboni-pubs.pdf"
-pubs_bib_prod = "{{vars.output_dir_prod}}/vita/publications/zamboni-pubs.bib"
-pubs_pdf_prod = "{{vars.output_dir_prod}}/vita/publications/zamboni-pubs.pdf"
+pubs_tex      = "pubs-src/publications.tex"
+pubs_pdf_src  = "pubs-src/publications.pdf"
+pubs_bib_dev  = "{{vars.output_dir_dev}}/vita/publications/publications.bib"
+pubs_pdf_dev  = "{{vars.output_dir_dev}}/vita/publications/publications.pdf"
+pubs_bib_prod = "{{vars.output_dir_prod}}/vita/publications/publications.bib"
+pubs_pdf_prod = "{{vars.output_dir_prod}}/vita/publications/publications.pdf"
 
 # Local dev server settings (used for polling-based auto-reload)
 port = "8008"
@@ -58,7 +58,7 @@ base_url = "http://localhost:{{vars.port}}"
 base_url_prod = "http://localhost:{{vars.port_prod}}"
 cv_url = "{{vars.base_url}}/vita/"
 pubs_url = "{{vars.base_url}}/vita/publications/"
-pipeline_docker_image = "zamboni/vita-pipeline:latest"
+pipeline_docker_image = "zzamboni/vita-pipeline:latest"
 
 
 # Install dependencies
@@ -175,9 +175,18 @@ outputs = ["{{vars.pubs_pdf_dev}}"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
+pubs_tex_file="{{vars.pubs_tex}}"
 (
-  cd "$(dirname "{{vars.pubs_tex}}")"
-  tectonic -Z search-path=$(dirname $(kpsewhich biblatex.sty)) zamboni-pubs.tex
+  cd "$(dirname "$pubs_tex_file")"
+  bibs=( *.bib )
+  : > publications.bib
+  for bib in "${bibs[@]}"; do
+    [[ "$bib" == "publications.bib" ]] && continue
+    [[ -f "$bib" ]] || continue
+    cat "$bib" >> publications.bib
+    printf '\n' >> publications.bib
+  done
+  tectonic "$(basename "$pubs_tex_file")"
 )
 mkdir -p "$(dirname "{{vars.pubs_pdf_dev}}")"
 cp "{{vars.pubs_pdf_src}}" "{{vars.pubs_pdf_dev}}"
@@ -190,9 +199,18 @@ outputs = ["{{vars.pubs_pdf_prod}}"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
+pubs_tex_file="{{vars.pubs_tex}}"
 (
-  cd "$(dirname "{{vars.pubs_tex}}")"
-  tectonic -Z search-path=$(dirname $(kpsewhich biblatex.sty)) zamboni-pubs.tex
+  cd "$(dirname "$pubs_tex_file")"
+  bibs=( *.bib )
+  : > publications.bib
+  for bib in "${bibs[@]}"; do
+    [[ "$bib" == "publications.bib" ]] && continue
+    [[ -f "$bib" ]] || continue
+    cat "$bib" >> publications.bib
+    printf '\n' >> publications.bib
+  done
+  tectonic "$(basename "$pubs_tex_file")"
 )
 mkdir -p "$(dirname "{{vars.pubs_pdf_prod}}")"
 cp "{{vars.pubs_pdf_src}}" "{{vars.pubs_pdf_prod}}"
@@ -346,6 +364,7 @@ description = "Run CV + publications pipeline from arbitrary inputs"
 usage = '''
 arg "<resume>" help="JSONresume file"
 arg "[bibfiles]" var=#true help="BibTeX files (optional)"
+flag "--pubs-url <url>" help="Online publications URL for publications PDF footer"
 flag "--out <dir>" help="Output directory" default="build/resume-output"
 '''
 run = '''
@@ -355,6 +374,9 @@ set -euo pipefail
 args=()
 if [[ -n "${usage_out}" ]]; then
    args+=(--out "${usage_out}")
+fi
+if [[ -n "${usage_pubs_url-}" ]]; then
+   args+=(--pubs-url "${usage_pubs_url}")
 fi
 args+=(--json "${usage_resume}")
 if [[ -n "${usage_bibfiles-}" ]]; then
@@ -371,6 +393,7 @@ description = "Run pipeline inside devcontainer"
 usage = '''
 arg "<resume>" help="JSONresume file"
 arg "[bibfiles]" var=#true help="BibTeX files (optional)"
+flag "--pubs-url <url>" help="Online publications URL for publications PDF footer"
 flag "--out <dir>" help="Output directory" default="build/resume-output"
 '''
 run = '''
@@ -380,6 +403,9 @@ set -euo pipefail
 args=()
 if [[ -n "${usage_out}" ]]; then
    args+=(--out "${usage_out}")
+fi
+if [[ -n "${usage_pubs_url-}" ]]; then
+   args+=(--pubs-url "${usage_pubs_url}")
 fi
 args+=("${usage_resume}")
 if [[ -n "${usage_bibfiles-}" ]]; then
@@ -394,7 +420,7 @@ description = "Build standalone pipeline Docker image"
 sources = [
   "Dockerfile",
   ".dockerignore",
-  "requirements.txt",
+  "requirements-docker.txt",
   "package.json",
   "package-lock.json",
   "scripts/run_pipeline.sh",
@@ -402,7 +428,8 @@ sources = [
   "scripts/render_typst_cv.py",
   "scripts/build_publications.py",
   "templates/publications.html.j2",
-  "pubs-src/zamboni-pubs.tex",
+  "pubs-assets/awesome-cv.cls",
+  "pubs-assets/fonts/**/*",
   "assets/profile/**/*",
   "assets/fontawesome/**/*",
   "themes/jsonresume-theme-even/**/*",
@@ -415,13 +442,14 @@ docker build --build-arg PREWARM_CACHE=1 -t "{{vars.pipeline_docker_image}}" .
 
 [tasks.docker-bash]
 description = "Open an interative shell in the Docker image"
-run = "docker run -it --entrypoint /bin/bash -v ${PWD}:/work -w /work zamboni/vita-pipeline"
+run = "docker run -it --entrypoint /bin/bash -v ${PWD}:/work -w /work {{vars.pipeline_docker_image}}"
 
 [tasks.pipeline-docker]
 description = "Run pipeline through standalone Docker image"
 usage = '''
 arg "<resume>" help="JSONresume file"
 arg "[bibfiles]" var=#true help="BibTeX files (optional)"
+flag "--pubs-url <url>" help="Online publications URL for publications PDF footer"
 flag "--out <dir>" help="Output directory" default="build/resume-output"
 '''
 run = '''
@@ -431,6 +459,9 @@ set -euo pipefail
 args=()
 if [[ -n "${usage_out}" ]]; then
    args+=(--out "${usage_out}")
+fi
+if [[ -n "${usage_pubs_url-}" ]]; then
+   args+=(--pubs-url "${usage_pubs_url}")
 fi
 args+=(--json "${usage_resume}")
 if [[ -n "${usage_bibfiles-}" ]]; then

@@ -8,6 +8,10 @@ node_modules
 **/__pycache__
 **/*.pyc
 build
+pubs-src
+zamboni*.json
+*.bib
+*.tex
 README.org
 CLAUDE.md
 AGENTS.md

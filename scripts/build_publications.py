@@ -18,6 +18,7 @@ BIB_DIR = Path(os.environ.get("PUBS_BIB_DIR", "pubs-src"))
 OUT_FILE = Path(os.environ.get("PUBS_HTML", "dist/publications.html"))
 TEMPLATE_DIR = Path("templates")
 PUBS_OUT_DIR = Path(os.environ.get("PUBS_OUT_DIR", "")) if os.environ.get("PUBS_OUT_DIR") else None
+PUBS_BIB_FILENAME = os.environ.get("PUBS_BIB_FILENAME", "publications.bib")
 
 EXPORT_SELECTED = False
 SELECTED_KEYWORD = "selected"
@@ -230,7 +231,7 @@ def write_combined_bib(raw_entries, sections):
     if not PUBS_OUT_DIR:
         return
     PUBS_OUT_DIR.mkdir(parents=True, exist_ok=True)
-    combined_path = PUBS_OUT_DIR / "zamboni-pubs.bib"
+    combined_path = PUBS_OUT_DIR / PUBS_BIB_FILENAME
     raw_by_key = {
         (e.get("key") or e.get("ID")): e for e in raw_entries if (e.get("key") or e.get("ID"))
     }
