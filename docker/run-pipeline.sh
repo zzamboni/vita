@@ -9,6 +9,8 @@ if [[ "${1:-}" == "--image" ]]; then
 fi
 
 exec docker run --rm \
+  --user "$(id -u):$(id -g)" \
+  -e HOME=/tmp \
   -v "$PWD":/work \
   -w /work \
   "$IMAGE_NAME" \

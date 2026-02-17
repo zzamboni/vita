@@ -17,7 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
 FROM base AS runtime
-ENV TECTONIC_CACHE_DIR=/opt/tectonic-cache
+ENV XDG_CACHE_HOME=/opt/vita-cache
+ENV TECTONIC_CACHE_DIR=/opt/vita-cache/tectonic
+ENV NPM_CONFIG_UPDATE_NOTIFIER=false
 
 RUN cd /tmp \
   && curl --proto '=https' --tlsv1.2 -fsSLo typst.tar.xz \
@@ -41,6 +43,9 @@ RUN cd /tmp \
 
 WORKDIR /opt/vita-toolkit
 
+RUN mkdir -p /opt/vita-cache \
+  && chmod -R a+rwx /opt/vita-cache
+
 COPY requirements-docker.txt package.json package-lock.json ./
 COPY themes/jsonresume-theme-even/ ./themes/jsonresume-theme-even/
 
@@ -50,15 +55,16 @@ RUN pip3 install --no-cache-dir --break-system-packages -r requirements-docker.t
   && rm -rf themes/jsonresume-theme-even themes/jsonresume.org \
   && rm -f package.json package-lock.json requirements-docker.txt
 
-RUN mkdir -p /root/.local/share/fonts
-COPY fonts/ /root/.local/share/fonts/
+RUN mkdir -p /usr/local/share/fonts
+COPY fonts/ /usr/local/share/fonts/
 COPY scripts/ ./scripts/
 COPY templates/ ./templates/
 COPY assets/ ./assets/
 COPY pubs-assets/ ./pubs-assets/
 COPY docker/entrypoint.sh /usr/local/bin/vita-pipeline
 
-RUN chmod +x /opt/vita-toolkit/scripts/run_pipeline.sh /usr/local/bin/vita-pipeline
+RUN fc-cache -f \
+  && chmod +x /opt/vita-toolkit/scripts/run_pipeline.sh /usr/local/bin/vita-pipeline
 
 ARG PREWARM_CACHE=0
 RUN if [ "$PREWARM_CACHE" = "1" ]; then \
@@ -87,16 +93,21 @@ RUN if [ "$PREWARM_CACHE" = "1" ]; then \
         '\colorlet{awesome}{awesome-concrete}' \
         '\colorizelinks[awesome-skyblue]' \
         '\begin{document}' \
-        '\makecvfooter{\today}{Publications}{\thepage}' \
-        '\cvsubsection{Foo}' \
-        '\cvsection{Bar}' \
+        '\makecvfooter{\today}{Prime Author~~~·~~~Publications\\\textup{\tiny Online at \href{https://example.invalid/vita/publications}{\nolinkurl{example.invalid/vita/publications}}}}{\thepage}' \
+        '\cvsubsection{Prime Author}' \
+        '{\tiny\ttfamily warm-cache}' \
+        '{\tiny $x$ \small $x$}' \
+        '{\fontsize{9pt}{9pt}\selectfont\ttfamily warm-cache-9pt}' \
+        '{\fontsize{9pt}{9pt}\selectfont $x$}' \
+        '\cvsection{Publications}' \
         '\nocite{*}' \
         '\printbibliography[keyword=other, heading=cvbibsection, title=Other Publications]' \
         '\end{document}' > /tmp/tectonic-prime/publications.tex; \
       cd /tmp/tectonic-prime && tectonic publications.tex; \
       (echo '#import "@preview/brilliant-cv:3.1.2"'; echo '#import "@preview/fontawesome:0.6.0"') | typst compile - /tmp/tectonic-prime/prime-typst.pdf; \
       rm -rf /tmp/tectonic-prime; \
-    fi
+    fi \
+  && chmod -R a+rwX /opt/vita-cache
 
 WORKDIR /work
 ENTRYPOINT ["/usr/local/bin/vita-pipeline"]
