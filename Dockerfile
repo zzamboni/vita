@@ -57,14 +57,10 @@ RUN pip3 install --no-cache-dir --break-system-packages -r requirements-docker.t
 
 RUN mkdir -p /usr/local/share/fonts
 COPY fonts/ /usr/local/share/fonts/
-COPY scripts/ ./scripts/
-COPY templates/ ./templates/
-COPY assets/ ./assets/
 COPY pubs-assets/ ./pubs-assets/
 COPY docker/entrypoint.sh /usr/local/bin/vita-pipeline
 
-RUN fc-cache -f \
-  && chmod +x /opt/vita-toolkit/scripts/run_pipeline.sh /usr/local/bin/vita-pipeline
+RUN fc-cache -f && chmod +x /usr/local/bin/vita-pipeline
 
 ARG PREWARM_CACHE=0
 RUN if [ "$PREWARM_CACHE" = "1" ]; then \
@@ -108,6 +104,12 @@ RUN if [ "$PREWARM_CACHE" = "1" ]; then \
       rm -rf /tmp/tectonic-prime; \
     fi \
   && chmod -R a+rwX /opt/vita-cache
+
+COPY scripts/ ./scripts/
+COPY templates/ ./templates/
+COPY assets/ ./assets/
+
+RUN chmod +x /opt/vita-toolkit/scripts/run_pipeline.sh
 
 WORKDIR /work
 ENTRYPOINT ["/usr/local/bin/vita-pipeline"]
