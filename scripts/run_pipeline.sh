@@ -14,7 +14,7 @@ Required:
   --out <dir>     Output base directory (relative to working dir or absolute path)
 
 Optional:
-  --bib <file>    BibTeX input (repeatable)
+  --bib <file>      BibTeX input (repeatable)
   --pubs-url <url>  Online publications URL used in generated publications PDF footer
 
 Example:
@@ -83,6 +83,19 @@ pubs_bib_name="${pubs_base_name}.bib"
 pubs_tex_name="${pubs_base_name}.tex"
 pubs_pdf_name="${pubs_base_name}.pdf"
 
+if [[ ! -f "$json_file" ]]; then
+  echo "JSON file not found: $json_file" >&2
+  exit 1
+fi
+
+for i in "${!bib_files[@]}"; do
+  bib_files[$i]="$(resolve_path "${bib_files[$i]}")"
+  if [[ ! -f "${bib_files[$i]}" ]]; then
+    echo "BibTeX file not found: ${bib_files[$i]}" >&2
+    exit 1
+  fi
+done
+
 resume_name="$(
   python - "$json_file" <<'PY'
 import json
@@ -113,33 +126,16 @@ PY
 pubs_url_display="${pubs_url#https://}"
 pubs_url_display="${pubs_url_display#http://}"
 
-if [[ ! -f "$json_file" ]]; then
-  echo "JSON file not found: $json_file" >&2
-  exit 1
-fi
-
-for i in "${!bib_files[@]}"; do
-  bib_files[$i]="$(resolve_path "${bib_files[$i]}")"
-  if [[ ! -f "${bib_files[$i]}" ]]; then
-    echo "BibTeX file not found: ${bib_files[$i]}" >&2
-    exit 1
-  fi
-done
-
 out_vita="$out_base/vita"
 out_pubs="$out_vita/publications"
 mkdir -p "$out_vita"
 
-# Sync profile assets for Typst CV
 mkdir -p "$out_vita/assets/profile"
 if compgen -G "$toolkit_root/assets/profile/*" >/dev/null; then
   cp -a "$toolkit_root/assets/profile"/* "$out_vita/assets/profile/"
 fi
 
-# Render CV HTML
 "$toolkit_root/scripts/render_cv.sh" "" "$json_file" "$out_vita/index.html"
-
-# Render + compile CV PDF via Typst
 python "$toolkit_root/scripts/render_typst_cv.py" "$json_file" "$out_vita/$cv_typ_name"
 typst compile "$out_vita/$cv_typ_name" "$out_vita/$cv_pdf_name"
 
@@ -155,7 +151,6 @@ if [[ ${#bib_files[@]} -gt 0 ]]; then
 
   pubs_links_json="$(printf '[{\"name\":\"PDF\",\"url\":\"/vita/publications/%s\",\"icon\":\"file-pdf\"},{\"name\":\"BibTeX\",\"url\":\"/vita/publications/%s\",\"icon\":\"book\"}]' "$pubs_pdf_name" "$pubs_bib_name")"
 
-  # Publications HTML + aggregated BibTeX
   (
     cd "$toolkit_root"
     PUBS_BIB_DIR="$pubs_tmp_dir" \

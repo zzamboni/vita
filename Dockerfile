@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 FROM base AS runtime
 ENV XDG_CACHE_HOME=/opt/vita-cache
 ENV TECTONIC_CACHE_DIR=/opt/vita-cache/tectonic
+ENV MISE_DATA_DIR=/opt/vita-cache/mise
 ENV NPM_CONFIG_UPDATE_NOTIFIER=false
 
 RUN cd /tmp \
@@ -46,21 +47,19 @@ WORKDIR /opt/vita-toolkit
 RUN mkdir -p /opt/vita-cache \
   && chmod -R a+rwx /opt/vita-cache
 
-COPY requirements-docker.txt package.json package-lock.json ./
+COPY mise.toml requirements.txt package.json package-lock.json ./
 COPY themes/jsonresume-theme-even/ ./themes/jsonresume-theme-even/
 
-RUN pip3 install --no-cache-dir --break-system-packages -r requirements-docker.txt \
-  && npm ci --omit=dev --ignore-scripts --no-audit --no-fund \
-  && npm cache clean --force \
-  && rm -rf themes/jsonresume-theme-even themes/jsonresume.org \
-  && rm -f package.json package-lock.json requirements-docker.txt
+RUN curl https://mise.run | MISE_INSTALL_PATH=/usr/local/bin/mise sh \
+  && mise trust /opt/vita-toolkit/mise.toml \
+  && mise install \
+  && HUSKY=0 NPM_CONFIG_IGNORE_SCRIPTS=true mise run bootstrap \
+  && npm cache clean --force
 
 RUN mkdir -p /usr/local/share/fonts
 COPY fonts/ /usr/local/share/fonts/
 COPY pubs-assets/ ./pubs-assets/
-COPY docker/entrypoint.sh /usr/local/bin/vita-pipeline
-
-RUN fc-cache -f && chmod +x /usr/local/bin/vita-pipeline
+RUN fc-cache -f
 
 ARG PREWARM_CACHE=0
 RUN if [ "$PREWARM_CACHE" = "1" ]; then \
@@ -105,6 +104,8 @@ RUN if [ "$PREWARM_CACHE" = "1" ]; then \
     fi \
   && chmod -R a+rwX /opt/vita-cache
 
+COPY docker/entrypoint.sh /usr/local/bin/vita-pipeline
+RUN  chmod +x /usr/local/bin/vita-pipeline
 COPY scripts/ ./scripts/
 COPY templates/ ./templates/
 COPY assets/ ./assets/
@@ -112,5 +113,6 @@ COPY assets/ ./assets/
 RUN chmod +x /opt/vita-toolkit/scripts/run_pipeline.sh
 
 WORKDIR /work
+
 ENTRYPOINT ["/usr/local/bin/vita-pipeline"]
-CMD ["--help"]
+CMD ["tasks"]

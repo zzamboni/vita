@@ -359,14 +359,31 @@ echo ">>> Deploying '$src_dir' to '$dest_dir' ..."
 rsync -a --delete --exclude "*.typ" "$src_dir"/ "$dest_dir"/
 '''
 
-[tasks.pipeline]
-description = "Run CV + publications pipeline from arbitrary inputs"
+[tasks.pipeline-script]
+description = "Run CV + publications pipeline from arbitrary inputs (script)"
 usage = '''
 arg "<resume>" help="JSONresume file"
 arg "[bibfiles]" var=#true help="BibTeX files (optional)"
 flag "--pubs-url <url>" help="Online publications URL for publications PDF footer"
 flag "--out <dir>" help="Output directory" default="build/resume-output"
 '''
+sources = [
+  "scripts/run_pipeline.sh",
+  "scripts/render_cv.sh",
+  "scripts/render_typst_cv.py",
+  "scripts/build_publications.py",
+  "templates/publications.html.j2",
+  "themes/jsonresume-theme-even/**/*",
+  "assets/profile/**/*",
+  "assets/logos/**/*",
+  "assets/fontawesome/**/*",
+  "pubs-assets/**/*",
+  "*.json",
+  "**/*.bib",
+]
+#outputs = [
+#  "{{usage_out}}/vita",
+#]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
@@ -375,11 +392,11 @@ args=()
 if [[ -n "${usage_out}" ]]; then
    args+=(--out "${usage_out}")
 fi
-if [[ -n "${usage_pubs_url-}" ]]; then
+if [[ -n "${usage_pubs_url:-}" ]]; then
    args+=(--pubs-url "${usage_pubs_url}")
 fi
 args+=(--json "${usage_resume}")
-if [[ -n "${usage_bibfiles-}" ]]; then
+if [[ -n "${usage_bibfiles:-}" ]]; then
    read -r -a arr <<< "$usage_bibfiles"
    for f in "${arr[@]}"; do
       args+=(--bib "$f")
@@ -404,11 +421,11 @@ args=()
 if [[ -n "${usage_out}" ]]; then
    args+=(--out "${usage_out}")
 fi
-if [[ -n "${usage_pubs_url-}" ]]; then
+if [[ -n "${usage_pubs_url:-}" ]]; then
    args+=(--pubs-url "${usage_pubs_url}")
 fi
 args+=("${usage_resume}")
-if [[ -n "${usage_bibfiles-}" ]]; then
+if [[ -n "${usage_bibfiles:-}" ]]; then
    args+=(${usage_bibfiles[@]})
 fi
 
@@ -420,7 +437,6 @@ description = "Build standalone pipeline Docker image"
 sources = [
   "Dockerfile",
   ".dockerignore",
-  "requirements-docker.txt",
   "package.json",
   "package-lock.json",
   "scripts/run_pipeline.sh",
@@ -433,6 +449,9 @@ sources = [
   "assets/profile/**/*",
   "assets/fontawesome/**/*",
   "themes/jsonresume-theme-even/**/*",
+  "docker/entrypoint.sh",
+  "docker/run-container.sh",
+  "docker/mise.tools.toml",
 ]
 run = '''
 #!/usr/bin/env bash
@@ -442,7 +461,7 @@ docker build --build-arg PREWARM_CACHE=1 -t "{{vars.pipeline_docker_image}}" .
 
 [tasks.docker-bash]
 description = "Open an interative shell in the Docker image"
-run = "docker run -it --entrypoint /bin/bash -v ${PWD}:/work -w /work {{vars.pipeline_docker_image}}"
+run = "docker/run-container.sh -it x -- bash"
 
 [tasks.pipeline-docker]
 description = "Run pipeline through standalone Docker image"
@@ -460,11 +479,11 @@ args=()
 if [[ -n "${usage_out}" ]]; then
    args+=(--out "${usage_out}")
 fi
-if [[ -n "${usage_pubs_url-}" ]]; then
+if [[ -n "${usage_pubs_url:-}" ]]; then
    args+=(--pubs-url "${usage_pubs_url}")
 fi
 args+=(--json "${usage_resume}")
-if [[ -n "${usage_bibfiles-}" ]]; then
+if [[ -n "${usage_bibfiles:-}" ]]; then
    read -r -a arr <<< "$usage_bibfiles"
    for f in "${arr[@]}"; do
       args+=(--bib "$f")
@@ -472,7 +491,7 @@ if [[ -n "${usage_bibfiles-}" ]]; then
 fi
 
 VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
-  docker/run-pipeline.sh "${args[@]}"
+  docker/run-container.sh "${args[@]}"
 '''
 
 # Convenience aliases (optional, but nice for discoverability)
