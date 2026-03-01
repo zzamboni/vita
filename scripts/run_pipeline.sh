@@ -31,6 +31,52 @@ resolve_path() {
   fi
 }
 
+calc_hash() {
+  {
+    for entry in "$@"; do
+      case "$entry" in
+        STR:*)
+          printf 'STR\n%s\n' "${entry#STR:}"
+          ;;
+        FILE:*)
+          local f="${entry#FILE:}"
+          if [[ -f "$f" ]]; then
+            printf 'FILE\n%s\n' "$f"
+            sha256sum "$f"
+          else
+            printf 'MISSING_FILE\n%s\n' "$f"
+          fi
+          ;;
+        DIR:*)
+          local d="${entry#DIR:}"
+          if [[ -d "$d" ]]; then
+            printf 'DIR\n%s\n' "$d"
+            while IFS= read -r -d '' p; do
+              printf 'PATH\n%s\n' "$p"
+              sha256sum "$p"
+            done < <(find "$d" -type f -print0 | sort -z)
+          else
+            printf 'MISSING_DIR\n%s\n' "$d"
+          fi
+          ;;
+      esac
+    done
+  } | sha256sum | awk '{print $1}'
+}
+
+needs_rebuild() {
+  local out_file="$1"
+  local stamp_file="$2"
+  local new_hash="$3"
+  [[ ! -f "$out_file" || ! -f "$stamp_file" || "$(cat "$stamp_file" 2>/dev/null || true)" != "$new_hash" ]]
+}
+
+mark_built() {
+  local stamp_file="$1"
+  local new_hash="$2"
+  printf '%s\n' "$new_hash" > "$stamp_file"
+}
+
 json_file=""
 output_dir=""
 pubs_url=""
@@ -135,14 +181,59 @@ out_vita="$out_base/vita"
 out_pubs="$out_vita/publications"
 mkdir -p "$out_vita"
 
+state_dir="$out_base/.pipeline-state/$json_stem"
+mkdir -p "$state_dir"
+
+# Sync profile assets for Typst CV
+
 mkdir -p "$out_vita/assets/profile"
 if compgen -G "$toolkit_root/assets/profile/*" >/dev/null; then
   cp -a "$toolkit_root/assets/profile"/* "$out_vita/assets/profile/"
 fi
 
-"$toolkit_root/scripts/render_cv.sh" "" "$json_file" "$out_vita/index.html"
-python "$toolkit_root/scripts/render_typst_cv.py" "$json_file" "$out_vita/$cv_typ_name"
-typst compile "$out_vita/$cv_typ_name" "$out_vita/$cv_pdf_name"
+cv_html="$out_vita/index.html"
+cv_html_hash="$(calc_hash \
+  "FILE:$json_file" \
+  "FILE:$toolkit_root/scripts/render_cv.sh" \
+  "DIR:$toolkit_root/themes/jsonresume-theme-even" \
+  "STR:cv_html_target=$cv_html")"
+if needs_rebuild "$cv_html" "$state_dir/cv-html.sha" "$cv_html_hash"; then
+  echo "→ Building CV HTML"
+  "$toolkit_root/scripts/render_cv.sh" "" "$json_file" "$cv_html"
+  mark_built "$state_dir/cv-html.sha" "$cv_html_hash"
+else
+  echo "→ CV HTML up to date"
+fi
+
+# Render + compile CV PDF via Typst
+cv_typ="$out_vita/$cv_typ_name"
+cv_pdf="$out_vita/$cv_pdf_name"
+cv_typ_hash="$(calc_hash \
+  "FILE:$json_file" \
+  "FILE:$toolkit_root/scripts/render_typst_cv.py" \
+  "DIR:$toolkit_root/assets/profile" \
+  "DIR:$toolkit_root/assets/logos" \
+  "STR:cv_typ_target=$cv_typ")"
+if needs_rebuild "$cv_typ" "$state_dir/cv-typ.sha" "$cv_typ_hash"; then
+  echo "→ Building Typst source"
+  python "$toolkit_root/scripts/render_typst_cv.py" "$json_file" "$cv_typ"
+  mark_built "$state_dir/cv-typ.sha" "$cv_typ_hash"
+else
+  echo "→ Typst source up to date"
+fi
+
+cv_pdf_hash="$(calc_hash \
+  "FILE:$cv_typ" \
+  "DIR:$out_vita/assets/profile" \
+  "DIR:$out_vita/assets/logos" \
+  "STR:cv_pdf_target=$cv_pdf")"
+if needs_rebuild "$cv_pdf" "$state_dir/cv-pdf.sha" "$cv_pdf_hash"; then
+  echo "→ Building CV PDF"
+  typst compile "$cv_typ" "$cv_pdf"
+  mark_built "$state_dir/cv-pdf.sha" "$cv_pdf_hash"
+else
+  echo "→ CV PDF up to date"
+fi
 
 if [[ ${#bib_files[@]} -gt 0 ]]; then
   mkdir -p "$out_pubs"
@@ -150,23 +241,46 @@ if [[ ${#bib_files[@]} -gt 0 ]]; then
   pubs_tmp_dir="$(mktemp -d)"
   trap 'rm -rf "$pubs_tmp_dir"' EXIT
 
-  for bib in "${bib_files[@]}"; do
+  sorted_bibs=("${bib_files[@]}")
+  if [[ ${#sorted_bibs[@]} -gt 0 ]]; then
+    IFS=$'\n' sorted_bibs=($(printf '%s\n' "${sorted_bibs[@]}" | sort))
+    unset IFS
+  fi
+
+  for bib in "${sorted_bibs[@]}"; do
     cp "$bib" "$pubs_tmp_dir/"
   done
 
   pubs_links_json="$(printf '[{\"name\":\"PDF\",\"url\":\"/vita/publications/%s\",\"icon\":\"file-pdf\"},{\"name\":\"BibTeX\",\"url\":\"/vita/publications/%s\",\"icon\":\"book\"}]' "$pubs_pdf_name" "$pubs_bib_name")"
 
-  (
-    cd "$toolkit_root"
-    PUBS_BIB_DIR="$pubs_tmp_dir" \
-    PUBS_HTML="$out_pubs/index.html" \
-    PUBS_OUT_DIR="$out_pubs" \
-    PUBS_BIB_FILENAME="$pubs_bib_name" \
-    PUBS_LINKS="$pubs_links_json" \
-    python scripts/build_publications.py
-  )
-
+  pubs_html="$out_pubs/index.html"
   agg_bib="$out_pubs/$pubs_bib_name"
+  pubs_html_hash_args=(
+    "FILE:$toolkit_root/scripts/build_publications.py"
+    "FILE:$toolkit_root/templates/publications.html.j2"
+    "STR:pubs_links=$pubs_links_json"
+    "STR:pubs_bib_name=$pubs_bib_name"
+  )
+  for bib in "${sorted_bibs[@]}"; do
+    pubs_html_hash_args+=("FILE:$bib")
+  done
+  pubs_html_hash="$(calc_hash "${pubs_html_hash_args[@]}")"
+  if needs_rebuild "$pubs_html" "$state_dir/pubs-html.sha" "$pubs_html_hash" || needs_rebuild "$agg_bib" "$state_dir/pubs-html.sha" "$pubs_html_hash"; then
+    echo "→ Building publications HTML + BibTeX"
+    (
+      cd "$toolkit_root"
+      PUBS_BIB_DIR="$pubs_tmp_dir" \
+      PUBS_HTML="$pubs_html" \
+      PUBS_OUT_DIR="$out_pubs" \
+      PUBS_BIB_FILENAME="$pubs_bib_name" \
+      PUBS_LINKS="$pubs_links_json" \
+      python scripts/build_publications.py
+    )
+    mark_built "$state_dir/pubs-html.sha" "$pubs_html_hash"
+  else
+    echo "→ Publications HTML + BibTeX up to date"
+  fi
+
   if [[ ! -f "$agg_bib" ]]; then
     echo "Aggregated bib not found: $agg_bib" >&2
     exit 1
@@ -226,12 +340,27 @@ LATEX
 
   cp "$agg_bib" "$pubs_work_dir/$pubs_bib_name"
 
-  (
-    cd "$pubs_work_dir"
-    tectonic "$pubs_tex_name"
-  )
-
-  cp "$pubs_work_dir/$pubs_pdf_name" "$out_pubs/$pubs_pdf_name"
+  pubs_pdf="$out_pubs/$pubs_pdf_name"
+  pubs_pdf_hash="$(calc_hash \
+    "FILE:$toolkit_root/scripts/run_pipeline.sh" \
+    "FILE:$json_file" \
+    "FILE:$agg_bib" \
+    "DIR:$pubs_assets_dir" \
+    "STR:pubs_tex_name=$pubs_tex_name" \
+    "STR:pubs_pdf_name=$pubs_pdf_name" \
+    "STR:resume_name=$resume_name" \
+    "STR:pubs_url=$pubs_url")"
+  if needs_rebuild "$pubs_pdf" "$state_dir/pubs-pdf.sha" "$pubs_pdf_hash"; then
+    echo "→ Building publications PDF"
+    (
+      cd "$pubs_work_dir"
+      tectonic "$pubs_tex_name"
+    )
+    cp "$pubs_work_dir/$pubs_pdf_name" "$pubs_pdf"
+    mark_built "$state_dir/pubs-pdf.sha" "$pubs_pdf_hash"
+  else
+    echo "→ Publications PDF up to date"
+  fi
 else
   rm -rf "$out_pubs"
 fi
