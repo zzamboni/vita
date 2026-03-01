@@ -486,8 +486,8 @@ fi
 if [[ -n "${usage_pubs_url:-}" ]]; then
    args+=(--pubs-url "${usage_pubs_url}")
 fi
-if [[ -n "${usage_serve:-}" ]]; then
-   args+=(--serve)
+if [[ -n "${usage_watch:-}" ]]; then
+   watch=watch
 fi
 
 VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
