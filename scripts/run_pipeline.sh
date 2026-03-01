@@ -205,6 +205,11 @@ else
   echo "→ CV HTML up to date"
 fi
 
+# Optional dev autoreload snippet injection (enabled by DEV_RELOAD=1)
+if [[ "${DEV_RELOAD:-0}" == "1" ]] && [[ -f "$cv_html" ]] && ! grep -q "__reload" "$cv_html"; then
+  perl -0777 -pe 's~</body>~\n<script>\n(() => {\n  const self = new URL(location.href);\n  self.searchParams.set("__reload", Date.now().toString());\n  let lastModified = null;\n  async function check() {\n    try {\n      const res = await fetch(self.toString(), { cache: "no-store" });\n      const lm = res.headers.get("last-modified") || null;\n      if (lastModified === null) { lastModified = lm; return; }\n      if (lm && lastModified && lm !== lastModified) location.reload();\n    } catch (e) {}\n  }\n  setInterval(check, 800);\n})();\n</script>\n</body>~s' -i "$cv_html"
+fi
+
 # Render + compile CV PDF via Typst
 cv_typ="$out_vita/$cv_typ_name"
 cv_pdf="$out_vita/$cv_pdf_name"

@@ -24,6 +24,10 @@ if [[ "${1:-}" == "bash" || "${1:-}" == "shell" ]]; then
 fi
 
 container_args=("$@")
+RELOAD_ENV_ARG=()
+if [[ -n "${DEV_RELOAD:-}" ]]; then
+    RELOAD_ENV_ARG=(-e "DEV_RELOAD=$DEV_RELOAD")
+fi
 
 mkdir -p "$CACHE_DIR"
 
@@ -38,6 +42,7 @@ exec docker run $ITARG --rm \
     -e MISE_CACHE_DIR=/opt/vita-cache/mise/cache \
     -e MISE_IDIOMATIC_VERSION_FILE=false \
     -e VITA_WORKDIR=/work \
+    "${RELOAD_ENV_ARG[@]}" \
     -v "$CACHE_DIR":/opt/vita-cache \
     -v "$PWD":/work \
     -w /work \

@@ -501,6 +501,7 @@ out_dir="${usage_out:-build/$(basename $usage_resume .json)}"
 if [[ -n "$serve" ]]; then
   VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
   VITA_PIPELINE_PORT_MAP="{{vars.port}}:{{vars.port}}" \
+  DEV_RELOAD=1 \
     docker/run-container.sh bash -lc '
       set -euox pipefail
       out="$1"
@@ -514,6 +515,9 @@ if [[ -n "$serve" ]]; then
       mise watch pipeline "$@"
     ' _ "$out_dir" "{{vars.port}}" "${args[@]}"
 else
+  if [[ -n "$watch" ]]; then
+    export DEV_RELOAD=1
+  fi
   VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
     docker/run-container.sh $watch pipeline "${args[@]}"
 fi
