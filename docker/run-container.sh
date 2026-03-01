@@ -3,6 +3,10 @@ set -euo pipefail
 
 IMAGE_NAME="${VITA_PIPELINE_IMAGE:-zzamboni/vita-pipeline:latest}"
 CACHE_DIR="${VITA_PIPELINE_CACHE_DIR:-${XDG_CACHE_HOME:-$HOME/.cache}/vita-pipeline}"
+PORT_ARG=""
+if [[ -n "${VITA_PIPELINE_PORT_MAP:-}" ]]; then
+    PORT_ARG="-p ${VITA_PIPELINE_PORT_MAP}"
+fi
 
 if [[ "${1:-}" == "--image" ]]; then
   IMAGE_NAME="$2"
@@ -25,6 +29,7 @@ mkdir -p "$CACHE_DIR"
 
 exec docker run $ITARG --rm \
     --user "$(id -u):$(id -g)" \
+    $PORT_ARG \
     -e HOME=/tmp \
     -e XDG_CACHE_HOME=/opt/vita-cache \
     -e TECTONIC_CACHE_DIR=/opt/vita-cache/tectonic \

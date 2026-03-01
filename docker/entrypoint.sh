@@ -12,7 +12,7 @@ fi
 
 case "$1" in
   shell|bash)
-    exec mise x -- bash
+    exec mise x -- bash "${@:2}"
     ;;
   run|tasks|trust|install|exec|x|watch|which|where|settings|doctor|version|help)
     exec mise "$@"

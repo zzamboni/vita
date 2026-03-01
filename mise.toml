@@ -466,12 +466,14 @@ arg "[bibfiles]" var=#true help="BibTeX files (optional)"
 flag "--pubs-url <url>" help="Online publications URL for publications PDF footer"
 flag "--out <dir>" help="Output directory"
 flag "--watch" help="Watch the command given"
+flag "--serve" help="Serve output directory and run in watch mode"
 '''
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 
 watch=""
+serve=""
 args=()
 args+=("${usage_resume}")
 if [[ -n "${usage_bibfiles:-}" ]]; then
@@ -489,9 +491,32 @@ fi
 if [[ -n "${usage_watch:-}" ]]; then
    watch=watch
 fi
+if [[ -n "${usage_serve:-}" ]]; then
+   serve=1
+   watch=watch
+fi
 
-VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
-  docker/run-container.sh $watch pipeline "${args[@]}"
+out_dir="${usage_out:-build/$(basename $usage_resume .json)}"
+
+if [[ -n "$serve" ]]; then
+  VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
+  VITA_PIPELINE_PORT_MAP="{{vars.port}}:{{vars.port}}" \
+    docker/run-container.sh bash -lc '
+      set -euox pipefail
+      out="$1"
+      port="$2"
+      shift 2
+      mkdir -p "$out"
+      echo "→ Serving $out inside container at http://localhost:$port"
+      python3 -m http.server "$port" --bind 0.0.0.0 --directory "$out" >/dev/null 2>&1 &
+      srv=$!
+      trap "kill $srv" EXIT INT TERM
+      mise watch pipeline "$@"
+    ' _ "$out_dir" "{{vars.port}}" "${args[@]}"
+else
+  VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
+    docker/run-container.sh $watch pipeline "${args[@]}"
+fi
 '''
 
 # Convenience aliases (optional, but nice for discoverability)
