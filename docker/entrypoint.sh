@@ -14,7 +14,7 @@ case "$1" in
   shell|bash)
     exec mise x -- bash
     ;;
-  run|tasks|trust|install|exec|x|which|where|settings|doctor|version|help)
+  run|tasks|trust|install|exec|x|watch|which|where|settings|doctor|version|help)
     exec mise "$@"
     ;;
   *)

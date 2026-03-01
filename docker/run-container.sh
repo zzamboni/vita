@@ -2,6 +2,7 @@
 set -euo pipefail
 
 IMAGE_NAME="${VITA_PIPELINE_IMAGE:-zzamboni/vita-pipeline:latest}"
+CACHE_DIR="${VITA_PIPELINE_CACHE_DIR:-${XDG_CACHE_HOME:-$HOME/.cache}/vita-pipeline}"
 
 if [[ "${1:-}" == "--image" ]]; then
   IMAGE_NAME="$2"
@@ -20,12 +21,19 @@ fi
 
 container_args=("$@")
 
+mkdir -p "$CACHE_DIR"
+
 exec docker run $ITARG --rm \
     --user "$(id -u):$(id -g)" \
     -e HOME=/tmp \
-    -e MISE_DATA_DIR=/work/.mise \
-    -e MISE_STATE_DIR=/work/.mise/state \
-    -e MISE_CACHE_DIR=/work/.mise/cache \
+    -e XDG_CACHE_HOME=/opt/vita-cache \
+    -e TECTONIC_CACHE_DIR=/opt/vita-cache/tectonic \
+    -e MISE_DATA_DIR=/opt/vita-cache/mise \
+    -e MISE_STATE_DIR=/opt/vita-cache/mise/state \
+    -e MISE_CACHE_DIR=/opt/vita-cache/mise/cache \
+    -e MISE_IDIOMATIC_VERSION_FILE=false \
+    -e VITA_WORKDIR=/work \
+    -v "$CACHE_DIR":/opt/vita-cache \
     -v "$PWD":/work \
     -w /work \
     "$IMAGE_NAME" \

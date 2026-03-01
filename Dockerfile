@@ -47,15 +47,6 @@ WORKDIR /opt/vita-toolkit
 RUN mkdir -p /opt/vita-cache \
   && chmod -R a+rwx /opt/vita-cache
 
-COPY mise.toml requirements.txt package.json package-lock.json ./
-COPY themes/jsonresume-theme-even/ ./themes/jsonresume-theme-even/
-
-RUN curl https://mise.run | MISE_INSTALL_PATH=/usr/local/bin/mise sh \
-  && mise trust /opt/vita-toolkit/mise.toml \
-  && mise install \
-  && HUSKY=0 NPM_CONFIG_IGNORE_SCRIPTS=true mise run bootstrap \
-  && npm cache clean --force
-
 RUN mkdir -p /usr/local/share/fonts
 COPY fonts/ /usr/local/share/fonts/
 COPY pubs-assets/ ./pubs-assets/
@@ -103,6 +94,15 @@ RUN if [ "$PREWARM_CACHE" = "1" ]; then \
       rm -rf /tmp/tectonic-prime; \
     fi \
   && chmod -R a+rwX /opt/vita-cache
+
+COPY mise.toml requirements.txt package.json package-lock.json ./
+COPY themes/jsonresume-theme-even/ ./themes/jsonresume-theme-even/
+
+RUN curl https://mise.run | MISE_INSTALL_PATH=/usr/local/bin/mise sh \
+  && mise trust /opt/vita-toolkit/mise.toml \
+  && mise install \
+  && HUSKY=0 NPM_CONFIG_IGNORE_SCRIPTS=true mise run bootstrap \
+  && npm cache clean --force
 
 COPY docker/entrypoint.sh /usr/local/bin/vita-pipeline
 RUN  chmod +x /usr/local/bin/vita-pipeline

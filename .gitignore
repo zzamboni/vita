@@ -29,3 +29,5 @@ themes/
 build/zamboni-jsonresume/dev/
 brilliant-cv/
 pubs-src/zamboni-pubs.pdf
+.mise/
+build/

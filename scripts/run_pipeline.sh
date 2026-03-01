@@ -66,10 +66,15 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ -z "$json_file" || -z "$output_dir" ]]; then
+if [[ -z "$json_file" ]]; then
   usage
   exit 1
 fi
+
+if [[ -z "$output_dir" ]]; then
+    output_dir="build/$(basename $json_file .json)"
+fi
+
 
 json_file="$(resolve_path "$json_file")"
 out_base="$(resolve_path "$output_dir")"

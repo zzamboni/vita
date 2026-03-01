@@ -6,6 +6,9 @@ python = "3.14.2"
 uv = "latest"
 watchexec = "latest"
 
+[settings]
+disable_tools = ["yarn"]
+
 [env]
 _.python.venv = { path = ".venv", create = true, uv_create_args = ["--seed"] }
 
@@ -359,13 +362,14 @@ echo ">>> Deploying '$src_dir' to '$dest_dir' ..."
 rsync -a --delete --exclude "*.typ" "$src_dir"/ "$dest_dir"/
 '''
 
-[tasks.pipeline-script]
+[tasks.pipeline]
 description = "Run CV + publications pipeline from arbitrary inputs (script)"
+alias = "build"
 usage = '''
 arg "<resume>" help="JSONresume file"
 arg "[bibfiles]" var=#true help="BibTeX files (optional)"
 flag "--pubs-url <url>" help="Online publications URL for publications PDF footer"
-flag "--out <dir>" help="Output directory" default="build/resume-output"
+flag "--out <dir>" help="Output directory"
 '''
 sources = [
   "scripts/run_pipeline.sh",
@@ -373,23 +377,14 @@ sources = [
   "scripts/render_typst_cv.py",
   "scripts/build_publications.py",
   "templates/publications.html.j2",
-  "themes/jsonresume-theme-even/**/*",
-  "assets/profile/**/*",
-  "assets/logos/**/*",
-  "assets/fontawesome/**/*",
-  "pubs-assets/**/*",
-  "*.json",
-  "**/*.bib",
+  "*.json"
 ]
-#outputs = [
-#  "{{usage_out}}/vita",
-#]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 
 args=()
-if [[ -n "${usage_out}" ]]; then
+if [[ -n "${usage_out:-}" ]]; then
    args+=(--out "${usage_out}")
 fi
 if [[ -n "${usage_pubs_url:-}" ]]; then
@@ -411,14 +406,14 @@ usage = '''
 arg "<resume>" help="JSONresume file"
 arg "[bibfiles]" var=#true help="BibTeX files (optional)"
 flag "--pubs-url <url>" help="Online publications URL for publications PDF footer"
-flag "--out <dir>" help="Output directory" default="build/resume-output"
+flag "--out <dir>" help="Output directory"
 '''
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 
 args=()
-if [[ -n "${usage_out}" ]]; then
+if [[ -n "${usage_out:-}" ]]; then
    args+=(--out "${usage_out}")
 fi
 if [[ -n "${usage_pubs_url:-}" ]]; then
@@ -461,7 +456,7 @@ docker build --build-arg PREWARM_CACHE=1 -t "{{vars.pipeline_docker_image}}" .
 
 [tasks.docker-bash]
 description = "Open an interative shell in the Docker image"
-run = "docker/run-container.sh -it x -- bash"
+run = "docker/run-container.sh bash"
 
 [tasks.pipeline-docker]
 description = "Run pipeline through standalone Docker image"
@@ -469,29 +464,34 @@ usage = '''
 arg "<resume>" help="JSONresume file"
 arg "[bibfiles]" var=#true help="BibTeX files (optional)"
 flag "--pubs-url <url>" help="Online publications URL for publications PDF footer"
-flag "--out <dir>" help="Output directory" default="build/resume-output"
+flag "--out <dir>" help="Output directory"
+flag "--watch" help="Watch the command given"
 '''
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 
+watch=""
 args=()
-if [[ -n "${usage_out}" ]]; then
+args+=("${usage_resume}")
+if [[ -n "${usage_bibfiles:-}" ]]; then
+   read -r -a arr <<< "$usage_bibfiles"
+   for f in "${arr[@]}"; do
+      args+=("$f")
+   done
+fi
+if [[ -n "${usage_out:-}" ]]; then
    args+=(--out "${usage_out}")
 fi
 if [[ -n "${usage_pubs_url:-}" ]]; then
    args+=(--pubs-url "${usage_pubs_url}")
 fi
-args+=(--json "${usage_resume}")
-if [[ -n "${usage_bibfiles:-}" ]]; then
-   read -r -a arr <<< "$usage_bibfiles"
-   for f in "${arr[@]}"; do
-      args+=(--bib "$f")
-   done
+if [[ -n "${usage_serve:-}" ]]; then
+   args+=(--serve)
 fi
 
 VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
-  docker/run-container.sh "${args[@]}"
+  docker/run-container.sh $watch pipeline "${args[@]}"
 '''
 
 # Convenience aliases (optional, but nice for discoverability)
