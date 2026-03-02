@@ -149,24 +149,26 @@ touch "{{vars.output_dir_prod}}/vita/assets/profile/.synced"
 
 [tasks.pubs-dev]
 description = "Build publications (dev)"
-sources = ["{{vars.pubs_script}}", "{{vars.pubs_template}}", "{{vars.pubs_bib}}", "scripts/build_pubs.sh", "mise.toml"]
+sources = ["{{vars.pubs_script}}", "{{vars.pubs_template}}", "{{vars.pubs_bib}}", "{{vars.cv_json}}", "scripts/build_pubs.sh", "mise.toml"]
 outputs = ["{{vars.pubs_html_dev}}", "{{vars.pubs_bib_dev}}"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 PUBS_LINKS='{{vars.pubs_links}}' \
+  PUBS_RESUME_JSON="{{vars.cv_json}}" \
   PUBS_OUT_DIR="{{vars.output_dir_dev}}/vita/publications" \
   scripts/build_pubs.sh 1 "{{vars.pubs_html_dev}}" "{{vars.pubs_script}}"
 '''
 
 [tasks.pubs-prod]
 description = "Build publications (prod)"
-sources = ["{{vars.pubs_script}}", "{{vars.pubs_template}}", "{{vars.pubs_bib}}", "scripts/build_pubs.sh", "mise.toml"]
+sources = ["{{vars.pubs_script}}", "{{vars.pubs_template}}", "{{vars.pubs_bib}}", "{{vars.cv_json}}", "scripts/build_pubs.sh", "mise.toml"]
 outputs = ["{{vars.pubs_html_prod}}", "{{vars.pubs_bib_prod}}"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 PUBS_LINKS='{{vars.pubs_links}}' \
+  PUBS_RESUME_JSON="{{vars.cv_json}}" \
   PUBS_OUT_DIR="{{vars.output_dir_prod}}/vita/publications" \
   scripts/build_pubs.sh 0 "{{vars.pubs_html_prod}}" "{{vars.pubs_script}}"
 '''
@@ -503,12 +505,13 @@ if [[ -n "$serve" ]]; then
   VITA_PIPELINE_PORT_MAP="{{vars.port}}:{{vars.port}}" \
   DEV_RELOAD=1 \
     docker/run-container.sh bash -lc '
-      set -euox pipefail
+      set -euo pipefail
       out="$1"
       port="$2"
       shift 2
       mkdir -p "$out"
       echo "→ Serving $out inside container at http://localhost:$port"
+      echo "=========================================================="
       python3 -m http.server "$port" --bind 0.0.0.0 --directory "$out" >/dev/null 2>&1 &
       srv=$!
       trap "kill $srv" EXIT INT TERM

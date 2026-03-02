@@ -195,7 +195,6 @@ cv_html="$out_vita/index.html"
 cv_html_hash="$(calc_hash \
   "FILE:$json_file" \
   "FILE:$toolkit_root/scripts/render_cv.sh" \
-  "DIR:$toolkit_root/themes/jsonresume-theme-even" \
   "STR:cv_html_target=$cv_html")"
 if needs_rebuild "$cv_html" "$state_dir/cv-html.sha" "$cv_html_hash"; then
   echo "→ Building CV HTML"
@@ -256,13 +255,14 @@ if [[ ${#bib_files[@]} -gt 0 ]]; then
     cp "$bib" "$pubs_tmp_dir/"
   done
 
-  pubs_links_json="$(printf '[{\"name\":\"PDF\",\"url\":\"/vita/publications/%s\",\"icon\":\"file-pdf\"},{\"name\":\"BibTeX\",\"url\":\"/vita/publications/%s\",\"icon\":\"book\"}]' "$pubs_pdf_name" "$pubs_bib_name")"
+  pubs_links_json="$(printf '[{\"name\":\"PDF\",\"url\":\"/vita/publications/%s\",\"icon\":\"file-pdf\"},{\"name\":\"BibTeX\",\"url\":\"/vita/publications/%s\",\"icon\":\"tex\"}]' "$pubs_pdf_name" "$pubs_bib_name")"
 
   pubs_html="$out_pubs/index.html"
   agg_bib="$out_pubs/$pubs_bib_name"
   pubs_html_hash_args=(
     "FILE:$toolkit_root/scripts/build_publications.py"
     "FILE:$toolkit_root/templates/publications.html.j2"
+    "FILE:$json_file"
     "STR:pubs_links=$pubs_links_json"
     "STR:pubs_bib_name=$pubs_bib_name"
   )
@@ -278,8 +278,13 @@ if [[ ${#bib_files[@]} -gt 0 ]]; then
       PUBS_HTML="$pubs_html" \
       PUBS_OUT_DIR="$out_pubs" \
       PUBS_BIB_FILENAME="$pubs_bib_name" \
+      PUBS_RESUME_JSON="$json_file" \
       PUBS_LINKS="$pubs_links_json" \
       python scripts/build_publications.py
+      # Optional dev autoreload snippet injection (enabled by DEV_RELOAD=1)
+      if [[ "${DEV_RELOAD:-0}" == "1" ]] && [[ -f "$pubs_html" ]] && ! grep -q "__reload" "$pubs_html"; then
+        perl -0777 -pe 's~</body>~\n<script>\n(() => {\n  const self = new URL(location.href);\n  self.searchParams.set("__reload", Date.now().toString());\n  let lastModified = null;\n  async function check() {\n    try {\n      const res = await fetch(self.toString(), { cache: "no-store" });\n      const lm = res.headers.get("last-modified") || null;\n      if (lastModified === null) { lastModified = lm; return; }\n      if (lm && lastModified && lm !== lastModified) location.reload();\n    } catch (e) {}\n  }\n  setInterval(check, 800);\n})();\n</script>\n</body>~s' -i "$pubs_html"
+      fi
     )
     mark_built "$state_dir/pubs-html.sha" "$pubs_html_hash"
   else

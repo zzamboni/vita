@@ -19,6 +19,7 @@ OUT_FILE = Path(os.environ.get("PUBS_HTML", "dist/publications.html"))
 TEMPLATE_DIR = Path("templates")
 PUBS_OUT_DIR = Path(os.environ.get("PUBS_OUT_DIR", "")) if os.environ.get("PUBS_OUT_DIR") else None
 PUBS_BIB_FILENAME = os.environ.get("PUBS_BIB_FILENAME", "publications.bib")
+PUBS_RESUME_JSON = os.environ.get("PUBS_RESUME_JSON", "")
 
 EXPORT_SELECTED = False
 SELECTED_KEYWORD = "selected"
@@ -147,6 +148,20 @@ def parse_floating_links(env_var: str):
                 }
             )
     return links
+
+
+def load_resume_name() -> str:
+    if not PUBS_RESUME_JSON:
+        return "Publications"
+    path = Path(PUBS_RESUME_JSON)
+    if not path.exists():
+        return "Publications"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        name = data.get("basics", {}).get("name", "")
+        return str(name).strip() or "Publications"
+    except Exception:
+        return "Publications"
 
 
 # Minimal accent mapping (extend as needed)
@@ -407,6 +422,7 @@ def main():
         generated=datetime.now(UTC).strftime("%Y-%m-%d"),
         dev_reload=dev_reload,
         floating_links=parse_floating_links("PUBS_LINKS"),
+        resume_name=load_resume_name(),
     )
 
     OUT_FILE.parent.mkdir(exist_ok=True)
