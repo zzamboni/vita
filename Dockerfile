@@ -104,11 +104,11 @@ RUN curl https://mise.run | MISE_INSTALL_PATH=/usr/local/bin/mise sh \
   && HUSKY=0 NPM_CONFIG_IGNORE_SCRIPTS=true mise run bootstrap \
   && npm cache clean --force
 
-COPY docker/entrypoint.sh /usr/local/bin/vita-pipeline
-RUN  chmod +x /usr/local/bin/vita-pipeline
 COPY scripts/ ./scripts/
 COPY templates/ ./templates/
 COPY assets/ ./assets/
+COPY docker/entrypoint.sh /usr/local/bin/vita-pipeline
+RUN  chmod +x /usr/local/bin/vita-pipeline
 
 RUN chmod +x /opt/vita-toolkit/scripts/run_pipeline.sh
 

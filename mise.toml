@@ -449,6 +449,7 @@ sources = [
   "docker/entrypoint.sh",
   "docker/run-container.sh",
   "docker/mise.tools.toml",
+  "requirements.txt"
 ]
 run = '''
 #!/usr/bin/env bash
