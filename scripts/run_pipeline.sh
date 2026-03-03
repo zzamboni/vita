@@ -259,10 +259,11 @@ if [[ ${#bib_files[@]} -gt 0 ]]; then
 
   pubs_html="$out_pubs/index.html"
   agg_bib="$out_pubs/$pubs_bib_name"
+  resume_name=$(jq -r '.basics.names // ""' $json_file)
   pubs_html_hash_args=(
     "FILE:$toolkit_root/scripts/build_publications.py"
     "FILE:$toolkit_root/templates/publications.html.j2"
-    "FILE:$json_file"
+    "STR:resume_name=$resume_name"
     "STR:pubs_links=$pubs_links_json"
     "STR:pubs_bib_name=$pubs_bib_name"
   )
@@ -353,9 +354,9 @@ LATEX
   pubs_pdf="$out_pubs/$pubs_pdf_name"
   pubs_pdf_hash="$(calc_hash \
     "FILE:$toolkit_root/scripts/run_pipeline.sh" \
-    "FILE:$json_file" \
     "FILE:$agg_bib" \
     "DIR:$pubs_assets_dir" \
+    "STR:resume_name=$resume_name" \
     "STR:pubs_tex_name=$pubs_tex_name" \
     "STR:pubs_pdf_name=$pubs_pdf_name" \
     "STR:resume_name=$resume_name" \

@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
     xz-utils \
+    jq \
   && rm -rf /var/lib/apt/lists/*
 
 FROM base AS runtime

@@ -8,6 +8,12 @@ export MISE_IDIOMATIC_VERSION_FILE="${MISE_IDIOMATIC_VERSION_FILE:-false}"
 
 mise trust "$VITA_TOOLKIT_ROOT/mise.toml" >/dev/null 2>&1 || true
 
+usage() {
+    cat <<'USAGE'
+Usage: build-resume.sh <resume.json> [bibfiles...] [--out <dir>] [--pubs-url <url>] [--watch] [--serve]
+USAGE
+}
+
 run_pipeline_via_mise() {
   local watch=0
   local serve=0
@@ -23,13 +29,12 @@ run_pipeline_via_mise() {
       --out) out="$2"; shift 2 ;;
       --pubs-url) pubs_url="$2"; shift 2 ;;
       -h|--help)
-        cat <<'USAGE'
-Usage: vita-pipeline build <resume.json> [bibfiles...] [--out <dir>] [--pubs-url <url>] [--watch] [--serve]
-USAGE
+        usage
         return 0
         ;;
       --*)
         echo "Unknown option: $1" >&2
+        usage
         return 1
         ;;
       *)
@@ -45,6 +50,7 @@ USAGE
 
   if [[ -z "$resume" ]]; then
     echo "Missing resume JSON file" >&2
+    usage
     return 1
   fi
 
