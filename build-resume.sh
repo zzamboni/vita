@@ -8,6 +8,13 @@ CACHE_DIR="${VITA_PIPELINE_CACHE_DIR:-${XDG_CACHE_HOME:-$HOME/.cache}/vita-pipel
 mkdir -p "$CACHE_DIR"
 
 PORT_ARGS=()
+CMD=build
+
+if [[ "$1" == "--bash" ]]; then
+  CMD=bash
+  shift
+fi
+
 for a in "$@"; do
   if [[ "$a" == "--serve" ]]; then
     PORT_ARGS=(-p "${PORT}:${PORT}")
@@ -19,4 +26,5 @@ exec docker run --rm -it \
   -v "$PWD":/work \
   "${PORT_ARGS[@]}" \
   "$IMAGE" \
-  build "$@"
+  $CMD "$@"
+
