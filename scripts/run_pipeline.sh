@@ -259,7 +259,7 @@ if [[ ${#bib_files[@]} -gt 0 ]]; then
 
   pubs_html="$out_pubs/index.html"
   agg_bib="$out_pubs/$pubs_bib_name"
-  resume_name=$(jq -r '.basics.names // ""' $json_file)
+  resume_name=$(jq -r '.basics.name // ""' $json_file)
   pubs_html_hash_args=(
     "FILE:$toolkit_root/scripts/build_publications.py"
     "FILE:$toolkit_root/templates/publications.html.j2"
