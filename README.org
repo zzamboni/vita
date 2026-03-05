@@ -1,106 +1,121 @@
-#+title: CV + Publications Build Pipeline
-#+author: Diego Zamboni
+#+title: Resume Toolkit - JSONresume/BibTeX to HTML/PDF
 
-This repository builds my CV and publications in multiple formats, and publishes them under =/vita/= on my website. The pipeline is JSON Resume + custom theme for HTML, Typst for the CV PDF, and LaTeX for the publications PDF.
+This project provides a reusable build pipeline for generating:
+- Resume HTML (from JSON Resume, using a customized version of [[https://github.com/rbardini/jsonresume-theme-even][jsonresume-theme-even]])
+- Resume PDF (from Typst generated from JSON Resume and using the [[https://typst.app/universe/package/brilliant-cv][brilliant-cv]] Typst template)
+- Publications HTML (from BibTeX)
+- Publications PDF (from LaTeX/BibTeX, using [[https://github.com/posquit0/Awesome-CV][AwesomeCV]], so it looks the same as the resume PDF)
+- Aggregated publications BibTeX
 
-* Overview
+The recommended interface is the wrapper script =build-resume.sh=, which runs everything inside a Docker image.
 
-- *Source of truth*: =zamboni-vita.json= (JSON Resume).
-- *HTML CV*: rendered with the local theme in =themes/jsonresume-theme-even=.
-- *CV PDF*: generated via Typst from JSON Resume (see =scripts/render_typst_cv.py=).
-- *Publications HTML*: generated from BibTeX using =scripts/build_publications.py= + =templates/publications.html.j2=.
-- *Publications PDF*: built via LaTeX from =pubs-src/zamboni-pubs.tex= using Tectonic.
-- *Outputs*: under =build/zamboni-jsonresume/{dev,prod}/vita/=
+* Quick Start
 
-The site structure is:
-- =/vita/= → HTML CV
-- =/vita/publications/= → publications HTML
-- =/vita/zamboni-vita.pdf= → CV PDF
-- =/vita/publications/zamboni-pubs.pdf= → publications PDF
-- =/vita/publications/zamboni-pubs.bib= → aggregated BibTeX (for download)
-
-* Repo Layout
-
-- =zamboni-vita.json=: JSON Resume source.
-- =pubs-src/=: publications LaTeX and BibTeX sources (e.g., =zamboni-pubs.tex=, =*.bib=).
-- =scripts/=: build helpers (JSON Resume render, Typst render, pubs build, etc.).
-- =templates/=: Jinja2 templates for publications HTML and Typst.
-- =themes/=: local JSON Resume theme.
-- =build/=: generated outputs (dev/prod).
-
-* Setup
-
-You can spin up a [[https://code.visualstudio.com/docs/devcontainers/containers][devcontainer]] with all the necessary dependencies like this:
+Build a Resume + publications:
 
 #+begin_src sh
-mise dev-up
+./build-resume.sh resume.json pubs-src/publications.bib
 #+end_src
 
-Once the container is up, use =mise dev-bash= to open a shell inside the container.
-
-If you want to develop outside the container, install dependencies once (this happens automatically within the container):
+Build, watch changes, and serve output:
 
 #+begin_src sh
-mise run bootstrap
+./build-resume.sh resume.json pubs-src/publications.bib --watch --serve
 #+end_src
 
-* Build Commands
+Then open:
+- =http://localhost:8080=
 
-Dev builds (HTML + PDFs):
+* Requirements
+
+- Docker
+- A JSON Resume file
+- Optional BibTeX file(s) for publications
+
+If no BibTeX files are provided, the publications output is skipped.
+
+* Output Layout
+
+Default output base directory:
+- =build/<resume-stem>/=
+
+Generated files:
+- =build/<resume-stem>/vita/index.html=
+- =build/<resume-stem>/vita/<resume-stem>.typ=
+- =build/<resume-stem>/vita/<resume-stem>.pdf=
+- =build/<resume-stem>/vita/publications/index.html= (if BibTeX provided)
+- =build/<resume-stem>/vita/publications/<resume-stem>-pubs.pdf= (if BibTeX provided)
+- =build/<resume-stem>/vita/publications/<resume-stem>-pubs.bib= (if BibTeX provided)
+
+* Main Commands
+
+** =build= (default)
+
+These are equivalent:
 
 #+begin_src sh
-mise run build-dev
+./build-resume.sh build resume.json pubs-src/publications.bib
+./build-resume.sh resume.json pubs-src/publications.bib
 #+end_src
 
-Prod builds:
+Options:
+- =--out <dir>=: output base directory
+- =--pubs-url <url>=: online publications URL for PDF footer
+- =--watch=: rebuild on input changes
+- =--serve=: start HTTP server (implies =--watch=)
+
+** =fetch-logos=
+
+Download company/institution logos from the resume file into =assets/logos/= in your working directory. Once these files are available, the =build= step will include them automatically in the generated PDF. You can also provide/update the images by hand with the appropriate name.
 
 #+begin_src sh
-mise run build-prod
+./build-resume.sh fetch-logos resume.json --overwrite
 #+end_src
 
-One-command dev loop (serve + watch):
+Options:
+- =--overwrite=
+- =--dry-run=
+- =--token <token>= (or set =LOGODEV_TOKEN=)
+
+** =update-certs=
+
+Sync certificates from Credly into your JSON resume. This replaces any entries in the =certificates= section of the JSONresume file that have a =url= field pointing to =credly.com=. Other entries are left untouched.
 
 #+begin_src sh
-mise run go-dev
+./build-resume.sh update-certs <credly-username> resume.json
 #+end_src
 
-* Publications PDF (LaTeX)
+Options:
+- =--include-expired=
+- =--include-non-cert-badges=
+- =--sort <date_desc|date_asc|name>=
 
-The publications PDF is built from =pubs-src/zamboni-pubs.tex= using this exact command (run in =pubs-src=) (required LaTeX to be installed separately to get the correct version of biblatex.sty, which Tectonic is missing):
+** Other passthrough subcommands
+
+You can also call container entrypoint commands directly, for example:
 
 #+begin_src sh
-tectonic -Z search-path=$(dirname $(kpsewhich biblatex.sty)) zamboni-pubs.tex
+./build-resume.sh tasks
+./build-resume.sh shell
 #+end_src
 
-The =mise= tasks =pubs-pdf-dev= / =pubs-pdf-prod= run this and copy the resulting PDF into the site output directory.
+=tasks= lists the =mise= tasks available inside the container (you can add =--hidden= to see internal tasks), and =shell= gives you an interactive shell inside the container.
 
-* Aggregated BibTeX Output
+* Environment Variables
 
-=build_publications.py= writes an aggregated =zamboni-pubs.bib= into the output directory, grouped by section with comment headers. This is the file exposed at =/vita/publications/zamboni-pubs.bib=.
+- =VITA_PIPELINE_IMAGE=: Docker image (default: =zzamboni/vita-pipeline:latest=)
+- =VITA_SERVE_PORT=: serve port (default: =8080=)
+- =VITA_PIPELINE_CACHE_DIR=: host cache dir for container caches
+- =LOGODEV_TOKEN=: token used by =fetch-logos=
 
-* Floating Links
+* Under the Hood
 
-Both the CV HTML and the publications HTML use floating action icons (bottom-right). These are configured in:
+The wrapper runs:
+- containerized entrypoint in =docker/entrypoint.sh=
+- pipeline script =scripts/run_pipeline.sh=
+- supporting converters in =scripts/=
 
-- CV: =zamboni-vita.json= → =meta.themeOptions.links=
-- Publications: top of =templates/publications.html.j2= (default list). Defined in =mise.toml= in the =pubs_links= variable.
-
-* Deploy
-
-Deploy the production output to the website:
-
-#+begin_src sh
-mise run deploy-prod
-#+end_src
-
-This rebuilds prod and syncs =build/zamboni-jsonresume/prod/vita/= to =../websites/zzamboni.org/static/vita/= (excluding =*.typ= files).
-
-* Updating CV Publication Reference Numbers
-
-If the publication ordering changes, update reference numbers in =zamboni-vita.json= using:
-
-#+begin_src sh
-python scripts/update_pub_numbers.py
-#+end_src
-
-This matches publication IDs in the HTML against the JSON references and updates the numeric labels accordingly.
+The `mise` tasks are intentionally minimal and user-facing:
+- =build=
+- =fetch-logos=
+- =update-certs=
