@@ -90,6 +90,17 @@ Options:
 - =--include-non-cert-badges=
 - =--sort <date_desc|date_asc|name>=
 
+** =update-pub-numbers=
+
+Update publication reference numbers in your JSON resume using the generated publications HTML anchors.
+
+#+begin_src sh
+./build-resume.sh update-pub-numbers resume.json
+#+end_src
+
+Options:
+- =--html <path>= (defaults to =build/<resume-stem>/vita/publications/index.html=)
+
 ** Other passthrough subcommands
 
 You can also call container entrypoint commands directly, for example:
