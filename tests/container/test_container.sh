@@ -9,7 +9,7 @@ CACHE_DIR="$TMP_DIR/cache"
 WORK_DIR="$TMP_DIR/work"
 
 cleanup() {
-    echo rm -rf "$TMP_DIR"
+    rm -rf "$TMP_DIR"
 }
 trap cleanup EXIT INT TERM
 

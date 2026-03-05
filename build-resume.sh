@@ -18,12 +18,14 @@ Usage:
   build-resume.sh [build] <resume.json> [bibfiles...] [--out <dir>] [--pubs-url <url>] [--watch] [--serve]
   build-resume.sh fetch-logos <resume.json> [--overwrite] [--dry-run]
   build-resume.sh update-certs <username> <resume.json> [--include-expired] [--include-non-cert-badges] [--sort <date_desc|date_asc|name>]
+  build-resume.sh update-pub-numbers <resume.json> [--html <path>]
   build-resume.sh <subcommand> [args...] (use 'build-resume.sh tasks' to see list)
 
 Examples:
   build-resume.sh zamboni-vita.json pubs-src/zamboni-pubs.bib --watch --serve
   build-resume.sh fetch-logos zamboni-vita.json --overwrite
   build-resume.sh update-certs zzamboni zamboni-vita.json
+  build-resume.sh update-pub-numbers zamboni-vita.json
   build-resume.sh tasks
 USAGE
 }
@@ -32,7 +34,7 @@ USAGE
 ENTRYPOINT_CMDS=(
   build pipeline shell bash
   run tasks trust install exec x watch which where settings doctor version help
-  fetch-logos update-certs
+  fetch-logos update-certs update-pub-numbers
 )
 
 is_entrypoint_cmd() {
