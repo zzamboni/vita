@@ -18,11 +18,13 @@
   - `./build-resume.sh <resume.json> [bibfiles...] [--out <dir>] [--watch] [--serve]`
   - `./build-resume.sh fetch-logos <resume.json> [--overwrite] [--dry-run] [--token <token>]`
   - `./build-resume.sh update-certs <username> <resume.json> [flags]`
+  - `./build-resume.sh update-pub-numbers <resume.json> [--html <path>]`
   - `./build-resume.sh tasks` (show exposed task list)
 - Direct `mise` tasks (user-facing):
   - `mise run build ...` (alias: `mise run pipeline ...`)
   - `mise run fetch-logos ...`
   - `mise run update-certs ...`
+  - `mise run update-pub-numbers ...`
 - Internal/helper tasks exist but are hidden in `mise tasks ls`.
 
 ## Coding Style & Naming Conventions
@@ -32,9 +34,15 @@
 - No dedicated formatter is configured; keep edits small and match existing style.
 
 ## Testing Guidelines
-- There is no automated test suite in this repository.
-- Validate by running the relevant pipeline command and checking generated files in `build/`.
-- For Docker-facing changes, validate via `build-resume.sh` (not only host-side `mise`).
+- Automated container integration tests are provided in `tests/container/test_container.sh`.
+- Run tests with:
+  - `tests/container/test_container.sh`
+  - or `mise run test-container`
+- The suite runs through `build-resume.sh` and currently validates:
+  - exposed task list
+  - end-to-end pipeline build outputs
+  - `fetch-logos` command wiring (`--dry-run`)
+- For Docker-facing changes, prefer validating via `build-resume.sh` and/or the container test suite.
 
 ## Commit & Pull Request Guidelines
 - Commits in this repo use short, imperative, sentence-style subjects (e.g., `Various improvements`).
