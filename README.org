@@ -108,6 +108,31 @@ You can also call container entrypoint commands directly, for example:
 - =VITA_PIPELINE_CACHE_DIR=: host cache dir for container caches
 - =LOGODEV_TOKEN=: token used by =fetch-logos=
 
+* Automated Tests
+
+Container integration tests live under =tests/container/= and validate:
+- exposed task list
+- end-to-end build outputs
+- logo-fetch command wiring
+
+Run tests:
+
+#+begin_src sh
+tests/container/test_container.sh
+#+end_src
+
+Optionally test a specific image:
+
+#+begin_src sh
+tests/container/test_container.sh myorg/vita-pipeline:latest
+#+end_src
+
+Or via mise:
+
+#+begin_src sh
+mise run test-container
+#+end_src
+
 * Under the Hood
 
 The wrapper runs:

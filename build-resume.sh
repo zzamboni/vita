@@ -43,6 +43,15 @@ is_entrypoint_cmd() {
   return 1
 }
 
+IT_ARG="-it"
+
+case "${1:-}" in
+  --no-it)
+    IT_ARG=""
+    shift
+    ;;
+esac
+
 case "${1:-}" in
   -h|--help)
     usage
@@ -75,7 +84,7 @@ for a in "${ARGS[@]}"; do
   fi
 done
 
-exec docker run --rm -it \
+exec docker run --rm $IT_ARG \
   --user "$(id -u):$(id -g)" \
   -v "$PWD":/work \
   -v "$CACHE_DIR":/opt/vita-cache \

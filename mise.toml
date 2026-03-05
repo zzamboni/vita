@@ -214,6 +214,7 @@ run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 docker build --build-arg PREWARM_CACHE=1 -t "{{vars.pipeline_docker_image}}" .
+mise test-container
 '''
 
 [tasks.docker-shell]
@@ -266,3 +267,11 @@ else
     docker/run-container.sh build "${args[@]}"
 fi
 '''
+
+[tasks.test-container]
+description = "Run container integration tests"
+hide = true
+usage = '''
+arg "[image]" help="Docker image to test" default="{{vars.pipeline_docker_image}}"
+'''
+run = "tests/container/test_container.sh \"$usage_image\""
