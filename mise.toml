@@ -41,7 +41,6 @@ sources = [
   "pubs-assets/**/*",
   "themes/jsonresume-theme-even/**/*",
   "*.json",
-  "pubs-src/**/*.bib",
 ]
 run = '''
 #!/usr/bin/env bash

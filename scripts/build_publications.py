@@ -14,7 +14,7 @@ import copy
 
 #logging.getLogger("bibtexparser").setLevel(logging.ERROR)
 
-BIB_DIR = Path(os.environ.get("PUBS_BIB_DIR", "pubs-src"))
+BIB_DIR = Path(os.environ.get("PUBS_BIB_DIR", "."))
 OUT_FILE = Path(os.environ.get("PUBS_HTML", "dist/publications.html"))
 TEMPLATE_DIR = Path("templates")
 PUBS_OUT_DIR = Path(os.environ.get("PUBS_OUT_DIR", "")) if os.environ.get("PUBS_OUT_DIR") else None
