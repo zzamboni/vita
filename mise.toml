@@ -13,376 +13,12 @@ disable_tools = ["yarn"]
 _.python.venv = { path = ".venv", create = true, uv_create_args = ["--seed"] }
 
 [vars]
-# Input CV (JSON Resume format)
-cv_json = "resume.json"
-
-# Publications pipeline inputs
-pubs_script   = "scripts/build_publications.py"
-pubs_template = "templates/publications.html.j2"
-pubs_bib      = "pubs-src/**/*.bib"
-pubs_links    = '[{"name":"Home","url":"/about","icon":"home"},{"name":"PDF","url":"/vita/publications/publications.pdf","icon":"file-pdf"},{"name":"BibTeX","url":"/vita/publications/publications.bib","icon":"tex"}]'
-
-# Typst CV pipeline
-typst_script = "scripts/render_typst_cv.py"
-typst_output = "resume.typ"
-typst_pdf    = "resume.pdf"
-
-# Output layout (keep dev/prod artifacts separated under build/)
-output_dir_base = "build/jsonresume"
-output_dir_dev  = "{{vars.output_dir_base}}/dev"
-output_dir_prod = "{{vars.output_dir_base}}/prod"
-
-# Output files (dev/prod)
-cv_html_dev   = "{{vars.output_dir_dev}}/vita/index.html"
-cv_typst_dev  = "{{vars.output_dir_dev}}/vita/{{vars.typst_output}}"
-cv_pdf_dev    = "{{vars.output_dir_dev}}/vita/{{vars.typst_pdf}}"
-
-cv_html_prod  = "{{vars.output_dir_prod}}/vita/index.html"
-cv_typst_prod = "{{vars.output_dir_prod}}/vita/{{vars.typst_output}}"
-cv_pdf_prod   = "{{vars.output_dir_prod}}/vita/{{vars.typst_pdf}}"
-
-pubs_html_dev  = "{{vars.output_dir_dev}}/vita/publications/index.html"
-pubs_html_prod = "{{vars.output_dir_prod}}/vita/publications/index.html"
-
-website_deploy_dir = "../websites/zzamboni.org/static/vita"
-
-# Publications outputs
-pubs_tex      = "pubs-src/publications.tex"
-pubs_pdf_src  = "pubs-src/publications.pdf"
-pubs_bib_dev  = "{{vars.output_dir_dev}}/vita/publications/publications.bib"
-pubs_pdf_dev  = "{{vars.output_dir_dev}}/vita/publications/publications.pdf"
-pubs_bib_prod = "{{vars.output_dir_prod}}/vita/publications/publications.bib"
-pubs_pdf_prod = "{{vars.output_dir_prod}}/vita/publications/publications.pdf"
-
-# Local dev server settings (used for polling-based auto-reload)
-port = "8008"
-port_prod = "8009"
-base_url = "http://localhost:{{vars.port}}"
-base_url_prod = "http://localhost:{{vars.port_prod}}"
-cv_url = "{{vars.base_url}}/vita/"
-pubs_url = "{{vars.base_url}}/vita/publications/"
 pipeline_docker_image = "zzamboni/vita-pipeline:latest"
-
-
-# Install dependencies
-[tasks.bootstrap]
-description = "Install/update project dependencies (Python + npm)"
-hide = true
-sources = ["requirements.txt", "package-lock.json", "package.json", "mise.toml"]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-
-# Python deps (into .venv created by mise env config)
-uv pip sync requirements.txt
-
-# Node deps
-# Root
-if [ -f package-lock.json ]; then npm ci; else npm install; fi
-
-# Local copy of jsonresume-theme-even
-if [ -f themes/jsonresume-theme-even/package-lock.json ]; then
-  (cd themes/jsonresume-theme-even && npm ci)
-else
-  (cd themes/jsonresume-theme-even && npm install)
-fi
-'''
+port = "8008"
 
 # -----------------------------------------------------------------------------
-# Core build steps
+# User-facing tasks
 # -----------------------------------------------------------------------------
-
-# Render the CV HTML from the JSON Resume input.
-
-[tasks.render-dev]
-description = "Render CV (dev)"
-hide = true
-depends = ["profile-assets-dev"]
-usage = '''
-flag "-t --theme <theme>"
-'''
-sources = ["{{vars.cv_json}}", "scripts/render_cv.sh", "mise.toml"]
-outputs = ["{{vars.cv_html_dev}}"]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-scripts/render_cv.sh "${usage_theme:-}" "{{vars.cv_json}}" "{{vars.cv_html_dev}}"
-'''
-
-[tasks.render-prod]
-description = "Render CV (prod)"
-hide = true
-depends = ["profile-assets-prod"]
-usage = '''
-flag "-t --theme <theme>"
-'''
-sources = ["{{vars.cv_json}}", "scripts/render_cv.sh", "mise.toml"]
-outputs = ["{{vars.cv_html_prod}}"]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-scripts/render_cv.sh "${usage_theme:-}" "{{vars.cv_json}}" "{{vars.cv_html_prod}}"
-'''
-
-[tasks.profile-assets-dev]
-description = "Sync profile assets (dev)"
-hide = true
-sources = ["assets/profile/**/*", "mise.toml"]
-outputs = ["{{vars.output_dir_dev}}/vita/assets/profile/.synced"]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-mkdir -p "{{vars.output_dir_dev}}/vita/assets/profile"
-cp -a assets/profile/* "{{vars.output_dir_dev}}/vita/assets/profile/"
-touch "{{vars.output_dir_dev}}/vita/assets/profile/.synced"
-'''
-
-[tasks.profile-assets-prod]
-description = "Sync profile assets (prod)"
-hide = true
-sources = ["assets/profile/**/*", "mise.toml"]
-outputs = ["{{vars.output_dir_prod}}/vita/assets/profile/.synced"]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-mkdir -p "{{vars.output_dir_prod}}/vita/assets/profile"
-cp -a assets/profile/* "{{vars.output_dir_prod}}/vita/assets/profile/"
-touch "{{vars.output_dir_prod}}/vita/assets/profile/.synced"
-'''
-
-# Build publications HTML from BibTeX + template.
-
-[tasks.pubs-dev]
-description = "Build publications (dev)"
-hide = true
-sources = ["{{vars.pubs_script}}", "{{vars.pubs_template}}", "{{vars.pubs_bib}}", "{{vars.cv_json}}", "scripts/build_pubs.sh", "mise.toml"]
-outputs = ["{{vars.pubs_html_dev}}", "{{vars.pubs_bib_dev}}"]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-PUBS_LINKS='{{vars.pubs_links}}' \
-  PUBS_RESUME_JSON="{{vars.cv_json}}" \
-  PUBS_OUT_DIR="{{vars.output_dir_dev}}/vita/publications" \
-  scripts/build_pubs.sh 1 "{{vars.pubs_html_dev}}" "{{vars.pubs_script}}"
-'''
-
-[tasks.pubs-prod]
-description = "Build publications (prod)"
-hide = true
-sources = ["{{vars.pubs_script}}", "{{vars.pubs_template}}", "{{vars.pubs_bib}}", "{{vars.cv_json}}", "scripts/build_pubs.sh", "mise.toml"]
-outputs = ["{{vars.pubs_html_prod}}", "{{vars.pubs_bib_prod}}"]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-PUBS_LINKS='{{vars.pubs_links}}' \
-  PUBS_RESUME_JSON="{{vars.cv_json}}" \
-  PUBS_OUT_DIR="{{vars.output_dir_prod}}/vita/publications" \
-  scripts/build_pubs.sh 0 "{{vars.pubs_html_prod}}" "{{vars.pubs_script}}"
-'''
-
-[tasks.pubs-pdf-dev]
-description = "Build publications PDF (dev, LaTeX)"
-hide = true
-sources = ["{{vars.pubs_tex}}", "{{vars.pubs_bib}}", "mise.toml"]
-outputs = ["{{vars.pubs_pdf_dev}}"]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-pubs_tex_file="{{vars.pubs_tex}}"
-(
-  cd "$(dirname "$pubs_tex_file")"
-  bibs=( *.bib )
-  : > publications.bib
-  for bib in "${bibs[@]}"; do
-    [[ "$bib" == "publications.bib" ]] && continue
-    [[ -f "$bib" ]] || continue
-    cat "$bib" >> publications.bib
-    printf '\n' >> publications.bib
-  done
-  tectonic "$(basename "$pubs_tex_file")"
-)
-mkdir -p "$(dirname "{{vars.pubs_pdf_dev}}")"
-cp "{{vars.pubs_pdf_src}}" "{{vars.pubs_pdf_dev}}"
-'''
-
-[tasks.pubs-pdf-prod]
-description = "Build publications PDF (prod, LaTeX)"
-hide = true
-sources = ["{{vars.pubs_tex}}", "{{vars.pubs_bib}}"]
-outputs = ["{{vars.pubs_pdf_prod}}"]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-pubs_tex_file="{{vars.pubs_tex}}"
-(
-  cd "$(dirname "$pubs_tex_file")"
-  bibs=( *.bib )
-  : > publications.bib
-  for bib in "${bibs[@]}"; do
-    [[ "$bib" == "publications.bib" ]] && continue
-    [[ -f "$bib" ]] || continue
-    cat "$bib" >> publications.bib
-    printf '\n' >> publications.bib
-  done
-  tectonic "$(basename "$pubs_tex_file")"
-)
-mkdir -p "$(dirname "{{vars.pubs_pdf_prod}}")"
-cp "{{vars.pubs_pdf_src}}" "{{vars.pubs_pdf_prod}}"
-'''
-
-# Generate Typst CV from JSON Resume format.
-[tasks.render-typst-dev]
-description = "Render Typst CV from JSON (dev)"
-hide = true
-depends = ["profile-assets-dev"]
-sources = ["{{vars.cv_json}}", "{{vars.typst_script}}", "mise.toml"]
-outputs = ["{{vars.cv_typst_dev}}"]
-run = '''
-#!/usr/bin/env bash
-set -euxo pipefail
-python "{{vars.typst_script}}" "{{vars.cv_json}}" "{{vars.cv_typst_dev}}"
-'''
-
-[tasks.render-typst-prod]
-description = "Render Typst CV from JSON (prod)"
-hide = true
-depends = ["profile-assets-prod"]
-sources = ["{{vars.cv_json}}", "{{vars.typst_script}}", "mise.toml"]
-outputs = ["{{vars.cv_typst_prod}}"]
-run = '''
-#!/usr/bin/env bash
-set -euxo pipefail
-python "{{vars.typst_script}}" "{{vars.cv_json}}" "{{vars.cv_typst_prod}}"
-'''
-
-# Compile Typst CV to PDF.
-[tasks.compile-typst-dev]
-description = "Compile Typst CV to PDF (dev)"
-hide = true
-depends = ["render-typst-dev"]
-sources = ["{{vars.cv_typst_dev}}", "{{vars.output_dir_dev}}/vita/assets/**/*"]
-outputs = ["{{vars.cv_pdf_dev}}"]
-run = '''
-#!/usr/bin/env bash
-set -euxo pipefail
-typst compile "{{vars.cv_typst_dev}}" "{{vars.cv_pdf_dev}}"
-'''
-
-[tasks.compile-typst-prod]
-description = "Compile Typst CV to PDF (prod)"
-hide = true
-depends = ["render-typst-prod"]
-sources = ["{{vars.cv_typst_prod}}", "{{vars.output_dir_prod}}/vita/assets/**/*"]
-outputs = ["{{vars.cv_pdf_prod}}"]
-run = '''
-#!/usr/bin/env bash
-set -euxo pipefail
-typst compile "{{vars.cv_typst_prod}}" "{{vars.cv_pdf_prod}}"
-'''
-
-# Manual Typst loop: compile the existing .typ without re-rendering JSON.
-[tasks.compile-typst-dev-manual]
-description = "Compile existing Typst CV to PDF (dev, manual edits)"
-hide = true
-sources = ["{{vars.cv_typst_dev}}", "{{vars.output_dir_dev}}/vita/assets/**/*"]
-outputs = ["{{vars.cv_pdf_dev}}"]
-run = '''
-#!/usr/bin/env bash
-set -euxo pipefail
-typst compile "{{vars.cv_typst_dev}}" "{{vars.cv_pdf_dev}}"
-'''
-  
-# Build both Typst outputs (typ + PDF).
-[tasks.typst-dev]
-description = "Build Typst CV (typ + PDF)"
-hide = true
-depends = ["compile-typst-dev"]
-
-[tasks.typst-prod]
-description = "Build Typst CV (typ + PDF, prod)"
-hide = true
-depends = ["compile-typst-prod"]
-
-# Dev-only: inject a reload polling snippet into the dev CV HTML.
-# This keeps resumed output unchanged in prod.
-
-[tasks.cv-reload-inject]
-description = "Inject dev reload script into dev CV HTML"
-hide = true
-depends = ["render-dev"]
-sources = [
-  "{{vars.cv_html_dev}}",
-  "mise.toml",
-]
-outputs = [
-  "{{vars.cv_html_dev}}",
-]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-
-# Only inject once
-if grep -q "__reload" "{{vars.cv_html_dev}}"; then
-  exit 0
-fi
-
-needle="</body>"
-inject='
-<script>
-(() => {
-  const self = new URL(location.href);
-  self.searchParams.set("__reload", Date.now().toString());
-  let lastModified = null;
-  async function check() {
-    try {
-      const res = await fetch(self.toString(), { cache: "no-store" });
-      const lm = res.headers.get("last-modified") || null;
-      if (lastModified === null) { lastModified = lm; return; }
-      if (lm && lastModified && lm !== lastModified) location.reload();
-    } catch (e) {}
-  }
-  setInterval(check, 800);
-})();
-</script>
-</body>'
-
-perl -0777 -pe "s~$needle~$inject~" -i "{{vars.cv_html_dev}}"
-'''
-
-
-# -----------------------------------------------------------------------------
-# Mode targets (what you normally run)
-# -----------------------------------------------------------------------------
-
-# Build dev outputs (both pages) with auto-reload enabled.
-# This is what you should use with `mise watch build-dev`.
-[tasks.build-dev]
-description = "Build dev outputs (with auto-reload)"
-hide = true
-depends = ["render-dev", "pubs-dev", "pubs-pdf-dev", "cv-reload-inject", "typst-dev"]  # keep your inject task dev-only
-
-# Build production outputs (both pages) without any auto-reload code.
-[tasks.build-prod]
-description = "Build prod outputs (no auto-reload)"
-hide = true
-depends = ["render-prod", "pubs-prod", "pubs-pdf-prod", "typst-prod"]
-
-[tasks.deploy-prod]
-description = "Deploy prod vita to website static directory"
-hide = true
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-
-src_dir="{{vars.output_dir_prod}}/vita"
-dest_dir="{{vars.website_deploy_dir}}"
-
-rm -rf "$dest_dir"
-mkdir -p "$dest_dir"
-
-echo ">>> Deploying '$src_dir' to '$dest_dir' ..."
-rsync -a --delete --exclude "*.typ" "$src_dir"/ "$dest_dir"/
-'''
 
 [tasks.build]
 description = "Run CV + publications pipeline"
@@ -399,7 +35,13 @@ sources = [
   "scripts/render_typst_cv.py",
   "scripts/build_publications.py",
   "templates/publications.html.j2",
-  "*.json"
+  "assets/profile/**/*",
+  "assets/logos/**/*",
+  "assets/fontawesome/**/*",
+  "pubs-assets/**/*",
+  "themes/jsonresume-theme-even/**/*",
+  "*.json",
+  "pubs-src/**/*.bib",
 ]
 run = '''
 #!/usr/bin/env bash
@@ -407,19 +49,20 @@ set -euo pipefail
 
 args=()
 if [[ -n "${usage_out:-}" ]]; then
-   args+=(--out "${usage_out}")
+  args+=(--out "${usage_out}")
 fi
 if [[ -n "${usage_pubs_url:-}" ]]; then
-   args+=(--pubs-url "${usage_pubs_url}")
+  args+=(--pubs-url "${usage_pubs_url}")
 fi
-args+=(--json "${usage_resume}")
+args+=(--json "$usage_resume")
 if [[ -n "${usage_bibfiles:-}" ]]; then
-   read -r -a arr <<< "$usage_bibfiles"
-   for f in "${arr[@]}"; do
-      args+=(--bib "$f")
-   done
+  read -r -a arr <<< "$usage_bibfiles"
+  for f in "${arr[@]}"; do
+    args+=(--bib "$f")
+  done
 fi
-scripts/run_pipeline.sh "${args[@]}" 
+
+scripts/run_pipeline.sh "${args[@]}"
 '''
 
 [tasks.fetch-logos]
@@ -433,7 +76,7 @@ flag "--token <token>" help="Logo.dev publishable API key for logo access"
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
- 
+
 workdir="${VITA_WORKDIR:-$PWD}"
 resume="$usage_resume"
 if [[ "$resume" != /* ]]; then
@@ -456,143 +99,6 @@ fi
 
 python scripts/fetch_company_logos.py "${args[@]}"
 '''
-
-[tasks.pipeline-devcontainer]
-description = "Run pipeline inside devcontainer"
-hide = true
-usage = '''
-arg "<resume>" help="JSONresume file"
-arg "[bibfiles]" var=#true help="BibTeX files (optional)"
-flag "--pubs-url <url>" help="Online publications URL for publications PDF footer"
-flag "--out <dir>" help="Output directory"
-'''
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-
-args=()
-if [[ -n "${usage_out:-}" ]]; then
-   args+=(--out "${usage_out}")
-fi
-if [[ -n "${usage_pubs_url:-}" ]]; then
-   args+=(--pubs-url "${usage_pubs_url}")
-fi
-args+=("${usage_resume}")
-if [[ -n "${usage_bibfiles:-}" ]]; then
-   args+=(${usage_bibfiles[@]})
-fi
-
-devcontainer exec --workspace-folder . -- mise run pipeline "${args[@]}"
-'''
-
-[tasks.pipeline-image-build]
-description = "Build standalone pipeline Docker image"
-hide = true
-sources = [
-  "Dockerfile",
-  ".dockerignore",
-  "package.json",
-  "package-lock.json",
-  "scripts/*",
-  "templates/publications.html.j2",
-  "pubs-assets/awesome-cv.cls",
-  "pubs-assets/fonts/**/*",
-  "assets/**/*",
-  "themes/jsonresume-theme-even/**/*",
-  "docker/entrypoint.sh",
-  "docker/run-container.sh",
-  "docker/mise.tools.toml",
-  "requirements.txt"
-]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-docker build --build-arg PREWARM_CACHE=1 -t "{{vars.pipeline_docker_image}}" .
-'''
-
-[tasks.docker-shell]
-description = "Open an interative shell in the Docker image"
-alias = ["bash", "docker-bash"]
-hide = true
-run = "docker/run-container.sh bash"
-
-[tasks.pipeline-docker]
-description = "Run pipeline through standalone Docker image"
-hide = true
-usage = '''
-arg "<resume>" help="JSONresume file"
-arg "[bibfiles]" var=#true help="BibTeX files (optional)"
-flag "--pubs-url <url>" help="Online publications URL for publications PDF footer"
-flag "--out <dir>" help="Output directory"
-flag "--watch" help="Watch the command given"
-flag "--serve" help="Serve output directory and run in watch mode"
-'''
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-
-watch=""
-serve=""
-args=()
-args+=("${usage_resume}")
-if [[ -n "${usage_bibfiles:-}" ]]; then
-   read -r -a arr <<< "$usage_bibfiles"
-   for f in "${arr[@]}"; do
-      args+=("$f")
-   done
-fi
-if [[ -n "${usage_out:-}" ]]; then
-   args+=(--out "${usage_out}")
-fi
-if [[ -n "${usage_pubs_url:-}" ]]; then
-   args+=(--pubs-url "${usage_pubs_url}")
-fi
-if [[ -n "${usage_watch:-}" ]]; then
-   watch=watch
-fi
-if [[ -n "${usage_serve:-}" ]]; then
-   serve=1
-   watch=watch
-fi
-
-out_dir="${usage_out:-build/$(basename $usage_resume .json)}"
-
-if [[ -n "$serve" ]]; then
-  VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
-  VITA_PIPELINE_PORT_MAP="{{vars.port}}:{{vars.port}}" \
-  DEV_RELOAD=1 \
-    docker/run-container.sh bash -lc '
-      set -euo pipefail
-      out="$1"
-      port="$2"
-      shift 2
-      mkdir -p "$out"
-      echo "→ Serving $out inside container at http://localhost:$port"
-      echo "=========================================================="
-      python3 -m http.server "$port" --bind 0.0.0.0 --directory "$out" >/dev/null 2>&1 &
-      srv=$!
-      trap "kill $srv" EXIT INT TERM
-      mise watch pipeline "$@"
-    ' _ "$out_dir" "{{vars.port}}" "${args[@]}"
-else
-  if [[ -n "$watch" ]]; then
-    export DEV_RELOAD=1
-  fi
-  VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
-    docker/run-container.sh $watch pipeline "${args[@]}"
-fi
-'''
-
-# Convenience aliases (optional, but nice for discoverability)
-[tasks.cv-dev]
-description = "Build CV (dev, inject reload)"
-hide = true
-depends = ["cv-reload-inject"]
-
-[tasks.cv-prod]
-description = "Build CV (production, no reload injection)"
-hide = true
-depends = ["render-prod"]
 
 [tasks.update-certs]
 description = "Update certificates from credly"
@@ -635,173 +141,128 @@ python scripts/update-certs-from-credly.py "${args[@]}"
 '''
 
 # -----------------------------------------------------------------------------
-# Dev UX tasks (server / open / one-command dev loop)
+# Internal/helper tasks
 # -----------------------------------------------------------------------------
 
-# Serve the dev output directory over HTTP.
-# Required for the polling-based auto-reload snippets (fetch + Last-Modified).
-[tasks.serve]
-description = "Serve output_dir_dev over HTTP (needed for reload polling)"
+[tasks.bootstrap]
+description = "Install/update project dependencies (Python + npm)"
 hide = true
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-echo "→ Serving {{vars.output_dir_dev}} at {{vars.base_url}}"
-python3 -m http.server "{{vars.port}}" --bind 0.0.0.0 --directory "{{vars.output_dir_dev}}" >/dev/null 2>&1
-'''
-
-# Serve the dev output directory over HTTP.
-# Required for the polling-based auto-reload snippets (fetch + Last-Modified).
-[tasks.serve-prod]
-description = "Serve output_dir_prod over HTTP"
-hide = true
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-echo "→ Serving {{vars.output_dir_prod}} at {{vars.base_url_prod}}"
-python3 -m http.server "{{vars.port_prod}}" --bind 0.0.0.0 --directory "{{vars.output_dir_prod}}" >/dev/null 2>&1
-'''
-
-# Open the dev pages once (using your system `open` wrapper).
-# Tip: use `mise watch build-dev` separately to rebuild without re-opening tabs.
-[tasks.open-dev]
-description = "Open CV + publications once"
-hide = true
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-echo "→ Opening CV + publications pages"
-xdg-open "{{vars.cv_url}}" >/dev/null 2>&1 || true
-xdg-open "{{vars.pubs_url}}" >/dev/null 2>&1 || true
-xdg-open "{{vars.cv_pdf_dev}}" >/dev/null 2>&1 || true
-'''
-
-# Open the prod pages from the local filesystem.
-[tasks.open-prod]
-description = "Open CV + publications (prod)"
-hide = true
-run = '''
-xdg-open {{vars.cv_html_prod}}
-xdg-open {{vars.pubs_html_prod}}
-xdg-open {{vars.cv_pdf_prod}}
-'''
-
-# Open the Typst PDF.
-[tasks.open-typst-dev]
-description = "Open Typst PDF"
-hide = true
-run = '''
-xdg-open {{vars.cv_pdf_dev}}
-'''
-
-# One-command dev loop:
-# - build dev artifacts once
-# - start server in background (quiet)
-# - open pages once
-# - run `mise watch build-dev` in the foreground
-[tasks.go-dev]
-description = "Dev loop: serve + xdg-open once + watch build-dev"
-hide = true
-depends = ["build-dev"]
+sources = ["requirements.txt", "package-lock.json", "package.json", "mise.toml"]
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "→ Serving {{vars.output_dir_dev}} at {{vars.base_url}}"
-python3 -m http.server "{{vars.port}}" --bind 0.0.0.0 --directory "{{vars.output_dir_dev}}" >/dev/null 2>&1 &
-server_pid=$!
+uv pip sync requirements.txt
 
-cleanup() {
-  kill "$server_pid" >/dev/null 2>&1 || true
-}
-trap cleanup EXIT INT TERM
+if [ -f package-lock.json ]; then npm ci; else npm install; fi
 
-sleep 0.3
-
-echo "→ Watching for changes (build-dev)"
-# Manual watcher: rebuild PDF when you edit the .typ by hand in build/.
-watchexec -w "{{vars.cv_typst_dev}}" --no-vcs-ignore -- mise run compile-typst-dev-manual >/dev/null 2>&1 &
-manual_pid=$!
-
-cleanup() {
-  kill "$server_pid" >/dev/null 2>&1 || true
-  kill "$manual_pid" >/dev/null 2>&1 || true
-}
-trap cleanup EXIT INT TERM
-
-mise watch build-dev
+if [ -f themes/jsonresume-theme-even/package-lock.json ]; then
+  (cd themes/jsonresume-theme-even && npm ci)
+else
+  (cd themes/jsonresume-theme-even && npm install)
+fi
 '''
 
-# One-command prod loop:
-# - build prod artifacts
-# - open them
-[tasks.go-prod]
-description = "Build and open prod files"
+[tasks.pipeline-devcontainer]
+description = "Run pipeline inside devcontainer"
 hide = true
-depends = ["build-prod", "open-prod"]
+usage = '''
+arg "<resume>" help="JSONresume file"
+arg "[bibfiles]" var=#true help="BibTeX files (optional)"
+flag "--pubs-url <url>" help="Online publications URL for publications PDF footer"
+flag "--out <dir>" help="Output directory"
+'''
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
 
-[tasks.dev-rebuild-image]
-description = "Rebuild devcontainer image when its config changes"
+args=("$usage_resume")
+if [[ -n "${usage_bibfiles:-}" ]]; then
+  read -r -a arr <<< "$usage_bibfiles"
+  for f in "${arr[@]}"; do
+    args+=("$f")
+  done
+fi
+if [[ -n "${usage_out:-}" ]]; then
+  args+=(--out "$usage_out")
+fi
+if [[ -n "${usage_pubs_url:-}" ]]; then
+  args+=(--pubs-url "$usage_pubs_url")
+fi
+
+devcontainer exec --workspace-folder . -- mise run pipeline "${args[@]}"
+'''
+
+[tasks.pipeline-image-build]
+description = "Build standalone pipeline Docker image"
 hide = true
 sources = [
-  ".devcontainer/devcontainer.json"
+  "Dockerfile",
+  ".dockerignore",
+  "package.json",
+  "package-lock.json",
+  "requirements.txt",
+  "scripts/**/*",
+  "templates/publications.html.j2",
+  "pubs-assets/**/*",
+  "assets/**/*",
+  "themes/jsonresume-theme-even/**/*",
+  "docker/entrypoint.sh",
+  "docker/run-container.sh",
 ]
-outputs.auto = true
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+docker build --build-arg PREWARM_CACHE=1 -t "{{vars.pipeline_docker_image}}" .
+'''
+
+[tasks.docker-shell]
+description = "Open an interactive shell in the Docker image"
+alias = ["bash", "docker-bash"]
+hide = true
+run = "docker/run-container.sh bash"
+
+[tasks.pipeline-docker]
+description = "Run pipeline through standalone Docker image"
+hide = true
+usage = '''
+arg "<resume>" help="JSONresume file"
+arg "[bibfiles]" var=#true help="BibTeX files (optional)"
+flag "--pubs-url <url>" help="Online publications URL for publications PDF footer"
+flag "--out <dir>" help="Output directory"
+flag "--watch" help="Watch the command given"
+flag "--serve" help="Serve output directory and run in watch mode"
+'''
 run = '''
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Recreate container so new config/features/post* hooks apply
-devcontainer build --workspace-folder .
+args=("$usage_resume")
+if [[ -n "${usage_bibfiles:-}" ]]; then
+  read -r -a arr <<< "$usage_bibfiles"
+  for f in "${arr[@]}"; do
+    args+=("$f")
+  done
+fi
+if [[ -n "${usage_out:-}" ]]; then
+  args+=(--out "$usage_out")
+fi
+if [[ -n "${usage_pubs_url:-}" ]]; then
+  args+=(--pubs-url "$usage_pubs_url")
+fi
+if [[ -n "${usage_watch:-}" ]]; then
+  args+=(--watch)
+fi
+if [[ -n "${usage_serve:-}" ]]; then
+  args+=(--serve)
+fi
+
+if [[ -n "${usage_serve:-}" ]]; then
+  VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
+  VITA_PIPELINE_PORT_MAP="{{vars.port}}:{{vars.port}}" \
+    docker/run-container.sh build "${args[@]}"
+else
+  VITA_PIPELINE_IMAGE="{{vars.pipeline_docker_image}}" \
+    docker/run-container.sh build "${args[@]}"
+fi
 '''
-
-[tasks.dev-up]
-description = "Run go-dev inside devcontainer (reuse existing)"
-hide = true
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-
-CID=$(script -q -c "devcontainer up --workspace-folder ." /dev/null | tee /dev/tty | tail -n 1 | jq -r '.containerId')
-devcontainer exec --workspace-folder . mise x -- mise go-dev 
-docker kill $CID
-'''
-
-[tasks.dev-up-nobuild]
-description = "Run go-dev inside devcontainer (reuse existing)"
-hide = true
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-
-CID=$(script -q -c "devcontainer up --workspace-folder ." /dev/null | tee /dev/tty | tail -n 1 | jq -r '.containerId')
-'''
-
-[tasks.dev-rebuild-up]
-description = "Run go-dev inside devcontainer (build new)"
-hide = true
-depends = [ "dev-rebuild-image" ]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-
-CID=$(script -q -c "devcontainer up --workspace-folder . --remove-existing-container" /dev/null | tee /dev/tty | tail -n 1 | jq -r '.containerId')
-devcontainer exec --workspace-folder . mise x -- mise go-dev 
-docker kill $CID
-'''
-
-[tasks.dev-rebuild-up-nobuild]
-description = "Run go-dev inside devcontainer (build new)"
-hide = true
-depends = [ "dev-rebuild-image" ]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-
-CID=$(script -q -c "devcontainer up --workspace-folder . --remove-existing-container" /dev/null | tee /dev/tty | tail -n 1 | jq -r '.containerId')
-'''
-
-[tasks.dev-bash]
-description = "Shell session in running container"
-hide = true
-run = "devcontainer exec --workspace-folder . bash"
