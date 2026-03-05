@@ -569,11 +569,43 @@ depends = ["render-prod"]
 
 [tasks.certs-update]
 description = "Update certificates from credly"
-run = "./scripts/update-certs-from-credly.py zzamboni {{vars.cv_json}}"
+usage = '''
+arg "<username>" help="Credly username/profile slug"
+arg "<resume>" help="JSONresume file to update"
+flag "--include-expired" help="Include expired certificates"
+flag "--include-non-cert-badges" help="Include all badges, even if not classified as certifications"
+flag "--sort <sort>" {
+     help "Sorting for Credly-derived certificates"
+     choices "date_desc" "date_asc" "name"
+     default "date_desc"
+}
+'''
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
 
-[tasks.certs-update-all]
-description = "Update certificates from credly (include expired)"
-run = "./scripts/update-certs-from-credly.py --include-expired zzamboni {{vars.cv_json}}"
+workdir="${VITA_WORKDIR:-$PWD}"
+resume="$usage_resume"
+if [[ "$resume" != /* ]]; then
+  resume="$workdir/$resume"
+fi
+
+args=()
+if [[ -n "${usage_include_expired:-}" ]]; then
+  args+=(--include-expired)
+fi
+if [[ -n "${usage_include_non_cert_badges:-}" ]]; then
+  args+=(--include-non-cert-badges)
+fi
+if [[ -n "${usage_sort:-}" ]]; then
+  args+=(--sort "${usage_sort}")
+fi
+
+args+=("$usage_username" "$resume")
+
+cd "$VITA_TOOLKIT_ROOT"
+python scripts/update-certs-from-credly.py "${args[@]}"
+'''
 
 # -----------------------------------------------------------------------------
 # Dev UX tasks (server / open / one-command dev loop)

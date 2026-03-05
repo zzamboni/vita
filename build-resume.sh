@@ -20,6 +20,9 @@ elif [[ "${1:-}" == "--fetch-logos" ]]; then
     ENV_ARGS=(-e "LOGODEV_TOKEN=$LOGODEV_TOKEN")
   fi
   shift
+elif [[ "${1:-}" == "--update-certs" ]]; then
+  CMD=certs-update
+  shift
 fi
 
 for a in "$@"; do
