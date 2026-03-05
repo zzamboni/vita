@@ -402,6 +402,41 @@ fi
 scripts/run_pipeline.sh "${args[@]}" 
 '''
 
+[tasks.logos]
+description = "Fetch company/education logos from JSON resume into /work assets"
+usage = '''
+arg "<resume>" help="JSONresume file"
+flag "--overwrite" help="Overwrite existing logo files"
+flag "--dry-run" help="Show what would be downloaded"
+flag "--token <token>" help="Logo.dev publishable API key for logo access"
+'''
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+ 
+workdir="${VITA_WORKDIR:-$PWD}"
+resume="$usage_resume"
+if [[ "$resume" != /* ]]; then
+  resume="$workdir/$resume"
+fi
+
+logos_dir="$workdir/assets/logos"
+mkdir -p "$logos_dir"
+
+args=("$resume" "--logos-dir" "$logos_dir")
+if [[ -n "${usage_overwrite:-}" ]]; then
+  args+=("--overwrite")
+fi
+if [[ -n "${usage_dry_run:-}" ]]; then
+  args+=("--dry-run")
+fi
+if [[ -n "${usage_token:-}" ]]; then
+  args+=("--token" "${usage_token}")
+fi
+
+python scripts/fetch_company_logos.py "${args[@]}"
+'''
+
 [tasks.pipeline-devcontainer]
 description = "Run pipeline inside devcontainer"
 usage = '''
@@ -436,15 +471,11 @@ sources = [
   ".dockerignore",
   "package.json",
   "package-lock.json",
-  "scripts/run_pipeline.sh",
-  "scripts/render_cv.sh",
-  "scripts/render_typst_cv.py",
-  "scripts/build_publications.py",
+  "scripts/*",
   "templates/publications.html.j2",
   "pubs-assets/awesome-cv.cls",
   "pubs-assets/fonts/**/*",
-  "assets/profile/**/*",
-  "assets/fontawesome/**/*",
+  "assets/**/*",
   "themes/jsonresume-theme-even/**/*",
   "docker/entrypoint.sh",
   "docker/run-container.sh",

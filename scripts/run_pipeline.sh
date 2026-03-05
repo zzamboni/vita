@@ -4,6 +4,10 @@ set -euo pipefail
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 toolkit_root="${VITA_TOOLKIT_ROOT:-$(cd "$script_dir/.." && pwd)}"
 workdir="${VITA_WORKDIR:-$PWD}"
+assets_source_dir="${VITA_ASSETS_DIR:-$workdir/assets}"
+if [[ ! -d "$assets_source_dir" ]]; then
+  assets_source_dir="$toolkit_root/assets"
+fi
 
 usage() {
   cat <<'USAGE'
@@ -191,9 +195,12 @@ if compgen -G "$toolkit_root/assets/profile/*" >/dev/null; then
   cp -a "$toolkit_root/assets/profile"/* "$out_vita/assets/profile/"
 fi
 
+profile_image=$(jq -r '.basics.image // ""' $json_file)
+
 cv_html="$out_vita/index.html"
 cv_html_hash="$(calc_hash \
   "FILE:$json_file" \
+  "FILE:$profile_image" \
   "FILE:$toolkit_root/scripts/render_cv.sh" \
   "STR:cv_html_target=$cv_html")"
 if needs_rebuild "$cv_html" "$state_dir/cv-html.sha" "$cv_html_hash"; then
@@ -215,12 +222,13 @@ cv_pdf="$out_vita/$cv_pdf_name"
 cv_typ_hash="$(calc_hash \
   "FILE:$json_file" \
   "FILE:$toolkit_root/scripts/render_typst_cv.py" \
+  "DIR:$out_vita/assets/profile" \
   "DIR:$toolkit_root/assets/profile" \
-  "DIR:$toolkit_root/assets/logos" \
+  "DIR:$assets_source_dir/logos" \
   "STR:cv_typ_target=$cv_typ")"
 if needs_rebuild "$cv_typ" "$state_dir/cv-typ.sha" "$cv_typ_hash"; then
   echo "→ Building Typst source"
-  python "$toolkit_root/scripts/render_typst_cv.py" "$json_file" "$cv_typ"
+  VITA_ASSETS_DIR="$assets_source_dir" python "$toolkit_root/scripts/render_typst_cv.py" "$json_file" "$cv_typ"
   mark_built "$state_dir/cv-typ.sha" "$cv_typ_hash"
 else
   echo "→ Typst source up to date"

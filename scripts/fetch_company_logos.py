@@ -153,7 +153,8 @@ def main() -> int:
     args = parser.parse_args()
 
     resume = load_resume(args.resume)
-    args.logos_dir.mkdir(parents=True, exist_ok=True)
+    if not args.dry_run:
+        args.logos_dir.mkdir(parents=True, exist_ok=True)
 
     seen = set()
     if not args.token:

@@ -8,10 +8,17 @@ CACHE_DIR="${VITA_PIPELINE_CACHE_DIR:-${XDG_CACHE_HOME:-$HOME/.cache}/vita-pipel
 mkdir -p "$CACHE_DIR"
 
 PORT_ARGS=()
+ENV_ARGS=()
 CMD=build
 
-if [[ "$1" == "--bash" ]]; then
+if [[ "${1:-}" == "--bash" ]]; then
   CMD=bash
+  shift
+elif [[ "${1:-}" == "--fetch-logos" ]]; then
+  CMD=logos
+  if [[ -n "${LOGODEV_TOKEN:-}" ]]; then
+    ENV_ARGS=(-e "LOGODEV_TOKEN=$LOGODEV_TOKEN")
+  fi
   shift
 fi
 
@@ -23,8 +30,14 @@ for a in "$@"; do
 done
 
 exec docker run --rm -it \
+  --user "$(id -u):$(id -g)" \
   -v "$PWD":/work \
+  -v "$CACHE_DIR":/opt/vita-cache \
+  -w /work \
+  -e VITA_WORKDIR=/work \
+  -e VITA_SERVE_PORT="$PORT" \
+  -e MISE_IDIOMATIC_VERSION_FILE=false \
+  "${ENV_ARGS[@]}" \
   "${PORT_ARGS[@]}" \
   "$IMAGE" \
   $CMD "$@"
-

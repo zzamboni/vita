@@ -9,6 +9,7 @@ Generic JSON Resume to Typst converter.
 """
 
 import json
+import os
 import re
 import sys
 import urllib.request
@@ -1012,7 +1013,7 @@ def main():
         resume_data = json.load(f)
 
     assets_dir = Path("assets")
-    source_assets_dir = Path("assets")
+    source_assets_dir = Path(os.environ.get("VITA_ASSETS_DIR", "assets"))
 
     if output_file:
         base_output_dir = output_file.parent
