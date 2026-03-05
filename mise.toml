@@ -510,8 +510,9 @@ set -euo pipefail
 docker build --build-arg PREWARM_CACHE=1 -t "{{vars.pipeline_docker_image}}" .
 '''
 
-[tasks.docker-bash]
+[tasks.docker-shell]
 description = "Open an interative shell in the Docker image"
+alias = ["bash", "docker-bash"]
 hide = true
 run = "docker/run-container.sh bash"
 
