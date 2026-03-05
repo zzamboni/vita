@@ -72,7 +72,9 @@ run_pipeline_via_mise() {
 
   if [[ "$serve" == "1" ]]; then
     mkdir -p "$out_base"
+    echo "========================================================="
     echo "→ Serving $out_base at http://localhost:$VITA_SERVE_PORT"
+    echo "========================================================="
     python3 -m http.server "$VITA_SERVE_PORT" --bind 0.0.0.0 --directory "$out_base" >/dev/null 2>&1 &
     local server_pid=$!
     trap 'kill "$server_pid" >/dev/null 2>&1 || true' EXIT INT TERM

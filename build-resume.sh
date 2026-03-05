@@ -10,22 +10,65 @@ mkdir -p "$CACHE_DIR"
 PORT_ARGS=()
 ENV_ARGS=()
 CMD=build
+ARGS=("$@")
 
-if [[ "${1:-}" == "--bash" ]]; then
-  CMD=bash
-  shift
-elif [[ "${1:-}" == "--fetch-logos" ]]; then
-  CMD=logos
-  if [[ -n "${LOGODEV_TOKEN:-}" ]]; then
-    ENV_ARGS=(-e "LOGODEV_TOKEN=$LOGODEV_TOKEN")
-  fi
-  shift
-elif [[ "${1:-}" == "--update-certs" ]]; then
-  CMD=certs-update
-  shift
+usage() {
+  cat <<'USAGE'
+Usage:
+  build-resume.sh [build] <resume.json> [bibfiles...] [--out <dir>] [--pubs-url <url>] [--watch] [--serve]
+  build-resume.sh logos <resume.json> [--overwrite] [--dry-run]
+  build-resume.sh certs-update <username> <resume.json> [--include-expired] [--include-non-cert-badges] [--sort <date_desc|date_asc|name>]
+  build-resume.sh <subcommand> [args...] (use 'build-resume.sh tasks' to see list)
+
+Examples:
+  build-resume.sh zamboni-vita.json pubs-src/zamboni-pubs.bib --watch --serve
+  build-resume.sh logos zamboni-vita.json --overwrite
+  build-resume.sh certs-update zzamboni zamboni-vita.json
+  build-resume.sh tasks
+USAGE
+}
+
+# Harmonize with container entrypoint commands.
+ENTRYPOINT_CMDS=(
+  build pipeline shell bash
+  run tasks trust install exec x watch which where settings doctor version help
+  logos certs-update
+)
+
+is_entrypoint_cmd() {
+  local candidate="$1"
+  for c in "${ENTRYPOINT_CMDS[@]}"; do
+    [[ "$candidate" == "$c" ]] && return 0
+  done
+  return 1
+}
+
+case "${1:-}" in
+  -h|--help)
+    usage
+    exit 0
+    ;;
+  "")
+    usage
+    exit 1
+    ;;
+  *)
+    if is_entrypoint_cmd "$1"; then
+      CMD="$1"
+      ARGS=("${@:2}")
+    else
+      # Default behavior remains build without explicit subcommand.
+      CMD=build
+      ARGS=("$@")
+    fi
+    ;;
+esac
+
+if [[ "$CMD" == "logos" && -n "${LOGODEV_TOKEN:-}" ]]; then
+  ENV_ARGS+=(-e "LOGODEV_TOKEN=$LOGODEV_TOKEN")
 fi
 
-for a in "$@"; do
+for a in "${ARGS[@]}"; do
   if [[ "$a" == "--serve" ]]; then
     PORT_ARGS=(-p "${PORT}:${PORT}")
     break
@@ -43,4 +86,4 @@ exec docker run --rm -it \
   "${ENV_ARGS[@]}" \
   "${PORT_ARGS[@]}" \
   "$IMAGE" \
-  $CMD "$@"
+  "$CMD" "${ARGS[@]}"

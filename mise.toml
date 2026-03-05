@@ -364,9 +364,9 @@ echo ">>> Deploying '$src_dir' to '$dest_dir' ..."
 rsync -a --delete --exclude "*.typ" "$src_dir"/ "$dest_dir"/
 '''
 
-[tasks.pipeline]
-description = "Run CV + publications pipeline from arbitrary inputs (script)"
-alias = "build"
+[tasks.build]
+description = "Run CV + publications pipeline"
+alias = "pipeline"
 usage = '''
 arg "<resume>" help="JSONresume file"
 arg "[bibfiles]" var=#true help="BibTeX files (optional)"
