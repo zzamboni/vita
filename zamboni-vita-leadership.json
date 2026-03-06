@@ -1,0 +1,308 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Diego Zamboni",
+    "label": "CISO • Security and Organizational Leader",
+    "email": "diego@zzamboni.org",
+    "image": "https://zzamboni.org/images/avatar-professional.jpg",
+    "url": "https://zzamboni.org",
+    "summary": "Security executive and organizational leader with 30 years of experience building and leading security programs, teams and governance capabilities across financial services, cloud platforms and enterprise technology organizations. I work effectively with boards, executives, business stakeholders and engineering teams to translate risk into clear priorities, establish durable controls and deliver measurable security outcomes.",
+    "location": {
+      "city": "Zurich",
+      "countryCode": "CH"
+    },
+    "profiles": [
+      {
+        "network": "Linkedin",
+        "username": "zzamboni",
+        "url": "https://linkedin.com/in/zzamboni"
+      },
+      {
+        "network": "Leanpub",
+        "username": "zzamboni",
+        "url": "https://leanpub.com/u/zzamboni"
+      },
+      {
+        "network": "Github",
+        "username": "zzamboni",
+        "url": "https://github.com/zzamboni"
+      },
+      {
+        "network": "Bluesky",
+        "username": "zzamboni.org",
+        "url": "https://bsky.app/profile/zzamboni.org"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Avaloq",
+      "url": "https://avaloq.com/",
+      "position": "CISO Governance",
+      "startDate": "2024-01-01",
+      "location": "Switzerland",
+      "summary": "Lead Avaloq's global CISO Governance team and define, operate and monitor the company's Information Security Management System.",
+      "highlights": [
+        "Own governance direction for security policies, requirements and compliance oversight.",
+        "Define and monitor Avaloq's global ISMS and related control framework.",
+        "Provide effective second-line oversight of first-line security functions in a regulated fintech environment."
+      ]
+    },
+    {
+      "name": "Amazon Web Services",
+      "url": "https://aws.amazon.com/",
+      "position": "Global Security Architect / Senior Global Security Architect",
+      "startDate": "2021-09-01",
+      "endDate": "2023-12-31",
+      "location": "Switzerland",
+      "summary": "Led security architecture engagements with global AWS customers, aligning business objectives and engineering execution with enterprise security requirements.",
+      "highlights": [
+        "Led the security architecture workstream for Stellantis Virtual Engineering Workbench, defining requirements, policies and mitigation priorities with customer and AWS stakeholders.",
+        "Established governance mechanisms for security metrics and reporting to provide visibility for technical and business leadership.",
+        "Built and scaled security enablement programs including Security Champions and Security Guardians initiatives.",
+        "Defined scalable partner security mechanisms for Volkswagen Digital Production Platform and supported secure-by-design delivery."
+      ]
+    },
+    {
+      "name": "Swisscom",
+      "url": "https://swisscom.com/",
+      "position": "Enterprise Architect and IT Clouds Solution Security Architect",
+      "startDate": "2019-04-01",
+      "endDate": "2021-09-30",
+      "location": "Switzerland",
+      "summary": "Provided enterprise and security architecture leadership for Swisscom cloud platforms, with accountability for governance, risk, compliance and data governance across multiple services.",
+      "highlights": [
+        "Directed compliance and assurance activities across internal, contractual and regulatory obligations including ISO27001, ISAE3402/3000 and GDPR.",
+        "Built and led a cross-organizational Security Champions community to embed security culture and ownership.",
+        "Led threat modeling, audits, penetration testing, vulnerability management and security reporting across platforms.",
+        "Contributed to Swisscom Platforms strategic vision for 2025."
+      ]
+    },
+    {
+      "name": "Swisscom",
+      "url": "https://swisscom.com/",
+      "position": "Team Lead & Product Owner for Health & State Management",
+      "startDate": "2016-03-01",
+      "endDate": "2019-04-01",
+      "location": "Switzerland",
+      "summary": "Built and led the Health and State Management team for Swisscom cloud platforms, combining people leadership with product ownership and delivery governance.",
+      "highlights": [
+        "Managed a team of up to 16 people and owned roadmap definition, prioritization and execution planning.",
+        "Defined the mission and scope of Health and State Management as Swisscom cloud portfolio expanded.",
+        "Led architectural decisions and service delivery for monitoring, logging and alerting capabilities used across cloud platforms.",
+        "Managed stakeholder and vendor relationships supporting critical operational services."
+      ]
+    },
+    {
+      "name": "CFEngine AS",
+      "url": "https://cfengine.com/",
+      "position": "Product Manager",
+      "startDate": "2013-08-01",
+      "endDate": "2014-06-30",
+      "location": "Norway/U.S.A. (remote)",
+      "summary": "Owned product direction for core CFEngine capabilities and led cross-functional delivery initiatives.",
+      "highlights": [
+        "Managed CFEngine language roadmap.",
+        "Created and led the CFEngine Design Center project, foundation for the later CFEngine Build service.",
+        "Coordinated third-party integration initiatives with major cloud and platform ecosystems."
+      ]
+    },
+    {
+      "name": "Boundless Innovation and Technology",
+      "position": "Cofounder, Head of Research and Training",
+      "startDate": "2012-07-01",
+      "endDate": "2014-07-31",
+      "location": "Mexico",
+      "summary": "Advised and coordinated teams delivering security and teaching-related products, consulting and services."
+    },
+    {
+      "name": "HP Enterprise Services",
+      "url": "https://hp.com/",
+      "position": "Account Security Officer",
+      "startDate": "2010-10-01",
+      "endDate": "2011-10-01",
+      "location": "Mexico",
+      "summary": "Acted as senior security liaison for enterprise customers, driving security governance and program execution across outsourcing engagements.",
+      "highlights": [
+        "Primary security point of contact for five enterprise customers in Mexico.",
+        "Led security-related initiatives across sales, design, implementation, delivery and operations.",
+        "Coordinated communication and execution across multidisciplinary technical and business teams."
+      ]
+    },
+    {
+      "name": "National Autonomous University of Mexico (UNAM)",
+      "url": "https://www.seguridad.unam.mx/",
+      "position": "Founder and lead of Computer Security Area",
+      "startDate": "1995-08-01",
+      "endDate": "1996-08-01",
+      "location": "Mexico",
+      "summary": "Founded and led UNAM's first dedicated computer security organization, establishing institutional capabilities that evolved into UNAM-CERT.",
+      "highlights": [
+        "Built and managed a team supporting university-wide security services, including incident response, auditing and awareness.",
+        "Provided security operations for critical supercomputing infrastructure and Unix environments.",
+        "Established and organized early editions of UNAM's International Computer Security Day, which evolved into long-running security events."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Executive Security Leadership Highlights",
+      "type": "Professional Highlights",
+      "highlights": [
+        "Lead global CISO governance and ISMS oversight at Avaloq.",
+        "Established and scaled security governance workstreams for large multi-stakeholder programs at AWS (Stellantis VEW and Volkswagen DPP).",
+        "Directed security architecture, risk management and compliance for Swisscom cloud platforms.",
+        "Built and led security communities and cross-functional teams to operationalize security culture and accountability.",
+        "Founded UNAM's first dedicated computer security organization, now evolved into UNAM-CERT."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Purdue University",
+      "url": "https://cerias.purdue.edu/",
+      "area": "Computer Science",
+      "studyType": "Ph.D.",
+      "startDate": "1996-08-01",
+      "endDate": "2001-08-01",
+      "location": "West Lafayette, IN, U.S.A.",
+      "summary": "Thesis: [Using Internal Sensors for Computer Intrusion Detection](https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf). Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)"
+    },
+    {
+      "institution": "Purdue University",
+      "url": "https://cerias.purdue.edu/",
+      "area": "Computer Science",
+      "studyType": "M.S.",
+      "startDate": "1996-08-01",
+      "endDate": "1998-05-01",
+      "location": "West Lafayette, IN, U.S.A.",
+      "summary": "Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certified Information Systems Security Professional (CISSP)",
+      "issuer": "ISC2",
+      "url": "https://www.credly.com/badges/d74f6e4c-0667-41fb-9243-e11a3793ace4/public_url",
+      "date": "2019-04-08",
+      "image": "https://images.credly.com/images/6eeb0a98-33cb-4f72-bfc3-f89d65a3286c/image.png"
+    },
+    {
+      "name": "See full list on Credly",
+      "url": "https://www.credly.com/users/zzamboni/"
+    }
+  ],
+  "awards": [
+    {
+      "title": "IEEE Security & Privacy Test of Time Award ([IEEE S&P page](https://www.ieee-security.org/TC/SP2020/awards.html), [CERIAS blog post](https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/))",
+      "date": "2020-05-18",
+      "awarder": "IEEE"
+    },
+    {
+      "title": "[Josef Raviv Memorial Postdoctoral Fellowship](https://www.cerias.purdue.edu/site/news/view/diego_zamboni_earns_fellowship_from_ibm)",
+      "date": "2001-07-01",
+      "awarder": "IBM"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Leadership",
+      "keywords": [
+        "32 years of multidisciplinary team and project leadership experience",
+        "IT Enterprise Architecture",
+        "Scaled Agile Framework (SAFe)"
+      ]
+    },
+    {
+      "name": "Information and Cyber Security",
+      "keywords": [
+        "Enterprise security governance",
+        "Enterprise security architecture",
+        "Virtualization and cloud computing security",
+        "Risk management and compliance",
+        "Intrusion detection and prevention",
+        "Software security and secure software development",
+        "ISO27001"
+      ]
+    },
+    {
+      "name": "Communication",
+      "keywords": [
+        "Excellent written and spoken communication skills",
+        "Extensive public speaking experience",
+        "Professional writing and teaching experience"
+      ]
+    },
+    {
+      "name": "Technology",
+      "keywords": [
+        "Broad and deep IT expertise",
+        "Cloud computing",
+        "Computer security"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Full proficiency"
+    },
+    {
+      "language": "German",
+      "fluency": "Intermediate proficiency (B2 level)"
+    }
+  ],
+  "references": [
+    {
+      "reference": "Available by request"
+    }
+  ],
+  "meta": {
+    "theme": "jsonresume-theme-even",
+    "themeOptions": {
+      "icons": "fontawesome",
+      "projectsByType": true,
+      "showTableOfContents": true,
+      "links": [
+        {
+          "name": "Home",
+          "icon": "home",
+          "url": "/about/"
+        },
+        {
+          "name": "PDF",
+          "icon": "file-pdf",
+          "url": "/vita/zamboni-vita-leadership.pdf"
+        },
+        {
+          "name": "Source",
+          "icon": "github",
+          "url": "https://gitlab.com/zzamboni/vita"
+        }
+      ],
+      "sections": [
+        "projects:Professional Highlights",
+        "work",
+        "skills",
+        "education",
+        "certificates",
+        "awards",
+        "languages",
+        "references"
+      ],
+      "sectionLabels": {
+        "work": "Experience",
+        "skills": "Skills",
+        "certificates": "Certifications",
+        "awards": "Honors & Awards",
+        "publications": "Publications",
+        "volunteer": "Other Professional Activities",
+        "projects:Advising": "Student Advising"
+      }
+    }
+  }
+}
