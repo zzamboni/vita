@@ -864,7 +864,7 @@
                 {
                     "name": "PDF",
                     "icon": "file-pdf",
-                    "url": "/vita/zamboni-vita.pdf"
+                    "url": "/vita/zamboni-vita-full.pdf"
                 },
                 {
                     "name": "Source",
@@ -900,6 +900,13 @@
                 "volunteer": "Other Professional Activities",
                 "projects:Advising": "Student Advising"
             }
+        },
+        "publicationsOptions": {
+            "bibfiles": [
+                "zamboni-pubs.bib",
+                "zamboni-patents.bib"
+            ],
+            "pubSections": true
         }
     }
 }

@@ -245,14 +245,13 @@
     }
   ],
   "publications": [
-    {
-      "name": "Selected publications",
-      "url": "/vita/publications/",
-      "authors": [
-        "Diego Zamboni"
-      ],
-      "summary": "Curated list for this profile is maintained in zamboni-pubs-general.bib."
-    }
+      {
+          "name": "List online",
+          "url": "/vita/publications/",
+          "authors": [
+              "Diego Zamboni"
+          ]
+      }
   ],
   "skills": [
     {
@@ -380,10 +379,20 @@
         "skills": "Skills",
         "certificates": "Certifications",
         "awards": "Honors & Awards",
-        "publications": "Publications",
+        "publications": "Selected publications",
         "volunteer": "Other Professional Activities",
         "projects:Advising": "Student Advising"
       }
+    },
+    "publicationsOptions": {
+        "bibfiles": [
+            "zamboni-pubs-general.bib"
+        ],
+        "inline_in_pdf": {
+            "ref-style": "ieee",
+            "ref-full": true
+        },
+        "pubSections": true
     }
   }
 }
