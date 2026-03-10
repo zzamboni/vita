@@ -906,7 +906,8 @@
                 "zamboni-pubs.bib",
                 "zamboni-patents.bib"
             ],
-            "pubSections": true
+            "pubSections": true,
+            "inline_in_pdf": true
         }
     }
 }
