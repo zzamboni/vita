@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Diego Zamboni",
-    "label": "CISO Governance • Organizational Leader • Security Expert • Computer Scientist",
+    "label": "CISO • Organizational Leader • Security Expert • Computer Scientist",
     "email": "diego@zzamboni.org",
     "image": "https://zzamboni.org/images/avatar-professional.jpg",
     "url": "https://zzamboni.org",
@@ -81,36 +81,30 @@
       "name": "Swisscom",
       "url": "https://swisscom.com/",
       "position": "Team Lead & Product Owner for Health & State Management",
-      "startDate": "2016-03-01",
+      "startDate": "2014-08-01",
       "endDate": "2019-04-01",
       "location": "Switzerland",
       "summary": "Built and led the Health and State Management team for Swisscom cloud platforms.",
       "highlights": [
         "Managed a team of up to 16 people.",
         "Owned roadmap and prioritization with product managers and stakeholders.",
-        "Defined and delivered platform-wide monitoring, logging and alerting capabilities."
+        "Defined and delivered platform-wide monitoring, logging and alerting capabilities.",
+        "Led the *Orchard* project through its implementation, production release and further improvements and development."
       ]
-    },
-    {
-      "name": "Swisscom",
-      "url": "https://swisscom.com/",
-      "position": "Cloud Architect and Orchard Project Lead",
-      "startDate": "2015-08-01",
-      "endDate": "2016-03-01",
-      "location": "Switzerland",
-      "summary": "Managed a team of three people and led the *Orchard* project through its implementation, production release and further improvements and development."
     },
     {
       "name": "CFEngine AS",
       "url": "https://cfengine.com/",
       "position": "Product Manager",
-      "startDate": "2013-08-01",
+      "startDate": "2011-10-01",
       "endDate": "2014-06-30",
       "location": "Norway/U.S.A. (remote)",
       "highlights": [
+        "CFEngine Advocate, with a special focus on security.",
         "Managed the CFEngine language roadmap.",
         "Created and led the [CFEngine Design Center](https://docs.cfengine.com/docs/3.10/guide-design-center.html) project, which was the foundation for the current [CFEngine Build](https://build.cfengine.com/) service.",
-        "Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack)."
+        "Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack).",
+        "Wrote the book [*Learning CFEngine 3*](https://cf-learn.info/), published by O'Reilly Media, which became the de facto introductory text to CFEngine."
       ]
     },
     {
@@ -247,9 +241,11 @@
   "publications": [
       {
           "name": "List online",
-          "url": "/vita/publications/",
           "authors": [
               "Diego Zamboni"
+          ],
+          "bibfiles": [
+              "zamboni-pubs-general.bib"
           ]
       }
   ],
@@ -346,13 +342,18 @@
       "links": [
         {
           "name": "Home",
-          "icon": "home",
-          "url": "/about/"
+          "icon": "fa-regular fa-house",
+          "url": "https://zzamboni.org/about/"
         },
         {
           "name": "PDF",
-          "icon": "file-pdf",
-          "url": "/vita/zamboni-vita-general.pdf"
+          "icon": "fa-regular fa-file-pdf",
+          "url": "zamboni-vita-general.pdf"
+        },
+        {
+          "name": "Publications",
+          "icon": "fa-quote-left",
+          "url": "publications/"
         },
         {
           "name": "Source",
@@ -385,14 +386,28 @@
       }
     },
     "publicationsOptions": {
-        "bibfiles": [
-            "zamboni-pubs-general.bib"
-        ],
         "inline_in_pdf": {
             "ref-style": "ieee",
             "ref-full": true
         },
-        "pubSections": true
+        "pubSections": true,
+        "links": [
+            {
+                "name": "Home",
+                "icon": "fa-regular fa-house",
+                "url": "https://zzamboni.org/about/"
+            },
+            {
+                "name": "PDF",
+                "url": "<publications>.pdf",
+                "icon": "fa-regular fa-file-pdf"
+            },
+            {
+                "name": "BibTeX",
+                "url": "<publications>.bib",
+                "icon": "tex"
+            }
+        ]
     }
   }
 }
