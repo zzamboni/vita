@@ -837,16 +837,15 @@
     ],
     "publications": [
         {
-            "name": "Full list online",
-            "url": "/vita/publications/",
-            "authors": [
-                "Diego Zamboni"
+            "bibfiles": [
+                "zamboni-pubs.bib",
+                "zamboni-patents.bib"
             ]
         }
     ],
     "references": [
         {
-            "reference": "Available by request"
+            "reference": "Available by request."
         }
     ],
     "meta": {
@@ -858,13 +857,18 @@
             "links": [
                 {
                     "name": "Home",
-                    "icon": "home",
-                    "url": "/about/"
+                    "icon": "fa-regular fa-house",
+                    "url": "https://zzamboni.org/about/"
                 },
                 {
                     "name": "PDF",
-                    "icon": "file-pdf",
-                    "url": "/vita/zamboni-vita-full.pdf"
+                    "icon": "fa-regular fa-file-pdf",
+                    "url": "<resume>.pdf"
+                },
+                {
+                    "name": "Publications",
+                    "icon": "fa-quote-left",
+                    "url": "publications/"
                 },
                 {
                     "name": "Source",
@@ -901,13 +905,37 @@
                 "projects:Advising": "Student Advising"
             }
         },
+        "pdfthemeOptions": {
+            "layout": {
+                "highlighted": false,
+                "header": {
+                    "header_align": "center"
+                },
+                "footer": {
+                    "display_page_counter": true
+                }
+            }
+        },
         "publicationsOptions": {
-            "bibfiles": [
-                "zamboni-pubs.bib",
-                "zamboni-patents.bib"
-            ],
             "pubSections": true,
-            "inline_in_pdf": true
+            "inline_in_pdf": true,
+            "links": [
+                {
+                    "name": "Home",
+                    "icon": "fa-regular fa-house",
+                    "url": "https://zzamboni.org/about/"
+                },
+                {
+                    "name": "PDF",
+                    "url": "<publications>.pdf",
+                    "icon": "fa-regular fa-file-pdf"
+                },
+                {
+                    "name": "BibTeX",
+                    "url": "<publications>.bib",
+                    "icon": "tex"
+                }
+            ]
         }
     }
 }

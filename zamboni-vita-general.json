@@ -164,7 +164,7 @@
         "Pioneered active worm-capture technology that became the foundation for modern honeypots and honeynets",
         "Designed system to simulate thousands of vulnerable hosts to attract and capture propagating worms",
         "Implemented automated analysis to extract signatures and update intrusion detection/prevention systems",
-        "Publications: [[18]](/vita/publications/#pub-riordan06:_build_billy_goat:first2006), [[25]](/vita/publications/#pub-riordan05:bg_techreport)"
+        "Publications: [[18]](publications/#pub-riordan06:_build_billy_goat:first2006), [[25]](publications/#pub-riordan05:bg_techreport)"
       ]
     },
     {
@@ -348,7 +348,7 @@
         {
           "name": "PDF",
           "icon": "fa-regular fa-file-pdf",
-          "url": "zamboni-vita-general.pdf"
+          "url": "<resume>.pdf"
         },
         {
           "name": "Publications",
