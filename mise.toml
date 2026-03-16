@@ -1,0 +1,41 @@
+[vars]
+deploy_dir = "../websites/zzamboni.org/static/vita/"
+build_script = "build-resume.sh"
+deploy_name = "zamboni-vita"
+
+[tasks.deploy]
+description = "Build a resume JSON file and deploy the generated vita site"
+usage = '''
+arg "<resume>" help="JSON resume file to build and deploy"
+'''
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+orig_resume="$usage_resume"
+
+if [[ ! -f "$orig_resume" ]]; then
+  echo "Resume file not found: $orig_resume" >&2
+  exit 1
+fi
+
+build_script="{{vars.build_script}}"
+resume="{{vars.deploy_name}}.json"
+
+cp $orig_resume $resume
+
+stem="$(basename "$resume" .json)"
+src_dir="$PWD/build/$stem/vita"
+dest_dir="{{vars.deploy_dir}}"
+
+"$build_script" "$resume"
+
+if [[ ! -d "$src_dir" ]]; then
+  echo "Expected build output not found: $src_dir" >&2
+  exit 1
+fi
+
+echo "Copying output files $src_dir to $dest_dir"
+mkdir -p "$dest_dir"
+rsync -a --delete "$src_dir"/ "$dest_dir"/
+'''
