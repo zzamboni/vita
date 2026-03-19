@@ -164,7 +164,7 @@
         "Pioneered active worm-capture technology that became the foundation for modern honeypots and honeynets",
         "Designed system to simulate thousands of vulnerable hosts to attract and capture propagating worms",
         "Implemented automated analysis to extract signatures and update intrusion detection/prevention systems",
-        "Publications: [[18]](publications/#pub-riordan06:_build_billy_goat:first2006), [[25]](publications/#pub-riordan05:bg_techreport)"
+        "Publications: [[5]](publications/#pub-riordan06:_build_billy_goat:first2006)"
       ]
     },
     {
@@ -241,11 +241,13 @@
   "publications": [
       {
           "name": "List online",
-          "authors": [
-              "Diego Zamboni"
-          ],
+          "authors": ["Diego Zamboni"],
           "bibfiles": [
-              "zamboni-pubs-general.bib"
+              "zamboni-pubs.bib",
+              "zamboni-patents.bib"
+          ],
+          "bibkeywords": [
+              "selected"
           ]
       }
   ],
@@ -385,29 +387,34 @@
         "projects:Advising": "Student Advising"
       }
     },
-    "publicationsOptions": {
-        "inline_in_pdf": {
-            "ref-style": "ieee",
-            "ref-full": true
-        },
-        "pubSections": true,
-        "links": [
-            {
-                "name": "Home",
-                "icon": "fa-regular fa-house",
-                "url": "https://zzamboni.org/about/"
-            },
-            {
-                "name": "PDF",
-                "url": "<publications>.pdf",
-                "icon": "fa-regular fa-file-pdf"
-            },
-            {
-                "name": "BibTeX",
-                "url": "<publications>.bib",
-                "icon": "tex"
-            }
-        ]
+      "pdfthemeOptions": {
+          "layout": {
+              "highlighted": false,
+              "footer": {
+                  "display_page_counter": true
+              }
+          }
+      },
+      "publicationsOptions": {
+          "inline_in_pdf": true,
+          "pubSections": true,
+          "links": [
+              {
+                  "name": "Home",
+                  "icon": "fa-regular fa-house",
+                  "url": "https://zzamboni.org/about/"
+              },
+              {
+                  "name": "PDF",
+                  "url": "<publications>.pdf",
+                  "icon": "fa-regular fa-file-pdf"
+              },
+              {
+                  "name": "BibTeX",
+                  "url": "<publications>.bib",
+                  "icon": "tex"
+              }
+          ]
     }
   }
 }
