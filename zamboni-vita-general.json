@@ -239,17 +239,68 @@
     }
   ],
   "publications": [
-      {
-          "name": "List online",
-          "authors": ["Diego Zamboni"],
-          "bibfiles": [
-              "zamboni-pubs.bib",
-              "zamboni-patents.bib"
-          ],
-          "bibkeywords": [
-              "selected"
-          ]
-      }
+    {
+      "name": "Full list online",
+      "authors": [
+        "Diego Zamboni"
+      ],
+      "bibfiles": [
+        "zamboni-pubs.bib",
+        "zamboni-patents.bib"
+      ],
+      "bibkeywords": [
+        "selected"
+      ]
+    },
+    {
+      "name": "Publishing with Emacs, Org-mode and Leanpub",
+      "publisher": "Leanpub",
+      "releaseDate": "2020-01-01",
+      "url": "https://leanpub.com/emacs-org-leanpub",
+      "summary": "Diego Zamboni"
+    },
+    {
+      "name": "Learning CFEngine",
+      "publisher": "O'Reilly Media, Inc. 2012–2017, afterwards self-published",
+      "releaseDate": "2012-01-01",
+      "url": "http://cf-learn.info/",
+      "summary": "Diego Zamboni"
+    },
+    {
+      "name": "Proceedings of the Recent Advances in Intrusion Detection (RAID): 9th International Symposium",
+      "publisher": "Springer-Verlag New York, Inc.",
+      "releaseDate": "2006-01-01",
+      "url": "",
+      "summary": "Editors: Diego Zamboni and Christopher Kruegel"
+    },
+    {
+      "name": "Building and deploying Billy Goat, a worm-detection system",
+      "publisher": "Proceedings of the 18th Annual FIRST Conference",
+      "releaseDate": "2006-01-01",
+      "url": "",
+      "summary": "James Riordan, Diego Zamboni, Yann Duponchel"
+    },
+    {
+      "name": "Using internal sensors and embedded detectors for intrusion detection",
+      "publisher": "Journal of Computer Security",
+      "releaseDate": "2002-01-01",
+      "url": "https://www.researchgate.net/publication/220065478_Using_Internal_Sensors_and_Embedded_Detectors_for_Intrusion_Detection",
+      "summary": "Florian Kerschbaum, Eugene H. Spafford, Diego Zamboni"
+    },
+    {
+      "name": "Using Internal Sensors for Computer Intrusion Detection",
+      "publisher": "",
+      "releaseDate": "2001-01-01",
+      "url": "https://www.cerias.purdue.edu/apps/reports_and_papers/view/1800",
+      "summary": "Diego Zamboni — CERIAS TR 2001-42"
+    },
+    {
+      "name": "Analysis of a Denial of Service Attack on TCP",
+      "publisher": "Proceedings of the 1997 IEEE Symposium on Security and Privacy",
+      "releaseDate": "1997-01-01",
+      "url": "https://www.cerias.purdue.edu/apps/reports_and_papers/view/605",
+      "summary": "Christoph L. Schuba, Ivan V. Krsul, Markus G. Kuhn, Eugene H. Spafford, Aurobindo Sundaram, Diego Zamboni — Awarded the 2020 IEEE Security & Privacy Test of Time Award."
+    }
   ],
   "skills": [
     {
@@ -340,11 +391,21 @@
     "themeOptions": {
       "icons": "fontawesome",
       "colors": {
-        "background": ["#0f172a"],
-        "dimmed": ["#1e293b"],
-        "primary": ["#f8fafc"],
-        "secondary": ["#cbd5e1"],
-        "accent": ["#22d3ee"]
+        "background": [
+          "#0f172a"
+        ],
+        "dimmed": [
+          "#1e293b"
+        ],
+        "primary": [
+          "#f8fafc"
+        ],
+        "secondary": [
+          "#cbd5e1"
+        ],
+        "accent": [
+          "#22d3ee"
+        ]
       },
       "projectsByType": true,
       "showTableOfContents": true,
@@ -394,34 +455,35 @@
         "projects:Advising": "Student Advising"
       }
     },
-      "pdfthemeOptions": {
-          "layout": {
-              "highlighted": false,
-              "footer": {
-                  "display_page_counter": true
-              }
-          }
-      },
-      "publicationsOptions": {
-          "inline_in_pdf": true,
-          "pubSections": true,
-          "links": [
-              {
-                  "name": "Home",
-                  "icon": "fa-regular fa-house",
-                  "url": "https://zzamboni.org/about/"
-              },
-              {
-                  "name": "PDF",
-                  "url": "<publications>.pdf",
-                  "icon": "fa-regular fa-file-pdf"
-              },
-              {
-                  "name": "BibTeX",
-                  "url": "<publications>.bib",
-                  "icon": "tex"
-              }
-          ]
+    "pdfthemeOptions": {
+      "layout": {
+        "highlighted": false,
+        "footer": {
+          "display_page_counter": true
+        }
+      }
+    },
+    "publicationsOptions": {
+      "inline_in_pdf": true,
+      "pubSections": true,
+      "full_standalone_list": true,
+      "links": [
+        {
+          "name": "Home",
+          "icon": "fa-regular fa-house",
+          "url": "https://zzamboni.org/about/"
+        },
+        {
+          "name": "PDF",
+          "url": "<publications>.pdf",
+          "icon": "fa-regular fa-file-pdf"
+        },
+        {
+          "name": "BibTeX",
+          "url": "<publications>.bib",
+          "icon": "tex"
+        }
+      ]
     }
   }
 }
