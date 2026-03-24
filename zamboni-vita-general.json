@@ -154,7 +154,7 @@
             ]
         },
         {
-            "description": "See [Publications](publications/) for publication details.",
+            "description": "See the [*online publications list*](publications/) for publication details.",
             "type": "Research"
         },
         {
@@ -259,6 +259,7 @@
     "publications": [
         {
             "name": "Full list online",
+            "url": "publications/",
             "authors": [
                 "Diego Zamboni"
             ],
@@ -391,6 +392,9 @@
     ],
     "meta": {
         "theme": "jsonresume-theme-even",
+        "site": {
+            "url": "https://zzamboni.org/vita/"
+        },
         "themeOptions": {
             "icons": "fontawesome",
             "colors": {
@@ -470,7 +474,10 @@
                 "footer": {
                     "display_page_counter": true
                 }
-            }
+            },
+            "visible_urls": ["notes"],
+            "pubs_url": "https://zzamboni.org/vita/publications/",
+            "cv_url": "https://zzamboni.org/vita/"
         },
         "publicationsOptions": {
             "inline_in_pdf": true,
