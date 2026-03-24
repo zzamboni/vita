@@ -1,489 +1,498 @@
 {
-  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
-  "basics": {
-    "name": "Diego Zamboni",
-    "label": "CISO • Organizational Leader • Security Expert • Computer Scientist",
-    "email": "diego@zzamboni.org",
-    "image": "https://zzamboni.org/images/avatar-professional.jpg",
-    "url": "https://zzamboni.org",
-    "summary": "Senior computer scientist, security expert and organizational leader with 30 years of experience across security governance, cloud security architecture, research and engineering. I combine strategic leadership, technical depth and clear communication to help organizations design secure systems, scale teams and deliver measurable outcomes.",
-    "location": {
-      "city": "Zurich",
-      "countryCode": "CH"
-    },
-    "profiles": [
-      {
-        "network": "Linkedin",
-        "username": "zzamboni",
-        "url": "https://linkedin.com/in/zzamboni"
-      },
-      {
-        "network": "Leanpub",
-        "username": "zzamboni",
-        "url": "https://leanpub.com/u/zzamboni"
-      },
-      {
-        "network": "Github",
-        "username": "zzamboni",
-        "url": "https://github.com/zzamboni"
-      },
-      {
-        "network": "Bluesky",
-        "username": "zzamboni.org",
-        "url": "https://bsky.app/profile/zzamboni.org"
-      }
-    ]
-  },
-  "work": [
-    {
-      "name": "Avaloq",
-      "url": "https://avaloq.com/",
-      "position": "CISO Governance",
-      "startDate": "2024-01-01",
-      "location": "Switzerland",
-      "summary": "Lead Avaloq's global CISO Governance team and define and monitor the company's Information Security Management System.",
-      "highlights": [
-        "Own security policy and governance direction.",
-        "Provide second-line oversight of first-line security functions.",
-        "Drive compliance monitoring and control effectiveness in a regulated fintech environment."
-      ]
-    },
-    {
-      "name": "Amazon Web Services",
-      "url": "https://aws.amazon.com/",
-      "position": "Global Security Architect / Senior Global Security Architect",
-      "startDate": "2021-09-01",
-      "endDate": "2023-12-31",
-      "location": "Switzerland",
-      "summary": "Worked with global AWS customers and internal teams to improve security posture, define secure architecture patterns and scale security awareness.",
-      "highlights": [
-        "Led security architecture in the Stellantis Virtual Engineering Workbench program.",
-        "Established security workstreams, metrics and reporting for business and technical stakeholders.",
-        "Helped launch and scale Security Champions and Security Guardians initiatives.",
-        "Supported secure collaboration mechanisms for the Volkswagen Digital Production Platform."
-      ]
-    },
-    {
-      "name": "Swisscom",
-      "url": "https://swisscom.com/",
-      "position": "Enterprise Architect and IT Clouds Solution Security Architect",
-      "startDate": "2019-04-01",
-      "endDate": "2021-09-30",
-      "location": "Switzerland",
-      "summary": "Led security architecture, risk and compliance activities for Swisscom cloud platforms across multiple services.",
-      "highlights": [
-        "Directed compliance and governance activities including ISO27001, ISAE3402/3000 and GDPR requirements.",
-        "Built and led a Security Champions community across IT Clouds teams.",
-        "Coordinated threat modeling, audits, penetration testing and vulnerability management."
-      ]
-    },
-    {
-      "name": "Swisscom",
-      "url": "https://swisscom.com/",
-      "position": "Team Lead & Product Owner for Health & State Management",
-      "startDate": "2014-08-01",
-      "endDate": "2019-04-01",
-      "location": "Switzerland",
-      "summary": "Built and led the Health and State Management team for Swisscom cloud platforms.",
-      "highlights": [
-        "Managed a team of up to 16 people.",
-        "Owned roadmap and prioritization with product managers and stakeholders.",
-        "Defined and delivered platform-wide monitoring, logging and alerting capabilities.",
-        "Led the *Orchard* project through its implementation, production release and further improvements and development."
-      ]
-    },
-    {
-      "name": "CFEngine AS",
-      "url": "https://cfengine.com/",
-      "position": "Product Manager",
-      "startDate": "2011-10-01",
-      "endDate": "2014-06-30",
-      "location": "Norway/U.S.A. (remote)",
-      "highlights": [
-        "CFEngine Advocate, with a special focus on security.",
-        "Managed the CFEngine language roadmap.",
-        "Created and led the [CFEngine Design Center](https://docs.cfengine.com/docs/3.10/guide-design-center.html) project, which was the foundation for the current [CFEngine Build](https://build.cfengine.com/) service.",
-        "Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack).",
-        "Wrote the book [*Learning CFEngine 3*](https://cf-learn.info/), published by O'Reilly Media, which became the de facto introductory text to CFEngine."
-      ]
-    },
-    {
-      "name": "IBM Zurich Research Lab",
-      "url": "https://research.ibm.com/labs/zurich",
-      "position": "Research Staff Member",
-      "startDate": "2001-10-01",
-      "endDate": "2009-10-01",
-      "location": "Switzerland",
-      "summary": "Member of IBM Zurich's Global Security Analysis Laboratory, working on intrusion detection, malware containment and virtualization security research."
-    },
-    {
-      "name": "National Autonomous University of Mexico (UNAM)",
-      "url": "https://www.seguridad.unam.mx/",
-      "position": "Founder and lead of Computer Security Area",
-      "startDate": "1995-08-01",
-      "endDate": "1996-08-01",
-      "location": "Mexico",
-      "highlights": [
-        "Established UNAM's [*Computer Security Area*](http://www.seguridad.unam.mx/), the University's first team dedicated to computer security, which has evolved into the [*Information Security Coordination (UNAM-CERT)*](http://www.seguridad.unam.mx/).",
-        "Managed up to nine people working on different projects related to computer security.",
-        "Provided security services to the whole University, including incident response, security information, auditing and teaching."
-      ]
-    }
-  ],
-  "projects": [
-    {
-      "name": "Management and leadership, IT security, cloud computing",
-      "type": "Professional Highlights",
-      "highlights": [
-        "Chief Information Security Officer for Governance at [Avaloq](https://avaloq.com/), defining and managing Avaloq's global ISO27001-certified Information Security Management System",
-        "Managed security architecture at the [Stellantis *Virtual Engineering Workbench*](https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions) project. Worked with Stellantis CISO and business stakeholders to define governance, establish security best practices and drive risk analysis, threat modeling and mitigation.",
-        "Established scalable and durable mechanisms to enable partners to work securely in the [Volkswagen Digital Production Platform (DPP)](https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/) program.",
-        "Managed security architecture, risk management, data governance and compliance (ISO27001, ISAE3402/3000, etc.) for [Swisscom's Cloud platforms](https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html).",
-        "Established and led the Swisscom IT Clouds security community of practice.",
-        "Established and led the *Health and State Management* team at Swisscom to design, implement and operate a framework for scalable monitoring, logging and alerting for Swisscom's Cloud platforms.",
-        "Established and led the first computer security organization at UNAM, which has grown into the university's [Information Security Coordination (UNAM-CERT)](https://www.seguridad.unam.mx/).",
-        "Managed IT security customer relationships at HP Enterprise Services, including overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting."
-      ]
-    },
-    {
-      "name": "Research, architecture and design",
-      "type": "Professional Highlights",
-      "highlights": [
-        "Designed the *Orchard* monitoring framework for Swisscom's *Application Cloud* platform, and led the team that implemented it and brought it into production.",
-        "Designed and implemented the *Billy Goat* malware capture and analysis system at IBM."
-      ]
-    },
-    {
-      "name": "Billy Goat: Active worm detection and capture",
-      "type": "Research",
-      "entity": "IBM Research",
-      "url": "https://dominoweb.draco.res.ibm.com/d7c39a9a2e73d870852570060051dfed.html",
-      "startDate": "2002",
-      "endDate": "2008",
-      "highlights": [
-        "Pioneered active worm-capture technology that became the foundation for modern honeypots and honeynets",
-        "Designed system to simulate thousands of vulnerable hosts to attract and capture propagating worms",
-        "Implemented automated analysis to extract signatures and update intrusion detection/prevention systems",
-        "Publications: [[18]](publications/#pub-riordan06:_build_billy_goat:first2006), [[25]](publications/#pub-riordan05:bg_techreport)"
-      ]
-    },
-    {
-      "name": "Open-source software projects",
-      "type": "Software",
-      "highlights": [
-        "GitHub: [github.com/zzamboni](https://github.com/zzamboni)",
-        "GitLab: [gitlab.com/zzamboni](https://gitlab.com/zzamboni)"
-      ]
-    }
-  ],
-  "education": [
-    {
-      "institution": "Purdue University",
-      "url": "https://cerias.purdue.edu/",
-      "area": "Computer Science",
-      "studyType": "Ph.D.",
-      "startDate": "1996-08-01",
-      "endDate": "2001-08-01",
-      "location": "West Lafayette, IN, U.S.A.",
-      "summary": "Thesis: [Using Internal Sensors for Computer Intrusion Detection](https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf). Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)"
-    },
-    {
-      "institution": "Purdue University",
-      "url": "https://cerias.purdue.edu/",
-      "area": "Computer Science",
-      "studyType": "M.S.",
-      "startDate": "1996-08-01",
-      "endDate": "1998-05-01",
-      "location": "West Lafayette, IN, U.S.A.",
-      "summary": "Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)"
-    },
-    {
-      "institution": "National Autonomous University of Mexico (UNAM)",
-      "url": "https://www.unam.mx/",
-      "area": "Computer Engineering",
-      "studyType": "Bachelor's degree",
-      "startDate": "1989-08-01",
-      "endDate": "1995-07-01",
-      "location": "Mexico City, Mexico",
-      "summary": "Thesis: [UNAM/Cray Project for Security in the Unix Operating System](https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf) (in Spanish, original title: *Proyecto UNAM/Cray de Seguridad en el Sistema Operativo Unix*)"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Certified Information Systems Security Professional (CISSP)",
-      "issuer": "ISC2",
-      "url": "https://www.credly.com/badges/d74f6e4c-0667-41fb-9243-e11a3793ace4/public_url",
-      "date": "2019-04-08",
-      "image": "https://images.credly.com/images/6eeb0a98-33cb-4f72-bfc3-f89d65a3286c/image.png"
-    },
-    {
-      "name": "See full list on Credly",
-      "url": "https://www.credly.com/users/zzamboni/"
-    }
-  ],
-  "awards": [
-    {
-      "title": "IEEE Security & Privacy Test of Time Award ([IEEE S&P page](https://www.ieee-security.org/TC/SP2020/awards.html), [CERIAS blog post](https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/))",
-      "date": "2020-05-18",
-      "awarder": "IEEE"
-    },
-    {
-      "title": "[CFEngine Champion](https://cfengine.com/engage/cfengine-champions/)",
-      "date": "2010",
-      "awarder": "CFEngine AS"
-    },
-    {
-      "title": "Fulbright Scholarship (for pursuing Ph.D. studies at Purdue University)",
-      "date": "1996-05-01",
-      "awarder": "Fulbright Program and CONACYT"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Full list online",
-      "authors": [
-        "Diego Zamboni"
-      ],
-      "bibfiles": [
-        "zamboni-pubs.bib",
-        "zamboni-patents.bib"
-      ],
-      "bibkeywords": [
-        "selected"
-      ]
-    },
-    {
-      "name": "Publishing with Emacs, Org-mode and Leanpub",
-      "publisher": "Leanpub",
-      "releaseDate": "2020-01-01",
-      "url": "https://leanpub.com/emacs-org-leanpub",
-      "summary": "Diego Zamboni"
-    },
-    {
-      "name": "Learning CFEngine",
-      "publisher": "O'Reilly Media, Inc. 2012–2017, afterwards self-published",
-      "releaseDate": "2012-01-01",
-      "url": "http://cf-learn.info/",
-      "summary": "Diego Zamboni"
-    },
-    {
-      "name": "Proceedings of the Recent Advances in Intrusion Detection (RAID): 9th International Symposium",
-      "publisher": "Springer-Verlag New York, Inc.",
-      "releaseDate": "2006-01-01",
-      "url": "",
-      "summary": "Editors: Diego Zamboni and Christopher Kruegel"
-    },
-    {
-      "name": "Building and deploying Billy Goat, a worm-detection system",
-      "publisher": "Proceedings of the 18th Annual FIRST Conference",
-      "releaseDate": "2006-01-01",
-      "url": "",
-      "summary": "James Riordan, Diego Zamboni, Yann Duponchel"
-    },
-    {
-      "name": "Using internal sensors and embedded detectors for intrusion detection",
-      "publisher": "Journal of Computer Security",
-      "releaseDate": "2002-01-01",
-      "url": "https://www.researchgate.net/publication/220065478_Using_Internal_Sensors_and_Embedded_Detectors_for_Intrusion_Detection",
-      "summary": "Florian Kerschbaum, Eugene H. Spafford, Diego Zamboni"
-    },
-    {
-      "name": "Using Internal Sensors for Computer Intrusion Detection",
-      "publisher": "",
-      "releaseDate": "2001-01-01",
-      "url": "https://www.cerias.purdue.edu/apps/reports_and_papers/view/1800",
-      "summary": "Diego Zamboni — CERIAS TR 2001-42"
-    },
-    {
-      "name": "Analysis of a Denial of Service Attack on TCP",
-      "publisher": "Proceedings of the 1997 IEEE Symposium on Security and Privacy",
-      "releaseDate": "1997-01-01",
-      "url": "https://www.cerias.purdue.edu/apps/reports_and_papers/view/605",
-      "summary": "Christoph L. Schuba, Ivan V. Krsul, Markus G. Kuhn, Eugene H. Spafford, Aurobindo Sundaram, Diego Zamboni — Awarded the 2020 IEEE Security & Privacy Test of Time Award."
-    }
-  ],
-  "skills": [
-    {
-      "name": "Leadership",
-      "keywords": [
-        "32 years of multidisciplinary team and project leadership experience",
-        "IT Enterprise Architecture",
-        "Scaled Agile Framework (SAFe)"
-      ]
-    },
-    {
-      "name": "Information and Cyber Security",
-      "keywords": [
-        "Enterprise security governance",
-        "Enterprise security architecture",
-        "Virtualization and cloud computing security",
-        "Risk management and compliance",
-        "Intrusion detection and prevention",
-        "Software security and secure software development",
-        "ISO27001"
-      ]
-    },
-    {
-      "name": "Technology",
-      "keywords": [
-        "Broad and deep IT expertise",
-        "Cloud computing",
-        "Computer security",
-        "Operating systems",
-        "Networking",
-        "Configuration management",
-        "Software & services development",
-        "Programming languages"
-      ]
-    },
-    {
-      "name": "Research",
-      "keywords": [
-        "Ph.D. in Computer Science",
-        "9 years of experience at IBM Research"
-      ]
-    },
-    {
-      "name": "Communication",
-      "keywords": [
-        "Excellent written and spoken communication skills",
-        "Extensive public speaking experience",
-        "Professional writing and teaching experience"
-      ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "Spanish",
-      "fluency": "Native"
-    },
-    {
-      "language": "English",
-      "fluency": "Full proficiency"
-    },
-    {
-      "language": "German",
-      "fluency": "Intermediate proficiency (B2 level)"
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "The Association for Computing Machinery (ACM)",
-      "position": "Member",
-      "url": "http://www.acm.org/",
-      "startDate": "1998"
-    },
-    {
-      "organization": "Purdue University Chapter of Upsilon Pi Epsilon",
-      "position": "Secretary and President",
-      "url": "https://www.cs.purdue.edu/future-students/organizations.html",
-      "startDate": "1998",
-      "endDate": "2000"
-    }
-  ],
-  "references": [
-    {
-      "reference": "Available by request"
-    }
-  ],
-  "meta": {
-    "theme": "jsonresume-theme-even",
-    "themeOptions": {
-      "icons": "fontawesome",
-      "colors": {
-        "background": [
-          "#0f172a"
-        ],
-        "dimmed": [
-          "#1e293b"
-        ],
-        "primary": [
-          "#f8fafc"
-        ],
-        "secondary": [
-          "#cbd5e1"
-        ],
-        "accent": [
-          "#22d3ee"
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "Diego Zamboni",
+        "label": "CISO • Organizational Leader • Security Expert • Computer Scientist",
+        "email": "diego@zzamboni.org",
+        "image": "https://zzamboni.org/images/avatar-professional.jpg",
+        "url": "https://zzamboni.org",
+        "summary": "Senior computer scientist, security expert and organizational leader with 30 years of experience across security governance, cloud security architecture, research and engineering. I combine strategic leadership, technical depth and clear communication to help organizations design secure systems, scale teams and deliver measurable outcomes.",
+        "location": {
+            "city": "Zurich",
+            "countryCode": "CH"
+        },
+        "profiles": [
+            {
+                "network": "Linkedin",
+                "username": "zzamboni",
+                "url": "https://linkedin.com/in/zzamboni"
+            },
+            {
+                "network": "Leanpub",
+                "username": "zzamboni",
+                "url": "https://leanpub.com/u/zzamboni"
+            },
+            {
+                "network": "Github",
+                "username": "zzamboni",
+                "url": "https://github.com/zzamboni"
+            },
+            {
+                "network": "Bluesky",
+                "username": "zzamboni.org",
+                "url": "https://bsky.app/profile/zzamboni.org"
+            }
         ]
-      },
-      "projectsByType": true,
-      "showTableOfContents": true,
-      "links": [
-        {
-          "name": "Home",
-          "icon": "fa-regular fa-house",
-          "url": "https://zzamboni.org/about/"
-        },
-        {
-          "name": "PDF",
-          "icon": "fa-regular fa-file-pdf",
-          "url": "<resume>.pdf"
-        },
-        {
-          "name": "Publications",
-          "icon": "fa-quote-left",
-          "url": "publications/"
-        },
-        {
-          "name": "Source",
-          "icon": "github",
-          "url": "https://gitlab.com/zzamboni/vita"
-        }
-      ],
-      "sections": [
-        "projects:Professional Highlights",
-        "work",
-        "education",
-        "certificates",
-        "projects:Research",
-        "projects:Software",
-        "awards",
-        "publications",
-        "skills",
-        "languages",
-        "volunteer",
-        "references"
-      ],
-      "sectionLabels": {
-        "work": "Experience",
-        "skills": "Skills",
-        "certificates": "Certifications",
-        "awards": "Honors & Awards",
-        "publications": "Selected publications",
-        "volunteer": "Other Professional Activities",
-        "projects:Advising": "Student Advising"
-      }
     },
-    "pdfthemeOptions": {
-      "layout": {
-        "highlighted": false,
-        "footer": {
-          "display_page_counter": true
-        }
-      }
-    },
-    "publicationsOptions": {
-      "inline_in_pdf": true,
-      "pubSections": true,
-      "full_standalone_list": true,
-      "links": [
+    "work": [
         {
-          "name": "Home",
-          "icon": "fa-regular fa-house",
-          "url": "https://zzamboni.org/about/"
+            "name": "Avaloq",
+            "url": "https://avaloq.com/",
+            "position": "CISO Governance",
+            "startDate": "2024-01-01",
+            "location": "Switzerland",
+            "summary": "Lead Avaloq's global CISO Governance team and define and monitor the company's Information Security Management System.",
+            "highlights": [
+                "Own security policy and governance direction.",
+                "Provide second-line oversight of first-line security functions.",
+                "Drive compliance monitoring and control effectiveness in a regulated fintech environment."
+            ]
         },
         {
-          "name": "PDF",
-          "url": "<publications>.pdf",
-          "icon": "fa-regular fa-file-pdf"
+            "name": "Amazon Web Services",
+            "url": "https://aws.amazon.com/",
+            "position": "Global Security Architect / Senior Global Security Architect",
+            "startDate": "2021-09-01",
+            "endDate": "2023-12-31",
+            "location": "Switzerland",
+            "summary": "Worked with global AWS customers and internal teams to improve security posture, define secure architecture patterns and scale security awareness.",
+            "highlights": [
+                "Led security architecture in the Stellantis Virtual Engineering Workbench program.",
+                "Established security workstreams, metrics and reporting for business and technical stakeholders.",
+                "Helped launch and scale Security Champions and Security Guardians initiatives.",
+                "Supported secure collaboration mechanisms for the Volkswagen Digital Production Platform."
+            ]
         },
         {
-          "name": "BibTeX",
-          "url": "<publications>.bib",
-          "icon": "tex"
+            "name": "Swisscom",
+            "url": "https://swisscom.com/",
+            "position": "Enterprise Architect and IT Clouds Solution Security Architect",
+            "startDate": "2019-04-01",
+            "endDate": "2021-09-30",
+            "location": "Switzerland",
+            "summary": "Led security architecture, risk and compliance activities for Swisscom cloud platforms across multiple services.",
+            "highlights": [
+                "Directed compliance and governance activities including ISO27001, ISAE3402/3000 and GDPR requirements.",
+                "Built and led a Security Champions community across IT Clouds teams.",
+                "Coordinated threat modeling, audits, penetration testing and vulnerability management."
+            ]
+        },
+        {
+            "name": "Swisscom",
+            "url": "https://swisscom.com/",
+            "position": "Team Lead & Product Owner for Health & State Management",
+            "startDate": "2014-08-01",
+            "endDate": "2019-04-01",
+            "location": "Switzerland",
+            "summary": "Built and led the Health and State Management team for Swisscom cloud platforms.",
+            "highlights": [
+                "Managed a team of up to 16 people.",
+                "Owned roadmap and prioritization with product managers and stakeholders.",
+                "Defined and delivered platform-wide monitoring, logging and alerting capabilities.",
+                "Led the *Orchard* project through its implementation, production release and further improvements and development."
+            ]
+        },
+        {
+            "name": "CFEngine AS",
+            "url": "https://cfengine.com/",
+            "position": "Product Manager",
+            "startDate": "2011-10-01",
+            "endDate": "2014-06-30",
+            "location": "Norway/U.S.A. (remote)",
+            "highlights": [
+                "CFEngine Advocate, with a special focus on security.",
+                "Managed the CFEngine language roadmap.",
+                "Created and led the [CFEngine Design Center](https://docs.cfengine.com/docs/3.10/guide-design-center.html) project, which was the foundation for the current [CFEngine Build](https://build.cfengine.com/) service.",
+                "Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack).",
+                "Wrote the book [*Learning CFEngine 3*](https://cf-learn.info/), published by O'Reilly Media, which became the de facto introductory text to CFEngine."
+            ]
+        },
+        {
+            "name": "IBM Zurich Research Lab",
+            "url": "https://research.ibm.com/labs/zurich",
+            "position": "Research Staff Member",
+            "startDate": "2001-10-01",
+            "endDate": "2009-10-01",
+            "location": "Switzerland",
+            "summary": "Member of IBM Zurich's Global Security Analysis Laboratory, working on intrusion detection, malware containment and virtualization security research."
+        },
+        {
+            "name": "National Autonomous University of Mexico (UNAM)",
+            "url": "https://www.seguridad.unam.mx/",
+            "position": "Founder and lead of Computer Security Area",
+            "startDate": "1995-08-01",
+            "endDate": "1996-08-01",
+            "location": "Mexico",
+            "highlights": [
+                "Established UNAM's [*Computer Security Area*](http://www.seguridad.unam.mx/), the University's first team dedicated to computer security, which has evolved into the [*Information Security Coordination (UNAM-CERT)*](http://www.seguridad.unam.mx/).",
+                "Managed up to nine people working on different projects related to computer security.",
+                "Provided security services to the whole University, including incident response, security information, auditing and teaching."
+            ]
         }
-      ]
+    ],
+    "projects": [
+        {
+            "name": "Management and leadership, IT security, cloud computing",
+            "type": "Professional Highlights",
+            "highlights": [
+                "Chief Information Security Officer for Governance at [Avaloq](https://avaloq.com/), defining and managing Avaloq's global ISO27001-certified Information Security Management System",
+                "Managed security architecture at the [Stellantis *Virtual Engineering Workbench*](https://www.stellantis.com/en/news/press-releases/2022/january/amazon-stellantis-collaborate-on-software-solutions) project. Worked with Stellantis CISO and business stakeholders to define governance, establish security best practices and drive risk analysis, threat modeling and mitigation.",
+                "Established scalable and durable mechanisms to enable partners to work securely in the [Volkswagen Digital Production Platform (DPP)](https://aws.amazon.com/solutions/case-studies/innovators/volkswagen-group/) program.",
+                "Managed security architecture, risk management, data governance and compliance (ISO27001, ISAE3402/3000, etc.) for [Swisscom's Cloud platforms](https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center.html).",
+                "Established and led the Swisscom IT Clouds security community of practice.",
+                "Established and led the *Health and State Management* team at Swisscom to design, implement and operate a framework for scalable monitoring, logging and alerting for Swisscom's Cloud platforms.",
+                "Established and led the first computer security organization at UNAM, which has grown into the university's [Information Security Coordination (UNAM-CERT)](https://www.seguridad.unam.mx/).",
+                "Managed IT security customer relationships at HP Enterprise Services, including overseeing the activities of operational and engineering teams, risk and compliance management, requirements discussion and reporting."
+            ]
+        },
+        {
+            "name": "Research, architecture and design",
+            "type": "Professional Highlights",
+            "highlights": [
+                "Designed the *Orchard* monitoring framework for Swisscom's *Application Cloud* platform, and led the team that implemented it and brought it into production.",
+                "Designed and implemented the *Billy Goat* malware capture and analysis system at IBM."
+            ]
+        },
+        {
+            "description": "See [Publications](publications/) for publication details.",
+            "type": "Research"
+        },
+        {
+            "name": "Billy Goat: Active worm detection and capture",
+            "type": "Research",
+            "entity": "IBM Research",
+            "url": "https://dominoweb.draco.res.ibm.com/d7c39a9a2e73d870852570060051dfed.html",
+            "startDate": "2002",
+            "endDate": "2008",
+            "highlights": [
+                "Pioneered active worm-capture technology that became the foundation for modern honeypots and honeynets",
+                "Designed system to simulate thousands of vulnerable hosts to attract and capture propagating worms",
+                "Implemented automated analysis to extract signatures and update intrusion detection/prevention systems",
+                "Publications: [[18]](publications/#pub-riordan06:_build_billy_goat:first2006), [[25]](publications/#pub-riordan05:bg_techreport)"
+            ]
+        },
+        {
+            "name": "Ph.D. Thesis: Using internal sensors and embedded detectors for intrusion detection",
+            "type": "Research",
+            "entity": "Purdue University",
+            "url": "https://zzamboni.org/cerias/zamboni/thesis/",
+            "startDate": "1996",
+            "endDate": "2001",
+            "highlights": [
+                "Investigated novel approaches to data collection for intrusion detection systems",
+                "Implemented and evaluated internal sensors and embedded detectors as data collection mechanisms",
+                "Analyzed trade-offs and effectiveness of different sensor placement strategies in IDS architectures",
+                "Publications: [[11]](publications/#pub-zamboni01:phd-thesis), [[19]](publications/#pub-zamboni02:sensors_detectors),  [[20]](publications/#pub-kerschbaum00:network-embedded-sensors),  [[27]](publications/#pub-spafford00:data_collection-techrep),  [[26]](publications/#pub-zamboni00:thesis-proposal), [[32]](publications/#pub-zamboni:raid2000)"
+            ]
+        },
+        {
+            "name": "Open-source software projects",
+            "type": "Software",
+            "highlights": [
+                "GitHub: [github.com/zzamboni](https://github.com/zzamboni)",
+                "GitLab: [gitlab.com/zzamboni](https://gitlab.com/zzamboni)"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Purdue University",
+            "url": "https://cerias.purdue.edu/",
+            "area": "Computer Science",
+            "studyType": "Ph.D.",
+            "startDate": "1996-08-01",
+            "endDate": "2001-08-01",
+            "location": "West Lafayette, IN, U.S.A.",
+            "summary": "Thesis: [Using Internal Sensors for Computer Intrusion Detection](https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf). Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)"
+        },
+        {
+            "institution": "Purdue University",
+            "url": "https://cerias.purdue.edu/",
+            "area": "Computer Science",
+            "studyType": "M.S.",
+            "startDate": "1996-08-01",
+            "endDate": "1998-05-01",
+            "location": "West Lafayette, IN, U.S.A.",
+            "summary": "Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)"
+        },
+        {
+            "institution": "National Autonomous University of Mexico (UNAM)",
+            "url": "https://www.unam.mx/",
+            "area": "Computer Engineering",
+            "studyType": "Bachelor's degree",
+            "startDate": "1989-08-01",
+            "endDate": "1995-07-01",
+            "location": "Mexico City, Mexico",
+            "summary": "Thesis: [UNAM/Cray Project for Security in the Unix Operating System](https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf) (in Spanish, original title: *Proyecto UNAM/Cray de Seguridad en el Sistema Operativo Unix*)"
+        }
+    ],
+    "certificates": [
+        {
+            "name": "Certified Information Systems Security Professional (CISSP)",
+            "issuer": "ISC2",
+            "url": "https://www.credly.com/badges/d74f6e4c-0667-41fb-9243-e11a3793ace4/public_url",
+            "date": "2019-04-08",
+            "image": "https://images.credly.com/images/6eeb0a98-33cb-4f72-bfc3-f89d65a3286c/image.png"
+        },
+        {
+            "name": "See full list on Credly",
+            "url": "https://www.credly.com/users/zzamboni/"
+        }
+    ],
+    "awards": [
+        {
+            "title": "IEEE Security & Privacy Test of Time Award ([IEEE S&P page](https://www.ieee-security.org/TC/SP2020/awards.html), [CERIAS blog post](https://www.cerias.purdue.edu/site/blog/post/a_test_of_time_coast_and_an_award-winning_paper/))",
+            "date": "2020-05-18",
+            "awarder": "IEEE"
+        },
+        {
+            "title": "[CFEngine Champion](https://cfengine.com/engage/cfengine-champions/)",
+            "date": "2010",
+            "awarder": "CFEngine AS"
+        },
+        {
+            "title": "Fulbright Scholarship (for pursuing Ph.D. studies at Purdue University)",
+            "date": "1996-05-01",
+            "awarder": "Fulbright Program and CONACYT"
+        }
+    ],
+    "publications": [
+        {
+            "name": "Full list online",
+            "authors": [
+                "Diego Zamboni"
+            ],
+            "bibfiles": [
+                "zamboni-pubs.bib",
+                "zamboni-patents.bib"
+            ],
+            "bibkeywords": [
+                "selected"
+            ]
+        },
+        {
+            "name": "Publishing with Emacs, Org-mode and Leanpub",
+            "publisher": "Leanpub",
+            "releaseDate": "2020-01-01",
+            "url": "https://leanpub.com/emacs-org-leanpub",
+            "summary": "Diego Zamboni"
+        },
+        {
+            "name": "Learning CFEngine",
+            "publisher": "O'Reilly Media, Inc. 2012–2017, afterwards self-published",
+            "releaseDate": "2012-01-01",
+            "url": "http://cf-learn.info/",
+            "summary": "Diego Zamboni"
+        },
+        {
+            "name": "Proceedings of the Recent Advances in Intrusion Detection (RAID): 9th International Symposium",
+            "publisher": "Springer-Verlag New York, Inc.",
+            "releaseDate": "2006-01-01",
+            "url": "",
+            "summary": "Editors: Diego Zamboni and Christopher Kruegel"
+        },
+        {
+            "name": "Building and deploying Billy Goat, a worm-detection system",
+            "publisher": "Proceedings of the 18th Annual FIRST Conference",
+            "releaseDate": "2006-01-01",
+            "url": "",
+            "summary": "James Riordan, Diego Zamboni, Yann Duponchel"
+        },
+        {
+            "name": "Using internal sensors and embedded detectors for intrusion detection",
+            "publisher": "Journal of Computer Security",
+            "releaseDate": "2002-01-01",
+            "url": "https://www.researchgate.net/publication/220065478_Using_Internal_Sensors_and_Embedded_Detectors_for_Intrusion_Detection",
+            "summary": "Florian Kerschbaum, Eugene H. Spafford, Diego Zamboni"
+        },
+        {
+            "name": "Using Internal Sensors for Computer Intrusion Detection",
+            "publisher": "",
+            "releaseDate": "2001-01-01",
+            "url": "https://www.cerias.purdue.edu/apps/reports_and_papers/view/1800",
+            "summary": "Diego Zamboni — CERIAS TR 2001-42"
+        },
+        {
+            "name": "Analysis of a Denial of Service Attack on TCP",
+            "publisher": "Proceedings of the 1997 IEEE Symposium on Security and Privacy",
+            "releaseDate": "1997-01-01",
+            "url": "https://www.cerias.purdue.edu/apps/reports_and_papers/view/605",
+            "summary": "Christoph L. Schuba, Ivan V. Krsul, Markus G. Kuhn, Eugene H. Spafford, Aurobindo Sundaram, Diego Zamboni — Awarded the 2020 IEEE Security & Privacy Test of Time Award."
+        }
+    ],
+    "skills": [
+        {
+            "name": "Leadership",
+            "keywords": [
+                "32 years of multidisciplinary team and project leadership experience",
+                "IT Enterprise Architecture",
+                "Scaled Agile Framework (SAFe)"
+            ]
+        },
+        {
+            "name": "Information and Cyber Security",
+            "keywords": [
+                "Enterprise security governance",
+                "Enterprise security architecture",
+                "Virtualization and cloud computing security",
+                "Risk management and compliance",
+                "Intrusion detection and prevention",
+                "Software security and secure software development",
+                "ISO27001"
+            ]
+        },
+        {
+            "name": "Technology",
+            "keywords": [
+                "Broad and deep IT expertise",
+                "Cloud computing",
+                "Computer security",
+                "Operating systems",
+                "Networking",
+                "Configuration management",
+                "Software & services development",
+                "Programming languages"
+            ]
+        },
+        {
+            "name": "Research",
+            "keywords": [
+                "Ph.D. in Computer Science",
+                "9 years of experience at IBM Research"
+            ]
+        },
+        {
+            "name": "Communication",
+            "keywords": [
+                "Excellent written and spoken communication skills",
+                "Extensive public speaking experience",
+                "Professional writing and teaching experience"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Spanish",
+            "fluency": "Native"
+        },
+        {
+            "language": "English",
+            "fluency": "Full proficiency"
+        },
+        {
+            "language": "German",
+            "fluency": "Intermediate proficiency (B2 level)"
+        }
+    ],
+    "references": [
+        {
+            "reference": "Available by request"
+        }
+    ],
+    "meta": {
+        "theme": "jsonresume-theme-even",
+        "themeOptions": {
+            "icons": "fontawesome",
+            "colors": {
+                "background": [
+                    "#0f172a"
+                ],
+                "dimmed": [
+                    "#1e293b"
+                ],
+                "primary": [
+                    "#f8fafc"
+                ],
+                "secondary": [
+                    "#cbd5e1"
+                ],
+                "accent": [
+                    "#22d3ee"
+                ]
+            },
+            "projectsByType": true,
+            "showTableOfContents": true,
+            "links": [
+                {
+                    "name": "Home",
+                    "icon": "fa-regular fa-house",
+                    "url": "https://zzamboni.org/about/"
+                },
+                {
+                    "name": "PDF version",
+                    "icon": "fa-regular fa-file-pdf",
+                    "url": "<resume>.pdf"
+                },
+                {
+                    "name": "Publications page",
+                    "icon": "fa-quote-left",
+                    "url": "publications/"
+                },
+                {
+                    "name": "Source",
+                    "icon": "github",
+                    "url": "https://gitlab.com/zzamboni/vita"
+                },
+                {
+                    "name": "Built with resume-toolkit",
+                    "icon": "screwdriver-wrench",
+                    "url": "https://github.com/zzamboni/resume-toolkit"
+                }
+            ],
+            "sections": [
+                "projects:Professional Highlights",
+                "work",
+                "education",
+                "certificates",
+                "projects:Research",
+                "projects:Software",
+                "awards",
+                "publications",
+                "skills",
+                "languages",
+                "volunteer",
+                "references"
+            ],
+            "sectionLabels": {
+                "work": "Experience",
+                "skills": "Skills",
+                "certificates": "Certifications",
+                "awards": "Honors & Awards",
+                "publications": "Selected publications",
+                "volunteer": "Other Professional Activities",
+                "projects:Advising": "Student Advising",
+                "projects:Research": "Selected Research"
+            }
+        },
+        "pdfthemeOptions": {
+            "layout": {
+                "highlighted": false,
+                "footer": {
+                    "display_page_counter": true
+                }
+            }
+        },
+        "publicationsOptions": {
+            "inline_in_pdf": true,
+            "pubSections": true,
+            "full_standalone_list": true,
+            "links": [
+                {
+                    "name": "Home",
+                    "icon": "fa-regular fa-house",
+                    "url": "https://zzamboni.org/about/"
+                },
+                {
+                    "name": "PDF",
+                    "url": "<publications>.pdf",
+                    "icon": "fa-regular fa-file-pdf"
+                },
+                {
+                    "name": "BibTeX",
+                    "url": "<publications>.bib",
+                    "icon": "tex"
+                }
+            ]
+        }
     }
-  }
 }
