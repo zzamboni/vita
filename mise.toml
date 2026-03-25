@@ -37,5 +37,5 @@ fi
 
 echo "Copying output files $src_dir to $dest_dir"
 mkdir -p "$dest_dir"
-rsync -a --delete "$src_dir"/ "$dest_dir"/
+rsync -a --verbose --delete --exclude='*.typ' "$src_dir"/ "$dest_dir"/
 '''
