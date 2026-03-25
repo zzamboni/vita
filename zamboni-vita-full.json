@@ -837,6 +837,8 @@
     ],
     "publications": [
         {
+            "name": "Full list online",
+            "url": "publications/",
             "bibfiles": [
                 "zamboni-pubs.bib",
                 "zamboni-patents.bib"
@@ -850,6 +852,9 @@
     ],
     "meta": {
         "theme": "jsonresume-theme-even",
+        "site": {
+            "url": "https://zzamboni.org/vita/"
+        },
         "themeOptions": {
             "icons": "fontawesome",
             "colors": {
@@ -868,12 +873,12 @@
                     "url": "https://zzamboni.org/about/"
                 },
                 {
-                    "name": "PDF",
+                    "name": "PDF version",
                     "icon": "fa-regular fa-file-pdf",
                     "url": "<resume>.pdf"
                 },
                 {
-                    "name": "Publications",
+                    "name": "Publications page",
                     "icon": "fa-quote-left",
                     "url": "publications/"
                 },
@@ -881,6 +886,11 @@
                     "name": "Source",
                     "icon": "github",
                     "url": "https://gitlab.com/zzamboni/vita"
+                },
+                {
+                    "name": "Built with resume-toolkit",
+                    "icon": "screwdriver-wrench",
+                    "url": "https://github.com/zzamboni/resume-toolkit"
                 }
            ],
             "sections": [
@@ -915,13 +925,13 @@
         "pdfthemeOptions": {
             "layout": {
                 "highlighted": false,
-                "header": {
-                    "header_align": "center"
-                },
                 "footer": {
                     "display_page_counter": true
                 }
-            }
+            },
+            "visible_urls": ["notes"],
+            "pubs_url": "https://zzamboni.org/vita/publications/",
+            "cv_url": "https://zzamboni.org/vita/"
         },
         "publicationsOptions": {
             "pubSections": true,

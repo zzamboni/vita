@@ -398,21 +398,11 @@
         "themeOptions": {
             "icons": "fontawesome",
             "colors": {
-                "background": [
-                    "#0f172a"
-                ],
-                "dimmed": [
-                    "#1e293b"
-                ],
-                "primary": [
-                    "#f8fafc"
-                ],
-                "secondary": [
-                    "#cbd5e1"
-                ],
-                "accent": [
-                    "#22d3ee"
-                ]
+                "background": ["#0f172a"],
+                "dimmed": ["#1e293b"],
+                "primary": ["#f8fafc"],
+                "secondary": ["#cbd5e1"],
+                "accent": ["#22d3ee"]
             },
             "projectsByType": true,
             "showTableOfContents": true,

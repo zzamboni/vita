@@ -275,21 +275,31 @@
       "projectsByType": true,
       "showTableOfContents": true,
       "links": [
-        {
-          "name": "Home",
-          "icon": "home",
-          "url": "/about/"
-        },
-        {
-          "name": "PDF",
-          "icon": "file-pdf",
-          "url": "/vita/zamboni-vita-leadership.pdf"
-        },
-        {
-          "name": "Source",
-          "icon": "github",
-          "url": "https://gitlab.com/zzamboni/vita"
-        }
+          {
+              "name": "Home",
+              "icon": "fa-regular fa-house",
+              "url": "https://zzamboni.org/about/"
+          },
+          {
+              "name": "PDF version",
+              "icon": "fa-regular fa-file-pdf",
+              "url": "<resume>.pdf"
+          },
+          {
+              "name": "Publications page",
+              "icon": "fa-quote-left",
+              "url": "publications/"
+          },
+          {
+              "name": "Source",
+              "icon": "github",
+              "url": "https://gitlab.com/zzamboni/vita"
+          },
+          {
+              "name": "Built with resume-toolkit",
+              "icon": "screwdriver-wrench",
+              "url": "https://github.com/zzamboni/resume-toolkit"
+          }
       ],
       "sections": [
         "projects:Professional Highlights",
@@ -310,6 +320,17 @@
         "volunteer": "Other Professional Activities",
         "projects:Advising": "Student Advising"
       }
+    },
+    "pdfthemeOptions": {
+        "layout": {
+            "highlighted": false,
+            "footer": {
+                "display_page_counter": true
+            }
+        },
+        "visible_urls": ["notes"],
+        "pubs_url": "https://zzamboni.org/vita/publications/",
+        "cv_url": "https://zzamboni.org/vita/"
     }
   }
 }
