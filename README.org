@@ -3,7 +3,7 @@
 
 This repository contains the source data for my curriculum vitae and publications.
 
-The files are in [[https://jsonresume.org/][JSON Resume]] format, with some extensions supported by  [[https://github.com/zzamboni/resume-toolkit][=resume-toolkit=]].
+The files are in [[https://jsonresume.org/][JSON Resume]] format, with some extensions supported by  [[https://github.com/zzamboni/resume-toolkit][resume-toolkit]].
 
 The rendered output is published at [[https://zzamboni.org/vita/][zzamboni.org/vita]].
 
@@ -18,13 +18,13 @@ The rendered output is published at [[https://zzamboni.org/vita/][zzamboni.org/v
 
 * Building and deploying
 
-Rendering is done with [[https://github.com/zzamboni/resume-toolkit][=resume-toolkit=]]. For example:
+Rendering is done with [[https://github.com/zzamboni/resume-toolkit][resume-toolkit]]. For example:
 
 #+begin_src shell
 build-resume.sh zamboni-vita-general.json --serve
 #+end_src
 
-This repository includes a =mise= task to build and deploy a selected JSON file to my website with a consistent name:
+This repository includes a =mise= task to build and deploy a selected JSON file to my website with a consistent name (see config variables in =mise.toml=):
 
 #+begin_src shell
 mise run deploy zamboni-vita-full.json
