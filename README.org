@@ -10,7 +10,7 @@ The rendered output is published at [[https://zzamboni.org/vita/][zzamboni.org/v
 * Contents
 
 - =zamboni-vita-full.json=: canonical full JSON Resume data
-- =zamboni-vita-general.json=: shorter general-purpose variant
+- =zamboni-vita-general.json=: shorter general-purpose variant (this is the one [[https://zzamboni.org/vita/][published on my website]])
 - =zamboni-vita-leadership.json=: leadership-focused variant
 - =zamboni-pubs.bib=: publications bibliography
 - =zamboni-patents.bib=: patents bibliography
