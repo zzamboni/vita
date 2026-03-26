@@ -884,7 +884,7 @@
                 },
                 {
                     "name": "Source",
-                    "icon": "github",
+                    "icon": "gitlab",
                     "url": "https://gitlab.com/zzamboni/vita"
                 },
                 {
