@@ -1,0 +1,33 @@
+#+title: Diego Zamboni's Curriculum Vitae Sources
+#+author: Diego Zamboni
+
+This repository contains the source data for my curriculum vitae and publications.
+
+The files are in [[https://jsonresume.org/][JSON Resume]] format, with some extensions supported by  [[https://github.com/zzamboni/resume-toolkit][=resume-toolkit=]].
+
+The rendered output is published at [[https://zzamboni.org/vita/][zzamboni.org/vita]].
+
+* Contents
+
+- =zamboni-vita-full.json=: canonical full JSON Resume data
+- =zamboni-vita-general.json=: shorter general-purpose variant
+- =zamboni-vita-leadership.json=: leadership-focused variant
+- =zamboni-pubs.bib=: publications bibliography
+- =zamboni-patents.bib=: patents bibliography
+- =assets/= contains images used in the rendering (if missing they are downloaded automatically)
+
+* Building and deploying
+
+Rendering is done with [[https://github.com/zzamboni/resume-toolkit][=resume-toolkit=]]. For example:
+
+#+begin_src shell
+build-resume.sh zamboni-vita-general.json --serve
+#+end_src
+
+This repository includes a =mise= task to build and deploy a selected JSON file to my website with a consistent name:
+
+#+begin_src shell
+mise run deploy zamboni-vita-full.json
+#+end_src
+
+The task runs =build-resume.sh= and syncs the generated files to the configured website destination.
