@@ -43,7 +43,7 @@
       "location": "Switzerland",
       "summary": "I lead the global CISO Governance team, focusing on establishing robust security policies and monitoring compliance. I am in charge of defining and monitoring Avaloq's global Information Security Management System. My role involves defining requirements and ensuring effective oversight of first-line security functions, which is essential for maintaining a secure and compliant environment in the financial technology sector.",
       "highlights": [],
-      "image": "https://img.logo.dev/avaloq.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/avaloq.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Amazon Web Services",
@@ -59,7 +59,7 @@
         "Established the VEW *Security Champions* program to promote and transfer security knowledge.",
         "Defined and tracked implementation of security features in VEW to fulfill both customer business requirements and AWS best practices."
       ],
-      "image": "https://img.logo.dev/aws.amazon.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/aws.amazon.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Amazon Web Services",
@@ -74,7 +74,7 @@
         "Created and promoted security learning materials tailored for various roles within the DPP project.",
         "Increased security awareness and knowledge by promoting a *Security Guardians* initiative across the DPP organization."
       ],
-      "image": "https://img.logo.dev/aws.amazon.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/aws.amazon.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Swisscom",
@@ -91,7 +91,7 @@
         "Coordinated organization- and team-wide processes for risk and vulnerability management.",
         "Development of the Swisscom Platforms vision for 2025."
       ],
-      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Swisscom",
@@ -110,7 +110,7 @@
         "Managed business relationship and technical implementation of OpsGenie for alert management in IT Clouds.",
         "Main technologies involved: VMware vSphere (ESX, vCenter, NSX), VMware vRealize Operations Manager and Log Insight, Ansible (configuration management), OpsGenie (alert management)."
       ],
-      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Swisscom",
@@ -120,7 +120,7 @@
       "endDate": "2016-03-01",
       "location": "Switzerland",
       "summary": "Managed a team of three people and led the *Orchard* project through its implementation, production release and further improvements and development.",
-      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Swisscom",
@@ -133,7 +133,7 @@
         "Designed the architecture and implemented the initial prototype for the *Orchard* health-management and self-healing framework for Swisscom's *Application Cloud* Platform-as-a-Service service.",
         "Main technologies involved: OpenStack (cloud computing infrastructure), Cloud Foundry (application platform), Consul (health management and service discovery), RabbitMQ (message bus), Riemann (event analysis)."
       ],
-      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "CFEngine AS",
@@ -148,7 +148,7 @@
         "Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack).",
         "Developed code for both the Design Center core and its integrations."
       ],
-      "image": "https://img.logo.dev/cfengine.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/cfengine.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "CFEngine AS",
@@ -163,7 +163,7 @@
         "Gave talks, wrote articles and blog posts, taught classes, and in general spread the word about CFEngine.",
         "Developed and implemented the strategy for CFEngine as a security component."
       ],
-      "image": "https://img.logo.dev/cfengine.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/cfengine.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Boundless Innovation and Technology",
@@ -186,7 +186,7 @@
         "Handled communication and coordination between technical teams involved in security initiatives.",
         "Involved in all security-related decisions at the sales, design, implementation, delivery and ongoing maintenance stages of IT Outsourcing projects."
       ],
-      "image": "https://img.logo.dev/hp.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/hp.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "HP Enterprise Services",
@@ -199,7 +199,7 @@
         "Helped multidisciplinary customer teams (software engineering, IT management, networking, sales and support) by solving complex problems in customer environments.",
         "Performed analysis, design and implementation of solutions in multiple areas of expertise, including system automation, configuration management, system administration, system design, virtualization, performance and security."
       ],
-      "image": "https://img.logo.dev/hp.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/hp.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "IBM Zurich Research Lab",
@@ -209,7 +209,7 @@
       "endDate": "2009-10-01",
       "location": "Switzerland",
       "summary": "I was a member of the [*Global Security Analysis Laboratory*](https://www.zurich.ibm.com/security/) (GSAL), where I worked in intrusion detection, malware detection and containment, and virtualization security research projects. See [Research](#projects-research) for details of my research.",
-      "image": "https://img.logo.dev/research.ibm.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/research.ibm.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Sun Microsystems",
@@ -239,7 +239,7 @@
         "Established the celebration of the *International Computer Security Day* (sponsored by the Association for Computing Machinery) at UNAM. Acted as the main organizer of the event for two years (1994 and 1995). This event has grown and evolved into the [*Computer Security Day*](https://www.disc.unam.mx/) and the [*Computer Security Congress*](https://congreso.seguridad.unam.mx/).",
         "Designed and headed development of an audit-analysis tool for Unix systems (SAINT)."
       ],
-      "image": "https://img.logo.dev/seguridad.unam.mx?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/seguridad.unam.mx?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "National Autonomous University of Mexico (UNAM)",
@@ -255,7 +255,7 @@
         "Monitored the security of the Cray supercomputer and related workstations.",
         "Other responsibilities: user administration, operating system installation, resource management, security policies."
       ],
-      "image": "https://img.logo.dev/seguridad.unam.mx?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/seguridad.unam.mx?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     }
   ],
   "education": [
@@ -268,7 +268,7 @@
       "endDate": "2001-08-01",
       "location": "West Lafayette, IN, U.S.A.",
       "summary": "Thesis: [Using Internal Sensors for Computer Intrusion Detection](https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf). Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)",
-      "image": "https://img.logo.dev/cerias.purdue.edu?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/cerias.purdue.edu?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "institution": "Purdue University",
@@ -279,7 +279,7 @@
       "endDate": "1998-05-01",
       "location": "West Lafayette, IN, U.S.A.",
       "summary": "Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)",
-      "image": "https://img.logo.dev/cerias.purdue.edu?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/cerias.purdue.edu?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "institution": "National Autonomous University of Mexico (UNAM)",
@@ -290,7 +290,7 @@
       "endDate": "1995-07-01",
       "location": "Mexico City, Mexico",
       "summary": "Thesis: [UNAM/Cray Project for Security in the Unix Operating System](https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf) (in Spanish, original title: *Proyecto UNAM/Cray de Seguridad en el Sistema Operativo Unix*)",
-      "image": "https://img.logo.dev/unam.mx?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/unam.mx?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     }
   ],
   "certificates": [

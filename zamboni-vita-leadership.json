@@ -47,7 +47,7 @@
         "Define and monitor Avaloq's global ISMS and related control framework.",
         "Provide effective second-line oversight of first-line security functions in a regulated fintech environment."
       ],
-      "image": "https://img.logo.dev/avaloq.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/avaloq.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Amazon Web Services",
@@ -63,7 +63,7 @@
         "Built and scaled security enablement programs including Security Champions and Security Guardians initiatives.",
         "Defined scalable partner security mechanisms for Volkswagen Digital Production Platform and supported secure-by-design delivery."
       ],
-      "image": "https://img.logo.dev/aws.amazon.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/aws.amazon.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Swisscom",
@@ -79,7 +79,7 @@
         "Led threat modeling, audits, penetration testing, vulnerability management and security reporting across platforms.",
         "Contributed to Swisscom Platforms strategic vision for 2025."
       ],
-      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Swisscom",
@@ -95,7 +95,7 @@
         "Led architectural decisions and service delivery for monitoring, logging and alerting capabilities used across cloud platforms.",
         "Managed stakeholder and vendor relationships supporting critical operational services."
       ],
-      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "CFEngine AS",
@@ -110,7 +110,7 @@
         "Created and led the CFEngine Design Center project, foundation for the later CFEngine Build service.",
         "Coordinated third-party integration initiatives with major cloud and platform ecosystems."
       ],
-      "image": "https://img.logo.dev/cfengine.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/cfengine.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Boundless Innovation and Technology",
@@ -133,7 +133,7 @@
         "Led security-related initiatives across sales, design, implementation, delivery and operations.",
         "Coordinated communication and execution across multidisciplinary technical and business teams."
       ],
-      "image": "https://img.logo.dev/hp.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/hp.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "National Autonomous University of Mexico (UNAM)",
@@ -148,7 +148,7 @@
         "Provided security operations for critical supercomputing infrastructure and Unix environments.",
         "Established and organized early editions of UNAM's International Computer Security Day, which evolved into long-running security events."
       ],
-      "image": "https://img.logo.dev/seguridad.unam.mx?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/seguridad.unam.mx?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     }
   ],
   "projects": [
@@ -174,7 +174,7 @@
       "endDate": "2001-08-01",
       "location": "West Lafayette, IN, U.S.A.",
       "summary": "Thesis: [Using Internal Sensors for Computer Intrusion Detection](https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf). Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)",
-      "image": "https://img.logo.dev/cerias.purdue.edu?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/cerias.purdue.edu?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "institution": "Purdue University",
@@ -185,7 +185,7 @@
       "endDate": "1998-05-01",
       "location": "West Lafayette, IN, U.S.A.",
       "summary": "Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)",
-      "image": "https://img.logo.dev/cerias.purdue.edu?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/cerias.purdue.edu?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     }
   ],
   "certificates": [

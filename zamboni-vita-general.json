@@ -47,7 +47,7 @@
         "Provide second-line oversight of first-line security functions.",
         "Drive compliance monitoring and control effectiveness in a regulated fintech environment."
       ],
-      "image": "https://img.logo.dev/avaloq.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/avaloq.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Amazon Web Services",
@@ -63,7 +63,7 @@
         "Helped launch and scale Security Champions and Security Guardians initiatives.",
         "Supported secure collaboration mechanisms for the Volkswagen Digital Production Platform."
       ],
-      "image": "https://img.logo.dev/aws.amazon.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/aws.amazon.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Swisscom",
@@ -78,7 +78,7 @@
         "Built and led a Security Champions community across IT Clouds teams.",
         "Coordinated threat modeling, audits, penetration testing and vulnerability management."
       ],
-      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "Swisscom",
@@ -94,7 +94,7 @@
         "Defined and delivered platform-wide monitoring, logging and alerting capabilities.",
         "Led the *Orchard* project through its implementation, production release and further improvements and development."
       ],
-      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/swisscom.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "CFEngine AS",
@@ -110,7 +110,7 @@
         "Coordinated the work on CFEngine third-party integration  (e.g. AWS EC2, VMware, Docker and OpenStack).",
         "Wrote the book [*Learning CFEngine 3*](https://cf-learn.info/), published by O'Reilly Media, which became the de facto introductory text to CFEngine."
       ],
-      "image": "https://img.logo.dev/cfengine.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/cfengine.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "IBM Zurich Research Lab",
@@ -120,7 +120,7 @@
       "endDate": "2009-10-01",
       "location": "Switzerland",
       "summary": "Member of IBM Zurich's Global Security Analysis Laboratory, working on intrusion detection, malware containment and virtualization security research.",
-      "image": "https://img.logo.dev/research.ibm.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/research.ibm.com?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "name": "National Autonomous University of Mexico (UNAM)",
@@ -134,7 +134,7 @@
         "Managed up to nine people working on different projects related to computer security.",
         "Provided security services to the whole University, including incident response, security information, auditing and teaching."
       ],
-      "image": "https://img.logo.dev/seguridad.unam.mx?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/seguridad.unam.mx?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     }
   ],
   "projects": [
@@ -211,7 +211,7 @@
       "endDate": "2001-08-01",
       "location": "West Lafayette, IN, U.S.A.",
       "summary": "Thesis: [Using Internal Sensors for Computer Intrusion Detection](https://zzamboni.org/files/theses/zamboni-phd-thesis.pdf). Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)",
-      "image": "https://img.logo.dev/cerias.purdue.edu?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/cerias.purdue.edu?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "institution": "Purdue University",
@@ -222,7 +222,7 @@
       "endDate": "1998-05-01",
       "location": "West Lafayette, IN, U.S.A.",
       "summary": "Advisor: [Eugene H. Spafford](http://spaf.cerias.purdue.edu/)",
-      "image": "https://img.logo.dev/cerias.purdue.edu?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/cerias.purdue.edu?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     },
     {
       "institution": "National Autonomous University of Mexico (UNAM)",
@@ -233,7 +233,7 @@
       "endDate": "1995-07-01",
       "location": "Mexico City, Mexico",
       "summary": "Thesis: [UNAM/Cray Project for Security in the Unix Operating System](https://zzamboni.org/files/theses/zamboni-bachelors-thesis.pdf) (in Spanish, original title: *Proyecto UNAM/Cray de Seguridad en el Sistema Operativo Unix*)",
-      "image": "https://img.logo.dev/unam.mx?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404"
+      "image": "https://img.logo.dev/unam.mx?token=pk_ISbYkmLlTf2aKrIGMaMHrA&retina=true&fallback=404&format=png"
     }
   ],
   "certificates": [
