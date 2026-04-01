@@ -28,6 +28,7 @@ stem="$(basename "$resume" .json)"
 src_dir="$PWD/build/$stem/vita"
 dest_dir="{{vars.deploy_dir}}"
 
+rm -rf "build/{{vars.deploy_name}}"
 "$build_script" "$resume"
 
 if [[ ! -d "$src_dir" ]]; then
