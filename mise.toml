@@ -39,4 +39,10 @@ fi
 echo "Copying output files $src_dir to $dest_dir"
 mkdir -p "$dest_dir"
 rsync -a --verbose --delete --exclude='*.typ' "$src_dir"/ "$dest_dir"/
+
+echo "Pushing changes from $dest_dir"
+cd "$dest_dir"
+git add .
+git commit -m "Updated CV"
+git push
 '''
