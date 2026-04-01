@@ -914,11 +914,6 @@
           "name": "Source",
           "icon": "gitlab",
           "url": "https://gitlab.com/zzamboni/vita"
-        },
-        {
-          "name": "Built with resume-toolkit",
-          "icon": "screwdriver-wrench",
-          "url": "https://github.com/zzamboni/resume-toolkit"
         }
       ],
       "sections": [
