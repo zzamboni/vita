@@ -1,6 +1,6 @@
 [vars]
 deploy_dir = "../websites/zzamboni.org/static/vita/"
-build_script = "build-resume.sh"
+build_script_url = "https://raw.githubusercontent.com/zzamboni/resume-toolkit/refs/heads/main/build-resume.sh"
 deploy_name = "zamboni-vita"
 
 [tasks.deploy]
@@ -19,14 +19,19 @@ if [[ ! -f "$orig_resume" ]]; then
   exit 1
 fi
 
-build_script="{{vars.build_script}}"
+build_script="$(mktemp)"
+trap 'rm -f "$build_script"' EXIT
+curl --fail --location --silent --show-error "{{vars.build_script_url}}" --output "$build_script"
+chmod +x "$build_script"
+
+dest_dir="${DEPLOY_DIR:-{{vars.deploy_dir}}}"
+commit_message="${DEPLOY_COMMIT_MESSAGE:-Update generated vita output [skip ci]}"
 resume="{{vars.deploy_name}}.json"
 
 cp $orig_resume $resume
 
 stem="$(basename "$resume" .json)"
 src_dir="$PWD/build/$stem/vita"
-dest_dir="{{vars.deploy_dir}}"
 
 rm -rf "build/{{vars.deploy_name}}"
 "$build_script" "$resume"
@@ -40,9 +45,16 @@ echo "Copying output files $src_dir to $dest_dir"
 mkdir -p "$dest_dir"
 rsync -a --verbose --delete --exclude='*.typ' "$src_dir"/ "$dest_dir"/
 
-echo "Pushing changes from $dest_dir"
-cd "$dest_dir"
-git add .
-git commit -m "Updated CV"
-git push
+if git -C "$dest_dir" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  echo "Pushing changes from $dest_dir"
+  git -C "$dest_dir" add -A
+
+  if git -C "$dest_dir" diff --cached --quiet; then
+    echo "No staged changes to commit in $dest_dir"
+    exit 0
+  fi
+
+  git -C "$dest_dir" commit -m "$commit_message"
+  git -C "$dest_dir" push
+fi
 '''

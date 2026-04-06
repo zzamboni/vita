@@ -1,0 +1,29 @@
+deploy_general_vita:
+  stage: deploy
+  image: jdxcode/mise:latest
+  services:
+    - name: docker:27-dind
+      command: ["--tls=false"]
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
+    GIT_DEPTH: "1"
+    GIT_STRATEGY: fetch
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      changes:
+        - zamboni-vita-general.json
+    - when: never
+  before_script:
+    - apk add --no-cache bash curl git rsync
+    - git config --global user.name "${GITLAB_USER_NAME:-GitLab CI}"
+    - git config --global user.email "${GITLAB_USER_EMAIL:-gitlab-ci@example.invalid}"
+    - git config --global --add safe.directory "$CI_PROJECT_DIR"
+  script:
+    - test -n "$DEPLOY_PUSH_TOKEN"
+    - export TARGET_REPO_URL="https://oauth2:${DEPLOY_PUSH_TOKEN}@gitlab.com/zzamboni/vita.git"
+    - git clone --depth 1 --branch "$CI_COMMIT_BRANCH" "$TARGET_REPO_URL" deploy-repo
+    - git config --global --add safe.directory "$CI_PROJECT_DIR/deploy-repo"
+    - export DEPLOY_DIR="$CI_PROJECT_DIR/deploy-repo/public"
+    - export DEPLOY_COMMIT_MESSAGE="Update generated vita output [skip ci]"
+    - mise run deploy zamboni-vita-general.json
