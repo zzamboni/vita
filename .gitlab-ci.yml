@@ -33,5 +33,5 @@ deploy_general_vita:
     - git clone --depth 1 --branch "$CI_COMMIT_BRANCH" "$TARGET_REPO_URL" deploy-repo
     - git config --global --add safe.directory "$CI_PROJECT_DIR/deploy-repo"
     - export DEPLOY_DIR="$CI_PROJECT_DIR/deploy-repo/static/vita"
-    - export DEPLOY_COMMIT_MESSAGE="Update generated vita output [skip ci]"
+    - export DEPLOY_COMMIT_MESSAGE="Update generated vita output"
     - mise run deploy zamboni-vita-general.json
