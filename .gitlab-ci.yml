@@ -1,6 +1,8 @@
 deploy_general_vita:
   stage: deploy
-  image: jdxcode/mise:latest
+  image:
+    name: jdxcode/mise:latest
+    entrypoint: [""]
   services:
     - name: docker:27-dind
       command: ["--tls=false"]
