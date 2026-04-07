@@ -21,9 +21,9 @@ deploy_general_vita:
     - git config --global --add safe.directory "$CI_PROJECT_DIR"
   script:
     - test -n "$DEPLOY_PUSH_TOKEN"
-    - export TARGET_REPO_URL="https://oauth2:${DEPLOY_PUSH_TOKEN}@gitlab.com/zzamboni/vita.git"
+    - export TARGET_REPO_URL="https://oauth2:${DEPLOY_PUSH_TOKEN}@gitlab.com/zzamboni/zzamboni.git"
     - git clone --depth 1 --branch "$CI_COMMIT_BRANCH" "$TARGET_REPO_URL" deploy-repo
     - git config --global --add safe.directory "$CI_PROJECT_DIR/deploy-repo"
-    - export DEPLOY_DIR="$CI_PROJECT_DIR/deploy-repo/public"
+    - export DEPLOY_DIR="$CI_PROJECT_DIR/deploy-repo/static/vita"
     - export DEPLOY_COMMIT_MESSAGE="Update generated vita output [skip ci]"
     - mise run deploy zamboni-vita-general.json
