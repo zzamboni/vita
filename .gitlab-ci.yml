@@ -20,7 +20,7 @@ deploy_general_vita:
     - when: never
   before_script:
     - apt-get update
-    - DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends bash curl git rsync ca-certificates docker.io
+    - DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends bash curl git rsync ca-certificates docker.io docker-cli
     - rm -rf /var/lib/apt/lists/*
     - git config --global user.name "${GITLAB_USER_NAME:-GitLab CI}"
     - git config --global user.email "${GITLAB_USER_EMAIL:-gitlab-ci@example.invalid}"
