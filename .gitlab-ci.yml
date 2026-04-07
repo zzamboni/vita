@@ -18,11 +18,12 @@ deploy_general_vita:
     - when: never
   before_script:
     - apt-get update
-    - DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends bash curl git rsync ca-certificates
+    - DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends bash curl git rsync ca-certificates docker.io
     - rm -rf /var/lib/apt/lists/*
     - git config --global user.name "${GITLAB_USER_NAME:-GitLab CI}"
     - git config --global user.email "${GITLAB_USER_EMAIL:-gitlab-ci@example.invalid}"
     - git config --global --add safe.directory "$CI_PROJECT_DIR"
+    - docker version
   script:
     - test -n "$DEPLOY_PUSH_TOKEN"
     - export TARGET_REPO_URL="https://oauth2:${DEPLOY_PUSH_TOKEN}@gitlab.com/zzamboni/zzamboni.org.git"
