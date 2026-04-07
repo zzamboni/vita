@@ -89,7 +89,6 @@
       "location": "Switzerland",
       "summary": "Built and led the Health and State Management team for Swisscom cloud platforms.",
       "highlights": [
-        "Managed a team of up to 16 people.",
         "Owned roadmap and prioritization with product managers and stakeholders.",
         "Defined and delivered platform-wide monitoring, logging and alerting capabilities.",
         "Led the *Orchard* project through its implementation, production release and further improvements and development."
@@ -130,7 +129,7 @@
       "endDate": "1996-08-01",
       "location": "Mexico",
       "highlights": [
-        "Established UNAM's [*Computer Security Area*](http://www.seguridad.unam.mx/), the University's first team dedicated to computer security, which has evolved into the [*Information Security Coordination (UNAM-CERT)*](http://www.seguridad.unam.mx/).",
+        "Established UNAM's [*Computer Security Area*](http://www.seguridad.unam.mx/), the University's first team dedicated to computer security, which has evolved into the [*Information Security Organization (UNAM-CERT)*](http://www.seguridad.unam.mx/).",
         "Managed up to nine people working on different projects related to computer security.",
         "Provided security services to the whole University, including incident response, security information, auditing and teaching."
       ],
