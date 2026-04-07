@@ -34,7 +34,7 @@ stem="$(basename "$resume" .json)"
 src_dir="$PWD/build/$stem/vita"
 
 rm -rf "build/{{vars.deploy_name}}"
-"$build_script" "$resume"
+"$build_script" --no-it "$resume"
 
 if [[ ! -d "$src_dir" ]]; then
   echo "Expected build output not found: $src_dir" >&2
