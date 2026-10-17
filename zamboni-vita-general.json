@@ -429,7 +429,8 @@
         {
           "name": "Home",
           "icon": "fa-regular fa-house",
-          "url": "https://zzamboni.org/about/"
+          "url": "https://zzamboni.org/about/",
+          "role": "site-home"
         },
         {
           "name": "PDF version",
@@ -443,8 +444,8 @@
         },
         {
           "name": "Source",
-          "icon": "gitlab",
-          "url": "https://gitlab.com/zzamboni/vita"
+          "icon": "github",
+          "url": "https://github.com/zzamboni/vita"
         }
       ],
       "sections": [
@@ -493,7 +494,8 @@
         {
           "name": "Home",
           "icon": "fa-regular fa-house",
-          "url": "https://zzamboni.org/about/"
+          "url": "https://zzamboni.org/about/",
+          "role": "site-home"
         },
         {
           "name": "PDF",
