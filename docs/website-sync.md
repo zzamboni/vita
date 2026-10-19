@@ -7,8 +7,12 @@ publications JSON data. HTML rendering is disabled using **only** `--no-html`.
 
 ## Locally
 
-Place checkouts of `vita` and `zzamboni.org` next to each other, or
-specify the destination explicitly:
+Run `mise run sync-website` to use the existing `vars.deploy_dir` setting
+in `mise.toml` (which points to `static/vita/` inside the website checkout).
+The task derives the website root automatically. `DEPLOY_DIR` can override
+that variable using the same convention as the older `deploy` task.
+
+For direct invocation, provide the checkout location explicitly:
 
 ```sh
 bash scripts/sync-website.sh --website-dir ../zzamboni.org
