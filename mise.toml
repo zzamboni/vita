@@ -67,3 +67,26 @@ set -euo pipefail
 website_dir="$(dirname "$(dirname "${DEPLOY_DIR:-{{vars.deploy_dir}}}")")"
 bash scripts/sync-website.sh --website-dir "$website_dir" "$@"
 '''
+
+[tasks.trigger-website-sync]
+description = "Trigger the vita-to-website GitHub Actions workflow (opens a PR against zzamboni.org main)"
+usage = '''
+arg "[resume]" default="zamboni-vita-general.json" help="Resume JSON filename in the vita repository"
+'''
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! command -v gh >/dev/null 2>&1; then
+  echo "GitHub CLI (gh) is required: https://cli.github.com/" >&2
+  exit 1
+fi
+
+gh workflow run sync-website.yml \
+  --repo zzamboni/vita \
+  --ref main \
+  --field "resume=$usage_resume"
+
+echo "Dispatched website synchronization for $usage_resume from vita/main."
+echo "Workflow runs: https://github.com/zzamboni/vita/actions/workflows/sync-website.yml"
+'''
