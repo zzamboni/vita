@@ -64,6 +64,8 @@ jobs:
             static/vita/publications/zamboni-vita-pubs.bib
           if git diff --cached --quiet; then
             echo 'No changes to propose.'
+            echo '### Vita website synchronization' >> "$GITHUB_STEP_SUMMARY"
+            echo 'No changes detected; no pull request created.' >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
           branch="auto/vita-sync-${RUN_ID}"
@@ -72,9 +74,12 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'auto: sync vita outputs'
           git push origin "$branch"
-          gh pr create \
+          pr_url="$(gh pr create \
             --repo zzamboni/zzamboni.org \
             --base main \
             --head "$branch" \
             --title 'Update vita and publications from source' \
-            --body "Automated update from [zzamboni/vita](https://github.com/zzamboni/vita/commit/${SOURCE_SHA}). Generated with resume-toolkit with HTML generation disabled. Includes resume data, publication JSON, both PDFs, and BibTeX. Please review before merging."
+            --body "Automated update from [zzamboni/vita](https://github.com/zzamboni/vita/commit/${SOURCE_SHA}). Generated with resume-toolkit with HTML generation disabled. Includes resume data, publication JSON, both PDFs, and BibTeX. Please review before merging.")"
+          echo "Created pull request: $pr_url"
+          echo "### Vita website synchronization" >> "$GITHUB_STEP_SUMMARY"
+          echo "Created pull request: [$pr_url]($pr_url)" >> "$GITHUB_STEP_SUMMARY"
