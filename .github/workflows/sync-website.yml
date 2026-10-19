@@ -70,4 +70,4 @@ jobs:
             --base staging \
             --head "$branch" \
             --title 'Update vita and publications from source' \
-            --body "Automated update from [zzamboni/vita](https://github.com/zzamboni/vita/commit/${SOURCE_SHA}). Generated with resume-toolkit using \x60--no-html\x60. Includes resume data, publication JSON, both PDFs, and BibTeX. Please review before merging."
+            --body "Automated update from [zzamboni/vita](https://github.com/zzamboni/vita/commit/${SOURCE_SHA}). Generated with resume-toolkit with HTML generation disabled. Includes resume data, publication JSON, both PDFs, and BibTeX. Please review before merging."
