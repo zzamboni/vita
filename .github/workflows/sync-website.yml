@@ -62,10 +62,15 @@ jobs:
             static/vita/zamboni-vita.pdf \
             static/vita/publications/zamboni-vita-pubs.pdf \
             static/vita/publications/zamboni-vita-pubs.bib
-          if git diff --cached --quiet; then
-            echo 'No changes to propose.'
+          # Only source-derived text/data changes justify a PR. PDF metadata may
+          # change on each regeneration even when the underlying content does not.
+          if git diff --cached --quiet -- \
+            data/jsonresume/resume.json \
+            data/jsonresume/publications.json \
+            static/vita/publications/zamboni-vita-pubs.bib; then
+            echo 'No JSON or BibTeX changes; skipping PDF-only differences.'
             echo '### Vita website synchronization' >> "$GITHUB_STEP_SUMMARY"
-            echo 'No changes detected; no pull request created.' >> "$GITHUB_STEP_SUMMARY"
+            echo 'No JSON or BibTeX changes; no pull request created (PDF-only differences are ignored).' >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
           branch="auto/vita-sync-${RUN_ID}"
