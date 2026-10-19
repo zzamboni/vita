@@ -58,3 +58,7 @@ if git -C "$dest_dir" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   git -C "$dest_dir" push
 fi
 '''
+
+[tasks.sync-website]
+description = "Build the CV and sync JSON/PDF/BibTeX into a local zzamboni.org checkout (without committing)"
+run = "bash scripts/sync-website.sh"
