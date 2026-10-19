@@ -1,92 +1,91 @@
-# Vita
+# My CV
 
-Source data and publishing workflow for [Diego Zamboni's CV](https://zzamboni.org/vita/) and [publications](https://zzamboni.org/vita/publications/).
+This repository is where I keep the source files for [my CV](https://zzamboni.org/vita/) and [my list of publications](https://zzamboni.org/vita/publications/). I use [JSON Resume](https://jsonresume.org/) for the CV and BibTeX for the publications.
 
-This repository contains the editable [JSON Resume](https://jsonresume.org/) documents and BibTeX sources. It **does not own the website's HTML templates** or treat generated files as canonical. The published CV is assembled from several independently maintained repositories.
+Over time, I've separated the source data, the tools that generate PDFs, and the website that displays everything. This makes it easier for me to update one piece without having to rebuild the whole setup.
 
-## How the pieces fit together
+## How it works
 
-| Repository | Responsibility |
-| --- | --- |
-| **[zzamboni/vita](https://github.com/zzamboni/vita)** (this repository) | JSON Resume and BibTeX source files; local synchronization script and GitHub Actions dispatch |
-| **[zzamboni/resume-toolkit](https://github.com/zzamboni/resume-toolkit)** | Containerized build pipeline producing CV/publications PDFs, publications JSON and aggregated BibTeX (and standalone HTML when requested) |
-| **[zzamboni/hugo-jsonresume](https://github.com/zzamboni/hugo-jsonresume)** | Reusable Hugo module rendering the CV and publications pages from JSON data; supports the Blowfish theme used by the site |
-| **[zzamboni/zzamboni.org](https://github.com/zzamboni/zzamboni.org)** | Hugo website, module configuration, imported JSON data and downloadable PDF/BibTeX files |
+There are four repositories involved:
 
-On the website, `hugo-jsonresume` renders `/vita/` and `/vita/publications/`. The synchronization build runs `resume-toolkit` with **`--no-html`**, since Hugo produces the web pages; the pipeline still generates both PDFs, publications JSON and BibTeX.
+- **[vita](https://github.com/zzamboni/vita)** (this one) is where I edit my CV and bibliography.
+- **[resume-toolkit](https://github.com/zzamboni/resume-toolkit)** is my containerized toolkit for turning those files into PDFs, a publications JSON file, and an aggregated BibTeX file. It can generate standalone HTML too.
+- **[hugo-jsonresume](https://github.com/zzamboni/hugo-jsonresume)** is the Hugo module I use to render the CV and publications directly on my website. It includes support for the Blowfish theme.
+- **[zzamboni.org](https://github.com/zzamboni/zzamboni.org)** is my Hugo website, where the generated data and downloads end up.
+
+For the website, I run `resume-toolkit` with `--no-html`. There's no point generating another set of HTML pages when `hugo-jsonresume` already handles [`/vita/`](https://zzamboni.org/vita/) and [`/vita/publications/`](https://zzamboni.org/vita/publications/). I still generate both PDFs, the publications JSON and the BibTeX file.
 
 ```text
-vita (JSON Resume + BibTeX)
-       |
-       v
-resume-toolkit --no-html
-       |
-       +-- resume JSON --------------------> zzamboni.org/data/jsonresume/
-       +-- publications JSON -------------> zzamboni.org/data/jsonresume/
-       +-- CV/publications PDFs ----------> zzamboni.org/static/vita/
-       +-- aggregated publications BibTeX -> zzamboni.org/static/vita/
-                                              |
-                                              v
-                                       hugo-jsonresume
-                                      /vita/ + /vita/publications/
+My JSON Resume + BibTeX files (vita)
+                 |
+                 v
+        resume-toolkit --no-html
+                 |
+                 +-- Resume + publications JSON --> zzamboni.org/data/jsonresume/
+                 +-- PDFs + publications BibTeX --> zzamboni.org/static/vita/
+                                                        |
+                                                        v
+                                                 hugo-jsonresume
+                                                /vita/ + /vita/publications/
 ```
 
-## Source files
+## The source files
 
-- `zamboni-vita-general.json`: **default** resume used when synchronizing with the website.
-- `zamboni-vita-full.json`: more comprehensive resume variant, selectable when needed.
-- `zamboni-pubs.bib` and `zamboni-patents.bib`: source bibliography files, referenced from the JSON Resume configuration.
+I keep a couple of versions of my CV:
 
-Generated output under `build/` and the temporary `zamboni-vita.json` are ignored by Git. Edit the source JSON and BibTeX files rather than generated output.
+- `zamboni-vita-general.json` is the one I normally publish on my website.
+- `zamboni-vita-full.json` is a more complete version, which I can select when needed.
 
-## Working locally
+The publications live in `zamboni-pubs.bib` and `zamboni-patents.bib`. The JSON Resume files specify which bibliographies to use.
 
-The following tasks use [mise](https://mise.jdx.dev/). Local builds require the `resume-toolkit` `build-resume.sh` wrapper (on `PATH` or configured via `VITA_BUILD_SCRIPT`) and Docker or Podman.
+Anything under `build/` is generated. The sync script also creates a temporary `zamboni-vita.json` so the exported files keep their existing names. Neither belongs in Git.
 
-### Build and copy into a local website checkout
+## Updating my website
+
+I have two ways of doing this, depending on whether I want to update a local checkout or open a PR on GitHub.
+
+### Copy the results to my local website checkout
+
+I use [mise](https://mise.jdx.dev/) to keep the commands short:
 
 ```sh
 mise run sync-website
 ```
 
-The default destination is derived from `deploy_dir` in `mise.toml` (currently `../websites/zzamboni.org/static/vita/`), so the script finds the website repository root automatically. Set `DEPLOY_DIR` to override it, or call `scripts/sync-website.sh --website-dir /path/to/zzamboni.org` directly.
+This builds the default CV and copies the JSON, PDFs and BibTeX into my local `zzamboni.org` checkout. It uses the `deploy_dir` variable in `mise.toml` to find the website (currently `../websites/zzamboni.org/static/vita/`). I can override that with `DEPLOY_DIR` or pass `--website-dir` directly to `scripts/sync-website.sh`.
 
-Choose another input resume:
+If I want to use my full CV instead:
 
 ```sh
 mise run sync-website --resume zamboni-vita-full.json
 ```
 
-The local script copies only the expected JSON/PDF/BibTeX outputs. It **does not commit or push** changes. Use `--dry-run` to preview differences or `--skip-build` to reuse existing build output. Its default selected input is `zamboni-vita-general.json`.
+This needs the `resume-toolkit` `build-resume.sh` wrapper (in my `PATH` or specified with `VITA_BUILD_SCRIPT`) and Docker or Podman.
 
-### Open a website update PR using GitHub Actions
+The script only copies the files it knows about. **It doesn't commit or push anything.** I can also use `--dry-run` to see what would change, or `--skip-build` to reuse an existing build.
 
-After editing the source files, **commit and push to `vita/main` first**, then dispatch the workflow:
+### Update the website through GitHub
+
+Most of the time, I'd rather let GitHub Actions generate the files and open a PR for me. Once I've **committed and pushed my changes to `vita/main`**, I run:
 
 ```sh
 mise run trigger-website-sync
 ```
 
-Or select another JSON Resume:
+Or, for the full CV:
 
 ```sh
 mise run trigger-website-sync zamboni-vita-full.json
 ```
 
-This task requires the authenticated [GitHub CLI](https://cli.github.com/) (`gh`). You can also run [Sync vita to zzamboni.org](https://github.com/zzamboni/vita/actions/workflows/sync-website.yml) manually in GitHub Actions, where the resume filename is an input.
+This uses the [GitHub CLI](https://cli.github.com/) (`gh`). I can also [start the workflow from GitHub](https://github.com/zzamboni/vita/actions/workflows/sync-website.yml) and choose which JSON file to use.
 
-The workflow:
+The workflow builds the CV with `--no-html`, compares the results against `zzamboni.org/main`, and opens a PR when the resume JSON, publications JSON or BibTeX has changed. **If only the PDFs are different, it skips the PR**, since generated PDF files can change even when their contents haven't. When there's a real data change, the PR includes any updated PDFs as well.
 
-1. Checks out this repository and `zzamboni.org/main`.
-2. Builds the chosen resume using `resume-toolkit --no-html` and synchronizes the five approved website files.
-3. Checks changes to resume JSON, publications JSON and BibTeX. **PDF-only differences do not trigger a PR**, since generated PDF bytes can vary without a source-content change.
-4. When JSON or BibTeX changed, opens a **reviewable PR against `zzamboni.org/main`**, including any changed PDFs. It does not auto-merge.
-5. Shows the PR link (or the no-change explanation) in the GitHub Actions run summary.
+I review and merge the PR myself. The workflow puts the PR link (or a note saying nothing changed) in the GitHub Actions run summary. Merging the PR into my website's `main` branch takes care of the normal deployment.
 
-Merging the PR updates the website's content and downloads and follows its normal deployment process.
+### One-time GitHub setup
 
-### GitHub Actions credential
+To let the workflow write to my website repository, I store a fine-grained GitHub token as `WEBSITE_SYNC_TOKEN` in **vita → Settings → Secrets and variables → Actions**. It needs Contents and Pull requests read/write access to `zzamboni/zzamboni.org`.
 
-The `vita` repository must have an Actions secret named `WEBSITE_SYNC_TOKEN`: a fine-grained personal access token with **Contents: read/write** and **Pull requests: read/write** permissions for `zzamboni/zzamboni.org`. Store it in **vita → Settings → Secrets and variables → Actions**, because the workflow runs here and writes to the other repository.
-
-For detailed output paths, prerequisites and script options, see **[Website synchronization guide](docs/website-sync.md)**. The toolkit's separate [README](https://github.com/zzamboni/resume-toolkit) covers standalone CV builds and output-format switches.
+For the exact file mappings and more options, I've put the details in [the website sync notes](docs/website-sync.md). The [resume-toolkit repository](https://github.com/zzamboni/resume-toolkit) has its own instructions for building standalone versions of my CV.
