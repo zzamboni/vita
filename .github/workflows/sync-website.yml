@@ -1,0 +1,73 @@
+name: Sync vita to zzamboni.org
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vita-website-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out vita
+        uses: actions/checkout@v4
+        with:
+          path: vita
+          persist-credentials: false
+
+      - name: Check out website staging
+        uses: actions/checkout@v4
+        with:
+          repository: zzamboni/zzamboni.org
+          ref: staging
+          path: zzamboni.org
+          token: ${{ secrets.WEBSITE_SYNC_TOKEN }}
+          persist-credentials: true
+
+      - name: Install resume-toolkit wrapper
+        run: |
+          curl --fail --location --retry 3 --silent --show-error \
+            https://raw.githubusercontent.com/zzamboni/resume-toolkit/main/build-resume.sh \
+            --output "$RUNNER_TEMP/build-resume.sh"
+          chmod +x "$RUNNER_TEMP/build-resume.sh"
+
+      - name: Generate and sync output
+        env:
+          VITA_BUILD_SCRIPT: ${{ runner.temp }}/build-resume.sh
+        run: bash vita/scripts/sync-website.sh --website-dir "$GITHUB_WORKSPACE/zzamboni.org"
+
+      - name: Commit and open a PR if anything changed
+        env:
+          GH_TOKEN: ${{ secrets.WEBSITE_SYNC_TOKEN }}
+          SOURCE_SHA: ${{ github.sha }}
+          RUN_ID: ${{ github.run_id }}
+        working-directory: zzamboni.org
+        run: |
+          set -euo pipefail
+          git add -- \
+            data/jsonresume/resume.json \
+            data/jsonresume/publications.json \
+            static/vita/zamboni-vita.pdf \
+            static/vita/publications/zamboni-vita-pubs.pdf \
+            static/vita/publications/zamboni-vita-pubs.bib
+          if git diff --cached --quiet; then
+            echo 'No changes to propose.'
+            exit 0
+          fi
+          branch="auto/vita-sync-${RUN_ID}"
+          git checkout -b "$branch"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'auto: sync vita outputs'
+          git push origin "$branch"
+          gh pr create \
+            --repo zzamboni/zzamboni.org \
+            --base staging \
+            --head "$branch" \
+            --title 'Update vita and publications from source' \
+            --body "Automated update from [zzamboni/vita](https://github.com/zzamboni/vita/commit/${SOURCE_SHA}). Generated with resume-toolkit using \x60--no-html\x60. Includes resume data, publication JSON, both PDFs, and BibTeX. Please review before merging."
