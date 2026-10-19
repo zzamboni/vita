@@ -73,7 +73,10 @@ The manually triggered workflow is
 Run it from the `vita` repository's **Actions** tab. You can choose a
 **resume** file there (default: `zamboni-vita-general.json`). It checks out the
 website's `main` branch, uses the same script, and opens a pull request
-against `main` only if output files changed. It never auto-merges.
+against `main` only if the resume JSON, publications JSON, or generated BibTeX
+changed. **PDF-only differences do not create a PR**, since regenerated PDFs
+may contain volatile metadata. When a PR is created for JSON/BibTeX changes,
+any changed PDFs are included too. It never auto-merges.
 
 Before running, configure a `vita` **Actions secret**
 named `WEBSITE_SYNC_TOKEN`: a fine-grained GitHub personal access token
