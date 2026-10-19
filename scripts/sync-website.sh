@@ -3,13 +3,14 @@ set -euo pipefail
 
 usage() {
   cat <<'HELP'
-Usage: scripts/sync-website.sh [--website-dir PATH] [--build-script PATH] [--skip-build] [--dry-run]
+Usage: scripts/sync-website.sh [--resume FILE] [--website-dir PATH] [--build-script PATH] [--skip-build] [--dry-run]
 
-Build canonical vita inputs with resume-toolkit --no-html and copy the website
+Build selected JSON Resume input with resume-toolkit --no-html and copy the website
 JSON, CV/publications PDFs, and aggregated BibTeX to zzamboni.org.
 No commits, pushes, or pull requests are made by this script.
 
 Options:
+  --resume FILE       JSON Resume source (default: zamboni-vita-general.json)
   --website-dir PATH  Website checkout (default: ../zzamboni.org)
   --build-script PATH  resume-toolkit wrapper (default: build-resume.sh in PATH)
   --skip-build         Reuse existing build/zamboni-vita/vita outputs
@@ -20,13 +21,15 @@ HELP
 repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 website_dir="${VITA_WEBSITE_DIR:-$repo_dir/../zzamboni.org}"
 build_script="${VITA_BUILD_SCRIPT:-build-resume.sh}"
+resume_file="${VITA_RESUME_FILE:-zamboni-vita-general.json}"
 skip_build=0
 dry_run=0
 while (($#)); do
   case "$1" in
-    --website-dir|--build-script)
+    --resume|--website-dir|--build-script)
       if (($# < 2)); then echo "Missing value for $1" >&2; exit 2; fi
       case "$1" in
+        --resume) resume_file="$2" ;;
         --website-dir) website_dir="$2" ;;
         --build-script) build_script="$2" ;;
       esac
@@ -42,7 +45,19 @@ website_dir="$(cd "$website_dir" && pwd)" || { echo "Website checkout not found"
 [[ -f "$website_dir/go.mod" && -d "$website_dir/data/jsonresume" ]] || {
   echo "Not a zzamboni.org checkout: $website_dir" >&2; exit 1
 }
-[[ -f "$repo_dir/zamboni-vita-full.json" ]] || { echo "Missing canonical resume JSON" >&2; exit 1; }
+# Inputs must live inside vita, which is mounted in the build container.
+if [[ "$resume_file" == /* ]]; then
+  resume_path="$resume_file"
+else
+  resume_path="$repo_dir/$resume_file"
+fi
+[[ -f "$resume_path" ]] || { echo "Resume JSON not found: $resume_path" >&2; exit 1; }
+resume_path="$(realpath "$resume_path")"
+case "$resume_path" in
+  "$repo_dir"/*) ;;
+  *) echo "Resume must be inside the vita checkout: $resume_path" >&2; exit 1 ;;
+esac
+echo "Using resume: ${resume_path#"$repo_dir"/}"
 
 if (( ! skip_build )); then
   if [[ "$build_script" == */* ]]; then
@@ -55,7 +70,7 @@ if (( ! skip_build )); then
     echo "Refusing to overwrite $temp_input" >&2; exit 1
   fi
   trap 'rm -f "$temp_input"' EXIT
-  cp "$repo_dir/zamboni-vita-full.json" "$temp_input"
+  cp "$resume_path" "$temp_input"
   (
     cd "$repo_dir"
     "$build_script" zamboni-vita.json --no-html --out build/zamboni-vita
@@ -65,7 +80,7 @@ fi
 out="$repo_dir/build/zamboni-vita/vita"
 # Explicit allowlist: never rsync --delete a website directory.
 sources=(
-  "$repo_dir/zamboni-vita-full.json"
+  "$resume_path"
   "$out/publications/zamboni-vita-pubs.json"
   "$out/zamboni-vita.pdf"
   "$out/publications/zamboni-vita-pubs.pdf"
