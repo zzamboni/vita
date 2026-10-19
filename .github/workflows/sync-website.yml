@@ -26,11 +26,11 @@ jobs:
           path: vita
           persist-credentials: false
 
-      - name: Check out website staging
+      - name: Check out website main
         uses: actions/checkout@v4
         with:
           repository: zzamboni/zzamboni.org
-          ref: staging
+          ref: main
           path: zzamboni.org
           token: ${{ secrets.WEBSITE_SYNC_TOKEN }}
           persist-credentials: true
@@ -74,7 +74,7 @@ jobs:
           git push origin "$branch"
           gh pr create \
             --repo zzamboni/zzamboni.org \
-            --base staging \
+            --base main \
             --head "$branch" \
             --title 'Update vita and publications from source' \
             --body "Automated update from [zzamboni/vita](https://github.com/zzamboni/vita/commit/${SOURCE_SHA}). Generated with resume-toolkit with HTML generation disabled. Includes resume data, publication JSON, both PDFs, and BibTeX. Please review before merging."
