@@ -2,6 +2,12 @@ name: Sync vita to zzamboni.org
 
 on:
   workflow_dispatch:
+    inputs:
+      resume:
+        description: Resume JSON file in vita
+        type: string
+        required: true
+        default: zamboni-vita-general.json
 
 permissions:
   contents: read
@@ -39,7 +45,8 @@ jobs:
       - name: Generate and sync output
         env:
           VITA_BUILD_SCRIPT: ${{ runner.temp }}/build-resume.sh
-        run: bash vita/scripts/sync-website.sh --website-dir "$GITHUB_WORKSPACE/zzamboni.org"
+          RESUME_FILE: ${{ inputs.resume }}
+        run: bash vita/scripts/sync-website.sh --website-dir "$GITHUB_WORKSPACE/zzamboni.org" --resume "$RESUME_FILE"
 
       - name: Commit and open a PR if anything changed
         env:
