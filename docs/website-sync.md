@@ -54,6 +54,20 @@ are not deleted or overwritten. Missing required files fail the sync.
 
 ## GitHub Actions
 
+To dispatch the workflow from your laptop, install and authenticate the
+[GitHub CLI](https://cli.github.com/) (`gh auth login`), then run:
+
+```sh
+mise run trigger-website-sync
+mise run trigger-website-sync zamboni-vita-full.json
+```
+
+The task uses `zamboni-vita-general.json` by default and submits the selected
+filename to GitHub Actions. **Commit and push your CV changes to `vita/main`
+first**: the workflow builds the remote `main` branch, not your uncommitted
+local files. Dispatching only starts the workflow; it does not wait for completion
+or merge the website PR.
+
 The manually triggered workflow is
 [Sync vita to zzamboni.org](../.github/workflows/sync-website.yml).
 Run it from the `vita` repository's **Actions** tab. You can choose a
