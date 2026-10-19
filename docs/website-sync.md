@@ -58,8 +58,8 @@ The manually triggered workflow is
 [Sync vita to zzamboni.org](../.github/workflows/sync-website.yml).
 Run it from the `vita` repository's **Actions** tab. You can choose a
 **resume** file there (default: `zamboni-vita-general.json`). It checks out the
-website's `staging` branch, uses the same script, and opens a pull request
-against `staging` only if output files changed. It never auto-merges.
+website's `main` branch, uses the same script, and opens a pull request
+against `main` only if output files changed. It never auto-merges.
 
 Before running, configure a `vita` **Actions secret**
 named `WEBSITE_SYNC_TOKEN`: a fine-grained GitHub personal access token
@@ -73,5 +73,4 @@ resume-toolkit release containing `--no-html` before running it.
 No version bump or release is performed by this workflow.
 
 Running the workflow creates a review PR; only merging into the website's
-`staging` branch initiates its normal staging deploy. A production
-promotion remains a separate manual decision.
+`main` branch initiates its normal production deploy.
