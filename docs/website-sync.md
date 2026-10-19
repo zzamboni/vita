@@ -1,7 +1,8 @@
 # Synchronizing vita with zzamboni.org
 
-The canonical inputs are `zamboni-vita-full.json`, `zamboni-pubs.bib`,
-and `zamboni-patents.bib` in this repository. Website rendering is owned by
+The default JSON Resume input is `zamboni-vita-general.json`. You can select
+another file using `--resume FILE`. BibTeX inputs (such as `zamboni-pubs.bib`
+and `zamboni-patents.bib`) are read from the selected resume configuration. Website rendering is owned by
 `zzamboni/zzamboni.org`; resume-toolkit creates the downloads and the
 publications JSON data. HTML rendering is disabled using **only** `--no-html`.
 
@@ -11,6 +12,12 @@ Run `mise run sync-website` to use the existing `vars.deploy_dir` setting
 in `mise.toml` (which points to `static/vita/` inside the website checkout).
 The task derives the website root automatically. `DEPLOY_DIR` can override
 that variable using the same convention as the older `deploy` task.
+
+To select another resume with mise:
+
+```sh
+mise run sync-website --resume zamboni-vita-full.json
+```
 
 For direct invocation, provide the checkout location explicitly:
 
@@ -30,11 +37,13 @@ The script never commits or pushes; review the website checkout and commit
 there if desired. `zamboni-vita.json` is a temporary, gitignored input
 created for the output stem and removed after the build.
 
+The selected resume JSON is copied to the website directly. A temporary
+`zamboni-vita.json` build input keeps the existing PDF and BibTeX filenames.
 The script updates exactly these files:
 
 | Source | zzamboni.org destination |
 | --- | --- |
-| `zamboni-vita-full.json` | `data/jsonresume/resume.json` |
+| Selected resume (default: `zamboni-vita-general.json`) | `data/jsonresume/resume.json` |
 | `build/zamboni-vita/vita/publications/zamboni-vita-pubs.json` | `data/jsonresume/publications.json` |
 | `build/zamboni-vita/vita/zamboni-vita.pdf` | `static/vita/zamboni-vita.pdf` |
 | `build/zamboni-vita/vita/publications/zamboni-vita-pubs.pdf` | `static/vita/publications/zamboni-vita-pubs.pdf` |
@@ -47,7 +56,8 @@ are not deleted or overwritten. Missing required files fail the sync.
 
 The manually triggered workflow is
 [Sync vita to zzamboni.org](../.github/workflows/sync-website.yml).
-Run it from the `vita` repository's **Actions** tab. It checks out the
+Run it from the `vita` repository's **Actions** tab. You can choose a
+**resume** file there (default: `zamboni-vita-general.json`). It checks out the
 website's `staging` branch, uses the same script, and opens a pull request
 against `staging` only if output files changed. It never auto-merges.
 
