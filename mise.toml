@@ -61,4 +61,9 @@ fi
 
 [tasks.sync-website]
 description = "Build the CV and sync JSON/PDF/BibTeX into a local zzamboni.org checkout (without committing)"
-run = "bash scripts/sync-website.sh"
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+website_dir="$(dirname "$(dirname "${DEPLOY_DIR:-{{vars.deploy_dir}}}")")"
+bash scripts/sync-website.sh --website-dir "$website_dir" "$@"
+'''
