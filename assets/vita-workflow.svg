@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="285" viewBox="0 0 1040 285" role="img" aria-labelledby="title desc">
+<title id="title">How I publish my CV and publications</title>
+<desc id="desc">My vita JSON Resume and BibTeX files go through resume-toolkit with no HTML output. JSON goes into the website data directory and is rendered by hugo-jsonresume. PDFs and BibTeX go into the website static directory for download.</desc>
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#1b304f}
+.box{stroke-width:1.7;rx:13}
+.head{font-size:17px;font-weight:bold;text-anchor:middle}
+.sub{font-size:13px;text-anchor:middle}
+.edge{stroke:#657a96;stroke-width:2.3;fill:none;marker-end:url(#arrow)}
+.label{font-size:12px;fill:#425874;text-anchor:middle}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#657a96"/></marker></defs>
+<rect class="box" x="15" y="103" width="186" height="70" fill="#e3edff" stroke="#4366a5"/>
+<text class="head" x="108" y="132">vita</text><text class="sub" x="108" y="153">JSON Resume + BibTeX</text>
+<rect class="box" x="255" y="103" width="190" height="70" fill="#e7f4f2" stroke="#357b76"/>
+<text class="head" x="350" y="132">resume-toolkit</text><text class="sub" x="350" y="153">--no-html</text>
+<rect class="box" x="570" y="29" width="186" height="70" fill="#f5f7fc" stroke="#526887"/>
+<text class="head" x="663" y="58">zzamboni.org</text><text class="sub" x="663" y="79">data/jsonresume/</text>
+<rect class="box" x="570" y="177" width="186" height="70" fill="#f5f7fc" stroke="#526887"/>
+<text class="head" x="663" y="206">zzamboni.org</text><text class="sub" x="663" y="227">static/vita/</text>
+<rect class="box" x="814" y="29" width="212" height="70" fill="#ede9fa" stroke="#6955a0"/>
+<text class="head" x="920" y="58">hugo-jsonresume</text><text class="sub" x="920" y="79">/vita/ + /vita/publications/</text>
+<rect class="box" x="814" y="177" width="212" height="70" fill="#f5f7fc" stroke="#526887"/>
+<text class="head" x="920" y="206">Downloads</text><text class="sub" x="920" y="227">CV PDFs + publications BibTeX</text>
+<path class="edge" d="M201 138H255"/>
+<path class="edge" d="M445 129H492V64H570"/>
+<path class="edge" d="M445 148H492V212H570"/>
+<path class="edge" d="M756 64H814"/><path class="edge" d="M756 212H814"/>
+<text class="label" x="520" y="50">JSON</text><text class="label" x="520" y="203">PDFs + BibTeX</text>
+</svg>
