@@ -1,0 +1,14 @@
+flowchart LR
+  vita["vita<br/>JSON Resume + BibTeX"] --> toolkit["resume-toolkit<br/>--no-html"]
+  toolkit -->|JSON| data["zzamboni.org<br/>data/jsonresume/"]
+  toolkit -->|PDFs + BibTeX| static["zzamboni.org<br/>static/vita/"]
+  data --> hugo["hugo-jsonresume<br/>/vita/ + /vita/publications/"]
+  static --> downloads["Downloads<br/>CV PDFs + publications BibTeX"]
+  classDef source fill:#e3edff,stroke:#4366a5,color:#1b304f
+  classDef build fill:#e7f4f2,stroke:#357b76,color:#1b304f
+  classDef output fill:#f5f7fc,stroke:#526887,color:#1b304f
+  classDef hugo fill:#ede9fa,stroke:#6955a0,color:#1b304f
+  class vita source
+  class toolkit build
+  class data,static,downloads output
+  class hugo hugo
