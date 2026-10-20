@@ -16,19 +16,9 @@ There are four repositories involved:
 
 For the website, I run =resume-toolkit= with =--no-html=. There's no point generating another set of HTML pages when =hugo-jsonresume= already handles [[https://zzamboni.org/vita/][=/vita/=]] and [[https://zzamboni.org/vita/publications/][=/vita/publications/=]]. I still generate both PDFs, the publications JSON and the BibTeX file.
 
-#+begin_example
-My JSON Resume + BibTeX files (vita)
-                 |
-                 v
-        resume-toolkit --no-html
-                 |
-                 +-- Resume + publications JSON --> zzamboni.org/data/jsonresume/
-                 +-- PDFs + publications BibTeX --> zzamboni.org/static/vita/
-                                                        |
-                                                        v
-                                                 hugo-jsonresume
-                                                /vita/ + /vita/publications/
-#+end_example
+[[file:assets/vita-workflow.svg]]
+
+I keep the [[file:assets/vita-workflow.mmd][Mermaid source for this diagram]] in the repository as well, so it's easy to update. The SVG is what GitHub displays in this Org README.
 
 ** The source files
 
