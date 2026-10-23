@@ -19,9 +19,11 @@ For the website, I run =resume-toolkit= with =--no-html=. There's no point gener
 [[file:assets/vita-workflow.svg]]
 
 #+HTML: <details>
-#+HTML: <summary>Source files and website update instructions</summary>
+#+HTML: <summary>About the diagram source</summary>
 
 I keep the [[file:assets/vita-workflow.mmd][Mermaid source for this diagram]] in the repository as well, so it's easy to update. The SVG is what GitHub displays in this Org README.
+
+#+HTML: </details>
 
 ** The source files
 
@@ -83,5 +85,3 @@ I review and merge the PR myself. The workflow puts the PR link (or a note sayin
 To let the workflow write to my website repository, I store a fine-grained GitHub token as =WEBSITE_SYNC_TOKEN= in *vita → Settings → Secrets and variables → Actions*. It needs Contents and Pull requests read/write access to =zzamboni/zzamboni.org=.
 
 For the exact file mappings and more options, I've put the details in [[docs/website-sync.md][the website sync notes]]. The [[https://github.com/zzamboni/resume-toolkit][resume-toolkit repository]] has its own instructions for building standalone versions of my CV.
-
-#+HTML: </details>
